@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelStratOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscDelStratOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratOrdrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

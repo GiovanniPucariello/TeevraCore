@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelStratQuoRequestT">
+		<sequence>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscDelStratQuoResponseT">
+		<sequence>
+			<element type="char" name="bidSidDel"/>
+			<element type="char" name="askSidDel"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

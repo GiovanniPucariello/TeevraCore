@@ -1,0 +1,35 @@
+<?xml version="1.0"?><project>
+  <parent>
+    <artifactId>TeevraUIBuilder</artifactId>
+    <groupId>com.hs.teevraui</groupId>
+    <version>0.0.1-A</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.hs.teevraui</groupId>
+  <artifactId>teevraConfig</artifactId>
+  <name>teevraConfig</name>
+  <version>0.0.1-A</version>
+  <packaging>pom</packaging>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>make shared resources</id>
+            <goals>
+              <goal>single</goal>
+            </goals>
+            <phase>package</phase>
+            <configuration>
+              <descriptors>
+                <descriptor>src/main/assembly/resources.xml</descriptor>
+              </descriptors>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition>
+	<process id="process_3">
+		<routes>
+			<route threads="10" savePoint="false" breakPoint="false">
+				<service type="mediation" name="validator"
+					id="validator_1">
+					<property name="config" value="validation_config" />
+				</service>
+				<target>
+					<multicast>
+						<target>
+							<service type="mediation" name="parser"
+								id="parser">
+								<property name="source"
+									value="database" />
+								<property name="url" value="some url" />
+							</service>
+						</target>
+					</multicast>
+				</target>
+			</route>
+		</routes>
+	</process>
+</definition>

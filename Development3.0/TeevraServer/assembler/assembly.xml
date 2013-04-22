@@ -1,0 +1,219 @@
+<assembly>
+	<id>bin</id>
+	<formats>
+		<format>dir</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<moduleSets>
+		<moduleSet>
+			<includes>
+				<include>com.hs.fusion:fusion-launcher</include>
+			</includes>
+			<binaries>
+				<dependencySets>
+					<dependencySet>
+						<excludes>
+							<exclude>com.hs.fusion:fusion-logger</exclude>
+						</excludes>
+					</dependencySet>
+				</dependencySets>
+				<outputDirectory>fusion</outputDirectory>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+		<moduleSet>
+			<includes>
+				<include>com.hs.fusion:fusion-remote</include>
+				<include>com.hs.fusion:fusion-logger</include>
+			</includes>
+			<binaries>
+				<dependencySets>
+					<dependencySet>
+						<includes>
+							<include>*.properties</include>
+						</includes>
+					</dependencySet>
+				</dependencySets>
+				<outputDirectory>fusion/resources/corebundles</outputDirectory>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+		<moduleSet>
+			<includes>
+				<include>com.hs.fusion:fusion-dbpool</include>
+			</includes>
+			<binaries>
+				<dependencySets>
+					<dependencySet>
+						<includes>
+							<include>*.properties</include>
+						</includes>
+					</dependencySet>
+				</dependencySets>
+				<outputDirectory>fusion/resources/bundles</outputDirectory>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+		<moduleSet>
+			<includes>
+				<include>com.hs.fusion:fusion-commons</include>
+				<include>com.hs.fusion:fusion-admin</include>
+				<include>com.hs.fusion:fusion-core</include>
+				<include>com.hs.fusion:fusion-broadcast</include>
+				<include>com.hs.fusion:event-logger</include>
+				<include>com.hs.fusion:messageid-generator</include>
+				<include>com.hs.fusion:savepoint-persist</include>
+				<include>com.hs.fusion:fusion-statemachine</include>
+				<include>com.hs.fusion:services.rules.conditionalrules</include>
+
+				<include>com.hs.fusion:connector.db</include>
+				<include>com.hs.fusion:connector.ibm.mq</include>
+				<include>com.hs.fusion:services.message.schema</include>
+				
+				<include>com.hs.fusion:connector.http.receiver</include>
+				<include>com.hs.fusion:connector.processLauncher</include>
+				
+				<include>com.hs.fusion:connector.exchange.fix</include>
+
+				<include>com.hs.fusion:services.message.processor.fixml</include>
+				<include>com.hs.fusion:services.config.reader</include>				
+				<include>com.hs.fusion:services.message.commons</include>
+				<include>com.hs.fusion:services.scripting</include>
+				
+				<include>com.hs.fusion:services.transformer</include>
+				<include>com.hs.fusion:services.transformer.rules</include>
+				<include>com.hs.fusion:services.transformer.rulemanager</include>
+				
+				<include>com.hs.fusion:services.validator</include>
+				<include>com.hs.fusion:services.validator.rules</include>
+				<include>com.hs.fusion:services.validator.rulemanager</include>
+		
+				<include>com.hs.fusion:services.adapter.validator.fixml</include>
+				<include>com.hs.fusion:services.message.parser.xml</include>
+				<include>com.hs.fusion:services.message.parser.db</include>
+				<include>com.hs.fusion:services.message.parser.td</include>
+				<include>com.hs.fusion:services.message.parser.fl</include>
+				<include>com.hs.fusion:services.message.parser.multisection</include>
+				<include>com.hs.fusion:services.message.formatter.binary</include>
+				<include>com.hs.fusion:services.message.formatter.xml</include>
+				<include>com.hs.fusion:services.message.formatter.td</include>
+				<include>com.hs.fusion:services.message.formatter.db</include>
+				<include>com.hs.fusion:services.message.formatter.template</include>
+				<include>com.hs.fusion:services.message.formatter.fl</include>
+				<include>com.hs.fusion:services.statemachine</include>
+
+				<include>com.hs.fusion:services.message.encrypter</include>
+				<include>com.hs.fusion:services.message.decrypter</include>		
+	
+				<include>com.hs.fusion:services.message.processor.extractor</include>
+				<include>com.hs.fusion:services.caching</include>
+				<include>com.hs.fusion:services.tedi</include>
+				<include>com.hs.fusion:tfp</include>                
+                <include>com.hs.fusion:connector.qpid</include>
+
+			</includes>
+			<binaries>
+				<dependencySets>
+					<dependencySet>
+						<excludes>
+							<exclude>org.apache.felix:*</exclude>
+							<exclude>com.hs.fusion:fusion-remote</exclude>
+							<exclude>com.hs.fusion:fusion-logger</exclude>
+							<exclude>com.hs.fusion:fusion-dbpool</exclude>
+							<exclude>org.slf4j:slf4j-api</exclude>
+							<exclude>org.postgresql:com.springsource.org.postgresql.jdbc3</exclude>
+							<exclude>org.hsqldb:com.springsource.org.hsqldb</exclude>
+							<exclude>com.hs.fusion:openjms</exclude>
+							<exclude>com.hs.fusion:openjms-common</exclude>
+							<exclude>com.hs.fusion:openjms-net</exclude>
+							<exclude>com.hs.fusion:concurrent</exclude>
+							<exclude>com.hs.fusion:spice-jndikit</exclude>
+							<exclude>junit:junit</exclude>
+							<exclude>com.hs.fusion:fusion-bo</exclude>
+							<exclude>net.sourceforge.jtds:jtds</exclude>
+							<exclude>org.apache.log4j:com.springsource.org.apache.log4j</exclude>
+							<exclude>org.apache.commons:com.springsource.org.apache.commons.logging</exclude>
+
+							<!-- additional filters -->
+							<exclude>aopalliance:aopalliance</exclude>
+							<exclude>com.fusion.external:com.ibm.mq</exclude>
+							<exclude>com.fusion.external:com.ibm.mq.jmqi</exclude>
+							<exclude>com.fusion.external:com.ibm.mqjms</exclude>
+							<exclude>com.fusion.external:dhbcore</exclude>
+							<exclude>com.fusion.external:connector</exclude>
+
+							<exclude>commons-jexl:commons-jexl</exclude>
+							<exclude>commons-logging:commons-logging</exclude>
+							<exclude>commons-logging:commons-logging-api</exclude>
+
+							<exclude>commons-httpclient:commons-httpclient</exclude>
+							<exclude>org.apache.camel:camel-http</exclude>		
+
+							<exclude>commons-pool:commons-pool</exclude>
+
+							<exclude>com.fusion.external:jconn3</exclude>
+							<exclude>jsch:jsch</exclude>
+
+							<exclude>org.apache.mina:mina-core</exclude>
+							<exclude>com.fusion.external:ojdbc</exclude>
+
+							<exclude>com.fusion.external:openjms</exclude>
+							<exclude>com.fusion.external:openjms-common</exclude>
+							<exclude>com.fusion.external:openjms-net</exclude>
+
+							<exclude>oro:oro</exclude>
+
+							<exclude>com.fusion.external:spice-jndikit</exclude>
+							<exclude>xmlunit:xmlunit</exclude>
+
+							<exclude>com.fusion.external:bsh</exclude>
+							<exclude>com.fusion.external:axis</exclude>
+							<exclude>com.fusion.external:dom4j-full</exclude>
+							<exclude>com.fusion.external:jaxrpc</exclude>
+							<exclude>com.fusion.external:jbcl</exclude>
+							<exclude>com.fusion.external:jgl</exclude>
+							<exclude>com.fusion.external:saaj</exclude>
+							<exclude>com.fusion.external:objtedi</exclude>
+							<exclude>com.fusion.external:mailapi</exclude>
+							<exclude>com.fusion.external:smtp</exclude>
+							<exclude>org.slf4j:slf4j-simple</exclude>									<exclude>org.apache.log4j:com.springsource.org.apache.log4j</exclude>
+							<exclude>com.fusion.external:activemq-all</exclude>
+							<exclude>log4j:log4j</exclude>
+							<exclude>com.fusion.external:geronimo-jms-spec</exclude>
+							<exclude>com.fusion.external:geronimo-jta-spec</exclude>
+							<exclude>com.fusion.external:j2ee</exclude>
+							<exclude>com.fusion.external:kahadb</exclude>
+							<exclude>stax:stax</exclude>
+							<exclude>org.apache.camel:camel-mina</exclude>
+
+						</excludes>
+					</dependencySet>
+				</dependencySets>
+				<outputDirectory>fusion/resources/bundles</outputDirectory>
+				<unpack>false</unpack>
+			</binaries>
+		</moduleSet>
+	</moduleSets>
+
+	<sources>
+		<files>
+			<file>
+				<source>${platform.root}/launcher/src/main/resources/fusion1.properties</source>
+				<outputDirectory>conf</outputDirectory>
+				<destName>fusion.properties</destName>
+				<filtered>true</filtered>
+			</file>
+		</files>		
+		
+		<fileSets>
+			<fileSet>
+				<directory>>${extensions.root}/generic/http/src/main/resources</directory>
+				<includes>
+					<include>teevraStdReq.dtd</include>
+				</includes>
+				<outputDirectory>fusion</outputDirectory>
+			</fileSet>
+		</fileSets>
+	</sources>
+
+</assembly>

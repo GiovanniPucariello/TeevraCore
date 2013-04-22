@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscAppFlxCntrRequestT">
+		<sequence>
+			<element type="flxCntrTrnIdGrpT" name="flxCntrTrnIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extAppFlxCntrRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="appFlxCntrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscAppFlxCntrRequestT" name="basic"/>
+			<element type="extAppFlxCntrRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscAppFlxCntrResponseT">
+		<sequence>
+			<element type="char" name="flxCntrSynProdId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="appFlxCntrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscAppFlxCntrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

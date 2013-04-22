@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelStratBlkAuctQuoRequestT">
+		<sequence>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratBlkAuctQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratBlkAuctQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscDelStratBlkAuctQuoResponseT">
+		<sequence>
+			<element type="char" name="bidSidDel"/>
+			<element type="char" name="askSidDel"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratBlkAuctQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratBlkAuctQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

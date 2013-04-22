@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="extCapAdjTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="capAdjTrnTyp" size="3"/>
+			<element type="char" name="capAdjEffDat" size="8"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="prodId2" size="4"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="capAdjRtio" size="11"/>
+			<element type="char" name="cshValDat" size="8"/>
+			<element type="char" name="secuValDat" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="capAdjTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extCapAdjTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="extCntrChgTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="cntrChgTrnTyp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="cntrExpDat" size="8"/>
+			<element type="char" name="cntrGenNo"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+			<element type="char" name="cntrSiz" size="13"/>
+			<element type="char" name="prodIdNew" size="4"/>
+			<element type="char" name="cntrClasCodNew"/>
+			<element type="char" name="cntrExpMthDatNew" size="2"/>
+			<element type="char" name="cntrExpYrDatNew" size="4"/>
+			<element type="char" name="cntrExerPrcNew" size="6"/>
+			<element type="char" name="cntrVersNoNew"/>
+			<element type="char" name="cntrSizNew" size="13"/>
+			<element type="char" name="cshValDat" size="8"/>
+			<element type="char" name="secuValDat" size="8"/>
+			<element type="char" name="autManExerTyp"/>
+			<element type="char" name="exerStylTyp"/>
+			<element type="char" name="mgnStylTyp"/>
+			<element type="char" name="exerPrcDcml"/>
+		</sequence>
+	</complexType>
+	<complexType name="cntrChgTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extCntrChgTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="extExchRatTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="noOfExchRat" size="2"/>
+			<element type="extExchRatTrnRecT" name="extExchRatTrnRec" size="19"/>
+		</sequence>
+	</complexType>
+	<complexType name="exchRatTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extExchRatTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="extIdayCntrTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="primExchIdCod" size="4"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="trdUntNo" size="8"/>
+			<element type="char" name="strkPrcMult" size="8"/>
+			<element type="char" name="cntrExpDat" size="8"/>
+			<element type="char" name="cntrStsCod"/>
+			<element type="char" name="cntrAsynInd"/>
+			<element type="char" name="lepoInd"/>
+			<element type="occCntrIdGrpT" name="occCntrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="idayCntrTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extIdayCntrTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="extProdChgTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="prodChgTrnTyp" size="3"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="exerPrcDcmlOld"/>
+			<element type="char" name="exerPrcDcmlNew"/>
+		</sequence>
+	</complexType>
+	<complexType name="prodChgTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extProdChgTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="extSetlPrcTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="noOfSetlPrc" size="2"/>
+			<element type="extSetlPrcTrnRecT" name="extSetlPrcTrnRec" size="24"/>
+		</sequence>
+	</complexType>
+	<complexType name="setlPrcTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extSetlPrcTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="extStsMsgTrnPubBcastT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+			<element type="char" name="exchIdCod" size="4"/>
+			<element type="char" name="sts" size="3"/>
+			<element type="char" name="stsProdId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="stsMsgTrnPubBcastT">
+		<sequence>
+			<element type="bscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extStsMsgTrnPubBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscSubBOInfoSubjectT">
+		<sequence>
+			<element type="char" name="boiTrnTyp" size="2"/>
+		</sequence>
+	</complexType>
+</struct>

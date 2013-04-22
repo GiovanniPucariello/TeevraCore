@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="10c5c4b1-cb53-4853-b78a-00c99f53a383" embeddedrepository="false">
+  <name>
+    DBDest
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="DBDest" namespace="Validation_Creation_templates"/>
+  <variables/>
+  <recorditems>
+    <mouseitem enabled="True" optional="False" duration="1281ms" action="Down" button="Left" movetime="300ms" sx="64" sy="200" loc="3;13">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="e3f50cab-a344-4d55-9fa7-f3348eb1bcc1">
+        <element role="picture" prefcap="picture" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="61,187,25,25">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::SWFLoader]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader420.FlexDrawing426.VBox427.HBox440.Panel441.compPalette.Grid444.GridRow460.GridItem461.ComponentPaletteItem450.VBox451.HBox452.Image454]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Image]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[icon_1]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Image]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/element[6]/container[5]/container[2]/container/container/container/picture[@id='icon_1']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="828ms" action="Up" button="Left" movetime="300ms" sx="589" sy="418" loc="378;102">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="1c5a6663-e227-42d9-a79d-dfe4a269a911">
+        <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="211,316,793,403">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.containers::Canvas]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader420.FlexDrawing426.VBox427.HBox440.VBox1092.graphCanvas]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.containers::Canvas]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[graphCanvas]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Canvas]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="827ms" action="Click" button="Right" movetime="300ms" sx="576" sy="410" loc="35;30">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="ea0eb2e3-7aeb-4e42-8bd5-6c5aac6fe2b8">
+        <element role="picture" prefcap="picture" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="541,380,50,50">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::SWFLoader]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader420.FlexDrawing426.VBox427.HBox440.VBox1092.graphCanvas.ComponentGraphCanvasItem1669.Image1670]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Image]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[icon_1_32963]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Image]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']/container[@id='Box5420']/picture[@id='icon_1_32963']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1405ms" action="Click" button="Left" movetime="300ms" sx="597" sy="437" loc="18;7">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="eaca9b21-afb7-4364-80fd-3d6017d6a53f">
+        <element role="menuitem" prefcap="menuitem" capabilities="accessible" flavor="msaa" visible="True" valid="True" enabled="True" hasfocus="True" dontcache="False" index="1" rect="579,430,189,17">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Configure Component]]>
+          </attribute>
+          <attribute name="accessibledefaultaction" type="System.String">
+            <![CDATA[Execute]]>
+          </attribute>
+          <attribute name="accessiblekeyboardshortcut" type="System.String">
+            <![CDATA[c]]>
+          </attribute>
+          <attribute name="accessiblename" type="System.String">
+            <![CDATA[Configure Component]]>
+          </attribute>
+          <attribute name="accessiblerole" type="System.Windows.Forms.AccessibleRole, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[MenuItem]]>
+          </attribute>
+          <attribute name="accessiblestate" type="System.Windows.Forms.AccessibleStates, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[Focused, HotTracked]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/contextmenu[@processname='iexplore']/contextmenu/menuitem[@accessiblename='Configure Component']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3015ms" action="Click" button="Left" movetime="300ms" sx="434" sy="234" loc="36;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="99e7d09e-fa03-48a6-8afe-34ba25e089c4">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,222,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1680.ComponentConfigurationForm1691.FormItem1692.RestrictedTextInput1693]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[ServiceId]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[9]/text[@id='ServiceId']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="2625ms" sequence="service" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1874ms" action="Click" button="Left" movetime="300ms" sx="437" sy="266" loc="39;15">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="dfefd1a5-09e8-459a-9c9d-572229955861">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,251,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1680.ComponentConfigurationForm1691.FormItem1698.TextInput1699]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[ServerURL]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[8]/text[@id='ServerURL']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="766ms" methodname="getURL_DB">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <keysequenceitem enabled="True" optional="False" duration="766ms" sequence="ur" presstime="100ms">
+          <comment>
+          </comment>
+          <bindings/>
+        </keysequenceitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1140ms" action="Click" button="Left" movetime="300ms" sx="401" sy="292" loc="3;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="8019071c-21b6-43bd-b838-a46200069bf3">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,280,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[14]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+            <![CDATA[Dest_USerid_DB]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Dest_USerid_DB]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer7984.ComponentConfigurationForm7995.FormItem8008.TextInput8009]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[UserName]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[7]/text[@id='UserName']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="1609ms" methodname="getUSeridDB">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <keysequenceitem enabled="True" optional="False" duration="1609ms" sequence="name" presstime="100ms">
+          <comment>
+          </comment>
+          <bindings/>
+        </keysequenceitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1156ms" action="Click" button="Left" movetime="300ms" sx="420" sy="346" loc="22;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="2c89b08f-ea12-4460-9921-e4f6549ace44">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,338,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer7984.ComponentConfigurationForm7995.FormItem8020.TextInput8021]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[Query]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[5]/text[@id='Query']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="2141ms" methodname="getQuery_DB">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <keysequenceitem enabled="True" optional="False" duration="2141ms" sequence="query" presstime="100ms">
+          <comment>
+          </comment>
+          <bindings/>
+        </keysequenceitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1171ms" action="Click" button="Left" movetime="300ms" sx="428" sy="379" loc="30;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="fb690254-9a3d-4fd3-aa9e-d081421832b4">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,367,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer7984.ComponentConfigurationForm7995.FormItem8026.TextInput8027]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[WaitInterval]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[4]/text[@id='WaitInterval']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="1750ms" sequence="1000" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1140ms" action="Click" button="Left" movetime="300ms" sx="414" sy="439" loc="16;14">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7ef1291a-5534-4cda-9be8-31a60e1bd626">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,425,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer7984.ComponentConfigurationForm7995.FormItem8042.TextInput8043]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[UpdateQuery]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[2]/text[@id='UpdateQuery']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="2125ms" methodname="getUpdatequery_DB">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <keysequenceitem enabled="True" optional="False" duration="2125ms" sequence="update" presstime="100ms">
+          <comment>
+          </comment>
+          <bindings/>
+        </keysequenceitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1480ms" action="Click" button="Left" movetime="300ms" sx="650" sy="563" loc="Center">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="72dec61e-d73e-4ad1-9f82-d74b568ba9ff">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="526,550,138,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1758.ComponentConfigurationForm1769.FormItem1806.ComboBox1807.Button1809]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[4]/combobox/button[@type='Button']]]>
+        </path>
+      </info>
+      <helperscreenshot guid="9c9cbe06-dbc3-4885-bc9c-2a3c23fcd076">
+        <![CDATA[/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9V
+XVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSk
+pKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAEwARYDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDpqKKK
+ACiiigAoqNZoncxpKjOvVQwJH4VJQAUUUmRuK85Az0oAWiikZgqlmIAAySe1AC0U1HSRQ6MrKehU
+5BoR1kRXQ5VgCD6igB1FFRPGJJMMXGAPuuV/lQBLRUP2dP70v/f1v8aPs6f3pf8Av63+NAE1FQ/Z
+0/vS/wDf1v8AGj7On96X/v63+NAE1FQ/Z0/vS/8Af1v8aPs6f3pf+/rf40ATUVD9nT+9L/39b/Gj
+7On96X/v63+NAE1FQ/Z0/vS/9/W/xo+zp/el/wC/rf40ATUVD9nT+9L/AN/W/wAaPs6f3pf+/rf4
+0ATUVD9nT+9L/wB/W/xo+zp/el/7+t/jQBNRUP2dP70v/f1v8aPs6f3pf+/rf40ATUVD9nT+9L/3
+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]]>
+      </helperscreenshot>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1090ms" action="Click" button="Left" movetime="300ms" sx="588" sy="623" loc="Center">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="971fb189-7fc3-493c-ac07-9999302b33ac">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="531,617,128,17">
+          <attribute name="caption" type="System.String">
+            <![CDATA[PostGre SQL]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[PostGre SQL]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]/listitem[@text='PostGre SQL']/text[@caption='PostGre SQL']]]>
+        </path>
+      </info>
+      <helperscreenshot guid="34da51d6-2425-447b-9c84-df51ecdc7f01">
+        <![CDATA[/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9V
+XVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSk
+pKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCABtAKIDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDpqqzN
+suvm4DoAvuQTn+dWqYypKCrqGXPQjIoAruFfbuGdp3D60OFkGGGcHI9jUv2S2/594v8AvgUfZLb/
+AJ94v++BQBCI0C7RkDOeGIJP1pPKj2qoXAT7uDgj8an+yW3/AD7xf98Cj7Jbf8+8X/fAoArtDE+7
+KnDHJAYgE/SnqFV2cD5mxk+uKl+yW3/PvF/3wKPslt/z7xf98CgCFI40OVGMdBk4H0HalcK+M547
+gkH9Kl+yW3/PvF/3wKPslt/z7xf98CgCAxRlFUDbt+6VOCKakCiMI/zYbdkZBz69etWfslt/z7xf
+98Cj7Jbf8+8X/fAoAjXCDAJ/Ek/zpd1P+yW3/PvF/wB8Cj7Jbf8APvF/3wKAGbqRjlSPUVJ9ktv+
+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]]>
+      </helperscreenshot>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1109ms" action="Click" button="Left" movetime="300ms" sx="429" sy="468" loc="31;14">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="60dbcd47-c165-4f52-8827-4d26c6ac8d2b">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,454,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer7984.ComponentConfigurationForm7995.FormItem8048.TextInput8049]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[ReadSize]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[1]/text[@id='ReadSize']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="1125ms" sequence="10000" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1171ms" action="Click" button="Left" movetime="300ms" sx="418" sy="313" loc="20;4">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="4bd56376-1322-4122-9401-8dab89014cfd">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="398,309,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer7984.ComponentConfigurationForm7995.FormItem8014.TextInput8015]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[Password]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/form/container[6]/text[@id='Password']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="2000ms" methodname="getPwd_DB">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <keysequenceitem enabled="True" optional="False" duration="2000ms" sequence="pwd" presstime="100ms">
+          <comment>
+          </comment>
+          <bindings/>
+        </keysequenceitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="936ms" action="Click" button="Left" movetime="300ms" sx="530" sy="519" loc="30;9">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="775ca318-8ac3-4d6b-a927-5491feb920a8">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="500,510,154,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save as Template...]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1680.ControlBar1750.Button1755]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save as Template...']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="921ms" action="Click" button="Left" movetime="300ms" sx="546" sy="350" loc="58;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="8859851b-29f1-4522-8eb7-75bd165e971b">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="488,338,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[InputDialog1796.Form1789.FormItem1790.TextInput1791]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form[@title='Save Template']/form/container/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="2719ms" methodname="getTempName_DB">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <keysequenceitem enabled="True" optional="False" duration="2719ms" sequence="tempname" presstime="100ms">
+          <comment>
+          </comment>
+          <bindings/>
+        </keysequenceitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1531ms" action="Click" button="Left" movetime="300ms" sx="400" sy="402" loc="26;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="93cfd3fb-2cd9-4f4a-a850-6baf2ed4a88e">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="374,394,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[InputDialog1796.ControlBar1807.Button1808]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form[@title='Save Template']/element[@type='ControlBar']/button[@text='Save']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1046ms" action="Click" button="Left" movetime="300ms" sx="525" sy="402" loc="45;18">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="fe1501b2-b3c2-479d-b276-e8358d5f90aa">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="480,384,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert1829.AlertForm1837.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/container[@caption='Save successful']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1156ms" action="Click" button="Left" movetime="300ms" sx="331" sy="515" loc="36;5">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="381a51ae-0919-44c0-b495-221a9976ba71">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="295,510,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1680.ControlBar1750.Button1751]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8888']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="EndpointsRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="EndpointsRepository.rxrep">
+    <codegen classname="EndpointsRepository" namespace="Validation_Creation_templates"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="VBNet">
+    <![CDATA[DBDest.UserCode.vb]]>
+  </usercodefile>
+  <references/>
+</recordtable>

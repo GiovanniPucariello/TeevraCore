@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscAcptTakUpTrnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodTo" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAcptTakUpTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAcptTakUpTrnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscAcptTakUpTrnResponseT">
+		<sequence>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAcptTakUpTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAcptTakUpTrnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscAcptTakUpTrnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodTo" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optAcptTakUpTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscAcptTakUpTrnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscAcptTakUpTrnResponseT">
+		<sequence>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optAcptTakUpTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscAcptTakUpTrnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

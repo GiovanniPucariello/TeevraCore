@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscInqAutExerParmGrpT">
+		<sequence>
+			<element type="char" name="genProdId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAutExerParmRequestT">
+		<sequence>
+			<element type="optBscInqAutExerParmGrpT" name="optBscInqAutExerParmGrp" size="474"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqAutExerParmRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqAutExerParmRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAutExerParmRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAutExerParmResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqAutExerParmRecT" name="optBscInqAutExerParmRec" size="82"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqAutExerParmRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="itmMinAmnt" size="8"/>
+			<element type="char" name="itmMinAmntCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqAutExerParmResponseT">
+		<sequence>
+			<element type="optExtInqAutExerParmRecT" name="optExtInqAutExerParmRec" size="82"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqAutExerParmResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqAutExerParmResponseT" name="basic"/>
+			<element type="optExtInqAutExerParmResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

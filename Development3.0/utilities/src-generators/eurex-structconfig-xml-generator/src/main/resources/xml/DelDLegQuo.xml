@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelDLegQuoRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelDLegQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelDLegQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelDLegQuoResponseT">
+		<sequence>
+			<element type="char" name="bidSidDel"/>
+			<element type="char" name="askSidDel"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelDLegQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelDLegQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

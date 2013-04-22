@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>teevra.platform.parent</artifactId>
+		<groupId>com.hs.fusion</groupId>
+		<version>2.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>services.scripting</artifactId>
+	<version>${scripting.version}</version>
+	<packaging>bundle</packaging>
+	<name>Scripting Engine</name>
+	<description>Scripting Engine</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.bsf</groupId>
+			<artifactId>com.springsource.org.apache.bsf</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>
+				com.springsource.org.codehaus.groovy
+			</artifactId>
+			<version>1.5.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-commons</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.netrexx</groupId>
+			<artifactId>com.springsource.com.ibm.netrexx</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.objectweb.asm</groupId>
+			<artifactId>
+				com.springsource.org.objectweb.asm.tree
+			</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.objectweb.asm</groupId>
+			<artifactId>
+				com.springsource.org.objectweb.asm.attrs
+			</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.objectweb.asm</groupId>
+			<artifactId>com.springsource.org.objectweb.asm</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>services.message.schema</artifactId>
+			<version>${message.schema.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>
+							com.headstrong.fusion.services.scripting.ScriptingEngineActivator
+						</Bundle-Activator>
+						<Import-Package>
+							!org.apache.commons.cli.*,!sun.tools.*,!sun.io.*,!org.python.*,!org.apache.xpath.*,!tcl.lang.*,!org.mozilla.javascript.*,!com.thoughtworks.xstream.*,!junit.*,!jline.*,!org.apache.tools.ant.*,!org.objectweb.asm.tree.analysis,!org.objectweb.asm.util,!javax.servlet.jsp,!groovy.runtime.metaclass,!com.mockobjects.constraint,!com.mockobjects.dynamic,!com.mockobjects,*
+						</Import-Package>
+						<Export-Package>
+							com.headstrong.fusion.services.scripting.*
+						</Export-Package>
+						<Embed-Dependency>
+							org.codehaus.groovy;inline=true;
+							org.apache.bsf;inline=true;
+							com.ibm.netrexx;inline=true;
+						</Embed-Dependency>
+						<Start-Level>6</Start-Level>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

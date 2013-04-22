@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="9f523ec9-0037-4975-8e5d-479cb3ffa090" embeddedrepository="false">
+  <name>
+    DBFormatter
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    True
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    5
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="DBFormatter" namespace="Validation_Creation_templates"/>
+  <variables/>
+  <recorditems>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="Record_Action">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+  </recorditems>
+  <repository name="FormattersRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="FormattersRepository.rxrep">
+    <codegen classname="FormattersRepository" namespace="Validation_Creation_templates"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <references/>
+</recordtable>

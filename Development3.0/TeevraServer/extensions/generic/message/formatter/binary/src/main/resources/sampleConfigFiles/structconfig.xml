@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="CnctRespDataT">
+		<sequence>
+			<element name="connectionID" type="SHORT"/>
+			<element name="connectionID1" type="USHORT"/>
+			<element name="VMQname" type="UTFSTRING" size="20"/>
+			<element name="prodMode" type="CHAR"/>
+		</sequence>
+	</complexType>
+	<complexType name="LoginReqDataT">
+		<sequence>
+			<element name="userID" type="UTFSTRING" size="20"/>
+			<element name="closure" type="CHAR"/>
+			<element name="applVersion" type="INT"/>
+			<element name="authorizationDataLength" type="INT"/>
+			<element name="firstLevel" type="CnctRespDataT"/>
+			<element name="x" type="FLOAT"/>
+			<element name="y" type="DOUBLE"/>
+		</sequence>
+	</complexType>
+	<complexType name="ReqCntrlT">
+		<sequence>
+			<element name="connectionID" type="INT"/>
+			<element name="dbApplID" type="UINT"/>
+			<element name="appDescr" type="UTFSTRING" size="20"/>
+			<element name="secondLevel" type="LoginReqDataT"/>
+			<element name="reqID" type="INT"/>
+			<element name="resubmitFlag" type="INT"/>
+			<element name="resubmitNo" type="UINT"/>
+			<element name="VCIver" type="UTFSTRING" size="20"/>
+			<element name="loginID" type="INT"/>
+		</sequence>
+	</complexType>
+	<complexType name="complexStruct">
+		<sequence>
+			<element name="num" type="INT"/>
+			<element name="num1" type="LONG"/>
+			<element name="num2" type="LONG"/>
+			<element name="thirdLevel" type="ReqCntrlT"/>
+			<element name="dummy" type="FLOAT"/>
+			<element name="name" type="UTFSTRING" size="20"/>
+			<element name="x" type="INT"/>
+			<element name="y" type="DOUBLE"/>
+			<element name="z" type="CHAR"/>
+		</sequence>
+	</complexType>
+</struct>

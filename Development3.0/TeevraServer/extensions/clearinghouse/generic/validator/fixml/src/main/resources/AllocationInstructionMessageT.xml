@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<ruleset>
+<!--  Needs confirmation : no mapping given for 1031 
+  <rule name="isnotnullandnotempty" sequence="1" errormsg="ID is required and can not be null">
+    <input name="operand" value="message.value.ID" type="input"/>
+  </rule>
+   -->
+  <rule name="isnotnullandnotempty" sequence="2" errormsg="transTyp is required and can not be null">
+    <input name="operand" value="message.value.transTyp" type="input"/>
+  </rule>  
+  <rule name="isnotnullandnotempty" sequence="4" errormsg="side is required and can not be null">
+    <input name="operand" value="message.value.side" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="5" errormsg="instrmt.ID is required and can not be null">
+    <input name="operand" value="message.value.instrmt.ID" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="6" errormsg="instrmt.cfi is required and can not be null">
+    <input name="operand" value="message.value.instrmt.cfi" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="7" errormsg="instrmt.mmy is required and can not be null">
+    <input name="operand" value="message.value.instrmt.mmy" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="8" errormsg="instrmt.strkPx is required and can not be null">
+    <input name="operand" value="message.value.instrmt.strkPx" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="9" errormsg="instrmt.exch is required and can not be null">
+    <input name="operand" value="message.value.instrmt.exch" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="10" errormsg="qty is required and can not be null">
+    <input name="operand" value="message.value.qty" type="input"/>
+  </rule>
+  <rule name="isnotnullandnotempty" sequence="11" errormsg="tradeDate is required and can not be null">
+    <input name="operand" value="message.value.trdDt" type="input"/>
+  </rule>
+</ruleset>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+	<mx:Script>
+		<![CDATA[
+			import com.headstrong.teevra.client.events.UserAuthenticationEvent;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+			
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			private function validateUser(event:MouseEvent):void
+			{
+//				var authenticationUserEvent:UserAuthenticationEvent = new UserAuthenticationEvent(userIdTextInput.text,passwordTextInput.text);
+//				authenticationUserEvent.dispatch();				
+			}
+			private function resetForm():void
+			{
+				userIdTextInput.text="";
+				passwordTextInput.text="";
+				
+			}
+		]]>
+	</mx:Script>
+
+	<mx:Panel id="loginPanel" name="loginPanel" styleName="panelStyle1" title="Teevra Login" height="166" width="352" paddingLeft="30" verticalAlign="middle">
+		
+		<mx:Form name="authenticationForm" horizontalCenter="center" defaultButton="{okbutton}">
+			
+			<mx:FormItem id="userIdFormItem" name="userIdFormItem" label="User Name">
+				<mx:TextInput id="userIdTextInput"/>				
+			</mx:FormItem>
+			
+			<mx:FormItem id="passwordFormItem" name="passwordFormItem" label="Password">
+				<mx:TextInput id="passwordTextInput" displayAsPassword="true"/>
+			</mx:FormItem>
+			
+			<mx:FormItem>
+			
+				<mx:HBox id="buttonHbox" name="buttonHbox" paddingTop="10">
+					<mx:Button id="okbutton" label="Submit" click="validateUser(event);"/>
+					<mx:Button id="cancelbutton" label="Reset" click="resetForm();"/>		
+				</mx:HBox>
+				
+			</mx:FormItem>
+				
+			
+		</mx:Form>
+	</mx:Panel>
+</mx:Module>

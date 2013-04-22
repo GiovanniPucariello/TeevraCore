@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+                  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                  http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+
+	<!-- ========================= TRANSACTION MANAGEMENT ========================= -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<!-- all methods starting with 'get' are read-only -->
+			<!-- all methods starting with 'get' are read-only -->
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="save*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="delete*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="register*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="unregister*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="assign*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="publish*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="unassign*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="schedule*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<tx:method name="auth*" propagation="REQUIRED"
+				rollback-for="java.lang.Throwable" />
+			<!-- other methods use the default transaction settings (see below) -->
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="processServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.process.dao.ProcessDAO.*(..))" />
+		<aop:pointcut id="schemaServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.schema.dao.MessageSchemaDAO.*(..))" />
+		<aop:pointcut id="processAdminServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.processadmin.dao.ProcessRuntimeDAO.*(..))" />
+		<aop:pointcut id="componentServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.component.dao.ComponentDAO.*(..))" />
+		<aop:pointcut id="refDataServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.refdata.dao.DataSourceConfigDAO.*(..))" />
+		<aop:pointcut id="serverAdminServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.serveradmin.dao.ServerConfigDAO.*(..))" />
+		<aop:pointcut id="stateMachineServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.statemachine.dao.StateMachineDAO.*(..))" />
+		<aop:pointcut id="userAdminServiceOperation"
+			expression="execution(* com.headstrong.teevra.services.useradmin.dao.UserDAO.*(..))" />
+		<aop:pointcut id="appPropertiesServiceOperaion"
+			expression="execution(* com.headstrong.teevra.services.appproperties.dao.TPropertyDAO.*(..))" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="processServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="schemaServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="processAdminServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="componentServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="refDataServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="serverAdminServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="stateMachineServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="userAdminServiceOperation" />
+		<aop:advisor advice-ref="txAdvice"
+			pointcut-ref="appPropertiesServiceOperaion" />
+	</aop:config>
+
+	<!-- ========================= BUSINESS OBJECT DEFINITIONS ========================= -->
+	<bean id="processService"
+		class="com.headstrong.teevra.services.process.ProcessServiceImpl">
+		<property name="processDAO">
+			<ref bean="processDAO" />
+		</property>
+	</bean>
+
+	<bean id="processAdminService"
+		class="com.headstrong.teevra.services.processadmin.ProcessAdminServiceImpl">
+		<property name="processRuntimeDAO">
+			<ref bean="processRuntimeDAO" />
+		</property>
+	</bean>
+
+	<bean id="componentService"
+		class="com.headstrong.teevra.services.component.ComponentServiceImpl">
+		<property name="componentDAO">
+			<ref bean="componentDAO" />
+		</property>
+		<property name="componentConfigDAO">
+			<ref bean="componentConfigDAO" />
+		</property>
+		<property name="componentTemplateDAO">
+			<ref bean="componentTemplateDAO" />
+		</property>
+	</bean>
+
+	<bean id="schemaService"
+		class="com.headstrong.teevra.services.schema.SchemaServiceImpl">
+		<property name="messageSchemaDAO">
+			<ref bean="messageSchemaDAO" />
+		</property>
+	</bean>
+
+	<bean id="refDataService"
+		class="com.headstrong.teevra.services.refdata.RefDataServiceImpl">
+		<property name="dataSourceConfigDAO">
+			<ref bean="dataSourceConfigDAO" />
+		</property>
+		<property name="refDataConfigDAO">
+			<ref bean="refDataConfigDAO" />
+		</property>
+	</bean>
+
+	<bean id="serverAdminService"
+		class="com.headstrong.teevra.services.serveradmin.ServerAdminServiceImpl">
+		<property name="serverConfigDAO">
+			<ref bean="serverConfigDAO" />
+		</property>
+		<property name="processServerDAO">
+			<ref bean="processServerDAO" />
+		</property>
+		<property name="processDAO">
+			<ref bean="processDAO" />
+		</property>
+	</bean>
+
+	<bean id="stateMachineService"
+		class="com.headstrong.teevra.services.statemachine.StateMachineServiceImpl">
+		<property name="stateMachineDAO">
+			<ref bean="stateMachineDAO" />
+		</property>
+	</bean>
+
+	<bean id="userAdminService"
+		class="com.headstrong.teevra.services.useradmin.UserAdminServiceImpl">
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+		<property name="roleDAO">
+			<ref bean="roleDAO" />
+		</property>
+		<property name="activityDAO">
+			<ref bean="activityDAO" />
+		</property>
+		<property name="userRoleDAO">
+			<ref bean="userRoleDAO" />
+		</property>
+		<property name="roleActivityDAO">
+			<ref bean="roleActivityDAO" />
+		</property>
+	</bean>
+
+	<bean id="appPropertiesService"
+		class="com.headstrong.teevra.services.appproperties.AppPropertiesServiceImpl">
+		<property name="propertyDAO">
+			<ref bean="propertyDAO" />
+		</property>
+	</bean>
+
+</beans>

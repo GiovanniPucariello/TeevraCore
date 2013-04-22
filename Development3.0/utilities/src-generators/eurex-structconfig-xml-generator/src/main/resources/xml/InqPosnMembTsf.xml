@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqPosnMembTsfRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqPosnMembTsfRequestT">
+		<sequence>
+			<element type="char" name="confCodStsInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqPosnMembTsfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqPosnMembTsfRequestT" name="basic"/>
+			<element type="futExtInqPosnMembTsfRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqPosnMembTsfRecT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="char" name="membClgIdCodTo" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="acctTypCodFromGrpT" name="acctTypCodFromGrp"/>
+			<element type="acctTypCodToGrpT" name="acctTypCodToGrp"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="cshAmntPosnTsf" size="16"/>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqPosnMembTsfResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqPosnMembTsfRecT" name="futBscInqPosnMembTsfRec" size="15"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqPosnMembTsfRecT">
+		<sequence>
+			<element type="char" name="confCodMembClgIdFrom"/>
+			<element type="char" name="confCodMembExchIdFrom"/>
+			<element type="char" name="confCodMembClgIdTo"/>
+			<element type="char" name="confCodMembExchIdTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqPosnMembTsfResponseT">
+		<sequence>
+			<element type="futExtInqPosnMembTsfRecT" name="futExtInqPosnMembTsfRec" size="15"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqPosnMembTsfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqPosnMembTsfResponseT" name="basic"/>
+			<element type="futExtInqPosnMembTsfResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnMembTsfRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnMembTsfRequestT">
+		<sequence>
+			<element type="char" name="confCodStsInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqPosnMembTsfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqPosnMembTsfRequestT" name="basic"/>
+			<element type="optExtInqPosnMembTsfRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnMembTsfRecT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="char" name="membClgIdCodTo" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="acctTypCodFromGrpT" name="acctTypCodFromGrp"/>
+			<element type="acctTypCodToGrpT" name="acctTypCodToGrp"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="cshAmntPosnTsf" size="16"/>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnMembTsfResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqPosnMembTsfRecT" name="optBscInqPosnMembTsfRec" size="15"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnMembTsfRecT">
+		<sequence>
+			<element type="char" name="confCodMembClgIdFrom"/>
+			<element type="char" name="confCodMembExchIdFrom"/>
+			<element type="char" name="confCodMembClgIdTo"/>
+			<element type="char" name="confCodMembExchIdTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnMembTsfResponseT">
+		<sequence>
+			<element type="optExtInqPosnMembTsfRecT" name="optExtInqPosnMembTsfRec" size="15"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqPosnMembTsfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqPosnMembTsfResponseT" name="basic"/>
+			<element type="optExtInqPosnMembTsfResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqFeeAdjGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqFeeAdjRequestT">
+		<sequence>
+			<element type="bscInqFeeAdjGrpT" name="bscInqFeeAdjGrp" size="472"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqFeeAdjRequestT">
+		<sequence>
+			<element type="char" name="feeTypCod" size="3"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqFeeAdjRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqFeeAdjRequestT" name="basic"/>
+			<element type="extInqFeeAdjRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqFeeAdjRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqFeeAdjResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqFeeAdjRecT" name="bscInqFeeAdjRec" size="25"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqFeeAdjRecT">
+		<sequence>
+			<element type="char" name="feeTypCod" size="3"/>
+			<element type="char" name="feeAdjAmnt" size="16"/>
+			<element type="char" name="adjMemo" size="40"/>
+			<element type="char" name="feeAdjTrnId" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqFeeAdjResponseT">
+		<sequence>
+			<element type="extInqFeeAdjRecT" name="extInqFeeAdjRec" size="25"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqFeeAdjResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqFeeAdjResponseT" name="basic"/>
+			<element type="extInqFeeAdjResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

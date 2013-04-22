@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscEntMasQuoGrpT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="quoQtyBuy" size="13"/>
+			<element type="char" name="quoQtySel" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntMasQuoRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="prcRsblChkInd"/>
+			<element type="char" name="suppQuoConfInd"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="optBscEntMasQuoGrpT" name="optBscEntMasQuoGrp" size="120"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntMasQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntMasQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntMasQuoRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoExeQtyBuy" size="13"/>
+			<element type="char" name="quoExeQtySel" size="13"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntMasQuoResponseT">
+		<sequence>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscEntMasQuoRecT" name="optBscEntMasQuoRec" size="120"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntMasQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntMasQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

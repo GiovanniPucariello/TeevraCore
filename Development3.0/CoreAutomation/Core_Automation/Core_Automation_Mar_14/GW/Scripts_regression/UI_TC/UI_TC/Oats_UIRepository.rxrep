@@ -1,0 +1,277 @@
+﻿<repository name="Oats_UIRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664">
+  <codegen classname="Oats_UIRepository" namespace="UI_TC"/>
+  <rootfolder id="31097da2-1aff-446c-99c8-77ee9da049d7" searchtimeout="30s" capname="unknown" name="Root" isrooted="True" usecache="True">
+    <appfolder id="e03f4126-3cd8-4ac6-92ca-20d7a9124b0c" searchtimeout="30s" capname="webdocument" name="WebDocumentOATS_Reporting_Engine" isrooted="True" usecache="False">
+      <folder id="8249cfbf-8244-4e54-a289-8a129a91b319" searchtimeout="10s" capname="table" name="SomeTableTag" isrooted="True" usecache="False">
+        <item id="3c7f7c2b-2811-4c2b-a906-c4cecfcf37cd" searchtimeout="10s" capname="atag" name="ATagTab1">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/div/ul/li[1]/a[@id='tab1']]]>
+        </item>
+        <item id="d988e5a5-405b-4675-bf07-44a28dff9a88" searchtimeout="10s" capname="atag" name="ATagTab2">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/div/ul/li[2]/a[@id='tab2']]]>
+        </item>
+        <item id="1776fd83-903c-411c-aae1-4b5d77e20828" searchtimeout="10s" capname="spantag" name="SpanTagROE_Status__">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[1]/td[1]/span[@innertext='ROE Status: ']]]>
+        </item>
+        <item id="3a717ec5-1aba-4f13-9475-003fe42e3fb1" searchtimeout="10s" capname="selecttag" name="SelectTagRoeStatus">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[1]/td[2]/select[@name='roeStatus']]]>
+        </item>
+        <item id="0e09d2b5-00f4-4524-a14d-eab740090519" searchtimeout="10s" capname="selecttag" name="SelectTagRoeType">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[1]/td[4]/select[@name='roeType']]]>
+        </item>
+        <item id="985db03f-a95f-456f-877e-dbf696536951" searchtimeout="10s" capname="imgtag" name="ImgTagHttp___10_200_51_28_8080">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[1]/td[6]/a/img[@src~'^http://10\.200\.51\.28:8080/']]]>
+        </item>
+        <item id="58b2355d-d960-4f34-9a0f-a33c1c29cf76" searchtimeout="10s" capname="inputtag" name="InputTagFirmRoeId">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[3]/td[2]/input[@name='firmRoeId']]]>
+        </item>
+        <item id="e8d4c192-60a7-437a-baae-6b3b3f36df3f" searchtimeout="10s" capname="inputtag" name="InputTagOrderId">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[3]/td[4]/input[@name='orderId']]]>
+        </item>
+        <item id="abdad5e0-e28f-40c1-b021-f2986d175daa" searchtimeout="10s" capname="inputtag" name="InputTagSearch">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/fieldset/table/tbody/tr[6]/td/input[@name='Search']]]>
+        </item>
+        <item id="3a4b60c0-11d1-4ab4-98e7-cb1b98e9d464" searchtimeout="10s" capname="spantag" name="SpanTagYour_Search_resulted_in_">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/table[2]/tbody/tr/td[1]/span[@innertext~'^Your\ Search\ resulted\ in\ :']]]>
+        </item>
+        <item id="553b1b44-8ac0-4c9c-954e-68888a8901ae" searchtimeout="10s" capname="atag" name="ATagTab3">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/div/ul/li[3]/a[@id='tab3']]]>
+        </item>
+        <item id="236eeae7-4ee6-4c91-adee-2e28b21e2f98" searchtimeout="10s" capname="atag" name="ATagTab4">
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]/tbody/tr[1]/td/form/div/ul/li[4]/a[@id='tab4']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[3]]]>
+        </basepath>
+      </folder>
+      <item id="6ac03fa5-8dce-4e78-9985-694c97ea5b85" searchtimeout="10s" capname="tdtag" name="TdTagScwCell_17">
+        <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[@id='scw']/tbody/tr[2]/td/table/tbody/tr[3]/td[@id='scwCell_17']]]>
+      </item>
+      <item id="0593317f-6df2-47be-94c6-deb26cbc3942" searchtimeout="10s" capname="tdtag" name="TdTagScwCell_21">
+        <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[@id='scw']/tbody/tr[2]/td/table/tbody/tr[4]/td[@id='scwCell_21']]]>
+      </item>
+      <item id="f539ea19-011b-47c9-8348-4c5390ab4b91" searchtimeout="10s" capname="atag" name="ATagTab5">
+        <![CDATA[/dom[@domain='10.200.51.28:8080']/body/table[2]/form/tbody/tr[1]/td/div/ul/li[5]/a[@id='tab5']]]>
+      </item>
+      <basepath>
+        <![CDATA[/dom[@domain='10.200.51.28:8080']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <appfolder id="c8c8d676-0fb2-425d-8896-1e33d30706ce" searchtimeout="30s" capname="container" name="ContainerSelectbox" isrooted="True" usecache="True">
+      <item id="749fa30e-d56b-495a-b952-b5e5f18c639b" searchtimeout="10s" capname="listitem" name="ListItemPending">
+        <![CDATA[/container[@caption='selectbox']/listitem[@accessiblename='Pending']]]>
+      </item>
+      <item id="c8c282ac-7bdc-40ea-baa3-0b8f1fa92308" searchtimeout="10s" capname="listitem" name="ListItemRoute_Order">
+        <![CDATA[/container[@caption='selectbox']/listitem[@accessiblename='Route Order']]]>
+      </item>
+      <basepath>
+        <![CDATA[/container[@caption='selectbox']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAYFJREFU
+OE/Fj71LAnEYx2/vhf6EhojIoleKlmpIoqlsiRoitHJscJFIbTB6s07lgtCiodmQarE0h5beqDZB
+DQT1jqCWQirfvt3P31kXFZYNPceH54XnPvccw/w1+hwRtHFxNNoF1FsFKGw86lgeDXZe7HlUi3WV
+JQYFK6DWeotWWxSd85fg/FHkvl2u9aJi3IdSjRdlYs5D+hI1hdQ1+hNU6s7QPrWHwaEZ6LkduFwu
+MOb9CAKROK7CMVyH4zLkfQznwSguRE5DAnzBO4xMO8GyLJiN43vkI4uPD5l/NSPz7sk1Klj3C9L7
+STEXIiXupHLSHq2dChxHcZmALBSSJKlggpV+wRv9xQVETi5IQ6lZoYLNw0gRggyU6iUq2PLcFCcY
+W6CCbU8oJ8giI5HOnfg9ZC+L3tE5KnDuBvCYSOIh8SLyLPIk1aT/TH73TaCePUDHMIdmlUViWVbn
+Z++5qX8RLapVdA3o6AUkOI6DyWSC0Wj8EQaDAWazGW63mwr+NV4BUqqnq4df6rAAAAAASUVORK5C
+YII=
+      </icon>
+    </appfolder>
+    <appfolder id="53bf7204-510d-43df-853d-1e62cabd3535" searchtimeout="30s" capname="webdocument" name="WebDocumentLocalhost_8880" isrooted="True" usecache="False">
+      <folder id="29029ed9-61bc-4191-b5e8-f98356074f2a" searchtimeout="10s" capname="flexobject" name="FlexObjectIceFish" isrooted="True" usecache="False">
+        <item id="2383e0fe-e53a-4cb5-af36-2a2a86b2da2e" searchtimeout="10s" capname="picture" name="PictureIcon_3_227162">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']/container/picture[@id='icon_3_227162']]]>
+        </item>
+        <item id="5cd2bdf4-d048-4659-a872-2f7c541ea1ad" searchtimeout="10s" capname="text" name="TextServiceId">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/form/form/container[10]/text[@id='ServiceId']]]>
+        </item>
+        <item id="cf4cbaa2-cce3-4133-82ad-c80afe69cd4f" searchtimeout="10s" capname="text" name="TextDelayinmillisecondbefore">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/form/form/container[3]/text[@id='Delayinmillisecondbeforenextpoll']]]>
+        </item>
+        <item id="1a536183-b2f3-4bc5-af6a-4f4230191b64" searchtimeout="10s" capname="text" name="TextMoveFileNamePostfix">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/form/form/container[4]/text[@id='MoveFileNamePostfix']]]>
+        </item>
+        <item id="4d2679c3-814a-4e4c-8893-220f5860510d" searchtimeout="10s" capname="text" name="TextMoveFileNamePrefix">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/form/form/container[5]/text[@id='MoveFileNamePrefix']]]>
+        </item>
+        <item id="c71a6e9d-de12-4fb9-bc7c-8486508ed972" searchtimeout="10s" capname="text" name="TextDestinationdirectoryFile">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/form/form/container[6]/text[@id='DestinationdirectoryFilenamepattern']]]>
+        </item>
+        <item id="56b59797-bbd2-4708-92cb-66966b3bc2af" searchtimeout="10s" capname="text" name="TextSourcedirectoryFilenamep">
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/form/form/container[7]/text[@id='SourcedirectoryFilenamepattern']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain='localhost:8880']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <appfolder id="6ec88614-d681-4c97-8b89-902ef3aa86e7" searchtimeout="30s" capname="contextmenu" name="ContextMenuIexplore" isrooted="True" usecache="True">
+      <item id="fb429e04-0f51-4228-b3c1-421e15ed6d3f" searchtimeout="10s" capname="menuitem" name="MenuItemConfigure_Component">
+        <![CDATA[/contextmenu[@processname='iexplore']/contextmenu/menuitem[@accessiblename='Configure Component']]]>
+      </item>
+      <basepath>
+        <![CDATA[/contextmenu[@processname='iexplore']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAALxJREFUOE9j/P//PwNFAGQACNsEZP9fs2Im0RimD6wZZgDQJUAmYQCy
+CKsBYFGgITsOnv9f1j73f0bVxP+R2S3/vWLL/oNcCAN4DYAZgs8dBA2AGbJs477/kTnN/z1jy0lz
+Acx2XGFCtAtABoDw1IXriXMBTAPMC+fOnfsPwugApwtgGmBOB9ENnZOIC4Oujmq4RcgGEO0CqLPA
+hmw/eA7sd5JcgGwAyBCYd0hyAUV5AZa2SaXhmYlUjTD1AHJC3EGQYdi3AAAAAElFTkSuQmCC
+      </icon>
+    </appfolder>
+    <appfolder id="c569fc83-7fc2-47f0-9aeb-199500969bc3" searchtimeout="30s" capname="webdocument" name="WebDocumentIceFish" isrooted="True" usecache="False">
+      <folder id="b1de6874-17e9-4fae-82a7-d8431e5185fa" searchtimeout="10s" capname="flexobject" name="FlexObjectIceFish" isrooted="True" usecache="False">
+        <item id="188271e5-ee89-4fca-9fd5-2b324791e196" searchtimeout="10s" capname="button" name="ButtonAdd_Component">
+          <![CDATA[/dom[1]/body/flexobject/container/container[@id='mainArea']/container/element/container/container/button[@id='addComponent']]]>
+        </item>
+        <item id="b5b6d21c-4f43-430b-b8d7-fc95f122467d" searchtimeout="10s" capname="text" name="TextAdministration_">
+          <![CDATA[/dom[1]/body/flexobject/container/toolbar/container/text[@id='nav_admin']]]>
+        </item>
+        <item id="e385da62-d154-408a-9f2e-a583d8c83ab3" searchtimeout="10s" capname="container" name="ContainerPanel">
+          <![CDATA[/dom[1]/body/flexobject/container[@id='panel']]]>
+        </item>
+        <item id="f7fd73e0-c116-4a1a-a1e7-02cf7ee7aef0" searchtimeout="10s" capname="button" name="ButtonOK">
+          <![CDATA[/dom[1]/body/flexobject/container[1]/element[@type='AlertForm']/button[@text='OK']]]>
+        </item>
+        <item id="8f0441d9-dd8d-46eb-b5f4-b9187a067096" searchtimeout="10s" capname="text" name="TextPlease_enter_component_I">
+          <![CDATA[/dom[1]/body/flexobject/container[1]/element[@type='AlertForm']/text[@caption~'^Please\ enter\ component\ In']]]>
+        </item>
+        <item id="1948628b-6124-43a2-a5df-bc1bf71badac" searchtimeout="10s" capname="menuitem" name="MenuItemComponents">
+          <![CDATA[/dom[1]/body/flexobject/contextmenu[1]/menuitem[@text='Components']]]>
+        </item>
+        <item id="a0002cce-1a58-4dfd-a853-f301374c3a0b" searchtimeout="10s" capname="button" name="ButtonClose">
+          <![CDATA[/dom[1]/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </item>
+        <item id="d266dca6-c699-400c-9ffd-d2b2573d22aa" searchtimeout="10s" capname="button" name="ButtonSave">
+          <![CDATA[/dom[1]/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <item id="70deb8e5-c3ba-44d4-9317-2efac3f55f50" searchtimeout="10s" capname="button" name="ButtonBrowse">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[1]/container/button[@text='Browse']]]>
+        </item>
+        <item id="b41109e7-d25a-42bc-b058-498c69a4d3d1" searchtimeout="10s" capname="text" name="TextTextInput4">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[1]/container/text[@type='TextInput']]]>
+        </item>
+        <item id="e349116e-fed7-4387-aafb-77012f3f56a3" searchtimeout="10s" capname="text" name="TextFile_NameAsterisk">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[1]/text/text[@caption='file Name*']]]>
+        </item>
+        <item id="5678558a-fe34-48f1-a489-1d312a5e669d" searchtimeout="10s" capname="text" name="TextService_AliasAsterisk">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[2]/text[@type='FormItemLabel']/text[@caption='Service Alias*']]]>
+        </item>
+        <item id="c6470896-01c9-47d1-9f7d-0af760c53d68" searchtimeout="10s" capname="text" name="TextTextInput3">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[2]/text[@type='TextInput']]]>
+        </item>
+        <item id="1ee59554-769d-4c13-8047-ffd7747364b4" searchtimeout="10s" capname="text" name="TextVersion">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[3]/text[@type='FormItemLabel']/text[@caption='Version']]]>
+        </item>
+        <item id="19ac9480-b892-42af-bb71-1db2efb922e0" searchtimeout="10s" capname="text" name="TextTextInput2">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[3]/text[@type='TextInput']]]>
+        </item>
+        <item id="79b387f2-726f-41fe-b689-5fdfead769fb" searchtimeout="10s" capname="text" name="TextDescriptionAsterisk">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[4]/text[@type='FormItemLabel']/text[@caption='Description*']]]>
+        </item>
+        <item id="b8ff6303-5a6c-4225-b1f9-da82060bc10d" searchtimeout="10s" capname="text" name="TextTextInput1">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[4]/text[@type='TextInput']]]>
+        </item>
+        <item id="b962bcfd-6e33-436b-8fc5-8e54306dcc60" searchtimeout="10s" capname="text" name="TextTypeAsterisk">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[5]/text/text[@caption='Type*']]]>
+        </item>
+        <item id="21ee4ed2-4e7e-436a-bba5-2d37833b445e" searchtimeout="10s" capname="text" name="TextNameAsterisk">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[6]/text[@type='FormItemLabel']/text[@caption='Name*']]]>
+        </item>
+        <item id="23c5fd01-a18f-43df-91e2-d448b57ca6be" searchtimeout="10s" capname="text" name="TextTextInput">
+          <![CDATA[/dom[1]/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[1]/body/flexobject]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[1]]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <appfolder id="d139d799-76d3-4055-b1aa-2596343d1e35" searchtimeout="30s" capname="form" name="FormSelect_file_to_upload_by" isrooted="True" usecache="True">
+      <item id="90d64480-e954-4207-b7c3-34f47aa21915" searchtimeout="10s" capname="form" name="FormSelect_file_to_upload_by">
+        <![CDATA[/form[@title~'^Select\ file\ to\ upload\ by\ ']]]>
+      </item>
+      <item id="ee9f6bf4-e341-4bec-9715-52af78d6c285" searchtimeout="10s" capname="button" name="ButtonCancel">
+        <![CDATA[/form[@title~'^Select\ file\ to\ upload\ by\ ']/button[@text='Cancel']]]>
+      </item>
+      <basepath>
+        <![CDATA[/form[@title~'^Select\ file\ to\ upload\ by\ ']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAzFJREFU
+OE+Nkn1MzHEcxz93XKe79Lt2v4TEKSXtcmV1d3E/jg5t1Dw10WmeEmusB3VMbBrNwyg9INISkodD
+K/KQ9XCMDTXNCWvxh4d/PFUeytXv7VdWZrPx3T777ru93699vu/PR0T/eUycau7KiOHxviO/q0WA
+tMrWefHM7fbCv9rF6lnmEfFHG8Yde96pKbN/3l+iq3tXE/qx8NDMD7ONitoZGlH5uijXup1rxxz8
+EyCTjaSItGOBFV3dcY088p41AK1pQEskUpJMSM1MQETycQyYLGbW+idAME+u+OEwPwBuPtoJ2MNR
+e94P61fNReqBLCQ0A5anQEjaNTD+vvEhE0V7BwF9bTuVdX6Jug88aU1Cb3MYTuarMC/Uhzdw+qv+
+J97AWMkj9hGP5Q089MmXQe5uht+AmJz6STe70PYqA46HWtQVKRE3TQ5WRsF9ItUUQ57H4S5ozvJY
++qAH3PEOSFzcBzJwYcevzX15/e52OBpNeGeVY1KIBsMCA+2ScZpbQ/20t8Q+2npmVStc04HFVwRA
+fjvEjHdFfwcs6+R7qHgzelui4ahxR2jEbFDQGtCRb6CiblBJD+hkF+jwe1DuW4wub8eQ7G8QMd7V
+/YCYaHaZ7U4qHDY/ZO/Sg7zNoEVC2jFCzbeCFp7+VVFFoFnZoJl7QFwmRAqfKnJzI2bfHv99X+/p
+0XlVgSFTkwWhIFpfLoxrmNc/90ytlk8uLdSeQvUErE5ZApqRBdp8A5TTApqT0kwSuVqAuJBKZ5Fk
+AUHXAdkJQHwWGBsc+Zw4TjG90aptepPj+VZmtDyjyALQ7ibQ0TbQJSGDkk+gvBdIbAIM9RCy6ICH
+VbgNO3qkUqmKTEZl+McK//bk+a6PGcZDRVwGT1tsoOLX8KoFtj0BkoQF0tgAyWUgoFowz9ndq1CO
+jur/nk43XNdxbkLHCm5oTd/b2dlZJw6Ne0WplTyVvgd7DZBXCqYCoaPECzwZE1+Sk0vAYDajRhFr
+L/C0Z86TlukDnDfGGpTm4k3jS9NjGDsX5nWJNAtKSRN5hjyDLSRlvP8aarhBbqpNd7pv2zGmpWCD
+snlrrOuVsSxN+ecEBMFPhB6LFYWJDvUAAAAASUVORK5CYII=
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+</repository>

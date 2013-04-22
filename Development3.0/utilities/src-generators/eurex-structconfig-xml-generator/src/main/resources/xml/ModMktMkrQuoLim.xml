@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscModMktMkrQuoLimRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="volLimQty" size="16"/>
+			<element type="char" name="deltaLimQty" size="16"/>
+			<element type="char" name="vegaLimQty" size="16"/>
+			<element type="char" name="timIntvlSec" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="modMktMkrQuoLimRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModMktMkrQuoLimRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="modMktMkrQuoLimResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

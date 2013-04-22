@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscInqExerAsgnRequestT">
+		<sequence>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="117"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqExerAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqExerAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqExerAsgnRecT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="exerQty" size="16"/>
+			<element type="char" name="asgnQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqExerAsgnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqExerAsgnRecT" name="optBscInqExerAsgnRec" size="22"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqExerAsgnRecT">
+		<sequence>
+			<element type="char" name="dlvShrQty" size="16"/>
+			<element type="char" name="invcAmnt" size="16"/>
+			<element type="char" name="cshSetlAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqExerAsgnResponseT">
+		<sequence>
+			<element type="optExtInqExerAsgnRecT" name="optExtInqExerAsgnRec" size="22"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqExerAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqExerAsgnResponseT" name="basic"/>
+			<element type="optExtInqExerAsgnResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

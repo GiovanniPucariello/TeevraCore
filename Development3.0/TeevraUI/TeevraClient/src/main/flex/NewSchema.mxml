@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script>
+	<![CDATA[
+		import com.headstrong.teevra.client.util.AlertHelper;
+		import mx.collections.ICollectionView;
+		import com.headstrong.teevra.client.events.ProcessServiceEvent;
+		import com.headstrong.teevra.client.events.SchemaServiceEvent;
+		import mx.events.CloseEvent;
+		import com.headstrong.teevra.client.view.entity.SchemaRawVO;
+		import com.headstrong.teevra.client.view.entity.SchemaVO;
+		import com.headstrong.teevra.client.events.ViewSchemaEvent;
+		import mx.controls.Alert;
+		import com.headstrong.teevra.client.model.ViewModelLocator;
+		
+		[Bindable]		
+ 		private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+ 		private var loadedSchema:SchemaVO;
+ 		
+ 		private var schemaServiceEvent:SchemaServiceEvent;
+ 	
+ 		private var serviceIdentifier:String;
+ 		private const SAVE_SCHEMA_EVENT:String = "SAVE_SCHEMA_EVENT";
+ 		private const DELETE_SCHEMA_EVENT:String = "DELETE_SCHEMA_EVENT";
+ 		private const VIEW_SCHEMA_EVENT:String = "VIEW_SCHEMA_EVENT";
+		
+		private function saveSchema():void
+		{
+			var schemaVO:SchemaVO = loadedSchema;
+			if(loadedSchema == null)
+			{
+				schemaVO = new SchemaVO;
+			}
+			//save Schema Details to database
+			schemaVO.schemaDesc = schemaDescText.text;
+			var schemaRawVO:SchemaRawVO = new SchemaRawVO();
+			schemaRawVO.schemaFormattedText = xmlTextArea.htmlText;
+			schemaVO.schemaRaw = schemaRawVO;
+			//08-Apr-09 AP : Code Added as a part of Generalization of event :Code Start
+			var args:Object = new Object();
+			args[SchemaServiceEvent.SAVE_SCHEMA_ID] = schemaVO;  //Doubt here
+			args[SchemaServiceEvent.SAVE_SCHEMA_XMLSTRING] = xmlTextArea.text;
+			serviceIdentifier=SAVE_SCHEMA_EVENT;
+			schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.SAVE_SCHEMA_COMMAND, args, this);
+			schemaServiceEvent.dispatch();
+			//08-Apr-09 AP : Code Added as a part of Generalization of event :Code End
+		}
+		
+		private function cancel():void
+		{
+			//On canecl, Show the View Schemas page
+			schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.VIEW_SCHEMA_COMMAND, null, this);
+			schemaServiceEvent.dispatch();
+			serviceIdentifier=VIEW_SCHEMA_EVENT;
+		}
+		private function init():void
+		{
+			loadedSchema = modelLocator.loadedSchema;
+		//	Alert.show("loadedSchema.schemaId.toString()=>"+loadedSchema.schemaId.toString());
+ 			if (loadedSchema != null)
+ 			{
+ 				schemaIdText.text = loadedSchema.schemaId.toString();
+ 				schemaDescText.text = loadedSchema.schemaDesc;
+ 				if(loadedSchema.schemaRaw != null)
+ 				{
+					xmlTextArea.htmlText=loadedSchema.schemaRaw.schemaFormattedText;
+ 				}
+ 				deleteSchemaButton.enabled=true;
+ 			} 
+		}
+		
+		private function deleteSchema():void
+		{
+			Alert.show("Do you want to delete the schema?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);
+		}
+		
+		private function confirmDeleteHandler(e:CloseEvent):void 
+		{
+			if (e.detail == Alert.YES) 
+			{
+				//08-Apr-09 AP : Code Added as a part of Generalization of event :Code Start
+				var args:Object = new Object();
+				args[SchemaServiceEvent.DELETE_SCHEMA_ID] = loadedSchema.schemaId;
+				serviceIdentifier=DELETE_SCHEMA_EVENT;
+				schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.DELETE_SCHEMA_COMMAND, args, this);
+				schemaServiceEvent.dispatch();
+				Alert.show("Schema has been deleted successfully!!","Delete Schema");
+			
+				//show the remaining schemas
+				schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.VIEW_SCHEMA_COMMAND, null, this);
+				schemaServiceEvent.dispatch();
+				serviceIdentifier=VIEW_SCHEMA_EVENT;	
+				//08-Apr-09 AP : Code Added as a part of Generalization of event :Code End	
+			}
+		}
+		public function result( event:Object ):void 
+		{
+			//08-Apr-09 AP : Code Added as a part of Generalization of event :Code Start
+				switch(serviceIdentifier)
+				{
+					case SAVE_SCHEMA_EVENT:
+						//get the saved process from the server side
+						var savedSchema:SchemaVO = SchemaVO(event.result); 
+					
+						// load the schema to the ViewModelLocator and set the details of the schema
+						modelLocator.loadedSchema = savedSchema;
+			    		schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.NEW_SCHEMA_COMMAND,null,this);
+						schemaServiceEvent.dispatch();
+						Alert.show("Schema has been saved successfully","Save Schema");
+						break;
+						
+					case DELETE_SCHEMA_EVENT:
+						Alert.show("Schema has been deleted successfully!!","Delete Schema");
+						break;
+					
+					case VIEW_SCHEMA_EVENT:
+						var viewSchema : ICollectionView = ICollectionView( event.result );
+						modelLocator.viewSchema = viewSchema;
+						modelLocator.loadModule(ViewModelLocator.VIEW_SCHEMA_SWF);
+						modelLocator.screenName = "Process Modeling > View Schema";
+						break;
+				}
+			//08-Apr-09 AP : Code Added as a part of Generalization of event :Code End
+		}
+		public function fault( info:Object ):void 
+		{
+			switch(serviceIdentifier)
+				{
+					case SAVE_SCHEMA_EVENT:
+						AlertHelper.displayFault(info,"Schema could not be saved");
+						break;
+						
+					case DELETE_SCHEMA_EVENT:
+						AlertHelper.displayFault(info,"Schema cannot be deletd");
+						break;
+					
+					case VIEW_SCHEMA_EVENT:
+						AlertHelper.displayFault(info,"Schemas could not be retrieved");
+						break;
+				}		
+		}
+		
+	]]>
+</mx:Script>
+		<!--<mx:Button label="@Resource(key='button.NewSchema.save', bundle='TeevraUI')" click="saveSchema();" y="354"/>
+		<mx:Button label="@Resource(key='button.NewSchema.cancel', bundle='TeevraUI')" click="cancelSchema();" x="415" y="354"/>-->
+		<mx:VBox width="100%" y="4">
+		   	<mx:HBox height="20%">
+		   		<mx:Label id="schemaId" text="@Resource(key='label.NewSchema.schemaID', bundle='TeevraUI')" fontWeight="bold"/>
+		   			<mx:Label id="schemaIdText" width="50" enabled="true" fontWeight="normal"/>
+		   		<mx:Label id="desc" text="@Resource(key='label.NewSchema.schemaDesc', bundle='TeevraUI')" fontWeight="bold"/>	
+		   			<mx:TextArea id="schemaDescText" width="500" height="20%"/>
+		   		<mx:Spacer id="spacer" width="50"/>
+		   		<mx:Button label="@Resource(key='button.NewSchema.save', bundle='TeevraUI')" click="saveSchema();"/>
+				<mx:Button label="@Resource(key='button.NewSchema.delete', bundle='TeevraUI')" id="deleteSchemaButton" enabled="false" click="deleteSchema();"/>
+				<mx:Button label="@Resource(key='button.NewSchema.cancel', bundle='TeevraUI')" click="cancel();"/>	
+		   	</mx:HBox>
+		   	
+		   	<mx:HBox height="100%">
+		   	  		<mx:RichTextEditor id="xmlTextArea" title="@Resource(key='label.NewSchema.XMLSchema', bundle='TeevraUI')" height="425" width="950"/> 		
+		   	</mx:HBox>
+		   	
+		   	
+		</mx:VBox>
+   
+</mx:Module>

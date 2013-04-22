@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscModAutExerParmRequestT">
+		<sequence>
+			<element type="char" name="actnCod"/>
+			<element type="char" name="genProdId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtModAutExerParmRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="itmMinAmnt" size="8"/>
+			<element type="char" name="itmMinAmntCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModAutExerParmRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModAutExerParmRequestT" name="basic"/>
+			<element type="optExtModAutExerParmRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscModAutExerParmResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModAutExerParmResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModAutExerParmResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

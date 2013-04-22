@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable version="2.3.6.10664" id="4aea9a5b-32d9-4efb-b2d9-3c5115150e9c">
+  <name>
+    login_1
+  </name>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="login_1" namespace="UI_TC"/>
+  <recorditems>
+    <mouseitem duration="1296ms" action="Click" button="Left" movetime="100ms" sx="548" sy="399" loc="75;1">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="058981d6-b30f-4eb2-a071-84cc728e64b3">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="473,398,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox253.VBox276.Panel257.authenticationForm.userIdFormItem.TextInput259]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[userIdTextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem duration="328.0158ms" sequence="ic" presstime="100ms">
+      <comment>
+      </comment>
+    </keysequenceitem>
+    <keyitem duration="202ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keysequenceitem duration="343.6356ms" sequence="fi" presstime="100ms">
+      <comment>
+      </comment>
+    </keysequenceitem>
+    <keyitem duration="233ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keysequenceitem duration="749.7504ms" sequence="h{Tab}" presstime="100ms">
+      <comment>
+      </comment>
+    </keysequenceitem>
+    <keysequenceitem duration="328.0158ms" sequence="ic" presstime="100ms">
+      <comment>
+      </comment>
+    </keysequenceitem>
+    <keyitem duration="202ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keysequenceitem duration="531.0732ms" sequence="fis" presstime="100ms">
+      <comment>
+      </comment>
+    </keysequenceitem>
+    <keyitem duration="562ms" action="Press" presstime="100ms" data="H" scancode="35" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="312ms" action="Press" presstime="100ms" data="Tab" scancode="15" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1093ms" action="Press" presstime="100ms" data="Return" scancode="28" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+  </recorditems>
+  <repository name="UI_TCRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664" relativepath="UI_TCRepository.rxrep">
+    <codegen classname="UI_TCRepository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+</recordtable>

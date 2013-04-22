@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntSLegQuoRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="quoQtyBuy" size="13"/>
+			<element type="char" name="quoQtySel" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntSLegQuoRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="prcRsblChkInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntSLegQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntSLegQuoRequestT" name="basic"/>
+			<element type="futExtEntSLegQuoRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntSLegQuoResponseT">
+		<sequence>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoBkQtyBuy" size="13"/>
+			<element type="char" name="quoBkQtySel" size="13"/>
+			<element type="char" name="quoExeQtyBuy" size="13"/>
+			<element type="char" name="quoExeQtySel" size="13"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntSLegQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntSLegQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntSLegQuoRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="quoQtyBuy" size="13"/>
+			<element type="char" name="quoQtySel" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntSLegQuoRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="prcRsblChkInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntSLegQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntSLegQuoRequestT" name="basic"/>
+			<element type="optExtEntSLegQuoRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntSLegQuoResponseT">
+		<sequence>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoBkQtyBuy" size="13"/>
+			<element type="char" name="quoBkQtySel" size="13"/>
+			<element type="char" name="quoExeQtyBuy" size="13"/>
+			<element type="char" name="quoExeQtySel" size="13"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntSLegQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntSLegQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

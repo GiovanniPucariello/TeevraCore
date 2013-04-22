@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscModBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtModBlkTrdRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futModBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscModBlkTrdRequestT" name="basic"/>
+			<element type="futExtModBlkTrdRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscModBlkTrdResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futModBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscModBlkTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscModBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtModBlkTrdRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModBlkTrdRequestT" name="basic"/>
+			<element type="optExtModBlkTrdRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscModBlkTrdResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModBlkTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

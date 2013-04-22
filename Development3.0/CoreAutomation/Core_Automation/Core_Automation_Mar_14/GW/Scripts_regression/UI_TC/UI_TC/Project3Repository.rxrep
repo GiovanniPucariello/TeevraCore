@@ -1,0 +1,99 @@
+﻿<repository name="Project3Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664">
+  <codegen classname="Project3Repository" namespace="UI_TC"/>
+  <rootfolder id="31097da2-1aff-446c-99c8-77ee9da049d7" searchtimeout="30s" capname="unknown" name="Root" isrooted="True" usecache="True">
+    <appfolder id="6b1ee4a4-0f24-421e-9184-50912031ffde" searchtimeout="30s" capname="webdocument" name="WebDocumentIceFish" isrooted="True" usecache="False">
+      <folder id="d44ae4d6-c91b-4486-b91e-09d75f644303" searchtimeout="10s" capname="container" name="ContainerMainArea" isrooted="True" usecache="False">
+        <item id="d5308aee-ec93-4d3d-a088-5cd6833727d9" searchtimeout="10s" capname="text" name="TextProcess_Modeling__View_P">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/text[@id='_ViewProcess_Label1']]]>
+        </item>
+        <item id="87acb574-83af-4325-8006-b00cc488a1c4" searchtimeout="10s" capname="button" name="ButtonSubmit">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </item>
+        <item id="46d9a32e-a73e-4c70-957d-208453d7668d" searchtimeout="10s" capname="text" name="TextPasswordTextInput">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@id='passwordTextInput']]]>
+        </item>
+        <item id="aaf8b00d-8223-4ba9-a4a7-eddfa96dd4bd" searchtimeout="10s" capname="text" name="TextUserIdTextInput">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']]]>
+        </basepath>
+      </folder>
+      <folder id="739f41ce-441c-4f81-80aa-79f58e593644" searchtimeout="10s" capname="contextmenu" name="ContextMenuMenu" isrooted="True" usecache="False">
+        <item id="de609546-1050-459b-b862-0d59c03e7f0e" searchtimeout="10s" capname="menuitem" name="MenuItemDataSource">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='DataSource']]]>
+        </item>
+        <item id="e59bf09d-bfd0-43db-af1f-eb60019c0187" searchtimeout="10s" capname="menuitem" name="MenuItemReference_Data">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='Reference Data']]]>
+        </item>
+        <item id="53b33711-8bb2-4075-b60a-7b84a8156a44" searchtimeout="10s" capname="menuitem" name="MenuItemView_Process">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='View Process']]]>
+        </item>
+        <item id="d8ef863a-ec07-43da-ade0-0c397b364edb" searchtimeout="10s" capname="menuitem" name="MenuItemView_Schema">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='View Schema']]]>
+        </item>
+        <item id="784f021c-5d67-4064-aadf-43128e0c29b6" searchtimeout="10s" capname="menuitem" name="MenuItemView_StateMachine">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='View StateMachine']]]>
+        </item>
+        <item id="a4f4e2fb-bc69-43ab-bab5-30f7d76e3f44" searchtimeout="10s" capname="menuitem" name="MenuItemProcesses_Status">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='Processes Status']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]]]>
+        </basepath>
+      </folder>
+      <item id="b7edf8b9-fb84-4a8d-b4ea-e38062705678" searchtimeout="10s" capname="text" name="TextProcess_Modeling_">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+      </item>
+      <item id="7c675430-13c1-4327-b3a1-f17cd29c3363" searchtimeout="10s" capname="text" name="TextProcess_Management_">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processManagement']]]>
+      </item>
+      <folder id="8abb97f1-b562-426b-b28c-b43d3f8205e5" searchtimeout="10s" capname="flexobject" name="FlexObjectIceFish" isrooted="True" usecache="False">
+        <item id="7d52f729-a010-4f91-a11c-a4e15ead5364" searchtimeout="10s" capname="text" name="TextAdministration_">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_admin']]]>
+        </item>
+        <item id="30938ff7-4f08-4a4b-a4bf-33203931e9e3" searchtimeout="10s" capname="text" name="TextMonitoring_Console_">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_exceptionHandling']]]>
+        </item>
+        <item id="87eca099-5412-42f8-af2d-ef617b264df0" searchtimeout="10s" capname="menuitem" name="MenuItemComponents">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='Components']]]>
+        </item>
+        <item id="016ef2e5-e611-4a16-99b3-1b590f16ee35" searchtimeout="10s" capname="menuitem" name="MenuItemError_Reporting">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='Error Reporting']]]>
+        </item>
+        <item id="a80ae687-1484-4acf-8eb8-26033c248ab5" searchtimeout="10s" capname="menuitem" name="MenuItemRoles">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='Roles']]]>
+        </item>
+        <item id="74c47bbc-2636-41a5-ad22-a003817c6c0d" searchtimeout="10s" capname="menuitem" name="MenuItemServer_Admin">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='Server Admin']]]>
+        </item>
+        <item id="56118301-556f-4b9a-a251-ee769b13a247" searchtimeout="10s" capname="menuitem" name="MenuItemUser_Admin">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='User Admin']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+</repository>

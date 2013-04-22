@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%"
+	xmlns:graph="com.headstrong.teevra.client.graph.*"  creationComplete="initApp();"
+	xmlns:local="*"
+	implements="mx.rpc.IResponder">
+	<mx:Script>
+		<![CDATA[
+			import com.headstrong.teevra.client.util.AlertHelper;
+			import mx.collections.SortField;
+			import mx.collections.Sort;
+			import mx.collections.ICollectionView;
+			import com.headstrong.teevra.client.events.StateMachineServiceEvent;
+			import mx.events.ValidationResultEvent;
+			import mx.validators.StringValidator;
+			
+			import mx.events.CloseEvent;
+			
+			import com.headstrong.teevra.client.events.ViewStateMachineEvent;
+			import com.headstrong.teevra.client.model.StateMachineCache;
+			
+			import mx.controls.Alert;
+			import com.headstrong.teevra.client.graph.model.StateMachineGraphLinkVO;
+			import com.headstrong.teevra.client.graph.model.StateMachineGraphNodeVO;
+			import com.headstrong.teevra.client.graph.model.StateVO;
+			import com.headstrong.teevra.client.graph.StateMachineGraphCanvasItem;
+			import mx.collections.ArrayCollection;
+			import com.headstrong.teevra.client.graph.model.StateMachineGraphVO;
+			import com.headstrong.teevra.client.view.entity.StateMachineVO;
+			import com.headstrong.teevra.client.graph.DrawingClasses.StateMachineConnector;
+			import com.headstrong.teevra.client.graph.DrawingClasses.ComponentConnector;
+			import com.headstrong.teevra.client.graph.common.Designer;
+			import mx.managers.DragManager;
+			import com.headstrong.teevra.client.graph.DrawingClasses.ComponentDesigner;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+    		import com.headstrong.teevra.client.util.UserEntitlements;
+			
+			[Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			
+			private var designer:Designer = new Designer();   
+   		 	private var iDragManager:DragManager;
+   		 	private var loadedStateMachine:StateMachineVO;
+   		 	
+   		 	private var stateMachineServiceEvent:StateMachineServiceEvent;
+   		 	private var serviceIdentifier:String;
+   		 	private const SAVE_STATEMACHINE_EVENT:String = "SAVE_STATEMACHINE_EVENT";
+   		 	private const PUBLISH_STATEMACHINE_EVENT:String = "PUBLISH_STATEMACHINE_EVENT";
+   		 	private const DELETE_STATEMACHINE_EVENT:String = "DELETE_STATEMACHINE_EVENT";
+   		 	private const VIEW_STATEMACHINE_EVENT:String = "VIEW_STATEMACHINE_EVENT";
+			 private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private var saveButtonEnabled:Boolean=true;
+			private var publishButtonEnabled:Boolean=true;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudStateMachine))
+				   {
+				   		saveButtonEnabled=false;				   						   		
+				   }
+				 if(!(userEntitlements.isAdmin || userEntitlements.publishStateMachine)){
+				 		publishButtonEnabled=false;
+				 }
+				
+			}
+			
+			private function initApp():void
+			{
+				authorizePage();
+				designer.setDesignArea(stateMachineCanvas);
+				var lineFactory:ClassFactory = new ClassFactory();
+    			lineFactory.generator = StateMachineConnector;
+    			designer.lineFactory = lineFactory;
+    	
+		    	stateMachinePalette.designer = designer;
+		    	stateMachineCanvas.designer = designer;
+		    	saveButton.enabled=saveButtonEnabled;
+		    	loadedStateMachine= modelLocator.loadedStateMachine;
+		    			    	
+		    	if ((loadedStateMachine != null) && (loadedStateMachine.graph != null))
+    			{
+    				loadStateMachineGraph(loadedStateMachine.graph);
+    				publishButton.enabled = publishButtonEnabled;
+    				deleteButton.enabled = saveButtonEnabled;	
+    			}		    	
+		    }
+		    private function saveStateMachine():void
+		    {
+		    	var validator:StringValidator  = new StringValidator();
+				var vResult:ValidationResultEvent;
+				validator.listener=newStateMachine.stateName;
+    			vResult=validator.validate(newStateMachine.stateName.text,false);
+    					    	
+		    	loadedStateMachine = newStateMachine.getStateMachineVO();
+		  		//25-Mar-09 AP Added to check the configuration details & state Name should be present for the state  :Code Start
+		    	if(designer.getBoxList().length!=0 && !configurationDetailsCheck())
+					return;
+					
+				if(vResult.type==ValidationResultEvent.VALID)
+				{
+			    	loadedStateMachine.graph = getStateGraph();
+			    	loadedStateMachine.stateMachineEvents=modelLocator.stateMachineEventString;
+			    	//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+			    	var args:Object = new Object();
+					args[StateMachineServiceEvent.SAVE_STATEMACHINE_ID] = loadedStateMachine;
+					stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.SAVE_STATEMACHINE_COMMAND,args,this);
+					stateMachineServiceEvent.dispatch();
+					serviceIdentifier=SAVE_STATEMACHINE_EVENT;
+					//08-Apr-09 AP Code Added as a part of Generalization of event :Code End
+			 	}
+			 	//25-Mar-09 AP Added to check the configuration details  & state Name should be present for the state :Code End
+		    }
+		    private function deleteStateMachine():void{
+		    	Alert.show("Do you want to delete the state machine?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);
+		    }
+		    private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+					var args:Object = new Object();
+					args[StateMachineServiceEvent.DELETE_STATEMACHINE_ID] = loadedStateMachine.stateMachineName;
+					stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.DELETE_STATEMACHINE_COMMAND, args, this);
+					stateMachineServiceEvent.dispatch();
+					serviceIdentifier=DELETE_STATEMACHINE_EVENT;	
+					//08-Apr-09 AP Code Added as a part of Generalization of event :Code End
+				}
+			}
+		    //publishes the state machine in the database
+		    private function publishStateMachine():void
+		    {	
+		    	if(!configurationDetailsCheck())
+		    	{
+					return;
+		    	}
+		    	loadedStateMachine.graph = getStateGraph();
+		    	loadedStateMachine= modelLocator.loadedStateMachine;
+		    	//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+		    	var args:Object = new Object;
+		    	args[StateMachineServiceEvent.PUBLISH_STATEMACHINE_ID] = loadedStateMachine;
+				stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.PUBLISH_STATEMACHINE_COMMAND, args, this);
+				stateMachineServiceEvent.dispatch();
+				serviceIdentifier=PUBLISH_STATEMACHINE_EVENT;		  
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code End  	    	
+		    }
+		    //exits the present screen and opens view state machine screen
+		    private function cancel():void
+		    {
+		    	//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+		    	stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.VIEW_STATEMACHINE_COMMAND,null,this);
+				stateMachineServiceEvent.dispatch();
+				serviceIdentifier=VIEW_STATEMACHINE_EVENT;
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code End
+		    }
+		    public function loadStateMachineGraph(graph:StateMachineGraphVO):void
+			{
+				var nodes:Object = graph.nodes;		
+				var links:Object = graph.links;
+				
+				//draw nodes
+				for each(var node:StateMachineGraphNodeVO in nodes)
+				{
+					var x:Number = node.x;
+					var y:Number = node.y;
+					stateMachineCanvas.addState(node.stateDetails.stateType,x,y,node.stateDetails);
+				}
+				//draw lines
+				var j:int=0;
+				for each(var fromNode:Object in links)
+				{
+					for each(var graphLink:StateMachineGraphLinkVO in fromNode)
+					{	
+						stateMachineCanvas.fromBoxWidth = graphLink.fromNodeWidth;
+						stateMachineCanvas.fromBoxHeight = graphLink.fromNodeHeight;
+						stateMachineCanvas.connectItems(graphLink.startNodeId, graphLink.endNodeId, graphLink.startX, graphLink.startY, graphLink.endX, graphLink.endY);
+						//assing the StateMachineLinkVO information (configuration of transition of state)
+						stateMachineCanvas.loadLinkDetails(graphLink);						
+					}				
+				}				
+			}
+		    public function getStateGraph():StateMachineGraphVO
+			{	
+				var graph:StateMachineGraphVO = new StateMachineGraphVO();
+				var graphNodes:Object = new Object();
+				var graphLinks:Object = new Object();
+						
+				graph.nodes = graphNodes;
+				graph.links = graphLinks;
+		
+				//construct list of nodes			
+				var nodes:ArrayCollection = designer.getBoxList();
+				for(var i:int=0;i<nodes.length;i++)
+				{
+					var node:StateMachineGraphCanvasItem = StateMachineGraphCanvasItem(nodes.getItemAt(i));
+					var stateComp:StateVO = node.stateVO;
+					
+					var graphNodeVO:StateMachineGraphNodeVO = new StateMachineGraphNodeVO();
+					graphNodeVO.stateDetails =  stateComp;
+					graphNodeVO.nodeId = stateComp.stateName;
+					graphNodeVO.x = node.x;
+					graphNodeVO.y = node.y; 
+								
+					graphNodes[stateComp.stateName] = graphNodeVO;  
+				}				
+				//construct adjacency list of links
+				var links:ArrayCollection = designer.getLineList();
+				for(var j:int=0;j<links.length;j++)
+				{
+					var line:StateMachineConnector = StateMachineConnector(links.getItemAt(j));
+					
+					var fromNode:StateMachineGraphCanvasItem =StateMachineGraphCanvasItem(line.fromBox);
+					var fromNodeId:String = fromNode.stateVO.stateName;
+					
+					var toNode:StateMachineGraphCanvasItem = StateMachineGraphCanvasItem(line.toBox);
+					var toNodeId:String = toNode.stateVO.stateName;
+					
+					if (graphLinks[fromNodeId] == null)
+					{
+						graphLinks[fromNodeId] = new Object();
+					}
+					if (graphLinks[fromNodeId][toNodeId] == null)
+					{
+						var linkVO:StateMachineGraphLinkVO = new StateMachineGraphLinkVO();
+						linkVO.linkDetails = line.stateMachineLinkVO;
+						linkVO.startNodeId = fromNodeId;
+						linkVO.endNodeId = toNodeId;
+						linkVO.startX = line.getX1();
+						linkVO.startY = line.getY1();
+						linkVO.endX = line.getX2();
+						linkVO.endY = line.getY2();
+						linkVO.fromNodeWidth = fromNode.getWidth();
+						linkVO.fromNodeHeight = fromNode.getHeight();
+						linkVO.toNodeWidth = toNode.getWidth();
+						linkVO.toNodeHeight = toNode.getHeight();
+						graphLinks[fromNodeId][toNodeId] = linkVO;
+					}
+			}
+		
+			return graph;
+			}
+			private function configurationDetailsCheck():Boolean
+			{
+				var stateDetails:StateVO;
+				var nodes:ArrayCollection = designer.getBoxList();
+		    	if(nodes.length==0)
+		    	{	
+		    		Alert.show("Please enter configuration details for State");
+		    		return false;
+		    	}
+				for(var i:int=0;i<nodes.length;i++)
+				{
+					var node:StateMachineGraphCanvasItem = StateMachineGraphCanvasItem(nodes.getItemAt(i));
+					var stateVO:StateVO = node.stateVO;
+					if(stateVO.stateName==null)
+					{
+						Alert.show("Please enter configuration details for State");
+						return false;
+					}
+				}
+			return true;
+			}
+			public function result( event:Object ):void 
+			{
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				var savedStateMachine:StateMachineVO;
+				switch(serviceIdentifier)
+				{
+					case SAVE_STATEMACHINE_EVENT:
+						savedStateMachine = StateMachineVO(event.result); 
+						// load the state machine to the ViewModelLocator and set the details of the state machine
+						modelLocator.loadedStateMachine = savedStateMachine;
+						modelLocator.screenName="Process Modeling > View StateMachine > Edit State Machine";
+						
+						stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.NEW_STATEMACHINE_COMMAND,null,this);
+						stateMachineServiceEvent.dispatch();	
+						Alert.show("State Machine has been Saved successfully","Save State Machine");
+						break;
+						
+					case PUBLISH_STATEMACHINE_EVENT:
+						Alert.show("State Machine Successfully published");
+						savedStateMachine = StateMachineVO(event.result); 
+						// load the state machine to the ViewModelLocator and set the details of the state machine
+						modelLocator.loadedStateMachine = savedStateMachine;
+						stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.NEW_STATEMACHINE_COMMAND,null,this);
+						stateMachineServiceEvent.dispatch();
+						break;
+							
+					case DELETE_STATEMACHINE_EVENT:
+						Alert.show("State Machine has been deleted successfully!!","Delete State Machine");	
+						//shows the view state machine screen with remaining state machines
+						
+						stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.VIEW_STATEMACHINE_COMMAND,null,this);
+						stateMachineServiceEvent.dispatch();
+						serviceIdentifier=VIEW_STATEMACHINE_EVENT;
+					    break;
+					    
+					case VIEW_STATEMACHINE_EVENT:
+						var stateMachines : ICollectionView = ICollectionView( event.result );
+						//load the state machine cache
+						StateMachineCache.getInstance().loadStateMachines(stateMachines);
+						var sortByName:SortField;
+						var sortStateMachines:Sort;
+						modelLocator.loadModule(ViewModelLocator.VIEW_STATE_MACHINE_SWF);
+						modelLocator.screenName = "Process Modeling > View StateMachine";
+						modelLocator.stateMachines=stateMachines;
+						sortStateMachines = new Sort();
+						sortByName = new SortField("stateMachineName",true,false);
+						sortStateMachines.fields = [sortByName];
+						stateMachines.sort = sortStateMachines;
+						stateMachines.refresh();
+						break;
+				}
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code End				
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case SAVE_STATEMACHINE_EVENT:
+						AlertHelper.displayFault(info,"State Machine cannot be saved");
+						break;
+						
+					case PUBLISH_STATEMACHINE_EVENT:
+						AlertHelper.displayFault(info,"State Machine cannot be published");
+						break;
+							
+					case DELETE_STATEMACHINE_EVENT:
+						AlertHelper.displayFault(info,"State Machine cannot be deleted");
+						break;
+					    
+					case VIEW_STATEMACHINE_EVENT:
+						AlertHelper.displayFault(info,"State Machines could not be retrieved");
+						break;
+				}	
+			}		
+		]]>
+	</mx:Script>
+	<mx:VBox width="100%" height="100%">
+		
+	
+		<mx:HBox width="100%" height="5%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+			<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+			<mx:Spacer width="100%"/>
+			<mx:Button label="@Resource(key='button.StateMachineDrawing.save', bundle='TeevraUI')" id="saveButton" click="saveStateMachine()" textAlign="center"/>
+			<mx:Button label="@Resource(key='button.StateMachineDrawing.publish', bundle='TeevraUI')" enabled="false" id="publishButton" click="publishStateMachine();" textAlign="center"/>
+			<mx:Button label="@Resource(key='button.StateMachineDrawing.delete', bundle='TeevraUI')" enabled="false" id="deleteButton" click="deleteStateMachine();" textAlign="center"/>
+			<mx:Button label="@Resource(key='button.StateMachineDrawing.cancel', bundle='TeevraUI')" click="cancel()"/>
+		</mx:HBox>
+		
+		
+		 <mx:HBox verticalAlign="top" width="100%" height="95%" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+	   		<mx:VBox width="10%" height="100%">
+	   			<graph:StateMachinePalette  height="100%" width="100%" id="stateMachinePalette"/>
+	   		</mx:VBox>
+			<mx:VBox width="90%" height="100%">
+				<local:NewStateMachine width="100%" height="10%" id="newStateMachine"/>
+				<graph:StateMachineGraphCanvas  height="100%" width="100%" id="stateMachineCanvas" x="23" y="44"/>	
+			</mx:VBox>   	
+		</mx:HBox>
+	</mx:VBox>
+	
+</mx:Module>

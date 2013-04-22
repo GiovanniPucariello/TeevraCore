@@ -1,0 +1,71 @@
+<userInput>
+	<!-- Install -->
+	<panel order="0">
+		<field type="text" align="left" variable="server.install.dir">
+			<spec txt="Server Install Directory" size="30" />
+		</field>
+		<field type="text" variable="tomcat.home.dir">
+			<spec txt="Tomcat Home Directory" size="30" />
+		</field>
+	</panel>
+	<panel order="1">
+		<field type="combo" variable="database.type">
+			<spec txt="Select Database">
+				<choice txt="Oracle" value="Oracle" set="true" />
+				<choice txt="Postgres" value="Postgres" />
+			</spec>
+		</field>
+	</panel>
+	<panel order="2">
+		<field type="text" align="left" variable="jdbc.url">
+			<spec txt="Database URL" size="30"
+				set="${jdbc.url_default}" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Database URL is a required field" />
+		</field>
+		<field type="text" align="left" variable="jdbc.username">
+			<spec txt="User Name" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" User Name is a required field" />
+		</field>
+		<field type="text" align="left" variable="jdbc.password">
+			<spec txt="Password" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Password is a required field" />
+		</field>
+	</panel>
+	<panel order="3">
+		<field type="radio" variable="auth.type">
+			<description align="left" id="Authentication Provider" />
+			<spec>
+				<choice txt="Ldap" id="Ldap" value="LDAP" />
+				<choice txt="Database" id="Database" value="DB"
+					set="true" />
+			</spec>
+		</field>
+	</panel>
+	<panel order="4">
+		<!--  LDAP Configuration Section -->
+		<field type="text" align="left" variable="ldap.url">
+			<spec txt="LDAP Server URL" size="30"
+				set="ldap://10.200.41.16:10389" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" LDAP URL is a required field" />
+		</field>
+		<field type="text" align="left" variable="ldap.root">
+			<spec txt="Root Directory" size="30" set="o=teevra" />
+		</field>
+		<validator class="com.izforge.izpack.util.NotEmptyValidator"
+			txt=" Root Directory is a required field" />
+		<field type="text" align="left" variable="ldap.userName">
+			<spec txt="User Dsn" size="30" set="uid=admin,ou=system" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" User Dsn is a required field" />
+		</field>
+		<field type="text" align="left" variable="ldap.password">
+			<spec txt="Password" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Password is a required field" />
+		</field>
+	</panel>
+</userInput>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelGivUpTrnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelGivUpTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelGivUpTrnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelGivUpTrnResponseT">
+		<sequence>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelGivUpTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelGivUpTrnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelGivUpTrnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelGivUpTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelGivUpTrnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelGivUpTrnResponseT">
+		<sequence>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelGivUpTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelGivUpTrnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

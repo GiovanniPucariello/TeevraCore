@@ -1,0 +1,583 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" 
+	creationComplete="initApp();"
+	xmlns:commands="com.headstrong.teevra.client.commands.*"
+	implements="mx.rpc.IResponder">
+  	<mx:Script source="scripts/DateUtilScript.as"/>
+    <mx:Script><![CDATA[
+    	import mx.managers.PopUpManagerChildList;
+    	
+    	import com.headstrong.teevra.client.util.AlertHelper;
+    	import com.headstrong.teevra.client.events.ServerAdminServiceEvent;
+    	import mx.collections.ICollectionView;
+    	import mx.collections.SortField;
+    	import mx.collections.Sort;
+    	import com.headstrong.teevra.client.events.ProcessAdminServiceEvent;
+   
+    	import com.headstrong.teevra.client.view.entity.ServerConfigVO;
+    	import com.headstrong.teevra.client.view.entity.ComponentDetailsEO;
+    	
+    	import com.headstrong.teevra.client.model.ServerCache;
+    	import mx.collections.ArrayCollection;
+    	
+    	import com.headstrong.teevra.client.view.admin.ProcessSchedule;
+    	import mx.managers.PopUpManager;
+        
+    	import mx.core.IFlexDisplayObject;
+    	import com.headstrong.teevra.client.view.admin.Recurrence;
+    	import com.headstrong.teevra.client.view.admin.ProcessMonitorDetailsPopup;
+    	import mx.formatters.DateFormatter;
+    	import mx.resources.ResourceBundle;
+    	import mx.controls.Alert;
+    	import mx.events.ListEvent;
+    	import mx.controls.dataGridClasses.DataGridColumn;
+    	import com.headstrong.teevra.client.model.ViewModelLocator;	
+        import com.headstrong.teevra.client.events.ProcessStatusEvent;
+        
+        import com.headstrong.teevra.client.model.ViewModelLocator;
+        import com.headstrong.teevra.client.commands.ProcessesStatusColorDataGrid;
+        import com.headstrong.teevra.client.util.UIModules;
+        import com.headstrong.teevra.client.util.UserEntitlements;
+        [Bindable]		
+		private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+		private var popup:IFlexDisplayObject;
+		private var processSchedule:ProcessSchedule;
+		//default message over the combo box of the server list
+		private const comboBoxPrompt:String ="--select server--";
+		//run status states of the process
+		private const STATUS_STOPPED:String = "STOPPED";
+		private const STATUS_RUNNING:String = "RUNNING";
+		private const STATUS_ERROR:String = "ERROR";
+		private const STATUS_STARTING:String = "STARTING";
+		private var processId:Number;
+		
+		private var processAdminServiceEvent:ProcessAdminServiceEvent;
+		private var serverAdminServiceEvent:ServerAdminServiceEvent;
+		private var serviceIdentifier:String;
+		private var components:ICollectionView;
+		
+		private const START_PROCESS_EVENT:String = "START_PROCESS";
+		private const STOP_PROCESS_EVENT:String = "STOP_PROCESS";
+		private const PROCESS_STATUS_EVENT:String = "PROCESS_STATUS";
+		private const GET_RECURRENCE_EVENT:String = "GET_RECURRENCE";
+		private const ASSIGN_SERVER_EVENT:String = "ASSIGN_SERVER";
+		private const UNASSIGN_SERVER_EVENT:String = "UNASSIGN_SERVER";
+		private const RUN_TIME_RPT_EVENT:String = "RUN_TIME_REPORT";
+		private const RECURRENCE_EVENT:String = "RECURRENCE";
+		private const VIEW_PROCESS_DTLS_EVENT:String = "VIEW_PROCESS_DTLS";
+		//private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+		
+		private var startStopButtonEnabled:Boolean=true;
+		private var itemClickEnabled:Boolean=true;		
+		private var assignUnAssignButtonEnabled:Boolean=true;	
+		//private var unAssignServerButtonEnabled:Boolean=true;	
+		private var recurrenceButtonEnabled:Boolean=true;
+								
+ 		private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+		
+		private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.startStopServer))
+				   {
+				   		startStopButtonEnabled=false;				   						   		
+				   }
+				if(!(userEntitlements.isAdmin || userEntitlements.assignUnassignServer))   
+				{
+					assignUnAssignButtonEnabled=false;
+					
+				}
+				if(!(userEntitlements.isAdmin || userEntitlements.scheduleProcess))   
+				{
+					recurrenceButtonEnabled=false;
+				}
+				if(!(userEntitlements.isAdmin || userEntitlements.viewErrorLog)){
+					itemClickEnabled=false;
+				}
+			}
+		
+		
+		private function initApp():void
+		{
+			authorizePage();
+			startButton.enabled=false;
+			stopButton.enabled=false;		
+			recurrence.enabled=false;
+			assignServerButton.enabled =false;
+			unassignServerButton.enabled = false;
+			viewProcessDtlsButton.enabled=false;	
+		}
+		
+		private function refresh():void
+    	{
+            initApp();
+            //09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+          	processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.PROCESS_STATUS_COMMAND, null, this);
+			processAdminServiceEvent.dispatch();
+			serviceIdentifier=PROCESS_STATUS_EVENT;
+			//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+		}
+		
+		private function itemClickEvent(event:Event):void
+		{
+			viewProcessDtlsButton.enabled=false;
+			var prcsRunStatus:String = processStatus.selectedItem.prcsRunStatus;
+			var serverName:String = processStatus.selectedItem.serverName; 
+			processId = processStatus.selectedItem.prcsId;					   			
+			
+			if( startStopButtonEnabled)
+		   	{
+				startButton.enabled = (processStatus.selectedIndex != -1);
+				stopButton.enabled = (processStatus.selectedIndex != -1);
+		   	}
+		   	if( assignUnAssignButtonEnabled)
+		   	{
+				assignServerButton.enabled =(processStatus.selectedIndex != -1);
+				unassignServerButton.enabled=(processStatus.selectedIndex != -1);
+		   	}
+		   	// Added as a part of Feature#611 [ProcessMonitoringConsole]	
+		   	if (prcsRunStatus == STATUS_RUNNING )
+		   	{		   	
+		   		viewProcessDtlsButton.enabled=(processStatus.selectedIndex != -1);
+		   	}
+		   	
+		   	
+//			switch(prcsRunStatus)
+//			{
+//				case(STATUS_STOPPED):
+//				{
+//					if(startStopButtonEnabled)
+//				   	{
+//						startButton.enabled = (processStatus.selectedIndex != -1);
+//						stopButton.enabled = (processStatus.selectedIndex == -1);
+//				   	}
+//				   	if( assignUnAssignButtonEnabled)
+//				   	{
+//						assignServerButton.enabled =(processStatus.selectedIndex != -1);
+//						if(serverName == null || serverName == "")
+//						{
+//							unassignServerButton.enabled=(processStatus.selectedIndex == -1);
+//						}
+//						else
+//						{
+//							unassignServerButton.enabled=(processStatus.selectedIndex != -1);
+//						}
+//				   	}
+//					break;
+//				}
+//				case(STATUS_RUNNING):
+//				{
+//					if( startStopButtonEnabled)
+//				   	{
+//						stopButton.enabled = (processStatus.selectedIndex != -1);
+//						startButton.enabled = (processStatus.selectedIndex == -1);
+//				   	}
+//				   	if( assignUnAssignButtonEnabled)
+//				   	{
+//						assignServerButton.enabled =(processStatus.selectedIndex == -1);
+//						unassignServerButton.enabled=(processStatus.selectedIndex == -1);
+//				   	}
+//					break;
+//				}
+//				case(STATUS_STARTING):
+//				case(STATUS_ERROR):
+//				{
+//					if( startStopButtonEnabled)
+//				   	{
+//						stopButton.enabled = (processStatus.selectedIndex != -1);
+//						startButton.enabled = (processStatus.selectedIndex != -1);
+//				   	}
+//				   	if( assignUnAssignButtonEnabled)
+//				   	{
+//						assignServerButton.enabled =(processStatus.selectedIndex != -1);
+//						unassignServerButton.enabled=(processStatus.selectedIndex != -1);
+//				   	}
+//					break;
+//				}
+//				default:
+//				{
+//					if( startStopButtonEnabled)
+//				   	{
+//						startButton.enabled = (processStatus.selectedIndex != -1);
+//						stopButton.enabled = (processStatus.selectedIndex != -1);
+//				   	}
+//				   	if( assignUnAssignButtonEnabled)
+//				   	{
+//						assignServerButton.enabled =(processStatus.selectedIndex != -1);
+//						unassignServerButton.enabled=(processStatus.selectedIndex != -1);
+//				   	}
+//				   	break;
+//				}
+//			}
+			if(recurrenceButtonEnabled)
+			{
+					recurrence.enabled = (processStatus.selectedIndex != -1);
+			}
+  		}
+  		
+		private function startProcess():void
+		{
+			if(processStatus.selectedItem.serverName == null || processStatus.selectedItem.serverName == "")
+			{
+				Alert.show("Assign the process to a server to start");
+			}
+			else
+			{
+				var server:ServerConfigVO = getServerConfig(processStatus.selectedItem.serverName);
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				var args:Object = new Object();
+				args[ProcessAdminServiceEvent.START_PROCESS_ID] = processStatus.selectedItem.prcsId;
+				args[ProcessAdminServiceEvent.START_PROCESS_SERVER] = server;
+				serviceIdentifier=START_PROCESS_EVENT;
+				processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.START_PROCESS_COMMAND, args, this);
+				processAdminServiceEvent.dispatch();
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End							
+			}
+		}
+	
+		private function stopProcess():void
+		{
+			var server:ServerConfigVO = getServerConfig(processStatus.selectedItem.serverName);
+			//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+			var args:Object = new Object();
+			args[ProcessAdminServiceEvent.STOP_PROCESS_ID] = processStatus.selectedItem.prcsId;
+			args[ProcessAdminServiceEvent.STOP_PROCESS_SERVER] = server;
+			serviceIdentifier=STOP_PROCESS_EVENT;
+			processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.STOP_PROCESS_COMMAND, args, this);
+			processAdminServiceEvent.dispatch();	
+			//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+		}
+        
+        // new method added as a part of Feature#611 [ProcessMonitoringConsole]
+        private function viewProcessDetails():void
+		{
+				/* Create an  Cairngorm ProcessAdminServiceEvent object with view process details as command
+				*  and then dispatch the event .... 
+				*/
+				var server:ServerConfigVO = getServerConfig(processStatus.selectedItem.serverName);
+				var args:Object = new Object();
+				args[ProcessAdminServiceEvent.VIEW_PROCESS_ID] = processStatus.selectedItem.prcsId;
+				args[ProcessAdminServiceEvent.VIEW_PROCESS_NAME]=processStatus.selectedItem.prcsName;
+				args[ProcessAdminServiceEvent.VIEW_PROCESS_SERVER] = server;
+				serviceIdentifier=VIEW_PROCESS_DTLS_EVENT;
+				processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.VIEW_PROCESS_DTLS_COMMAND, args, this);
+				processAdminServiceEvent.dispatch();
+								
+		}
+        
+        private function getErrorReports(event:ListEvent): void
+		{
+			if( itemClickEnabled)
+			{
+				modelLocator.isPrcsStatusReport = true;
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				var args:Object = new Object();
+				args[ProcessAdminServiceEvent.RUN_PROCESS_ID] = event.currentTarget.selectedItem.prcsRunId;
+				serviceIdentifier=RUN_TIME_RPT_EVENT;
+				processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.PROCESS_RUNTIME_RPT_COMMAND, args, this);
+				processAdminServiceEvent.dispatch();
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+			}
+		}        
+        private function recurrenceProcess():void
+        {   
+        	//call the getter event which will get the recurren for the perticular process -id
+        	var args:Object = new Object();
+        	//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+			args[ProcessAdminServiceEvent.GET_RECURRENCE_ID] = processId;
+			serviceIdentifier=GET_RECURRENCE_EVENT;
+			processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.GET_RECURRENCE_COMMAND, args, this);
+			processAdminServiceEvent.dispatch();	
+			//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+			
+		}
+	    
+	    public function result(event:Object):void
+		{
+			//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+			switch(serviceIdentifier)
+			{
+				case START_PROCESS_EVENT:
+					
+					Alert.show("Process has been Successfully Started","Start Process");
+					processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.PROCESS_STATUS_COMMAND, null, this);
+					processAdminServiceEvent.dispatch();
+					serviceIdentifier=PROCESS_STATUS_EVENT;
+					break;
+					
+				case STOP_PROCESS_EVENT:
+					Alert.show("Process has been Successfully Stopped","Stop Process");
+					processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.PROCESS_STATUS_COMMAND, null, this);
+					processAdminServiceEvent.dispatch();
+					serviceIdentifier=PROCESS_STATUS_EVENT;					
+					break;
+					
+				case PROCESS_STATUS_EVENT:
+				 	var sortProcessStatus:Sort;
+           			var sortByServerName:SortField;
+		            var sortByPrcsName:SortField;
+		            var processesStatus : ICollectionView = ICollectionView( event.result );
+					sortProcessStatus = new Sort();
+					sortByServerName = new SortField("serverName",true,false);
+					sortByPrcsName = new SortField("prcsName",true,false);
+					//sort by server name first and then by process name 
+					sortProcessStatus.fields=[sortByServerName,sortByPrcsName];
+					processesStatus.sort=sortProcessStatus;
+					processesStatus.refresh();
+					modelLocator.processStatus = processesStatus;
+					modelLocator.loadModule(ViewModelLocator.PROCESS_STATUS_SWF);
+					modelLocator.screenName = "Process Management > Process Status";
+					break;
+				
+				case GET_RECURRENCE_EVENT:
+					processSchedule = ProcessSchedule(event.result);
+					var configUI:Recurrence;
+					popup = PopUpManager.createPopUp(this, Recurrence ,false);
+					//popup.width = this.width*.5;
+					configUI = Recurrence(popup);
+					if(processSchedule == null)
+					{
+						processSchedule = new ProcessSchedule();
+					}
+					processSchedule.prcsId = processId;
+			    	configUI.createProcessUI(popupClose,popupSave,processSchedule);
+			    	PopUpManager.centerPopUp(popup);
+			    	break;		
+			    	
+			    case RUN_TIME_RPT_EVENT:
+			    	var prcsRunErrorReports : ICollectionView = ICollectionView( event.result );
+					modelLocator.prcsRunErrorReports = prcsRunErrorReports;
+					modelLocator.loadModule(ViewModelLocator.ERROR_REPORTING_EVENT);
+					modelLocator.screenName = "Process Management > Process Status >Error Reporting";
+					break;	    
+			
+				case ASSIGN_SERVER_EVENT:
+					Alert.show("Process has been Successfully assigned","Assign Server");	
+					processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.PROCESS_STATUS_COMMAND, null, this);
+					processAdminServiceEvent.dispatch();
+					serviceIdentifier=PROCESS_STATUS_EVENT;	
+					break;					
+				case UNASSIGN_SERVER_EVENT:
+					Alert.show("Process has been Successfully Unassigned","Unassign Server");
+					processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.PROCESS_STATUS_COMMAND, null, this);
+					processAdminServiceEvent.dispatch();
+					serviceIdentifier=PROCESS_STATUS_EVENT;
+					break;	
+					
+				case RECURRENCE_EVENT:	
+					Alert.show("Process has been Scheduled Successfully","Schedule Process");
+					break;					
+				// new case added as a part of Feature#611 [ProcessMonitoringConsole]	
+				case VIEW_PROCESS_DTLS_EVENT:
+					components= ICollectionView( event.result );
+					/* Create a new popup screen for each selected item and ViewProcessDetails button click */
+					var processMonitorConsole:ProcessMonitorDetailsPopup;
+					var processMonitorDtlsPopup:IFlexDisplayObject=PopUpManager.createPopUp(this , ProcessMonitorDetailsPopup,false,PopUpManagerChildList.PARENT);
+					processMonitorConsole=ProcessMonitorDetailsPopup(processMonitorDtlsPopup); /* Cast to modify the popup properties */
+					processMonitorConsole.create(processAdminServiceEvent,components);  
+					PopUpManager.centerPopUp(processMonitorConsole);			
+					
+			}
+			//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+		}
+
+		/**
+		 * executed if delegator's ComponentServiceDelegate failed in getting ComponentTemplateEO
+		 * @param info
+		 *
+		 */
+		public function fault(info:Object):void
+		{
+			switch(serviceIdentifier)
+			{
+				case START_PROCESS_EVENT:
+					AlertHelper.displayFault(info,"Process cannot be started");
+					break;
+					
+				case STOP_PROCESS_EVENT:
+					AlertHelper.displayFault(info,"Process cannot be stopped");			
+					break;
+					
+				case PROCESS_STATUS_EVENT:
+				 	AlertHelper.displayFault(info,"Processes with run status could not be retrieved");		
+					break;
+				
+				case GET_RECURRENCE_EVENT:
+					Alert.show(info.fault.faultString);
+			    	break;		
+			    	
+			    case RUN_TIME_RPT_EVENT:
+			    	AlertHelper.displayFault(info,"Error reports for the process could not be retrieved");	
+					break;	    
+			
+				case ASSIGN_SERVER_EVENT:
+					AlertHelper.displayFault(info,"Process cannot be assigned to the server");	
+					break;					
+				case UNASSIGN_SERVER_EVENT:
+					AlertHelper.displayFault(info,"Process cannot be unassigned from the server");
+					break;	
+					
+				case RECURRENCE_EVENT:	
+					AlertHelper.displayFault(info,"Process cannot be scheduled");
+					break;		
+				// new case added as a part of Feature#611 [ProcessMonitoringConsole]	
+				case VIEW_PROCESS_DTLS_EVENT:
+					AlertHelper.displayFault(info,"Process Monitoring Details cannot be retrieved for "
+					+resourceManager.getString('TeevraUI','title_process_id.ProcessMonitorDetailsPopup')
+					+processStatus.selectedItem.prcsId.toString()
+					//+resourceManager.getString('TeevraUI','title_process_name.ProcessMonitorDetailsPopup')
+					//+processStatus.selectedItem.prcsName
+					/* Alert width depends on title width so uncomment the above lines for further flex builde version and try */				
+					);
+					break;										
+			}
+		}
+
+	    private function popupClose(event:MouseEvent):void{
+	    	PopUpManager.removePopUp(popup);
+	    }
+
+	   	private function popupSave():void
+	   	{
+	   		processSchedule.prcsId = processStatus.selectedItem.prcsId
+	   		var serverName:String = processStatus.selectedItem.serverName; 
+			if(serverName == null || serverName == "")
+			{
+				Alert.show("Assign a server to the process to start");
+			}
+			else
+			{
+		   		if(processSchedule.recurrence==null)
+		   		{
+		   			Alert.show("Please Enter All the Information");
+		   		}
+		   		else
+		   		{
+			   		var server:ServerConfigVO = getServerConfig(serverName);
+			   		//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+			   		var args:Object = new Object();
+					args[ProcessAdminServiceEvent.RECURRENCE_ID] = processSchedule;
+					args[ProcessAdminServiceEvent.RECURRENCE_CONFIG] = server;
+					serviceIdentifier=RECURRENCE_EVENT;
+					processAdminServiceEvent = new ProcessAdminServiceEvent(ProcessAdminServiceEvent.RECURRENCE_COMMAND, args, this);
+					processAdminServiceEvent.dispatch();
+					//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+			   		PopUpManager.removePopUp(popup);			   		
+		   		}
+	 	    }
+	   	}
+	   	private function unassignServer():void
+		{
+			if(processStatus.selectedItem.serverName==null)
+			{
+				Alert.show("The process has not yet assigned to any server");				
+			}
+			else
+			{
+				var args:Object = new Object();
+				args[ServerAdminServiceEvent.UNASSIGN_SERVER_ID] = Number(processStatus.selectedItem.prcsId);
+				serviceIdentifier=UNASSIGN_SERVER_EVENT;
+				serverAdminServiceEvent = new ServerAdminServiceEvent(ServerAdminServiceEvent.UNASSIGN_SERVER_COMMAND, args, this);
+				serverAdminServiceEvent.dispatch();					
+			}
+			
+		}
+	   	private function assignServer():void
+		{
+			if(serverList.text.toString()==comboBoxPrompt)
+			{
+				Alert.show("Please select a server to assign");				
+			}
+			else if(processStatus.selectedItem.serverName == serverList.text.toString().toString()){
+				Alert.show("Process is already assigend to the selected server");
+			}
+			else
+			{
+				var serverToAssign:ServerConfigVO = getServerConfig(serverList.text.toString());
+				if(processStatus.selectedIndex != -1)
+				{
+					//call the server admin service event wala thing not process admin service 
+					var args:Object = new Object();
+					args[ServerAdminServiceEvent.ASSIGN_SERVER_ID] = Number(processStatus.selectedItem.prcsId);
+					args[ServerAdminServiceEvent.ASSIGN_SERVER_NAME] = serverToAssign;
+					serviceIdentifier=ASSIGN_SERVER_EVENT;
+					serverAdminServiceEvent = new ServerAdminServiceEvent(ServerAdminServiceEvent.ASSIGN_SERVER_COMMAND, args, this);
+					serverAdminServiceEvent.dispatch();
+				}
+			}
+		}		
+		
+
+		private function getServerNames():ArrayCollection
+		{
+			var serverConfigList:ArrayCollection = ServerCache.getInstance().getConfigs();
+    		var serverNamesList:ArrayCollection = new ArrayCollection();
+    		for(var i:int=0; i<serverConfigList.length; i++)
+    		{
+    			var serverConfig:ServerConfigVO = ServerConfigVO(serverConfigList[i]);
+    			serverNamesList.addItem(serverConfig.serverName);
+    		}
+    		
+			return serverNamesList;
+		}
+		
+		private function getServerConfig(serverName:String):ServerConfigVO
+		{
+			return ServerCache.getInstance().retrieveServer(serverName);
+		}
+		
+		private function filterGrid():void
+		{
+			if(serverList.text == comboBoxPrompt)
+			{
+				Alert.show("Select a server to proceed");
+			}
+			else
+			{
+				modelLocator.processStatus.filterFunction = filterOnServerName;
+				modelLocator.processStatus.refresh();
+			}
+		}
+		
+		private function filterOnServerName(item:Object):Boolean
+		{
+			var isMatch:Boolean = false
+               if((item.serverName !=null) && (item.serverName == serverList.text)){
+                   isMatch = true
+               }               
+               return isMatch;  
+		}
+		
+    ]]></mx:Script>
+   	
+   	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+    	<mx:Spacer width="50%"/>
+        <mx:ComboBox id="serverList" dataProvider="{getServerNames()}" selectedIndex="-1" prompt="{comboBoxPrompt}"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.assignServer', bundle='TeevraUI')" id="assignServerButton" click="assignServer()" textAlign="center"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.unassignServer', bundle='TeevraUI')" id="unassignServerButton" click="unassignServer()" textAlign="center"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.filterProcesses', bundle='TeevraUI')" id="filterProcesses" textAlign="center" click="filterGrid()"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.viewProcessDetails', bundle='TeevraUI')" id="viewProcessDtlsButton" textAlign="center" click="viewProcessDetails()"/>
+        <mx:Spacer width="50%"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.refresh', bundle='TeevraUI')" id="refreshButton" click="refresh()" textAlign="center"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.start', bundle='TeevraUI')" id="startButton" click="startProcess()" textAlign="center"/>
+        <mx:Button label="@Resource(key='button.ProcessesStatus.stop', bundle='TeevraUI')" id="stopButton" click="stopProcess()" textAlign="center"/>
+        <mx:Button label="Schedule" id="recurrence" click="recurrenceProcess();" textAlign="center"/>
+     </mx:HBox>
+   
+    <commands:ProcessesStatusColorDataGrid id="processStatus" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" dataProvider="{modelLocator.processStatus}" width="100%" height="100%" itemClick="itemClickEvent(event);" doubleClickEnabled="true" itemDoubleClick="getErrorReports(event);">
+		<commands:columns>       
+			<mx:DataGridColumn dataField="prcsId" headerText="@Resource(key='column.ProcessesStatus.prcsId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsRunId" headerText="@Resource(key='column.ProcessesStatus.prcsRunId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsName" headerText="@Resource(key='column.ProcessesStatus.prcsName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsRunStatus" headerText="@Resource(key='column.ProcessesStatus.prcsRunStatus', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="serverName" headerText="@Resource(key='column.ProcessesStatus.serverName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsRunStartTime" headerText="@Resource(key='column.ProcessesStatus.prcsRunStartTime', bundle='TeevraUI')"  labelFunction="formatDate" />
+			<mx:DataGridColumn dataField="prcsRunStopTime" headerText="@Resource(key='column.ProcessesStatus.prcsRunStopTime', bundle='TeevraUI')" labelFunction="formatDate" />
+			<mx:DataGridColumn dataField="prcsMsgsRecd" headerText="@Resource(key='column.ProcessesStatus.prcsMsgsRecd', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsMsgsProcessed" headerText="@Resource(key='column.ProcessesStatus.prcsMsgsProcessed', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsMsgsError" headerText="@Resource(key='column.ProcessesStatus.prcsMsgsError', bundle='TeevraUI')" />
+		</commands:columns>	
+	</commands:ProcessesStatusColorDataGrid>
+    
+</mx:Module>

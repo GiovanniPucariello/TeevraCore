@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqPosnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="98"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqPosnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqPosnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqPosnRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="prvLngQty" size="16"/>
+			<element type="char" name="prvShtQty" size="16"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="notifQty" size="16"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+			<element type="char" name="totVmarAmnt" size="16"/>
+			<element type="char" name="totFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqPosnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqPosnRecT" name="futBscInqPosnRec" size="22"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqPosnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqPosnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="98"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqPosnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqPosnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="prvLngQty" size="16"/>
+			<element type="char" name="prvShtQty" size="16"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="exerQty" size="16"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+			<element type="char" name="totPrmAmnt" size="16"/>
+			<element type="char" name="totFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqPosnRecT" name="optBscInqPosnRec" size="22"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnRecT">
+		<sequence>
+			<element type="char" name="abdnQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnResponseT">
+		<sequence>
+			<element type="optExtInqPosnRecT" name="optExtInqPosnRec" size="22"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqPosnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqPosnResponseT" name="basic"/>
+			<element type="optExtInqPosnResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

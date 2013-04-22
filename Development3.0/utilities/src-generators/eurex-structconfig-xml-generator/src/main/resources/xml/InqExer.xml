@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscInqExerRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="117"/>
+			<element type="char" name="undrPrc" size="14"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqExerRequestT">
+		<sequence>
+			<element type="char" name="exerCntrInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqExerRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqExerRequestT" name="basic"/>
+			<element type="optExtInqExerRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqExerRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="exerQty" size="16"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="trdUntNo" size="8"/>
+			<element type="char" name="undrPrc" size="14"/>
+			<element type="char" name="undrPrcInd"/>
+			<element type="char" name="undrDispDcml" size="2"/>
+			<element type="char" name="itmPerUnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqExerResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqExerRecT" name="optBscInqExerRec" size="21"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqExerRecT">
+		<sequence>
+			<element type="char" name="undrXetraPrc" size="14"/>
+			<element type="char" name="abdnQty" size="16"/>
+			<element type="char" name="autManExerTyp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqExerResponseT">
+		<sequence>
+			<element type="optExtInqExerRecT" name="optExtInqExerRec" size="21"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqExerResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqExerResponseT" name="basic"/>
+			<element type="optExtInqExerResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

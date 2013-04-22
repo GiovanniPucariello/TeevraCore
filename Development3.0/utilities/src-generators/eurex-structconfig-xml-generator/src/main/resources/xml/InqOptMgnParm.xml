@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqOptMgnParmGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqOptMgnParmRequestT">
+		<sequence>
+			<element type="bscInqOptMgnParmGrpT" name="bscInqOptMgnParmGrp" size="475"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqOptMgnParmRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqOptMgnParmRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqOptMgnParmRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqOptMgnParmResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqOptMgnParmRecT" name="bscInqOptMgnParmRec" size="57"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqOptMgnParmRecT">
+		<sequence>
+			<element type="char" name="undrPrcOfst" size="14"/>
+			<element type="char" name="undrPrcOfstDcml" size="2"/>
+			<element type="char" name="domRat" size="7"/>
+			<element type="char" name="forgnRat" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqOptMgnParmResponseT">
+		<sequence>
+			<element type="extInqOptMgnParmRecT" name="extInqOptMgnParmRec" size="57"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqOptMgnParmResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqOptMgnParmResponseT" name="basic"/>
+			<element type="extInqOptMgnParmResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

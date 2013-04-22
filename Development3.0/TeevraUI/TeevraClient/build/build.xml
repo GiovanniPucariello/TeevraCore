@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="Teevra UI Client" basedir="." default="compileAll">
+	<property file="build.properties" prefix="build" />
+
+	<property name="FLEX_HOME" value="${build.flexHome}"/>
+	<property name="APP_ROOT" value="${build.projectRoot}"/>
+	<property name="SERVER_ROOT" value="${build.tomcatHome}"/>
+	<property name="src.dir" value="${APP_ROOT}/src/main/flex"/>
+	<property name="src.locale.dir" value="${APP_ROOT}/src/main/resources/locale/{locale}"/>
+	<property name="src.css.dir" value="${APP_ROOT}/src/main/flex/css"/>
+	<property name="lib.dir" value="${APP_ROOT}/libs"/>
+	<property name="deploy.dir" value="${SERVER_ROOT}/webapps/teevra"/>
+	<property name="config.dir" value="${build.configDir}"/>
+	<property name="out.dir" value="${APP_ROOT}/target"/>
+	<property name="OPTIMIZE" value="true" />
+	<property name="DEBUG" value="false" />
+	<!--property name="services.config" value="${deploy.dir}/WEB-INF/flex/services-config.xml"/-->
+	<property name="services.config" value="${config.dir}/services-config.xml"/>
+
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+		<classpath>
+			<pathelement location="${lib.dir}/ant-contrib-1.0b3.jar"/>
+		</classpath>
+	</taskdef>
+
+	<target name="clean">
+		<delete dir="${out.dir}" failonerror="false"/>
+	</target>
+
+	<target name="cleanDeploy" depends="clean">
+		<delete>
+			<fileset dir="${deploy.dir}" includes="*.swf"/>
+		</delete>
+	</target>
+
+	<target name="init" description="initialize the project" >
+		<mkdir dir="${out.dir}" />
+		<copy todir="${out.dir}" includeemptydirs="false">
+			<fileset dir="${src.dir}">
+				<exclude name="**/*.as" />
+				<exclude name="**/*.mxml" />
+				<exclude name="**/build.xml" />
+				<exclude name="**/*.css" />
+				<exclude name="**/*.properties" />
+				<exclude name="**/*.ser" />
+				<exclude name="**/*.vser" />
+				<include name="**/*.jsp" />
+				<include name="**/*.html" />				
+			</fileset>
+		</copy>
+		<mkdir dir="${out.dir}/css" />
+		<copy todir="${out.dir}/css" includeemptydirs="false">
+			<fileset dir="${src.dir}/css">
+				<exclude name="**/*.css" />
+				<include name="**/*.swf" />
+			</fileset>
+		</copy>
+		<copy todir="${out.dir}" includeemptydirs="false">
+			<fileset dir="${lib.dir}">
+				<include name="**/*.swf" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="compile" description="Compile swf modules and main swf" depends="init">
+
+		<!-- compile main SWF -->
+		<mxmlc file="${APP_ROOT}/src/main/flex/teevraClient.mxml" 
+        	output="${out.dir}/teevraClient.swf"
+        	keep-generated-actionscript="true"
+        	debug="${DEBUG}"
+		optimize="${OPTIMIZE}"
+		link-report="${out.dir}/report.xml"
+		allow-source-path-overlap="true"
+		services="${services.config}"
+		locale="en_US">
+
+			<compiler.context-root>/teevra</compiler.context-root>
+			<source-path path-element="${src.dir}" />
+			<source-path path-element="${src.locale.dir}" />
+			<library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<library-path dir="${FLEX_HOME}/frameworks/libs/air" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<library-path dir="${FLEX_HOME}/frameworks/locale" append="true">
+				<include name="{locale}" />
+			</library-path>
+			<library-path dir="${lib.dir}" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+			<source-path path-element="${FLEX_HOME}/frameworks"/>
+
+			<!-- List of SWC files or directories that contain SWC files. -->
+			<compiler.library-path dir="${FLEX_HOME}/frameworks" append="true">
+				<include name="libs" />
+				<include name="../bundles/{locale}" />
+			</compiler.library-path>
+		</mxmlc>
+	</target>
+
+	<!-- compile modules -->
+	<target name="compile.modules" description="Compile swf modules specified in the properties file">
+		<property name="flex.modules" value="${build.modules}"/>
+		<foreach list="${flex.modules}" target="compileModule" param="module" delimiter="," inheritall="true" trim="true"/>
+	</target>
+
+	<target name="compileModule" description="Compiles the module with the name set in the module property">
+		<echo> Module name..... : ${module} </echo>
+		<mxmlc file="${APP_ROOT}/src/main/flex/${module}.mxml" 
+		output="${out.dir}/${module}.swf"
+		debug="${DEBUG}"
+		optimize="${OPTIMIZE}"
+		load-externs="${out.dir}/report.xml"
+		locale="en_US"
+		fork="true">
+
+			<compiler.context-root>/teevra</compiler.context-root>
+			<source-path path-element="${src.dir}" />
+			<source-path path-element="${src.locale.dir}" />
+			<library-path dir="${FLEX_HOME}/frameworks/libs" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<library-path dir="${FLEX_HOME}/frameworks/libs/air" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<library-path dir="${FLEX_HOME}/frameworks/locale" append="true">
+				<include name="{locale}" />
+			</library-path>
+			<library-path dir="${lib.dir}" append="true">
+				<include name="*.swc" />
+			</library-path>
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+			<source-path path-element="${FLEX_HOME}/frameworks"/>
+
+			<!-- List of SWC files or directories that contain SWC files. -->
+			<compiler.library-path dir="${FLEX_HOME}/frameworks" append="true">
+				<include name="libs" />
+				<include name="../bundles/{locale}" />
+			</compiler.library-path>
+
+		</mxmlc>
+	</target>
+
+	<target name="compileAll" description="initialize the project" depends="compile,compile.modules"/>
+
+	<target name="cleanCompile" description="initialize the project" depends="clean,compileAll"/>
+
+	<target name="deploy" description="Deploys the compiled SWF files on to server">
+		<copy todir="${deploy.dir}" includeemptydirs="false">
+			<fileset dir="${out.dir}">
+				<exclude name="**/*.xml" />
+				<include name="**/*.swf" />
+				<include name="**/*.jsp" />
+				<include name="**/*.html" />
+			</fileset>
+			
+		</copy>
+		
+	</target>
+
+	<target name="deployClean" depends="cleanDeploy, compile, deploy" description="Cleans, builds all and deploys"/>
+
+</project>
+

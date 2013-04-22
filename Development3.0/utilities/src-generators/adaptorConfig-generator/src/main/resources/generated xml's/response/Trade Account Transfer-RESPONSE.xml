@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_ENTER_TRADE_ACCOUNT_TRANSFER_RID" namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="CStructToFIXML"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-RESPONSE" structName="optEntTrdAcctTsfResponseT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.trnIdNo">
+                <structField>basic.trnIdNo</structField>
+            </field>
+            <field name="basic.optBscEntTrdAcctTsfRec{=2}.trnPrmAmnt">
+                <structField>basic.optBscEntTrdAcctTsfRec{=2}.trnPrmAmnt</structField>
+            </field>
+            <field name="basic.optBscEntTrdAcctTsfRec{=2}.trnFeeAmnt">
+                <structField>basic.optBscEntTrdAcctTsfRec{=2}.trnFeeAmnt</structField>
+            </field>
+            <field name="basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNo">
+                <structField>basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNo</structField>
+            </field>
+            <field name="basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNoPnt">
+                <structField>basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNoPnt</structField>
+            </field>
+            <field name="basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnHistAdjInd">
+                <structField>basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnHistAdjInd</structField>
+            </field>
+            <field name="basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnAdjStsCod">
+                <structField>basic.optBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnAdjStsCod</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-RESPONSE" structName="optEntTrdAcctTsfResponseT">
+        <mappings fixmlClassName="TrdCaptRpt">
+            <arrayMappings>
+                <arrayMapping src="basic.optBscEntTrdAcctTsfRec" size="2">
+                    <targetObj name="message.value.RptSide">
+                        <map targetDataSize="numeric 5" targetDataType="String" src="trnIdSfxGrp.trnIdSfxNoPnt" target="RptID" type="simple"/>
+                        <map targetDataSize="numeric 5" targetDataType="String" src="trnIdSfxGrp.trnIdSfxNo" target="OrdID2" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="Integer" target="AcctTyp" type="switch-case">
+                            <switch expr="trnIdSfxGrp.trnAdjStsCod">
+                                <case value="A" targetValue="4"/>
+                                <case value="R" targetValue="2"/>
+                                <case value="N" targetValue="99"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="header.exchApplId" target="message.value.RtPrtys[RtPtyRl=21].RtPrtyID" type="simple"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 6" targetDataType="String" src="basic.trnIdNo" target="message.value.RptID" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetValue=" " src="basic.optBscEntTrdAcctTsfRec.trnIdSfxGrp.trnHistAdjInd" target="NA" type="constant"/>
+            <map targetDataSize="Amount" targetValue="000000000000000" src="basic.optBscEntTrdAcctTsfRec.trnFeeAmnt" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+            <map targetDataSize="numeric signed 12, 2" targetValue="000000000000" src="basic.optBscEntTrdAcctTsfRec.trnPrmAmnt" target="NA" type="constant"/>
+        </mappings>
+    </predicate>
+    <predicate mapType="STRUCT-BO" messageType="FUTURES-RESPONSE" structName="futEntTrdAcctTsfResponseT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.trnIdNo">
+                <structField>basic.trnIdNo</structField>
+            </field>
+            <field name="basic.futBscEntTrdAcctTsfRec{=2}.trnVmarAmnt">
+                <structField>basic.futBscEntTrdAcctTsfRec{=2}.trnVmarAmnt</structField>
+            </field>
+            <field name="basic.futBscEntTrdAcctTsfRec{=2}.trnFeeAmnt">
+                <structField>basic.futBscEntTrdAcctTsfRec{=2}.trnFeeAmnt</structField>
+            </field>
+            <field name="basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNo">
+                <structField>basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNo</structField>
+            </field>
+            <field name="basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNoPnt">
+                <structField>basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnIdSfxNoPnt</structField>
+            </field>
+            <field name="basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnHistAdjInd">
+                <structField>basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnHistAdjInd</structField>
+            </field>
+            <field name="basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnAdjStsCod">
+                <structField>basic.futBscEntTrdAcctTsfRec{=2}.trnIdSfxGrp.trnAdjStsCod</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="FUTURES-RESPONSE" structName="futEntTrdAcctTsfResponseT">
+        <mappings fixmlClassName="TrdCaptRpt">
+            <arrayMappings>
+                <arrayMapping src="basic.futBscEntTrdAcctTsfRec" size="2">
+                    <targetObj name="message.value.RptSide">
+                        <map targetDataSize="numeric 5" targetDataType="String" src="trnIdSfxGrp.trnIdSfxNo" target="OrdID2" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="Integer" target="AcctTyp" type="switch-case">
+                            <switch expr="trnIdSfxGrp.trnAdjStsCod">
+                                <case value="A" targetValue="4"/>
+                                <case value="R" targetValue="2"/>
+                                <case value="N" targetValue="99"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="numeric 5" targetDataType="String" src="trnIdSfxGrp.trnIdSfxNoPnt" target="RptID" type="simple"/>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="Amount" targetValue="000000000000000" src="basic.futBscEntTrdAcctTsfRec.trnFeeAmnt" target="NA" type="constant"/>
+            <map targetDataSize="Quantity" targetValue="000000000000000" src="basic.futBscEntTrdAcctTsfRec.trnVmarAmnt" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="header.exchApplId" target="message.value.RtPrtys[RtPtyRl=21].RtPrtyID" type="simple"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="FUT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 6" targetDataType="String" src="basic.trnIdNo" target="message.value.RptID" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetValue=" " src="basic.futBscEntTrdAcctTsfRec.trnIdSfxGrp.trnHistAdjInd" target="NA" type="constant"/>
+        </mappings>
+    </predicate>
+</configuration>

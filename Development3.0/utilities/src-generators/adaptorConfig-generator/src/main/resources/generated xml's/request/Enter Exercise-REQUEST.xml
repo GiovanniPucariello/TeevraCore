@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_ENTER_EXERCISE_RID" namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="FIXML-BO" messageType="OPTIONS-REQUEST" structName="optEntExerRequestT">
+        <mappings fixmlClassName="PosMntReq">
+            <selectors>
+                <selector dataType="Int" src="message.value.TxnTyp =1"/>
+                <selector dataType="Int" src="message.value.Actn =1" preOperator="AND"/>
+                <selector dataType="String" src="message.value.Instrmt.SecTyp=OPT" preOperator="AND"/>
+            </selectors>
+            <map targetDataSize="alphanumeric 3" validationType="m" src="message.value.Instrmt.Status" target="extension.trdrIdGrpAppr.partSubGrpCodAppr" type="simple"/>
+            <map targetDataSize="freetext 12" validationType="o" targetValue="            " target="extension.txtGrp.cust" type="constant"/>
+            <map targetDataSize="alphanumeric 7" validationType="m" targetValue="OPT" target="header.prodLine" type="constant"/>
+            <map targetDataSize="Quantity" validationType="m" src="message.value.Qty.Long" target="basic.exerQty" type="simple"/>
+            <map targetDataSize="numeric 2" validationType="m" src="message.value.Instrmt.MatDt[:Mth]" target="basic.optCntrIdGrp.cntrExpMthDat" type="simple"/>
+            <map targetDataSize="numeric 1" validationType="m" targetValue="0" target="basic.optCntrIdGrp.cntrVersNo" type="constant"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" target="basic.acctTypCodGrp.acctTypCod" type="switch-case">
+                <switch expr="message.value.Pty.R">
+                    <case value="30" targetValue="A"/>
+                    <case value="14" targetValue="G"/>
+                    <case value="66" targetValue="M"/>
+                    <case value="99" targetValue="P"/>
+                </switch>
+            </map>
+            <map targetDataSize="numeric 6" validationType="m" src="message.value.Instrmt.StrkPx" target="basic.optCntrIdGrp.cntrExerPrc" type="simple"/>
+            <map targetDataSize="alphanumeric 8" validationType="m" src="message.value.Instrmt.Rgstry" target="extension.password" type="simple"/>
+            <map targetDataSize="freetext 12" validationType="o" targetValue="            " target="extension.txtGrp.text" type="constant"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" src="message.value.CntraryInstrctnInd" target="extension.exerOtmWrnInd" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" src="message.value.Pty[R=4].ID" target="basic.membClgIdCod" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" src="message.value.Pty[R=1].ID " target="basic.membExchIdCod" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.MatDt[:Yr]" target="basic.optCntrIdGrp.cntrExpYrDat" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Pty[R=21].ID" target="header.exchApplId" type="simple"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" target="basic.optCntrIdGrp.cntrClasCod" type="switch-case">
+                <switch expr="message.value.Instrmt.Evnt.EventTyp">
+                    <case value="1" targetValue="P"/>
+                    <case value="2" targetValue="C"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 3" validationType="m" src="message.value.Instrmt.CrdRtg" target="extension.trdrIdGrpAppr.partNoAppr" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.CFI" target="basic.optCntrIdGrp.prodId" type="simple"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" target="extension.exerAllInd" type="switch-case">
+                <switch expr="message.value.Qty.Typ">
+                    <case value="TQ" targetValue="Y"/>
+                    <case value="TOT" targetValue="N"/>
+                </switch>
+            </map>
+            <map targetDataSize="freetext 12" validationType="o" targetValue="            " target="extension.txtGrp.userOrdrNum" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " target="header.membExchIdCodOboMs" type="constant"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" target="basic.acctTypCodGrp.acctTypNo" type="switch-case">
+                <switch expr="message.value.Pty.ID">
+                    <case value="ACCT_TYP_NO_ONE" targetValue="1"/>
+                    <case value="ACCT_TYP_NO_TWO" targetValue="2"/>
+                    <case value="ACCT_TYP_NO_MKT_AND_PROP" targetValue="P"/>
+                </switch>
+            </map>
+        </mappings>
+    </predicate>
+    <predicate mapType="BO-STRUCT" messageType="OPTIONS-REQUEST" structName="optEntExerRequestT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.membClgIdCod">
+                <structField>basic.membClgIdCod</structField>
+            </field>
+            <field name="basic.membExchIdCod">
+                <structField>basic.membExchIdCod</structField>
+            </field>
+            <field name="basic.exerQty">
+                <structField>basic.exerQty</structField>
+            </field>
+            <field name="basic.acctTypCodGrp.acctTypCod">
+                <structField>basic.acctTypCodGrp.acctTypCod</structField>
+            </field>
+            <field name="basic.acctTypCodGrp.acctTypNo">
+                <structField>basic.acctTypCodGrp.acctTypNo</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.prodId">
+                <structField>basic.optCntrIdGrp.prodId</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrClasCod">
+                <structField>basic.optCntrIdGrp.cntrClasCod</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrExpMthDat">
+                <structField>basic.optCntrIdGrp.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrExpYrDat">
+                <structField>basic.optCntrIdGrp.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrExerPrc">
+                <structField>basic.optCntrIdGrp.cntrExerPrc</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrVersNo">
+                <structField>basic.optCntrIdGrp.cntrVersNo</structField>
+            </field>
+            <field name="extension.exerAllInd">
+                <structField>extension.exerAllInd</structField>
+            </field>
+            <field name="extension.exerOtmWrnInd">
+                <structField>extension.exerOtmWrnInd</structField>
+            </field>
+            <field name="extension.password">
+                <structField>extension.password</structField>
+            </field>
+            <field name="extension.txtGrp.cust">
+                <structField>extension.txtGrp.cust</structField>
+            </field>
+            <field name="extension.txtGrp.userOrdrNum">
+                <structField>extension.txtGrp.userOrdrNum</structField>
+            </field>
+            <field name="extension.txtGrp.text">
+                <structField>extension.txtGrp.text</structField>
+            </field>
+            <field name="extension.trdrIdGrpAppr.partSubGrpCodAppr">
+                <structField>extension.trdrIdGrpAppr.partSubGrpCodAppr</structField>
+            </field>
+            <field name="extension.trdrIdGrpAppr.partNoAppr">
+                <structField>extension.trdrIdGrpAppr.partNoAppr</structField>
+            </field>
+        </binding>
+    </predicate>
+</configuration>

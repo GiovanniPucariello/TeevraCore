@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqCntrRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqCntrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqCntrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqCntrRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="trdUntNo" size="8"/>
+			<element type="char" name="cntrExpDat" size="8"/>
+			<element type="char" name="primExchIdCod" size="4"/>
+			<element type="char" name="cntrStsCod"/>
+			<element type="char" name="cntrAsynInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqCntrResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqCntrRecT" name="futBscInqCntrRec" size="219"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqCntrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqCntrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqCntrRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqCntrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqCntrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqCntrRecT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="trdUntNo" size="8"/>
+			<element type="char" name="cntrExpDat" size="8"/>
+			<element type="char" name="cntrGenNo"/>
+			<element type="char" name="primExchIdCod" size="4"/>
+			<element type="char" name="cntrStsCod"/>
+			<element type="char" name="cntrAsynInd"/>
+			<element type="char" name="lepoInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqCntrResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqCntrRecT" name="optBscInqCntrRec" size="171"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqCntrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqCntrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

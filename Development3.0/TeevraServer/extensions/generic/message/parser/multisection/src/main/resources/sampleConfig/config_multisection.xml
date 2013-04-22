@@ -1,0 +1,96 @@
+<Config>
+	<ConfigName>SampleConfig</ConfigName>
+	<IsHeaderPresent>Yes[change->true]</IsHeaderPresent>
+	<NoOfHeaderLines>2</NoOfHeaderLines>[Change -> HeaderLine]
+	[new]
+	<HeaderOffset>0</HeaderOffset>
+	<HeaderIdentifier></HeaderIdentifier>
+	<IsSectionHeaderPresent>Yes</IsSectionHeaderPresent>
+	<SectionHeaderIdentifier>XYZ</SectionHeaderIdentifier>
+	<SectionHeaderLine></SectionHeaderLine>
+	<SectionBodyLine></SectionBodyLine>
+	<SectionBodyIdentifier></SectionBodyIdentifier>
+	<Headers> [change->Remove this]
+		<Header>[Rename -> GenericHeader]
+			<delimiter></delimiter>
+			<HeaderFields>[Change -> Binding as in FL Parser and TD Parser]
+				<HeaderField>
+					<Name>FirstName</Name>
+					<Position>
+						<startindex>0</startindex>
+						<endindex>6</endindex>
+					</Position>
+				</HeaderField>
+				<HeaderField>
+					<Name>LastName</Name>
+					<Position>
+						<startindex>6</startindex>
+						<endindex>10</endindex>
+					</Position>
+				</HeaderField>
+			</HeaderFields>
+			[After change above section would be like]
+			<binding>
+				<field name="messageCode" start="1" end="4" />
+				<field name="clearingOrgId" start="5" end="9" />
+			</binding>
+		</Header>
+	</Headers>
+	<Sections>
+
+		<Section>
+			<delimiter></delimiter> [Change: move it inside section header and section details]
+			<SectionHeader>
+				<SectionHeaderFields>
+					<SectionHeaderField>
+						<Name>ABC</Name>
+						<Position>
+							<startindex>0</startindex>
+							<endindex>5</endindex>
+						</Position>
+					</SectionHeaderField>
+					<SectionHeaderField>
+						<Name>HEF</Name>
+						<Position>
+							<startindex>6</startindex>
+							<endindex>10</endindex>
+						</Position>
+					</SectionHeaderField>
+					<SectionHeaderField>
+						<Name>RTY</Name>
+						<Position>
+							<startindex>3</startindex>
+							<endindex>5</endindex>
+						</Position>
+					</SectionHeaderField>
+					<SectionHeaderField>
+						<Name>KIR</Name>
+						<Position>
+							<startindex>4</startindex>
+							<endindex>7</endindex>
+						</Position>
+					</SectionHeaderField>
+				</SectionHeaderFields>
+			</SectionHeader>
+			<SectionDetails> [Change to SectionBody]
+				<SectionFields>
+					<SectionField>
+						<Name>DEF</Name>
+						<Position>
+							<startindex>6</startindex>
+							<endindex>7</endindex>
+						</Position>
+					</SectionField>
+					<SectionField>
+						<Name>RTU</Name>
+						<Position>
+							<startindex>8</startindex>
+							<endindex>9</endindex>
+						</Position>
+					</SectionField>
+
+				</SectionFields>
+			</SectionDetails>
+		</Section>
+	</Sections>
+</Config>

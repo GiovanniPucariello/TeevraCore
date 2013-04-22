@@ -1,0 +1,78 @@
+/*
+ * The information in this document is subject to change without notice and 
+ * does not represent a commitment by Headstrong Corporation. The software 
+ * and/or databases described in this document are furnished under a license 
+ * agreement and may be used or copied only in accordance with the terms of 
+ * the agreement. 
+ * 
+ * Copyright © 2008 Headstrong Corporation
+ * All rights reserved.
+ * 
+ * $Id: TdFormatterServiceActivator.java
+ * $Revision: 
+ * $Author: ssoni
+ * $DateTime: Nov 21, 2008 
+ */
+
+package com.headstrong.fusion.services.message.formatter.td;
+
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.headstrong.fusion.commons.resolver.ServiceAliasManager;
+import com.headstrong.fusion.services.message.formatter.td.impl.TdFormatterServiceImpl;
+
+/**
+ * 
+ */
+public class TdFormatterServiceActivator implements BundleActivator {
+
+	private static final Logger logger = LoggerFactory
+			.getLogger(TdFormatterServiceActivator.class);
+	private static ServiceAliasManager aliasManager = ServiceAliasManager
+			.getInstance();
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
+	 */
+	public void start(BundleContext context) throws Exception {
+
+		TdFormatterService tdFormatter = new TdFormatterServiceImpl();
+		// Initialize the service.
+		tdFormatter.init();
+		Dictionary<String, String> props = new Hashtable<String, String>();
+		props.put(Constants.SERVICE_PID, TdFormatterService.class.getName());
+		props.put(Constants.SERVICE_DESCRIPTION,
+				"Fusion Tag-Delimited Formatter Implementation");
+		props.put(Constants.SERVICE_VENDOR, "Headstrong");
+		logger.info("Registering service :"
+				+ TdFormatterService.class.getName());
+
+		context.registerService(TdFormatterService.class.getName(),
+				tdFormatter, props);
+
+		/**
+		 * Register service alias.
+		 */
+		aliasManager.registerServiceAlias(TdFormatterService.class
+				.getSimpleName(), TdFormatterService.class.getName());
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
+	 */
+	public void stop(BundleContext context) throws Exception {
+		logger.info("Stopping service " + TdFormatterService.class.getName());
+	}
+
+}

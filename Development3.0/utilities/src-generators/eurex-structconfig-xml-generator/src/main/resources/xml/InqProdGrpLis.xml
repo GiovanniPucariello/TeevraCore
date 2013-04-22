@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdGrpLisRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="prodGrpUsgTyp"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdGrpLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdGrpLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdGrpLisRecT">
+		<sequence>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="prodGrpLngNam" size="40"/>
+			<element type="char" name="maxOrdrQty" size="13"/>
+			<element type="char" name="maxCalSprdQty" size="13"/>
+			<element type="char" name="maxWhsQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="prodGrpComplCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdGrpLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdGrpLisRecT" name="bscInqProdGrpLisRec" size="24"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdGrpLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdGrpLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

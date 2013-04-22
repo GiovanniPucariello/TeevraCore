@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definition>
+	<process id="process_2">
+		<routes>
+			<route threads="10" savePoint="false" breakPoint="false">
+				<service type="mediation" name="choice" id="choice">
+					<property name="choice" value="choice_config" />
+				</service>
+				<target>
+					<loadbalancer strategy="RoundRobin">
+						<target>
+							<service type="mediation" name="validator"
+								id="validator_1">
+								<property name="config"
+									value="validation_config" />
+							</service>
+							<service type="mediation" name="parser"
+								id="parser">
+								<property name="source"
+									value="database" />
+								<property name="url" value="some url" />
+							</service>
+						</target>
+					</loadbalancer>
+				</target>
+			</route>
+		</routes>
+	</process>
+</definition>

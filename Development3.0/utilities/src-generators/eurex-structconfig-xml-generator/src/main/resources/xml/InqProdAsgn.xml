@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdAsgnRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdAsgnRecT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="mktMkrLicInd"/>
+			<element type="prodAsgnGrpT" name="prodAsgnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdAsgnResponseT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdAsgnRecT" name="bscInqProdAsgnRec" size="60"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdAsgnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

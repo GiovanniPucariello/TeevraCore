@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelGivUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelGivUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelGivUpOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelGivUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelGivUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelGivUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelGivUpOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelGivUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

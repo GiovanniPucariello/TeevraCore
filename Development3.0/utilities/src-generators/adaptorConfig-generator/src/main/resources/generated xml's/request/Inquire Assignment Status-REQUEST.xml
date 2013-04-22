@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_INQUIRE_ASSIGNMENT_STATUS_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="FIXML-BO" messageType="OPTIONS-REQUEST" structName="optInqAsgnStatRequestT">
+        <mappings fixmlClassName="ReqForPoss">
+            <selectors>
+                <selector dataType="Int" src="message.value.ReqTyp=3"/>
+                <selector dataType="String" src="message.value.Instrmt.OptAt=null" preOperator="AND"/>
+                <selector dataType="String" src="message.value.Instrmt.SecTyp=OPT" preOperator="AND"/>
+            </selectors>
+            <map targetDataSize="binary 80" src="message.value.Instrmt.EncSecDesc" target="basic.keyDataCtrlBlk" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" src="message.value.Pty[R=1].ID " target="basic.membExchIdCod" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Pty[R=21].ID" target="header.exchApplId" type="simple"/>
+            <map targetDataSize="alphanumeric 7" validationType="m" targetValue="OPT" target="header.prodLine" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " target="header.membExchIdCodOboMs" type="constant"/>
+        </mappings>
+    </predicate>
+    <predicate mapType="BO-STRUCT" messageType="OPTIONS-REQUEST" structName="optInqAsgnStatRequestT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.membExchIdCod">
+                <structField>basic.membExchIdCod</structField>
+            </field>
+            <field name="basic.keyDataCtrlBlk">
+                <structField>basic.keyDataCtrlBlk</structField>
+            </field>
+        </binding>
+    </predicate>
+</configuration>

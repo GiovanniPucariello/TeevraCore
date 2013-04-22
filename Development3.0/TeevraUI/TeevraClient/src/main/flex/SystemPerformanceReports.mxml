@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" >
+    <mx:Script><![CDATA[    
+        // Defines the method that the application calls.
+            
+    ]]></mx:Script>
+    <mx:DataGrid width="100%" height="100%">
+    <mx:dataProvider>
+        <mx:Object componenetName="DB EndPoint" Description="XXXX" lastExecuted="Running" noOfRecord="180" noOfError="0" currentStatus="Stopped"/>
+        <mx:Object componenetName="MQ EndPoint" Description="XXXX" lastExecuted="Running" noOfRecord="190" noOfError="1" currentStatus="Running"/>
+    </mx:dataProvider>
+    
+    <mx:columns>
+        <mx:DataGridColumn dataField="componenetName"/>    
+        <mx:DataGridColumn dataField="Description"/>
+        <mx:DataGridColumn dataField="lastExecuted"/>
+        <mx:DataGridColumn dataField="noOfRecord"/>
+        <mx:DataGridColumn dataField="noOfError"/>
+        <mx:DataGridColumn dataField="currentStatus"/>
+	</mx:columns>
+  </mx:DataGrid>
+   
+</mx:Module>

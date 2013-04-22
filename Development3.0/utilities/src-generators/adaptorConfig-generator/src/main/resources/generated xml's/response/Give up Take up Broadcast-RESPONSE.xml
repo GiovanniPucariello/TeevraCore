@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_SUBSCRIBE_GIVE_UP_TAKE_UP" namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="CStructToFIXML"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-RESPONSE" structName="optSubGivUpTakUpPrivBcastT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.givUpTakUpInd">
+                <structField>basic.givUpTakUpInd</structField>
+            </field>
+            <field name="basic.membClgIdCodFrom">
+                <structField>basic.membClgIdCodFrom</structField>
+            </field>
+            <field name="basic.membExchIdCodFrom">
+                <structField>basic.membExchIdCodFrom</structField>
+            </field>
+            <field name="basic.membClgIdCodTo">
+                <structField>basic.membClgIdCodTo</structField>
+            </field>
+            <field name="basic.membExchIdCodTo">
+                <structField>basic.membExchIdCodTo</structField>
+            </field>
+            <field name="basic.trnDat">
+                <structField>basic.trnDat</structField>
+            </field>
+            <field name="basic.ordrNo">
+                <structField>basic.ordrNo</structField>
+            </field>
+            <field name="basic.trnIdNo">
+                <structField>basic.trnIdNo</structField>
+            </field>
+            <field name="basic.gutSts">
+                <structField>basic.gutSts</structField>
+            </field>
+            <field name="basic.gutStsTrnsCod">
+                <structField>basic.gutStsTrnsCod</structField>
+            </field>
+            <field name="basic.buyCod">
+                <structField>basic.buyCod</structField>
+            </field>
+            <field name="basic.lngQty">
+                <structField>basic.lngQty</structField>
+            </field>
+            <field name="basic.shtQty">
+                <structField>basic.shtQty</structField>
+            </field>
+            <field name="basic.opnClsCod">
+                <structField>basic.opnClsCod</structField>
+            </field>
+            <field name="basic.trdMtchPrc">
+                <structField>basic.trdMtchPrc</structField>
+            </field>
+            <field name="basic.prmAmnt">
+                <structField>basic.prmAmnt</structField>
+            </field>
+            <field name="basic.trnFeeAmnt">
+                <structField>basic.trnFeeAmnt</structField>
+            </field>
+            <field name="basic.dateLstUpdDat">
+                <structField>basic.dateLstUpdDat</structField>
+            </field>
+            <field name="basic.acctTypCodFromGrp.acctTypCodFrom">
+                <structField>basic.acctTypCodFromGrp.acctTypCodFrom</structField>
+            </field>
+            <field name="basic.acctTypCodFromGrp.acctTypNoFrom">
+                <structField>basic.acctTypCodFromGrp.acctTypNoFrom</structField>
+            </field>
+            <field name="basic.acctTypCodToGrp.acctTypCodTo">
+                <structField>basic.acctTypCodToGrp.acctTypCodTo</structField>
+            </field>
+            <field name="basic.acctTypCodToGrp.acctTypNoTo">
+                <structField>basic.acctTypCodToGrp.acctTypNoTo</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.prodId">
+                <structField>basic.optCntrIdGrp.prodId</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrClasCod">
+                <structField>basic.optCntrIdGrp.cntrClasCod</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrExpMthDat">
+                <structField>basic.optCntrIdGrp.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrExpYrDat">
+                <structField>basic.optCntrIdGrp.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrExerPrc">
+                <structField>basic.optCntrIdGrp.cntrExerPrc</structField>
+            </field>
+            <field name="basic.optCntrIdGrp.cntrVersNo">
+                <structField>basic.optCntrIdGrp.cntrVersNo</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnIdSfxNo">
+                <structField>basic.trnIdSfxGrp.trnIdSfxNo</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnIdSfxNoPnt">
+                <structField>basic.trnIdSfxGrp.trnIdSfxNoPnt</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnHistAdjInd">
+                <structField>basic.trnIdSfxGrp.trnHistAdjInd</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnAdjStsCod">
+                <structField>basic.trnIdSfxGrp.trnAdjStsCod</structField>
+            </field>
+            <field name="extension.ordrQty">
+                <structField>extension.ordrQty</structField>
+            </field>
+            <field name="extension.ordrExePrc">
+                <structField>extension.ordrExePrc</structField>
+            </field>
+            <field name="extension.trdTyp">
+                <structField>extension.trdTyp</structField>
+            </field>
+            <field name="extension.txtGrpFrom.custFrom">
+                <structField>extension.txtGrpFrom.custFrom</structField>
+            </field>
+            <field name="extension.txtGrpFrom.userOrdrNumFrom">
+                <structField>extension.txtGrpFrom.userOrdrNumFrom</structField>
+            </field>
+            <field name="extension.txtGrpFrom.textFrom">
+                <structField>extension.txtGrpFrom.textFrom</structField>
+            </field>
+            <field name="extension.txtGrpTo.custTo">
+                <structField>extension.txtGrpTo.custTo</structField>
+            </field>
+            <field name="extension.txtGrpTo.userOrdrNumTo">
+                <structField>extension.txtGrpTo.userOrdrNumTo</structField>
+            </field>
+            <field name="extension.txtGrpTo.textTo">
+                <structField>extension.txtGrpTo.textTo</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origExchIdCod">
+                <structField>extension.origGuTuTrnGrp.origExchIdCod</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origTrnIdNo">
+                <structField>extension.origGuTuTrnGrp.origTrnIdNo</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origOrdrNo">
+                <structField>extension.origGuTuTrnGrp.origOrdrNo</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origTrnDat">
+                <structField>extension.origGuTuTrnGrp.origTrnDat</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origTrnDatCet">
+                <structField>extension.origGuTuTrnGrp.origTrnDatCet</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origCntrId">
+                <structField>extension.origGuTuTrnGrp.origCntrId</structField>
+            </field>
+            <field name="extension.trdrIdGrp.partSubGrpCod">
+                <structField>extension.trdrIdGrp.partSubGrpCod</structField>
+            </field>
+            <field name="extension.trdrIdGrp.partNo">
+                <structField>extension.trdrIdGrp.partNo</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-RESPONSE" structName="optSubGivUpTakUpPrivBcastT">
+        <mappings fixmlClassName="AllocRpt">
+            <arrayMappings>
+                <arrayMapping src="basic.acctTypCodToGrp">
+                    <targetObj name="message.value.Alloc.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCodTo">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypNoTo">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+                <arrayMapping src="basic.acctTypCodFromGrp">
+                    <targetObj name="message.value.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypNoFrom">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCodFrom">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="alphanumeric 12" targetValue="            " src="extension.origGuTuTrnGrp.origOrdrNo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="Date" targetDataType="Date" src="basic.trnDat" target="message.value.BizDt" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpFrom.userOrdrNumFrom" target="NA" type="constant"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpTo.textTo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 30" targetDataType="String" src="extension.origGuTuTrnGrp.origCntrId" target="message.value.SesSub" type="simple"/>
+            <map targetDataSize="numeric 5" targetDataType="String" src="basic.trnIdSfxGrp.trnIdSfxNo" target="message.value.ID2" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="Date" src="basic.optCntrIdGrp.cntrExpYrDat" target="message.value.Instrmt.MatDt[:Yr]" type="simple"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membClgIdCodFrom" target="message.value.Pty[R=4].ID" type="simple"/>
+            <map targetDataSize="Timestamp" targetDataType="String" src="basic.dateLstUpdDat" target="message.value.Instrmt.Evnt.Txt" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="basic.gutStsTrnsCod" target="message.value.Txt" type="simple"/>
+            <map targetDataSize="Volume" targetDataType="Float" src="extension.ordrQty" target="message.value.OrdAlloc.Qty" type="simple"/>
+            <map targetDataSize="Volume" targetDataType="Float" src="basic.shtQty" target="message.value.Qty" type="simple"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membExchIdCodFrom" target="message.value.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membExchIdCodTo" target="message.value.Alloc.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="Price" targetDataType="Float" src="extension.ordrExePrc" target="message.value.AllExc.LastPx" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpFrom.textFrom" target="NA" type="constant"/>
+            <map targetDataSize="Amount" targetValue="000000000000000" src="basic.trnFeeAmnt" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="Int" target="message.value.RptTyp" type="switch-case">
+                <switch expr="basic.givUpTakUpInd">
+                    <case value="G" targetValue="8"/>
+                    <case value="T" targetValue="6"/>
+                </switch>
+            </map>
+            <map targetDataSize="numeric 1" targetDataType="String" targetValue="0" src="basic.optCntrIdGrp.cntrVersNo" target="message.value.Instrmt.OptAt" type="constant"/>
+            <map targetDataSize="numeric 5" targetDataType="String" src="basic.trnIdSfxGrp.trnIdSfxNoPnt" target="message.value.RefID" type="simple"/>
+            <map targetDataSize="numeric signed 12, 2" targetValue="000000000000" src="basic.prmAmnt" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="extension.origGuTuTrnGrp.origExchIdCod" target="message.value.LastMkt" type="simple"/>
+            <map targetDataSize="alphanumeric 6" targetDataType="String" src="basic.trnIdNo" target="message.value.RptID" type="simple"/>
+            <map targetDataSize="alphanumeric 3" targetValue="   " src="extension.trdrIdGrp.partSubGrpCod" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="Int" targetValue="0" src="basic.gutSts" target="message.value.Stat" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="basic.opnClsCod" target="message.value.PosEfct" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpFrom.custFrom" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 9" targetDataType="String" src="basic.ordrNo" target="message.value.OrdAlloc.OrdID" type="simple"/>
+            <map targetDataSize="numeric 2" targetDataType="Date" src="basic.optCntrIdGrp.cntrExpMthDat" target="message.value.Instrmt.MatDt[:Mth]" type="simple"/>
+            <map targetDataSize="Date" targetDataType="Date" src="extension.origGuTuTrnGrp.origTrnDat" target="message.value.OrignDt" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" target="message.value.Side" type="switch-case">
+                <switch expr="basic.buyCod">
+                    <case value="B" targetValue="1"/>
+                    <case value="S" targetValue="2"/>
+                </switch>
+            </map>
+            <map targetDataSize="numeric 6" targetDataType="Float" src="basic.optCntrIdGrp.cntrExerPrc" target="message.value.Instrmt.StrkPx" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="basic.trnIdSfxGrp.trnHistAdjInd" target="message.value.PrevlyRpted" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" target="message.value.Instrmt.Evnt.EventTyp" type="switch-case">
+                <switch expr="basic.optCntrIdGrp.cntrClasCod">
+                    <case value="P" targetValue="1"/>
+                    <case value="C" targetValue="2"/>
+                </switch>
+            </map>
+            <map targetDataSize="Price" targetDataType="Float" src="basic.trdMtchPrc" target="message.value.AvgPx" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpTo.userOrdrNumTo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 9" targetDataType="String" src="extension.origGuTuTrnGrp.origTrnIdNo" target="message.value.AllExc.ExecID" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" target="message.value.TransTyp" type="switch-case">
+                <switch expr="basic.trnIdSfxGrp.trnAdjStsCod">
+                    <case value="A" targetValue="1"/>
+                    <case value="R" targetValue="6"/>
+                    <case value="N" targetValue="99"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 3" targetValue="   " src="extension.trdrIdGrp.partNo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membClgIdCodTo" target="message.value.Pty[R=4].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String " src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="Volume" targetDataType="Float" src="basic.lngQty" target="message.value.AllExc.LastQty" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="basic.optCntrIdGrp.prodId" target="message.value.Instrmt.CFI" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpTo.custTo" target="NA" type="constant"/>
+            <map targetDataSize="Date" targetValue="00000000" src="extension.origGuTuTrnGrp.origTrnDatCet" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="Int" target="message.value.TrdTyp" type="switch-case">
+                <switch expr="extension.trdTyp">
+                    <case value="A" targetValue="2"/>
+                    <case value=" " targetValue="1"/>
+                    <case value="B" targetValue="3"/>
+                    <case value="E" targetValue="4"/>
+                    <case value="N" targetValue="5"/>
+                    <case value="O" targetValue="6"/>
+                    <case value="P" targetValue="7"/>
+                    <case value="V" targetValue="8"/>
+                    <case value="W" targetValue="9"/>
+                    <case value="M" targetValue="99"/>
+                </switch>
+            </map>
+        </mappings>
+    </predicate>
+    <predicate mapType="STRUCT-BO" messageType="FUTURES-RESPONSE" structName="futSubGivUpTakUpPrivBcastT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.givUpTakUpInd">
+                <structField>basic.givUpTakUpInd</structField>
+            </field>
+            <field name="basic.membClgIdCodFrom">
+                <structField>basic.membClgIdCodFrom</structField>
+            </field>
+            <field name="basic.membExchIdCodFrom">
+                <structField>basic.membExchIdCodFrom</structField>
+            </field>
+            <field name="basic.membClgIdCodTo">
+                <structField>basic.membClgIdCodTo</structField>
+            </field>
+            <field name="basic.membExchIdCodTo">
+                <structField>basic.membExchIdCodTo</structField>
+            </field>
+            <field name="basic.trnDat">
+                <structField>basic.trnDat</structField>
+            </field>
+            <field name="basic.ordrNo">
+                <structField>basic.ordrNo</structField>
+            </field>
+            <field name="basic.trnIdNo">
+                <structField>basic.trnIdNo</structField>
+            </field>
+            <field name="basic.gutSts">
+                <structField>basic.gutSts</structField>
+            </field>
+            <field name="basic.gutStsTrnsCod">
+                <structField>basic.gutStsTrnsCod</structField>
+            </field>
+            <field name="basic.buyCod">
+                <structField>basic.buyCod</structField>
+            </field>
+            <field name="basic.lngQty">
+                <structField>basic.lngQty</structField>
+            </field>
+            <field name="basic.shtQty">
+                <structField>basic.shtQty</structField>
+            </field>
+            <field name="basic.opnClsCod">
+                <structField>basic.opnClsCod</structField>
+            </field>
+            <field name="basic.trdMtchPrc">
+                <structField>basic.trdMtchPrc</structField>
+            </field>
+            <field name="basic.trnVmarAmnt">
+                <structField>basic.trnVmarAmnt</structField>
+            </field>
+            <field name="basic.trnFeeAmnt">
+                <structField>basic.trnFeeAmnt</structField>
+            </field>
+            <field name="basic.dateLstUpdDat">
+                <structField>basic.dateLstUpdDat</structField>
+            </field>
+            <field name="basic.acctTypCodFromGrp.acctTypCodFrom">
+                <structField>basic.acctTypCodFromGrp.acctTypCodFrom</structField>
+            </field>
+            <field name="basic.acctTypCodFromGrp.acctTypNoFrom">
+                <structField>basic.acctTypCodFromGrp.acctTypNoFrom</structField>
+            </field>
+            <field name="basic.acctTypCodToGrp.acctTypCodTo">
+                <structField>basic.acctTypCodToGrp.acctTypCodTo</structField>
+            </field>
+            <field name="basic.acctTypCodToGrp.acctTypNoTo">
+                <structField>basic.acctTypCodToGrp.acctTypNoTo</structField>
+            </field>
+            <field name="basic.futCntrIdGrp.prodId">
+                <structField>basic.futCntrIdGrp.prodId</structField>
+            </field>
+            <field name="basic.futCntrIdGrp.cntrExpMthDat">
+                <structField>basic.futCntrIdGrp.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.futCntrIdGrp.cntrExpYrDat">
+                <structField>basic.futCntrIdGrp.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnIdSfxNo">
+                <structField>basic.trnIdSfxGrp.trnIdSfxNo</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnIdSfxNoPnt">
+                <structField>basic.trnIdSfxGrp.trnIdSfxNoPnt</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnHistAdjInd">
+                <structField>basic.trnIdSfxGrp.trnHistAdjInd</structField>
+            </field>
+            <field name="basic.trnIdSfxGrp.trnAdjStsCod">
+                <structField>basic.trnIdSfxGrp.trnAdjStsCod</structField>
+            </field>
+            <field name="extension.ordrQty">
+                <structField>extension.ordrQty</structField>
+            </field>
+            <field name="extension.ordrExePrc">
+                <structField>extension.ordrExePrc</structField>
+            </field>
+            <field name="extension.trdTyp">
+                <structField>extension.trdTyp</structField>
+            </field>
+            <field name="extension.txtGrpFrom.custFrom">
+                <structField>extension.txtGrpFrom.custFrom</structField>
+            </field>
+            <field name="extension.txtGrpFrom.userOrdrNumFrom">
+                <structField>extension.txtGrpFrom.userOrdrNumFrom</structField>
+            </field>
+            <field name="extension.txtGrpFrom.textFrom">
+                <structField>extension.txtGrpFrom.textFrom</structField>
+            </field>
+            <field name="extension.txtGrpTo.custTo">
+                <structField>extension.txtGrpTo.custTo</structField>
+            </field>
+            <field name="extension.txtGrpTo.userOrdrNumTo">
+                <structField>extension.txtGrpTo.userOrdrNumTo</structField>
+            </field>
+            <field name="extension.txtGrpTo.textTo">
+                <structField>extension.txtGrpTo.textTo</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origExchIdCod">
+                <structField>extension.origGuTuTrnGrp.origExchIdCod</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origTrnIdNo">
+                <structField>extension.origGuTuTrnGrp.origTrnIdNo</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origOrdrNo">
+                <structField>extension.origGuTuTrnGrp.origOrdrNo</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origTrnDat">
+                <structField>extension.origGuTuTrnGrp.origTrnDat</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origTrnDatCet">
+                <structField>extension.origGuTuTrnGrp.origTrnDatCet</structField>
+            </field>
+            <field name="extension.origGuTuTrnGrp.origCntrId">
+                <structField>extension.origGuTuTrnGrp.origCntrId</structField>
+            </field>
+            <field name="extension.trdrIdGrp.partSubGrpCod">
+                <structField>extension.trdrIdGrp.partSubGrpCod</structField>
+            </field>
+            <field name="extension.trdrIdGrp.partNo">
+                <structField>extension.trdrIdGrp.partNo</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="FUTURES-RESPONSE" structName="futSubGivUpTakUpPrivBcastT">
+        <mappings fixmlClassName="AllocRpt">
+            <arrayMappings>
+                <arrayMapping src="basic.acctTypCodToGrp">
+                    <targetObj name="message.value.Alloc.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCodTo">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypNoTo">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+                <arrayMapping src="basic.acctTypCodFromGrp">
+                    <targetObj name="message.value.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypNoFrom">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCodFrom">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="alphanumeric 12" targetValue="            " src="extension.origGuTuTrnGrp.origOrdrNo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="FUT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="Date" targetDataType="Date" src="basic.trnDat" target="message.value.BizDt" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpFrom.userOrdrNumFrom" target="NA" type="constant"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpTo.textTo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 30" targetDataType="String" src="extension.origGuTuTrnGrp.origCntrId" target="message.value.SesSub" type="simple"/>
+            <map targetDataSize="numeric 5" targetDataType="String" src="basic.trnIdSfxGrp.trnIdSfxNo" target="message.value.ID2" type="simple"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membClgIdCodFrom" target="message.value.Pty[R=4].ID" type="simple"/>
+            <map targetDataSize="numeric 2" targetDataType="Date" src="basic.futCntrIdGrp.cntrExpMthDat" target="message.value.Instrmt.MatDt[:Mth]" type="simple"/>
+            <map targetDataSize="Timestamp" targetDataType="String" src="basic.dateLstUpdDat" target="message.value.Instrmt.Evnt.Txt" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="basic.gutStsTrnsCod" target="message.value.Txt" type="simple"/>
+            <map targetDataSize="Volume" targetDataType="Float" src="extension.ordrQty" target="message.value.OrdAlloc.Qty" type="simple"/>
+            <map targetDataSize="Volume" targetDataType="Float" src="basic.shtQty" target="message.value.Qty" type="simple"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membExchIdCodFrom" target="message.value.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membExchIdCodTo" target="message.value.Alloc.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="Price" targetDataType="Float" src="extension.ordrExePrc" target="message.value.AllExc.LastPx" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpFrom.textFrom" target="NA" type="constant"/>
+            <map targetDataSize="Amount" targetValue="000000000000000" src="basic.trnFeeAmnt" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="Int" target="message.value.RptTyp" type="switch-case">
+                <switch expr="basic.givUpTakUpInd">
+                    <case value="G" targetValue="8"/>
+                    <case value="T" targetValue="6"/>
+                </switch>
+            </map>
+            <map targetDataSize="numeric 5" targetDataType="String" src="basic.trnIdSfxGrp.trnIdSfxNoPnt" target="message.value.RefID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="extension.origGuTuTrnGrp.origExchIdCod" target="message.value.LastMkt" type="simple"/>
+            <map targetDataSize="alphanumeric 6" targetDataType="String" src="basic.trnIdNo" target="message.value.RptID" type="simple"/>
+            <map targetDataSize="alphanumeric 3" targetValue="   " src="extension.trdrIdGrp.partSubGrpCod" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="Int" target="message.value.Stat" type="switch-case">
+                <switch expr="basic.gutSts">
+                    <case value="P" targetValue="9"/>
+                    <case value=" " targetValue="8"/>
+                    <case value="G" targetValue="10"/>
+                    <case value="M" targetValue="11"/>
+                    <case value="N" targetValue="12"/>
+                    <case value="T" targetValue="13"/>
+                    <case value="U" targetValue="14"/>
+                    <case value="R" targetValue="15"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="basic.opnClsCod" target="message.value.PosEfct" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpFrom.custFrom" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 9" targetDataType="String" src="basic.ordrNo" target="message.value.OrdAlloc.OrdID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="basic.futCntrIdGrp.prodId" target="message.value.Instrmt.CFI" type="simple"/>
+            <map targetDataSize="Date" targetDataType="Date" src="extension.origGuTuTrnGrp.origTrnDat" target="message.value.OrignDt" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" target="message.value.Side" type="switch-case">
+                <switch expr="basic.buyCod">
+                    <case value="B" targetValue="1"/>
+                    <case value="S" targetValue="2"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="basic.trnIdSfxGrp.trnHistAdjInd" target="message.value.PrevlyRpted" type="simple"/>
+            <map targetDataSize="Quantity" targetValue="000000000000000" src="basic.trnVmarAmnt" target="NA" type="constant"/>
+            <map targetDataSize="Price" targetDataType="Float" src="basic.trdMtchPrc" target="message.value.AvgPx" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpTo.userOrdrNumTo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 9" targetDataType="String" src="extension.origGuTuTrnGrp.origTrnIdNo" target="message.value.AllExc.ExecID" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" target="message.value.TransTyp" type="switch-case">
+                <switch expr="basic.trnIdSfxGrp.trnAdjStsCod">
+                    <case value="A" targetValue="1"/>
+                    <case value="R" targetValue="6"/>
+                    <case value="N" targetValue="99"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 4" targetDataType="Date" src="basic.futCntrIdGrp.cntrExpYrDat" target="message.value.Instrmt.MatDt[:Yr]" type="simple"/>
+            <map targetDataSize="alphanumeric 3" targetValue="   " src="extension.trdrIdGrp.partNo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 5" targetDataType="String" src="basic.membClgIdCodTo" target="message.value.Alloc.Pty[R=4].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="Volume" targetDataType="Float" src="basic.lngQty" target="message.value.AllExc.LastQty" type="simple"/>
+            <map targetDataSize="freetext 12" targetValue="            " src="extension.txtGrpTo.custTo" target="NA" type="constant"/>
+            <map targetDataSize="Date" targetValue="00000000" src="extension.origGuTuTrnGrp.origTrnDatCet" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="Int" target="message.value.TrdTyp" type="switch-case">
+                <switch expr="extension.trdTyp">
+                    <case value="A" targetValue="2"/>
+                    <case value=" " targetValue="1"/>
+                    <case value="B" targetValue="3"/>
+                    <case value="E" targetValue="4"/>
+                    <case value="N" targetValue="5"/>
+                    <case value="O" targetValue="6"/>
+                    <case value="P" targetValue="7"/>
+                    <case value="V" targetValue="8"/>
+                    <case value="W" targetValue="9"/>
+                    <case value="M" targetValue="99"/>
+                </switch>
+            </map>
+        </mappings>
+    </predicate>
+</configuration>

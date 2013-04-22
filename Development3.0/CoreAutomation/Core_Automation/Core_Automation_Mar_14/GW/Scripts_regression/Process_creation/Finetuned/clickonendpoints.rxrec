@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="3a177992-8bf8-49e3-9996-06693f54db0c" embeddedrepository="false">
+  <name>
+    clickonendpoints
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="clickonendpoints" namespace="Finetuned"/>
+  <variables/>
+  <recorditems>
+    <mouseitem enabled="True" optional="False" duration="1062ms" action="Click" button="Left" movetime="100ms" sx="92" sy="171" loc="65;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="06d39f99-1d76-45b9-9eba-a26e063e76f4">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="11" rect="27,160,170,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Endpoints]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader434.FlexDrawing440.VBox441.HBox454.Panel455.compPalette._header0]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Endpoints']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="FinetunedRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="FinetunedRepository.rxrep">
+    <codegen classname="FinetunedRepository" namespace="Finetuned"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <references/>
+</recordtable>

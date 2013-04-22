@@ -1,0 +1,59 @@
+﻿<repository name="Project2Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718">
+  <codegen classname="Project2Repository" namespace="UI_TC"/>
+  <rootfolder name="Root" id="31097da2-1aff-446c-99c8-77ee9da049d7" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+    <appfolder name="WebDocumentHash" id="70c801e1-bffc-470e-aec4-3536a94d0325" searchtimeout="30000ms" capname="webdocument" isrooted="True" usecache="False">
+      <folder name="FormForm" id="4861f5d2-c6e6-40df-b8ba-1da3880d5625" searchtimeout="10000ms" capname="form" isrooted="True" usecache="False">
+        <item name="ButtonSubmit" id="28e27489-be02-442d-ba09-4e8e3389f3fa" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </item>
+        <item name="TextPasswordTextInput" id="b93f215b-2509-44bd-8db0-3a7393cc7aa9" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@id='passwordTextInput']]]>
+        </item>
+        <item name="TextUserIdTextInput" id="eb07ac26-e0d8-4efa-8239-d765b0ff0f5a" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form]]>
+        </basepath>
+      </folder>
+      <folder name="ContainerNavigationCanvas" id="3e309af7-4ea9-4eb9-bc25-79714294c443" searchtimeout="10000ms" capname="container" isrooted="True" usecache="False">
+        <item name="TextAdministration_" id="023b85f7-9ccf-4b85-8274-01c7f95724a1" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_admin']]]>
+        </item>
+        <item name="TextMonitoring_Console_" id="fc74c63d-c7a0-4185-993b-9e93bbda390a" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_exceptionHandling']]]>
+        </item>
+        <item name="TextProcess_Management_" id="5923148d-3c4c-4bf1-bfa6-f9c28b15aa08" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processManagement']]]>
+        </item>
+        <item name="TextProcess_Modeling_" id="ccdc83c3-e483-4759-b376-2210eeb503b2" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+  <variables/>
+</repository>

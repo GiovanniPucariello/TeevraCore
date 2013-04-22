@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>teevra.server.assembler</artifactId>
+	<packaging>pom</packaging>
+	<version>2.0.0</version>
+	<name>teevra server assembler</name>
+	<description>teevra server assembler</description>
+	<properties>
+		<platform.root>../platform</platform.root>
+		<extensions.root>../extensions</extensions.root>
+	</properties>
+	<!--  Issue management  -->
+	<!--
+		<issueManagement>
+		<system>Bugzilla</system>
+		<url>http://10.200.15.22/bugzilla/</url>
+		</issueManagement>
+	-->
+	<!--  Continuous Integration -->
+	<ciManagement>
+		<system>CruiseControl</system>
+		<url>http://10.200.41.13:8080/cruisecontrol/index</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<address>
+					arunkumar.krishnamoorthy@headstrong.com
+				</address>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+	<!--  Developer Information -->
+	<developers>
+		<developer>
+			<id>Arunkumar</id>
+			<name>Arunkumar Krishnamoorthy</name>
+			<email>arunkumar.krishnamoorthy@headstrong.com</email>
+			<roles>
+				<role>Team Incharge</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>som</id>
+			<name>Som Krishan Soni</name>
+			<email>som.soni@headstrong.com</email>
+			<roles>
+				<role>Lead - Platform Development</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>Raghu</id>
+			<name>Raghavendra Reddy</name>
+			<email>Raghavendra.Reddy@headstrong.com</email>
+			<roles>
+				<role>Lead - Clearing House Connectivity Development</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>Nikhil</id>
+			<name>Nikhil Kashyap</name>
+			<email>Nikhil.Kashyap@headstrong.com</email>
+			<roles>
+				<role>Business Analyst</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>Anurag</id>
+			<name>Anurag Singh</name>
+			<email>Singh.Anurag@headstrong.com</email>
+			<roles>
+				<role>Business Analyst</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>Asha</id>
+			<name>Ashalatha</name>
+			<email>Ashalatha@headstrong.com</email>
+			<roles>
+				<role>QA Engineer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>Arjun</id>
+			<name>Arjun H</name>
+			<email>arjun.h@headstrong.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>viswanath</id>
+			<name>P. Viswanath</name>
+			<email>viswanath.p@headstrong.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>aakash</id>
+			<name>Punatar Aakash</name>
+			<email>punatar.aakash@headstrong.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>pragash</id>
+			<name>Pragash R</name>
+			<email>pragash.r@headstrong.com</email>
+			<roles>
+				<role>Sr. QA Engineer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>sgottemukkala</id>
+			<name>Srujan Gottemukkala</name>
+			<email>srujan.gottemukkala@headstrong.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+		<developer>
+			<id>manish</id>
+			<name>Manish Tiwari</name>
+			<email>manish.tiwari@headstrong.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+			<developer>
+			<id>varun</id>
+			<name>Varun Garde</name>
+			<email>varun.garde@headstrong.com</email>
+			<roles>
+				<role>Sr. Developer</role>
+			</roles>
+			<organization>Headstrong</organization>
+			<organizationUrl>http://www.headstrong.com</organizationUrl>
+			<timezone>+5.5</timezone>
+		</developer>
+
+	</developers>
+	<modules>
+		<module>../platform/parent</module>
+		<module>../platform/commons</module>
+		<module>../platform/logger</module>
+		<module>../platform/launcher</module>
+		<module>../platform/admin</module>
+		<module>../platform/broadcast</module>
+		<module>../platform/statemachine</module>
+
+		<module>../platform/savepoint-persist</module>
+		<module>../platform/messageid-generator</module>
+		<module>../platform/remote</module>
+
+		<module>../platform/dbpool</module>
+		<module>../platform/eventlogger</module>
+
+		<module>../platform/core</module>
+		<module>../platform/businessobject</module>
+
+		<module>../extensions/generic/conditionalrules</module>
+
+		<module>../extensions/generic/connectors/db</module>
+		<module>../extensions/generic/connectors/ibm.mq</module>
+		<module>../extensions/generic/connectors/processLauncher</module>
+		
+		<module>../extensions/generic/connectors/fix</module>
+
+		<module>../extensions/generic/message/schema</module>
+
+		<module>../extensions/generic/config/reader</module>
+		<module>../extensions/generic/message/commons</module>
+		
+		<module>../extensions/generic/http</module>
+
+		<module>../extensions/generic/scripting</module>		
+			
+		<module>../extensions/generic/message/parser/xml</module>
+		<module>../extensions/generic/message/parser/db</module>
+		<module>../extensions/generic/message/parser/td</module>
+		<module>../extensions/generic/message/parser/fl</module>
+		<module>../extensions/generic/message/parser/multisection</module>
+		<module>../extensions/generic/message/formatter/binary</module>
+		<module>../extensions/generic/message/formatter/td</module>
+		<module>../extensions/generic/message/formatter/xml</module>
+		<module>../extensions/generic/message/formatter/db</module>
+		<module>../extensions/generic/message/formatter/template</module>
+		<module>../extensions/generic/message/formatter/fl</module>
+
+		<module>../extensions/generic/message/decrypter</module>
+		<module>../extensions/generic/message/encrypter</module>
+		
+		<module>
+			../extensions/generic/transformationengine/transformer
+		</module>
+		<module>
+			../extensions/generic/transformationengine/rulemanager
+		</module>
+		<module>
+			../extensions/generic/transformationengine/rules
+		</module>
+
+		<module>
+			../extensions/generic/validationengine/validator
+		</module>
+		<module>
+			../extensions/generic/validationengine/rulemanager
+		</module>
+		<module>../extensions/generic/validationengine/rules</module>
+
+		
+		<module>../extensions/generic/statemachine</module>		
+			
+		<module>../extensions/clearinghouse/generic/message/fixml</module>
+		<module>
+			../extensions/clearinghouse/generic/validator/fixml
+		</module>
+		<module>../extensions/generic/caching</module>
+
+		<module>../extensions/generic/tedi/transformationengine</module>
+		<module>../extensions/generic/tfp</module>
+        <module>../extensions/generic/connectors/qpid</module>
+
+	</modules>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+						 <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.5.2</version>
+        <configuration>
+            <check></check>
+            <formats>
+                <format>html</format>
+                <format>xml</format>
+            </formats>
+        </configuration>
+      </plugin>
+		</plugins>
+	</build>
+</project>

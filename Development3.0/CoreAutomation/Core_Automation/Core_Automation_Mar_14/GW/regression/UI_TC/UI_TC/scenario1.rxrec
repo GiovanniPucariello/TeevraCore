@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="ba0e493b-a4a9-47d1-bf3f-d2b9e3131954" embeddedrepository="false">
+  <name>
+    scenario1
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="scenario1" namespace="UI_TC"/>
+  <variables/>
+  <recorditems>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="startsce1">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <validationitem enabled="True" optional="False" duration="100ms" action="AttributeEqual">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="ad0229b3-697e-4761-8d8c-cecf1b8662b7">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="391,410,68,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[User Name]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[User Name]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@type='FormItemLabel']/text[@caption='User Name']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[User Name]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem enabled="True" optional="False" duration="100ms" action="AttributeEqual">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="cae63fa2-9954-4246-a2b6-95366407955b">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="391,439,68,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Password]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Password]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@type='FormItemLabel']/text[@caption='Password']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Password]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem enabled="True" optional="False" duration="100ms" action="AttributeEqual">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="347d93e9-e6f4-4135-a12f-143d37fd59b5">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="473,467,71,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Submit]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox139.VBox162.Panel143.authenticationForm.FormItem159.buttonHbox.Button141]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Submit]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem enabled="True" optional="False" duration="525ms" action="AttributeEqual">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="1826ea5f-5cb7-40a9-aa62-32ec1e798941">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="552,467,62,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Reset]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox139.VBox162.Panel143.authenticationForm.FormItem159.buttonHbox.Button142]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Reset']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Reset]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem enabled="True" optional="False" duration="1187ms" action="Click" button="Left" movetime="100ms" sx="531" sy="417" loc="58;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="058981d6-b30f-4eb2-a071-84cc728e64b3">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="473,409,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox139.VBox162.Panel143.authenticationForm.userIdFormItem.TextInput145]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[userIdTextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="userid">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="pwd">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="submit">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <userrecorditem enabled="True" optional="False" duration="100ms" methodname="pass_fail">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="end1">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+  </recorditems>
+  <repository name="UI_TCRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="UI_TCRepository.rxrep">
+    <codegen classname="UI_TCRepository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="VBNet">
+    <![CDATA[scenario1.UserCode.vb]]>
+  </usercodefile>
+  <references>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Core\3.0.1.12040__b798506b574ebc9a\Ranorex.Core.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.Flex\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.Flex.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.MozillaWeb\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.MozillaWeb.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.Msaa\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.Msaa.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.Office\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.Office.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.RawText\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.RawText.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.Web\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.Web.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.Win32\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.Win32.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.WinForms\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.WinForms.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\assembly\GAC_MSIL\Ranorex.Plugin.Wpf\3.0.1.12040__b798506b574ebc9a\Ranorex.Plugin.Wpf.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Data.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll
+    </reference>
+    <reference>
+      C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll
+    </reference>
+  </references>
+</recordtable>

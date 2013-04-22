@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="RanorexReport.xsl"?>
+<log title="Ranorex Test Report">
+<message time="2011/04/11 13:53:10.655" level="INFO" category="Replay">
+<![CDATA[Replay started with 1x speed.]]><br/>
+</message>
+<message time="2011/04/11 13:53:10.655" level="WARN" category="Replay">
+<![CDATA[Code Items are skipped during recording file playback.]]><br/>
+<![CDATA[The code item method: 'starttest' will only be called from the compiled recording code.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.265" level="INFO" category="Replay">
+<![CDATA[Mouse Left Click item 'WebDocumentIceFish1.TextAdministration_' at 38;7.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.593" level="INFO" category="Replay">
+<![CDATA[Mouse Left Click item 'WebDocumentIceFish.FlexObjectIceFish.MenuItemServer_Admin' at 61;10.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.843" level="INFO" category="Replay">
+<![CDATA[Validating AttributeEqual (Text='Server Id') on item 'WebDocumentIceFish.ContainerVBox.CellString9'.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.843" level="SUCCESS" category="Validation">
+<![CDATA[Attribute 'Text' of element for item 'WebDocumentIceFish.ContainerVBox.CellString9' does match the specified value.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.874" level="INFO" category="Replay">
+<![CDATA[Validating AttributeEqual (Text='Server Name') on item 'WebDocumentIceFish.ContainerVBox.CellString10'.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.874" level="SUCCESS" category="Validation">
+<![CDATA[Attribute 'Text' of element for item 'WebDocumentIceFish.ContainerVBox.CellString10' does match the specified value.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.937" level="INFO" category="Replay">
+<![CDATA[Validating AttributeEqual (Text='JMX URL') on item 'WebDocumentIceFish.ContainerVBox.CellString11'.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.937" level="SUCCESS" category="Validation">
+<![CDATA[Attribute 'Text' of element for item 'WebDocumentIceFish.ContainerVBox.CellString11' does match the specified value.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.984" level="INFO" category="Replay">
+<![CDATA[Validating AttributeEqual (Text='Registered Date') on item 'WebDocumentIceFish.ContainerVBox.CellString12'.]]><br/>
+</message>
+<message time="2011/04/11 13:53:11.984" level="SUCCESS" category="Validation">
+<![CDATA[Attribute 'Text' of element for item 'WebDocumentIceFish.ContainerVBox.CellString12' does match the specified value.]]><br/>
+</message>
+<message time="2011/04/11 13:53:22.124" level="ERROR" category="Replay">
+<![CDATA[Item 'WebDocumentIceFish1.Row0.CellString8' was not found within the specified timeout of 10s.]]><br/>
+</message>
+<message time="2011/04/11 13:53:22.155" level="INFO" category="Screenshot">
+<a href="Scenario54_20110411_135310.rxlog_1_rxlog.jpg"><img src="Scenario54_20110411_135310.rxlog_1_rxlog_thumb.jpg" alt="Screenshot"/></a>
+</message>
+<message time="2011/04/11 13:53:22.202" level="FAILURE" category="Replay">
+<![CDATA[Replay (item #8) could not be completed because Item 'WebDocumentIceFish1.Row0.CellString8' was not found within the specified timeout of 10s.]]><br/>
+</message>
+</log>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqStratOrdrBkDeptRequestT">
+		<sequence>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqStratOrdrBkDeptRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqStratOrdrBkDeptRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratOrdrBkDeptRecT">
+		<sequence>
+			<element type="bstOrdrGrpT" name="bstOrdrGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratOrdrBkDeptResponseT">
+		<sequence>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqStratOrdrBkDeptRecT" name="bscInqStratOrdrBkDeptRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqStratOrdrBkDeptResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqStratOrdrBkDeptResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

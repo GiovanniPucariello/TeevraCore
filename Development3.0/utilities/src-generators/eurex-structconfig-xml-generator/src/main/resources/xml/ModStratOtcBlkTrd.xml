@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscModStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="stratEquLegGrpT" name="stratEquLegGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extModStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="modStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModStratOtcBlkTrdRequestT" name="basic"/>
+			<element type="extModStratOtcBlkTrdRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModStratOtcBlkTrdResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="modStratOtcBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModStratOtcBlkTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

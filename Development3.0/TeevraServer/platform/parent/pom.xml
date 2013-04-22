@@ -1,0 +1,215 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>teevra.platform.parent</artifactId>
+	<packaging>pom</packaging>
+	<name>Teevra platform parent.</name>
+	<version>2.0.0</version>
+	<description>Teevra platform parent.</description>
+
+	<!--  Define common properties  -->
+	<properties>
+		<compiler.fork>false</compiler.fork>
+		<camel-version>2.9.0</camel-version>
+		<spring-version>3.1.0.RELEASE</spring-version>
+		<platform.version>3.0</platform.version>
+		<slf4j.version>1.6.1</slf4j.version>
+		
+				
+		<!--  versions of clearing house components -->
+		<eurex.version>2.1.0</eurex.version>
+		<euronext.version>2.1.0</euronext.version>
+		<liffe.version>2.1.0</liffe.version>
+        <lme.version>2.1.0</lme.version>
+
+		<!--  versions of clearing house specific components -->
+		<ms.ibm.mq.version>2.0.0 </ms.ibm.mq.version>
+		
+		<!--  versions of clearing house specific generic components -->
+		<processor.fixml.version>2.1.0</processor.fixml.version>
+		<validator.fixml.version>2.0.0</validator.fixml.version>
+
+		<!--  versions of generic formatters -->
+		<message.formatter.binary.version>2.0.0</message.formatter.binary.version>
+		<message.formatter.db.version>2.0.0</message.formatter.db.version>
+		<message.formatter.fl.version>2.0.0</message.formatter.fl.version>
+		<message.formatter.td.version>2.0.0</message.formatter.td.version>
+		<message.formatter.template.version>2.0.0</message.formatter.template.version>
+		<message.formatter.xml.version>2.0.0</message.formatter.xml.version>
+		
+		<!-- versions of generic parsers -->
+		<message.parser.db.version>2.0.0</message.parser.db.version>
+		<message.parser.fl.version>2.0.0</message.parser.fl.version>
+		<message.parser.multisection.version>2.1.0</message.parser.multisection.version>
+		<message.parser.td.version>2.0.0</message.parser.td.version>
+		<message.parser.xml.version>2.0.0</message.parser.xml.version>
+		
+		<!-- versions of generic components -->
+		<connectors.amqp.version>2.0.0</connectors.amqp.version>
+		<connectors.conditionaldb.version>2.1.0</connectors.conditionaldb.version>
+		<connectors.db.version>2.1.0</connectors.db.version>
+		<connectors.filesplitter.version>2.0.0</connectors.filesplitter.version>
+		<connectors.ibm.mq.version>2.1.0</connectors.ibm.mq.version>
+		<connectors.occ.secdef.version>2.0.0</connectors.occ.secdef.version>
+		<connectors.sNp.sdmdb.version>2.0.0</connectors.sNp.sdmdb.version>
+			
+		<!--  versions for generic services  -->
+		<conditionalrules.version>2.0.0</conditionalrules.version>
+		<config.reader.version>2.0.0</config.reader.version>
+		<message.commons.version>2.0.0</message.commons.version>
+		<message.schema.version>2.0.0</message.schema.version>
+		<scripting.version>2.0.0</scripting.version>
+		<statemachine.version>2.0.0</statemachine.version>
+		<tedi.version>2.0.0</tedi.version>
+		<tfp.version>2.0.0</tfp.version>
+		<transformationengine.version>2.0.0</transformationengine.version>
+		<validationengine.version>2.0.0</validationengine.version>
+		<caching.version>2.0.0</caching.version>
+		
+	</properties>
+	<!--  common properties  -->
+
+	<repositories>
+	    <repository>
+			<id>maven.repo.remote</id>
+			<name>
+				Maven-Plugins project
+			</name>
+			<url>
+				http://maven-plugins.sourceforge.net/repository
+			</url>
+		</repository>
+		<repository>
+			<id>fusion-lib</id>
+			<url>http://10.200.15.76:8080/repository/libs-releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<!--  springsource osgi bundle repository -->
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>
+				SpringSource Enterprise Bundle Repository - SpringSource
+				Bundle Releases
+			</name>
+			<url>
+				http://repository.springsource.com/maven/bundles/release
+			</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>
+				SpringSource Enterprise Bundle Repository - External
+				Bundle Releases
+			</name>
+			<url>
+				http://repository.springsource.com/maven/bundles/external
+			</url>
+		</repository>
+		<!--  end:springsource bundle repository  -->
+	</repositories>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+             <groupId>org.codehaus.mojo</groupId>
+             <artifactId>cobertura-maven-plugin</artifactId>
+			 <configuration>
+             <formats>
+              <format>html</format>
+             </formats>
+             </configuration>
+             <version>2.5.2</version>
+            </plugin>
+		</plugins>
+	</build>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<configuration>
+					<linkXref>true</linkXref>
+					<sourceEncoding>ISO-8859-1</sourceEncoding>
+					<targetJdk>1.6</targetJdk>
+				</configuration>
+			</plugin>
+			<!--  Code coverage plugin -->
+			<!-- 
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-clover2-plugin</artifactId>
+				<configuration>
+					<generateHistorical>true</generateHistorical>
+					<generateHtml>true</generateHtml>
+					<licenseLocation>
+						${clover.licenseLocation}
+					</licenseLocation>
+				</configuration>
+			</plugin>
+			 -->
+			 <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.5.2</version>
+        <configuration>
+            <check></check>
+            <formats>
+                <format>html</format>
+                <format>xml</format>
+            </formats>
+        </configuration>
+      </plugin>
+		</plugins>
+	</reporting>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
+		</dependency>	
+
+		<!--  Library Dependencies. These will be copied as OSGI bundles -->
+
+	</dependencies>
+</project>

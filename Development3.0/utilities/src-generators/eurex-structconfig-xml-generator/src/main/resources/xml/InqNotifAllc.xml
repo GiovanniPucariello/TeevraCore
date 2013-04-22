@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqNotifAllcRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="232"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqNotifAllcRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqNotifAllcRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqNotifAllcRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="notifQty" size="16"/>
+			<element type="char" name="allcQty" size="16"/>
+			<element type="char" name="faceAmnt" size="16"/>
+			<element type="char" name="invcAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqNotifAllcResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqNotifAllcRecT" name="futBscInqNotifAllcRec" size="17"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqNotifAllcRecT">
+		<sequence>
+			<element type="char" name="prodShtNam" size="30"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqNotifAllcResponseT">
+		<sequence>
+			<element type="futExtInqNotifAllcRecT" name="futExtInqNotifAllcRec" size="17"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqNotifAllcResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqNotifAllcResponseT" name="basic"/>
+			<element type="futExtInqNotifAllcResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

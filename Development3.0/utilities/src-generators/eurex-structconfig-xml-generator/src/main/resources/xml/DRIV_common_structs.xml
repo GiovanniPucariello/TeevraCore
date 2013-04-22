@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="acctTypCodFromGrpT">
+		<sequence>
+			<element type="char" name="acctTypCodFrom"/>
+			<element type="char" name="acctTypNoFrom"/>
+		</sequence>
+	</complexType>
+	<complexType name="acctTypCodGrpT">
+		<sequence>
+			<element type="char" name="acctTypCod"/>
+			<element type="char" name="acctTypNo"/>
+		</sequence>
+	</complexType>
+	<complexType name="acctTypCodToGrpT">
+		<sequence>
+			<element type="char" name="acctTypCodTo"/>
+			<element type="char" name="acctTypNoTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="acctVatParmRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="vatPcntBuy" size="4"/>
+			<element type="char" name="vatPcntSell" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="acctVatParmGrpT">
+		<sequence>
+			<element type="acctVatParmRecT" name="acctVatParmRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="blkAuctPotPrcGrpT">
+		<sequence>
+			<element type="char" name="bidExePrc" size="14"/>
+			<element type="char" name="bidExeQty" size="13"/>
+			<element type="char" name="askExePrc" size="14"/>
+			<element type="char" name="askExeQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="bnkCtctGrpT">
+		<sequence>
+			<element type="char" name="bnkCtctPsn" size="30"/>
+			<element type="char" name="bnkCtctPsnPhn" size="13"/>
+			<element type="char" name="bnkCtctPsnEMail" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntEbiTrdReqGrpT">
+		<sequence>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="ctpySubGrpCod" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="trdXQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntEbiTrdRespRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+			<element type="char" name="trnIdNo" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqEbiTrdRespRecT">
+		<sequence>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="ctpySubGrpCod" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="ebiTrdApprInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModEbiTrdReqGrpT">
+		<sequence>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="ctpySubGrpCod" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="ebiTrdApprInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModEbiTrdRespRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="ebiTrdApprInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscSeqNoT">
+		<sequence>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="char" name="trnSeqNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="bstOrdrGrpT">
+		<sequence>
+			<element type="char" name="bstBidPrc" size="14"/>
+			<element type="char" name="bstBidQty" size="16"/>
+			<element type="char" name="bstAskPrc" size="14"/>
+			<element type="char" name="bstAskQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="bstQuoOrdrGrpT">
+		<sequence>
+			<element type="char" name="bstOrdrBidPrc" size="14"/>
+			<element type="char" name="bstOrdrBidQty" size="16"/>
+			<element type="char" name="bstOrdrAskPrc" size="14"/>
+			<element type="char" name="bstOrdrAskQty" size="16"/>
+			<element type="char" name="bstQuoBidPrc" size="14"/>
+			<element type="char" name="bstQuoBidQty" size="16"/>
+			<element type="char" name="bstQuoAskPrc" size="14"/>
+			<element type="char" name="bstQuoAskQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="clgCtctGrpT">
+		<sequence>
+			<element type="char" name="clgCtctPsn" size="30"/>
+			<element type="char" name="clgCtctPsnPhn" size="13"/>
+			<element type="char" name="clgCtctPsnTlx" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="crsCurrHrctGrpT">
+		<sequence>
+			<element type="char" name="crsCurrHrctPcnt" size="3"/>
+			<element type="char" name="adjExchRatDbt" size="16"/>
+			<element type="char" name="adjExchRatCrdt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="cshLegEfpFinGrpT">
+		<sequence>
+			<element type="char" name="issTxt" size="30"/>
+			<element type="char" name="cpnRat" size="5"/>
+			<element type="char" name="matuDat" size="8"/>
+			<element type="char" name="cpnFreq" size="2"/>
+			<element type="char" name="currTypCod" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="cshLegEfsGrpT">
+		<sequence>
+			<element type="char" name="cpnFixRat" size="6"/>
+			<element type="char" name="cpnVarRef" size="12"/>
+			<element type="char" name="cpnVarOfs" size="7"/>
+			<element type="char" name="cpnFreq" size="2"/>
+			<element type="char" name="swapStrtDat" size="8"/>
+			<element type="char" name="swapEndDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="cshLimGrpT">
+		<sequence>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="cshLim" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="ctctTextGrpT">
+		<sequence>
+			<element type="char" name="ctctText" size="40"/>
+		</sequence>
+	</complexType>
+	<complexType name="dataHeaderT">
+		<sequence>
+			<element type="char" name="exchApplId" size="4"/>
+			<element type="char" name="prodLine" size="7"/>
+			<element type="char" name="membExchIdCodOboMs" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futCntrIdGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="trdrIdGrpT">
+		<sequence>
+			<element type="char" name="partSubGrpCod" size="3"/>
+			<element type="char" name="partNo" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="ebiTrdInqRespGrpT">
+		<sequence>
+			<element type="char" name="ebiTrdRefNo" size="6"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ebiBrokIdCod" size="5"/>
+			<element type="char" name="futPrc" size="14"/>
+			<element type="char" name="nomVal" size="9"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="ebiTrdReqGrpT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ebiBrokIdCod" size="5"/>
+			<element type="char" name="futPrc" size="14"/>
+			<element type="char" name="nomVal" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="extExchRatTrnRecT">
+		<sequence>
+			<element type="char" name="currTypCodFrom" size="3"/>
+			<element type="char" name="currTypCodTo" size="3"/>
+			<element type="char" name="convUntExpo"/>
+			<element type="char" name="exchRat" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="extSetlPrcTrnRecT">
+		<sequence>
+			<element type="char" name="setlPrcTrnTyp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="cntrGenNo"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+			<element type="char" name="setlPrcCod"/>
+			<element type="char" name="cntrSetlPrc" size="14"/>
+			<element type="char" name="undrClsPrc" size="14"/>
+			<element type="char" name="undrFinSetlPrc" size="14"/>
+			<element type="char" name="undrFinSetlInd"/>
+			<element type="char" name="mgnClsPrc" size="14"/>
+			<element type="char" name="cshValDat" size="8"/>
+			<element type="char" name="secuValDat" size="8"/>
+			<element type="char" name="prodDispDcml" size="2"/>
+			<element type="char" name="exerPrcDcml"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="flxCntrTrnIdClsGrpT">
+		<sequence>
+			<element type="char" name="flxCntrTrnIdNoCls" size="9"/>
+			<element type="char" name="trnIdSfxNoCls" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="flxCntrTrnIdGrpT">
+		<sequence>
+			<element type="char" name="flxCntrTrnIdNo" size="9"/>
+			<element type="char" name="trnIdSfxNo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="flxFutCntrIdGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpDat" size="8"/>
+			<element type="char" name="crtSetlTyp"/>
+		</sequence>
+	</complexType>
+	<complexType name="flxOptCntrIdGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpDat" size="8"/>
+			<element type="char" name="flxOptCntrExerPrc" size="9"/>
+			<element type="char" name="cntrVersNo"/>
+			<element type="char" name="exerStylTyp"/>
+			<element type="char" name="crtSetlTyp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDLegSeqNoT">
+		<sequence>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="char" name="prodSeqNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscSeqNoT">
+		<sequence>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="char" name="prodSeqNo" size="9"/>
+			<element type="char" name="cntrSeqNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futCntrId2GrpT">
+		<sequence>
+			<element type="char" name="cntrExpMthDat2" size="2"/>
+			<element type="char" name="cntrExpYrDat2" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="futCntrIdGrpFromT">
+		<sequence>
+			<element type="char" name="prodIdFrom" size="4"/>
+			<element type="char" name="cntrExpMthDatFrom" size="2"/>
+			<element type="char" name="cntrExpYrDatFrom" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="futCntrIdGrpToT">
+		<sequence>
+			<element type="char" name="prodIdTo" size="4"/>
+			<element type="char" name="cntrExpMthDatTo" size="2"/>
+			<element type="char" name="cntrExpYrDatTo" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="futCntrListGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrStsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="givUpCtctGrpT">
+		<sequence>
+			<element type="char" name="givUpCtctPsn" size="30"/>
+			<element type="char" name="givUpCtctPsnPhn" size="13"/>
+			<element type="char" name="givUpCtctPsnTlx" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="gutGrpT">
+		<sequence>
+			<element type="char" name="gutCtpy" size="5"/>
+			<element type="char" name="gutRefCust" size="12"/>
+			<element type="char" name="gutRefUserOrdrNum" size="12"/>
+			<element type="char" name="gutRefText" size="12"/>
+			<element type="char" name="gutSts"/>
+		</sequence>
+	</complexType>
+	<complexType name="occCntrIdGrpT">
+		<sequence>
+			<element type="char" name="occRootId" size="6"/>
+			<element type="char" name="occCfi" size="6"/>
+			<element type="char" name="occExpDat" size="8"/>
+			<element type="char" name="occExerPrc" size="15"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscSeqNoT">
+		<sequence>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="char" name="prodSeqNo" size="9"/>
+			<element type="char" name="cntrSeqNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optCntrIdGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+		</sequence>
+	</complexType>
+	<complexType name="optCntrListGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+			<element type="char" name="cntrStsCod"/>
+			<element type="char" name="lepoInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="origGuTuTrnGrpT">
+		<sequence>
+			<element type="char" name="origExchIdCod" size="4"/>
+			<element type="char" name="origTrnIdNo" size="9"/>
+			<element type="char" name="origOrdrNo" size="12"/>
+			<element type="char" name="origTrnDat" size="8"/>
+			<element type="char" name="origTrnDatCet" size="8"/>
+			<element type="char" name="origCntrId" size="30"/>
+		</sequence>
+	</complexType>
+	<complexType name="origTrnFiltGrpT">
+		<sequence>
+			<element type="char" name="origExchIdCod" size="4"/>
+			<element type="char" name="origTrnIdNo" size="9"/>
+			<element type="char" name="origOrdrNo" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="origTrnGrpT">
+		<sequence>
+			<element type="char" name="origExchIdCod" size="4"/>
+			<element type="char" name="origTrnIdNo" size="9"/>
+			<element type="char" name="origOrdrNo" size="12"/>
+			<element type="char" name="origTrnDat" size="8"/>
+			<element type="char" name="origTrnTim" size="8"/>
+			<element type="char" name="origTrnDatCet" size="8"/>
+			<element type="char" name="origTrnTimCet" size="8"/>
+			<element type="char" name="origCntrId" size="30"/>
+		</sequence>
+	</complexType>
+	<complexType name="pinGrpT">
+		<sequence>
+			<element type="char" name="pin" size="4"/>
+			<element type="char" name="pinProcMis"/>
+			<element type="char" name="pinProcTob"/>
+			<element type="char" name="pinProcOtc"/>
+		</sequence>
+	</complexType>
+	<complexType name="prcStepTblGrpT">
+		<sequence>
+			<element type="char" name="prcUppVald" size="14"/>
+			<element type="char" name="prcStep" size="14"/>
+		</sequence>
+	</complexType>
+	<complexType name="prodAsgnGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="maxOrdrQty" size="13"/>
+			<element type="char" name="maxCalSprdQty" size="13"/>
+			<element type="char" name="maxWhsQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="prodGrpIdGrpT">
+		<sequence>
+			<element type="char" name="prodGrpUsgTyp"/>
+			<element type="char" name="prodGrpNam" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="prodMargDataGrpT">
+		<sequence>
+			<element type="char" name="mgnClasCod" size="5"/>
+			<element type="char" name="histVol" size="5"/>
+			<element type="char" name="histVolCod"/>
+			<element type="char" name="mgnStylTyp"/>
+		</sequence>
+	</complexType>
+	<complexType name="prodSeqNoGrpT">
+		<sequence>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="char" name="prodSeqNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="prstGrpT">
+		<sequence>
+			<element type="char" name="prstTypeCod"/>
+			<element type="char" name="prstTrnCod" size="2"/>
+			<element type="char" name="prstState"/>
+		</sequence>
+	</complexType>
+	<complexType name="prvCrsCurrHrctGrpT">
+		<sequence>
+			<element type="char" name="prvCrsCurrHrctPcnt" size="3"/>
+			<element type="char" name="prvAdjExchRatDbt" size="16"/>
+			<element type="char" name="prvAdjExchRatCrdt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="pstAddGrpT">
+		<sequence>
+			<element type="char" name="addStr1" size="30"/>
+			<element type="char" name="addStr2" size="30"/>
+			<element type="char" name="addCty" size="20"/>
+			<element type="char" name="addPstCod" size="6"/>
+			<element type="char" name="addCtry" size="25"/>
+		</sequence>
+	</complexType>
+	<complexType name="rskLimStsGrpT">
+		<sequence>
+			<element type="char" name="timIntvlViolCnt"/>
+			<element type="char" name="wrkVolLimSts"/>
+			<element type="char" name="deltaLngLimSts"/>
+			<element type="char" name="deltaShtLimSts"/>
+			<element type="char" name="vegaLngLimSts"/>
+			<element type="char" name="vegaShtLimSts"/>
+		</sequence>
+	</complexType>
+	<complexType name="rskLimTimIntvlGrpT">
+		<sequence>
+			<element type="char" name="timIntvlSec" size="5"/>
+			<element type="char" name="noOfTxnLim" size="16"/>
+			<element type="char" name="timVolLimQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="rskLimWrkOrdrGrpT">
+		<sequence>
+			<element type="char" name="wrkVolLimQty" size="16"/>
+			<element type="char" name="deltaLngLimQty" size="16"/>
+			<element type="char" name="deltaShtLimQty" size="16"/>
+			<element type="char" name="vegaLngLimQty" size="16"/>
+			<element type="char" name="vegaShtLimQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="secuTypGrpT">
+		<sequence>
+			<element type="char" name="secuTypPfx"/>
+			<element type="char" name="secuTypSfx" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="sprdLnkRecT">
+		<sequence>
+			<element type="char" name="sprdTblStrtIdx" size="2"/>
+			<element type="char" name="sprdTblEndIdx" size="2"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="sprdTblGrpT">
+		<sequence>
+			<element type="char" name="sprdBidPrc" size="14"/>
+			<element type="char" name="sprdTicAmt" size="14"/>
+			<element type="char" name="sprdAbsPcnt"/>
+		</sequence>
+	</complexType>
+	<complexType name="sprdTblExpGrpT">
+		<sequence>
+			<element type="char" name="sprdTblNam" size="21"/>
+			<element type="char" name="sprdTimToExp" size="3"/>
+			<element type="sprdTblGrpT" name="sprdTblGrp" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="stratEquLegGrpT">
+		<sequence>
+			<element type="char" name="stratEquLegBuyCod"/>
+			<element type="char" name="stratEquLegIsin" size="12"/>
+			<element type="char" name="stratEquLegPrc" size="14"/>
+			<element type="char" name="stratEquLegVol" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="stratLegGrpT">
+		<sequence>
+			<element type="char" name="stratLegBuyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="stratLegUndrPrc" size="14"/>
+			<element type="char" name="stratLegVol" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="stratIdGrpT">
+		<sequence>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="stratLegGrpT" name="stratLegGrp" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="stratLegTrdNoGrpT">
+		<sequence>
+			<element type="char" name="trdNo" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="stratTrdNoGrpT">
+		<sequence>
+			<element type="stratLegTrdNoGrpT" name="stratLegTrdNoGrp" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="totTrdQtyHistRecT">
+		<sequence>
+			<element type="char" name="totTrdQtyHist" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="totTrdQtyHistGrpT">
+		<sequence>
+			<element type="totTrdQtyHistRecT" name="totTrdQtyHist" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="trdIdOboGrpT">
+		<sequence>
+			<element type="char" name="partSubGrpCodObo" size="3"/>
+			<element type="char" name="partNoObo" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="trdLegMtchGrpT">
+		<sequence>
+			<element type="char" name="trdNoLeg" size="6"/>
+			<element type="char" name="trdMtchQtyLeg" size="13"/>
+			<element type="char" name="trdMtchPrcLeg" size="14"/>
+		</sequence>
+	</complexType>
+	<complexType name="trdrIdGrpApprT">
+		<sequence>
+			<element type="char" name="partSubGrpCodAppr" size="3"/>
+			<element type="char" name="partNoAppr" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="trdrIdGrpFromT">
+		<sequence>
+			<element type="char" name="partSubGrpCodFrom" size="3"/>
+			<element type="char" name="partNoFrom" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="trnIdSfxGrpT">
+		<sequence>
+			<element type="char" name="trnIdSfxNo" size="5"/>
+			<element type="char" name="trnIdSfxNoPnt" size="5"/>
+			<element type="char" name="trnHistAdjInd"/>
+			<element type="char" name="trnAdjStsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="trnIdSfxKeyGrpT">
+		<sequence>
+			<element type="char" name="trnIdSfxNo" size="5"/>
+			<element type="char" name="trnHistAdjInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="txtGrpT">
+		<sequence>
+			<element type="char" name="cust" size="12"/>
+			<element type="char" name="userOrdrNum" size="12"/>
+			<element type="char" name="text" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="txtGrpFiltT">
+		<sequence>
+			<element type="char" name="custFilt" size="12"/>
+			<element type="char" name="userOrdrNumFilt" size="12"/>
+			<element type="char" name="textFilt" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="txtGrpFromT">
+		<sequence>
+			<element type="char" name="custFrom" size="12"/>
+			<element type="char" name="userOrdrNumFrom" size="12"/>
+			<element type="char" name="textFrom" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="txtGrpToT">
+		<sequence>
+			<element type="char" name="custTo" size="12"/>
+			<element type="char" name="userOrdrNumTo" size="12"/>
+			<element type="char" name="textTo" size="12"/>
+		</sequence>
+	</complexType>
+</struct>

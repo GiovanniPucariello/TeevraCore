@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscSubProdStatChgInfoPubBcastT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="prcsStsValCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="subProdStatChgInfoPubBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscSubProdStatChgInfoPubBcastT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscSubProdStatChgInfoSubjectT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelPosnMembTsfRequestT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="delPosnMembTsfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelPosnMembTsfRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscDelPosnMembTsfResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="delPosnMembTsfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelPosnMembTsfResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

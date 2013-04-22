@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqOwnDLegOrdrGrpT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnDLegOrdrRequestT">
+		<sequence>
+			<element type="futBscInqOwnDLegOrdrGrpT" name="futBscInqOwnDLegOrdrGrp" size="78"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqOwnDLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqOwnDLegOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnDLegOrdrRecT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrBkQty" size="13"/>
+			<element type="char" name="ordrExeQty" size="13"/>
+			<element type="char" name="ordrTotExeQty" size="13"/>
+			<element type="char" name="ordrTotQty" size="13"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrExePrc" size="14"/>
+			<element type="char" name="ordrExpDat" size="8"/>
+			<element type="char" name="ordrSts"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="ordrCreDat" size="8"/>
+			<element type="char" name="ordrCreTim" size="8"/>
+			<element type="char" name="ordrPrioDat" size="8"/>
+			<element type="char" name="ordrPrioTim" size="8"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+			<element type="char" name="membExchIdCodObo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnDLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqOwnDLegOrdrRecT" name="futBscInqOwnDLegOrdrRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqOwnDLegOrdrRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="trdIdOboGrpT" name="trdIdOboGrp"/>
+			<element type="char" name="ordrPersInd"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+			<element type="char" name="etsSesId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqOwnDLegOrdrResponseT">
+		<sequence>
+			<element type="futExtInqOwnDLegOrdrRecT" name="futExtInqOwnDLegOrdrRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqOwnDLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqOwnDLegOrdrResponseT" name="basic"/>
+			<element type="futExtInqOwnDLegOrdrResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,650 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="RanorexReport3.xsl"?><report>
+  <activity user="shasrivastava" host="BL1DJD1W4BS" osversion="Windows XP Service Pack 3 32bit" runtimeversion="2.0.50727.3615" rxversion="3.0.1.12040" language="en-US" screenresolution="1280x1024" timestamp="10/24/2011 6:07:23 PM" module="Recording4" result="Failed" duration="0ms" type="root" rid="22bf03a028d25bf0">
+    <detail>
+      Recording4
+    </detail>
+    <errmsg>
+      Failed to find item 'project4Repository.WebDocumentIceFish.ContainerPanel.CellString7' within the specified timeout of 50s.
+    </errmsg>
+    <item time="00:00.421" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish1.FlexObjectIceFish.TextUserIdTextInput' at 83;4.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container/text[@id='userIdTextInput']" fullname="project4Repository.WebDocumentIceFish1.FlexObjectIceFish.TextUserIdTextInput" id="5216218d0a03496ab3cd7533fadbd1fa" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="78" itemindex="0"/>
+    </item>
+    <item time="00:08.312" level="Info" category="Keyboard">
+      <message>
+        Key sequence 'teevra{Tab}'.
+      </message>
+      <metainfo itemindex="1" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="82"/>
+    </item>
+    <item time="00:09.296" level="Info" category="Keyboard">
+      <message>
+        Key sequence 'teevra{Tab}'.
+      </message>
+      <metainfo itemindex="2" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="86"/>
+    </item>
+    <item time="00:10.218" level="Info" category="Keyboard">
+      <message>
+        Key 'Enter' Press.
+      </message>
+      <metainfo itemindex="3" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="90"/>
+    </item>
+    <item time="00:12.140" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish1.FlexObjectIceFish.TextProcess_Modeling_' at 53;6.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']" fullname="project4Repository.WebDocumentIceFish1.FlexObjectIceFish.TextProcess_Modeling_" id="f8fd7e2bb4144393a6ac30025251ec2c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="94" itemindex="4"/>
+    </item>
+    <item time="00:14.281" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish1.FlexObjectIceFish.MenuItemView_Schema' at 54;4.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='View Schema']" fullname="project4Repository.WebDocumentIceFish1.FlexObjectIceFish.MenuItemView_Schema" id="6a23379ecb0343c387ad4d76d3cdd09b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="98" itemindex="5"/>
+    </item>
+    <item time="00:16.031" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Id') on item 'WebDocumentIceFish.ContainerVBox.CellString'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Id']/cell[@text='Id']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString" id="9058a69db0bf4aa581034b9e70330a5f" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="102" itemindex="6"/>
+    </item>
+    <item time="00:16.249" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Id']/cell[@text='Id']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString" id="9058a69db0bf4aa581034b9e70330a5f" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="103" itemindex="6"/>
+    </item>
+    <item time="00:16.406" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Id']/cell[@text='Id']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString" id="9058a69db0bf4aa581034b9e70330a5f" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="106" itemindex="7"/>
+    </item>
+    <item time="00:16.640" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Id']/cell[@text='Id']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString" id="9058a69db0bf4aa581034b9e70330a5f" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="107" itemindex="7"/>
+    </item>
+    <item time="00:16.796" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Name') on item 'WebDocumentIceFish.ContainerVBox.CellString1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Name']/cell[@text='Name']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString1" id="a2caa46af4fb4a92a40d87dd81a7f10a" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="110" itemindex="8"/>
+    </item>
+    <item time="00:17.031" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Name']/cell[@text='Name']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString1" id="a2caa46af4fb4a92a40d87dd81a7f10a" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="111" itemindex="8"/>
+    </item>
+    <item time="00:17.187" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Name']/cell[@text='Name']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString1" id="a2caa46af4fb4a92a40d87dd81a7f10a" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="114" itemindex="9"/>
+    </item>
+    <item time="00:17.343" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Name']/cell[@text='Name']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString1" id="a2caa46af4fb4a92a40d87dd81a7f10a" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="115" itemindex="9"/>
+    </item>
+    <item time="00:17.484" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Description') on item 'WebDocumentIceFish.ContainerVBox.CellString2'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Description']/cell[@text='Description']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString2" id="767745ca0f98435da7f9904dacf727c5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="118" itemindex="10"/>
+    </item>
+    <item time="00:17.609" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString2' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Description']/cell[@text='Description']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString2" id="767745ca0f98435da7f9904dacf727c5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="119" itemindex="10"/>
+    </item>
+    <item time="00:17.765" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString2'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Description']/cell[@text='Description']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString2" id="767745ca0f98435da7f9904dacf727c5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="122" itemindex="11"/>
+    </item>
+    <item time="00:17.921" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString2' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Description']/cell[@text='Description']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString2" id="767745ca0f98435da7f9904dacf727c5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="123" itemindex="11"/>
+    </item>
+    <item time="00:18.078" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Created By') on item 'WebDocumentIceFish.ContainerVBox.CellString3'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Created By']/cell[@text='Created By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString3" id="fdba8394846447799f3a5b7c6fb52e5b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="126" itemindex="12"/>
+    </item>
+    <item time="00:18.328" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString3' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Created By']/cell[@text='Created By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString3" id="fdba8394846447799f3a5b7c6fb52e5b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="127" itemindex="12"/>
+    </item>
+    <item time="00:18.484" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString3'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Created By']/cell[@text='Created By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString3" id="fdba8394846447799f3a5b7c6fb52e5b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="130" itemindex="13"/>
+    </item>
+    <item time="00:18.703" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString3' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Created By']/cell[@text='Created By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString3" id="fdba8394846447799f3a5b7c6fb52e5b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="131" itemindex="13"/>
+    </item>
+    <item time="00:18.859" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Date Created') on item 'WebDocumentIceFish.ContainerVBox.CellString4'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Date Created']/cell[@text='Date Created']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString4" id="596e16f6433e4b7b9916eec3db91d2de" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="134" itemindex="14"/>
+    </item>
+    <item time="00:19.124" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString4' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Date Created']/cell[@text='Date Created']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString4" id="596e16f6433e4b7b9916eec3db91d2de" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="135" itemindex="14"/>
+    </item>
+    <item time="00:19.265" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString4'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Date Created']/cell[@text='Date Created']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString4" id="596e16f6433e4b7b9916eec3db91d2de" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="138" itemindex="15"/>
+    </item>
+    <item time="00:19.390" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString4' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Date Created']/cell[@text='Date Created']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString4" id="596e16f6433e4b7b9916eec3db91d2de" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="139" itemindex="15"/>
+    </item>
+    <item time="00:19.546" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Modified By') on item 'WebDocumentIceFish.ContainerVBox.CellString5'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Modified By']/cell[@text='Modified By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString5" id="e82e7f7c049b4aa790761dcc80657f3e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="142" itemindex="16"/>
+    </item>
+    <item time="00:19.843" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString5' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Modified By']/cell[@text='Modified By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString5" id="e82e7f7c049b4aa790761dcc80657f3e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="143" itemindex="16"/>
+    </item>
+    <item time="00:19.984" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString5'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Modified By']/cell[@text='Modified By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString5" id="e82e7f7c049b4aa790761dcc80657f3e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="146" itemindex="17"/>
+    </item>
+    <item time="00:20.202" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString5' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Modified By']/cell[@text='Modified By']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString5" id="e82e7f7c049b4aa790761dcc80657f3e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="147" itemindex="17"/>
+    </item>
+    <item time="00:20.359" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Last Modified') on item 'WebDocumentIceFish.ContainerVBox.CellString6'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Modified']/cell[@text='Last Modified']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString6" id="ba1bbbd66b9349cebfd06d7676d2f94c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="150" itemindex="18"/>
+    </item>
+    <item time="00:20.484" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString6' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Modified']/cell[@text='Last Modified']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString6" id="ba1bbbd66b9349cebfd06d7676d2f94c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="151" itemindex="18"/>
+    </item>
+    <item time="00:20.624" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (DataItemType='String') on item 'WebDocumentIceFish.ContainerVBox.CellString6'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Modified']/cell[@text='Last Modified']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString6" id="ba1bbbd66b9349cebfd06d7676d2f94c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="154" itemindex="19"/>
+    </item>
+    <item time="00:20.765" level="Success" category="Validation">
+      <message>
+        Attribute 'DataItemType' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.CellString6' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Modified']/cell[@text='Last Modified']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.CellString6" id="ba1bbbd66b9349cebfd06d7676d2f94c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="155" itemindex="19"/>
+    </item>
+    <item time="00:20.906" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='New ') on item 'WebDocumentIceFish.ContainerVBox.ButtonNew_'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="158" itemindex="20"/>
+    </item>
+    <item time="00:21.156" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="159" itemindex="20"/>
+    </item>
+    <item time="00:21.312" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Id='newButton') on item 'WebDocumentIceFish.ContainerVBox.ButtonNew_'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="162" itemindex="21"/>
+    </item>
+    <item time="00:21.531" level="Success" category="Validation">
+      <message>
+        Attribute 'Id' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="163" itemindex="21"/>
+    </item>
+    <item time="00:21.687" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFish.ContainerVBox.ButtonNew_'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="166" itemindex="22"/>
+    </item>
+    <item time="00:21.812" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="167" itemindex="22"/>
+    </item>
+    <item time="00:21.968" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Delete') on item 'WebDocumentIceFish.ContainerVBox.ButtonDelete'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete" id="347a10f3d7ff4553b04855e1e936e0f5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="170" itemindex="23"/>
+    </item>
+    <item time="00:22.218" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete" id="347a10f3d7ff4553b04855e1e936e0f5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="171" itemindex="23"/>
+    </item>
+    <item time="00:22.374" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Id='deleteButton') on item 'WebDocumentIceFish.ContainerVBox.ButtonDelete'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete" id="347a10f3d7ff4553b04855e1e936e0f5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="174" itemindex="24"/>
+    </item>
+    <item time="00:22.562" level="Success" category="Validation">
+      <message>
+        Attribute 'Id' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete" id="347a10f3d7ff4553b04855e1e936e0f5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="175" itemindex="24"/>
+    </item>
+    <item time="00:22.718" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFish.ContainerVBox.ButtonDelete'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete" id="347a10f3d7ff4553b04855e1e936e0f5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="178" itemindex="25"/>
+    </item>
+    <item time="00:22.843" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonDelete" id="347a10f3d7ff4553b04855e1e936e0f5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="179" itemindex="25"/>
+    </item>
+    <item time="00:22.999" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.ContainerVBox.ButtonNew_' at 24;12.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox.ButtonNew_" id="92c4f44a73bb49bc850c3547ed10cc61" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="182" itemindex="26"/>
+    </item>
+    <item time="00:24.265" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='ID') on item 'WebDocumentIceFish.ContainerVBox1.TextID'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="186" itemindex="27"/>
+    </item>
+    <item time="00:24.577" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextID' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="187" itemindex="27"/>
+    </item>
+    <item time="00:24.718" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='ID') on item 'WebDocumentIceFish.ContainerVBox1.TextID'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="190" itemindex="28"/>
+    </item>
+    <item time="00:24.937" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextID' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="191" itemindex="28"/>
+    </item>
+    <item time="00:25.077" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Id='schemaId') on item 'WebDocumentIceFish.ContainerVBox1.TextID'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="194" itemindex="29"/>
+    </item>
+    <item time="00:25.202" level="Success" category="Validation">
+      <message>
+        Attribute 'Id' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextID' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="195" itemindex="29"/>
+    </item>
+    <item time="00:25.359" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Label') on item 'WebDocumentIceFish.ContainerVBox1.TextID'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="198" itemindex="30"/>
+    </item>
+    <item time="00:25.484" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextID' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaId']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextID" id="dbc87d3aa1bc46ae850165be4f5ebda8" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="199" itemindex="30"/>
+    </item>
+    <item time="00:25.640" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='Description') on item 'WebDocumentIceFish.ContainerVBox1.TextDescription'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="202" itemindex="31"/>
+    </item>
+    <item time="00:25.765" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="203" itemindex="31"/>
+    </item>
+    <item time="00:25.921" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Description') on item 'WebDocumentIceFish.ContainerVBox1.TextDescription'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="206" itemindex="32"/>
+    </item>
+    <item time="00:26.249" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="207" itemindex="32"/>
+    </item>
+    <item time="00:26.390" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Id='desc') on item 'WebDocumentIceFish.ContainerVBox1.TextDescription'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="210" itemindex="33"/>
+    </item>
+    <item time="00:26.515" level="Success" category="Validation">
+      <message>
+        Attribute 'Id' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="211" itemindex="33"/>
+    </item>
+    <item time="00:26.656" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Label') on item 'WebDocumentIceFish.ContainerVBox1.TextDescription'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="214" itemindex="34"/>
+    </item>
+    <item time="00:26.921" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='desc']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextDescription" id="24429b3b16c64193af3a1d2593827d0d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="215" itemindex="34"/>
+    </item>
+    <item time="00:27.062" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='') on item 'WebDocumentIceFish.ContainerVBox1.TextUITextField'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaDescText']/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField" id="59dd081566b24017a996f1da3f1549cf" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="218" itemindex="35"/>
+    </item>
+    <item time="00:27.187" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaDescText']/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField" id="59dd081566b24017a996f1da3f1549cf" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="219" itemindex="35"/>
+    </item>
+    <item time="00:27.327" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='UITextField') on item 'WebDocumentIceFish.ContainerVBox1.TextUITextField'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaDescText']/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField" id="59dd081566b24017a996f1da3f1549cf" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="222" itemindex="36"/>
+    </item>
+    <item time="00:27.609" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/text[@id='schemaDescText']/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField" id="59dd081566b24017a996f1da3f1549cf" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="223" itemindex="36"/>
+    </item>
+    <item time="00:27.749" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Save') on item 'WebDocumentIceFish.ContainerVBox1.ButtonSave'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Save']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave" id="3ee96d4e52994a98a610ea79a3808173" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="226" itemindex="37"/>
+    </item>
+    <item time="00:27.968" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Save']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave" id="3ee96d4e52994a98a610ea79a3808173" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="227" itemindex="37"/>
+    </item>
+    <item time="00:28.124" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFish.ContainerVBox1.ButtonSave'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Save']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave" id="3ee96d4e52994a98a610ea79a3808173" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="230" itemindex="38"/>
+    </item>
+    <item time="00:28.374" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Save']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave" id="3ee96d4e52994a98a610ea79a3808173" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="231" itemindex="38"/>
+    </item>
+    <item time="00:28.515" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Delete') on item 'WebDocumentIceFish.ContainerVBox1.ButtonDelete1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteSchemaButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1" id="3cc8e1f6922c4c048b7360e882153d4b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="234" itemindex="39"/>
+    </item>
+    <item time="00:28.656" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteSchemaButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1" id="3cc8e1f6922c4c048b7360e882153d4b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="235" itemindex="39"/>
+    </item>
+    <item time="00:28.796" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Id='deleteSchemaButton') on item 'WebDocumentIceFish.ContainerVBox1.ButtonDelete1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteSchemaButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1" id="3cc8e1f6922c4c048b7360e882153d4b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="238" itemindex="40"/>
+    </item>
+    <item time="00:28.984" level="Success" category="Validation">
+      <message>
+        Attribute 'Id' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteSchemaButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1" id="3cc8e1f6922c4c048b7360e882153d4b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="239" itemindex="40"/>
+    </item>
+    <item time="00:29.124" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFish.ContainerVBox1.ButtonDelete1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteSchemaButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1" id="3cc8e1f6922c4c048b7360e882153d4b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="242" itemindex="41"/>
+    </item>
+    <item time="00:29.249" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteSchemaButton']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonDelete1" id="3cc8e1f6922c4c048b7360e882153d4b" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="243" itemindex="41"/>
+    </item>
+    <item time="00:29.406" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Cancel') on item 'WebDocumentIceFish.ContainerVBox1.ButtonCancel'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Cancel']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonCancel" id="538f7fdfd9ce4e0a9b672aacaf6c6ee5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="246" itemindex="42"/>
+    </item>
+    <item time="00:29.671" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonCancel' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Cancel']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonCancel" id="538f7fdfd9ce4e0a9b672aacaf6c6ee5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="247" itemindex="42"/>
+    </item>
+    <item time="00:29.812" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFish.ContainerVBox1.ButtonCancel'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Cancel']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonCancel" id="538f7fdfd9ce4e0a9b672aacaf6c6ee5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="250" itemindex="43"/>
+    </item>
+    <item time="00:29.937" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonCancel' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Cancel']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonCancel" id="538f7fdfd9ce4e0a9b672aacaf6c6ee5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="251" itemindex="43"/>
+    </item>
+    <item time="00:30.093" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='') on item 'WebDocumentIceFish.ContainerVBox1.TextUITextField1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/text/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField1" id="a7bb814411d6495da65ea8955a264014" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="254" itemindex="44"/>
+    </item>
+    <item time="00:30.327" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/text/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField1" id="a7bb814411d6495da65ea8955a264014" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="255" itemindex="44"/>
+    </item>
+    <item time="00:30.468" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='UITextField') on item 'WebDocumentIceFish.ContainerVBox1.TextUITextField1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/text/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField1" id="a7bb814411d6495da65ea8955a264014" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="258" itemindex="45"/>
+    </item>
+    <item time="00:30.734" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/text/text[@caption='']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextUITextField1" id="a7bb814411d6495da65ea8955a264014" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="259" itemindex="45"/>
+    </item>
+    <item time="00:30.874" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='XML Schema') on item 'WebDocumentIceFish.ContainerVBox1.TextXML_Schema'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/element[@type='UIComponent']/text[@caption='XML Schema']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema" id="ddc0cb7544624f1ebb564a88cbcbe531" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="262" itemindex="46"/>
+    </item>
+    <item time="00:31.046" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/element[@type='UIComponent']/text[@caption='XML Schema']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema" id="ddc0cb7544624f1ebb564a88cbcbe531" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="263" itemindex="46"/>
+    </item>
+    <item time="00:31.202" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='XML Schema') on item 'WebDocumentIceFish.ContainerVBox1.TextXML_Schema'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/element[@type='UIComponent']/text[@caption='XML Schema']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema" id="ddc0cb7544624f1ebb564a88cbcbe531" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="266" itemindex="47"/>
+    </item>
+    <item time="00:31.421" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/element[@type='UIComponent']/text[@caption='XML Schema']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema" id="ddc0cb7544624f1ebb564a88cbcbe531" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="267" itemindex="47"/>
+    </item>
+    <item time="00:31.577" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='UITextField') on item 'WebDocumentIceFish.ContainerVBox1.TextXML_Schema'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/element[@type='UIComponent']/text[@caption='XML Schema']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema" id="ddc0cb7544624f1ebb564a88cbcbe531" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="270" itemindex="48"/>
+    </item>
+    <item time="00:31.718" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/text/element[@type='UIComponent']/text[@caption='XML Schema']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.TextXML_Schema" id="ddc0cb7544624f1ebb564a88cbcbe531" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="271" itemindex="48"/>
+    </item>
+    <item time="00:31.859" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.ContainerVBox1.ButtonSave' at Center.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Save']" fullname="project4Repository.WebDocumentIceFish.ContainerVBox1.ButtonSave" id="3ee96d4e52994a98a610ea79a3808173" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="274" itemindex="49"/>
+    </item>
+    <item time="00:33.312" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='Schema could not be saved') on item 'WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='UIComponent']/text[@caption='Schema could not be saved']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save" id="4ed8a6835e9c43c2bb62020c7d4d157e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="278" itemindex="50"/>
+    </item>
+    <item time="00:33.671" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='UIComponent']/text[@caption='Schema could not be saved']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save" id="4ed8a6835e9c43c2bb62020c7d4d157e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="279" itemindex="50"/>
+    </item>
+    <item time="00:33.812" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Schema could not be saved') on item 'WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='UIComponent']/text[@caption='Schema could not be saved']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save" id="4ed8a6835e9c43c2bb62020c7d4d157e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="282" itemindex="51"/>
+    </item>
+    <item time="00:33.968" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='UIComponent']/text[@caption='Schema could not be saved']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.TextSchema_could_not_be_save" id="4ed8a6835e9c43c2bb62020c7d4d157e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="283" itemindex="51"/>
+    </item>
+    <item time="00:34.124" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='OK') on item 'WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='AlertForm']/button[@text='OK']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK" id="6cec4cbe691b4375a6d0c33f267f1f03" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="286" itemindex="52"/>
+    </item>
+    <item time="00:34.249" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='AlertForm']/button[@text='OK']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK" id="6cec4cbe691b4375a6d0c33f267f1f03" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="287" itemindex="52"/>
+    </item>
+    <item time="00:34.406" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='AlertForm']/button[@text='OK']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK" id="6cec4cbe691b4375a6d0c33f267f1f03" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="290" itemindex="53"/>
+    </item>
+    <item time="00:34.765" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='AlertForm']/button[@text='OK']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK" id="6cec4cbe691b4375a6d0c33f267f1f03" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="291" itemindex="53"/>
+    </item>
+    <item time="00:36.765" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK' at Center.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container[@caption='Schema could not be saved']/element[@type='AlertForm']/button[@text='OK']" fullname="project4Repository.WebDocumentIceFish.ContainerSchema_could_not_be_save.ButtonOK" id="6cec4cbe691b4375a6d0c33f267f1f03" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="294" itemindex="54"/>
+    </item>
+    <item time="00:38.624" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.ContainerPanel.TextProcess_Modeling_' at 38;5.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']" fullname="project4Repository.WebDocumentIceFish.ContainerPanel.TextProcess_Modeling_" id="176fe0cd06f64c4e9660b6b991ed0897" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="298" itemindex="55"/>
+    </item>
+    <item time="00:41.687" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.MenuItemView_Schema' at 98;11.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='View Schema']" fullname="project4Repository.WebDocumentIceFish.MenuItemView_Schema" id="7c6aaf803ec2483caabb9a187503ca89" timeout="40000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="302" itemindex="56"/>
+    </item>
+    <item time="00:56.843" level="Info" category="Mouse" errimg="Recording420111024_180721_0e03e477_trace.jpg" errthumb="Recording420111024_180721_0e03e477_trace_thumb.jpg">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.ContainerPanel.ColumnName' at 109;297.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Name']" fullname="project4Repository.WebDocumentIceFish.ContainerPanel.ColumnName" id="945c8dcdb6694be09a6195db15f3d11e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="306" itemindex="57"/>
+    </item>
+    <item time="01:01.562" level="Info" category="Mouse" errimg="Recording420111024_180721_015c8c00_trace.jpg" errthumb="Recording420111024_180721_015c8c00_trace_thumb.jpg">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFish.ContainerPanel.CellString7' at 108;5.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index~'^.*']/cell[@text='test1']" fullname="project4Repository.WebDocumentIceFish.ContainerPanel.CellString7" id="15d4ed4a2cd9486abc46f4616447711f" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="310" itemindex="58"/>
+    </item>
+    <item time="01:51.671" level="Error" category="Module" errimg="Recording420111024_180721_ad3b9881_trace.jpg" errthumb="Recording420111024_180721_ad3b9881_trace_thumb.jpg">
+      <message>
+        Failed to find item 'project4Repository.WebDocumentIceFish.ContainerPanel.CellString7' within the specified timeout of 50s. No element found for path 'dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index~'^.*']/cell[@text='test1']' within 50s.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index~'^.*']/cell[@text='test1']" fullname="project4Repository.WebDocumentIceFish.ContainerPanel.CellString7" id="15d4ed4a2cd9486abc46f4616447711f" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb" codeline="311" tracekeepalive="" stacktrace="   at Ranorex.Core.Repository.RepoItemInfo.Find[T](Boolean findSingle, Boolean throwException)
+   at Ranorex.Core.Repository.RepoItemInfo.CreateAdapter[T](Boolean throwException)
+   at UI_TC.UI_TC.project4RepositoryFolders.ContainerPanelFolder.get_CellString7() in D:\ICEFISH\regression\UI_TC\UI_TC\project4Repository.vb:line 904
+   at UI_TC.UI_TC.Recording4.Run() in D:\ICEFISH\regression\UI_TC\UI_TC\Recording4.vb:line 311
+   at Ranorex.Core.Testing.TestSuiteModule.RunInternal(DataContext parentDataContext)" itemindex="58"/>
+    </item>
+  </activity>
+</report>

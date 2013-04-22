@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqSpcEquCollRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="csdId" size="6"/>
+			<element type="char" name="csdPldgAcctNo" size="12"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqSpcEquCollRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqSpcEquCollRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqSpcEquCollRecT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="spcEquCollQty" size="16"/>
+			<element type="char" name="avlBulkCollQty" size="16"/>
+			<element type="char" name="usedSecQty" size="16"/>
+			<element type="char" name="secEvalPrc" size="14"/>
+			<element type="char" name="evalPrcDispDcml" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="csdId" size="6"/>
+			<element type="char" name="csdPldgAcctNo" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqSpcEquCollResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqSpcEquCollRecT" name="bscInqSpcEquCollRec" size="25"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqSpcEquCollResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqSpcEquCollResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

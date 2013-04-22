@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdGrpAsgnRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdGrpAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdGrpAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdGrpAsgnRecT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="prodGrpStsCod"/>
+			<element type="char" name="maxOrdrQty" size="13"/>
+			<element type="char" name="maxCalSprdQty" size="13"/>
+			<element type="char" name="maxWhsQty" size="13"/>
+			<element type="char" name="maxQtyChgAlwdInd"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdGrpAsgnResponseT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membClgIdCodNxt" size="5"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdGrpAsgnRecT" name="bscInqProdGrpAsgnRec" size="40"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdGrpAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdGrpAsgnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

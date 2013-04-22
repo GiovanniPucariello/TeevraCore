@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" creationComplete="initApp();" height="100%" width="100%">
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import com.headstrong.teevra.client.model.StateMachineCache;
+			import com.headstrong.teevra.client.view.entity.StateMachineVO;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+			import com.headstrong.teevra.client.util.UIModules;
+			import mx.collections.ArrayCollection;
+			
+		[Bindable]		
+ 		private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+ 		private var loadedState:StateMachineVO;
+ 		private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+ 		
+ 		
+ 		public function initApp():void
+ 		{
+ 			loadedState = modelLocator.loadedStateMachine; 			
+ 			if (loadedState != null)
+ 			{
+ 				modelLocator.screenName = "Process Modeling > View StateMachine > Edit State Machine";
+ 				stateId.text = loadedState.stateMachineId.toString();
+ 				stateName.text = loadedState.stateMachineName;
+ 				stateDescription.text = loadedState.stateMachineDesc;
+ 				stateMachineStatus.text=loadedState.stateMachineStatus;
+ 			}
+ 			else
+ 			{
+				modelLocator.screenName = "Process Modeling > View StateMachine > New State Machine";
+				stateId.text="";
+				stateName.text="";
+				stateDescription.text="";
+				stateMachineStatus.text="NEW";
+ 			}
+ 		}
+ 		public function getStateMachineVO():StateMachineVO
+ 		{
+        	var stateMachineVO:StateMachineVO = loadedState;
+        	if(stateMachineVO == null)
+        	{
+        		stateMachineVO = new StateMachineVO();
+        	}
+        	stateMachineVO.stateMachineName = stateName.text;
+        	stateMachineVO.stateMachineDesc = stateDescription.text;
+        	return stateMachineVO;
+        }
+ 		
+		]]>
+	</mx:Script>	
+	<mx:HBox width="100%" height="100%">
+    	<mx:VBox width="50%">
+	    	<mx:Form width="100%">
+		    	<mx:FormItem label="@Resource(key='formText.NewStateMachine.stateID', bundle='TeevraUI')" width="127" fontWeight="bold">
+		    		<mx:Label width="100%" id="stateId" enabled="true" fontWeight="normal"/>
+		        </mx:FormItem>
+				<mx:FormItem label="@Resource(key='formText.NewProcess.stateMachineStatus', bundle='TeevraUI')" width="345" fontWeight="bold">
+	         	   <mx:Label width="100%" id="stateMachineStatus"  fontWeight="bold" />
+	        	</mx:FormItem>
+	    	</mx:Form>
+    	</mx:VBox>
+    	<mx:VBox width="50%">
+	    	<mx:Form width="100%">
+				<mx:FormItem label="@Resource(key='formText.NewStateMachine.stateName', bundle='TeevraUI')" width="345" fontWeight="bold" >
+          	  		<mx:TextInput width="100%" id="stateName" fontWeight="normal"/>
+      	  		</mx:FormItem>
+      	  		<mx:FormItem label="@Resource(key='formText.NewStateMachine.stateDesc', bundle='TeevraUI')" width="345" fontWeight="bold">
+          	  		<mx:TextArea width="100%" maxChars="@Resource(key='maxFieldSize.stateMachineDescText.size', bundle='TeevraUI')" id="stateDescription" fontWeight="normal"/>
+          		</mx:FormItem>
+        	</mx:Form>
+    	</mx:VBox>
+    </mx:HBox>
+</mx:Module>

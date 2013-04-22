@@ -1,0 +1,2132 @@
+
+package  com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0;
+
+import javax.annotation.Generated;
+
+import com.headstrong.fusion.bo.java.BeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AdjustedPositionReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AdvSideEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AdvTransTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AdvertisementMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AffectedOrdGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AggregatedBookEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AggressorIndicatorEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocAckGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocInstrnRptSideGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocPositionEffectEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocRptRptSideGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocationInstructionAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocationInstructionAlertMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocationInstructionMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocationReportAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AllocationReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AltPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplIDReportGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplIDRequestAckGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplIDRequestGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplicationMessageReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplicationMessageRequestAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplicationMessageRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ApplicationSequenceControlBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AssignmentMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AssignmentReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AttrbGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BaseHeaderTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BaseTradingRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BatchHeaderTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BatchTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BenchmarkCurveNameEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidCompReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidCompRspGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidDescReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidRequestTransTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidResponseMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BidTradeTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.BusinessMessageRejectMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CancellationRightsEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ClrInstGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollInqQualGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollateralAssignmentMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollateralInquiryAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollateralInquiryMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollateralReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollateralRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CollateralResponseMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CommissionDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CompIDReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CompIDStatGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ComplexEventDatesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ComplexEventTimesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ComplexEventsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ConfirmationAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ConfirmationMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ConfirmationRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ContAmtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ContextPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ContextPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ContraGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ContraryIntentionReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CorporateActionEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CpctyConfGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CrossOrderCancelReplaceRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CrossOrderCancelRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CustOrderHandlingInstEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.CutOffTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DKReasonEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DealingCapacityEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeEventsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeInstrumentAttributeBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeInstrumentBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeInstrumentPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeInstrumentPartySubIDsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativePriceQuoteMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativePriceUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSecurityAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSecurityDefinitionBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSecurityListMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSecurityListRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSecurityListUpdateReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSecurityXMLBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSettlMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeSymbolSfxEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeTimeUnitEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DerivativeValuationMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DeskOrderHandlingInstEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DeskTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DiscretionInstructionsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DisplayInstructionBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DlvyInstGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DlvyInstTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DontKnowTradeDKMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.DueToRelatedEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.EmailMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.EnumDocBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ErrorFieldsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ErrorMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.EvntGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExDestinationIDSourceEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExchangeForPhysicalEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExecAllocGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExecCollGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExecInstRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExecPriceTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExecutionAcknowledgementMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExecutionReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExerciseMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ExpirationQtyBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.FIXMLBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.FieldBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.FillsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.FinancingDetailsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ForexReqEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.FundRenewWaivEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.HopTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.IOIMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.IOINaturalFlagEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.IOIQltyIndEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.IOIQualGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.IOIQualifierEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.IOITransTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InViewOfCommonEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtLegExecGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtLegGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtLegIOIGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtLegSecListGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtMDReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrmtStrkPxGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrumentBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrumentExtensionBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrumentLegBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrumentPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.InstrumentPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LastFragmentEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LastRptRequestedEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegBenchmarkCurveDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegBenchmarkCurveNameEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegOrdGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegPositionEffectEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegPreAllocGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegPriceUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegQuotGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegQuotStatGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegSecAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegStipulationTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegStipulationsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegSymbolSfxEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegTimeUnitEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LegalConfirmEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LinesOfTextGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListCancelRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListExecuteMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListOrdGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListStatusMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListStrikePriceMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ListUpdateActionEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LocateReqdEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.LotTypeRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MDFullGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MDImplicitDeleteEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MDIncGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MDReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MDRjctGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDataFeedTypesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDataIncrementalRefreshMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDataRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDataRequestRejectMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDataSnapshotFullRefreshMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDefinitionMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDefinitionRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketDefinitionUpdateReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketSegmentGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MarketUpdateActionEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MassQuoteAcknowledgementMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MassQuoteMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MatchRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MaturityRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MessageHeaderTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MiscFeesGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MsgTypeGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.MultilegOrderCancelReplaceMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NestedInstrumentAttributeBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NestedParties2BlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NestedParties3BlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NestedParties4BlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NestedPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NetworkCounterpartySystemStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NetworkCounterpartySystemStatusResponseMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NewOrderCrossMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NewOrderListMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NewOrderMultilegMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NewOrderSingleMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NewsMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NewsRefGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NotAffectedOrdersGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NotifyBrokerOfCreditEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NstdPtys2SubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NstdPtys3SubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NstdPtys4SubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.NstdPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ObjectFactoryBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OddLotEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrdAllocGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrdListStatGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrdTypeRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderCancelRejectMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderCancelReplaceRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderCancelRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderCapacityEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderMassActionReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderMassActionRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderMassCancelReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderMassCancelRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderMassStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderQtyDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.OrderStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyAltIDsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyDetailBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyDetailsListReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyDetailsListRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyListGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyListResponseTypeGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PartyRelationshipsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PegInstructionsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PosAmtTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PosMntRptSideGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PosTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PosUndInstrmtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PositionAmountDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PositionEffectEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PositionMaintenanceReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PositionMaintenanceRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PositionQtyBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PositionReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PossDupFlagEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PossResendEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PreAllocGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PreAllocMlegGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PreviouslyReportedEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PriceLimitsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PriceQuoteMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PriceUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.PublishTrdIndicatorEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotCxlEntriesGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotEntryAckGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotEntryGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotQualGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotReqLegsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotReqRjctGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotSetAckGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuotSetGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteCancelMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteQualifierEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteRequestRejectMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteResponseMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteStatusReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.QuoteStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RFQReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RFQRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RateSourceBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ReferenceBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RegistStatusEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RegistrationInstructionsMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RegistrationInstructionsResponseMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelSymDerivSecGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelSymDerivSecUpdGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedAltPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedContextPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedContextPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedPartyAltIDsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedPartyDetailBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedPartyGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelatedPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelationshipRiskInstrumentScopeBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelationshipRiskLimitsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelationshipRiskSecAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RelationshipRiskWarningLevelsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ReportToExchEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RequestForPositionsAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RequestForPositionsMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RequestedPartyRoleGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RestructuringTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RgstDistInstGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RgstDtlsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RiskInstrumentScopeBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RiskLimitsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RiskSecAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RiskWarningLevelsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RootPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RootSubPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.RoutingGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecListGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecLstUpdRelSymGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecLstUpdRelSymsLegGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecSizesGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecTypesGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecondaryPriceLimitsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityDefinitionMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityDefinitionRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityDefinitionUpdateReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityListMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityListRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityListUpdateReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityStatusMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityTradingRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityTypeRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityTypesMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityUpdateActionEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SecurityXMLBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SeniorityEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlCurrFxRateCalcEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlDetailsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlInstGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlInstTransTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlInstructionsDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlObligTransTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlObligationInstructionsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlSessIDEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlementInstructionRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlementInstructionsMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SettlementObligationReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SideCrossOrdCxlGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SideCrossOrdModGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SideTrdRegTSBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SolicitedFlagEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SpreadOrBenchmarkCurveDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StatsIndGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StipulationTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StipulationsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StrategyParametersGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StreamAssignmentReportACKMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StreamAssignmentReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StreamAssignmentRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StrikeRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StrmAsgnReqGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StrmAsgnReqInstrmtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StrmAsgnRptGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.StrmAsgnRptInstrmtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.SymbolSfxEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TargetPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TickRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TimeInForceRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TimeUnitEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradSesUpdateActionEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradeCapLegUnderlyingsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradeCaptureReportAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradeCaptureReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradeCaptureReportRequestAckMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradeCaptureReportRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradeReportOrderDetailBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradedFlatSwitchEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionListMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionListRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionListUpdateReportMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionRulesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionRulesGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionStatusMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TradingSessionStatusRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdAllocGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdCapDtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdCapRptAckSideGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdCapRptSideGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdCollGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdInstrmtLegGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdRegTimestampsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdRepIndicatorsGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdSessLstGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TrdgSesGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TriggerPriceDirectionEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.TriggeringInstructionBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UndInstrmtCollGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UndInstrmtGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UndSecAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingAmountBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingCashTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingFXRateCalcEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingInstrumentBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingLegInstrumentBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingLegSecurityAltIDGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingPriceUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingRestructuringTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingSeniorityEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingStipTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingStipulationsBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingSymbolSfxEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingTimeUnitEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnderlyingUnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UndlyInstrumentPartiesBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UndlyInstrumentPtysSubGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnitOfMeasureEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UnsolicitedIndicatorEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UserNotificationMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UserRequestMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UserResponseMessageTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.UsernameGrpBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.ValuationMethodEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.VenueTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.WorkingIndicatorEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.XrefBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.YieldDataBlockTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.YieldTypeEnumTBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.JAXBElementBeanAccessor;
+import com.headstrong.fusion.bo.java.generated.teevra_fixml_1_0.AbstractMessageTBeanAccessor;
+
+import com.headstrong.teevra_fixml_1_0.AdjustedPositionReportMessageT;
+import com.headstrong.teevra_fixml_1_0.AdvSideEnumT;
+import com.headstrong.teevra_fixml_1_0.AdvTransTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.AdvertisementMessageT;
+import com.headstrong.teevra_fixml_1_0.AffectedOrdGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.AggregatedBookEnumT;
+import com.headstrong.teevra_fixml_1_0.AggressorIndicatorEnumT;
+import com.headstrong.teevra_fixml_1_0.AllocAckGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.AllocGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.AllocInstrnRptSideGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.AllocPositionEffectEnumT;
+import com.headstrong.teevra_fixml_1_0.AllocRptRptSideGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.AllocationInstructionAckMessageT;
+import com.headstrong.teevra_fixml_1_0.AllocationInstructionAlertMessageT;
+import com.headstrong.teevra_fixml_1_0.AllocationInstructionMessageT;
+import com.headstrong.teevra_fixml_1_0.AllocationReportAckMessageT;
+import com.headstrong.teevra_fixml_1_0.AllocationReportMessageT;
+import com.headstrong.teevra_fixml_1_0.AltPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ApplIDReportGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ApplIDRequestAckGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ApplIDRequestGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ApplicationMessageReportMessageT;
+import com.headstrong.teevra_fixml_1_0.ApplicationMessageRequestAckMessageT;
+import com.headstrong.teevra_fixml_1_0.ApplicationMessageRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.ApplicationSequenceControlBlockT;
+import com.headstrong.teevra_fixml_1_0.AssignmentMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.AssignmentReportMessageT;
+import com.headstrong.teevra_fixml_1_0.AttrbGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.BaseHeaderT;
+import com.headstrong.teevra_fixml_1_0.BaseTradingRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.BatchHeaderT;
+import com.headstrong.teevra_fixml_1_0.BatchT;
+import com.headstrong.teevra_fixml_1_0.BenchmarkCurveNameEnumT;
+import com.headstrong.teevra_fixml_1_0.BidCompReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.BidCompRspGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.BidDescReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.BidRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.BidRequestTransTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.BidResponseMessageT;
+import com.headstrong.teevra_fixml_1_0.BidTradeTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.BusinessMessageRejectMessageT;
+import com.headstrong.teevra_fixml_1_0.CancellationRightsEnumT;
+import com.headstrong.teevra_fixml_1_0.ClrInstGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.CollInqQualGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.CollateralAssignmentMessageT;
+import com.headstrong.teevra_fixml_1_0.CollateralInquiryAckMessageT;
+import com.headstrong.teevra_fixml_1_0.CollateralInquiryMessageT;
+import com.headstrong.teevra_fixml_1_0.CollateralReportMessageT;
+import com.headstrong.teevra_fixml_1_0.CollateralRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.CollateralResponseMessageT;
+import com.headstrong.teevra_fixml_1_0.CommissionDataBlockT;
+import com.headstrong.teevra_fixml_1_0.CompIDReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.CompIDStatGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ComplexEventDatesBlockT;
+import com.headstrong.teevra_fixml_1_0.ComplexEventTimesBlockT;
+import com.headstrong.teevra_fixml_1_0.ComplexEventsBlockT;
+import com.headstrong.teevra_fixml_1_0.ConfirmationAckMessageT;
+import com.headstrong.teevra_fixml_1_0.ConfirmationMessageT;
+import com.headstrong.teevra_fixml_1_0.ConfirmationRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.ContAmtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ContextPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.ContextPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ContraGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ContraryIntentionReportMessageT;
+import com.headstrong.teevra_fixml_1_0.CorporateActionEnumT;
+import com.headstrong.teevra_fixml_1_0.CpctyConfGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.CrossOrderCancelReplaceRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.CrossOrderCancelRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.CustOrderHandlingInstEnumT;
+import com.headstrong.teevra_fixml_1_0.CutOffT;
+import com.headstrong.teevra_fixml_1_0.DKReasonEnumT;
+import com.headstrong.teevra_fixml_1_0.DealingCapacityEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativeEventsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeInstrumentAttributeBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeInstrumentBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeInstrumentPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeInstrumentPartySubIDsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativePriceQuoteMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativePriceUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSecurityAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSecurityDefinitionBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSecurityListMessageT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSecurityListRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSecurityListUpdateReportMessageT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSecurityXMLBlockT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSettlMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativeSymbolSfxEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativeTimeUnitEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativeUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.DerivativeValuationMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.DeskOrderHandlingInstEnumT;
+import com.headstrong.teevra_fixml_1_0.DeskTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.DiscretionInstructionsBlockT;
+import com.headstrong.teevra_fixml_1_0.DisplayInstructionBlockT;
+import com.headstrong.teevra_fixml_1_0.DlvyInstGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.DlvyInstTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.DontKnowTradeDKMessageT;
+import com.headstrong.teevra_fixml_1_0.DueToRelatedEnumT;
+import com.headstrong.teevra_fixml_1_0.EmailMessageT;
+import com.headstrong.teevra_fixml_1_0.EnumDoc;
+import com.headstrong.teevra_fixml_1_0.ErrorFieldsBlockT;
+import com.headstrong.teevra_fixml_1_0.ErrorMessageT;
+import com.headstrong.teevra_fixml_1_0.EvntGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ExDestinationIDSourceEnumT;
+import com.headstrong.teevra_fixml_1_0.ExchangeForPhysicalEnumT;
+import com.headstrong.teevra_fixml_1_0.ExecAllocGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ExecCollGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ExecInstRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.ExecPriceTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.ExecutionAcknowledgementMessageT;
+import com.headstrong.teevra_fixml_1_0.ExecutionReportMessageT;
+import com.headstrong.teevra_fixml_1_0.ExerciseMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.ExpirationQtyBlockT;
+import com.headstrong.teevra_fixml_1_0.FIXML;
+import com.headstrong.teevra_fixml_1_0.FieldBlockT;
+import com.headstrong.teevra_fixml_1_0.FillsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.FinancingDetailsBlockT;
+import com.headstrong.teevra_fixml_1_0.ForexReqEnumT;
+import com.headstrong.teevra_fixml_1_0.FundRenewWaivEnumT;
+import com.headstrong.teevra_fixml_1_0.HopT;
+import com.headstrong.teevra_fixml_1_0.IOIMessageT;
+import com.headstrong.teevra_fixml_1_0.IOINaturalFlagEnumT;
+import com.headstrong.teevra_fixml_1_0.IOIQltyIndEnumT;
+import com.headstrong.teevra_fixml_1_0.IOIQualGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.IOIQualifierEnumT;
+import com.headstrong.teevra_fixml_1_0.IOITransTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.InViewOfCommonEnumT;
+import com.headstrong.teevra_fixml_1_0.InstrmtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrmtLegExecGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrmtLegGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrmtLegIOIGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrmtLegSecListGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrmtMDReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrmtStrkPxGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrumentBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrumentExtensionBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrumentLegBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrumentPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.InstrumentPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.LastFragmentEnumT;
+import com.headstrong.teevra_fixml_1_0.LastRptRequestedEnumT;
+import com.headstrong.teevra_fixml_1_0.LegBenchmarkCurveDataBlockT;
+import com.headstrong.teevra_fixml_1_0.LegBenchmarkCurveNameEnumT;
+import com.headstrong.teevra_fixml_1_0.LegOrdGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.LegPositionEffectEnumT;
+import com.headstrong.teevra_fixml_1_0.LegPreAllocGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.LegPriceUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.LegQuotGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.LegQuotStatGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.LegSecAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.LegStipulationTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.LegStipulationsBlockT;
+import com.headstrong.teevra_fixml_1_0.LegSymbolSfxEnumT;
+import com.headstrong.teevra_fixml_1_0.LegTimeUnitEnumT;
+import com.headstrong.teevra_fixml_1_0.LegUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.LegalConfirmEnumT;
+import com.headstrong.teevra_fixml_1_0.LinesOfTextGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ListCancelRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.ListExecuteMessageT;
+import com.headstrong.teevra_fixml_1_0.ListOrdGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ListStatusMessageT;
+import com.headstrong.teevra_fixml_1_0.ListStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.ListStrikePriceMessageT;
+import com.headstrong.teevra_fixml_1_0.ListUpdateActionEnumT;
+import com.headstrong.teevra_fixml_1_0.LocateReqdEnumT;
+import com.headstrong.teevra_fixml_1_0.LotTypeRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.MDFullGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MDImplicitDeleteEnumT;
+import com.headstrong.teevra_fixml_1_0.MDIncGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MDReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MDRjctGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MarketDataFeedTypesBlockT;
+import com.headstrong.teevra_fixml_1_0.MarketDataIncrementalRefreshMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketDataRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketDataRequestRejectMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketDataSnapshotFullRefreshMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketDefinitionMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketDefinitionRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketDefinitionUpdateReportMessageT;
+import com.headstrong.teevra_fixml_1_0.MarketSegmentGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MarketUpdateActionEnumT;
+import com.headstrong.teevra_fixml_1_0.MassQuoteAcknowledgementMessageT;
+import com.headstrong.teevra_fixml_1_0.MassQuoteMessageT;
+import com.headstrong.teevra_fixml_1_0.MatchRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.MaturityRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.MessageHeaderT;
+import com.headstrong.teevra_fixml_1_0.MiscFeesGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MsgTypeGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.MultilegOrderCancelReplaceMessageT;
+import com.headstrong.teevra_fixml_1_0.NestedInstrumentAttributeBlockT;
+import com.headstrong.teevra_fixml_1_0.NestedParties2BlockT;
+import com.headstrong.teevra_fixml_1_0.NestedParties3BlockT;
+import com.headstrong.teevra_fixml_1_0.NestedParties4BlockT;
+import com.headstrong.teevra_fixml_1_0.NestedPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.NetworkCounterpartySystemStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.NetworkCounterpartySystemStatusResponseMessageT;
+import com.headstrong.teevra_fixml_1_0.NewOrderCrossMessageT;
+import com.headstrong.teevra_fixml_1_0.NewOrderListMessageT;
+import com.headstrong.teevra_fixml_1_0.NewOrderMultilegMessageT;
+import com.headstrong.teevra_fixml_1_0.NewOrderSingleMessageT;
+import com.headstrong.teevra_fixml_1_0.NewsMessageT;
+import com.headstrong.teevra_fixml_1_0.NewsRefGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.NotAffectedOrdersGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.NotifyBrokerOfCreditEnumT;
+import com.headstrong.teevra_fixml_1_0.NstdPtys2SubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.NstdPtys3SubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.NstdPtys4SubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.NstdPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ObjectFactory;
+import com.headstrong.teevra_fixml_1_0.OddLotEnumT;
+import com.headstrong.teevra_fixml_1_0.OrdAllocGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.OrdListStatGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.OrdTypeRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.OrderCancelRejectMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderCancelReplaceRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderCancelRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderCapacityEnumT;
+import com.headstrong.teevra_fixml_1_0.OrderMassActionReportMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderMassActionRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderMassCancelReportMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderMassCancelRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderMassStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.OrderQtyDataBlockT;
+import com.headstrong.teevra_fixml_1_0.OrderStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.PartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.PartyAltIDsBlockT;
+import com.headstrong.teevra_fixml_1_0.PartyDetailBlockT;
+import com.headstrong.teevra_fixml_1_0.PartyDetailsListReportMessageT;
+import com.headstrong.teevra_fixml_1_0.PartyDetailsListRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.PartyListGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PartyListResponseTypeGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PartyRelationshipsBlockT;
+import com.headstrong.teevra_fixml_1_0.PegInstructionsBlockT;
+import com.headstrong.teevra_fixml_1_0.PosAmtTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.PosMntRptSideGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PosTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.PosUndInstrmtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PositionAmountDataBlockT;
+import com.headstrong.teevra_fixml_1_0.PositionEffectEnumT;
+import com.headstrong.teevra_fixml_1_0.PositionMaintenanceReportMessageT;
+import com.headstrong.teevra_fixml_1_0.PositionMaintenanceRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.PositionQtyBlockT;
+import com.headstrong.teevra_fixml_1_0.PositionReportMessageT;
+import com.headstrong.teevra_fixml_1_0.PossDupFlagEnumT;
+import com.headstrong.teevra_fixml_1_0.PossResendEnumT;
+import com.headstrong.teevra_fixml_1_0.PreAllocGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PreAllocMlegGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PreviouslyReportedEnumT;
+import com.headstrong.teevra_fixml_1_0.PriceLimitsBlockT;
+import com.headstrong.teevra_fixml_1_0.PriceQuoteMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.PriceUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.PtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.PublishTrdIndicatorEnumT;
+import com.headstrong.teevra_fixml_1_0.QuotCxlEntriesGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotEntryAckGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotEntryGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotQualGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotReqLegsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotReqRjctGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotSetAckGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuotSetGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.QuoteCancelMessageT;
+import com.headstrong.teevra_fixml_1_0.QuoteMessageT;
+import com.headstrong.teevra_fixml_1_0.QuoteQualifierEnumT;
+import com.headstrong.teevra_fixml_1_0.QuoteRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.QuoteRequestRejectMessageT;
+import com.headstrong.teevra_fixml_1_0.QuoteResponseMessageT;
+import com.headstrong.teevra_fixml_1_0.QuoteStatusReportMessageT;
+import com.headstrong.teevra_fixml_1_0.QuoteStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.RFQReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RFQRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.RateSourceBlockT;
+import com.headstrong.teevra_fixml_1_0.ReferenceBlockT;
+import com.headstrong.teevra_fixml_1_0.RegistStatusEnumT;
+import com.headstrong.teevra_fixml_1_0.RegistrationInstructionsMessageT;
+import com.headstrong.teevra_fixml_1_0.RegistrationInstructionsResponseMessageT;
+import com.headstrong.teevra_fixml_1_0.RelSymDerivSecGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelSymDerivSecUpdGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedAltPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedContextPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedContextPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedPartyAltIDsBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedPartyDetailBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedPartyGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelatedPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelationshipRiskInstrumentScopeBlockT;
+import com.headstrong.teevra_fixml_1_0.RelationshipRiskLimitsBlockT;
+import com.headstrong.teevra_fixml_1_0.RelationshipRiskSecAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RelationshipRiskWarningLevelsBlockT;
+import com.headstrong.teevra_fixml_1_0.ReportToExchEnumT;
+import com.headstrong.teevra_fixml_1_0.RequestForPositionsAckMessageT;
+import com.headstrong.teevra_fixml_1_0.RequestForPositionsMessageT;
+import com.headstrong.teevra_fixml_1_0.RequestedPartyRoleGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RestructuringTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.RgstDistInstGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RgstDtlsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RiskInstrumentScopeBlockT;
+import com.headstrong.teevra_fixml_1_0.RiskLimitsBlockT;
+import com.headstrong.teevra_fixml_1_0.RiskSecAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.RiskWarningLevelsBlockT;
+import com.headstrong.teevra_fixml_1_0.RootPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.RootSubPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.RoutingGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecListGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecLstUpdRelSymGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecLstUpdRelSymsLegGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecSizesGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecTypesGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SecondaryPriceLimitsBlockT;
+import com.headstrong.teevra_fixml_1_0.SecurityDefinitionMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityDefinitionRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityDefinitionUpdateReportMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityListMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityListRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityListUpdateReportMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityStatusMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityTradingRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.SecurityTypeRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityTypesMessageT;
+import com.headstrong.teevra_fixml_1_0.SecurityUpdateActionEnumT;
+import com.headstrong.teevra_fixml_1_0.SecurityXMLBlockT;
+import com.headstrong.teevra_fixml_1_0.SeniorityEnumT;
+import com.headstrong.teevra_fixml_1_0.SettlCurrFxRateCalcEnumT;
+import com.headstrong.teevra_fixml_1_0.SettlDetailsBlockT;
+import com.headstrong.teevra_fixml_1_0.SettlInstGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SettlInstTransTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.SettlInstructionsDataBlockT;
+import com.headstrong.teevra_fixml_1_0.SettlMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.SettlObligTransTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.SettlObligationInstructionsBlockT;
+import com.headstrong.teevra_fixml_1_0.SettlPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.SettlPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SettlSessIDEnumT;
+import com.headstrong.teevra_fixml_1_0.SettlementInstructionRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.SettlementInstructionsMessageT;
+import com.headstrong.teevra_fixml_1_0.SettlementObligationReportMessageT;
+import com.headstrong.teevra_fixml_1_0.SideCrossOrdCxlGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SideCrossOrdModGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SideTrdRegTSBlockT;
+import com.headstrong.teevra_fixml_1_0.SolicitedFlagEnumT;
+import com.headstrong.teevra_fixml_1_0.SpreadOrBenchmarkCurveDataBlockT;
+import com.headstrong.teevra_fixml_1_0.StatsIndGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.StipulationTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.StipulationsBlockT;
+import com.headstrong.teevra_fixml_1_0.StrategyParametersGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.StreamAssignmentReportACKMessageT;
+import com.headstrong.teevra_fixml_1_0.StreamAssignmentReportMessageT;
+import com.headstrong.teevra_fixml_1_0.StreamAssignmentRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.StrikeRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.StrmAsgnReqGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.StrmAsgnReqInstrmtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.StrmAsgnRptGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.StrmAsgnRptInstrmtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.SymbolSfxEnumT;
+import com.headstrong.teevra_fixml_1_0.TargetPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.TickRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.TimeInForceRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.TimeUnitEnumT;
+import com.headstrong.teevra_fixml_1_0.TradSesUpdateActionEnumT;
+import com.headstrong.teevra_fixml_1_0.TradeCapLegUnderlyingsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TradeCaptureReportAckMessageT;
+import com.headstrong.teevra_fixml_1_0.TradeCaptureReportMessageT;
+import com.headstrong.teevra_fixml_1_0.TradeCaptureReportRequestAckMessageT;
+import com.headstrong.teevra_fixml_1_0.TradeCaptureReportRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.TradeReportOrderDetailBlockT;
+import com.headstrong.teevra_fixml_1_0.TradedFlatSwitchEnumT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionListMessageT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionListRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionListUpdateReportMessageT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionRulesBlockT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionRulesGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionStatusMessageT;
+import com.headstrong.teevra_fixml_1_0.TradingSessionStatusRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.TrdAllocGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdCapDtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdCapRptAckSideGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdCapRptSideGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdCollGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdInstrmtLegGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdRegTimestampsBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdRepIndicatorsGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdSessLstGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TrdgSesGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.TriggerPriceDirectionEnumT;
+import com.headstrong.teevra_fixml_1_0.TriggeringInstructionBlockT;
+import com.headstrong.teevra_fixml_1_0.UndInstrmtCollGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.UndInstrmtGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.UndSecAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingAmountBlockT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingCashTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingFXRateCalcEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingInstrumentBlockT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingLegInstrumentBlockT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingLegSecurityAltIDGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingPriceUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingRestructuringTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingSeniorityEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingStipTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingStipulationsBlockT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingSymbolSfxEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingTimeUnitEnumT;
+import com.headstrong.teevra_fixml_1_0.UnderlyingUnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.UndlyInstrumentPartiesBlockT;
+import com.headstrong.teevra_fixml_1_0.UndlyInstrumentPtysSubGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.UnitOfMeasureEnumT;
+import com.headstrong.teevra_fixml_1_0.UnsolicitedIndicatorEnumT;
+import com.headstrong.teevra_fixml_1_0.UserNotificationMessageT;
+import com.headstrong.teevra_fixml_1_0.UserRequestMessageT;
+import com.headstrong.teevra_fixml_1_0.UserResponseMessageT;
+import com.headstrong.teevra_fixml_1_0.UsernameGrpBlockT;
+import com.headstrong.teevra_fixml_1_0.ValuationMethodEnumT;
+import com.headstrong.teevra_fixml_1_0.VenueTypeEnumT;
+import com.headstrong.teevra_fixml_1_0.WorkingIndicatorEnumT;
+import com.headstrong.teevra_fixml_1_0.Xref;
+import com.headstrong.teevra_fixml_1_0.YieldDataBlockT;
+import com.headstrong.teevra_fixml_1_0.YieldTypeEnumT;
+import javax.xml.bind.JAXBElement;
+import com.headstrong.teevra_fixml_1_0.AbstractMessageT;
+
+public class BeanAccessorFactory {
+	
+	private BeanAccessorFactory(){
+		//DefaultContstructor
+	}
+	
+	public static BeanAccessor getBeanAccessor(Object obj){
+		//for each java class registered with this generator, 
+		//create a new Bean Accessor;
+		BeanAccessor accessor = null;
+		 if(obj instanceof AdjustedPositionReportMessageT){
+			accessor = new AdjustedPositionReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof AdvSideEnumT){
+			accessor = new AdvSideEnumTBeanAccessor();
+		}
+		else if(obj instanceof AdvTransTypeEnumT){
+			accessor = new AdvTransTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof AdvertisementMessageT){
+			accessor = new AdvertisementMessageTBeanAccessor();
+		}
+		else if(obj instanceof AffectedOrdGrpBlockT){
+			accessor = new AffectedOrdGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof AggregatedBookEnumT){
+			accessor = new AggregatedBookEnumTBeanAccessor();
+		}
+		else if(obj instanceof AggressorIndicatorEnumT){
+			accessor = new AggressorIndicatorEnumTBeanAccessor();
+		}
+		else if(obj instanceof AllocAckGrpBlockT){
+			accessor = new AllocAckGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof AllocGrpBlockT){
+			accessor = new AllocGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof AllocInstrnRptSideGrpBlockT){
+			accessor = new AllocInstrnRptSideGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof AllocPositionEffectEnumT){
+			accessor = new AllocPositionEffectEnumTBeanAccessor();
+		}
+		else if(obj instanceof AllocRptRptSideGrpBlockT){
+			accessor = new AllocRptRptSideGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof AllocationInstructionAckMessageT){
+			accessor = new AllocationInstructionAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof AllocationInstructionAlertMessageT){
+			accessor = new AllocationInstructionAlertMessageTBeanAccessor();
+		}
+		else if(obj instanceof AllocationInstructionMessageT){
+			accessor = new AllocationInstructionMessageTBeanAccessor();
+		}
+		else if(obj instanceof AllocationReportAckMessageT){
+			accessor = new AllocationReportAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof AllocationReportMessageT){
+			accessor = new AllocationReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof AltPtysSubGrpBlockT){
+			accessor = new AltPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ApplIDReportGrpBlockT){
+			accessor = new ApplIDReportGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ApplIDRequestAckGrpBlockT){
+			accessor = new ApplIDRequestAckGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ApplIDRequestGrpBlockT){
+			accessor = new ApplIDRequestGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ApplicationMessageReportMessageT){
+			accessor = new ApplicationMessageReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof ApplicationMessageRequestAckMessageT){
+			accessor = new ApplicationMessageRequestAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof ApplicationMessageRequestMessageT){
+			accessor = new ApplicationMessageRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof ApplicationSequenceControlBlockT){
+			accessor = new ApplicationSequenceControlBlockTBeanAccessor();
+		}
+		else if(obj instanceof AssignmentMethodEnumT){
+			accessor = new AssignmentMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof AssignmentReportMessageT){
+			accessor = new AssignmentReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof AttrbGrpBlockT){
+			accessor = new AttrbGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof BaseHeaderT){
+			accessor = new BaseHeaderTBeanAccessor();
+		}
+		else if(obj instanceof BaseTradingRulesBlockT){
+			accessor = new BaseTradingRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof BatchHeaderT){
+			accessor = new BatchHeaderTBeanAccessor();
+		}
+		else if(obj instanceof BatchT){
+			accessor = new BatchTBeanAccessor();
+		}
+		else if(obj instanceof BenchmarkCurveNameEnumT){
+			accessor = new BenchmarkCurveNameEnumTBeanAccessor();
+		}
+		else if(obj instanceof BidCompReqGrpBlockT){
+			accessor = new BidCompReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof BidCompRspGrpBlockT){
+			accessor = new BidCompRspGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof BidDescReqGrpBlockT){
+			accessor = new BidDescReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof BidRequestMessageT){
+			accessor = new BidRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof BidRequestTransTypeEnumT){
+			accessor = new BidRequestTransTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof BidResponseMessageT){
+			accessor = new BidResponseMessageTBeanAccessor();
+		}
+		else if(obj instanceof BidTradeTypeEnumT){
+			accessor = new BidTradeTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof BusinessMessageRejectMessageT){
+			accessor = new BusinessMessageRejectMessageTBeanAccessor();
+		}
+		else if(obj instanceof CancellationRightsEnumT){
+			accessor = new CancellationRightsEnumTBeanAccessor();
+		}
+		else if(obj instanceof ClrInstGrpBlockT){
+			accessor = new ClrInstGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof CollInqQualGrpBlockT){
+			accessor = new CollInqQualGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof CollateralAssignmentMessageT){
+			accessor = new CollateralAssignmentMessageTBeanAccessor();
+		}
+		else if(obj instanceof CollateralInquiryAckMessageT){
+			accessor = new CollateralInquiryAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof CollateralInquiryMessageT){
+			accessor = new CollateralInquiryMessageTBeanAccessor();
+		}
+		else if(obj instanceof CollateralReportMessageT){
+			accessor = new CollateralReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof CollateralRequestMessageT){
+			accessor = new CollateralRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof CollateralResponseMessageT){
+			accessor = new CollateralResponseMessageTBeanAccessor();
+		}
+		else if(obj instanceof CommissionDataBlockT){
+			accessor = new CommissionDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof CompIDReqGrpBlockT){
+			accessor = new CompIDReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof CompIDStatGrpBlockT){
+			accessor = new CompIDStatGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ComplexEventDatesBlockT){
+			accessor = new ComplexEventDatesBlockTBeanAccessor();
+		}
+		else if(obj instanceof ComplexEventTimesBlockT){
+			accessor = new ComplexEventTimesBlockTBeanAccessor();
+		}
+		else if(obj instanceof ComplexEventsBlockT){
+			accessor = new ComplexEventsBlockTBeanAccessor();
+		}
+		else if(obj instanceof ConfirmationAckMessageT){
+			accessor = new ConfirmationAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof ConfirmationMessageT){
+			accessor = new ConfirmationMessageTBeanAccessor();
+		}
+		else if(obj instanceof ConfirmationRequestMessageT){
+			accessor = new ConfirmationRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof ContAmtGrpBlockT){
+			accessor = new ContAmtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ContextPartiesBlockT){
+			accessor = new ContextPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof ContextPtysSubGrpBlockT){
+			accessor = new ContextPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ContraGrpBlockT){
+			accessor = new ContraGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ContraryIntentionReportMessageT){
+			accessor = new ContraryIntentionReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof CorporateActionEnumT){
+			accessor = new CorporateActionEnumTBeanAccessor();
+		}
+		else if(obj instanceof CpctyConfGrpBlockT){
+			accessor = new CpctyConfGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof CrossOrderCancelReplaceRequestMessageT){
+			accessor = new CrossOrderCancelReplaceRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof CrossOrderCancelRequestMessageT){
+			accessor = new CrossOrderCancelRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof CustOrderHandlingInstEnumT){
+			accessor = new CustOrderHandlingInstEnumTBeanAccessor();
+		}
+		else if(obj instanceof CutOffT){
+			accessor = new CutOffTBeanAccessor();
+		}
+		else if(obj instanceof DKReasonEnumT){
+			accessor = new DKReasonEnumTBeanAccessor();
+		}
+		else if(obj instanceof DealingCapacityEnumT){
+			accessor = new DealingCapacityEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeEventsGrpBlockT){
+			accessor = new DerivativeEventsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeInstrumentAttributeBlockT){
+			accessor = new DerivativeInstrumentAttributeBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeInstrumentBlockT){
+			accessor = new DerivativeInstrumentBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeInstrumentPartiesBlockT){
+			accessor = new DerivativeInstrumentPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeInstrumentPartySubIDsGrpBlockT){
+			accessor = new DerivativeInstrumentPartySubIDsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativePriceQuoteMethodEnumT){
+			accessor = new DerivativePriceQuoteMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativePriceUnitOfMeasureEnumT){
+			accessor = new DerivativePriceUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSecurityAltIDGrpBlockT){
+			accessor = new DerivativeSecurityAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSecurityDefinitionBlockT){
+			accessor = new DerivativeSecurityDefinitionBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSecurityListMessageT){
+			accessor = new DerivativeSecurityListMessageTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSecurityListRequestMessageT){
+			accessor = new DerivativeSecurityListRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSecurityListUpdateReportMessageT){
+			accessor = new DerivativeSecurityListUpdateReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSecurityXMLBlockT){
+			accessor = new DerivativeSecurityXMLBlockTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSettlMethodEnumT){
+			accessor = new DerivativeSettlMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeSymbolSfxEnumT){
+			accessor = new DerivativeSymbolSfxEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeTimeUnitEnumT){
+			accessor = new DerivativeTimeUnitEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeUnitOfMeasureEnumT){
+			accessor = new DerivativeUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof DerivativeValuationMethodEnumT){
+			accessor = new DerivativeValuationMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof DeskOrderHandlingInstEnumT){
+			accessor = new DeskOrderHandlingInstEnumTBeanAccessor();
+		}
+		else if(obj instanceof DeskTypeEnumT){
+			accessor = new DeskTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof DiscretionInstructionsBlockT){
+			accessor = new DiscretionInstructionsBlockTBeanAccessor();
+		}
+		else if(obj instanceof DisplayInstructionBlockT){
+			accessor = new DisplayInstructionBlockTBeanAccessor();
+		}
+		else if(obj instanceof DlvyInstGrpBlockT){
+			accessor = new DlvyInstGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof DlvyInstTypeEnumT){
+			accessor = new DlvyInstTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof DontKnowTradeDKMessageT){
+			accessor = new DontKnowTradeDKMessageTBeanAccessor();
+		}
+		else if(obj instanceof DueToRelatedEnumT){
+			accessor = new DueToRelatedEnumTBeanAccessor();
+		}
+		else if(obj instanceof EmailMessageT){
+			accessor = new EmailMessageTBeanAccessor();
+		}
+		else if(obj instanceof EnumDoc){
+			accessor = new EnumDocBeanAccessor();
+		}
+		else if(obj instanceof ErrorFieldsBlockT){
+			accessor = new ErrorFieldsBlockTBeanAccessor();
+		}
+		else if(obj instanceof ErrorMessageT){
+			accessor = new ErrorMessageTBeanAccessor();
+		}
+		else if(obj instanceof EvntGrpBlockT){
+			accessor = new EvntGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ExDestinationIDSourceEnumT){
+			accessor = new ExDestinationIDSourceEnumTBeanAccessor();
+		}
+		else if(obj instanceof ExchangeForPhysicalEnumT){
+			accessor = new ExchangeForPhysicalEnumTBeanAccessor();
+		}
+		else if(obj instanceof ExecAllocGrpBlockT){
+			accessor = new ExecAllocGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ExecCollGrpBlockT){
+			accessor = new ExecCollGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ExecInstRulesBlockT){
+			accessor = new ExecInstRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof ExecPriceTypeEnumT){
+			accessor = new ExecPriceTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof ExecutionAcknowledgementMessageT){
+			accessor = new ExecutionAcknowledgementMessageTBeanAccessor();
+		}
+		else if(obj instanceof ExecutionReportMessageT){
+			accessor = new ExecutionReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof ExerciseMethodEnumT){
+			accessor = new ExerciseMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof ExpirationQtyBlockT){
+			accessor = new ExpirationQtyBlockTBeanAccessor();
+		}
+		else if(obj instanceof FIXML){
+			accessor = new FIXMLBeanAccessor();
+		}
+		else if(obj instanceof FieldBlockT){
+			accessor = new FieldBlockTBeanAccessor();
+		}
+		else if(obj instanceof FillsGrpBlockT){
+			accessor = new FillsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof FinancingDetailsBlockT){
+			accessor = new FinancingDetailsBlockTBeanAccessor();
+		}
+		else if(obj instanceof ForexReqEnumT){
+			accessor = new ForexReqEnumTBeanAccessor();
+		}
+		else if(obj instanceof FundRenewWaivEnumT){
+			accessor = new FundRenewWaivEnumTBeanAccessor();
+		}
+		else if(obj instanceof HopT){
+			accessor = new HopTBeanAccessor();
+		}
+		else if(obj instanceof IOIMessageT){
+			accessor = new IOIMessageTBeanAccessor();
+		}
+		else if(obj instanceof IOINaturalFlagEnumT){
+			accessor = new IOINaturalFlagEnumTBeanAccessor();
+		}
+		else if(obj instanceof IOIQltyIndEnumT){
+			accessor = new IOIQltyIndEnumTBeanAccessor();
+		}
+		else if(obj instanceof IOIQualGrpBlockT){
+			accessor = new IOIQualGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof IOIQualifierEnumT){
+			accessor = new IOIQualifierEnumTBeanAccessor();
+		}
+		else if(obj instanceof IOITransTypeEnumT){
+			accessor = new IOITransTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof InViewOfCommonEnumT){
+			accessor = new InViewOfCommonEnumTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtGrpBlockT){
+			accessor = new InstrmtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtLegExecGrpBlockT){
+			accessor = new InstrmtLegExecGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtLegGrpBlockT){
+			accessor = new InstrmtLegGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtLegIOIGrpBlockT){
+			accessor = new InstrmtLegIOIGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtLegSecListGrpBlockT){
+			accessor = new InstrmtLegSecListGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtMDReqGrpBlockT){
+			accessor = new InstrmtMDReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrmtStrkPxGrpBlockT){
+			accessor = new InstrmtStrkPxGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrumentBlockT){
+			accessor = new InstrumentBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrumentExtensionBlockT){
+			accessor = new InstrumentExtensionBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrumentLegBlockT){
+			accessor = new InstrumentLegBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrumentPartiesBlockT){
+			accessor = new InstrumentPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof InstrumentPtysSubGrpBlockT){
+			accessor = new InstrumentPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof LastFragmentEnumT){
+			accessor = new LastFragmentEnumTBeanAccessor();
+		}
+		else if(obj instanceof LastRptRequestedEnumT){
+			accessor = new LastRptRequestedEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegBenchmarkCurveDataBlockT){
+			accessor = new LegBenchmarkCurveDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegBenchmarkCurveNameEnumT){
+			accessor = new LegBenchmarkCurveNameEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegOrdGrpBlockT){
+			accessor = new LegOrdGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegPositionEffectEnumT){
+			accessor = new LegPositionEffectEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegPreAllocGrpBlockT){
+			accessor = new LegPreAllocGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegPriceUnitOfMeasureEnumT){
+			accessor = new LegPriceUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegQuotGrpBlockT){
+			accessor = new LegQuotGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegQuotStatGrpBlockT){
+			accessor = new LegQuotStatGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegSecAltIDGrpBlockT){
+			accessor = new LegSecAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegStipulationTypeEnumT){
+			accessor = new LegStipulationTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegStipulationsBlockT){
+			accessor = new LegStipulationsBlockTBeanAccessor();
+		}
+		else if(obj instanceof LegSymbolSfxEnumT){
+			accessor = new LegSymbolSfxEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegTimeUnitEnumT){
+			accessor = new LegTimeUnitEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegUnitOfMeasureEnumT){
+			accessor = new LegUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof LegalConfirmEnumT){
+			accessor = new LegalConfirmEnumTBeanAccessor();
+		}
+		else if(obj instanceof LinesOfTextGrpBlockT){
+			accessor = new LinesOfTextGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ListCancelRequestMessageT){
+			accessor = new ListCancelRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof ListExecuteMessageT){
+			accessor = new ListExecuteMessageTBeanAccessor();
+		}
+		else if(obj instanceof ListOrdGrpBlockT){
+			accessor = new ListOrdGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ListStatusMessageT){
+			accessor = new ListStatusMessageTBeanAccessor();
+		}
+		else if(obj instanceof ListStatusRequestMessageT){
+			accessor = new ListStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof ListStrikePriceMessageT){
+			accessor = new ListStrikePriceMessageTBeanAccessor();
+		}
+		else if(obj instanceof ListUpdateActionEnumT){
+			accessor = new ListUpdateActionEnumTBeanAccessor();
+		}
+		else if(obj instanceof LocateReqdEnumT){
+			accessor = new LocateReqdEnumTBeanAccessor();
+		}
+		else if(obj instanceof LotTypeRulesBlockT){
+			accessor = new LotTypeRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof MDFullGrpBlockT){
+			accessor = new MDFullGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MDImplicitDeleteEnumT){
+			accessor = new MDImplicitDeleteEnumTBeanAccessor();
+		}
+		else if(obj instanceof MDIncGrpBlockT){
+			accessor = new MDIncGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MDReqGrpBlockT){
+			accessor = new MDReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MDRjctGrpBlockT){
+			accessor = new MDRjctGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MarketDataFeedTypesBlockT){
+			accessor = new MarketDataFeedTypesBlockTBeanAccessor();
+		}
+		else if(obj instanceof MarketDataIncrementalRefreshMessageT){
+			accessor = new MarketDataIncrementalRefreshMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketDataRequestMessageT){
+			accessor = new MarketDataRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketDataRequestRejectMessageT){
+			accessor = new MarketDataRequestRejectMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketDataSnapshotFullRefreshMessageT){
+			accessor = new MarketDataSnapshotFullRefreshMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketDefinitionMessageT){
+			accessor = new MarketDefinitionMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketDefinitionRequestMessageT){
+			accessor = new MarketDefinitionRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketDefinitionUpdateReportMessageT){
+			accessor = new MarketDefinitionUpdateReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof MarketSegmentGrpBlockT){
+			accessor = new MarketSegmentGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MarketUpdateActionEnumT){
+			accessor = new MarketUpdateActionEnumTBeanAccessor();
+		}
+		else if(obj instanceof MassQuoteAcknowledgementMessageT){
+			accessor = new MassQuoteAcknowledgementMessageTBeanAccessor();
+		}
+		else if(obj instanceof MassQuoteMessageT){
+			accessor = new MassQuoteMessageTBeanAccessor();
+		}
+		else if(obj instanceof MatchRulesBlockT){
+			accessor = new MatchRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof MaturityRulesBlockT){
+			accessor = new MaturityRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof MessageHeaderT){
+			accessor = new MessageHeaderTBeanAccessor();
+		}
+		else if(obj instanceof MiscFeesGrpBlockT){
+			accessor = new MiscFeesGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MsgTypeGrpBlockT){
+			accessor = new MsgTypeGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof MultilegOrderCancelReplaceMessageT){
+			accessor = new MultilegOrderCancelReplaceMessageTBeanAccessor();
+		}
+		else if(obj instanceof NestedInstrumentAttributeBlockT){
+			accessor = new NestedInstrumentAttributeBlockTBeanAccessor();
+		}
+		else if(obj instanceof NestedParties2BlockT){
+			accessor = new NestedParties2BlockTBeanAccessor();
+		}
+		else if(obj instanceof NestedParties3BlockT){
+			accessor = new NestedParties3BlockTBeanAccessor();
+		}
+		else if(obj instanceof NestedParties4BlockT){
+			accessor = new NestedParties4BlockTBeanAccessor();
+		}
+		else if(obj instanceof NestedPartiesBlockT){
+			accessor = new NestedPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof NetworkCounterpartySystemStatusRequestMessageT){
+			accessor = new NetworkCounterpartySystemStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof NetworkCounterpartySystemStatusResponseMessageT){
+			accessor = new NetworkCounterpartySystemStatusResponseMessageTBeanAccessor();
+		}
+		else if(obj instanceof NewOrderCrossMessageT){
+			accessor = new NewOrderCrossMessageTBeanAccessor();
+		}
+		else if(obj instanceof NewOrderListMessageT){
+			accessor = new NewOrderListMessageTBeanAccessor();
+		}
+		else if(obj instanceof NewOrderMultilegMessageT){
+			accessor = new NewOrderMultilegMessageTBeanAccessor();
+		}
+		else if(obj instanceof NewOrderSingleMessageT){
+			accessor = new NewOrderSingleMessageTBeanAccessor();
+		}
+		else if(obj instanceof NewsMessageT){
+			accessor = new NewsMessageTBeanAccessor();
+		}
+		else if(obj instanceof NewsRefGrpBlockT){
+			accessor = new NewsRefGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof NotAffectedOrdersGrpBlockT){
+			accessor = new NotAffectedOrdersGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof NotifyBrokerOfCreditEnumT){
+			accessor = new NotifyBrokerOfCreditEnumTBeanAccessor();
+		}
+		else if(obj instanceof NstdPtys2SubGrpBlockT){
+			accessor = new NstdPtys2SubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof NstdPtys3SubGrpBlockT){
+			accessor = new NstdPtys3SubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof NstdPtys4SubGrpBlockT){
+			accessor = new NstdPtys4SubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof NstdPtysSubGrpBlockT){
+			accessor = new NstdPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ObjectFactory){
+			accessor = new ObjectFactoryBeanAccessor();
+		}
+		else if(obj instanceof OddLotEnumT){
+			accessor = new OddLotEnumTBeanAccessor();
+		}
+		else if(obj instanceof OrdAllocGrpBlockT){
+			accessor = new OrdAllocGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof OrdListStatGrpBlockT){
+			accessor = new OrdListStatGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof OrdTypeRulesBlockT){
+			accessor = new OrdTypeRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof OrderCancelRejectMessageT){
+			accessor = new OrderCancelRejectMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderCancelReplaceRequestMessageT){
+			accessor = new OrderCancelReplaceRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderCancelRequestMessageT){
+			accessor = new OrderCancelRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderCapacityEnumT){
+			accessor = new OrderCapacityEnumTBeanAccessor();
+		}
+		else if(obj instanceof OrderMassActionReportMessageT){
+			accessor = new OrderMassActionReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderMassActionRequestMessageT){
+			accessor = new OrderMassActionRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderMassCancelReportMessageT){
+			accessor = new OrderMassCancelReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderMassCancelRequestMessageT){
+			accessor = new OrderMassCancelRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderMassStatusRequestMessageT){
+			accessor = new OrderMassStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof OrderQtyDataBlockT){
+			accessor = new OrderQtyDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof OrderStatusRequestMessageT){
+			accessor = new OrderStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof PartiesBlockT){
+			accessor = new PartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof PartyAltIDsBlockT){
+			accessor = new PartyAltIDsBlockTBeanAccessor();
+		}
+		else if(obj instanceof PartyDetailBlockT){
+			accessor = new PartyDetailBlockTBeanAccessor();
+		}
+		else if(obj instanceof PartyDetailsListReportMessageT){
+			accessor = new PartyDetailsListReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof PartyDetailsListRequestMessageT){
+			accessor = new PartyDetailsListRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof PartyListGrpBlockT){
+			accessor = new PartyListGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PartyListResponseTypeGrpBlockT){
+			accessor = new PartyListResponseTypeGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PartyRelationshipsBlockT){
+			accessor = new PartyRelationshipsBlockTBeanAccessor();
+		}
+		else if(obj instanceof PegInstructionsBlockT){
+			accessor = new PegInstructionsBlockTBeanAccessor();
+		}
+		else if(obj instanceof PosAmtTypeEnumT){
+			accessor = new PosAmtTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof PosMntRptSideGrpBlockT){
+			accessor = new PosMntRptSideGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PosTypeEnumT){
+			accessor = new PosTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof PosUndInstrmtGrpBlockT){
+			accessor = new PosUndInstrmtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PositionAmountDataBlockT){
+			accessor = new PositionAmountDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof PositionEffectEnumT){
+			accessor = new PositionEffectEnumTBeanAccessor();
+		}
+		else if(obj instanceof PositionMaintenanceReportMessageT){
+			accessor = new PositionMaintenanceReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof PositionMaintenanceRequestMessageT){
+			accessor = new PositionMaintenanceRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof PositionQtyBlockT){
+			accessor = new PositionQtyBlockTBeanAccessor();
+		}
+		else if(obj instanceof PositionReportMessageT){
+			accessor = new PositionReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof PossDupFlagEnumT){
+			accessor = new PossDupFlagEnumTBeanAccessor();
+		}
+		else if(obj instanceof PossResendEnumT){
+			accessor = new PossResendEnumTBeanAccessor();
+		}
+		else if(obj instanceof PreAllocGrpBlockT){
+			accessor = new PreAllocGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PreAllocMlegGrpBlockT){
+			accessor = new PreAllocMlegGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PreviouslyReportedEnumT){
+			accessor = new PreviouslyReportedEnumTBeanAccessor();
+		}
+		else if(obj instanceof PriceLimitsBlockT){
+			accessor = new PriceLimitsBlockTBeanAccessor();
+		}
+		else if(obj instanceof PriceQuoteMethodEnumT){
+			accessor = new PriceQuoteMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof PriceUnitOfMeasureEnumT){
+			accessor = new PriceUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof PtysSubGrpBlockT){
+			accessor = new PtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof PublishTrdIndicatorEnumT){
+			accessor = new PublishTrdIndicatorEnumTBeanAccessor();
+		}
+		else if(obj instanceof QuotCxlEntriesGrpBlockT){
+			accessor = new QuotCxlEntriesGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotEntryAckGrpBlockT){
+			accessor = new QuotEntryAckGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotEntryGrpBlockT){
+			accessor = new QuotEntryGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotQualGrpBlockT){
+			accessor = new QuotQualGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotReqGrpBlockT){
+			accessor = new QuotReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotReqLegsGrpBlockT){
+			accessor = new QuotReqLegsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotReqRjctGrpBlockT){
+			accessor = new QuotReqRjctGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotSetAckGrpBlockT){
+			accessor = new QuotSetAckGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuotSetGrpBlockT){
+			accessor = new QuotSetGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof QuoteCancelMessageT){
+			accessor = new QuoteCancelMessageTBeanAccessor();
+		}
+		else if(obj instanceof QuoteMessageT){
+			accessor = new QuoteMessageTBeanAccessor();
+		}
+		else if(obj instanceof QuoteQualifierEnumT){
+			accessor = new QuoteQualifierEnumTBeanAccessor();
+		}
+		else if(obj instanceof QuoteRequestMessageT){
+			accessor = new QuoteRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof QuoteRequestRejectMessageT){
+			accessor = new QuoteRequestRejectMessageTBeanAccessor();
+		}
+		else if(obj instanceof QuoteResponseMessageT){
+			accessor = new QuoteResponseMessageTBeanAccessor();
+		}
+		else if(obj instanceof QuoteStatusReportMessageT){
+			accessor = new QuoteStatusReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof QuoteStatusRequestMessageT){
+			accessor = new QuoteStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof RFQReqGrpBlockT){
+			accessor = new RFQReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RFQRequestMessageT){
+			accessor = new RFQRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof RateSourceBlockT){
+			accessor = new RateSourceBlockTBeanAccessor();
+		}
+		else if(obj instanceof ReferenceBlockT){
+			accessor = new ReferenceBlockTBeanAccessor();
+		}
+		else if(obj instanceof RegistStatusEnumT){
+			accessor = new RegistStatusEnumTBeanAccessor();
+		}
+		else if(obj instanceof RegistrationInstructionsMessageT){
+			accessor = new RegistrationInstructionsMessageTBeanAccessor();
+		}
+		else if(obj instanceof RegistrationInstructionsResponseMessageT){
+			accessor = new RegistrationInstructionsResponseMessageTBeanAccessor();
+		}
+		else if(obj instanceof RelSymDerivSecGrpBlockT){
+			accessor = new RelSymDerivSecGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelSymDerivSecUpdGrpBlockT){
+			accessor = new RelSymDerivSecUpdGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedAltPtysSubGrpBlockT){
+			accessor = new RelatedAltPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedContextPartiesBlockT){
+			accessor = new RelatedContextPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedContextPtysSubGrpBlockT){
+			accessor = new RelatedContextPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedPartyAltIDsBlockT){
+			accessor = new RelatedPartyAltIDsBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedPartyDetailBlockT){
+			accessor = new RelatedPartyDetailBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedPartyGrpBlockT){
+			accessor = new RelatedPartyGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelatedPtysSubGrpBlockT){
+			accessor = new RelatedPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelationshipRiskInstrumentScopeBlockT){
+			accessor = new RelationshipRiskInstrumentScopeBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelationshipRiskLimitsBlockT){
+			accessor = new RelationshipRiskLimitsBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelationshipRiskSecAltIDGrpBlockT){
+			accessor = new RelationshipRiskSecAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RelationshipRiskWarningLevelsBlockT){
+			accessor = new RelationshipRiskWarningLevelsBlockTBeanAccessor();
+		}
+		else if(obj instanceof ReportToExchEnumT){
+			accessor = new ReportToExchEnumTBeanAccessor();
+		}
+		else if(obj instanceof RequestForPositionsAckMessageT){
+			accessor = new RequestForPositionsAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof RequestForPositionsMessageT){
+			accessor = new RequestForPositionsMessageTBeanAccessor();
+		}
+		else if(obj instanceof RequestedPartyRoleGrpBlockT){
+			accessor = new RequestedPartyRoleGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RestructuringTypeEnumT){
+			accessor = new RestructuringTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof RgstDistInstGrpBlockT){
+			accessor = new RgstDistInstGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RgstDtlsGrpBlockT){
+			accessor = new RgstDtlsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RiskInstrumentScopeBlockT){
+			accessor = new RiskInstrumentScopeBlockTBeanAccessor();
+		}
+		else if(obj instanceof RiskLimitsBlockT){
+			accessor = new RiskLimitsBlockTBeanAccessor();
+		}
+		else if(obj instanceof RiskSecAltIDGrpBlockT){
+			accessor = new RiskSecAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof RiskWarningLevelsBlockT){
+			accessor = new RiskWarningLevelsBlockTBeanAccessor();
+		}
+		else if(obj instanceof RootPartiesBlockT){
+			accessor = new RootPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof RootSubPartiesBlockT){
+			accessor = new RootSubPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof RoutingGrpBlockT){
+			accessor = new RoutingGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecAltIDGrpBlockT){
+			accessor = new SecAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecListGrpBlockT){
+			accessor = new SecListGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecLstUpdRelSymGrpBlockT){
+			accessor = new SecLstUpdRelSymGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecLstUpdRelSymsLegGrpBlockT){
+			accessor = new SecLstUpdRelSymsLegGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecSizesGrpBlockT){
+			accessor = new SecSizesGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecTypesGrpBlockT){
+			accessor = new SecTypesGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecondaryPriceLimitsBlockT){
+			accessor = new SecondaryPriceLimitsBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecurityDefinitionMessageT){
+			accessor = new SecurityDefinitionMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityDefinitionRequestMessageT){
+			accessor = new SecurityDefinitionRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityDefinitionUpdateReportMessageT){
+			accessor = new SecurityDefinitionUpdateReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityListMessageT){
+			accessor = new SecurityListMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityListRequestMessageT){
+			accessor = new SecurityListRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityListUpdateReportMessageT){
+			accessor = new SecurityListUpdateReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityStatusMessageT){
+			accessor = new SecurityStatusMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityStatusRequestMessageT){
+			accessor = new SecurityStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityTradingRulesBlockT){
+			accessor = new SecurityTradingRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof SecurityTypeRequestMessageT){
+			accessor = new SecurityTypeRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityTypesMessageT){
+			accessor = new SecurityTypesMessageTBeanAccessor();
+		}
+		else if(obj instanceof SecurityUpdateActionEnumT){
+			accessor = new SecurityUpdateActionEnumTBeanAccessor();
+		}
+		else if(obj instanceof SecurityXMLBlockT){
+			accessor = new SecurityXMLBlockTBeanAccessor();
+		}
+		else if(obj instanceof SeniorityEnumT){
+			accessor = new SeniorityEnumTBeanAccessor();
+		}
+		else if(obj instanceof SettlCurrFxRateCalcEnumT){
+			accessor = new SettlCurrFxRateCalcEnumTBeanAccessor();
+		}
+		else if(obj instanceof SettlDetailsBlockT){
+			accessor = new SettlDetailsBlockTBeanAccessor();
+		}
+		else if(obj instanceof SettlInstGrpBlockT){
+			accessor = new SettlInstGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SettlInstTransTypeEnumT){
+			accessor = new SettlInstTransTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof SettlInstructionsDataBlockT){
+			accessor = new SettlInstructionsDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof SettlMethodEnumT){
+			accessor = new SettlMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof SettlObligTransTypeEnumT){
+			accessor = new SettlObligTransTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof SettlObligationInstructionsBlockT){
+			accessor = new SettlObligationInstructionsBlockTBeanAccessor();
+		}
+		else if(obj instanceof SettlPartiesBlockT){
+			accessor = new SettlPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof SettlPtysSubGrpBlockT){
+			accessor = new SettlPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SettlSessIDEnumT){
+			accessor = new SettlSessIDEnumTBeanAccessor();
+		}
+		else if(obj instanceof SettlementInstructionRequestMessageT){
+			accessor = new SettlementInstructionRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof SettlementInstructionsMessageT){
+			accessor = new SettlementInstructionsMessageTBeanAccessor();
+		}
+		else if(obj instanceof SettlementObligationReportMessageT){
+			accessor = new SettlementObligationReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof SideCrossOrdCxlGrpBlockT){
+			accessor = new SideCrossOrdCxlGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SideCrossOrdModGrpBlockT){
+			accessor = new SideCrossOrdModGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SideTrdRegTSBlockT){
+			accessor = new SideTrdRegTSBlockTBeanAccessor();
+		}
+		else if(obj instanceof SolicitedFlagEnumT){
+			accessor = new SolicitedFlagEnumTBeanAccessor();
+		}
+		else if(obj instanceof SpreadOrBenchmarkCurveDataBlockT){
+			accessor = new SpreadOrBenchmarkCurveDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof StatsIndGrpBlockT){
+			accessor = new StatsIndGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof StipulationTypeEnumT){
+			accessor = new StipulationTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof StipulationsBlockT){
+			accessor = new StipulationsBlockTBeanAccessor();
+		}
+		else if(obj instanceof StrategyParametersGrpBlockT){
+			accessor = new StrategyParametersGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof StreamAssignmentReportACKMessageT){
+			accessor = new StreamAssignmentReportACKMessageTBeanAccessor();
+		}
+		else if(obj instanceof StreamAssignmentReportMessageT){
+			accessor = new StreamAssignmentReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof StreamAssignmentRequestMessageT){
+			accessor = new StreamAssignmentRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof StrikeRulesBlockT){
+			accessor = new StrikeRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof StrmAsgnReqGrpBlockT){
+			accessor = new StrmAsgnReqGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof StrmAsgnReqInstrmtGrpBlockT){
+			accessor = new StrmAsgnReqInstrmtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof StrmAsgnRptGrpBlockT){
+			accessor = new StrmAsgnRptGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof StrmAsgnRptInstrmtGrpBlockT){
+			accessor = new StrmAsgnRptInstrmtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof SymbolSfxEnumT){
+			accessor = new SymbolSfxEnumTBeanAccessor();
+		}
+		else if(obj instanceof TargetPartiesBlockT){
+			accessor = new TargetPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof TickRulesBlockT){
+			accessor = new TickRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof TimeInForceRulesBlockT){
+			accessor = new TimeInForceRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof TimeUnitEnumT){
+			accessor = new TimeUnitEnumTBeanAccessor();
+		}
+		else if(obj instanceof TradSesUpdateActionEnumT){
+			accessor = new TradSesUpdateActionEnumTBeanAccessor();
+		}
+		else if(obj instanceof TradeCapLegUnderlyingsGrpBlockT){
+			accessor = new TradeCapLegUnderlyingsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TradeCaptureReportAckMessageT){
+			accessor = new TradeCaptureReportAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradeCaptureReportMessageT){
+			accessor = new TradeCaptureReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradeCaptureReportRequestAckMessageT){
+			accessor = new TradeCaptureReportRequestAckMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradeCaptureReportRequestMessageT){
+			accessor = new TradeCaptureReportRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradeReportOrderDetailBlockT){
+			accessor = new TradeReportOrderDetailBlockTBeanAccessor();
+		}
+		else if(obj instanceof TradedFlatSwitchEnumT){
+			accessor = new TradedFlatSwitchEnumTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionListMessageT){
+			accessor = new TradingSessionListMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionListRequestMessageT){
+			accessor = new TradingSessionListRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionListUpdateReportMessageT){
+			accessor = new TradingSessionListUpdateReportMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionRulesBlockT){
+			accessor = new TradingSessionRulesBlockTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionRulesGrpBlockT){
+			accessor = new TradingSessionRulesGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionStatusMessageT){
+			accessor = new TradingSessionStatusMessageTBeanAccessor();
+		}
+		else if(obj instanceof TradingSessionStatusRequestMessageT){
+			accessor = new TradingSessionStatusRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof TrdAllocGrpBlockT){
+			accessor = new TrdAllocGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdCapDtGrpBlockT){
+			accessor = new TrdCapDtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdCapRptAckSideGrpBlockT){
+			accessor = new TrdCapRptAckSideGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdCapRptSideGrpBlockT){
+			accessor = new TrdCapRptSideGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdCollGrpBlockT){
+			accessor = new TrdCollGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdInstrmtLegGrpBlockT){
+			accessor = new TrdInstrmtLegGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdRegTimestampsBlockT){
+			accessor = new TrdRegTimestampsBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdRepIndicatorsGrpBlockT){
+			accessor = new TrdRepIndicatorsGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdSessLstGrpBlockT){
+			accessor = new TrdSessLstGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TrdgSesGrpBlockT){
+			accessor = new TrdgSesGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof TriggerPriceDirectionEnumT){
+			accessor = new TriggerPriceDirectionEnumTBeanAccessor();
+		}
+		else if(obj instanceof TriggeringInstructionBlockT){
+			accessor = new TriggeringInstructionBlockTBeanAccessor();
+		}
+		else if(obj instanceof UndInstrmtCollGrpBlockT){
+			accessor = new UndInstrmtCollGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof UndInstrmtGrpBlockT){
+			accessor = new UndInstrmtGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof UndSecAltIDGrpBlockT){
+			accessor = new UndSecAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingAmountBlockT){
+			accessor = new UnderlyingAmountBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingCashTypeEnumT){
+			accessor = new UnderlyingCashTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingFXRateCalcEnumT){
+			accessor = new UnderlyingFXRateCalcEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingInstrumentBlockT){
+			accessor = new UnderlyingInstrumentBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingLegInstrumentBlockT){
+			accessor = new UnderlyingLegInstrumentBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingLegSecurityAltIDGrpBlockT){
+			accessor = new UnderlyingLegSecurityAltIDGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingPriceUnitOfMeasureEnumT){
+			accessor = new UnderlyingPriceUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingRestructuringTypeEnumT){
+			accessor = new UnderlyingRestructuringTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingSeniorityEnumT){
+			accessor = new UnderlyingSeniorityEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingStipTypeEnumT){
+			accessor = new UnderlyingStipTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingStipulationsBlockT){
+			accessor = new UnderlyingStipulationsBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingSymbolSfxEnumT){
+			accessor = new UnderlyingSymbolSfxEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingTimeUnitEnumT){
+			accessor = new UnderlyingTimeUnitEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnderlyingUnitOfMeasureEnumT){
+			accessor = new UnderlyingUnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof UndlyInstrumentPartiesBlockT){
+			accessor = new UndlyInstrumentPartiesBlockTBeanAccessor();
+		}
+		else if(obj instanceof UndlyInstrumentPtysSubGrpBlockT){
+			accessor = new UndlyInstrumentPtysSubGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof UnitOfMeasureEnumT){
+			accessor = new UnitOfMeasureEnumTBeanAccessor();
+		}
+		else if(obj instanceof UnsolicitedIndicatorEnumT){
+			accessor = new UnsolicitedIndicatorEnumTBeanAccessor();
+		}
+		else if(obj instanceof UserNotificationMessageT){
+			accessor = new UserNotificationMessageTBeanAccessor();
+		}
+		else if(obj instanceof UserRequestMessageT){
+			accessor = new UserRequestMessageTBeanAccessor();
+		}
+		else if(obj instanceof UserResponseMessageT){
+			accessor = new UserResponseMessageTBeanAccessor();
+		}
+		else if(obj instanceof UsernameGrpBlockT){
+			accessor = new UsernameGrpBlockTBeanAccessor();
+		}
+		else if(obj instanceof ValuationMethodEnumT){
+			accessor = new ValuationMethodEnumTBeanAccessor();
+		}
+		else if(obj instanceof VenueTypeEnumT){
+			accessor = new VenueTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof WorkingIndicatorEnumT){
+			accessor = new WorkingIndicatorEnumTBeanAccessor();
+		}
+		else if(obj instanceof Xref){
+			accessor = new XrefBeanAccessor();
+		}
+		else if(obj instanceof YieldDataBlockT){
+			accessor = new YieldDataBlockTBeanAccessor();
+		}
+		else if(obj instanceof YieldTypeEnumT){
+			accessor = new YieldTypeEnumTBeanAccessor();
+		}
+		else if(obj instanceof JAXBElement){
+			accessor = new JAXBElementBeanAccessor();
+		}
+		else if(obj instanceof AbstractMessageT){
+			accessor = new AbstractMessageTBeanAccessor();
+		}
+		
+		//check if there was a match
+		if(accessor != null){
+			accessor.setTarget(obj);
+		}
+		return accessor;
+	}
+	
+}

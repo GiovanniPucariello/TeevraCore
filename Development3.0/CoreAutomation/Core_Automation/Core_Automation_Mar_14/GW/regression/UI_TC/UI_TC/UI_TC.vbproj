@@ -1,0 +1,773 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{BBBA39D7-F382-4DA1-9FE4-58C901185602}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <MyType>Console</MyType>
+    <RootNamespace>UI_TC</RootNamespace>
+    <AssemblyName>UI_TC</AssemblyName>
+    <RanorexVersion>3</RanorexVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG=1,TRACE=1</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE=1</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <ItemGroup>
+    <Reference Include="Ranorex.Core, Version=$(RanorexVersion)">
+      <id>a7f6eb6e-1754-499e-bc5e-573e03b63fef</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Flex, Version=$(RanorexVersion)">
+      <id>ceb1fd94-974d-480f-8473-8f42f9ec3bff</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.MozillaWeb, Version=$(RanorexVersion)">
+      <id>f3e0d781-a3fd-4e1f-9b79-5defbb1047ec</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Msaa, Version=$(RanorexVersion)">
+      <id>48fcb5b3-2698-441f-80ac-c3af2393f1c0</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Office, Version=$(RanorexVersion)">
+      <id>ef80c335-27d6-4355-81b9-acfb4914c914</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.RawText, Version=$(RanorexVersion)">
+      <id>7a2b6289-afde-4fec-a9bc-db4ae1f45c76</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Web, Version=$(RanorexVersion)">
+      <id>d397afea-7967-4b3f-81c7-453195d0902c</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Win32, Version=$(RanorexVersion)">
+      <id>bd5f08cd-8949-4fe4-a746-8777a75d9284</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WinForms, Version=$(RanorexVersion)">
+      <id>0884ecb7-ea29-4cfe-b139-fbc2d99da06c</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Wpf, Version=$(RanorexVersion)">
+      <id>c8d9d27f-3b37-4527-8b26-af383e877405</id>
+    </Reference>
+    <Reference Include="System">
+      <id>c7df27b0-74d3-4350-8d6e-707601af2ae2</id>
+    </Reference>
+    <Reference Include="System.Data">
+      <id>be4c6a4d-9a2c-4a51-8136-86b77f6261a2</id>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <id>ffc3c849-14b2-402a-b73d-25a9d9101bae</id>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <id>ea4e26c5-bb33-403a-88be-d0ba72b4ef41</id>
+    </Reference>
+    <Reference Include="System.Xml">
+      <id>b298cc14-2ec3-4351-ad7a-4a186e61fe9d</id>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic">
+      <id>0e21d79f-d32b-40b4-9756-55fe4eb23a64</id>
+    </Import>
+    <Import Include="System.Collections">
+      <id>87e41627-14b2-499f-a56f-04629bf4b64b</id>
+    </Import>
+    <Import Include="System.Collections.Generic">
+      <id>405beba4-d51c-4cb5-aa65-f5a6ead992a4</id>
+    </Import>
+    <Import Include="System.Diagnostics">
+      <id>f906f5c0-fe2b-4af2-899e-f32d4c991375</id>
+    </Import>
+    <Compile Include="close_loginagain.UserCode.vb">
+      <DependentUpon>close_loginagain.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>bfcf338f-5149-408b-88dd-bea0dd9d8cde</BoundTo>
+      <id>f53bf3e5-7ded-4674-bd6f-ddbe2bbef409</id>
+    </Compile>
+    <Compile Include="close_loginagain.vb">
+      <DependentUpon>close_loginagain.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>bfcf338f-5149-408b-88dd-bea0dd9d8cde</BoundTo>
+      <id>05d06638-189b-4113-aa0b-241ed9f5b93f</id>
+    </Compile>
+    <Compile Include="createtestprocess.UserCode.vb">
+      <DependentUpon>createtestprocess.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>9446cb53-3826-4ea9-87ce-e866798e8742</BoundTo>
+      <id>02e8ca2f-4eb4-4359-ba87-e3091d3e3aed</id>
+    </Compile>
+    <Compile Include="createtestprocess.vb">
+      <DependentUpon>createtestprocess.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>9446cb53-3826-4ea9-87ce-e866798e8742</BoundTo>
+      <id>d159b9ff-6890-4f0d-a172-6df327464792</id>
+    </Compile>
+    <Compile Include="CSVConnector.vb">
+      <ORIGINALPATH>C:\Program Files\Ranorex 2.3\Samples\DataDrivenTest\VBNET\CSVConnector.vb</ORIGINALPATH>
+      <id>abea1794-cfe9-4ad9-a50a-0843aae9c7cf</id>
+    </Compile>
+    <Compile Include="login.UserCode.vb">
+      <DependentUpon>login.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>8323574b-a047-4ddf-9ead-23b0c1c86599</BoundTo>
+      <id>2202cac1-df03-49a0-aea2-4ec654e071ad</id>
+    </Compile>
+    <Compile Include="login.vb">
+      <DependentUpon>login.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>8323574b-a047-4ddf-9ead-23b0c1c86599</BoundTo>
+      <id>9a9e1c36-199d-493c-a83e-fcc80583be66</id>
+    </Compile>
+    <Compile Include="login_1.UserCode.vb">
+      <DependentUpon>login_1.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>2445f2c8-a695-4530-8036-a19c3794c736</BoundTo>
+      <id>9a370447-8719-4a1c-a2d1-1ea8d9e3cad6</id>
+    </Compile>
+    <Compile Include="login_1.vb">
+      <DependentUpon>login_1.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>2445f2c8-a695-4530-8036-a19c3794c736</BoundTo>
+      <id>625e0026-527f-40b6-a2d7-f13abf4c1e5c</id>
+    </Compile>
+    <Compile Include="logout.UserCode.vb">
+      <DependentUpon>logout.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>bf2b8542-1e39-4f92-aec3-70abd110b620</BoundTo>
+      <id>187d37c2-a5fd-4029-ae46-a666c8abd1de</id>
+    </Compile>
+    <Compile Include="logout.vb">
+      <DependentUpon>logout.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>bf2b8542-1e39-4f92-aec3-70abd110b620</BoundTo>
+      <id>61accb3f-48ea-4222-994f-d0f546847b8f</id>
+    </Compile>
+    <Compile Include="N24_Create_Delete_Update_User.vb">
+      <DependentUpon>24_Create_Delete_Update_User.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>3cd2fd0b-3a7b-4547-b866-649399c94c71</BoundTo>
+      <id>ee3e0eff-96d4-4a18-8bba-86a34fd16a5c</id>
+    </Compile>
+    <Compile Include="Oats_UIRepository.vb">
+      <DependentUpon>Oats_UIRepository.rxrep</DependentUpon>
+      <BoundTo>8032646f-62fc-487c-98c5-4231ec3d73c3</BoundTo>
+      <id>f194a776-17db-462e-8fca-ca2d1d435877</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="process14Repository.vb">
+      <DependentUpon>process14Repository.rxrep</DependentUpon>
+      <BoundTo>702f806e-b20e-4a05-b7ff-364fa24f783c</BoundTo>
+      <id>a8afdb3d-d573-4fac-b9a3-f780493e6f33</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project10Repository.vb">
+      <DependentUpon>Project10Repository.rxrep</DependentUpon>
+      <BoundTo>aed1cf1e-6914-423d-98b3-e70292778a3d</BoundTo>
+      <id>7b4bc152-e34b-43f3-b54a-795bf6ff04e9</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project11Repository.vb">
+      <DependentUpon>Project11Repository.rxrep</DependentUpon>
+      <BoundTo>47b12b49-b74b-4faf-9e6c-23dd44cc1cdd</BoundTo>
+      <id>8dd23c05-12ba-4ab1-9ced-c43b74011fcc</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project12Repository.vb">
+      <DependentUpon>Project12Repository.rxrep</DependentUpon>
+      <BoundTo>f898435e-0b46-4947-b255-a56b22611a43</BoundTo>
+      <id>670881a2-c8ed-412e-b381-7189a36d5988</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="project13Repository.vb">
+      <DependentUpon>project13Repository.rxrep</DependentUpon>
+      <BoundTo>ff308526-2343-4fb9-9888-f400a3f43599</BoundTo>
+      <id>35af6b5a-c104-4549-bb70-c0ba451fc960</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project1Repository.vb">
+      <DependentUpon>Project1Repository.rxrep</DependentUpon>
+      <BoundTo>63e20fe3-6b70-4d46-a607-a5e2fadd6b36</BoundTo>
+      <id>6d180494-e547-45cc-8bf7-0754b6bb3abd</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project2Repository.vb">
+      <DependentUpon>Project2Repository.rxrep</DependentUpon>
+      <BoundTo>d3bd144a-dfb8-41b6-9f81-0eadb9eca754</BoundTo>
+      <id>52764769-3888-49e8-bfcf-c7a4f07c6ba2</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project3Repository.vb">
+      <DependentUpon>Project3Repository.rxrep</DependentUpon>
+      <BoundTo>7c4d14e7-ef4f-4d32-b981-3283b7d4f7b3</BoundTo>
+      <id>ffb6b82f-ebaf-418a-a18e-35b62337553f</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="project4Repository.vb">
+      <DependentUpon>project4Repository.rxrep</DependentUpon>
+      <BoundTo>977b5e8b-dcb3-4738-b966-7bf791f451b3</BoundTo>
+      <id>c1304ba0-f07a-45c9-95b0-6e6b46c0e625</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project5Repository.vb">
+      <DependentUpon>Project5Repository.rxrep</DependentUpon>
+      <BoundTo>a4c0ac84-435e-4bea-a33e-babb9fdba36a</BoundTo>
+      <id>99328f8d-f0cd-4071-bc35-a79959fff6e0</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project7Repository.vb">
+      <DependentUpon>Project7Repository.rxrep</DependentUpon>
+      <BoundTo>da15bed8-e903-47d4-81c9-845ac88d6b61</BoundTo>
+      <id>d662f615-1918-44c2-af68-5bbb175d70d5</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project8Repository.vb">
+      <DependentUpon>Project8Repository.rxrep</DependentUpon>
+      <BoundTo>64529cda-5a55-47c3-8dc0-d6e5c3112b20</BoundTo>
+      <id>b8523f53-f584-43bd-b90d-1b9865b3b4a8</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Project9Repository.vb">
+      <DependentUpon>Project9Repository.rxrep</DependentUpon>
+      <BoundTo>465ae837-b513-4348-9139-50afb9c74f88</BoundTo>
+      <id>8ebbad17-b53e-40b6-8207-71779b6837e9</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <Compile Include="Recording10.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project10\Project10\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording10.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>c82f406d-3a4a-4bd7-9894-73d22d72969e</BoundTo>
+      <id>0b2c4a93-b9cc-49b9-a5a4-b31543af681a</id>
+    </Compile>
+    <Compile Include="Recording10.vb">
+      <DependentUpon>Recording10.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>c82f406d-3a4a-4bd7-9894-73d22d72969e</BoundTo>
+      <id>e20e9283-59da-46c0-9c7f-beb9cb797b43</id>
+    </Compile>
+    <Compile Include="Recording13.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\project13\project13\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording13.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>fce31b50-4703-462c-a3f5-7de36d4340fb</BoundTo>
+      <id>1a29a97b-5e4f-47f0-96fe-be61a169939c</id>
+    </Compile>
+    <Compile Include="Recording13.vb">
+      <DependentUpon>Recording13.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>fce31b50-4703-462c-a3f5-7de36d4340fb</BoundTo>
+      <id>ee844787-c727-41f3-8270-88353871c86a</id>
+    </Compile>
+    <Compile Include="Recording11.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project11\Project11\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording11.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>ce4cd973-0829-4cf5-a691-fcccad625d93</BoundTo>
+      <id>56a13450-df24-4ea2-82ac-25c3935d1b9b</id>
+    </Compile>
+    <Compile Include="Recording11.vb">
+      <DependentUpon>Recording11.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>ce4cd973-0829-4cf5-a691-fcccad625d93</BoundTo>
+      <id>b8a9ccfb-e35b-44a8-a086-152a5a533ec1</id>
+    </Compile>
+    <Compile Include="Recording4.UserCode.vb">
+      <DependentUpon>Recording4.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>fb0676cc-0306-468c-8728-a53eccf06b88</BoundTo>
+      <id>b4dd576f-4275-45c2-b73b-60589c33b867</id>
+    </Compile>
+    <Compile Include="Recording4.vb">
+      <DependentUpon>Recording4.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>fb0676cc-0306-468c-8728-a53eccf06b88</BoundTo>
+      <id>c72640ee-b304-4623-873e-e2fd27768c35</id>
+    </Compile>
+    <Compile Include="Recording9.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project9\Project9\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording9.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>17e92fac-0407-40d9-8fdc-1e0b11bc402b</BoundTo>
+      <id>a782d1a3-fab8-47d7-a061-48c8d36291e9</id>
+    </Compile>
+    <Compile Include="Recording9.vb">
+      <DependentUpon>Recording9.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>17e92fac-0407-40d9-8fdc-1e0b11bc402b</BoundTo>
+      <id>9f80c9c4-3416-40d6-ab31-f7bf8d0a2900</id>
+    </Compile>
+    <Compile Include="Recording8.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project8\Project8\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording8.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>ab7ec72d-7277-430c-90aa-afa0699eb357</BoundTo>
+      <id>ce9601a9-85a9-4b08-b240-0b3945125996</id>
+    </Compile>
+    <Compile Include="Recording8.vb">
+      <DependentUpon>Recording8.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>ab7ec72d-7277-430c-90aa-afa0699eb357</BoundTo>
+      <id>d83571a6-6612-4b33-9ea6-0303c62bc8a7</id>
+    </Compile>
+    <Compile Include="Recording7.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project7\Project7\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording7.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>33fdf768-af0b-4a2a-8691-e8befd59c50b</BoundTo>
+      <id>23cae420-2808-4a33-aa12-6788c6033b8b</id>
+    </Compile>
+    <Compile Include="Recording7.vb">
+      <DependentUpon>Recording7.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>33fdf768-af0b-4a2a-8691-e8befd59c50b</BoundTo>
+      <id>fc9355e4-d86f-4164-bf02-ff4b972051d5</id>
+    </Compile>
+    <Compile Include="Recording5.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project5\Project5\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording5.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>4b26e41f-fac5-4fc9-8872-601ed92933a0</BoundTo>
+      <id>6f58abab-7fd7-4bcc-b89f-0dda55f3d738</id>
+    </Compile>
+    <Compile Include="Recording5.vb">
+      <DependentUpon>Recording5.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>4b26e41f-fac5-4fc9-8872-601ed92933a0</BoundTo>
+      <id>bd0803d6-0ea1-473b-9668-18973ef9dcf6</id>
+    </Compile>
+    <Compile Include="Recording3.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project3\Project3\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording3.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>9a4d987f-050a-47d5-acee-44302ad19930</BoundTo>
+      <id>03fff01a-9c7c-430e-80ba-90ce95cd20d2</id>
+    </Compile>
+    <Compile Include="Recording3.vb">
+      <DependentUpon>Recording3.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>9a4d987f-050a-47d5-acee-44302ad19930</BoundTo>
+      <id>426e5583-3b5d-4b2d-9a1c-48fd89db4a7f</id>
+    </Compile>
+    <Compile Include="Recording2.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project2\Project2\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording2.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>7a5ad3a3-ffb9-4647-8287-f96e39055381</BoundTo>
+      <id>50c1f605-ec35-4cff-b59a-e52b7f4fb7f4</id>
+    </Compile>
+    <Compile Include="Recording2.vb">
+      <DependentUpon>Recording2.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>7a5ad3a3-ffb9-4647-8287-f96e39055381</BoundTo>
+      <id>0fe548a3-b21e-41a1-8b80-b4b364913593</id>
+    </Compile>
+    <Compile Include="Recording14.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\process14\process14\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording14.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>5871190f-f117-4461-a7a7-4f0f073f4501</BoundTo>
+      <id>cb7c31e6-847c-484c-bf4a-620ea2ba8820</id>
+    </Compile>
+    <Compile Include="Recording14.vb">
+      <DependentUpon>Recording14.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>5871190f-f117-4461-a7a7-4f0f073f4501</BoundTo>
+      <id>4767a483-4614-499f-8690-820baa096991</id>
+    </Compile>
+    <Compile Include="scenario1.UserCode.vb">
+      <DependentUpon>scenario1.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>9c6495ad-0021-4e64-9dac-6caf43463c47</BoundTo>
+      <id>492b0f2d-15d0-4e1a-9a22-119b4b7f7aaa</id>
+    </Compile>
+    <Compile Include="scenario1.vb">
+      <DependentUpon>scenario1.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>9c6495ad-0021-4e64-9dac-6caf43463c47</BoundTo>
+      <id>6c3bac99-6eeb-4d40-b6fa-6c7ac5aedb7f</id>
+    </Compile>
+    <Compile Include="Scenario13.UserCode.vb">
+      <DependentUpon>Scenario13.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>d453ca0a-24c3-4698-a811-08faacdc69d7</BoundTo>
+      <id>996b80e9-30b8-4e15-8f49-a6db9f770295</id>
+    </Compile>
+    <Compile Include="Scenario13.vb">
+      <DependentUpon>Scenario13.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>d453ca0a-24c3-4698-a811-08faacdc69d7</BoundTo>
+      <id>bfdebc38-e1d2-4cd2-8112-44782a79b8d6</id>
+    </Compile>
+    <Compile Include="Scenario14.UserCode.vb">
+      <DependentUpon>Scenario14.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>5e451e96-f0a9-4921-b183-757dfa8710c4</BoundTo>
+      <id>4cdb1983-d10f-4e44-9f2c-4649c4912b95</id>
+    </Compile>
+    <Compile Include="Scenario14.vb">
+      <DependentUpon>Scenario14.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>5e451e96-f0a9-4921-b183-757dfa8710c4</BoundTo>
+      <id>c1be6c49-5d85-4808-b345-67ad9f9de2c3</id>
+    </Compile>
+    <Compile Include="Scenario15.UserCode.vb">
+      <DependentUpon>Scenario15.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>a6c2e1a0-6fcf-416e-b556-0e3b6aa75404</BoundTo>
+      <id>63337cf3-7887-4ada-8244-55b09d99e554</id>
+    </Compile>
+    <Compile Include="Scenario15.vb">
+      <DependentUpon>Scenario15.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>a6c2e1a0-6fcf-416e-b556-0e3b6aa75404</BoundTo>
+      <id>46e59f53-3bf8-4822-bb82-005b060b5159</id>
+    </Compile>
+    <Compile Include="Scenario16.UserCode.vb">
+      <DependentUpon>Scenario16.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>1043f48c-fca3-4591-b2cd-429ed5201c82</BoundTo>
+      <id>2eec13a9-5f05-4539-8af6-03b94f06914d</id>
+    </Compile>
+    <Compile Include="Scenario16.vb">
+      <DependentUpon>Scenario16.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>1043f48c-fca3-4591-b2cd-429ed5201c82</BoundTo>
+      <id>5ce314d3-b2be-4c5d-b2a2-754afe1ff192</id>
+    </Compile>
+    <Compile Include="Scenario21.UserCode.vb">
+      <ORIGINALPATH>D:\test\Oats_UI\Oats_UI\Scenario21.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Scenario21.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>218f8787-e4e5-4161-8a54-58137823571b</BoundTo>
+      <id>8a75e936-e700-4c53-880f-3dab262be825</id>
+    </Compile>
+    <Compile Include="Scenario21.vb">
+      <DependentUpon>Scenario21.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>218f8787-e4e5-4161-8a54-58137823571b</BoundTo>
+      <id>6fd9b004-cb39-4823-a76f-264eaceea012</id>
+    </Compile>
+    <Compile Include="Scenario22.UserCode.vb">
+      <DependentUpon>Scenario22.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>40230c0b-3482-4096-bf52-25450f62696e</BoundTo>
+      <id>e0fb3a6d-e23d-482b-9d38-1813bf14b2cb</id>
+    </Compile>
+    <Compile Include="Scenario22.vb">
+      <DependentUpon>Scenario22.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>40230c0b-3482-4096-bf52-25450f62696e</BoundTo>
+      <id>884d0e01-94ca-4d27-9cec-3e6cbe624ce5</id>
+    </Compile>
+    <Compile Include="scenario25.UserCode.vb">
+      <DependentUpon>scenario25.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>98aa0c20-bd52-4061-9112-230d9a1f63f6</BoundTo>
+      <id>305f84a3-f723-4bed-85b4-d160d5211799</id>
+    </Compile>
+    <Compile Include="scenario25.vb">
+      <DependentUpon>scenario25.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>98aa0c20-bd52-4061-9112-230d9a1f63f6</BoundTo>
+      <id>a06ccf31-fef4-4919-8875-cf3327102d83</id>
+    </Compile>
+    <Compile Include="scenario25_CreDelUp_role.UserCode.vb">
+      <DependentUpon>scenario25_CreDelUp_role.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>e0439d37-4115-4269-9c5a-870f998ddb2e</BoundTo>
+      <id>3b2cf28a-50a7-4d04-acba-3501c8e2b1de</id>
+    </Compile>
+    <Compile Include="scenario25_CreDelUp_role.vb">
+      <DependentUpon>scenario25_CreDelUp_role.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>e0439d37-4115-4269-9c5a-870f998ddb2e</BoundTo>
+      <id>3966033c-19a3-41a9-9bbd-481721f11aeb</id>
+    </Compile>
+    <Compile Include="Scenario54.UserCode.vb">
+      <DependentUpon>Scenario54.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>e7765650-3040-4110-a578-06c2c4d2b0da</BoundTo>
+      <id>c3071e26-9c8c-492e-b381-675d0cff4157</id>
+    </Compile>
+    <Compile Include="Scenario54.vb">
+      <DependentUpon>Scenario54.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>e7765650-3040-4110-a578-06c2c4d2b0da</BoundTo>
+      <id>d6aa1ae4-3dec-41f7-a15c-7e37a50eb7d3</id>
+    </Compile>
+    <Compile Include="Scenario56.UserCode.vb">
+      <DependentUpon>Scenario56.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>b4c76b26-8d4c-4456-9f04-9bd36b50a2c2</BoundTo>
+      <id>5e12c372-26c2-4753-8128-3fec9eec7d7f</id>
+    </Compile>
+    <Compile Include="Scenario56.vb">
+      <DependentUpon>Scenario56.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>b4c76b26-8d4c-4456-9f04-9bd36b50a2c2</BoundTo>
+      <id>3323b811-b032-40ef-b805-f4d94454b9bf</id>
+    </Compile>
+    <Compile Include="Scenario57.UserCode.vb">
+      <DependentUpon>Scenario57.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>d19e935e-7590-4c03-9c5c-0c751297f612</BoundTo>
+      <id>41b42986-42a1-4414-b383-537644d820f7</id>
+    </Compile>
+    <Compile Include="Scenario57.vb">
+      <DependentUpon>Scenario57.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>d19e935e-7590-4c03-9c5c-0c751297f612</BoundTo>
+      <id>30f1f672-513d-4f1f-bfae-69c22311dccf</id>
+    </Compile>
+    <Compile Include="Scenario66_GenericFormater.UserCode.vb">
+      <DependentUpon>Scenario66-GenericFormater.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>6a07a810-d080-4957-8da5-0f72b582b3ac</BoundTo>
+      <id>3a125208-7e6e-4828-a886-471b64a2dc34</id>
+    </Compile>
+    <Compile Include="Scenario66_GenericFormater.vb">
+      <DependentUpon>Scenario66-GenericFormater.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>6a07a810-d080-4957-8da5-0f72b582b3ac</BoundTo>
+      <id>569ffe5c-f26f-4199-91a9-0f7bc8d3169d</id>
+    </Compile>
+    <Compile Include="scenario9.UserCode.vb">
+      <DependentUpon>scenario9.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>a073b25e-14d8-475d-943c-101d433e50c3</BoundTo>
+      <id>d7ee8e4d-67ba-466a-8c78-550493d20679</id>
+    </Compile>
+    <Compile Include="scenario9.vb">
+      <DependentUpon>scenario9.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+      <BoundTo>a073b25e-14d8-475d-943c-101d433e50c3</BoundTo>
+      <id>bcf84381-74f9-4c56-91d3-c511c08f52e2</id>
+    </Compile>
+    <Compile Include="_Create_Delete_Update_User.vb">
+      <DependentUpon>24_Create_Delete_Update_User.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+      <BoundTo>3cd2fd0b-3a7b-4547-b866-649399c94c71</BoundTo>
+      <id>4f130093-0782-432a-a3ae-398f5dfdb7d4</id>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <id>46ab0b11-4849-4c36-942e-5f41b0ee1070</id>
+    </Compile>
+    <Compile Include="Program.vb">
+      <id>3eb9c343-7f21-4cea-bda6-336f7f1eb9b7</id>
+    </Compile>
+    <Compile Include="UI_TCRepository.vb">
+      <DependentUpon>UI_TCRepository.rxrep</DependentUpon>
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>be1790dd-316b-4de2-a842-004285da19e0</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <None Include="24_Create_Delete_Update_User.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>3cd2fd0b-3a7b-4547-b866-649399c94c71</id>
+    </None>
+    <None Include="close_loginagain.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>bfcf338f-5149-408b-88dd-bea0dd9d8cde</id>
+    </None>
+    <None Include="createtestprocess.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>9446cb53-3826-4ea9-87ce-e866798e8742</id>
+    </None>
+    <None Include="data.csv">
+      <id>e0b87544-450a-4508-9de6-3f77a1e5ff7c</id>
+    </None>
+    <None Include="dummy.vb">
+      <ORIGINALPATH>D:\10Nov\dummy.txt</ORIGINALPATH>
+      <id>de674ccc-0dad-44b7-a34c-b9056ff58a5e</id>
+    </None>
+    <None Include="login.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>8323574b-a047-4ddf-9ead-23b0c1c86599</id>
+    </None>
+    <None Include="login_1.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>2445f2c8-a695-4530-8036-a19c3794c736</id>
+    </None>
+    <None Include="logout.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>bf2b8542-1e39-4f92-aec3-70abd110b620</id>
+    </None>
+    <None Include="Oats_UIRepository.rxrep">
+      <id>8032646f-62fc-487c-98c5-4231ec3d73c3</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="process14Repository.rxrep">
+      <id>702f806e-b20e-4a05-b7ff-364fa24f783c</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project10Repository.rxrep">
+      <id>aed1cf1e-6914-423d-98b3-e70292778a3d</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project11Repository.rxrep">
+      <id>47b12b49-b74b-4faf-9e6c-23dd44cc1cdd</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project12Repository.rxrep">
+      <id>f898435e-0b46-4947-b255-a56b22611a43</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="project13Repository.rxrep">
+      <id>ff308526-2343-4fb9-9888-f400a3f43599</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project1Repository.rxrep">
+      <id>63e20fe3-6b70-4d46-a607-a5e2fadd6b36</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project2Repository.rxrep">
+      <id>d3bd144a-dfb8-41b6-9f81-0eadb9eca754</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project3Repository.rxrep">
+      <id>7c4d14e7-ef4f-4d32-b981-3283b7d4f7b3</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="project4Repository.rxrep">
+      <id>977b5e8b-dcb3-4738-b966-7bf791f451b3</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project5Repository.rxrep">
+      <id>a4c0ac84-435e-4bea-a33e-babb9fdba36a</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project7Repository.rxrep">
+      <id>da15bed8-e903-47d4-81c9-845ac88d6b61</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project8Repository.rxrep">
+      <id>64529cda-5a55-47c3-8dc0-d6e5c3112b20</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Project9Repository.rxrep">
+      <id>465ae837-b513-4348-9139-50afb9c74f88</id>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <None Include="Recording10.rxrec">
+      <BoundTo>aed1cf1e-6914-423d-98b3-e70292778a3d</BoundTo>
+      <id>c82f406d-3a4a-4bd7-9894-73d22d72969e</id>
+    </None>
+    <None Include="Recording13.rxrec">
+      <BoundTo>ff308526-2343-4fb9-9888-f400a3f43599</BoundTo>
+      <id>fce31b50-4703-462c-a3f5-7de36d4340fb</id>
+    </None>
+    <None Include="Recording11.rxrec">
+      <BoundTo>47b12b49-b74b-4faf-9e6c-23dd44cc1cdd</BoundTo>
+      <id>ce4cd973-0829-4cf5-a691-fcccad625d93</id>
+    </None>
+    <None Include="Recording4.rxrec">
+      <BoundTo>977b5e8b-dcb3-4738-b966-7bf791f451b3</BoundTo>
+      <id>fb0676cc-0306-468c-8728-a53eccf06b88</id>
+    </None>
+    <None Include="Recording9.rxrec">
+      <BoundTo>465ae837-b513-4348-9139-50afb9c74f88</BoundTo>
+      <id>17e92fac-0407-40d9-8fdc-1e0b11bc402b</id>
+    </None>
+    <None Include="Recording8.rxrec">
+      <BoundTo>64529cda-5a55-47c3-8dc0-d6e5c3112b20</BoundTo>
+      <id>ab7ec72d-7277-430c-90aa-afa0699eb357</id>
+    </None>
+    <None Include="Recording7.rxrec">
+      <BoundTo>da15bed8-e903-47d4-81c9-845ac88d6b61</BoundTo>
+      <id>33fdf768-af0b-4a2a-8691-e8befd59c50b</id>
+    </None>
+    <None Include="Recording5.rxrec">
+      <BoundTo>a4c0ac84-435e-4bea-a33e-babb9fdba36a</BoundTo>
+      <id>4b26e41f-fac5-4fc9-8872-601ed92933a0</id>
+    </None>
+    <None Include="Recording3.rxrec">
+      <BoundTo>7c4d14e7-ef4f-4d32-b981-3283b7d4f7b3</BoundTo>
+      <id>9a4d987f-050a-47d5-acee-44302ad19930</id>
+    </None>
+    <None Include="Recording2.rxrec">
+      <BoundTo>d3bd144a-dfb8-41b6-9f81-0eadb9eca754</BoundTo>
+      <id>7a5ad3a3-ffb9-4647-8287-f96e39055381</id>
+    </None>
+    <None Include="Recording14.rxrec">
+      <BoundTo>702f806e-b20e-4a05-b7ff-364fa24f783c</BoundTo>
+      <id>5871190f-f117-4461-a7a7-4f0f073f4501</id>
+    </None>
+    <None Include="Reports\Test.rxlog">
+      <id>8f87404d-12bb-4569-ab17-7bd9f8877aa9</id>
+    </None>
+    <None Include="scenario1.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>9c6495ad-0021-4e64-9dac-6caf43463c47</id>
+    </None>
+    <None Include="Scenario13.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>d453ca0a-24c3-4698-a811-08faacdc69d7</id>
+    </None>
+    <None Include="Scenario14.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>5e451e96-f0a9-4921-b183-757dfa8710c4</id>
+    </None>
+    <None Include="Scenario15.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>a6c2e1a0-6fcf-416e-b556-0e3b6aa75404</id>
+    </None>
+    <None Include="Scenario16.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>1043f48c-fca3-4591-b2cd-429ed5201c82</id>
+    </None>
+    <None Include="Scenario21.rxrec">
+      <BoundTo>8032646f-62fc-487c-98c5-4231ec3d73c3</BoundTo>
+      <id>218f8787-e4e5-4161-8a54-58137823571b</id>
+    </None>
+    <None Include="Scenario22.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>40230c0b-3482-4096-bf52-25450f62696e</id>
+    </None>
+    <None Include="scenario25.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>98aa0c20-bd52-4061-9112-230d9a1f63f6</id>
+    </None>
+    <None Include="scenario25_CreDelUp_role.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>e0439d37-4115-4269-9c5a-870f998ddb2e</id>
+    </None>
+    <None Include="Scenario54.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>e7765650-3040-4110-a578-06c2c4d2b0da</id>
+    </None>
+    <None Include="Scenario56.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>b4c76b26-8d4c-4456-9f04-9bd36b50a2c2</id>
+    </None>
+    <None Include="Scenario57.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>d19e935e-7590-4c03-9c5c-0c751297f612</id>
+    </None>
+    <None Include="Scenario66-GenericFormater.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>6a07a810-d080-4957-8da5-0f72b582b3ac</id>
+    </None>
+    <None Include="scenario9.rxrec">
+      <BoundTo>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</BoundTo>
+      <id>a073b25e-14d8-475d-943c-101d433e50c3</id>
+    </None>
+    <None Include="UI_TCRepository.rxrep">
+      <id>2443eb40-8d6b-44ee-b400-1f68fa4df1a8</id>
+      <projectdefaultrepository>true</projectdefaultrepository>
+      <repoid>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</repoid>
+    </None>
+    <Folder Include="Reports">
+      <ReportsDir>true</ReportsDir>
+      <id>638acb3b-c65b-433d-8b57-cb21590a69b3</id>
+    </Folder>
+  </ItemGroup>
+</Project>

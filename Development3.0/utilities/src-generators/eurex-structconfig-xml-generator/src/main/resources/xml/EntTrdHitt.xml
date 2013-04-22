@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntTrdHittRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntTrdHittRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntTrdHittRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdHittRecT">
+		<sequence>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdHittResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="futBscEntTrdHittRecT" name="futBscEntTrdHittRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntTrdHittResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntTrdHittResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdHittRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntTrdHittRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntTrdHittRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdHittRecT">
+		<sequence>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdHittResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="optBscEntTrdHittRecT" name="optBscEntTrdHittRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntTrdHittResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntTrdHittResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

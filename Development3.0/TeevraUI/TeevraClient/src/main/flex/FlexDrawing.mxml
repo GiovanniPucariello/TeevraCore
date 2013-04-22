@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" width="100%" height="100%"
+	xmlns:graph="com.headstrong.teevra.client.graph.*" creationComplete="initApp();"
+	xmlns:local="*"
+	implements="mx.rpc.IResponder"
+	xmlns:com="*" xmlns:flexScript="com.headstrong.teevra.components.common.*">
+    <mx:Script><![CDATA[
+    	import mx.utils.ArrayUtil;
+    	import com.headstrong.teevra.client.util.AlertHelper;
+    	import mx.collections.ICollectionView;
+    	import com.headstrong.teevra.client.events.ComponentServiceEvent;
+    	import com.headstrong.teevra.client.events.ProcessServiceEvent;
+    	import com.headstrong.teevra.client.graph.DrawingClasses.ComponentConnector;
+    	import com.headstrong.teevra.client.graph.DrawingClasses.ComponentDesigner;
+    	import com.headstrong.teevra.client.graph.common.Line;
+    	import com.headstrong.teevra.client.graph.ComponentGraphCanvasItem;
+    	import com.headstrong.teevra.client.graph.common.Designer;
+    	
+    	import mx.events.CloseEvent;
+    	import mx.events.ValidationResultEvent;
+    	import mx.validators.StringValidator;
+    	import com.headstrong.teevra.client.graph.model.ProcessServiceConfigurationVO;
+    	
+    	import com.headstrong.teevra.client.events.GetSchemasEvent;
+    	
+    	import com.adobe.cairngorm.control.CairngormEvent;
+    	import com.headstrong.teevra.client.commands.ViewSchemaCommand;
+    	import com.headstrong.teevra.client.events.ViewSchemaEvent;
+    	import com.adobe.cairngorm.commands.Command;
+    	import com.headstrong.teevra.client.commands.ViewProcessCommand;
+    	import com.headstrong.teevra.client.graph.model.ProcessServiceVO;
+    	import flash.sampler.getGetterInvocationCount;
+	
+	import com.headstrong.teevra.client.events.ViewProcessEvent;
+	import com.headstrong.teevra.client.view.entity.ProcessVO;    
+    
+    import mx.controls.Alert;
+    import mx.collections.ArrayCollection;
+    import mx.core.DragSource;
+    import mx.events.DragEvent;
+    import mx.managers.DragManager;
+   
+    import com.adobe.viewsource.ViewSource;
+    import com.headstrong.teevra.client.graph.model.ComponentVO;
+    
+    import com.headstrong.teevra.client.graph.model.ProcessGraphVO;
+    import com.headstrong.teevra.client.graph.model.ProcessGraphNodeVO;
+    import com.headstrong.teevra.client.graph.model.ProcessGraphLinkVO;
+    
+    import com.headstrong.teevra.client.model.ViewModelLocator;
+    import com.headstrong.teevra.client.util.UserEntitlements;
+    
+    private var designer:Designer = new Designer();   
+    private var iDragManager:DragManager;
+    private var compVO:ComponentVO;
+    private var loadedProcess:ProcessVO;
+    private var processGraphVO:ProcessGraphVO;
+    private var processGraphNodeVO:ProcessGraphNodeVO;
+    private var businessErrorHandlerValue:String;
+	private var systemErrorHandlerValue:String;
+		
+   // private var processGraphLinkVO:ProcessGraphLinkVO;
+   
+     [Bindable]	
+    private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+    
+    private var processServiceEvent:ProcessServiceEvent;
+    private var serviceIdentifier:String;
+	private const COMPONENT_SERVICE:String="COMPONENT_SERVICE";
+	private const PROCESS_SERVICE:String="PROCESS_SERVICE";
+	
+	private const SAVE_EVENT:String = "SAVE_EVENT";
+	private const DELETE_EVENT:String = "DELETE_EVENT";
+	private const PUBLISH_EVENT:String = "PUBLISH_EVENT";
+	private const DRAWING_PROCESS_EVENT:String = "DRAWING_PROCESS_EVENT";
+	private const GET_PROCESS_EVENT:String = "GET_PROCESS_EVENT";
+    
+    private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+	private var saveButtonEnabled:Boolean=true;
+	private var publishButtonEnabled:Boolean=true;
+	
+	private function authorizePage():void
+	{
+		if(!(userEntitlements.isAdmin || userEntitlements.crudProcess))
+		   {
+		   		saveButtonEnabled=false;				   						   		
+		   }
+		 if(!(userEntitlements.isAdmin || userEntitlements.publishProcess)){
+		 		publishButtonEnabled=false;
+		 }
+		
+	}    
+    private function initApp():void{
+   		
+    	authorizePage();
+    	designer.setDesignArea(graphCanvas);
+    	var lineFactory:ClassFactory = new ClassFactory();
+    	lineFactory.generator = ComponentConnector;
+    	designer.lineFactory = lineFactory;
+    	
+    	compPalette.designer= designer;
+    	graphCanvas.designer = designer; 
+    	
+    	loadedProcess = modelLocator.loadedProcess;
+    	saveButton.enabled=saveButtonEnabled;
+    	if ((loadedProcess != null) && (loadedProcess.graph != null))
+    	{
+    		loadProcessGraph(loadedProcess.graph);	
+    		publishButton.enabled = publishButtonEnabled;
+    		deleteButton.enabled = saveButtonEnabled;
+    	}
+		//if the process is in locked mode, process cannot be edited 
+    	if ((loadedProcess != null) && (!loadedProcess.isProcessEditable()))
+    	{
+    		saveButton.enabled = false;	
+    		publishButton.enabled = false;
+    		deleteButton.enabled = false;
+    		newProcess.nameText.editable = false;
+    		newProcess.descriptionText.editable = false;
+    	}
+    	var getSchemasEvent:GetSchemasEvent = new GetSchemasEvent();
+    	getSchemasEvent.dispatch();
+    }
+	private function saveProcess():void
+    {	
+    	var validator:StringValidator  = new StringValidator();
+		var vResult:ValidationResultEvent;
+		var saveFlag:Boolean;
+		var serviceDetails:ProcessServiceVO;
+
+    	validator.listener=newProcess.nameText;
+    	vResult=validator.validate(newProcess.nameText.text,false);
+    	loadedProcess = newProcess.getProcessVO();
+    	
+    	//Added to check the configuration details:Code Start
+    	
+		if(designer.getBoxList().length!=0 && !configurationDetailsCheck(serviceDetails)) {
+			Alert.show("Please fill the configuration details of components in process canvas");
+			return;
+		}
+    	
+		//Added to check the configuration details:Code End
+    	
+    	if(vResult.type==ValidationResultEvent.VALID )
+    	{
+    		if(validateUniqueServiceId())
+    		{
+    			if ( validateThrottleConfig()) 
+    			{
+		    		var args:Object = new Object();
+		    		loadedProcess.graph = getProcessGraph();
+		    		
+					args[ProcessServiceEvent.SAVE_PROCESS_ID] = loadedProcess;
+					processServiceEvent = new ProcessServiceEvent(ProcessServiceEvent.SAVE_PROCESS_COMMAND, args, this);
+					processServiceEvent.dispatch();
+					serviceIdentifier=SAVE_EVENT;
+    			}
+    			else
+    			{
+    				Alert.show("Please configure both the parameters");
+    			}
+    		}    		
+    	}
+    	else
+    	{
+    		Alert.show("Please fill in all the mandatory fields details","Configuration Detail");
+    	}
+    }
+    private function validateThrottleConfig():Boolean
+    {
+		if ( (loadedProcess.throttleMsgCount > 0 && loadedProcess.throttleTime <= 0)
+				|| (loadedProcess.throttleTime > 0 && loadedProcess.throttleMsgCount <= 0)) {
+					return false;
+			}
+    	return true;
+    }
+    private function validateUniqueServiceId():Boolean
+    {
+    	var uniqueIdCollection:ArrayCollection = new ArrayCollection();
+    	var nodes:ArrayCollection = designer.getBoxList();
+		for(var i:int=0;i<nodes.length;i++)
+		{
+			var node:ComponentGraphCanvasItem = ComponentGraphCanvasItem(nodes.getItemAt(i));
+			var serviceDetails:ProcessServiceVO = node.serviceDetails;
+			if(serviceDetails==null)//for publishing process check
+			{
+				Alert.show("Please fill the configuration details of components in process canvas");
+				return false;
+			}
+			if(serviceDetails.serviceId=="")
+			{	
+				Alert.show("Service Id required for "+node.parentComponent.compName,"Service Id");
+				return false;
+			}
+			if(uniqueIdCollection.contains(serviceDetails.serviceId))
+			{
+				Alert.show("Duplicate Service Id for "+node.parentComponent.compName,"Service Id");
+				return false;
+			}
+			else
+			{
+				uniqueIdCollection.addItem(serviceDetails.serviceId);
+			}
+		}
+		return true;
+    }
+    
+	private function publishProcess():void
+	{
+    	loadedProcess = newProcess.getProcessVO();
+    	var serviceDetails:ProcessServiceVO;
+        var saveProcessStatus:Boolean;
+        if(validateUniqueServiceId())
+	    {
+	       		if ( validateThrottleConfig()) 
+    			{
+		        	loadedProcess.graph = getProcessGraph();
+		        	var args:Object = new Object();
+					args[ProcessServiceEvent.PUBLISH_PROCESS_ID] = loadedProcess;
+					processServiceEvent = new ProcessServiceEvent(ProcessServiceEvent.PUBLISH_PROCESS_COMMAND, args, this);
+					processServiceEvent.dispatch();
+					serviceIdentifier=PUBLISH_EVENT;	
+    			}
+    			else
+    			{
+    				Alert.show("Please configure both the parameters");
+    			}
+	    }
+//		else
+//	    {
+//	    	Alert.show("Please fill the configuration details of components in process canvas");
+//	    }
+       
+	}
+	private function configurationDetailsCheck(serviceDetails:ProcessServiceVO):Boolean
+	{
+		var nodes:ArrayCollection = designer.getBoxList();
+    	if(nodes.length==0)
+    		return false;
+			for(var i:int=0;i<nodes.length;i++)
+			{
+				var node:ComponentGraphCanvasItem = ComponentGraphCanvasItem(nodes.getItemAt(i));
+				var comp:ComponentVO = node.parentComponent;
+				serviceDetails = node.serviceDetails;
+				if(serviceDetails==null)
+				{					
+					return false;
+				}				
+			}
+		return true;
+	}
+	private function cancel():void
+	{
+		var viewProcessEvent:ViewProcessEvent = new ViewProcessEvent();
+		viewProcessEvent.dispatch();
+	}
+		
+        
+    private function deleteProcess():void
+	{
+		Alert.show("Do you want to delete the selected process?", "Confirm delete", 
+   			Alert.YES | Alert.NO, null, 
+   			confirmDeleteHandler, null, Alert.NO);
+	}
+	
+	private function confirmDeleteHandler(e:CloseEvent):void {
+		if (e.detail == Alert.YES) {
+			var args:Object = new Object();
+			args[ProcessServiceEvent.DELETE_PROCESS_ID] = loadedProcess.prcsId; 
+			//07-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+			processServiceEvent = new ProcessServiceEvent(ProcessServiceEvent.DELETE_PROCESS_COMMAND, args , this);
+			processServiceEvent.dispatch();
+			serviceIdentifier=DELETE_EVENT;
+			//07-Apr-09 AP Code Added as a part of Generalization of event :Code End
+
+			//show the remaining processes
+			cancel();
+		}
+	}
+
+	public function loadProcessGraph(graph:ProcessGraphVO):void
+	{
+		var components:ArrayCollection = ArrayCollection(modelLocator.components);
+		
+		var nodes:Object = graph.nodes;		
+		var links:Object = graph.links;
+		
+		//draw nodes
+		for each(var node:ProcessGraphNodeVO in nodes)
+		{
+			var comp:ComponentVO = getComponent(node.componentId, components);
+			var x:Number = node.x;
+			var y:Number = node.y;
+			graphCanvas.addComponent(comp,node.serviceDetails,x,y);
+		}
+			
+		//draw lines
+		for each(var fromNode:Object in links)
+		{
+			for each(var graphLink:ProcessGraphLinkVO in fromNode)
+			{
+				graphCanvas.connectItems(graphLink.startNodeId, graphLink.endNodeId, graphLink.startX, graphLink.startY, graphLink.endX, graphLink.endY);
+			}
+		}
+		
+	}
+	
+	public function getComponent(compId:Number, components:ArrayCollection):ComponentVO
+	{
+		for(var i:int=0;i<components.length;i++)
+		{
+			var comp:ComponentVO = ComponentVO(components.getItemAt(i));
+			if (comp.compId == compId)
+			{
+				return comp;
+			}
+		}
+		return null;
+	}
+	
+	public function getProcessGraph():ProcessGraphVO
+	{
+		var graph:ProcessGraphVO = new ProcessGraphVO();
+		var graphNodes:Object = new Object();
+		var graphLinks:Object = new Object();
+	
+		
+		if (loadedProcess == null) {
+			graph.processId = 0;
+		} else {
+			graph.processId = loadedProcess.prcsId;
+		}
+		
+		graph.nodes = graphNodes;
+		graph.links = graphLinks;
+
+		
+		//construct list of nodes			
+		var nodes:ArrayCollection = designer.getBoxList();
+		for(var i:int=0;i<nodes.length;i++)
+		{
+			var node:ComponentGraphCanvasItem = ComponentGraphCanvasItem(nodes.getItemAt(i));
+			var comp:ComponentVO = node.parentComponent;
+			var serviceDetails:ProcessServiceVO = node.serviceDetails;
+			serviceDetails.prcsId = loadedProcess.prcsId;
+			var configList:ArrayCollection = serviceDetails.configurations;
+			if (configList != null) {
+				for (var k:int=0;k<configList.length;k++) {
+					(ProcessServiceConfigurationVO(configList.getItemAt(k))).prcsId = loadedProcess.prcsId;
+				}
+			}
+
+			var graphNodeVO:ProcessGraphNodeVO = new ProcessGraphNodeVO();
+			graphNodeVO.componentId = comp.compId;
+			graphNodeVO.nodeId = serviceDetails.serviceId;
+			graphNodeVO.x = node.x;
+			graphNodeVO.y = node.y; 
+			graphNodeVO.serviceDetails = serviceDetails			
+			graphNodes[serviceDetails.serviceId] = graphNodeVO;  			
+		}		
+		//construct adjacency list of links
+		var links:ArrayCollection = designer.getLineList();
+		for(var j:int=0;j<links.length;j++)
+		{
+			var line:ComponentConnector = ComponentConnector(links.getItemAt(j));
+			var fromNode:ComponentGraphCanvasItem =ComponentGraphCanvasItem(line.fromBox);
+			var fromComp:ComponentVO = fromNode.parentComponent;
+			var fromNodeId:String = fromNode.serviceDetails.serviceId;
+			
+			var toNode:ComponentGraphCanvasItem = ComponentGraphCanvasItem(line.toBox);
+			var toComp:ComponentVO = toNode.parentComponent;
+			var toNodeId:String = toNode.serviceDetails.serviceId;
+			
+			if (graphLinks[fromNodeId] == null)
+			{
+				graphLinks[fromNodeId] = new Object();
+			}
+			if (graphLinks[fromNodeId][toNodeId] == null)
+			{
+				var linkVO:ProcessGraphLinkVO = new ProcessGraphLinkVO();
+				linkVO.startNodeId = fromNodeId;
+				linkVO.endNodeId = toNodeId;
+				linkVO.startX = line.getX1();
+				linkVO.startY = line.getY1();
+				linkVO.endX = line.getX2();
+				linkVO.endY = line.getY2();
+				
+				graphLinks[fromNodeId][toNodeId] = linkVO;
+			}
+		}
+		if(newProcess.serviceDetails==null)
+		{
+			graph.errorReportNHandlingConfigs = new ProcessServiceVO();
+		}
+		else
+		{
+			graph.errorReportNHandlingConfigs = newProcess.serviceDetails;
+		}
+		getErrorConfiguration(graph.errorReportNHandlingConfigs);
+		
+		return graph;
+	}
+	
+	
+	public function result( event:Object ):void 
+	{
+		var viewModel : ViewModelLocator;
+		var componentServiceEvent:ComponentServiceEvent;
+		switch(serviceIdentifier)
+		{
+			case SAVE_EVENT:
+				var savedProcess:ProcessVO = ProcessVO(event.result); 
+				// load the process to the ViewModelLocator and set the details of the process
+				modelLocator.loadedProcess = savedProcess;
+				// Dispatching GetProcessEvent is unnecessary. Check and remove it later
+				modelLocator.screenName="Process Modeling > View Process > Edit Process";
+				
+				componentServiceEvent = new ComponentServiceEvent(ComponentServiceEvent.DRAWING_PROCESS_COMMAND,null,this);
+    			componentServiceEvent.dispatch();
+    			serviceIdentifier=DRAWING_PROCESS_EVENT;
+    			Alert.show("Process has been successfully saved","Save Process");	
+				break;
+			
+			case DELETE_EVENT:
+				Alert.show("Process has been deleted successfully!!","Delete Process");	
+				break;
+			
+			case DRAWING_PROCESS_EVENT:
+				var coll : ICollectionView = ICollectionView( event.result );
+				//viewModel = ViewModelLocator.getInstance();
+				modelLocator.components=coll;
+				modelLocator.loadModule(ViewModelLocator.DRAWING_PROCESS_SWF);
+				break;
+				
+			case GET_PROCESS_EVENT:
+				var resultProcesses : ArrayCollection = ArrayCollection( event.result );
+				if (resultProcesses.length > 0)
+				{
+					//viewModel = ViewModelLocator.getInstance();
+					modelLocator.loadedProcess = ProcessVO(resultProcesses.getItemAt(0));
+					//Open process drawing
+					componentServiceEvent = new ComponentServiceEvent(ComponentServiceEvent.DRAWING_PROCESS_COMMAND,null,this);
+    				componentServiceEvent.dispatch();
+    				serviceIdentifier=DRAWING_PROCESS_EVENT;
+				}	
+				break;
+			
+			case PUBLISH_EVENT:
+				//get the saved process from the server side
+				var publishedProcess:ProcessVO = ProcessVO(event.result); 
+				// load the process to the ViewModelLocator and set the details of the process
+				modelLocator.loadedProcess = publishedProcess;
+				componentServiceEvent = new ComponentServiceEvent(ComponentServiceEvent.DRAWING_PROCESS_COMMAND,null,this);
+    			componentServiceEvent.dispatch();
+    			serviceIdentifier=DRAWING_PROCESS_EVENT;					
+    			Alert.show("Process has been successfully published","Publish Process");			
+    			break;
+		}
+				
+	}
+	public function fault( info:Object ):void 
+	{
+		switch(serviceIdentifier)
+		{
+			case SAVE_EVENT:
+				AlertHelper.displayFault(info,"Process cannot be saved");
+				break;
+			
+			case DELETE_EVENT:
+				AlertHelper.displayFault(info,"Process cannot be deleted");	
+				break;
+			
+			case DRAWING_PROCESS_EVENT:
+				Alert.show(info.fault.faultString);	
+				break;
+				
+			case GET_PROCESS_EVENT:
+				AlertHelper.displayFault(info,"Process cannot be retrieved");
+				break;
+			
+			case PUBLISH_EVENT:
+				AlertHelper.displayFault(info,"Process cannot be published");		
+    			break;
+		}
+	}
+	private function getErrorConfiguration(processServiceEO:ProcessServiceVO):void
+	{
+			if(newProcess.errorHandler.businessErrorValue!=null && newProcess.errorHandler.businessErrorValue!="")
+			{
+				businessErrorHandlerValue = newProcess.errorHandler.businessErrorValue;
+				if(businessErrorHandlerValue==resourceManager.getString('TeevraUI', 'label.ErrorHandler.reportAndAbortJobThreshold.value'))
+				{
+					businessErrorHandlerValue = newProcess.errorHandler.getBusinessTextValue();
+				}			
+			}
+			if(newProcess.errorHandler.systemErrorValue!=null && newProcess.errorHandler.systemErrorValue!="")
+			{
+				systemErrorHandlerValue = newProcess.errorHandler.systemErrorValue;
+				if(systemErrorHandlerValue==resourceManager.getString('TeevraUI', 'label.ErrorHandler.reportAndAbortJobThreshold.value'))
+				{
+					systemErrorHandlerValue = newProcess.errorHandler.getSystemTextValue();
+				}
+			}
+			processServiceEO.businessErrorStrategy = businessErrorHandlerValue;
+			processServiceEO.systemErrorStrategy = systemErrorHandlerValue;
+	}
+	]]></mx:Script>
+    
+    <mx:VBox width="100%" height="100%">
+		
+	
+		<mx:HBox width="100%" height="29" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+			<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+			<mx:Spacer width="100%"/>    
+			<mx:Button label="@Resource(key='button.NewProcess.save', bundle='TeevraUI')" id="saveButton" click="saveProcess()" textAlign="center"/>
+			<mx:Button label="@Resource(key='button.NewProcess.publish', bundle='TeevraUI')" enabled="false" id="publishButton" click="publishProcess()" textAlign="center"/>
+			<mx:Button label="@Resource(key='button.NewProcess.delete', bundle='TeevraUI')" enabled="false" id="deleteButton" click="deleteProcess()"/>
+			<mx:Button label="@Resource(key='button.NewProcess.cancel', bundle='TeevraUI')" click="cancel()"/>
+		</mx:HBox>
+		
+		
+		 <mx:HBox verticalAlign="top" width="100%" height="95%" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+			 <mx:Panel width="10%" height="100%" title="Component Palette" horizontalScrollPolicy="off" verticalScrollPolicy="off" styleName="panelStyle1"  >
+		   		<graph:ComponentsPalette width="10%" height="100%" id="compPalette" /> 
+		   	</mx:Panel>
+		  	
+		  	<mx:VBox width="89%" height="100%">
+					<flexScript:CollapsiblePanel styleName="panelStyle1" id="processDetails" width="100%" height="180" headerHeight="30" paddingTop="2" paddingLeft="2" paddingRight="2" paddingBottom="2">
+			 			<local:NewProcss width="100%" height="100%"  id="newProcess"/>
+					</flexScript:CollapsiblePanel>	
+					<graph:ComponentGraphCanvas width="100%" height="100%" id="graphCanvas" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>	
+				</mx:VBox>   	
+			</mx:HBox>
+	</mx:VBox>
+    
+    
+    
+</mx:Module>

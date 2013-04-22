@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqMembSecuProfRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembSecuProfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembSecuProfRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMembSecuProfResponseT">
+		<sequence>
+			<element type="char" name="mstrSecuProf" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqMembSecuProfResponseT">
+		<sequence>
+			<element type="char" name="rsrcAccLvlNo" size="350"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembSecuProfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembSecuProfResponseT" name="basic"/>
+			<element type="extInqMembSecuProfResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,229 @@
+﻿<repository name="Template_C_Route" id="6a95dbe4-5293-4aa4-860b-4f1adfbd684c" rxversion="3.0.2.12718">
+  <codegen classname="Template_C_Route" namespace="Validation_Creation_templates"/>
+  <rootfolder name="Root" id="475d9c6b-8439-40ad-b007-ed561022319f" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+    <appfolder name="WebDocumentLocalhost_8082" id="9d21d617-8f64-4867-bf28-9f40e0897463" searchtimeout="30000ms" capname="webdocument" isrooted="True" usecache="False">
+      <item name="ButtonRouters" id="3cfc03c5-5f14-4d99-98d8-1e91148ca8cd" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Routers']]]>
+      </item>
+      <folder name="ContainerHBox" id="8ee1b376-6fcc-4f96-aa45-ef9a1ce67e59" searchtimeout="30000ms" capname="container" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="PictureIcon_16" id="5a93143b-8c69-40c0-83cf-ad4c72ead732" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_16']]]>
+        </item>
+        <item name="ContainerGraphCanvas" id="8d044d78-7d77-410d-a345-39f6a226fb88" searchtimeout="30000ms" capname="container" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']]]>
+        </item>
+        <item name="PictureIcon_16_175107" id="8722f4fe-4e3d-42f8-abfa-1368bda2e087" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']/container/picture[@id='icon_16_175107']]]>
+        </item>
+        <item name="ButtonServices" id="75ba287c-17f9-46cf-bef5-e633724b5191" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Services']]]>
+        </item>
+        <item name="PictureIcon_44" id="8681663c-96a9-40c6-a366-ed0dfc621d22" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_44']]]>
+        </item>
+        <item name="PictureIcon_44_549200" id="99a318ff-22ab-44a5-a6b3-8e63b9a660a0" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']/container[@id~'^.*']/picture[@id='icon_44_549200']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container]]>
+        </basepath>
+      </folder>
+      <folder name="ContainerVBox" id="fc85bb68-a73a-45c3-87e1-3f8841e82324" searchtimeout="30000ms" capname="container" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="TextTextInput1" id="f9c7bc1f-0466-4172-91d2-74c94f634805" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/element/container/container/combobox/text[@type='TextInput']]]>
+        </item>
+        <item name="TextTextInput" id="590035a9-34a2-4794-87fa-c76cd4d4f089" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/container/combobox[@id='schemaName']/text[@type='TextInput']]]>
+        </item>
+        <item name="ButtonButton" id="d4deda7d-7a47-4de4-a645-7b66c338def4" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/container/combobox[@id='splittingStrategy']/button[@type='Button']]]>
+        </item>
+        <item name="TextServiceId" id="f9775d26-a936-49aa-a07f-5817967e8a2b" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/container/text[@id='serviceId']]]>
+        </item>
+        <item name="Text_12" id="8d271439-83a3-4130-91a2-1c7c401d4162" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/element/container/container/text[@id='_12']]]>
+        </item>
+        <item name="Text_02" id="d238e8f1-f424-4281-a676-cd35b814fb63" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/element/container/container/text[@id='_02']]]>
+        </item>
+        <item name="TextServiceId1" id="4d0f4e2b-e58d-43e0-aaf6-d01ac25a1b64" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/container/text[@id='serviceId']]]>
+        </item>
+        <item name="ButtonX" id="187526f5-58ce-4fe7-a3f0-179e9893cdd9" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container[1]/element/container[1]/container[2]/button[@id='_40']]]>
+        </item>
+        <item name="ButtonX1" id="056e8e96-8233-455d-9c88-cb5844d83900" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container[1]/element/container[1]/container[2]/button[@id='_30']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container]]>
+        </basepath>
+      </folder>
+      <folder name="ContainerVBox1" id="f10f27f5-fbc4-4226-85b0-98c1af3b3a28" searchtimeout="30000ms" capname="container" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="ButtonButton4" id="8d59ab3c-9e88-40ab-b149-a2e7d6f2f0c0" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/element/container[1]/container[1]/combobox/button[@type='Button']]]>
+        </item>
+        <item name="ButtonButton3" id="1c98e53d-7a04-4b07-aa9c-abe53de92385" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/element/container[2]/container[1]/combobox/button[@type='Button']]]>
+        </item>
+        <item name="ButtonButton2" id="e02e9cb9-a461-4238-8649-6a61bb7913c6" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/element/container[3]/container[1]/combobox/button[@type='Button']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container]]>
+        </basepath>
+      </folder>
+      <folder name="FlexObjectTeevra" id="3411347d-4534-4b54-aeb4-35a823ae2484" searchtimeout="30000ms" capname="flexobject" isrooted="True" usecache="False">
+        <item name="ButtonButton1" id="357539fd-a56c-4e33-a9f2-182657cfff2f" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container/container/combobox[@id='schemaName']/button[@type='Button']]]>
+        </item>
+        <item name="ButtonSave_as_Template___" id="18a73524-390d-45e7-a224-52da5d2eca57" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save as Template...']]]>
+        </item>
+        <item name="TextPartition_Key" id="af1e4af8-cb86-44f0-b589-1807a5e521ca" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/listitem[@text='Partition Key']/text[@caption='Partition Key']]]>
+        </item>
+        <item name="ListList" id="08d388ed-07b0-4fd6-bd32-8ebdb7a02372" searchtimeout="30000ms" capname="list" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]]]>
+        </item>
+        <item name="TextContractid" id="ce3380ff-08e8-4914-8bbf-5b9a982dda35" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]/listitem[@text='Contractid']/text[@caption='Contractid']]]>
+        </item>
+        <item name="TextMessageid" id="025e1f92-ac2d-436a-b73d-47626ab032ed" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]/listitem[@text='Messageid']/text[@caption='Messageid']]]>
+        </item>
+        <item name="TextPartition_Key1" id="4135cadf-e3ce-455b-b9ab-afa41e81e855" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]/listitem[@text='Partition Key']/text[@caption='Partition Key']]]>
+        </item>
+        <item name="TextSample_typ" id="4b09c30a-a27e-4c61-a48f-d96467087409" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]/listitem[@text='Sample_typ']/text[@caption='Sample_typ']]]>
+        </item>
+        <item name="TextStatus" id="f909e005-67f5-444e-9c4c-4bb7cbb83d70" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list[1]/listitem[@text='Status']/text[@caption='Status']]]>
+        </item>
+        <item name="ButtonOK" id="502fa329-d4fd-4a40-a559-94a2b85cd88b" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container[@caption='Save successful']/element[@type='AlertForm']/button[@text='OK']]]>
+        </item>
+        <item name="ButtonSave" id="821f4167-e323-4036-af2b-1591c9daf778" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form[@title='Save Template']/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <item name="TextTextInput" id="a67d47c6-c922-4098-bfa6-bec65f3ad6c6" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form[@title='Save Template']/form/container/text[@type='TextInput']]]>
+        </item>
+        <item name="PictureIcon_47" id="a0296b0e-08d1-4c4c-984e-93a76b286eed" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_47']]]>
+        </item>
+        <item name="PictureIcon_47_241263" id="c4244523-cd31-4999-b09e-63506c70c15e" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']/container[@id~'^.*']/picture[@id='icon_47_241263']]]>
+        </item>
+        <item name="ButtonSave1" id="71048a62-0372-416f-9fea-d91ca598da71" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <item name="TextM_Teevra_C21_FixedToFIXM" id="835951f7-0573-4e17-af2d-78180dfcb4a7" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/listitem[@text='M_Teevra_C21_FixedToFIXML']/text[@caption='M_Teevra_C21_FixedToFIXML']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject]]>
+        </basepath>
+      </folder>
+      <folder name="FormForm" id="3a97e0f2-342a-48bf-9548-fca06fce63c5" searchtimeout="30000ms" capname="form" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="ComboBoxMapFileName" id="a518dcbe-5996-47ab-8c4f-adb01effc286" searchtimeout="30000ms" capname="combobox" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[2]/combobox]]>
+        </item>
+        <item name="ButtonButton" id="f3c8bf8e-aae9-4839-8c72-704ccf83e727" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[2]/combobox/button[@type='Button']]]>
+        </item>
+        <item name="TextServiceId" id="754ef4eb-8b61-4b4f-96e0-f22c74476670" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[3]/text[@id='ServiceId']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <appfolder name="ContextMenuIexplore" id="039978c3-2fba-4d51-9b8f-9cb09ec09df4" searchtimeout="30000ms" capname="contextmenu" addcaps="nativewindow" isrooted="True" usecache="True">
+      <item name="MenuItemConfigure_Component" id="e495aaac-0749-47fb-aa4a-6cb966632b0a" searchtimeout="30000ms" capname="menuitem" addcaps="accessible">
+        <![CDATA[/contextmenu[@processname='iexplore']/contextmenu/menuitem[@accessiblename='Configure Component']]]>
+      </item>
+      <basepath>
+        <![CDATA[/contextmenu[@processname='iexplore']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAALxJREFUOE9j/P//PwNFAGQACNsEZP9fs2Im0RimD6wZZgDQJUAmYQCy
+CKsBYFGgITsOnv9f1j73f0bVxP+R2S3/vWLL/oNcCAN4DYAZgs8dBA2AGbJs477/kTnN/z1jy0lz
+Acx2XGFCtAtABoDw1IXriXMBTAPMC+fOnfsPwugApwtgGmBOB9ENnZOIC4Oujmq4RcgGEO0CqLPA
+hmw/eA7sd5JcgGwAyBCYd0hyAUV5AZa2SaXhmYlUjTD1AHJC3EGQYdi3AAAAAElFTkSuQmCC
+      </icon>
+    </appfolder>
+    <appfolder name="MenuBarExplorer" id="078891f2-cf10-4c8a-acd6-1bf30f731420" searchtimeout="30000ms" capname="menubar" addcaps="nativewindow" isrooted="True" usecache="True">
+      <item name="ButtonMicrosoft_Excel___Copy_o" id="2635a731-69b4-46e9-8e79-a7a3926f5cc3" searchtimeout="30000ms" capname="button" addcaps="nativeitem,checkable">
+        <![CDATA[/menubar[@processname='explorer']/container[@caption='' and @controlid='40965']/container/toolbar/button[@text~'^Microsoft\ Excel\ -\ Copy\ of']]]>
+      </item>
+      <item name="ButtonValidation_Creation_temp" id="59530de2-5e4c-4d96-a318-0ed4a15a097a" searchtimeout="30000ms" capname="button" addcaps="nativeitem,checkable">
+        <![CDATA[/menubar[@processname='explorer']/container[@caption='' and @controlid='40965']/container/toolbar/button[@text~'^Validation_Creation_templ']]]>
+      </item>
+      <basepath>
+        <![CDATA[/menubar[@processname='explorer']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAALBJREFUOE9j/P//PwNFAGQAJZgizWDXr1899z8lmOHE0a3/v3x6RhC/
+eXnjPzoG6QO7oK4qG0MSpPjp4ytYxWEGvX55/z/YBTCBqRMawIaBcWX2/56OSuxyQPkVS6aA5VBc
+0NJQhDAAqKihOuf/y2cQV6DLwQxnOHNyJ15nYvM7shjcBR/fP/gPwuga3r6+g9MCcBiAXEBMLOBS
+A3cBPPBggUgkTXlKpCQfgJPygBsAABEv9phGO1VMAAAAAElFTkSuQmCC
+      </icon>
+    </appfolder>
+    <appfolder name="FormHttp___localhost_8082_te" id="704b91bd-db36-4ac5-9289-8ee77419d3ae" searchtimeout="30000ms" capname="form" addcaps="nativewindow" isrooted="True" usecache="True">
+      <item name="ListItemDone" id="99e423c2-f465-462b-81d2-0aa09b48f32e" searchtimeout="30000ms" capname="listitem">
+        <![CDATA[/form[@title~'^http.*']/container/statusbar/listitem[@text='Done']]]>
+      </item>
+      <basepath>
+        <![CDATA[/form[@title~'^http.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAzFJREFU
+OE+Nkn1MzHEcxz93XKe79Lt2v4TEKSXtcmV1d3E/jg5t1Dw10WmeEmusB3VMbBrNwyg9INISkodD
+K/KQ9XCMDTXNCWvxh4d/PFUeytXv7VdWZrPx3T777ru93699vu/PR0T/eUycau7KiOHxviO/q0WA
+tMrWefHM7fbCv9rF6lnmEfFHG8Yde96pKbN/3l+iq3tXE/qx8NDMD7ONitoZGlH5uijXup1rxxz8
+EyCTjaSItGOBFV3dcY088p41AK1pQEskUpJMSM1MQETycQyYLGbW+idAME+u+OEwPwBuPtoJ2MNR
+e94P61fNReqBLCQ0A5anQEjaNTD+vvEhE0V7BwF9bTuVdX6Jug88aU1Cb3MYTuarMC/Uhzdw+qv+
+J97AWMkj9hGP5Q089MmXQe5uht+AmJz6STe70PYqA46HWtQVKRE3TQ5WRsF9ItUUQ57H4S5ozvJY
++qAH3PEOSFzcBzJwYcevzX15/e52OBpNeGeVY1KIBsMCA+2ScZpbQ/20t8Q+2npmVStc04HFVwRA
+fjvEjHdFfwcs6+R7qHgzelui4ahxR2jEbFDQGtCRb6CiblBJD+hkF+jwe1DuW4wub8eQ7G8QMd7V
+/YCYaHaZ7U4qHDY/ZO/Sg7zNoEVC2jFCzbeCFp7+VVFFoFnZoJl7QFwmRAqfKnJzI2bfHv99X+/p
+0XlVgSFTkwWhIFpfLoxrmNc/90ytlk8uLdSeQvUErE5ZApqRBdp8A5TTApqT0kwSuVqAuJBKZ5Fk
+AUHXAdkJQHwWGBsc+Zw4TjG90aptepPj+VZmtDyjyALQ7ibQ0TbQJSGDkk+gvBdIbAIM9RCy6ICH
+VbgNO3qkUqmKTEZl+McK//bk+a6PGcZDRVwGT1tsoOLX8KoFtj0BkoQF0tgAyWUgoFowz9ndq1CO
+jur/nk43XNdxbkLHCm5oTd/b2dlZJw6Ne0WplTyVvgd7DZBXCqYCoaPECzwZE1+Sk0vAYDajRhFr
+L/C0Z86TlukDnDfGGpTm4k3jS9NjGDsX5nWJNAtKSRN5hjyDLSRlvP8aarhBbqpNd7pv2zGmpWCD
+snlrrOuVsSxN+ecEBMFPhB6LFYWJDvUAAAAASUVORK5CYII=
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+  <variables/>
+</repository>

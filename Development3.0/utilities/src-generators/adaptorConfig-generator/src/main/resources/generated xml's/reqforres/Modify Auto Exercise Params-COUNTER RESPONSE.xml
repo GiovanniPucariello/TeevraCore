@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_MODIFY_AUTOMATIC_EXERCISE_PARAMETERS_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-REQUEST" structName="optModAutExerParmRequestT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.actnCod">
+                <structField>basic.actnCod</structField>
+            </field>
+            <field name="basic.genProdId">
+                <structField>basic.genProdId</structField>
+            </field>
+            <field name="basic.dateLstUpdDat">
+                <structField>basic.dateLstUpdDat</structField>
+            </field>
+            <field name="extension.itmMinAmnt">
+                <structField>extension.itmMinAmnt</structField>
+            </field>
+            <field name="extension.itmMinAmntCod">
+                <structField>extension.itmMinAmntCod</structField>
+            </field>
+            <field name="extension.acctTypCodGrp.acctTypCod">
+                <structField>extension.acctTypCodGrp.acctTypCod</structField>
+            </field>
+            <field name="extension.acctTypCodGrp.acctTypNo">
+                <structField>extension.acctTypCodGrp.acctTypNo</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-REQUEST" structName="optModAutExerParmRequestT">
+        <mappings fixmlClassName="PosMntReq">
+            <arrayMappings>
+                <arrayMapping src="extension.acctTypCodGrp">
+                    <targetObj name="message.value.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypNo">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCod">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataType="Int" targetValue="1" target="message.value.TxnTyp " type="constant"/>
+            <map targetDataType="Int" targetValue="2" target="message.value.Actn " type="constant"/>
+            <map targetDataType="String" targetValue="OPT" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="String" src="basic.genProdId" target="message.value.Instrmt.CFI" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="String" src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 7" validationType="m" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetValue=" " src="extension.itmMinAmntCod" target="NA" type="constant"/>
+            <map targetDataSize="numeric signed 7, 2" src="extension.itmMinAmnt" target="message.value.ThresholdAmt" type="simple"/>
+            <map targetDataSize="Timestamp" validationType="f" targetDataType="String" src="basic.dateLstUpdDat" target="message.value.Instrmt.Evnt.Txt" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" targetDataType="Int" targetValue=" 2" src="basic.actnCod" target="message.value.Actn " type="constant"/>
+        </mappings>
+    </predicate>
+</configuration>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntDLegQuoReqRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntDLegQuoReqRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntDLegQuoReqRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntDLegQuoReqResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

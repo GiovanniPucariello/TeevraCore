@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqMktNewsRequestT">
+		<sequence>
+			<element type="char" name="newsDat" size="8"/>
+			<element type="char" name="newsTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMktNewsRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMktNewsRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMktNewsResponseT">
+		<sequence>
+			<element type="char" name="msgShtText" size="55"/>
+			<element type="char" name="newsDtl" size="900"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMktNewsResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMktNewsResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+	<mx:Script source="scripts/DateUtilScript.as"/>
+	<mx:Script>
+		<![CDATA[
+			import com.headstrong.teevra.client.util.AlertHelper;
+			import mx.collections.Sort;
+			import mx.collections.SortField;
+			import com.headstrong.teevra.client.model.ServerCache;
+			import mx.collections.ICollectionView;
+			import com.headstrong.teevra.client.events.ServerAdminServiceEvent;
+			import com.headstrong.teevra.client.events.RefDataServiceEvent;
+			import mx.formatters.DateFormatter;
+			import mx.events.CloseEvent;
+			import com.headstrong.teevra.client.events.ViewServerConfigurationEvent;
+			import mx.core.IFlexDisplayObject;
+			import mx.controls.Alert;
+			import com.headstrong.teevra.client.view.admin.RegisterServerUI;
+			import com.headstrong.teevra.client.view.entity.ServerConfigVO;
+			import mx.managers.PopUpManager;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+			import com.headstrong.teevra.client.util.UserEntitlements;
+			
+			[Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			private var popup:IFlexDisplayObject; 
+			private var serverConfig:ServerConfigVO;
+			private var serverName:String;
+			private var isNewConfig:Boolean;
+			
+			private var serverAdminServiceEvent:ServerAdminServiceEvent;
+			private var serviceIdentifier:String;			
+			private const REGISTER_SERVER_EVENT:String = "REGISTER_SERVER_EVENT";
+			private const UNREGISTER_SERVER_EVENT:String = "UNREGISTER_SERVER_EVENT";
+			private const VIEW_SERVER_CONFIG_EVENT:String = "VIEW_SERVER_CONFIG_EVENT";
+			private var isServerAdminFlag:Boolean;
+			
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			private var regUnRegButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.regUnregServervers))
+				   {
+				   		regUnRegButtonEnabled=false;
+				   		itemClickEnabled=false;				   						   		
+				   }				
+			}			
+			private function init():void
+			{
+				authorizePage();
+				register.enabled=regUnRegButtonEnabled;
+				  
+			}	
+			private function itemClickEvent(event:Event):void
+			{
+				if(itemClickEnabled){
+					serverName = event.currentTarget.selectedItem.serverName;
+					unregister.enabled = true;
+				}
+			}
+			private function updateServer(event:Event):void
+			{
+				if(regUnRegButtonEnabled)
+				{
+					isNewConfig=false;
+					var configUI:RegisterServerUI;
+					
+					popup = PopUpManager.createPopUp(this, RegisterServerUI ,true);
+					popup.width = 500;
+					configUI = RegisterServerUI(popup);  
+					
+					
+					serverConfig = new ServerConfigVO();
+					serverConfig.serverId = event.currentTarget.selectedItem.serverId;
+					serverConfig.serverName = event.currentTarget.selectedItem.serverName;
+					serverConfig.serverUrl = event.currentTarget.selectedItem.serverUrl;
+					serverConfig.createdBy=event.currentTarget.selectedItem.createdBy;
+					serverConfig.createdDate=event.currentTarget.selectedItem.createdDate;
+			    	
+			    	configUI.create(isNewConfig,popupClose,popupSave,serverConfig);
+			    	PopUpManager.centerPopUp(popup);
+		  		}
+			}
+			private function popupClose(event:MouseEvent):void
+			{
+				PopUpManager.removePopUp(popup);
+			}
+			private function popupSave():void
+	   		{
+	   			//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start	
+				var args:Object = new Object();
+				args[ServerAdminServiceEvent.REGISTER_SERVER_ID] = serverConfig;
+				serviceIdentifier=REGISTER_SERVER_EVENT;
+				serverAdminServiceEvent = new ServerAdminServiceEvent(ServerAdminServiceEvent.REGISTER_SERVER_COMMAND, args, this);
+				serverAdminServiceEvent.dispatch();	
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End	
+	   			PopUpManager.removePopUp(popup);
+	   		}
+	   		private function registerServer(event:MouseEvent):void
+	   		{
+	   			isNewConfig=true;
+	   			var configUI:RegisterServerUI;
+				
+				popup = PopUpManager.createPopUp(this, RegisterServerUI ,true);
+				popup.width = 500;
+				configUI = RegisterServerUI(popup);  
+					
+				serverConfig = new ServerConfigVO();			
+		    	
+		    	configUI.create(isNewConfig,popupClose,popupSave,serverConfig);
+		    	PopUpManager.centerPopUp(popup);
+	   		}
+	   		private function unregisterServer(event:Event):void
+	   		{
+	   			Alert.show("Do you want to unallocate the processes registered(if any) in the server and proceed?", "Confirm Unregister", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);
+	   			
+	   		}
+	   		private function refreshConfigs():void
+	   		{
+	   				isServerAdminFlag = true;
+	   				var args:Object = new Object();
+	   				args[ServerAdminServiceEvent.VIEW_SERVER_CONFIG_ID] = isServerAdminFlag;
+					serviceIdentifier=VIEW_SERVER_CONFIG_EVENT;
+					serverAdminServiceEvent = new ServerAdminServiceEvent(ServerAdminServiceEvent.VIEW_SERVER_CONFIG_COMMAND, args, this);
+					serverAdminServiceEvent.dispatch();	
+					isServerAdminFlag=serverAdminServiceEvent.getArgument(ServerAdminServiceEvent.VIEW_SERVER_CONFIG_ID);  			
+	   		}
+	   		private function confirmDeleteHandler(e:CloseEvent):void {
+				if (e.detail == Alert.YES) {
+					
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start	
+				var args:Object = new Object();
+				args[ServerAdminServiceEvent.UNREGISTER_SERVER_ID] = serverName;
+				serviceIdentifier=UNREGISTER_SERVER_EVENT;
+				serverAdminServiceEvent = new ServerAdminServiceEvent(ServerAdminServiceEvent.UNREGISTER_SERVER_COMMAND, args, this);
+				serverAdminServiceEvent.dispatch();	
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End				
+				}
+		}
+		private function setRelativeColWidths():void
+  		{
+	  		serverGrid.columns[0].width = serverGrid.width*.08;
+			serverGrid.columns[1].width = serverGrid.width*.25;
+			serverGrid.columns[2].width = serverGrid.width*.4;
+			serverGrid.columns[3].width = serverGrid.width*.27;
+
+		}
+		// retrieves users from database
+		private function getServerConfigs():void
+		{
+			isServerAdminFlag = true;
+			var args:Object = new Object();
+			args = new Object();
+			args[ServerAdminServiceEvent.VIEW_SERVER_CONFIG_ID] = isServerAdminFlag;
+			serviceIdentifier=VIEW_SERVER_CONFIG_EVENT;
+			serverAdminServiceEvent = new ServerAdminServiceEvent(ServerAdminServiceEvent.VIEW_SERVER_CONFIG_COMMAND, args, this);
+			serverAdminServiceEvent.dispatch();	
+			isServerAdminFlag=serverAdminServiceEvent.getArgument(ServerAdminServiceEvent.VIEW_SERVER_CONFIG_ID);		
+		}
+		public function result( event:Object ):void 
+		{
+			
+			var args:Object = new Object();
+			switch(serviceIdentifier)
+			{
+				case REGISTER_SERVER_EVENT:
+					Alert.show("Server has been successfully registered","Register Server");
+					//refresh server configurations
+					getServerConfigs();
+					break;
+					
+				case VIEW_SERVER_CONFIG_EVENT:
+					var serverConfigs : ICollectionView = ICollectionView( event.result );
+					// load the server cache
+					ServerCache.getInstance().loadServerConfigs(serverConfigs);
+					//if server screen has to be opened
+					if(isServerAdminFlag)
+					{
+						var sortByServerType:SortField;
+						var sortServerType:Sort;
+						
+						modelLocator.loadModule(ViewModelLocator.VIEW_SERVER_CONFIG_SWF);
+						modelLocator.screenName = "Administration > Server Configurations";
+						modelLocator.serverConfigs=serverConfigs;
+			
+						sortServerType = new Sort();
+						sortByServerType = new SortField("serverName",true,false);
+						sortServerType.fields = [sortByServerType];
+						serverConfigs.sort = sortServerType;
+						serverConfigs.refresh();
+					}
+					break;
+					
+				case UNREGISTER_SERVER_EVENT:
+					Alert.show("Server has been successfully Unregistered","Unregister Server"); 
+					getServerConfigs();
+					break;
+					
+			}
+			
+		}
+		public function fault( info:Object ):void 
+		{
+			switch(serviceIdentifier)
+			{
+				case REGISTER_SERVER_EVENT:
+					AlertHelper.displayFault(info,"Server cannot be retrieved");
+					break;
+					
+				case VIEW_SERVER_CONFIG_EVENT:
+					AlertHelper.displayFault(info,"Servers could not be retrieved");
+					break;
+					
+				case UNREGISTER_SERVER_EVENT:
+					AlertHelper.displayFault(info,"Server cannot be unregistered");
+					break;
+					
+			}
+		}
+		]]>
+	</mx:Script>
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		
+       <!-- <mx:Button id="Refresh" label="@Resource(key='button.ServerConfig.refresh', bundle='TeevraUI')" click=""/>-->
+        <mx:Button id="register" label="@Resource(key='button.ServerConfig.register', bundle='TeevraUI')" click="registerServer(event);"/>
+        <mx:Button id="unregister" label="@Resource(key='button.ServerConfig.unregister', bundle='TeevraUI')" enabled="false" click="unregisterServer(event);"/>
+        
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="serverGrid" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" dataProvider="{modelLocator.serverConfigs}" width="100%" height="100%" itemClick="itemClickEvent(event);" doubleClickEnabled="true" itemDoubleClick="updateServer(event);" creationComplete="setRelativeColWidths();"  >
+		<mx:columns>       
+			<mx:DataGridColumn dataField="serverId" headerText="@Resource(key='column.ServerConfig.serverId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="serverName" headerText="@Resource(key='column.ServerConfig.serverName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="serverUrl" headerText="@Resource(key='column.ServerConfig.serverURL', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdDate" headerText="@Resource(key='column.ServerConfig.serverRegdDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

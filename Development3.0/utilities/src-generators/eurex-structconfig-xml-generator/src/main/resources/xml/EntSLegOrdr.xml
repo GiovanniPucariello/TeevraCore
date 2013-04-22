@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntSLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrExePrc" size="14"/>
+			<element type="char" name="ordrTrgPrc" size="14"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="ordrExpDat" size="8"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntSLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="acctTypCod"/>
+			<element type="char" name="acctTypNo"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="prcRsblChkInd"/>
+			<element type="char" name="ordrPersInd"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+			<element type="char" name="etsSesId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntSLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntSLegOrdrRequestT" name="basic"/>
+			<element type="futExtEntSLegOrdrRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntSLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrExeQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntSLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrBkQty" size="13"/>
+			<element type="char" name="ordrCnclQty" size="13"/>
+			<element type="char" name="ordrCreDat" size="8"/>
+			<element type="char" name="ordrCreTim" size="8"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntSLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntSLegOrdrResponseT" name="basic"/>
+			<element type="futExtEntSLegOrdrResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntSLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrExePrc" size="14"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="ordrExpDat" size="8"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntSLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="acctTypCod"/>
+			<element type="char" name="acctTypNo"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="prcRsblChkInd"/>
+			<element type="char" name="ordrPersInd"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+			<element type="char" name="etsSesId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntSLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntSLegOrdrRequestT" name="basic"/>
+			<element type="optExtEntSLegOrdrRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntSLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrExeQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntSLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrBkQty" size="13"/>
+			<element type="char" name="ordrCnclQty" size="13"/>
+			<element type="char" name="ordrCreDat" size="8"/>
+			<element type="char" name="ordrCreTim" size="8"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntSLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntSLegOrdrResponseT" name="basic"/>
+			<element type="optExtEntSLegOrdrResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

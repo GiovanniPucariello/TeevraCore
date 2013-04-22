@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>teevra.platform.parent</artifactId>
+		<groupId>com.hs.fusion</groupId>
+		<version>2.0.0</version>
+	</parent>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>fusion-admin</artifactId>
+	<version>${platform.version}</version>
+	<name>Fusion Admin Module</name>
+	<packaging>bundle</packaging>
+	<description>Fusion Administration Module</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.fusion.external</groupId>
+			<artifactId>org.jgroups</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-commons</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-logger</artifactId>
+			<version>${platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>
+							com.headstrong.fusion.failover.FusionAdminActivator
+						</Bundle-Activator>
+						<Import-Package>
+							org.osgi.framework.*,*
+						</Import-Package>
+						<Export-Package>
+							com.headstrong.fusion.failover.*
+						</Export-Package>
+						<Start-Level>2</Start-Level>
+						<Component-Version>2.1.0</Component-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+             <groupId>org.codehaus.mojo</groupId>
+             <artifactId>cobertura-maven-plugin</artifactId>
+			 <configuration>
+             <formats>
+              <format>html</format>
+             </formats>
+             </configuration>
+             <version>2.5.2</version>
+             </plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+    <plugins>
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.5.2</version>
+        <configuration>
+            <check></check>
+            <formats>
+                <format>html</format>
+                <format>xml</format>
+            </formats>
+        </configuration>
+    </plugin>
+  </plugins>
+</reporting>
+
+</project>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqSLegOrdrBkDeptRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqSLegOrdrBkDeptRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqSLegOrdrBkDeptRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqSLegOrdrBkDeptRecT">
+		<sequence>
+			<element type="bstOrdrGrpT" name="bstOrdrGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqSLegOrdrBkDeptResponseT">
+		<sequence>
+			<element type="futBscInqSLegOrdrBkDeptRecT" name="futBscInqSLegOrdrBkDeptRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqSLegOrdrBkDeptResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqSLegOrdrBkDeptResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSLegOrdrBkDeptRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqSLegOrdrBkDeptRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqSLegOrdrBkDeptRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSLegOrdrBkDeptRecT">
+		<sequence>
+			<element type="char" name="bstBidPrc" size="14"/>
+			<element type="char" name="bstBidQty" size="16"/>
+			<element type="char" name="bstAskPrc" size="14"/>
+			<element type="char" name="bstAskQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSLegOrdrBkDeptResponseT">
+		<sequence>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqSLegOrdrBkDeptRecT" name="optBscInqSLegOrdrBkDeptRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqSLegOrdrBkDeptResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqSLegOrdrBkDeptResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

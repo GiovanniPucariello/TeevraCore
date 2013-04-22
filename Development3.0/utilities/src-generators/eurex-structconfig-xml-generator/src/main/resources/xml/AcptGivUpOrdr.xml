@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscAcptGivUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAcptGivUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAcptGivUpOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAcptGivUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscAcptGivUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optAcptGivUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscAcptGivUpOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optAcptGivUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

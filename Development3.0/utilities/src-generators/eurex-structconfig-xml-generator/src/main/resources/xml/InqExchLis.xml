@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqExchLisRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqExchLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqExchLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqExchLisRecT">
+		<sequence>
+			<element type="char" name="exchIdCod" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqExchLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqExchLisRecT" name="bscInqExchLisRec" size="500"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqExchLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqExchLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

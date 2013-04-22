@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="9238014a-dcd2-4996-8fcb-3632506e9df9" embeddedrepository="false">
+  <name>
+    fddsfsdf
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="fddsfsdf" namespace="Validation_Creation_templates"/>
+  <variables/>
+  <recorditems>
+    <mouseitem enabled="True" optional="False" duration="2670ms" action="Click" button="Left" movetime="100ms" sx="615" sy="371" loc="146;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="2575973f-c3a8-40ce-bd38-3bd61c26bf6b">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="469,359,161,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[InputDialog1946.Form1936.FormItem1937.ComboBox1852.Button1854]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form[@title='Choose Template']/form/container/combobox/button[@type='Button']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="4468ms" action="Down" button="Left" movetime="100ms" sx="618" sy="406" loc="4;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="db9fb48c-22fe-4324-a8c2-09672a9defb5">
+        <element role="indicator" prefcap="indicator" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="614,398,16,37">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[List1977.VScrollBar1994.ScrollThumb2007]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls.scrollClasses::ScrollThumb]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[ScrollThumb]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/scrollbar/indicator[@type='ScrollThumb']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="891ms" action="Up" button="Left" movetime="100ms" sx="618" sy="443" loc="4;45">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="db9fb48c-22fe-4324-a8c2-09672a9defb5">
+        <element role="indicator" prefcap="indicator" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="614,435,16,37">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[List1977.VScrollBar1994.ScrollThumb2007]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls.scrollClasses::ScrollThumb]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[ScrollThumb]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/scrollbar/indicator[@type='ScrollThumb']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="100ms" sx="559" sy="466" loc="80;5">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="54e75457-7a9b-4a9f-91fd-ae62e6c792e7">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="479,461,125,17">
+          <attribute name="caption" type="System.String">
+            <![CDATA[stringtrim]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[stringtrim]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/listitem[@text='stringtrim']/text[@caption='stringtrim']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="Validation_Creation_templatesRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="Validation_Creation_templatesRepository.rxrep">
+    <codegen classname="Validation_Creation_templatesRepository" namespace="Validation_Creation_templates"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <references/>
+</recordtable>

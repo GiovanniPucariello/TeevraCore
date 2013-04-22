@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscModGivUpTrnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtModGivUpTrnRequestT">
+		<sequence>
+			<element type="txtGrpToT" name="txtGrpTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="futModGivUpTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscModGivUpTrnRequestT" name="basic"/>
+			<element type="futExtModGivUpTrnRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscModGivUpTrnResponseT">
+		<sequence>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futModGivUpTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscModGivUpTrnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscModGivUpTrnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtModGivUpTrnRequestT">
+		<sequence>
+			<element type="txtGrpToT" name="txtGrpTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModGivUpTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModGivUpTrnRequestT" name="basic"/>
+			<element type="optExtModGivUpTrnRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscModGivUpTrnResponseT">
+		<sequence>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModGivUpTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModGivUpTrnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

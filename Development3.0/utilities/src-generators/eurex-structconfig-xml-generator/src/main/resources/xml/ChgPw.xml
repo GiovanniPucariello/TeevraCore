@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscChgPwRequestT">
+		<sequence>
+			<element type="char" name="newPw" size="8"/>
+			<element type="char" name="oldPw" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="chgPwRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscChgPwRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="chgPwResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

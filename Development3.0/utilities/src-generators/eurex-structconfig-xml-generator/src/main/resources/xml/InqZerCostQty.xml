@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqZerCostQtyRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqZerCostQtyRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqZerCostQtyRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqZerCostQtyResponseT">
+		<sequence>
+			<element type="char" name="crtZerCostQty" size="16"/>
+			<element type="char" name="prvZerCostQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqZerCostQtyResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futExtInqZerCostQtyResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqZerCostQtyRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqZerCostQtyRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqZerCostQtyRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqZerCostQtyResponseT">
+		<sequence>
+			<element type="char" name="crtZerCostQty" size="16"/>
+			<element type="char" name="prvZerCostQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqZerCostQtyResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optExtInqZerCostQtyResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

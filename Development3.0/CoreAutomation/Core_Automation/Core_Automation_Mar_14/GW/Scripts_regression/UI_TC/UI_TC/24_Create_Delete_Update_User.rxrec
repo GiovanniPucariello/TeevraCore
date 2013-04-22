@@ -1,0 +1,3262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable version="2.3.6.10664" id="8969386c-66b1-49d1-b72c-72b2d330a879">
+  <name>
+    24_Create_Delete_Update_User
+  </name>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    5
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="_Create_Delete_Update_User" namespace="UI_TC"/>
+  <recorditems>
+    <mouseitem duration="2092ms" action="Click" button="Left" movetime="10ms" sx="655" sy="63" loc="47;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="fe6fbd88-79e8-4a0d-872b-96b72227f960">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="608,54,143,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Administration ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Administration ]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_admin]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_admin]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/toolbar/container/text[@id='nav_admin']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="1078ms" action="Click" button="Left" movetime="10ms" sx="654" sy="100" loc="51;10">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="a619b812-bea5-45e1-aeb9-5c9401cdbd65">
+        <element role="menuitem" prefcap="menuitem" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="603,90,117,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[User Admin]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[Object]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/contextmenu[1]/menuitem[@text='User Admin']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="2734ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="41d7d0d1-32ec-4c37-a8b8-11a9f726cb37">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="19,124,68,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Id]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Id']/cell[@text='Id']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Id]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="66846c5c-3e76-4848-a372-cb4ddbb30344">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="87,124,127,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[1]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Name]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Name']/cell[@text='Name']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Name]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="cf4c6fc2-fcf8-46b2-9154-c58a106a6b27">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="214,124,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[2]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[First Name]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='First Name']/cell[@text='First Name']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[First Name]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="f34fefe8-0096-4f46-a050-79dd2e300fef">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="312,124,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[3]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Last Name]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Name']/cell[@text='Last Name']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Last Name]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b9fb18fd-e4aa-424c-852c-18472ad18d70">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="410,124,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[4]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Status]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Status']/cell[@text='Status']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Status]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="262c9568-77b1-4acc-88b9-335f95e36646">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="508,124,196,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[5]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Roles]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Roles']/cell[@text='Roles']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Roles]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="7085379d-20dd-4cf5-b971-d7c2c0bd238b">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="704,124,147,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[6]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Date Created]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Date Created']/cell[@text='Date Created']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Date Created]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="6f7451b3-4a7b-4950-9f90-750e9c2fcef3">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="851,124,145,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[7]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Last Modified]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Modified']/cell[@text='Last Modified']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Last Modified]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b024d9b3-deaf-44c6-a84b-4b911e5ac8de">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="791,95,53,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[New]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.newButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[newButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[New]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Enabled]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[False]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Valid]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[True]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Visible]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[True]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Pressed]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[False]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Delete]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Id]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[deleteButton]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8ce3a09b-82e5-4155-b1d7-ebd28348a3f7">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="False" hasfocus="False" dontcache="True" index="1" rect="852,95,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Button]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="1462ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8839aec9-28e9-4a48-8f4d-85fef1a21e6c">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="928,95,76,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Refresh]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.refreshButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[refreshButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='refreshButton']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Refresh]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="224ms" action="Click" button="Left" movetime="10ms" sx="823" sy="109" loc="32;14">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b024d9b3-deaf-44c6-a84b-4b911e5ac8de">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="791,95,53,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[New]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader464.ViewUser465.HBox466.newButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[newButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="6797dc8b-4e30-42b3-be0f-4dca54739329">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,226,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem666.TextInput667]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[7]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="6797dc8b-4e30-42b3-be0f-4dca54739329">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,226,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem666.TextInput667]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[7]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[TextInput]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,255,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem672.TextInput673]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[TextInput]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1d5e9919-2c91-4e39-b7fe-5a23d87b7bb9">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,284,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem678.TextInput679]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[TextInput]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b1bb4341-6f11-44bd-a504-3e7b9afe1e1c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,342,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem690.TextInput691]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[3]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[TextInput]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="7c4225a5-6c20-474c-8714-cfb278910f2c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="384,373,274,18">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem696.ComboBox697.TextInput701]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[2]/combobox/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[TextInput]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="3a37c360-3097-4f43-9a3c-ac9a192cfc14">
+        <element role="list" prefcap="list" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="382,400,120,163">
+          <attribute name="selecteditemindex" type="System.Int32">
+            <![CDATA[-1]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls.listClasses::ListBase]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem706.HBox707.List708]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::List]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[List]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[1]/container/list[2]]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Type]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[List]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="863733ed-95f7-4366-8f2e-1b59330af45c">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="510,431,40,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[>]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem706.HBox707.VBox713.Button715]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[1]/container/container/button[@text='>']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[>]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="846f7480-e76d-4e33-95c1-a649e2aad179">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="510,491,40,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[<]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.Form665.FormItem706.HBox707.VBox713.Button718]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[1]/container/container/button[@text='<']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[<]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="afbc3703-1697-47ef-957d-3f313c5afe58">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="288,596,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.ControlBar727.Button728]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Save]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1b70c3f0-eda4-4bf4-acee-aaf213337f36">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="354,596,61,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup654.ControlBar727.Button730]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Close]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="e8a2481c-4a34-40dc-a85e-ed1e727615f6">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,227,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[User Name*]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[User Name*]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[7]/text[@type='FormItemLabel']/text[@caption='User Name*']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[User Name*]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="e833ab30-efe4-4df8-911f-fa580f6c2a2c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,256,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[First Name*]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[First Name*]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[6]/text[@type='FormItemLabel']/text[@caption='First Name*']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[First Name*]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="7fa4944f-a70c-458b-bd59-5d003c5eb0ab">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,285,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Last Name]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Last Name]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[5]/text[@type='FormItemLabel']/text[@caption='Last Name']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Last Name]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="0d612cda-09df-4335-ae40-f307d0b90ec7">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,314,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Password*]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Password*]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[4]/text[@type='FormItemLabel']/text[@caption='Password*']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Password*]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="c2ff786b-5a8a-4ec3-afce-9f4e5044aeed">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,343,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Email]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Email]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[3]/text[@type='FormItemLabel']/text[@caption='Email']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Email]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ece47fdf-6e73-4a15-8b90-38860cbf1ef5">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,372,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Status*]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Status*]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[2]/text/text[@caption='Status*']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Status*]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="953ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b5cdd6fd-3828-4055-a09a-eb3661c28165">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="293,400,75,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Roles]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Roles]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[1]/text/text[@caption='Roles']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Roles]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="1561ms" action="Click" button="Left" movetime="10ms" sx="461" sy="236" loc="79;10">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="6797dc8b-4e30-42b3-be0f-4dca54739329">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,226,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.Form629.FormItem630.TextInput631]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[7]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="109ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="171ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="46ms" action="Press" presstime="46ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1702ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="140ms" action="Press" presstime="100ms" data="U" scancode="22" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="187ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="171ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="874ms" action="Press" presstime="100ms" data="R" scancode="19" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="952ms" action="Click" button="Left" movetime="10ms" sx="446" sy="260" loc="64;5">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,255,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.Form629.FormItem636.TextInput637]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="249ms" action="Press" presstime="100ms" data="F" scancode="33" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="249ms" action="Press" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="249ms" action="Press" presstime="100ms" data="R" scancode="19" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="218ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="593ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="93ms" action="Press" presstime="93ms" data="N" scancode="49" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="140ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="155ms" action="Press" presstime="100ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1093ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="1187ms" action="Click" button="Left" movetime="10ms" sx="431" sy="292" loc="49;8">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1d5e9919-2c91-4e39-b7fe-5a23d87b7bb9">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,284,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.Form629.FormItem642.TextInput643]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="718ms" action="Press" presstime="100ms" data="L" scancode="38" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="187ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="233ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="749ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="155ms" action="Press" presstime="100ms" data="N" scancode="49" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="93ms" action="Press" presstime="93ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="202ms" action="Press" presstime="100ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1062ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="874ms" action="Click" button="Left" movetime="10ms" sx="423" sy="327" loc="41;14">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="20077e3e-289d-4e97-962a-b8e8ec445da1">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,313,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.Form629.FormItem648.TextInput649]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[4]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="218ms" action="Press" presstime="100ms" data="P" scancode="25" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="249ms" action="Press" presstime="100ms" data="W" scancode="17" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="827ms" action="Press" presstime="100ms" data="D" scancode="32" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="874ms" action="Click" button="Left" movetime="10ms" sx="419" sy="346" loc="37;4">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b1bb4341-6f11-44bd-a504-3e7b9afe1e1c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,342,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.Form629.FormItem654.TextInput655]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[3]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="249ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="109ms" action="Press" presstime="100ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="202ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="217ms" action="Press" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1655ms" action="Press" presstime="100ms" data="L" scancode="38" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="1296ms" action="Click" button="Left" movetime="10ms" sx="419" sy="382" loc="35;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="7c4225a5-6c20-474c-8714-cfb278910f2c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="384,373,274,18">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.Form629.FormItem660.ComboBox661.TextInput665]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[2]/combobox/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="3468ms" action="Click" button="Left" movetime="10ms" sx="419" sy="397" loc="32;1">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8fdd46d7-be9b-4cc7-abac-0afe5212e13f">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="387,396,290,17">
+          <attribute name="caption" type="System.String">
+            <![CDATA[ACTIVE]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[ACTIVE]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/list/listitem[@text='ACTIVE']/text[@caption='ACTIVE']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="1124ms" action="Click" button="Left" movetime="10ms" sx="385" sy="604" loc="31;8">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1b70c3f0-eda4-4bf4-acee-aaf213337f36">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="354,596,61,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup618.ControlBar691.Button694]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem duration="0ms" methodname="verify_close">
+      <comment>
+      </comment>
+    </userrecorditem>
+    <mouseitem duration="1264ms" action="Click" button="Left" movetime="10ms" sx="810" sy="106" loc="19;11">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b024d9b3-deaf-44c6-a84b-4b911e5ac8de">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="791,95,53,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[New]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader461.ViewUser462.HBox463.newButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[newButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="998ms" action="Click" button="Left" movetime="10ms" sx="513" sy="239" loc="131;13">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="6797dc8b-4e30-42b3-be0f-4dca54739329">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,226,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.Form809.FormItem810.TextInput811]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[7]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="124ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="171ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="93ms" action="Press" presstime="93ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="921ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="156ms" action="Press" presstime="100ms" data="U" scancode="22" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="186ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="187ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1281ms" action="Press" presstime="100ms" data="R" scancode="19" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="1249ms" action="Click" button="Left" movetime="10ms" sx="497" sy="267" loc="115;12">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,255,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.Form809.FormItem816.TextInput817]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="217ms" action="Press" presstime="100ms" data="F" scancode="33" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="577ms" action="Press" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="233ms" action="Press" presstime="100ms" data="R" scancode="19" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="170ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="592ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="77ms" action="Press" presstime="77ms" data="N" scancode="49" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="156ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="139ms" action="Press" presstime="100ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1374ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="952ms" action="Click" button="Left" movetime="10ms" sx="480" sy="295" loc="98;11">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1d5e9919-2c91-4e39-b7fe-5a23d87b7bb9">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,284,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.Form809.FormItem822.TextInput823]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="140ms" action="Press" presstime="100ms" data="L" scancode="38" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="186ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="202ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="452ms" action="Press" presstime="100ms" data="T" scancode="20" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="108ms" action="Press" presstime="100ms" data="N" scancode="49" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="139ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="124ms" action="Press" presstime="100ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1233ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="874ms" action="Click" button="Left" movetime="10ms" sx="467" sy="332" loc="85;19">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="20077e3e-289d-4e97-962a-b8e8ec445da1">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,313,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.Form809.FormItem828.TextInput829]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[4]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="483ms" action="Press" presstime="100ms" data="P" scancode="25" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="171ms" action="Press" presstime="100ms" data="W" scancode="17" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1015ms" action="Press" presstime="100ms" data="D" scancode="32" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="827ms" action="Click" button="Left" movetime="10ms" sx="459" sy="351" loc="77;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b1bb4341-6f11-44bd-a504-3e7b9afe1e1c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,342,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.Form809.FormItem834.TextInput835]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[3]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="265ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="93ms" action="Press" presstime="93ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="202ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="0ms" action="Down" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="61ms" action="Press" presstime="61ms" data="O" scancode="24" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="812ms" action="Up" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="593ms" action="Press" presstime="100ms" data="L" scancode="38" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="297ms" action="Down" presstime="100ms" data="LShiftKey, Shift" scancode="42" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="31ms" action="Down" presstime="100ms" data="D2, Shift" scancode="3" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="62ms" action="Up" presstime="100ms" data="LShiftKey" scancode="42" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="531ms" action="Up" presstime="100ms" data="D2" scancode="3" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="420ms" action="Press" presstime="100ms" data="H" scancode="35" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="608ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="155ms" action="Press" presstime="100ms" data="OemPeriod" scancode="52" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="281ms" action="Press" presstime="100ms" data="C" scancode="46" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="218ms" action="Press" presstime="100ms" data="O" scancode="24" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1155ms" action="Press" presstime="100ms" data="M" scancode="50" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="842ms" action="Click" button="Left" movetime="10ms" sx="454" sy="383" loc="70;10">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="7c4225a5-6c20-474c-8714-cfb278910f2c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="384,373,274,18">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.Form809.FormItem840.ComboBox841.TextInput845]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/form/container[2]/combobox/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="1342ms" action="Click" button="Left" movetime="10ms" sx="455" sy="401" loc="68;5">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="8fdd46d7-be9b-4cc7-abac-0afe5212e13f">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="387,396,290,17">
+          <attribute name="caption" type="System.String">
+            <![CDATA[ACTIVE]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[ACTIVE]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/list/listitem[@text='ACTIVE']/text[@caption='ACTIVE']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="224ms" action="Click" button="Left" movetime="10ms" sx="319" sy="610" loc="31;14">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="afbc3703-1697-47ef-957d-3f313c5afe58">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="288,596,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup798.ControlBar871.Button872]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="f6704e19-ac20-491d-8bff-f6605a076bf8">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="396,327,234,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Save User]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save User]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Save User']/element[@type='UIComponent']/text[@caption='Save User']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[Save User]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="a381fd43-c119-4398-a153-16d55e126134">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="414,364,203,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[User has been added successfully]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[User has been added successfully]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Save User']/element[@type='AlertForm']/text[@caption~'^User\ has\ been\ added\ succe']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[User has been added successfully]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="1072ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="19f60977-2aab-47c1-a126-ca0e09de670f">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="480,393,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert935.AlertForm943.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Save User']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[OK]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="1093ms" action="Click" button="Left" movetime="10ms" sx="493" sy="399" loc="13;6">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="19f60977-2aab-47c1-a126-ca0e09de670f">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="480,393,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert935.AlertForm943.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Save User']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem duration="1189ms" methodname="Verify_save">
+      <comment>
+      </comment>
+    </userrecorditem>
+    <mouseitem duration="364ms" action="DoubleClick" button="Left" movetime="10ms" sx="252" sy="180" loc="37;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="5dd6f1ad-d3c1-45b8-957a-971a70216a39">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="215,171,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[2]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[firstname]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index='1']/cell[@text='firstname']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="6797dc8b-4e30-42b3-be0f-4dca54739329">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,217,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[testuser]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup14508.Form14519.FormItem14520.TextInput14521]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[7]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[testuser]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,246,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[firstname]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup14508.Form14519.FormItem14526.TextInput14527]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[firstname]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1d5e9919-2c91-4e39-b7fe-5a23d87b7bb9">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,275,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[lastname]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup14508.Form14519.FormItem14532.TextInput14533]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[lastname]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="b1bb4341-6f11-44bd-a504-3e7b9afe1e1c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,333,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[emaiol@hs.com]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup14508.Form14519.FormItem14544.TextInput14545]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[3]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[emaiol@hs.com]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="1549ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="7c4225a5-6c20-474c-8714-cfb278910f2c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="384,364,274,18">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[ACTIVE]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup14508.Form14519.FormItem14550.ComboBox14551.TextInput14555]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[2]/combobox/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[ACTIVE]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="1046ms" action="Click" button="Left" movetime="10ms" sx="375" sy="596" loc="21;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1b70c3f0-eda4-4bf4-acee-aaf213337f36">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="354,587,61,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup14508.ControlBar14581.Button14584]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="2373ms" action="DoubleClick" button="Left" movetime="10ms" sx="269" sy="174" loc="54;3">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="5dd6f1ad-d3c1-45b8-957a-971a70216a39">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="215,171,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[2]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[1]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[firstname]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index='1']/cell[@text='firstname']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="3498ms" action="Click" button="Left" movetime="10ms" sx="461" sy="263" loc="79;8">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,255,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[firstname]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42102.Form42113.FormItem42120.TextInput42121]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="171ms" action="Press" presstime="100ms" data="C" scancode="46" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="108ms" action="Press" presstime="100ms" data="H" scancode="35" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="233ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="327ms" action="Press" presstime="100ms" data="N" scancode="49" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="93ms" action="Press" presstime="93ms" data="G" scancode="34" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="531ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="2733ms" action="Press" presstime="100ms" data="D1" scancode="2" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="303ms" action="Click" button="Left" movetime="10ms" sx="307" sy="615" loc="19;19">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="afbc3703-1697-47ef-957d-3f313c5afe58">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="288,596,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42102.ControlBar42175.Button42176]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="1337.3896ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="a381fd43-c119-4398-a153-16d55e126134">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="414,364,203,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[User has been added successfully]]>
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[User has been added successfully]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::FlexTextField]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container[@caption='Save User']/element[@type='AlertForm']/text[@caption~'^User\ has\ been\ added\ succe']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[User has been added successfully]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="4186ms" action="Click" button="Left" movetime="10ms" sx="519" sy="405" loc="39;12">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="19f60977-2aab-47c1-a126-ca0e09de670f">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="480,393,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert42247.AlertForm42255.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container[@caption='Save User']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="364ms" action="DoubleClick" button="Left" movetime="10ms" sx="313" sy="201" loc="0;8">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="00189f6b-adef-4301-9d2c-dd9bd73a39cc">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="313,193,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[3]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[2]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[lastname]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index='2']/cell[@text='lastname']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="2587.2936ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,255,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[firstnamechange1]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42426.Form42437.FormItem42444.TextInput42445]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[firstnamechange1]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="1280ms" action="Click" button="Left" movetime="10ms" sx="496" sy="293" loc="114;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1d5e9919-2c91-4e39-b7fe-5a23d87b7bb9">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,284,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[lastname]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42426.Form42437.FormItem42450.TextInput42451]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem duration="171ms" action="Press" presstime="100ms" data="C" scancode="46" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="140ms" action="Press" presstime="100ms" data="H" scancode="35" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="124ms" action="Press" presstime="100ms" data="A" scancode="30" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="405ms" action="Press" presstime="100ms" data="N" scancode="49" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="93ms" action="Press" presstime="93ms" data="G" scancode="34" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="327ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <keyitem duration="1843ms" action="Press" presstime="100ms" data="Q" scancode="16" setModifiers="False">
+      <comment>
+      </comment>
+    </keyitem>
+    <mouseitem duration="1452ms" action="Click" button="Left" movetime="10ms" sx="399" sy="604" loc="45;8">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1b70c3f0-eda4-4bf4-acee-aaf213337f36">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="354,596,61,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42426.ControlBar42499.Button42502]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem duration="364ms" action="DoubleClick" button="Left" movetime="10ms" sx="342" sy="203" loc="29;10">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="00189f6b-adef-4301-9d2c-dd9bd73a39cc">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="313,193,98,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[3]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[2]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[lastname]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='localhost:8880']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index='2']/cell[@text='lastname']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <validationitem duration="100ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1d5e9919-2c91-4e39-b7fe-5a23d87b7bb9">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,284,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[lastname]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42558.Form42569.FormItem42582.TextInput42583]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[lastname]]>
+      </matchvalue>
+    </validationitem>
+    <validationitem duration="571.8234ms" action="AttributeEqual" exceptiononfail="True">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="ad9f227d-d0c2-4621-94ab-754a0cd41325">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="382,255,300,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[firstnamechange1]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42558.Form42569.FormItem42576.TextInput42577]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </path>
+      </info>
+      <matchname>
+        <![CDATA[Text]]>
+      </matchname>
+      <matchvalue>
+        <![CDATA[firstnamechange1]]>
+      </matchvalue>
+    </validationitem>
+    <mouseitem duration="1078ms" action="Click" button="Left" movetime="10ms" sx="393" sy="613" loc="39;17">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="1b70c3f0-eda4-4bf4-acee-aaf213337f36">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="354,596,61,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[NewUserPopup42558.ControlBar42631.Button42634]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem duration="100ms" methodname="deleteuser">
+      <comment>
+      </comment>
+    </userrecorditem>
+  </recorditems>
+  <repository name="UI_TCRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664" relativepath="UI_TCRepository.rxrep">
+    <codegen classname="UI_TCRepository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+</recordtable>

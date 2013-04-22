@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqEfpIdxTrdRequestT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqEfpIdxTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqEfpIdxTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqEfpIdxTrdRecT">
+		<sequence>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="setlInst" size="2"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="whsTrdStsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqEfpIdxTrdResponseT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trdNo" size="6"/>
+			<element type="char" name="nomVal" size="9"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="futPrc" size="14"/>
+			<element type="char" name="hdgeTyp" size="3"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="cshBsktRefId" size="20"/>
+			<element type="futBscInqEfpIdxTrdRecT" name="futBscInqEfpIdxTrdRec" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqEfpIdxTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqEfpIdxTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

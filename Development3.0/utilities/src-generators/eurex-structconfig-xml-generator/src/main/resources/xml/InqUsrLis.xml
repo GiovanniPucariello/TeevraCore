@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqUsrLisRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqUsrLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqUsrLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqUsrLisRecT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqUsrLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqUsrLisRecT" name="bscInqUsrLisRec" size="300"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqUsrLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqUsrLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

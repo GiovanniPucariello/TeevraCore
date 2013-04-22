@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqHistPosTrnRequestT">
+		<sequence>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="strtStmSeqNo" size="9"/>
+			<element type="char" name="stopStmSeqNo" size="9"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqHistPosTrnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqHistPosTrnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqHistPosTrnRecT">
+		<sequence>
+			<element type="char" name="recProdLine" size="7"/>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="agrsrMtchInd"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="exerPrcDcml"/>
+			<element type="char" name="prodDispDcml" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqHistPosTrnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqHistPosTrnRecT" name="bscInqHistPosTrnRec" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqHistPosTrnRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="ordrPrtFilCod"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="gutGrpT" name="gutGrp"/>
+			<element type="char" name="grsBas" size="6"/>
+			<element type="char" name="undrIsinCod" size="12"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+			<element type="char" name="bonIsinCod" size="12"/>
+			<element type="char" name="prmAmnt" size="13"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+			<element type="char" name="posnLngBal" size="13"/>
+			<element type="char" name="posnShtBal" size="13"/>
+			<element type="char" name="cshValDat" size="8"/>
+			<element type="char" name="secuValDat" size="8"/>
+			<element type="char" name="swapEndDat" size="8"/>
+			<element type="char" name="cpnFixRat" size="6"/>
+			<element type="origTrnGrpT" name="origTrnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqHistPosTrnResponseT">
+		<sequence>
+			<element type="extInqHistPosTrnRecT" name="extInqHistPosTrnRec" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqHistPosTrnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqHistPosTrnResponseT" name="basic"/>
+			<element type="extInqHistPosTrnResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

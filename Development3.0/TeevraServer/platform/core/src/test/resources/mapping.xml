@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<!--  service element maps to Service Endpoint -->
+	<class name="com.headstrong.fusion.config.ServiceEndPoint">
+		<map-to xml="service" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" node="attribute" />
+		</field>
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" />
+		</field>
+		<field name="properties" collection="map" required="true">
+			<bind-xml name="property" node="element">
+				<class name="org.exolab.castor.mapping.MapItem">
+					<field name="key" type="java.lang.String">
+						<bind-xml name="name" node="attribute" />
+					</field>
+					<field name="value" type="java.lang.String">
+						<bind-xml name="value" node="attribute" />
+					</field>
+				</class>
+			</bind-xml>
+		</field>
+	</class>
+	<!--   Process Configuration -->
+	<class
+		name="com.headstrong.fusion.config.ProcessConfigurationModel">
+		<map-to xml="definition" />
+		<field name="processSequence"
+			type="com.headstrong.fusion.config.ProcessSequence">
+			<bind-xml name="process" />
+		</field>
+	</class>
+
+	<!--  Process Sequence  -->
+	<class name="com.headstrong.fusion.config.ProcessSequence">
+		<map-to xml="process" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="routes" type="com.headstrong.fusion.config.Route"
+			collection="arraylist" container="false">
+			<bind-xml name="routes" />
+		</field>
+	</class>
+	<!--  Route  -->
+	<class name="com.headstrong.fusion.config.Route">
+		<map-to xml="route" />
+		<field name="savePoint" type="java.lang.Boolean">
+			<bind-xml name="savePoint" node="attribute" />
+		</field>
+		<field name="breakPoint" type="java.lang.Boolean">
+			<bind-xml name="breakPoint" node="attribute" />
+		</field>
+		<field name="threads" type="java.lang.Integer">
+			<bind-xml name="threads" node="attribute" />
+		</field>
+		<field name="service"
+			type="com.headstrong.fusion.config.ServiceEndPoint">
+			<bind-xml name="service" node="element" />
+		</field>
+		<field name="targets"
+			type="com.headstrong.fusion.config.EndPoint" collection="arraylist"
+			container="false">
+			<bind-xml name="target" />
+		</field>
+	</class>
+
+	<!--  Routing Endpoints -->
+
+
+	<!--  Multicasting  -->
+	<class name="com.headstrong.fusion.config.MulticastEndPoint">
+		<map-to xml="multicast" />
+		<field name="targets"
+			type="com.headstrong.fusion.config.EndPoint" collection="arraylist"
+			container="false">
+			<bind-xml name="target" />
+		</field>
+	</class>
+
+	<!--  LoadBalancer -->
+	<class name="com.headstrong.fusion.config.LoadBalancerEndPoint">
+		<map-to xml="loadbalancer" />
+		<field name="strategy" type="java.lang.String">
+			<bind-xml name="strategy" node="attribute" />
+		</field>
+		<field name="targets"
+			type="com.headstrong.fusion.config.EndPoint" collection="arraylist"
+			container="false">
+			<bind-xml name="target" />
+		</field>
+	</class>
+
+
+
+</mapping>

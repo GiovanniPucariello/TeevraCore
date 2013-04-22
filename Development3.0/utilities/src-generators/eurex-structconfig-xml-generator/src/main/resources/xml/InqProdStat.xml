@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdStatGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdStatRequestT">
+		<sequence>
+			<element type="bscInqProdStatGrpT" name="bscInqProdStatGrp" size="152"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdStatRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdStatRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdStatRecT">
+		<sequence>
+			<element type="char" name="prcsStsValCod" size="5"/>
+			<element type="char" name="trnTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdStatResponseT">
+		<sequence>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdStatRecT" name="bscInqProdStatRec" size="152"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdStatResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdStatResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

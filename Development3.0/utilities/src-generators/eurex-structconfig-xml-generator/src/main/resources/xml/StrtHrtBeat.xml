@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="strtHrtBeatRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscStrtHrtBeatResponseT">
+		<sequence>
+			<element type="char" name="hrtBeatIntvlSec" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="strtHrtBeatResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscStrtHrtBeatResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

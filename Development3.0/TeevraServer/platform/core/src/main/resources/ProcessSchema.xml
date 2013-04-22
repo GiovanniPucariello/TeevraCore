@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<!--  Error Reporter Config -->
+	<class name="com.headstrong.fusion.config.ErrorReporterConfig">
+		<map-to xml="errorReporter" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" required="true" />
+		</field>
+		<field name="properties" collection="map">
+			<bind-xml name="property" node="element">
+				<class name="org.exolab.castor.mapping.MapItem">
+					<field name="key" type="java.lang.String">
+						<bind-xml name="name" node="attribute" />
+					</field>
+					<field name="value" type="java.lang.String">
+						<bind-xml name="value" node="attribute" />
+					</field>
+				</class>
+			</bind-xml>
+		</field>
+	</class>
+
+	<class name="com.headstrong.fusion.config.ErrorReportingConfig">
+		<map-to xml="errorReporter" />
+		<field name="errorReporterId" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="formatter" type="java.lang.String">
+			<bind-xml name="formatter" node="attribute" required="true" />
+		</field>
+	</class>
+
+	<!--  Error Handling strategy Config -->
+	<class
+		name="com.headstrong.fusion.config.ErrorHandlingStrategyConfig">
+		<map-to xml="errorHandlingStrategy" />
+		<field name="strategy" type="java.lang.String">
+			<bind-xml name="type" node="attribute" required="true" />
+		</field>
+		<field name="batch" type="java.lang.Boolean">
+			<bind-xml name="batch" node="attribute" required="false" />
+		</field>
+		<field name="properties" collection="map">
+			<bind-xml name="property" node="element">
+				<class name="org.exolab.castor.mapping.MapItem">
+					<field name="key" type="java.lang.String">
+						<bind-xml name="name" node="attribute" />
+					</field>
+					<field name="value" type="java.lang.String">
+						<bind-xml name="value" node="attribute" />
+					</field>
+				</class>
+			</bind-xml>
+		</field>
+	</class>
+
+	<!--  On-Error Configuration -->
+	<class name="com.headstrong.fusion.config.OnErrorConfig">
+		<map-to xml="onError" />
+		<field name="errorReporters"
+			type="com.headstrong.fusion.config.ErrorReportingConfig"
+			collection="arraylist">
+			<bind-xml name="errorReporter" node="element" />
+		</field>
+		<field name="exceptionType" type="java.lang.String">
+			<bind-xml name="exceptionType" node="attribute"
+				required="true" />
+		</field>
+		<field name="errorHandlingStrategy"
+			type="com.headstrong.fusion.config.ErrorHandlingStrategyConfig">
+			<bind-xml name="errorHandlingStrategy" node="element"
+				required="true" />
+		</field>
+	</class>
+
+	<!--  Mediation Endpoint -->
+	<class name="com.headstrong.fusion.config.MediatorConfig">
+		<map-to xml="mediator" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" required="true" />
+		</field>
+		<field name="errorConfigList"
+			type="com.headstrong.fusion.config.OnErrorConfig"
+			collection="arraylist">
+			<bind-xml auto-naming="deriveByClass" node="element" />
+		</field>
+		<field name="properties" collection="map">
+			<bind-xml name="property" node="element">
+				<class name="org.exolab.castor.mapping.MapItem">
+					<field name="key" type="java.lang.String">
+						<bind-xml name="name" node="attribute" />
+					</field>
+					<field name="value" type="java.lang.String">
+						<bind-xml name="value" node="attribute" />
+					</field>
+				</class>
+			</bind-xml>
+		</field>
+	</class>
+
+	<!--  Connector Endpoint -->
+	<class name="com.headstrong.fusion.config.ConnectorConfig">
+		<map-to xml="connector" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="type" type="java.lang.String">
+			<bind-xml name="type" node="attribute" required="true" />
+		</field>
+		<field name="errorConfigList"
+			type="com.headstrong.fusion.config.OnErrorConfig"
+			collection="arraylist">
+			<bind-xml auto-naming="deriveByClass" node="element" />
+		</field>
+
+		<field name="properties" collection="map">
+			<bind-xml name="property" node="element">
+				<class name="org.exolab.castor.mapping.MapItem">
+					<field name="key" type="java.lang.String">
+						<bind-xml name="name" node="attribute" />
+					</field>
+					<field name="value" type="java.lang.String">
+						<bind-xml name="value" node="attribute" />
+					</field>
+				</class>
+			</bind-xml>
+		</field>
+	</class>
+
+	<!--  EndPoint Sequence mutliple mapping -->
+	<class name="com.headstrong.fusion.config.SourceSequence">
+		<map-to xml="from" />
+		<field name="threads" type="java.lang.Integer">
+			<bind-xml name="threads" node="attribute" />
+		</field>
+		<field name="endPointId" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+	</class>
+
+	<!--  EndPoint Sequence mutliple mapping -->
+	<class name="com.headstrong.fusion.config.EndPointSequence">
+		<map-to xml="to" />
+		<field name="threads" type="java.lang.Integer">
+			<bind-xml name="threads" node="attribute" />
+		</field>
+		<field name="endPointId" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="deadEnd" type="java.lang.Boolean">
+			<bind-xml name="deadend" node="attribute" />
+		</field>
+	</class>
+
+	<!--   Process Configuration Model -->
+	<class
+		name="com.headstrong.fusion.config.ProcessConfigurationModel">
+		<map-to xml="fusion" />
+		<!--  Collection of Endpoints. -->
+		<field name="connectors"
+			type="com.headstrong.fusion.config.ConnectorConfig"
+			collection="arraylist" container="false">
+			<bind-xml auto-naming="deriveByClass" node="element"
+				location="connectors" />
+		</field>
+		<field name="errorReporters"
+			type="com.headstrong.fusion.config.ErrorReporterConfig"
+			collection="arraylist" container="false">
+			<bind-xml auto-naming="deriveByClass" node="element"
+				location="errorReporters" />
+		</field>
+		<field name="mediators"
+			type="com.headstrong.fusion.config.MediatorConfig"
+			collection="arraylist" container="false">
+			<bind-xml auto-naming="deriveByClass" node="element"
+				location="mediators" />
+		</field>
+		<field name="routers"
+			type="com.headstrong.fusion.config.RouterConfig"
+			collection="arraylist" container="false">
+			<bind-xml auto-naming="deriveByClass" node="element"
+				location="routers" />
+		</field>
+		<field name="process"
+			type="com.headstrong.fusion.config.Process">
+			<bind-xml name="process" node="element" />
+		</field>
+	</class>
+	<!--  ProcessSequence -->
+	<class name="com.headstrong.fusion.config.Route">
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="start" type="java.lang.Boolean">
+			<bind-xml name="start" node="attribute" />
+		</field>
+		<field name="end" type="java.lang.Boolean">
+			<bind-xml name="end" node="attribute" />
+		</field>
+		<field name="split" type="java.lang.Boolean">
+			<bind-xml name="split" node="attribute" />
+		</field>
+
+		<field name="sequence"
+			type="com.headstrong.fusion.config.SequenceType"
+			collection="arraylist">
+			<bind-xml auto-naming="deriveByClass" node="element" />
+		</field>
+	</class>
+
+	<!--  Process   -->
+	<class name="com.headstrong.fusion.config.Process">
+		<map-to xml="process" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" node="attribute" required="true" />
+		</field>
+		<field name="flow" type="java.lang.String">
+			<bind-xml name="flow" node="attribute" />
+		</field>
+		<field name="toRecover" type="java.lang.Boolean">
+			<bind-xml name="toRecover" node="attribute" />
+		</field>
+		<field name="toLogPrcsEvents" type="java.lang.Boolean">
+			<bind-xml name="toLogPrcsEvents" node="attribute" />
+		</field>
+		<field name="toLogMsgEvents" type="java.lang.Boolean">
+			<bind-xml name="toLogMsgEvents" node="attribute" />
+		</field>
+		<field name="toLogCompEvents" type="java.lang.Boolean">
+			<bind-xml name="toLogCompEvents" node="attribute" />
+		</field>
+		<field name="throttleTime" type="java.lang.String">
+			<bind-xml name="throttleTime" node="attribute" />
+		</field>
+		<field name="throttleMsgCount" type="java.lang.String">
+			<bind-xml name="throttleMsgCount" node="attribute" />
+		</field>
+		<field name="routes" type="com.headstrong.fusion.config.Route"
+			collection="arraylist">
+			<bind-xml name="route" node="element" />
+		</field>
+		<field name="onErrorConfigList"
+			type="com.headstrong.fusion.config.OnErrorConfig"
+			collection="arraylist">
+			<bind-xml auto-naming="deriveByClass" node="element" />
+		</field>
+	</class>
+
+
+	<!--  Content Based Router -->
+	<class name="com.headstrong.fusion.config.CBREndPointConfig">
+		<map-to xml="cbr" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="expressionType" type="java.lang.String">
+			<bind-xml name="exprType" node="element" required="true" />
+		</field>
+		<field name="when" type="com.headstrong.fusion.config.When"
+			collection="arraylist">
+			<bind-xml name="when" node="element" />
+		</field>
+		<field name="otherwise"
+			type="com.headstrong.fusion.config.Otherwise">
+			<bind-xml name="otherwise" node="element" />
+		</field>
+	</class>
+
+	<!--  When  -->
+	<class name="com.headstrong.fusion.config.When">
+		<map-to xml="when" />
+		<field name="predicate"
+			type="com.headstrong.fusion.config.Predicate">
+			<bind-xml auto-naming="deriveByClass" node="element" />
+		</field>
+		<field name="expression" type="java.lang.String">
+			<bind-xml name="expression" node="element" required="true" />
+		</field>
+		<field name="to"
+			type="com.headstrong.fusion.config.EndPointSequence">
+			<bind-xml name="to" node="element" />
+		</field>
+	</class>
+
+	<!--  Otherwise -->
+
+	<class name="com.headstrong.fusion.config.Otherwise">
+		<map-to xml="otherwise" />
+		<field name="to"
+			type="com.headstrong.fusion.config.EndPointSequence">
+			<bind-xml name="to" node="element" />
+		</field>
+	</class>
+
+	<!--  Predicates -->
+
+	<class name="com.headstrong.fusion.config.JXPath">
+		<map-to xml="jxpath" />
+		<field name="expression" type="java.lang.String">
+			<bind-xml name="expression" node="element" />
+		</field>
+	</class>
+
+	<!--  Field Name predicate -->
+	<class name="com.headstrong.fusion.config.FieldPredicate">
+		<map-to xml="field" />
+		<field name="name" type="java.lang.String">
+			<bind-xml name="name" node="attribute" required="true" />
+		</field>
+		<field name="value" type="java.lang.String">
+			<bind-xml name="value" node="attribute" required="true" />
+		</field>
+	</class>
+
+	<!--  Expression predicate -->
+	<class name="com.headstrong.fusion.config.ExpressionPredicate">
+		<field name="expression" type="java.lang.String">
+			<bind-xml name="expression" node="element" required="true" />
+		</field>
+	</class>
+
+	<!--  Content Based Router -->
+	<class name="com.headstrong.fusion.config.SavepointConfig">
+		<map-to xml="savepoint" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+	</class>
+	<!-- MulticastRouter configuration -->
+	<class name="com.headstrong.fusion.config.MultiCastRouterConfig">
+		<map-to xml="multicast" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="targets"
+			type="com.headstrong.fusion.config.EndPointSequence"
+			collection="arraylist">
+			<bind-xml name="to" node="element" required="true" />
+		</field>
+	</class>
+
+
+	<!--  Splitter Router Config. -->
+	<!--  Content Based Router -->
+	<class name="com.headstrong.fusion.config.SplitterConfig">
+		<map-to xml="splitter" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="splitterStrategy"
+			type="com.headstrong.fusion.config.SplitterStrategy">
+			<bind-xml auto-naming="deriveByClass" node="element" />
+		</field>
+	</class>
+
+	<!--  Partition Key split strategy -->
+	<class name="com.headstrong.fusion.config.PartitionKeyStrategy">
+		<map-to xml="partitionKeyStrategy" />
+		<field name="partitionKeys" type="java.lang.String"
+			collection="arraylist">
+			<bind-xml name="partitionKey" node="element"
+				location="partitionKeys" />
+		</field>
+	</class>
+	<!--  Batch Split strategy-->
+	<class name="com.headstrong.fusion.config.BatchSplitStrategy">
+		<map-to xml="batchStrategy" />
+		<field name="batchSize" type="java.lang.Integer" node="element" />
+	</class>
+</mapping>

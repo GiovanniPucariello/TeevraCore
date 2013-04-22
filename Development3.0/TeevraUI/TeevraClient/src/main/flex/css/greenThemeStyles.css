@@ -1,0 +1,159 @@
+/* CSS file */
+
+	Accordion {
+   				fillAlphas: 0.54, 0.45, 0.39, 0.12;
+   				fillColors: #006600;
+	}
+
+	Application {
+				backgroundColor:#728776;
+				borderStyle:none;
+				color:#000000;
+				fontSize: 11;
+				themeColor: #336666;
+
+		}
+
+		VScrollBar {
+			   cornerRadius: 0;
+			   highlightAlphas: 0, 0;
+			   fillAlphas: 0.45, 0.48, 0.49, 0.21;
+			   fillColors: #336666, #336666, #336666, #336666;
+			   trackColors: #336666, #006633;
+			   themeColor: #336666;
+			   borderColor: #336666;
+		}	  	
+		Panel {
+			disabledColor:#D8E4D8;
+			color:#728776;
+			border-alpha:1.0;	
+			borderColor:#BBCAB9;
+			backgroundColor:ffffff;		
+		}
+		Accordion {
+		   selectedFillColors: #009900, #009900;
+		   themeColor: #ff0000;
+		   backgroundColor: #ffffff;
+		   textRollOverColor: #000000;
+		   textSelectedColor: #000000;
+		   openDuration: 500;
+		}
+		.dataGridheaderStyle
+		{
+			fontWeight:'bold';
+			textAlign: 'center';
+			color: #D8E4D8;
+			
+		}
+		DataGrid {
+        	headerColors: #5f7f77,#5f7f77 ;
+			headerStyleName:dataGridheaderStyle;
+    	}
+        .panelStyle {
+		   borderStyle: solid;
+		   borderColor: #719781;
+		   borderAlpha: 0.35;
+		   borderThickness: 5;
+		   cornerRadius: 1;
+		   headerHeight: 0;
+		   backgroundAlpha: 1;
+		   highlightAlphas: 0, 0;
+		   backgroundColor:#9aac9d;
+		}
+
+		.panelStyle1 {
+		   	borderColor: #BBCAB9;  
+   			borderThicknessLeft: 6;
+   			borderThicknessTop: 0;
+   			borderThicknessBottom: 3;
+  			borderThicknessRight: 6;
+   			headerHeight: 30;   	   		   
+		   	backgroundColor:#FFFFFF;
+			cornerRadius: 5;
+		}
+		
+		.dataGridStyle {
+			alternating-item-colors:#D6DED4,#BBCAB9;
+			rollOverColor:#546B5E;
+			textRollOverColor:#EFEFEF;
+			textDecoration:bold;
+			selection-color:#40534A;
+			text-selected-color:#FFFFFF;
+			dropShadowEnabled: true;
+			color: #000000;
+			fontFamily:Verdana;
+   			fontSize: 10;
+		}
+		Button {
+			textSelectedColor:#4C7437;
+			textRollOverColor:#5f7f77;
+			disabledColor:#abbea1;
+			color:#4E6257;
+			themeColor:#336666;
+			fillAlphas: 0.57, 0.76, 0.54, 0.16;
+		}
+		.navigationMenuStyle {
+			backgroundColor:#D6DED4;
+			color:#4E6469;
+			fontSize:10;
+			rollOverColor:#5f7f77;
+			textRollOverColor:#FEFEFE;
+			textDecoration:bold;
+			selection-color:#3E3E3E;
+			text-selected-color:#FFFFFF;
+		}
+		
+		.labelStyle {
+			fontFamily:Verdana;
+			fontSize:12;
+			color:#D8E4D8;
+			fontWeight:bold; 
+		}
+		.labelStyle5 {			
+			fontFamily:Calibri;
+			fontSize:14;
+			color:#000000;
+			fontWeight:bold;
+			
+		}
+		
+		Label {
+			fontFamily:Verdana;
+			fontSize:11;
+			color:#4A4A4A;
+		}
+		.labelStyle2 {
+			fontFamily:Verdana;
+			fontSize:12;
+			color:#006699;
+		}
+		.navigationLabelStyle {
+			fontFamily:Verdana;
+			fontSize:11;
+			color:#4C7437;
+			textDecoration:none;
+			disabledColor:#CCCCCC;
+			
+		}
+		.activeNavigationLabelStyle {
+			fontFamily:Verdana;
+			fontSize:11;
+			color:#CBEDB8;			
+			textDecoration:none;
+		}
+		.labelStyle3 {
+			fontFamily:Verdana;
+			fontSize:12;
+			color:#000000;
+		}
+		.bMenu {
+			textSelectedColor:#000000;
+			textRollOverColor:#000000;
+			disabledColor:#AAB3B3;
+			color:#111111;
+		}
+		LinkButton {
+   			rollOverColor: #D6DED4;
+		}
+
+		

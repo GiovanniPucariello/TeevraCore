@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntMembStopRlseRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="membStopRlseInd"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="password" size="8"/>
+			<element type="trdrIdGrpApprT" name="trdrIdGrpAppr"/>
+		</sequence>
+	</complexType>
+	<complexType name="entMembStopRlseRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntMembStopRlseRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntMembStopRlseResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="entMembStopRlseResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntMembStopRlseResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,318 @@
+<userInput>
+	<!-- Install -->
+	<panel order="0">
+
+		<field type="title" bold="false" txt="Installation"
+			id="Select Teevra applications to be installed" />
+		<field type="check" variable="teevra.app.ui">
+			<spec txt="Teevra Web Application"
+				id="Teevra Web Application" true="yes" false="no" set="false" />
+		</field>
+		<field type="check" variable="teevra.app.server">
+			<spec txt="Teevra Server" id="Teevra Server application"
+				revalidate="yes" true="yes" false="no" set="false" />
+		</field>
+		<field type="check" variable="http.service">
+			<spec txt="Enable Http Service" id="Enable Http Service"
+				variable="fusion.http.status" revalidate="yes" true="true" false="false" set="false"/>
+		</field>
+	</panel>
+	<!--
+	<panel order="1">
+
+		<field type="title" bold="false" txt="Installation"
+			id="Select Teevra server components to be installed" />
+		<field type="check" variable="teevra.server.comp.Euronext">
+			<spec txt="Eurex Clearing" id="LCH.Clearnet SA"
+				true="yes" false="no" set="false" />
+		</field>
+		<field type="check" variable="teevra.server.comp.Eurex">
+			<spec txt="Eurex Clearing" id="Eurex Clearing" true="yes"
+				false="no" set="false" />
+		</field>
+
+
+	</panel>
+	-->
+	<!-- 
+	<panel order="2">
+		<field type="title" bold="false" txt="Recovery Queue Details"
+			id="Recovery Queue Details" />
+		<field type="text" align="left" variable="jms.url">
+
+			<spec txt="JMS URL" size="30" set="${jms.url_default}" />
+
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" JMS URL is a required field" />
+
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="jms.queue.name">
+
+			<spec txt="JMS Queue Name" size="30" />
+
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Queue Name is a required field" />
+
+		</field>
+
+	</panel>
+-->
+	<panel order="1">
+		<field type="title" bold="false" txt="Application Data Home"
+			id="Application Data Home" />
+		<field type="text" align="left" variable="fusion.home">
+			<spec txt="Application Data Home" size="30" set="$USER_HOME\.fusion" />
+		</field>
+	</panel>
+	
+	
+	<panel order="2">
+		<field type="title" bold="false" txt="Cluster Details"
+			id="Cluster Details" />
+
+		<field type="check" variable="teevra.server.cluster">
+			<spec txt="Server Cluster" id="Install as a cluster"
+				revalidate="yes" true="true" false="false" set="false" />
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="cluster.group.name"
+			conditionid="cluster.selected">
+			<spec txt="Cluster Name" size="30" />
+
+		</field>
+		<field type="space" />
+		<field type="combo" variable="cluster.type"
+			conditionid="cluster.selected">
+			<spec txt="Cluster Type ">
+				<choice txt="master" value="master" set="true" />
+				<choice txt="Slave" value="slave" />
+			</spec>
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="cluster.group.id"
+			conditionid="cluster.selected">
+			<spec txt="Cluster Id" size="30" />			
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="cluster.node.name"
+			conditionid="cluster.selected">
+			<spec txt="Node Name" size="30" />			
+		</field>
+		<field type="space" />
+		
+
+	</panel>
+
+
+	<panel order="3">
+		<!--  Database Configuration Section -->
+		<field type="title" bold="false" txt="Database Configuration"
+			id="Database Configuration" />
+		<field type="divider" />
+		<field type="space" />
+		<field type="combo" variable="database.type">
+			<spec txt="Database ">
+				<choice txt="Oracle" value="Oracle" set="true" />
+				<choice txt="PostGre SQL" value="Postgres" />
+				<choice txt="Sybase" value="Sybase" />
+			</spec>
+		</field>
+	</panel>
+	
+	<panel order="4">
+		<field type="title" bold="false" txt="Encryption Key Path"
+			id="Encryption Key Path" />
+		<field type="divider" />
+		<field type="space" />
+		<field type="text" align="left" variable="fusion.passKeyLocation">
+			<spec txt="Encryption Key Path" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Pass Key Field is a required field" />
+		</field>
+	</panel>
+	
+	<panel order="5">
+		<!-- Teevra Database Configuration Section -->
+		<field type="title" bold="false" txt="Teevra Database Configuration"
+			id="Teevra Database Configuration" />
+		<field type="divider" />
+		<field type="space" />
+
+		<field type="text" align="left" variable="jdbc.url">
+
+			<spec txt="Database URL" size="30"
+				set="${jdbc.url_default}" />
+
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Database URL is a required field" />
+
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="jdbc.username">
+			<spec txt="User Name" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" User Name is a required field" />
+		</field>
+		
+		<field type="space" />
+
+			
+
+
+		<field type="text" align="left" variable="jdbc.passwordLocation">
+			<spec txt="Password File Location" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Password File Location is a required field" />
+		</field>
+
+	</panel>
+
+
+
+
+
+	<panel order="6">
+		<field type="title" bold="false" txt="Authentication Provider"
+			id="User Authentication" />
+		<field type="divider" />
+		<field type="space" />
+		<field type="title" bold="true" txt="Choose an Option" />
+
+		<field type="radio" variable="auth.type">
+			<description align="left" id="Authentication Provider" />
+			<spec>
+				<choice txt="Ldap" id="Ldap" value="LDAP" />
+				<choice txt="Database" id="Database" value="DB"
+					set="true" />
+			</spec>
+		</field>
+
+	</panel>
+
+
+	<panel order="7">
+
+		<!--  LDAP Configuration Section -->
+		<field type="title" bold="false" txt="LDAP Configuration"
+			id="LDAP Configuration" />
+		<field type="divider" />
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.url">
+			<spec txt="LDAP Server URL" size="30"
+				set="ldap://10.200.41.16:10389" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" LDAP URL is a required field" />
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.root">
+			<spec txt="Root Directory" size="30" set="o=teevra" />
+		</field>
+		<validator class="com.izforge.izpack.util.NotEmptyValidator"
+			txt=" Root Directory is a required field" />
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.userName">
+			<spec txt="User Dsn" size="30" set="uid=admin,ou=system" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" User Dsn is a required field" />
+		</field>
+		<field type="space" />
+		<!--field type="text" align="left" variable="ldap.password">
+			<spec txt="Password" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Password is a required field" />
+		</field -->
+		<field type="text" align="left" variable="ldap.enabled.status">
+			<spec txt="Status" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Status should be true/false" />
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.context">
+			<spec txt="Context" size="30" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt=" Context should not be empty" />
+		</field>
+		
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.type">
+			<spec txt="Type" size="30" />			
+		</field>
+		
+		<field type="divider" /> 
+	</panel>
+	
+	<panel order="8">
+
+		<field type="title" bold="false" txt="Installation"
+			id="" />
+		<!-- 
+			<field type="dir" variable="server.install.dir"
+			conditionid="teevra.server.selected">
+			<spec txt="Server Install Directory" size="30"
+			mustExist="false" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+			txt="Server install directory path is required" />
+			</field>
+		-->
+		<field type="space" />
+
+		<field type="dir" variable="tomcat.home.dir"
+			conditionid="teevra.ui.selected">
+			<spec txt="Teevra Web App Install Directory" size="30"
+				mustExist="false" />
+			<validator class="com.izforge.izpack.util.NotEmptyValidator"
+				txt="Web App Install directory is required" />
+		</field>
+
+	</panel>
+	
+	
+	<panel order="9">
+	<!-- HTTP AND HTTPS Configuration Section -->
+		<field type="title" bold="false" txt="Http Server Configuration" id="Http Server Configuration" />
+
+		<field type="divider" />
+
+		<field type="space" />
+
+		<field type="text" align="left" variable="http.threadPoolSize">
+			<spec txt="ThreadPoolSize" size="10" set="40" />
+		</field>
+
+		<field type="divider" />
+
+		<field type="space" />
+
+		<field type="staticText" align="left" txt="HTTP" id="HTTP"/>
+
+		<field type="text" align="left" variable="http.port">
+			<spec txt="Port" size="10" set="8080" />
+			<validator class="com.izforge.izpack.util.HttpPortValidator"
+				txt=" Specified http port is already running" />
+		</field>
+		
+		<field type="divider" />
+
+		<field type="space" />
+
+		<field type="staticText" align="left" txt="HTTPS" id="HTTPS"/>
+
+		<field type="check" variable="https.service">
+			<spec txt="Enabled" id="Enabled" 
+				revalidate="yes" true="true" false="false" />
+		</field>
+		
+		<field type="text" align="left" variable="https.port" conditionid="https.service.selected">
+			<spec txt="Port" size="10" set="443"/>	
+				<validator class="com.izforge.izpack.util.HttpPortValidator"
+				txt=" Specified https port is already running" />
+
+		</field>
+	
+		<field type="divider" />
+
+	
+	</panel>
+	
+</userInput>

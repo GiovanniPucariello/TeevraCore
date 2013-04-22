@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes" ?>
+<installation version="1.0">
+	<info>
+		<appname>Teevra</appname>
+		<appversion>3.0</appversion>
+		<authors>
+			<author name="Headstrong Corporation" email="" />
+		</authors>
+		<url>http://www.headstrong.com</url>
+		<uninstaller write="no" />
+		<javaversion>1.6</javaversion>
+		<requiresjdk>yes</requiresjdk>
+		<webdir>http://</webdir>
+		<writeinstallationinformation>yes</writeinstallationinformation>
+	</info>	
+	<guiprefs width="750" height="480" resizable="no">
+			<modifier key="useFlags" value="yes" />
+			<modifier key="langDisplayType" value="default" />
+			<modifier key="useHeadingPanel" value="yes" />
+			<modifier key="headingImageOnLeft" value="no" />
+			<modifier key="headingFontSize" value="1" />
+			<modifier key="headingBackgroundColor" value="-1250856" />
+			<modifier key="headingForegroundColor" value="-1250856" />
+	</guiprefs>
+	<locale>
+		<langpack iso3="eng" />
+	</locale>
+	<resources>
+		<res id="InfoPanel.info" src="info.txt" parse="yes" />				
+		<res id="userInputSpec.xml" src="userInputSpec_Console.xml" />
+		<res id="ProcessPanel.Spec.xml" src="ProcessPanel.Spec.xml" />
+		<res id="userInputLang.xml_eng" src="eng.xml" />
+	</resources>
+	<conditions>
+		
+		
+		<condition type="variable" id="teevra.server.option.selected">
+			<name>teevra.apps</name>
+			<value>Server</value>
+		</condition>
+		
+		<condition type="variable" id="teevra.ui.option.selected">
+			<name>teevra.apps</name>
+			<value>Web</value>
+		</condition>
+		<condition type="variable" id="teevra.both.option.selected">
+			<name>teevra.apps</name>
+			<value>Both</value>
+		</condition>
+		
+		<condition type="or" id="teevra.server.selected">
+			<condition type="ref" refid="teevra.server.option.selected" />
+			<condition type="ref" refid="teevra.both.option.selected" />
+		</condition>
+		
+		<condition type="or" id="teevra.ui.selected">
+			<condition type="ref" refid="teevra.ui.option.selected" />
+			<condition type="ref" refid="teevra.both.option.selected" />
+		</condition>
+		
+		<condition type="variable" id="db.oracle">
+			<name>database.type</name>
+			<value>Oracle</value>
+		</condition>
+		<condition type="variable" id="db.postgres">
+			<name>database.type</name>
+			<value>Postgres</value>
+		</condition>
+		<condition type="variable" id="db.sybase">
+			<name>database.type</name>
+			<value>Sybase</value>
+		</condition>
+
+		<condition type="variable" id="ldapPanel.show">
+			<name>auth.type</name>
+			<value>LDAP</value>
+		</condition>
+		
+		<condition type="variable" id="cluster.selected">
+			<name>teevra.server.cluster</name>
+			<value>true</value>
+		</condition>
+		<condition type="variable" id="cluster.master">
+			<name>cluster.type</name>
+			<value>master</value>
+		</condition>
+		<condition type="and" id="clusterandmaster">
+			<condition type="ref" refid="cluster.selected" />
+			<condition type="ref" refid="cluster.master" />
+		</condition>
+
+		<condition type="and" id="standalone">
+			<condition type="ref" refid="!cluster.selected" />
+			<condition type="ref" refid="teevra.server.selected" />
+		</condition>
+		<condition type="or" id="standaloneorclustermaster">
+			<condition type="ref" refid="standalone" />
+			<condition type="ref" refid="clusterandmaster" />
+		</condition>
+		<condition type="and" id="webapp.panel">
+			<condition type="ref" refid="teevra.ui.selected" />
+			<condition type="ref" refid="teevra.server.selected" />
+		</condition>
+
+	</conditions>
+	<dynamicvariables>
+		<variable name="hibernate.dialect"
+			value="org.hibernate.dialect.OracleDialect" condition="db.oracle" />
+		<variable name="hibernate.dialect"
+			value="org.hibernate.dialect.PostgreSQLDialect"
+			condition="db.postgres" />
+		<variable name="hibernate.dialect"
+			value="org.hibernate.dialect.SybaseDialect"
+			condition="db.sybase" />
+		<variable name="jdbc.driverClassName"
+			value="oracle.jdbc.OracleDriver" condition="db.oracle" />
+		<variable name="jdbc.driverClassName"
+			value="org.postgresql.Driver" condition="db.postgres" />
+		<variable name="jdbc.driverClassName"
+			value="com.sybase.jdbc3.jdbc.SybDriver" condition="db.sybase" />	
+		<variable name="jdbc.url_default"
+			value="jdbc:oracle:thin:@10.200.41.16:1521:teevra"
+			condition="db.oracle" />
+		<variable name="jdbc.url_default"
+			value="jdbc:postgresql://10.200.20.106/TestInstaller"
+			condition="db.postgres" />
+		<variable name="jdbc.url_default"
+					value="jdbc:sybase:Tds:10.200.41.82:9010"
+			condition="db.sybase" />
+		
+		<variable name="jms.url_default" value="tcp://localhost:61616" />
+		<variable name="ldap.url" value="" condition="!ldapPanel.show" />
+		<variable name="ldap.root" value="" condition="!ldapPanel.show" />
+		<variable name="ldap.userName" value=""
+			condition="!ldapPanel.show" />
+		<variable name="euronext.selected" value="NO" />
+		
+		<!--  cluster properties default values. -->
+		<variable name="cluster.type" value=""
+			condition="!cluster.selected" />
+		<variable name="cluster.node.name" value=""
+			condition="!cluster.selected" />
+		<variable name="cluster.group.id" value=""
+			condition="!cluster.selected" />
+		<variable name="cluster.group.name" value=""
+			condition="!cluster.selected" />
+	</dynamicvariables>
+	<panels>
+		<panel classname="HelloPanel" />
+		
+		<panel classname="UserInputPanel" />		
+		<panel classname="UserInputPanel"
+			condition="teevra.server.selected" />		
+		<panel classname="UserInputPanel"
+			condition="teevra.server.selected" />
+		<panel classname="UserInputPanel"
+			condition="cluster.selected" />
+		<panel classname="UserInputPanel" />
+		<panel classname="UserInputPanel" />
+		<panel classname="UserInputPanel" />
+		<panel classname="UserInputPanel" />
+		<panel classname="UserInputPanel" />
+		<panel classname="UserInputPanel" condition="ldapPanel.show" />
+		<panel classname="UserInputPanel" condition="webapp.panel" />
+		<panel classname="TargetPanel" />
+		<panel classname="PacksPanel" />
+		<panel classname="InstallPanel" />
+		<panel classname="ProcessPanel" />
+		<panel classname="FinishPanel" />
+	</panels>
+	<packs>
+		<pack name="Teevra Admin Console" required="yes"
+			preselected="yes" condition="teevra.ui.selected">
+			<description>Teevra Admin Console</description>
+			<file src="../TeevraUI/TeevraApp/target/teevra.war"
+				targetdir="${tomcat.home.dir}/webapps" override="true"
+				condition="teevra.server.selected">
+			</file>
+			<parsable
+				targetfile="${tomcat.home.dir}/webapps/teevra.war/WEB-INF/jdbc.properties"
+				condition="teevra.server.selected" />
+			<parsable
+				targetfile="${tomcat.home.dir}/webapps/teevra.war/WEB-INF/classes/properties/teevraApp.properties"
+				condition="teevra.server.selected" />
+			<file src="../TeevraUI/TeevraApp/target/teevra.war"
+				targetdir="${INSTALL_PATH}/webapps" override="true"
+				condition="!teevra.server.selected">
+			</file>
+			<parsable
+				targetfile="${INSTALL_PATH}/webapps/teevra.war/WEB-INF/jdbc.properties"
+				condition="!teevra.server.selected" />
+		</pack>
+		<pack name="Database Scripts" required="yes" preselected="yes"
+			condition="standaloneorclustermaster" id="dbscriptsPack"
+			override="true">
+			<description>Database Scripts</description>
+			<!--  Database related files. -->
+			<fileset dir="db" targetdir="${INSTALL_PATH}/scripts/db"
+				override="true">
+				<exclude name=".svn" />
+			</fileset>
+			<fileset dir="../Database"
+				targetdir="${INSTALL_PATH}/scripts/db">
+				<exclude name=".svn" />
+			</fileset>
+			<fileset dir="../utilities/dataLoader/lib"
+				targetdir="${INSTALL_PATH}/scripts/db/lib">
+				<exclude name=".svn" />
+			</fileset>
+			<singlefile src="../utilities/dataLoader/bin/dataLoader.jar"
+				target="${INSTALL_PATH}/scripts/db/lib/dataLoader.jar" />
+			<singlefile
+				src="../utilities/dataLoader/resources/tables.xlsx"
+				target="${INSTALL_PATH}/scripts/db/lib/tables.xlsx" />
+			
+			<parsable
+				targetfile="${INSTALL_PATH}/scripts/db/Launchsql.bat"
+				override="true" />
+			<executable
+					targetfile="${INSTALL_PATH}/scripts/db/Launchsql.sh"
+					override="true" stage="postinstall" keep="true">
+				<args>
+					<arg value="${INSTALL_PATH}"/>
+					<arg value="${database.type}"/>
+					<arg value="${jdbc.url}"/>
+					<arg value="${jdbc.username}"/>	
+					<arg value="${jdbc.passwordLocation}"/>
+					<arg value="${euronext.selected}"/>   
+					<arg value="${auth.type}"/>   
+					<arg value="${fusion.passKeyLocation}"/>   					
+				</args>
+			</executable>
+		</pack>
+		<pack name="Teevra Server" required="yes" preselected="yes"
+			condition="teevra.server.selected">
+			<description>teevra server</description>
+			<fileset
+				dir="../TeevraServer/assembler/target/teevra.server.assembler-2.0.0-bin.dir/fusion"
+				targetdir="${INSTALL_PATH}/lib">
+				<os family="windows" />
+				<os family="unix" />
+			</fileset>
+			<fileset
+				dir="../TeevraServer/assembler/target/teevra.server.assembler-2.0.0-bin.dir/conf"
+				targetdir="${INSTALL_PATH}/conf">
+				<os family="windows" />
+				<os family="unix" />
+			</fileset>
+		
+			<!--  startup/shutdown scripts -->
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/bin"
+				targetdir="${INSTALL_PATH}/bin/">
+				<os family="windows" />
+				<include name="*.bat" />
+			</fileset>
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/bin"
+				targetdir="${INSTALL_PATH}/bin/">
+				<os family="unix" />
+				<include name="*.sh" />
+			</fileset>
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/bin"
+				targetdir="${INSTALL_PATH}/bin/">
+				<os family="windows" />
+				<include name="*.exe" />
+			</fileset>
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/lib"
+				targetdir="${INSTALL_PATH}/lib/">
+				<os family="windows" />
+				<os family="unix" />
+				<include name="*.jar" />
+			</fileset>
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/lib"
+				targetdir="${INSTALL_PATH}/lib/">
+				<os family="windows" />
+				<include name="*.dll" />
+			</fileset>
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/lib"
+				targetdir="${INSTALL_PATH}/lib/">
+				<os family="unix" />
+				<include name="*.so" />
+			</fileset>
+			<!--  support only for solaris sparc 32 bit -->
+			<fileset
+				dir="../TeevraServer/assembler/service-wrapper/bin"
+				targetdir="${INSTALL_PATH}/bin/">
+				<os family="unix" />
+				<include name="wrapper-solaris-sparc-32" />
+			</fileset>
+			<singlefile
+				src="../TeevraServer/assembler/service-wrapper/conf/wrapper.conf"
+				target="${INSTALL_PATH}/conf/wrapper.conf">
+				<os family="windows" />
+				<os family="unix" />
+			</singlefile>
+			<parsable
+				targetfile="${INSTALL_PATH}/conf/fusion.properties" />
+			<parsable
+				targetfile="${INSTALL_PATH}/bin/start-Teevra.sh" />
+		</pack>
+	</packs>
+</installation>

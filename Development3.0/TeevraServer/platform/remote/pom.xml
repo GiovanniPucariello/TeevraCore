@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>teevra.platform.parent</artifactId>
+		<groupId>com.hs.fusion</groupId>
+		<version>2.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>fusion-remote</artifactId>
+	<version>${platform.version}</version>
+	<packaging>bundle</packaging>
+	<name>Fusion JMX Manager</name>
+	<description>Fusion Remote Service.</description>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>
+							com.headstrong.fusion.remote.MBeanActivator
+						</Bundle-Activator>
+						<Export-Package>
+							com.headstrong.fusion.remote.*;
+						</Export-Package>
+						<Start-Level>1</Start-Level>
+						<Component-Version>2.1.0</Component-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-logger</artifactId>
+			<version>${platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

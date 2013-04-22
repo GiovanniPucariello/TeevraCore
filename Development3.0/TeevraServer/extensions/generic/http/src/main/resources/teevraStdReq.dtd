@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Directive (name, value)>
+<!ELEMENT Directives (Directive*)>
+<!ELEMENT Header (userID, password, routeID, Directives?)>
+<!ELEMENT Request (Header, payload)>
+<!ATTLIST Request
+	versionID CDATA #REQUIRED
+>
+<!ELEMENT name EMPTY>
+<!ELEMENT password EMPTY>
+<!ELEMENT payload (#PCDATA)>
+<!ATTLIST payload
+	isXML (true | false) #IMPLIED
+	isEncoded (true | false) #IMPLIED
+>
+<!ELEMENT routeID EMPTY>
+<!ELEMENT userID EMPTY>
+<!ELEMENT value EMPTY>

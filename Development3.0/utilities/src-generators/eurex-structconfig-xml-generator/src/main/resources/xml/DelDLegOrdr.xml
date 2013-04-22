@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelDLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelDLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelDLegOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelDLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelDLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelDLegOrdrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

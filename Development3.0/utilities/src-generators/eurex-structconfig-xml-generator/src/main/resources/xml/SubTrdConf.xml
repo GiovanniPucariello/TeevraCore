@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscSubTrdConfPrivBcastT">
+		<sequence>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="agrsrMtchInd"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="exerPrcDcml"/>
+			<element type="char" name="prodDispDcml" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtSubTrdConfPrivBcastT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="ordrPrtFilCod"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="gutGrpT" name="gutGrp"/>
+			<element type="char" name="grsBas" size="6"/>
+			<element type="char" name="undrIsinCod" size="12"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+			<element type="char" name="bonIsinCod" size="12"/>
+			<element type="char" name="prmAmnt" size="13"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+			<element type="char" name="cshValDat" size="8"/>
+			<element type="char" name="secuValDat" size="8"/>
+			<element type="char" name="swapEndDat" size="8"/>
+			<element type="char" name="cpnFixRat" size="6"/>
+			<element type="origTrnGrpT" name="origTrnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futSubTrdConfPrivBcastT">
+		<sequence>
+			<element type="futBscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscSubTrdConfPrivBcastT" name="basic"/>
+			<element type="futExtSubTrdConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscSubTrdConfSubjectT">
+		<sequence>
+			<element type="char" name="basic.membId" size="5"/>
+			<element type="char" name="basic.prodId" size="4"/>
+			<element type="char" name="basic.cntrExpYrDat" size="4"/>
+			<element type="char" name="basic.cntrExpMthDat" size="2"/>
+			<element type="char" name="basic.subjFill" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscSubTrdConfPrivBcastT">
+		<sequence>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="agrsrMtchInd"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dcmlShft"/>
+			<element type="char" name="exerPrcDcml"/>
+			<element type="char" name="prodDispDcml" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtSubTrdConfPrivBcastT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="ordrPrtFilCod"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="gutGrpT" name="gutGrp"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+			<element type="char" name="bonIsinCod" size="12"/>
+			<element type="char" name="prmAmnt" size="13"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+			<element type="char" name="cshValDat" size="8"/>
+			<element type="char" name="secuValDat" size="8"/>
+			<element type="origTrnGrpT" name="origTrnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optSubTrdConfPrivBcastT">
+		<sequence>
+			<element type="optBscSeqNoT" name="seqNo"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscSubTrdConfPrivBcastT" name="basic"/>
+			<element type="optExtSubTrdConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscSubTrdConfSubjectT">
+		<sequence>
+			<element type="char" name="basic.membId" size="5"/>
+			<element type="char" name="basic.prodId" size="4"/>
+			<element type="char" name="basic.cntrExpYrDat" size="4"/>
+			<element type="char" name="basic.cntrExpMthDat" size="2"/>
+			<element type="char" name="basic.cntrClasCod"/>
+			<element type="char" name="basic.cntrExerPrc" size="6"/>
+			<element type="char" name="basic.cntrVersNo"/>
+		</sequence>
+	</complexType>
+</struct>

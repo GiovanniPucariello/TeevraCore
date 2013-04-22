@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqVolTrdRequestT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqVolTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqVolTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqVolTrdRecT">
+		<sequence>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optCntrIdVolaGrpT">
+		<sequence>
+			<element type="char" name="prodId2" size="4"/>
+			<element type="char" name="cntrClasCod2"/>
+			<element type="char" name="cntrExpMthDat2" size="2"/>
+			<element type="char" name="cntrExpYrDat2" size="4"/>
+			<element type="char" name="cntrExerPrc2" size="6"/>
+			<element type="char" name="cntrVersNo2"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqVolTrdResponseT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trdNo" size="6"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="futBscInqVolTrdRecT" name="futBscInqVolTrdRec" size="2"/>
+			<element type="optCntrIdVolaGrpT" name="optCntrIdVolaGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqVolTrdRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqVolTrdResponseT">
+		<sequence>
+			<element type="futExtInqVolTrdRecT" name="futExtInqVolTrdRec" size="2"/>
+			<element type="char" name="trnIdNoOpt" size="6"/>
+			<element type="char" name="trdQtyOpt" size="13"/>
+			<element type="char" name="trdMtchPrcOpt" size="14"/>
+			<element type="char" name="usedQtyOpt" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqVolTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqVolTrdResponseT" name="basic"/>
+			<element type="futExtInqVolTrdResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="c96eb5cb-a88c-4ef0-8433-896e1f0bcfac" embeddedrepository="false">
+  <name>
+    login
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    5
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="login" namespace="Finetuned"/>
+  <variables/>
+  <recorditems>
+    <mouseitem enabled="True" optional="False" duration="2950ms" action="Click" button="Left" movetime="300ms" sx="85" sy="11" loc="14;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="0ba6eb60-4ade-47cc-a0f5-6a44c6ab2ef8">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="71,3,192,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[teevraClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+      <helperscreenshot guid="8212f892-507d-401a-8382-2bca2422ec4b">
+        <![CDATA[/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9V
+XVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSk
+pKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCAAoAVsDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwBzdPxq
+WHvUTdB9alh70iOpIDhhT91Rn7y0tAx+6kdyEJHWm1HNuIGOR3FCAC7OAv3u/FJ5roAo4x2IpYSC
+D65zTZyOB1NX1sSMvwJJLdT0JwcfhTv7NjAzmTHr/kVDMGElvu67/wCorTeQADHJKAdelYWTkztd
+WcKcOV23/Mo/2fD/AHn/ADH+FH9nw/3n/Mf4VeZkGwYXBA3HvQ+zjO37/b+7+FPlXYz+s1f5ij/Z
+8P8Aef8AMf4Uf2fD/ef8x/hV75fOG7bsycYx/SjK70yq8deRz/SjlXYPrNX+Yo/2fD/ef8x/hR/Z
+8P8Aef8AMf4Ve+QS9mGPYY/oajkxvODkeuKOWPYPrNX+Yq/2dEDjMmfTj/Cj+z4f7z/mP8K0BKDM
+M7cAn5vamx7Nq52453Z60cq7B9Zq/wAxSXTYmOAzk/Uf4Un9nw/3n/Mf4VfhKjYcqOu7NIhQRrwp
+PO7Jx/n8KOVdg+s1f5il/ZseAcyc9OR/hSf2fD/ef8x/hV9CpEQYjAznNCFMRg7ec7s0cq7B9Zq/
+zFD+z4f7z/mP8KP7Ph/vP+Y/wq/CFOwYU9d2etQUcsewfWav8xX/ALPh/vP+Y/wo/s+H+8/5j/Cr
+FFPkj2D6zV/mK/8AZ8P95/zH+FH9nw/3n/Mf4VYoo5I9g+s1f5iv/Z8P95/zH+FH9nw/3n/Mf4VY
+oo5I9g+s1f5iv/Z8P95/zH+FH9nw/wB5/wAx/hViijkj2D6zV/mK/wDZ8P8Aef8AMf4UacF+ysSM
+neev0FWKoWZYRnaSMnoO9LlSkrGntZzpS5nfb9S0oLnCtgHJwe1PgkJLKTkioNrE/eIbODmpo02D
+Gc1qzjJWlRThmUH3NLuqtIjNOccApjOM96CjeYEDOECYyD71FxlndRuqr+88z+LO/wDDb/KnR58x
+t+7O4464x/Ki4FjdRuqrCJNwLM2edwwcf4flRF5mXyWPHDYP8jRcC1upplRTguoPoTUNvvwd4PHc
+k8/nVe5R2nYhGI45A9qTegrkjdB9alh71E3QfWpYe9UHUe3VfrS0yVSyYHWq2+4HGf0FAy5SMNyk
+ZxmqnmXHr+go8y49f0FAEjRMq5zk+goEBYAk4PcVH5lx6/oKPMuPX9BVczFYW8IE1uSeA3U/hVjz
+ov8Anqn/AH0KpyLJLjfzjpUf2c/3ays76HVzU5QjGV7o0POi/wCeqf8AfQpslzDHGzmRSFBOARk1
+R+zn+7TLiAi3kO3oh/lT94m1Ho3+H+ZpedF/z0UHuCcEexHal86L/nqn/fQq3quli5zPCo88Dleg
+kH+Pv+B9RiCHI4U+nPGDQ+YSVK2t7/I0POi/56p/30KPOi/56p/30Kz/ALOf7tH2c/3aPeHah3f4
+f5mh50X/AD1T/voUedF/z1T/AL6FZ/2c/wB2j7Of7tHvBah3f4f5mh50X/PVP++hR50X/PVP++hW
+f9nP92j7Of7tHvBah3f4f5mh50X/AD1T/voUedF/z1T/AL6FZ/2c/wB2j7Of7tHvBah3f4f5miLh
+AMCZQD23UnnRf89U/wC+hWf9nP8Ado+zn+7R7wWod3+H+ZoedF/z1T/voUedF/z1T/voVn/Zz/do
++zn+7R7wWod3+H+ZoedF/wA9U/76FHnRf89U/wC+hWf9nP8Ado+zn+7R7wWod3+H+ZoedF/z1T/v
+oUedF/z1T/voVn/Zz/do+zn+7R7wWod3+H+ZoedF/wA9U/76FHnRf89U/wC+hWf9nP8Ado+zn+7R
+7wWod3+H+ZoedF/z1T/voVTs94jLKM4NR/Zz/dqWPzYl2pwM56UK97sblTUHGN9bE4V5GLMMccVM
+M4GetVPMuPX9BR5lx6/oKo5y5RVPzLj1/QUeZcev6CgC5RVPzLj1/QUeZcev6CgC5RVPzLj1/QUe
+Zcev6CgC5RVPzLj1/QUeZcev6CgB7dvrUsPeiigXUkoxRRQMMCjAoooAMCjAoooAMCjAoooAMCor
+lDJbSooyzIQB74oooAfM810XinZdtwAqqfuI4OVH0J4J6k4ximwLGIwY4xGDyV2gEHuCPXtRRQBJ
+gUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYF
+FFABgUYFFFABgUYFFFABgUYFFFABgUYFFFABgUYFFFAH/9k=]]>
+      </helperscreenshot>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="5090ms" action="Click" button="Left" movetime="300ms" sx="92" sy="80" loc="28;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7cb77751-961e-4026-91d8-4f14aa783ad6">
+        <element role="menuitem" prefcap="menuitem" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="64,70,145,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[View Process]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[Object]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/contextmenu[1]/menuitem[@text='View Process']]]>
+        </path>
+      </info>
+      <helperscreenshot guid="5039647f-e5ba-445d-a6bb-ac15a38239b6">
+        <![CDATA[/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9V
+XVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSk
+pKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCADoASEDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwBzdPxq
+WHvUTdB9alh70iOpIDhhT91Rn7y0tAx+6kdyEJHWm1HNuIGOR3FCAC7OAv3u/FJ5roAo4x2IpYSC
+D65zTZyOB1NX1sSWd1OwwGdpx64qvEGCfN1qy8gAGOSUA69KhlDN1G6nsyDYMLggbj3ofZxnb9/t
+/d/ClcBm6jdT/l84btuzJxjH9KMrvTKrx15HP9KLgM3Ubqf8gl7MMewx/Q1HJjecHI9cUXAdyDjB
+z6Um6pRKDMM7cAn5vamx7Nq52453Z60XAauWOByaTdUkJUbDlR13ZpEKCNeFJ53ZOP8AP4UXATDY
+Bx16U3dUiFSIgxGBnOaEKYjB2853ZouBHuo3VJCFOwYU9d2etQUAP3UbqZRTAfuo3UyigB+6jdTK
+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
+FiiiimMKKKKACiiigAooooAKKKKAP//Z]]>
+      </helperscreenshot>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1100ms" action="Click" button="Left" movetime="300ms" sx="1044" sy="32" loc="38;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="74693844-e671-4fda-ad07-56cff6efdc0c">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="1006,20,64,21">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Logout]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[teevraClient1.panel.logoBox.logoutHBox.logoutBtn]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::LinkButton]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[logoutBtn]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[LinkButton]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='logoBox']/container/button[@id='logoutBtn']]]>
+        </path>
+      </info>
+      <helperscreenshot guid="52bb135c-03f7-4633-b236-51d2da6b4293">
+        <![CDATA[/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9V
+XVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/2wBDARweHigjKE4rK06kbl1upKSkpKSk
+pKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKSkpKT/wAARCACKANgDASIA
+AhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQA
+AAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3
+ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWm
+p6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEA
+AwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSEx
+BhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElK
+U1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3
+uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwB+aM1Y
+opEWK+aM1YooCxXzRmrFFAWK+aM1YooCxXzRmrFFAWK+aM1YooCxXzRmrFFAWK+aM1YooCxXzRmr
+FFAWK+aM1YooCxXzRmrFFAWK+aM1YooCxXzRmrFFAWK+aKsUUBYKKKKBhRRRQAUUUUAFFFFABVSC
+GS5mmAuHQI3ue59/ardR6Z/r7r/eH8zUtXaR0UZOMJyW+n5h/Z0v/P4/5H/Gj+zpf+fx/wAj/jVm
+8/49n/D+dE0w2gxuMbgGIOcCnyRF9Zqd/wAF/kVv7Ol/5/H/ACP+NH9nS/8AP4/5H/GpvOfys7uP
+M278fw+vpSCZ/LJ35Hm7d2BwvrRyRD6zU7/gv8iL+zpf+fx/yP8AjR/Z0v8Az+P+R/xqbzn8sNu+
+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
+UUAf/9k=]]>
+      </helperscreenshot>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1171ms" action="Click" button="Left" movetime="300ms" sx="689" sy="376" loc="88;5">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="0ae2e95a-d7c8-4337-beb1-4729e3b2c6d3">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="601,371,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox57.VBox80.Panel61.authenticationForm.userIdFormItem.TextInput63]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/container/container/form/container[3]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="3031ms" sequence="teevra" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1077ms" action="Click" button="Left" movetime="300ms" sx="671" sy="410" loc="70;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="3d47934a-2be8-4dc8-a37a-0b2d7a654885">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="601,400,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox57.VBox80.Panel61.authenticationForm.passwordFormItem.TextInput64]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/container/container/form/container[2]/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="3968ms" sequence="teevra" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="2826ms" action="Click" button="Left" movetime="300ms" sx="633" sy="439" loc="32;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="89b229fa-9ee6-4eb8-8fba-6426d2fd4997">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="601,429,71,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Submit]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox57.VBox80.Panel61.authenticationForm.FormItem77.buttonHbox.Button59]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="1148" sy="102" loc="18;7">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="2f117c45-8de7-490e-952f-396dbbbd0dfd">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="1130,95,53,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[New]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader123.ViewProcess124.HBox125.newButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[newButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="project1Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="project1Repository.rxrep">
+    <codegen classname="project1Repository" namespace="Finetuned"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="CSharp">
+    <![CDATA[login.UserCode.cs]]>
+  </usercodefile>
+  <references/>
+</recordtable>

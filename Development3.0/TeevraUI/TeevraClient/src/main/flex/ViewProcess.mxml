@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();" 
+	implements="mx.rpc.IResponder">
+<mx:Script source="scripts/DateUtilScript.as"/>
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.util.AlertHelper;
+	import com.headstrong.teevra.client.util.UIModules;
+	import mx.collections.Sort;
+	import com.headstrong.teevra.client.model.ComponentCache;
+	import mx.collections.ICollectionView;
+
+	import com.headstrong.teevra.client.events.ComponentServiceEvent;
+	import com.headstrong.teevra.client.view.entity.ProcessVO;
+	import com.headstrong.teevra.client.events.ProcessServiceEvent;
+	import mx.events.CloseEvent;
+	import com.headstrong.teevra.client.events.ViewProcessEvent;
+
+	import mx.formatters.DateFormatter;
+	import mx.collections.ArrayCollection;
+	import com.headstrong.teevra.client.util.UserEntitlements;
+	import mx.collections.SortField;
+    import com.headstrong.teevra.client.model.ViewModelLocator;  
+		
+			import mx.controls.Alert;
+	
+		    
+            import com.headstrong.teevra.client.model.ViewModelLocator;
+            
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			private var componentServiceEvent:ComponentServiceEvent;
+			private var serviceIdentifier:String;
+			
+			private const NEW_PROCESS_EVENT:String = "NEW_PROCESS";
+			private const DELETE_PROCESS_EVENT:String = "DELETE_PROCESS";
+			private const GET_PROCESS_EVENT:String = "GET_PROCESS";
+			private const DRAWING_PROCESS_EVENT:String = "DRAWING_PROCESS_EVENT";
+			private const VIEW_COMPONENT_EVENT:String = "VIEW_COMPONENT_EVENT";
+			
+			private var isViewComponentEvent:Boolean;
+			//private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+			
+			private var newButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+			private var deleteButtonEnabled:Boolean=true;	
+			private var publishProcessAllowed:Boolean=true;	
+			private var editProcessAllowed:Boolean=true;			
+			
+			
+ 			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudProcess))
+				   {
+				   		newButtonEnabled=false;
+				   		itemClickEnabled=false;
+				   		deleteButtonEnabled=false;
+				   		editProcessAllowed=false;
+				   }
+				if(!(userEntitlements.isAdmin || userEntitlements.publishProcess))   
+				{
+					publishProcessAllowed=false;
+				}
+			}
+			
+			private function init():void
+			{				
+				authorizePage();
+				deleteButton.enabled = false;				
+				newButton.enabled=newButtonEnabled;				 				
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(event.currentTarget.selectedItem.prcsStatus == 'LOCKED'){
+        			deleteButton.enabled = false;
+        		}
+        		else{
+        			if(deleteButtonEnabled)
+				    {
+        				deleteButton.enabled = (processGrid.selectedIndex != -1);
+       				}
+        		}		
+	  		}
+			
+			private function createNewProcess():void
+        	{
+        		modelLocator.loadedProcess=null;
+        		//07-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+    			componentServiceEvent = new ComponentServiceEvent(ComponentServiceEvent.NEW_PROCESS_COMMAND, null, this);
+    			componentServiceEvent.dispatch();
+    			//07-Apr-09 AP Code Added as a part of Generalization of event :Code End
+    			serviceIdentifier=NEW_PROCESS_EVENT;
+            }
+           
+            private function deleteProcess():void
+        	{
+        		Alert.show("Do you want to delete the selected process?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);
+			}
+			
+			private function confirmDeleteHandler(e:CloseEvent):void {
+				if (e.detail == Alert.YES) {
+					
+					var args:Object = new Object();
+					args[ProcessServiceEvent.DELETE_PROCESS_ID] = processGrid.selectedItem.prcsId; 
+					
+					//07-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+					var processServiceEvent:ProcessServiceEvent = new ProcessServiceEvent(ProcessServiceEvent.DELETE_PROCESS_COMMAND, args , this);
+					processServiceEvent.dispatch();
+					serviceIdentifier=DELETE_PROCESS_EVENT;
+					//07-Apr-09 AP Code Added as a part of Generalization of event :Code End
+				
+					//show the remaining processes
+					var viewProcessEvent:ViewProcessEvent = new ViewProcessEvent();
+					viewProcessEvent.dispatch();
+				}
+			}
+           
+            private function editProcess(event:Event):void
+    		{
+    			if( userEntitlements.isAdmin  || editProcessAllowed || publishProcessAllowed)				   
+				   {
+		    			//07-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+		    			var args:Object = new Object();
+						args[ProcessServiceEvent.GET_PROCESS_ID] = event.currentTarget.selectedItem.prcsId;
+						var processServiceEvent:ProcessServiceEvent = new ProcessServiceEvent(ProcessServiceEvent.GET_PROCESS_COMMAND, args, this);
+						processServiceEvent.dispatch();
+						serviceIdentifier=GET_PROCESS_EVENT;
+						//07-Apr-09 AP Code Added as a part of Generalization of event :Code End
+				   }
+	  		}
+	  		private function setRelativeColWidths():void
+	  		{
+		  		processGrid.columns[0].width = processGrid.width*.08;
+				processGrid.columns[1].width = processGrid.width*.2;
+				processGrid.columns[2].width = processGrid.width*.3;
+				processGrid.columns[3].width = processGrid.width*.1;
+				processGrid.columns[4].width = processGrid.width*.16;
+				processGrid.columns[5].width = processGrid.width*.16;
+			}
+			public function result( event:Object ):void 
+			{
+				var coll : ICollectionView;				
+				switch(serviceIdentifier)
+				{
+					case NEW_PROCESS_EVENT:
+						coll = ICollectionView( event.result );
+						modelLocator.components=coll;
+						modelLocator.loadModule(ViewModelLocator.DRAWING_PROCESS_SWF);
+						//22-Apr-09 AP Added to load the component first time to the cache:Code Start
+						if(ComponentCache.getInstance().getComponents().length==0)
+      					{
+		      				isViewComponentEvent=false;
+							var args:Object = new Object();
+							args[ComponentServiceEvent.VIEW_COMPONENT_ID] = isViewComponentEvent;
+							var componentServiceEvent:ComponentServiceEvent = new ComponentServiceEvent(ComponentServiceEvent.VIEW_COMPONENT_COMMAND, args, this);
+							componentServiceEvent.dispatch();
+							serviceIdentifier=VIEW_COMPONENT_EVENT;
+							isViewComponentEvent=componentServiceEvent.getArgument(ComponentServiceEvent.VIEW_COMPONENT_ID);
+						}
+						
+						//22-Apr-09 AP Added to load the component first time to the cache:Code End
+						break;
+						
+					case DELETE_PROCESS_EVENT:
+						Alert.show("Process has been deleted successfully!!","Delete Process");	
+						break;
+					
+					case GET_PROCESS_EVENT:
+						var resultProcesses : ArrayCollection = ArrayCollection( event.result );
+						if (resultProcesses.length > 0)
+						{
+							modelLocator.loadedProcess = ProcessVO(resultProcesses.getItemAt(0));							    			
+							//Open process drawing
+							componentServiceEvent = new ComponentServiceEvent(ComponentServiceEvent.DRAWING_PROCESS_COMMAND,null,this);
+			    			componentServiceEvent.dispatch();
+			    			serviceIdentifier=DRAWING_PROCESS_EVENT;
+						}	
+						break;
+					
+					case DRAWING_PROCESS_EVENT:
+						coll = ICollectionView( event.result );
+						modelLocator.components=coll;
+						//Load the cache only first time with component when user double click and load the FlexDrawing page
+						if(ComponentCache.getInstance().getComponents().length==0)
+						{
+							ComponentCache.getInstance().loadComponents(coll);
+						}
+						modelLocator.loadModule(ViewModelLocator.DRAWING_PROCESS_SWF);
+						break;
+					
+					case VIEW_COMPONENT_EVENT:
+						var sortByComponentType:SortField;
+						var sortComponentType:Sort;
+						var viewModel : ViewModelLocator = ViewModelLocator.getInstance();
+						
+						coll = ICollectionView( event.result );
+						if(isViewComponentEvent)
+						{
+							sortComponentType = new Sort();
+							sortByComponentType = new SortField("compType",true,false);
+							sortComponentType.fields = [sortByComponentType];
+							coll.sort = sortComponentType;
+							coll.refresh();
+							
+							viewModel.components=coll;
+							viewModel.loadModule(ViewModelLocator.VIEW_COMPONENT_SWF);
+							viewModel.screenName = "Administration > List of Component";
+						}
+						else
+						{	
+							ComponentCache.getInstance().loadComponents(coll);
+						}
+						break;
+				}
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case NEW_PROCESS_EVENT:
+						Alert.show(info.fault.faultString);	
+						break;
+						
+					case DELETE_PROCESS_EVENT:
+						AlertHelper.displayFault(info,"Process cannot be deleted");
+						break;
+					
+					case GET_PROCESS_EVENT:
+						AlertHelper.displayFault(info,"Process cannot be retrieved");	
+						break;
+					
+					case DRAWING_PROCESS_EVENT:
+						Alert.show(info.fault.faultString);	
+						break;
+					
+					case VIEW_COMPONENT_EVENT:
+						AlertHelper.displayFault(info,"Components cannot be retrieved");
+						break;
+				}		
+			}
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+        <mx:Button id="newButton" label="@Resource(key='button.ViewProcess.newProcess', bundle='TeevraUI')" click="createNewProcess();"/>
+        <mx:Button id="deleteButton" label="@Resource(key='button.ViewProcess.deleteProcess', bundle='TeevraUI')" click="deleteProcess();"/>
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="processGrid" styleName="dataGridStyle"  headerStyleName="dataGridheaderStyle"  dataProvider="{modelLocator.viewProcesses}" width="100%" height="100%" itemClick="itemClickEvent(event);" doubleClickEnabled="true" itemDoubleClick="editProcess(event);" creationComplete="setRelativeColWidths();" >
+		<mx:columns>       
+			<mx:DataGridColumn dataField="prcsId" headerText="@Resource(key='column.ViewProcess.prcsId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsName" headerText="@Resource(key='column.ViewProcess.prcsName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="prcsDesc" headerText="@Resource(key='column.ViewProcess.prcsDesc', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="prcsStatus" headerText="@Resource(key='column.ViewProcess.prcsStatus', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdDate" headerText="@Resource(key='column.ViewProcess.createDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+			<mx:DataGridColumn dataField="modifiedDate" headerText="@Resource(key='column.ViewProcess.modfiedDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

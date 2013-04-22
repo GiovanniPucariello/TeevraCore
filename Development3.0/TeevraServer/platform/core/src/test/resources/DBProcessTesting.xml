@@ -1,0 +1,46 @@
+<fusion>
+	<mediators>
+		<mediator type="com.headstrong.fusion.services.transformer.Transformer" id="transformer"/>
+		<mediator type="com.headstrong.fusion.services.parsers.dbparser.DBParser" id="dbparser_1"/>
+		<mediator type="com.headstrong.fusion.services.validator.Validator" id="validator"/>
+		<mediator type="com.headstrong.fusion.services.formatters.dbformatter.DBFormatter" id="dbformatter_1"/>
+
+	</mediators>
+	<connectors>
+		<connector id="db1" type="DATABASE">
+			<property name="classname" value="org.postgresql.Driver"/>
+			<property name="url" value="jdbc:postgresql://10.200.15.76/stridehub"/>
+			<property name="username" value="postgres"/>
+			<property name="password" value="stride"/>
+			<property name="query" value="select * from process_runtime"/>
+			<property name="interval" value="60000"/>
+		</connector>
+			<connector id="db2" type="DATABASE">
+			<property name="classname" value="org.postgresql.Driver"/>
+			<property name="url" value="jdbc:postgresql://10.200.15.76/stridehub"/>
+			<property name="username" value="postgres"/>
+			<property name="password" value="stride"/>
+			<property name="query" value="INSERT INTO temptable(col1, col2, col3)  VALUES (#, #, #)"/>
+			<property name="interval" value="60000"/>
+		</connector>
+		
+	</connectors>
+	<process id="10" name="DBProcess testing">
+		<route id="sequence1" start="true">
+			<from id="db1" />
+			<to id="dbparser_1" />
+		</route>
+		<route id="sequence2" split="true">
+			<from id="dbparser_1" />
+			<to id="validator"/>
+		</route>
+		<route id="sequence3">
+			<from id="validator" />
+			<to id="dbformatter_1"/>
+		</route>
+		<route id="sequence4" end="true">
+			<from id="dbformatter_1" />
+			<to id="db2"/>
+		</route>
+	</process>
+</fusion>

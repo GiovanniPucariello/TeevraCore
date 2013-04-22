@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fusion.external</groupId>
+  <artifactId>rabbitmq.client</artifactId>
+  <packaging>bundle</packaging>
+  <name>Rabbit MQ Client</name>
+  <version>0.0.1-A</version>
+  <description>Rabbit MQ Client</description>
+  	<!--  common properties  -->
+	<repositories>
+		<repository>
+			<id>fusion-lib</id>
+			<url>http://10.200.15.76:8080/repository/libs-releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+    <dependencies>
+		<dependency>
+			<groupId>rabbitmq.client</groupId>
+			<artifactId>rabbitmq.client</artifactId>
+			<version>0.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+  	</dependencies>
+   <properties>
+        <export.packages>${export.package}*;version=${unpack.version}</export.packages>
+        <import.packages>*</import.packages>
+        <private.packages>!*</private.packages>
+        <symbolic.name>${pom.groupId}.${pom.artifactId}</symbolic.name>
+        <embed-dep>*;scope=provided;inline=true;</embed-dep>
+        <unpack-bundle>false</unpack-bundle>
+    </properties>
+
+    <build>
+    <plugins>
+     <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>1.2.0</version>
+        <configuration>
+            <unpackBundle>${unpack.bundle}</unpackBundle>
+            <instructions>
+                <Bundle-Name>${artifactId}</Bundle-Name>
+                <Bundle-SymbolicName>${symbolic.name}</Bundle-SymbolicName>
+                <Bundle-Description>${pom.name}</Bundle-Description>
+                <Include-Resource>${include.resources}</Include-Resource>
+                <Embed-Dependency>${embed-dep}</Embed-Dependency>
+                <Export-Package>com.rabbitmq.*;</Export-Package>
+            </instructions>
+        </configuration>
+        <extensions>true</extensions>
+     </plugin>
+    </plugins>
+    </build>
+</project>

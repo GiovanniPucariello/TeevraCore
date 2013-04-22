@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_SUBSCRIBE_TRADE_CONFIRMATION" namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="FIXML-BO" messageType="OPTIONS-REQUEST" structName="optBscSubTrdConfSubjectT">
+        <mappings fixmlClassName="TrdCaptRptReq">
+            <selectors>
+                <selector dataType="Int" src="message.value.ReqTyp=0"/>
+                <selector dataType="String" src="message.value.SubReqTyp=1" preOperator="AND"/>
+                <selector dataType="String" src="message.value.Instrmt.Evnt.EventTyp = 1, 2" preOperator="AND"/>
+            </selectors>
+            <map targetDataSize="numeric 1" validationType="m" targetValue="0" target="basic.cntrVersNo" type="constant"/>
+            <map targetDataSize="numeric 2" validationType="m" src="message.value.Instrmt.MatDt[:Mth]" target="basic.cntrExpMthDat" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.MatDt[:Yr]" target="basic.cntrExpYrDat" type="simple"/>
+            <map targetDataSize="numeric 6" validationType="m" src="message.value.Instrmt.StrkPx" target="basic.cntrExerPrc" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" src="message.value.Pty[R=1].ID" target="basic.membId" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.CFI" target="basic.prodId" type="simple"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" target="basic.cntrClasCod" type="switch-case">
+                <switch expr="message.value.Instrmt.Evnt.EventTyp">
+                    <case value="1" targetValue="P"/>
+                    <case value="2" targetValue="C"/>
+                </switch>
+            </map>
+        </mappings>
+    </predicate>
+    <predicate mapType="BO-STRUCT" messageType="OPTIONS-REQUEST" structName="optBscSubTrdConfSubjectT">
+        <binding>
+            <field name="basic.membId">
+                <structField>basic.membId</structField>
+            </field>
+            <field name="basic.prodId">
+                <structField>basic.prodId</structField>
+            </field>
+            <field name="basic.cntrExpYrDat">
+                <structField>basic.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.cntrExpMthDat">
+                <structField>basic.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.cntrClasCod">
+                <structField>basic.cntrClasCod</structField>
+            </field>
+            <field name="basic.cntrExerPrc">
+                <structField>basic.cntrExerPrc</structField>
+            </field>
+            <field name="basic.cntrVersNo">
+                <structField>basic.cntrVersNo</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="FIXML-BO" messageType="FUTURES-REQUEST" structName="futBscSubTrdConfSubjectT">
+        <mappings fixmlClassName="TrdCaptRptReq">
+            <selectors>
+                <selector dataType="Int" src="message.value.ReqTyp=0"/>
+                <selector dataType="String" src="message.value.SubReqTyp=1" preOperator="AND"/>
+                <selector dataType="String" src="message.value.Instrmt.Evnt.EventTyp=null" preOperator="AND"/>
+            </selectors>
+            <map targetDataSize="numeric 2" validationType="m" src="message.value.Instrmt.MatDt[:Mth]" target="basic.cntrExpMthDat" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.MatDt[:Yr]" target="basic.cntrExpYrDat" type="simple"/>
+            <map targetDataSize="alphanumeric 8" validationType="r" targetValue="        " target="basic.subjFill" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" src="message.value.Pty[R=1].ID" target="basic.membId" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.CFI" target="basic.prodId" type="simple"/>
+        </mappings>
+    </predicate>
+    <predicate mapType="BO-STRUCT" messageType="FUTURES-REQUEST" structName="futBscSubTrdConfSubjectT">
+        <binding>
+            <field name="basic.membId">
+                <structField>basic.membId</structField>
+            </field>
+            <field name="basic.prodId">
+                <structField>basic.prodId</structField>
+            </field>
+            <field name="basic.cntrExpYrDat">
+                <structField>basic.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.cntrExpMthDat">
+                <structField>basic.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.subjFill">
+                <structField>basic.subjFill</structField>
+            </field>
+        </binding>
+    </predicate>
+</configuration>

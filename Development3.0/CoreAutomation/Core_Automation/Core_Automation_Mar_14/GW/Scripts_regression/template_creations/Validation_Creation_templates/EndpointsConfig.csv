@@ -1,0 +1,2 @@
+﻿URL_DB;USerid_DB;Pwd_DB;Query_DB;Updatequery_DB;TempName_DB_SOURCE;Dest_URL_DB;Dest_USerid_DB;Dest_Pwd_DB;Dest_Query_DB;Dest_Updatequery_DB;Dest_TempName_DB;
+jdbc:oracle:thin:@10.200.20.36:1521:icefishcoreunix;scott;icefish@1234;select messageid,contractid from test_src;update test_src set status='OPEN';Dbsource;jdbc:oracle:thin:@10.200.20.36:1521;scott;icefish@1234;insert into test_dest(messageid,contractid) valuve(#,#);;Dbdestination;

@@ -1,0 +1,141 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.hs.fusion</groupId>
+		<artifactId>teevra.platform.parent</artifactId>
+		<version>2.0.0</version>
+	</parent>
+
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>fusion-launcher</artifactId>
+	<version>${platform.version}</version>
+	<name>Fusion Launch Pad</name>
+	<description>
+		Fusion Launcher starts an OSGi container ( Apache Felix ) and
+		deploys all the fusion bundle.
+	</description>
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.framework</artifactId>
+			<version>1.0.4</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>org.osgi.foundation</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.osgi</groupId>
+					<artifactId>org.osgi.core</artifactId>
+				</exclusion>
+			</exclusions>
+
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-logger</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>com.springsource.javax.transaction</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-bo</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fusion.external</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.2</version>
+		</dependency> 
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>com.springsource.org.apache.commons.io</artifactId>
+			<version>1.4.0</version>
+		</dependency> 
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+
+				<excludes>
+					<exclude>fusion1.properties</exclude>
+				</excludes>
+			</resource>
+
+		</resources>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.2</version>
+
+				<configuration>
+
+					<archive>
+
+						<!--
+							<index>true</true>
+						-->
+						<manifest>
+							<mainClass>
+								com.headstrong.fusion.launcher.main.FusionLauncher
+							</mainClass>
+							<packageName>
+								com.headstrong.fusion.launcher
+							</packageName>
+							<addClasspath>true</addClasspath>
+							<addExtensions />
+							<classpathPrefix />
+						</manifest>
+						<manifestEntries>
+							<mode>development</mode>
+							<!--
+								<Class-Path>libraries/org.apache.felix.framework-1.0.4.jar
+								</Class-Path>
+							-->
+						</manifestEntries>
+					</archive>
+					<instructions>
+						<Component-Version>2.1.0</Component-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

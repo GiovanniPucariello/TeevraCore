@@ -1,0 +1,47 @@
+package  ${beanAccessorPkg};
+
+import javax.annotation.Generated;
+
+import com.headstrong.fusion.bo.java.BeanAccessor;
+import ${fqn};
+#foreach($className in $importClasses)
+import ${className};
+#end
+
+import com.headstrong.fusion.bo.impl.exception.AttributeNotFoundException;
+import com.headstrong.fusion.bo.java.JavaBusinessObject;
+
+public class ${simpleName}BeanAccessor implements BeanAccessor<$simpleName> {
+	
+	private $simpleName bean;
+	
+	@Override
+	public Object get(String accessPath) throws AttributeNotFoundException {
+#foreach($entry in $memberNameGetterMap.entrySet())
+		#if( $velocityCount > 1)else#end if("${entry.getKey()}".equalsIgnoreCase(accessPath)){
+			return this.bean.${entry.getValue()}();
+		}
+#end
+		throw new AttributeNotFoundException(accessPath, new JavaBusinessObject(bean));
+	}
+
+	@Override
+	public void set(String accessPath, Object obj)throws AttributeNotFoundException {
+#foreach($entry in $memberNameSetterMap.entrySet())
+		#if( $velocityCount > 1)else#end if("${entry.getKey()}".equalsIgnoreCase(accessPath)){
+			#if ($enumAttrs.contains($entry.getKey()))if(obj.toString().trim().equals("")){
+				return;
+			}
+		   #end this.bean.${entry.getValue()}($memberNameSetterParamMap.get($entry.getKey()));
+			return;
+		}
+#end
+		throw new AttributeNotFoundException(accessPath, new JavaBusinessObject(bean));
+	}
+
+	@Override
+	public void setTarget($simpleName obj) {
+		this.bean = obj; 
+	}
+
+}

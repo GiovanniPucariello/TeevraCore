@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/TradeMessageSchema"
+	xmlns="http://www.example.org/TradeMessageSchema"
+	elementFormDefault="qualified">
+	<xs:element name="TradeMessageTest" type="TradeMessageTest" />
+	<xs:complexType name="TradeMessageTest">
+		<xs:sequence>
+			<xs:element name="MsgId" type="xs:string" />
+			<xs:element name="Activity" type="xs:string" />
+			<xs:element name="Status" type="xs:string" />
+			<xs:element name="TransType" type="xs:string" />
+			<xs:element name="SrcRouteAddress" type="xs:string" />
+			<xs:element name="SrcRecvTime" type="xs:string" />
+			<xs:element name="SrcReleaseTime" type="xs:string" />
+			<xs:element name="DstnRouteAddress" type="xs:string" />
+			<xs:element name="DstnRecvTime" type="xs:string" />
+			<xs:element name="DstnReleaseTime" type="xs:string" />
+			<xs:element name="CreationTimestamp" type="xs:string" />
+			<xs:element name="Trade" type="TradeMasterTest" />
+			<xs:element name="DkReason" type="EquityExerciseTest" />
+			<xs:element name="PartyWorkflowComment" type="xs:string" />
+			<xs:element name="PartyWorkflowSuperId" type="xs:string" />
+			<xs:element name="PartyWorkflowDeskId" type="xs:string" />
+			<xs:element name="PartyWorkflowETradeId" type="xs:string" />
+			<xs:element name="PartyWorkflowDesignatedParty"
+				type="xs:string" />
+			<xs:element name="PartyWorkflowBrokerName" type="xs:string" />
+			<xs:element name="PartyWorkflowComment" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TradeMasterTest">
+		<xs:sequence>
+			<xs:element name="TradeId" type="xs:string" />
+			<xs:element name="TradeIdSupplement" type="xs:string" />
+			<xs:element name="TradeStatus" type="xs:string" />
+			<xs:element name="YourPartyId" type="xs:string" />
+			<xs:element name="ContraId" type="xs:string" />
+			<xs:element name="ContraTradeId" type="xs:string" />
+			<xs:element name="ProductType" type="xs:string" />
+			<xs:element name="TradeDate" type="xs:string" />
+			<xs:element name="ProductTypeDetails"
+				type="BaseProductTypeTest" />
+			<xs:element name="CollateralPayerParty" type="xs:string" />
+			<xs:element name="CollateralReceiverParty" type="xs:double" />
+			<xs:element name="CollateralPayAmt" type="xs:double" />
+			<xs:element name="CollateralPayCurrency" type="xs:string" />
+			<xs:element name="CollateralPayRule" type="xs:string" />
+			<xs:element name="CollateralPayPercent" type="xs:double" />
+			<xs:element name="CollateralPayNotionalAmt"
+				type="xs:string" />
+			<xs:element name="MasterConfirmType" type="xs:string" />
+			<xs:element name="MasterConfirmDate" type="xs:string" />
+			<xs:element name="MasterConfirmAnnnexDate" type="xs:string" />
+			<xs:element name="ContractualTermsSupplementType"
+				type="xs:string" />
+			<xs:element name="ContractualTermsSupplementPubDate"
+				type="xs:string" />
+			<xs:element name="_15A-6Rule" type="xs:string" />
+			<xs:element name="StrikeDate" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BaseProductTypeTest">
+		<xs:sequence>
+			<xs:element name="TradeId" type="xs:string" />
+			<xs:element name="TradeIdSupplement" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="EquityExerciseTest">
+		<xs:sequence>
+			<xs:element name="CommencementDate" type="xs:string" />
+			<xs:element name="ExpirationDate" type="xs:string" />
+			<xs:element name="IntegralMultipleExercise"
+				type="xs:double" />
+			<xs:element name="MinimumNumberOfOptions" type="xs:long" />
+			<xs:element name="MaximumNumberOfOptions" type="xs:long" />
+			<xs:element name="PeriodMultiplier" type="xs:integer" />
+			<xs:element name="SettlementCurrency" type="xs:string" />
+			<xs:element name="SettlementType" type="xs:string" />
+			<xs:element name="SettlementMethodElectingParty"
+				type="xs:string" />
+			<xs:element name="ValuationDatesUnadjusted"
+				type="xs:string" />
+			<xs:element name="BermudaPotentialExerciseDates"
+				type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

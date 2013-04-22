@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdGrpRequestT">
+		<sequence>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="nxtDayInd"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdGrpRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdGrpRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdGrpRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdGrpResponseT">
+		<sequence>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="prodGrpLngNam" size="40"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="exchAff"/>
+			<element type="char" name="expTypCod"/>
+			<element type="char" name="maxOrdrQty" size="13"/>
+			<element type="char" name="maxCalSprdQty" size="13"/>
+			<element type="char" name="maxWhsQty" size="13"/>
+			<element type="char" name="rsrcAccLvlNo" size="350"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdGrpRecT" name="bscInqProdGrpRec" size="350"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdGrpResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdGrpResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

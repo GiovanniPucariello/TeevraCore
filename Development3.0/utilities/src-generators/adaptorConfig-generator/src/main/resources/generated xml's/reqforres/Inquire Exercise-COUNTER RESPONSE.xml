@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_INQUIRE_EXERCISE_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-REQUEST" structName="optInqExerRequestT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.membClgIdCod">
+                <structField>basic.membClgIdCod</structField>
+            </field>
+            <field name="basic.membExchIdCod">
+                <structField>basic.membExchIdCod</structField>
+            </field>
+            <field name="basic.undrPrc">
+                <structField>basic.undrPrc</structField>
+            </field>
+            <field name="basic.mliCntrDataCtr">
+                <structField>basic.mliCntrDataCtr</structField>
+            </field>
+            <field name="basic.keyDataCtrlBlk">
+                <structField>basic.keyDataCtrlBlk</structField>
+            </field>
+            <field name="basic.acctTypCodGrp.acctTypCod">
+                <structField>basic.acctTypCodGrp.acctTypCod</structField>
+            </field>
+            <field name="basic.acctTypCodGrp.acctTypNo">
+                <structField>basic.acctTypCodGrp.acctTypNo</structField>
+            </field>
+            <field name="basic.optCntrIdGrp{=117}.prodId">
+                <structField>basic.optCntrIdGrp{=117}.prodId</structField>
+            </field>
+            <field name="basic.optCntrIdGrp{=117}.cntrClasCod">
+                <structField>basic.optCntrIdGrp{=117}.cntrClasCod</structField>
+            </field>
+            <field name="basic.optCntrIdGrp{=117}.cntrExpMthDat">
+                <structField>basic.optCntrIdGrp{=117}.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.optCntrIdGrp{=117}.cntrExpYrDat">
+                <structField>basic.optCntrIdGrp{=117}.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.optCntrIdGrp{=117}.cntrExerPrc">
+                <structField>basic.optCntrIdGrp{=117}.cntrExerPrc</structField>
+            </field>
+            <field name="basic.optCntrIdGrp{=117}.cntrVersNo">
+                <structField>basic.optCntrIdGrp{=117}.cntrVersNo</structField>
+            </field>
+            <field name="extension.exerCntrInd">
+                <structField>extension.exerCntrInd</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-REQUEST" structName="optInqExerRequestT">
+        <mappings fixmlClassName="ReqForPoss">
+            <arrayMappings>
+                <arrayMapping src="basic.optCntrIdGrp" size="117">
+                    <targetObj name="message.value.Undly">
+                        <map targetDataSize="numeric 2" targetDataType="Date" src="cntrExpMthDat" target="Mat[:Mth]" type="simple"/>
+                        <map targetDataSize="alphanumeric 4" targetDataType="String" src="prodId" target="CFI" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" targetValue="0" src="cntrVersNo" target="Issr" type="constant"/>
+                        <map targetDataSize="alphanumeric 4" targetDataType="Date" src="cntrExpYrDat" target="Mat[:Yr]" type="simple"/>
+                        <map targetDataSize="numeric 6" targetDataType="Float" src="cntrExerPrc" target="EndPx" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="EncUndSecDesc" type="switch-case">
+                            <switch expr="cntrClasCod">
+                                <case value="P" targetValue="1"/>
+                                <case value="C" targetValue="2"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+                <arrayMapping src="basic.acctTypCodGrp">
+                    <targetObj name="message.value.Pty">
+                        <map targetDataSize="alphanumeric 1" validationType="o" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCod">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" validationType="o" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypNo">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataType="Int" targetValue="2" target="message.value.ReqTyp" type="constant"/>
+            <map targetDataType="String" targetValue="0" target="message.value.Instrmt.OptAt" type="constant"/>
+            <map targetDataType="String" targetValue="OPT" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="binary 80" targetDataType="String" src="basic.keyDataCtrlBlk" target="message.value.Instrmt.EncSecDesc" type="simple"/>
+            <map targetDataSize="alphanumeric 7" validationType="m" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" targetDataType="String" src="basic.membClgIdCod" target="message.value.Pty[R=4].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" targetDataType="String" src="basic.membExchIdCod" target="message.value.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="String" src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="trdMtchPrc" targetDataType="Float" src="basic.undrPrc" target="message.value.Undly.Px" type="simple"/>
+            <map targetDataSize="numeric 3" targetDataType="Big Integer" src="basic.mliCntrDataCtr" target="message.value.Instrmt.EncSecDescLen" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetDataType="String" src="extension.exerCntrInd" target="message.value.Txt" type="simple"/>
+        </mappings>
+    </predicate>
+</configuration>

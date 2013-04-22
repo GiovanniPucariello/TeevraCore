@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqDLegOrdrBkDeptRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDLegOrdrBkDeptRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDLegOrdrBkDeptRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDLegOrdrBkDeptRecT">
+		<sequence>
+			<element type="char" name="dblLegBstBidPrc" size="14"/>
+			<element type="char" name="dblLegBstBidQty" size="16"/>
+			<element type="char" name="dblLegBstAskPrc" size="14"/>
+			<element type="char" name="dblLegBstAskQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDLegOrdrBkDeptResponseT">
+		<sequence>
+			<element type="futBscInqDLegOrdrBkDeptRecT" name="futBscInqDLegOrdrBkDeptRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDLegOrdrBkDeptResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDLegOrdrBkDeptResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

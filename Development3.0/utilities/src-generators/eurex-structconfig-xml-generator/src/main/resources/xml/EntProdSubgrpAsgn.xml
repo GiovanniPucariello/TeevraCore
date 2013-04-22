@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntProdSubgrpAsgnRequestT">
+		<sequence>
+			<element type="char" name="partSubGrpCod" size="3"/>
+			<element type="prodAsgnGrpT" name="prodAsgnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="entProdSubgrpAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntProdSubgrpAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="entProdSubgrpAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

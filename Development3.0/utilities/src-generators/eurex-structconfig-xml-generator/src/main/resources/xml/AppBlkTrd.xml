@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscAppBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtAppBlkTrdRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAppBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAppBlkTrdRequestT" name="basic"/>
+			<element type="futExtAppBlkTrdRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscAppBlkTrdResponseT">
+		<sequence>
+			<element type="char" name="trdNo" size="6"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAppBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAppBlkTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscAppBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtAppBlkTrdRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="optAppBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscAppBlkTrdRequestT" name="basic"/>
+			<element type="optExtAppBlkTrdRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscAppBlkTrdResponseT">
+		<sequence>
+			<element type="char" name="trdNo" size="6"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optAppBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscAppBlkTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

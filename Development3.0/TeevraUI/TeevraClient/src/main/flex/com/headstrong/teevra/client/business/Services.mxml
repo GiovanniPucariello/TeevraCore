@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cairngorm:ServiceLocator
+	xmlns:mx="http://www.adobe.com/2006/mxml"
+	xmlns:cairngorm="com.adobe.cairngorm.business.*">
+	
+	<mx:RemoteObject id="processService" 
+		destination="processService" showBusyCursor="true">
+	</mx:RemoteObject>
+						 
+	<mx:RemoteObject id="processAdminService"
+		destination="processAdminService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="componentService"
+		destination="componentService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="schemaService"
+		destination="schemaService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="refDataService"
+		destination="refDataService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="serverAdminService"
+		destination="serverAdminService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="stateMachineService"
+		destination="stateMachineService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="userAdminService"
+		destination="userAdminService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="userAuthenticationService"
+		destination="userAuthenticationService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+	<mx:RemoteObject id="appPropertiesService"
+		destination="appPropertiesService" showBusyCursor="true">
+	</mx:RemoteObject>
+	
+</cairngorm:ServiceLocator>

@@ -1,0 +1,1 @@
+..\\IzPack\bin\compile installer.xml -o Teevra.jar -k standard

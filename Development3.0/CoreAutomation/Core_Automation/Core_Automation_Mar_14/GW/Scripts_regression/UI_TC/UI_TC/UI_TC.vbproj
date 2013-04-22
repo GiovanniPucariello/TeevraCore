@@ -1,0 +1,520 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{BBBA39D7-F382-4DA1-9FE4-58C901185602}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <MyType>Console</MyType>
+    <RootNamespace>UI_TC</RootNamespace>
+    <AssemblyName>UI_TC</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG=1,TRACE=1</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE=1</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <ItemGroup>
+    <Reference Include="Ranorex.Core" />
+    <Reference Include="Ranorex.Plugin.Flex" />
+    <Reference Include="Ranorex.Plugin.Msaa" />
+    <Reference Include="Ranorex.Plugin.Web" />
+    <Reference Include="Ranorex.Plugin.Win32" />
+    <Reference Include="Ranorex.Plugin.WinForms" />
+    <Reference Include="Ranorex.Plugin.Wpf" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Compile Include="close_loginagain.UserCode.vb">
+      <DependentUpon>close_loginagain.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="close_loginagain.vb">
+      <DependentUpon>close_loginagain.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="createtestprocess.UserCode.vb">
+      <DependentUpon>createtestprocess.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="createtestprocess.vb">
+      <DependentUpon>createtestprocess.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="CSVConnector.vb">
+      <ORIGINALPATH>C:\Program Files\Ranorex 2.3\Samples\DataDrivenTest\VBNET\CSVConnector.vb</ORIGINALPATH>
+    </Compile>
+    <Compile Include="login.UserCode.vb">
+      <DependentUpon>login.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="login.vb">
+      <DependentUpon>login.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="login_1.UserCode.vb">
+      <DependentUpon>login_1.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="login_1.vb">
+      <DependentUpon>login_1.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="logout.UserCode.vb">
+      <DependentUpon>logout.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="logout.vb">
+      <DependentUpon>logout.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Oats_UIRepository.vb">
+      <DependentUpon>Oats_UIRepository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="process14Repository.vb">
+      <DependentUpon>process14Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project10Repository.vb">
+      <DependentUpon>Project10Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project11Repository.vb">
+      <DependentUpon>Project11Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project12Repository.vb">
+      <DependentUpon>Project12Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="project13Repository.vb">
+      <DependentUpon>project13Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project1Repository.vb">
+      <DependentUpon>Project1Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project2Repository.vb">
+      <DependentUpon>Project2Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project3Repository.vb">
+      <DependentUpon>Project3Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="project4Repository.vb">
+      <DependentUpon>project4Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project5Repository.vb">
+      <DependentUpon>Project5Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project7Repository.vb">
+      <DependentUpon>Project7Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project8Repository.vb">
+      <DependentUpon>Project8Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Project9Repository.vb">
+      <DependentUpon>Project9Repository.rxrep</DependentUpon>
+    </Compile>
+    <Compile Include="Recording10.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project10\Project10\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording10.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording10.vb">
+      <DependentUpon>Recording10.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording13.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\project13\project13\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording13.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording13.vb">
+      <DependentUpon>Recording13.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording11.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project11\Project11\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording11.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording11.vb">
+      <DependentUpon>Recording11.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording4.UserCode.vb">
+      <DependentUpon>Recording4.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording4.vb">
+      <DependentUpon>Recording4.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording9.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project9\Project9\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording9.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording9.vb">
+      <DependentUpon>Recording9.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording8.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project8\Project8\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording8.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording8.vb">
+      <DependentUpon>Recording8.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording7.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project7\Project7\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording7.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording7.vb">
+      <DependentUpon>Recording7.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording5.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project5\Project5\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording5.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording5.vb">
+      <DependentUpon>Recording5.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording3.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project3\Project3\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording3.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording3.vb">
+      <DependentUpon>Recording3.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording2.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\Project2\Project2\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording2.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording2.vb">
+      <DependentUpon>Recording2.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Recording14.UserCode.vb">
+      <ORIGINALPATH>D:\ramesh_scripts\process14\process14\Recording1.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Recording14.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Recording14.vb">
+      <DependentUpon>Recording14.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="scenario1.UserCode.vb">
+      <DependentUpon>scenario1.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="scenario1.vb">
+      <DependentUpon>scenario1.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario13.UserCode.vb">
+      <DependentUpon>Scenario13.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario13.vb">
+      <DependentUpon>Scenario13.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario14.UserCode.vb">
+      <DependentUpon>Scenario14.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario14.vb">
+      <DependentUpon>Scenario14.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario15.UserCode.vb">
+      <DependentUpon>Scenario15.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario15.vb">
+      <DependentUpon>Scenario15.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario16.UserCode.vb">
+      <DependentUpon>Scenario16.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario16.vb">
+      <DependentUpon>Scenario16.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario21.UserCode.vb">
+      <ORIGINALPATH>D:\test\Oats_UI\Oats_UI\Scenario21.UserCode.vb</ORIGINALPATH>
+      <DependentUpon>Scenario21.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario21.vb">
+      <DependentUpon>Scenario21.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario22.UserCode.vb">
+      <DependentUpon>Scenario22.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario22.vb">
+      <DependentUpon>Scenario22.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="scenario25.UserCode.vb">
+      <DependentUpon>scenario25.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="scenario25.vb">
+      <DependentUpon>scenario25.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="scenario25_CreDelUp_role.UserCode.vb">
+      <DependentUpon>scenario25_CreDelUp_role.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="scenario25_CreDelUp_role.vb">
+      <DependentUpon>scenario25_CreDelUp_role.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario54.UserCode.vb">
+      <DependentUpon>Scenario54.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario54.vb">
+      <DependentUpon>Scenario54.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario56.UserCode.vb">
+      <DependentUpon>Scenario56.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario56.vb">
+      <DependentUpon>Scenario56.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario57.UserCode.vb">
+      <DependentUpon>Scenario57.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario57.vb">
+      <DependentUpon>Scenario57.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="Scenario66_GenericFormater.UserCode.vb">
+      <DependentUpon>Scenario66-GenericFormater.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Scenario66_GenericFormater.vb">
+      <DependentUpon>Scenario66-GenericFormater.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="scenario9.UserCode.vb">
+      <DependentUpon>scenario9.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="scenario9.vb">
+      <DependentUpon>scenario9.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="_Create_Delete_Update_User.vb">
+      <DependentUpon>24_Create_Delete_Update_User.rxrec</DependentUpon>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="24_Create_Delete_Update_User.vb">
+      <DependentUpon>24_Create_Delete_Update_User.rxrec</DependentUpon>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb" />
+    <Compile Include="Program.vb" />
+    <Compile Include="UI_TCRepository.vb">
+      <DependentUpon>UI_TCRepository.rxrep</DependentUpon>
+    </Compile>
+    <None Include="24_Create_Delete_Update_User.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="close_loginagain.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="createtestprocess.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="data.csv" />
+    <None Include="dummy.vb">
+      <ORIGINALPATH>D:\10Nov\dummy.txt</ORIGINALPATH>
+    </None>
+    <None Include="login.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="login_1.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="logout.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Oats_UIRepository.rxrep">
+      <id>8032646f-62fc-487c-98c5-4231ec3d73c3</id>
+    </None>
+    <None Include="process14Repository.rxrep">
+      <id>702f806e-b20e-4a05-b7ff-364fa24f783c</id>
+    </None>
+    <None Include="Project10Repository.rxrep">
+      <id>aed1cf1e-6914-423d-98b3-e70292778a3d</id>
+    </None>
+    <None Include="Project11Repository.rxrep">
+      <id>47b12b49-b74b-4faf-9e6c-23dd44cc1cdd</id>
+    </None>
+    <None Include="Project12Repository.rxrep">
+      <id>f898435e-0b46-4947-b255-a56b22611a43</id>
+    </None>
+    <None Include="project13Repository.rxrep">
+      <id>ff308526-2343-4fb9-9888-f400a3f43599</id>
+    </None>
+    <None Include="Project1Repository.rxrep">
+      <id>63e20fe3-6b70-4d46-a607-a5e2fadd6b36</id>
+    </None>
+    <None Include="Project2Repository.rxrep">
+      <id>d3bd144a-dfb8-41b6-9f81-0eadb9eca754</id>
+    </None>
+    <None Include="Project3Repository.rxrep">
+      <id>7c4d14e7-ef4f-4d32-b981-3283b7d4f7b3</id>
+    </None>
+    <None Include="project4Repository.rxrep">
+      <id>977b5e8b-dcb3-4738-b966-7bf791f451b3</id>
+    </None>
+    <None Include="Project5Repository.rxrep">
+      <id>a4c0ac84-435e-4bea-a33e-babb9fdba36a</id>
+    </None>
+    <None Include="Project7Repository.rxrep">
+      <id>da15bed8-e903-47d4-81c9-845ac88d6b61</id>
+    </None>
+    <None Include="Project8Repository.rxrep">
+      <id>64529cda-5a55-47c3-8dc0-d6e5c3112b20</id>
+    </None>
+    <None Include="Project9Repository.rxrep">
+      <id>465ae837-b513-4348-9139-50afb9c74f88</id>
+    </None>
+    <None Include="Recording10.rxrec">
+      <BoundTo>aed1cf1e-6914-423d-98b3-e70292778a3d</BoundTo>
+    </None>
+    <None Include="Recording13.rxrec">
+      <BoundTo>ff308526-2343-4fb9-9888-f400a3f43599</BoundTo>
+    </None>
+    <None Include="Recording11.rxrec">
+      <BoundTo>47b12b49-b74b-4faf-9e6c-23dd44cc1cdd</BoundTo>
+    </None>
+    <None Include="Recording4.rxrec">
+      <BoundTo>977b5e8b-dcb3-4738-b966-7bf791f451b3</BoundTo>
+    </None>
+    <None Include="Recording9.rxrec">
+      <BoundTo>465ae837-b513-4348-9139-50afb9c74f88</BoundTo>
+    </None>
+    <None Include="Recording8.rxrec">
+      <BoundTo>64529cda-5a55-47c3-8dc0-d6e5c3112b20</BoundTo>
+    </None>
+    <None Include="Recording7.rxrec">
+      <BoundTo>da15bed8-e903-47d4-81c9-845ac88d6b61</BoundTo>
+    </None>
+    <None Include="Recording5.rxrec">
+      <BoundTo>a4c0ac84-435e-4bea-a33e-babb9fdba36a</BoundTo>
+    </None>
+    <None Include="Recording3.rxrec">
+      <BoundTo>7c4d14e7-ef4f-4d32-b981-3283b7d4f7b3</BoundTo>
+    </None>
+    <None Include="Recording2.rxrec">
+      <BoundTo>d3bd144a-dfb8-41b6-9f81-0eadb9eca754</BoundTo>
+    </None>
+    <None Include="Recording14.rxrec">
+      <BoundTo>702f806e-b20e-4a05-b7ff-364fa24f783c</BoundTo>
+    </None>
+    <None Include="Reports\Recording9_20110401_175434.rxlog" />
+    <None Include="Reports\Recording9_20110401_175434.rxlog" />
+    <None Include="Reports\Recording9_20110401_175434.rxlog" />
+    <None Include="Reports\Recording9_20110401_175434.rxlog" />
+    <None Include="Reports\Scenario54_20110411_134331.rxlog" />
+    <None Include="Reports\Scenario54_20110411_134431.rxlog" />
+    <None Include="Reports\Scenario54_20110411_135310.rxlog" />
+    <None Include="Reports\Scenario54_20110411_135422.rxlog" />
+    <None Include="Reports\Scenario54_20110411_135422.rxlog" />
+    <None Include="Reports\Scenario54_20110411_135732.rxlog" />
+    <None Include="Reports\Scenario54_20110411_135732.rxlog" />
+    <None Include="Reports\Scenario56_20110411_134541.rxlog" />
+    <None Include="Reports\Scenario56_20110411_134650.rxlog" />
+    <None Include="Reports\Test.rxlog" />
+    <None Include="Reports\Test.rxlog" />
+    <None Include="Reports\Test.rxlog" />
+    <None Include="Reports\Test.rxlog" />
+    <None Include="scenario1.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario13.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario14.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario15.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario16.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario21.rxrec">
+      <BoundTo>8032646f-62fc-487c-98c5-4231ec3d73c3</BoundTo>
+    </None>
+    <None Include="Scenario22.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="scenario25.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="scenario25_CreDelUp_role.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario54.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario56.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario57.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="Scenario66-GenericFormater.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="scenario9.rxrec">
+      <BoundTo>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</BoundTo>
+    </None>
+    <None Include="UI_TCRepository.rxrep">
+      <id>49f0df9c-b88c-4764-aa93-76d5ce30b1a9</id>
+    </None>
+    <Folder Include="Reports">
+      <ReportsDir>true</ReportsDir>
+    </Folder>
+  </ItemGroup>
+</Project>

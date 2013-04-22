@@ -1,0 +1,45 @@
+<fusion>
+	<mediators>
+		<mediator type="validator" id="validator_1">
+			<property name="config" value="validation_config" />
+		</mediator>
+		<mediator type="parser" id="parser">
+			<property name="source" value="database" />
+			<property name="url" value="some url" />
+		</mediator>
+	</mediators>
+	<connectors>
+		<connector id="jms_1" type="jmsqueue" mode="IN">
+			<property name="queuename" value="12345" />
+		</connector>
+		<connector id="jms_2" type="jmsqueue" mode="OUT">
+			<property name="queuename" value="123456" />
+		</connector>
+	</connectors>
+	<!-- 	<routers>
+		<cbr id="123cbr">
+		<bean id="mybean" method="somemethod" target="jms_2" />
+		</cbr>
+		<loadbalancer id="1b1">
+		<targets>
+		<target id="1"/>
+		<target id="2"/>
+		</targets>
+		</loadbalancer>
+		<multicast id="mc1">
+		<targets>
+		<target id="1"/>
+		<target id="2"/>
+		</targets>
+		</multicast>
+		
+		</routers> -->
+	<process id="process_1" flow="SEDA">
+		<sequences>
+			<binding connector="jms_1" target="validator" />
+			<mediation threads="10" savepoint="false"
+				breakpoint="false" mediator="validator" target="parser" />
+			<mediation mediator="parser" target="jms_2" />
+		</sequences>
+	</process>
+</fusion>

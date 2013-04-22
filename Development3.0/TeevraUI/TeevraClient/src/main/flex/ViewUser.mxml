@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script source="scripts/DateUtilScript.as"/>
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.util.AlertHelper;
+	import com.headstrong.teevra.client.events.AppPropertiesServiceEvent;
+	
+	import mx.collections.ArrayCollection;
+	import mx.collections.ICollectionView;
+	import com.headstrong.teevra.client.events.UserAdminServiceEvent;
+	import com.headstrong.teevra.client.view.entity.UserVO;
+	import com.headstrong.teevra.client.view.admin.NewUserPopup;
+	import mx.formatters.DateFormatter;
+	import mx.events.CloseEvent;
+
+	import mx.core.IFlexDisplayObject;
+	import mx.controls.Alert;
+
+	import mx.managers.PopUpManager;
+  
+            import com.headstrong.teevra.client.model.ViewModelLocator;
+            
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			
+			private var popup:IFlexDisplayObject;
+			private var user:UserVO;
+			private var isNewUser:Boolean;
+			private var userAdminServiceEvent:UserAdminServiceEvent;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+			import mx.collections.ArrayCollection;
+			import com.headstrong.teevra.client.util.UserEntitlements;
+			
+			private var serviceIdentifier:String;			
+			private const GET_USERS_EVENT:String = "GET_USERS";
+			private const ADD_USER_EVENT:String ="ADD_USER";
+			private const DELETE_USER_EVENT:String = "DELETE_USER";
+			private const GET_ROLES_EVENT:String = "GET_ROLES";
+			private const GET_AUTH_TYPE_EVENT:String = "GET_AUTH_TYPE";
+			
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private var newButtonEnabled:Boolean=true;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudUsers))
+				   {
+				   		newButtonEnabled=false;				   						   		
+				   }
+				
+			}
+			
+			private function init():void
+			{
+				authorizePage();
+				deleteButton.enabled = false;
+				newButton.enabled=newButtonEnabled;
+				userGrid.dataProvider = modelLocator.users;
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(newButtonEnabled)
+				{
+					deleteButton.enabled = (userGrid.selectedIndex != -1);
+				}
+	  		}
+	  		// sets width for individual columns
+	  		private function setRelativeColWidths():void
+	  		{
+				userGrid.columns[0].width = userGrid.width*.07;
+				userGrid.columns[1].width = userGrid.width*.13;
+				userGrid.columns[2].width = userGrid.width*.10;
+				userGrid.columns[3].width = userGrid.width*.10;
+				userGrid.columns[4].width = userGrid.width*.10;
+				userGrid.columns[5].width = userGrid.width*.20;
+				userGrid.columns[6].width = userGrid.width*.15;
+				userGrid.columns[7].width = userGrid.width*.15;
+			}
+			// adds new user
+			private function addUser():void{
+				isNewUser = true;
+				getRoles();				
+			}
+			private function openNewUserConfig():void{
+				var userPopup:NewUserPopup;
+				
+				popup = PopUpManager.createPopUp(this, NewUserPopup ,true);
+				popup.width = 500;
+				userPopup = NewUserPopup(popup);  
+				
+				user = new UserVO();		
+		    	
+		    	userPopup.create(popupClose,popupSave,user,isNewUser);
+		    	PopUpManager.centerPopUp(popup);
+			}
+			// deletes the selected user
+			private function deleteUser():void{
+				Alert.show("Do you want to delete the selected User?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);	
+			}
+			//on confirmation for delete user
+			private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					var args:Object = new Object();
+					args[UserAdminServiceEvent.DELETE_USER_ID] = userGrid.selectedItem.userId;
+					serviceIdentifier=DELETE_USER_EVENT;
+					userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.DELETE_USER_COMMAND, args, this);
+					userAdminServiceEvent.dispatch();	 			
+				}
+			}	
+			// refreshes the screen
+			private function refreshUsers():void{
+				modelLocator.loadModule(ViewModelLocator.VIEW_USER_SWF);	
+			}
+			// edits the selected user
+			private function editUser(event:Event):void{
+				if(newButtonEnabled)
+				{
+					isNewUser = false;
+					user = UserVO(event.currentTarget.selectedItem);
+					getRoles();
+				}
+			}
+			
+			private function openEditUserConfig():void{
+				var userPopup:NewUserPopup;
+				
+				popup = PopUpManager.createPopUp(this, NewUserPopup ,true);
+				popup.width = 500;
+				userPopup = NewUserPopup(popup);  
+				
+		    	userPopup.create(popupClose,popupSave,user,isNewUser);
+		    	PopUpManager.centerPopUp(popup);	
+			}
+			// retrieves roles from database
+			private function getRoles():void{
+				serviceIdentifier=GET_ROLES_EVENT;
+				userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.GET_ROLES_COMMAND, null, this);
+				userAdminServiceEvent.dispatch();
+			}
+        	
+        	private function popupClose(event:MouseEvent):void{
+	    		PopUpManager.removePopUp(popup);
+	   		}
+	   		
+	   		private function popupSave():void
+		    {
+		    	var args:Object = new Object();
+				args[UserAdminServiceEvent.ADD_USER_ID] = user;
+				serviceIdentifier=ADD_USER_EVENT;
+				userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.ADD_USER_COMMAND, args, this);
+				userAdminServiceEvent.dispatch();				
+				PopUpManager.removePopUp(popup);	    	
+		    }	
+			
+			// retrieves users from database
+			private function getUsers():void{
+				serviceIdentifier=GET_USERS_EVENT;
+				userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.GET_USERS_COMMAND, null, this);
+				userAdminServiceEvent.dispatch();	
+			}
+			// retrieves the authentication type to be used from T_Property table
+			private function getAuthType():void{
+				var args:Object = new Object();
+				var authTypeKey:String = resourceManager.getString('TeevraUI', 'key.common.authTypeKey');
+				args[AppPropertiesServiceEvent.GET_PROPERTY_VALUE_ID] = authTypeKey;
+				serviceIdentifier=GET_AUTH_TYPE_EVENT;
+				var appPropertiesServiceEvent:AppPropertiesServiceEvent = new AppPropertiesServiceEvent(AppPropertiesServiceEvent.GET_PROPERTY_VALUE_COMMAND, args, this);
+				appPropertiesServiceEvent.dispatch();	
+			}
+			
+			public function result( event:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case GET_USERS_EVENT:
+						var users : ICollectionView = ICollectionView( event.result );
+						modelLocator.users = users;
+						modelLocator.loadModule(ViewModelLocator.VIEW_USER_SWF);
+						modelLocator.screenName = "Administration > User Admin";
+						break;
+						
+					case ADD_USER_EVENT:
+						var user:UserVO = UserVO(event.result);
+						Alert.show("User has been added successfully","Save User");
+						getUsers();
+						break;	
+					
+					case DELETE_USER_EVENT:
+						Alert.show("User has been deleted successfully","Delete User");
+						getUsers();
+						break;
+					
+					case GET_ROLES_EVENT:
+						var roles : ICollectionView = ICollectionView( event.result );
+						modelLocator.roles= roles;
+						getAuthType();						
+						break;
+						
+					case GET_AUTH_TYPE_EVENT:
+						var authType : String = String( event.result );
+						modelLocator.authType= authType;
+						if(isNewUser){
+							openNewUserConfig();
+						}
+						else{
+							openEditUserConfig();
+						}
+						break;
+											
+				}
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case GET_USERS_EVENT:
+						AlertHelper.displayFault(info,"Users could not be retrieved");
+						break;
+						
+					case ADD_USER_EVENT:
+						AlertHelper.displayFault(info,"User cannot be added");
+						break;	
+					
+					case DELETE_USER_EVENT:
+						AlertHelper.displayFault(info,"User cannot be deleted");
+						break;
+					
+					case GET_ROLES_EVENT:
+						AlertHelper.displayFault(info,"Roles cannot be retrieved");
+						break;
+						
+					case GET_AUTH_TYPE_EVENT:
+						AlertHelper.displayFault(info,"Authentication type cannot be retrieved");
+						break;							
+				}
+			}	    
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		<mx:Button id="newButton" label="@Resource(key='button.ViewUser.new', bundle='TeevraUI')" click="addUser();"/>
+		<mx:Button id="deleteButton" label="@Resource(key='button.ViewUser.delete', bundle='TeevraUI')" click="deleteUser();"/>
+		<mx:Button id="refreshButton" label="@Resource(key='button.ViewUser.refresh', bundle='TeevraUI')" click="refreshUsers();"/>
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="userGrid" styleName="dataGridStyle" width="100%" height="100%" itemClick="itemClickEvent(event);"  doubleClickEnabled="true" itemDoubleClick="editUser(event);" creationComplete="setRelativeColWidths();" >
+		<mx:columns>       
+			<mx:DataGridColumn dataField="userId" headerText="@Resource(key='column.ViewUser.userId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="userName" headerText="@Resource(key='column.ViewUser.userName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="userFirstName" headerText="@Resource(key='column.ViewUser.userFirstName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="userLastName" headerText="@Resource(key='column.ViewUser.userLastName', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="userStatus" headerText="@Resource(key='column.ViewUser.userStatus', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="roleNames" headerText="@Resource(key='column.ViewUser.roleNames', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdDate" headerText="@Resource(key='column.ViewUser.createDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+			<mx:DataGridColumn dataField="modifiedDate" headerText="@Resource(key='column.ViewUser.modfiedDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

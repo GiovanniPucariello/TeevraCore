@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelUsrSecuProfRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="delUsrSecuProfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelUsrSecuProfRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="delUsrSecuProfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

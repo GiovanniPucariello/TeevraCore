@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntStratBlkAuctQuoRequestT">
+		<sequence>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="extEntStratBlkAuctQuoRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="entStratBlkAuctQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntStratBlkAuctQuoRequestT" name="basic"/>
+			<element type="extEntStratBlkAuctQuoRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntStratBlkAuctQuoResponseT">
+		<sequence>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="entStratBlkAuctQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntStratBlkAuctQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

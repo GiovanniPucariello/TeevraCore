@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqStratBlkAuctGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratBlkAuctRequestT">
+		<sequence>
+			<element type="bscInqStratBlkAuctGrpT" name="bscInqStratBlkAuctGrp" size="128"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqStratBlkAuctRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqStratBlkAuctRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratBlkAuctRecT">
+		<sequence>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="char" name="blkAuctStsCod"/>
+			<element type="char" name="blkAuctStrtTim" size="8"/>
+			<element type="char" name="blkAuctQty" size="16"/>
+			<element type="blkAuctPotPrcGrpT" name="blkAuctPotPrcGrp"/>
+			<element type="char" name="membRtng" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratBlkAuctResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqStratBlkAuctRecT" name="bscInqStratBlkAuctRec" size="14"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqStratBlkAuctResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqStratBlkAuctResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

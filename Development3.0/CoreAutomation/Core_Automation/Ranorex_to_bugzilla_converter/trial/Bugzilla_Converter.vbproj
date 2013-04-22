@@ -1,0 +1,274 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{19893A46-7F60-4093-BF0C-D4358DF390DF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Exe</OutputType>
+    <MyType>Console</MyType>
+    <RootNamespace>trial</RootNamespace>
+    <AssemblyName>Bugzilla_Converter</AssemblyName>
+    <RanorexVersion>3</RanorexVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>DEBUG=1,TRACE=1</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE=1</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.Targets" />
+  <ItemGroup>
+    <Reference Include="Ranorex.Core, Version=$(RanorexVersion)">
+      <id>a6ffea57-9a52-44ba-bbf9-23e6d9cfc095</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Flex, Version=$(RanorexVersion)">
+      <id>0db3198e-5f18-4119-a5d5-3594df9c436c</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.MozillaWeb, Version=$(RanorexVersion)">
+      <id>30a48dda-954e-40ee-b118-1fbd1a252e37</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Msaa, Version=$(RanorexVersion)">
+      <id>39e6daa0-b83d-4d44-9f44-132992a2cdf3</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Office, Version=$(RanorexVersion)">
+      <id>2ec0b634-a79d-43f7-bda1-1274ca816619</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.RawText, Version=$(RanorexVersion)">
+      <id>39b91bed-d4c4-41c8-bd8d-1308d52bc4ec</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Web, Version=$(RanorexVersion)">
+      <id>fbc8bb81-9d59-4361-b72b-4e1a916e3f1f</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Win32, Version=$(RanorexVersion)">
+      <id>66e55890-9a27-4795-9aaa-aba37f0b0e16</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WinForms, Version=$(RanorexVersion)">
+      <id>efaacc7c-5c87-40cc-b4cf-6422e1fc0c57</id>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Wpf, Version=$(RanorexVersion)">
+      <id>e915eb7c-6bfd-4f56-9869-bcefebb249e6</id>
+    </Reference>
+    <Reference Include="System">
+      <id>8736f6e0-200c-44ce-9cfa-ab5e9068969f</id>
+    </Reference>
+    <Reference Include="System.Data">
+      <id>65510a29-a0f4-4b21-b0d3-ba98ca71f37c</id>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <id>cb61e6fb-0eb6-40e6-9cd1-4a46934018c8</id>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <id>935772f3-f42e-431b-bde4-fda63124e4e5</id>
+    </Reference>
+    <Reference Include="System.Xml">
+      <id>b1fcd137-f5a9-4d18-9087-f76d08ec3b6f</id>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic">
+      <id>06c00e8b-90d6-4bc6-941c-029205ef2471</id>
+    </Import>
+    <Compile Include="AssemblyInfo.vb">
+      <id>db45513d-8199-4352-94e5-1c6231470d46</id>
+    </Compile>
+    <Compile Include="Program.vb">
+      <id>8c2db2c2-dda3-46aa-8f90-161e1e775f00</id>
+    </Compile>
+    <Compile Include="Converter.UserCode.vb">
+      <BoundTo>518ea191-0ab1-4f75-b429-9f2cad29a01e</BoundTo>
+      <DependentUpon>Converter.rxrec</DependentUpon>
+      <id>0458c795-932b-4842-bd53-83f7be8f06fb</id>
+      <UserCode>true</UserCode>
+    </Compile>
+    <Compile Include="Converter.vb">
+      <BoundTo>518ea191-0ab1-4f75-b429-9f2cad29a01e</BoundTo>
+      <DependentUpon>Converter.rxrec</DependentUpon>
+      <id>e95035de-adac-430b-932a-19bade00de42</id>
+      <RecorderCode>true</RecorderCode>
+    </Compile>
+    <Compile Include="trialRepository.vb">
+      <BoundTo>aef1a90f-0d21-46e5-8e50-112d3877e8e9</BoundTo>
+      <DependentUpon>trialRepository.rxrep</DependentUpon>
+      <id>04486e38-d94e-48e0-bc95-ce88e56f3a17</id>
+      <RepositoryCode>true</RepositoryCode>
+    </Compile>
+    <None Include="app.config">
+      <id>4b62b7fb-f1c0-4e37-9d55-e967ac9f2574</id>
+    </None>
+    <None Include="Converter.rxrec">
+      <BoundTo>aef1a90f-0d21-46e5-8e50-112d3877e8e9</BoundTo>
+      <id>518ea191-0ab1-4f75-b429-9f2cad29a01e</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_151807.rxlog">
+      <id>7dcc3dde-8a36-4478-ad79-5bb08e495245</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_151938.rxlog">
+      <id>bafa7e1b-11a0-4c30-ba7f-ccdefc8c7d05</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_152916.rxlog">
+      <id>fd012b7d-6424-4c6e-8b97-cefa4467ec8d</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_153006.rxlog">
+      <id>f4fff7ab-c2aa-45d3-aed4-1879861c2548</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_153845.rxlog">
+      <id>7afefad5-262d-4f55-9e83-feed5e351e21</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_183745.rxlog">
+      <id>528d1038-4c9f-40d5-a9f8-6f35298c3ab9</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_185613.rxlog">
+      <id>b32cd12e-7a06-4d2e-bdb9-2f8b48f0328b</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_185826.rxlog">
+      <id>d6cb7954-007e-468a-8047-12bc53257321</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120418_190304.rxlog">
+      <id>31a301f5-6d67-4927-94f5-537f0371962a</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120430_170025.rxlog">
+      <id>ef1c543f-5ff1-4f76-b252-06776eb2f5fc</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120508_171235.rxlog">
+      <id>68ee6b58-8992-49b4-b2d5-8619bb01c39c</id>
+    </None>
+    <None Include="Reports\Bugzilla_converter_20120508_171422.rxlog" />
+    <None Include="Reports\Recording120120417_194836.rxlog">
+      <id>53fbcbc9-c484-44c2-8b21-341c1f389041</id>
+    </None>
+    <None Include="Reports\trial_20120417_194823.rxlog">
+      <id>eefa7e67-9610-496f-be6f-96efa7a9d685</id>
+    </None>
+    <None Include="Reports\trial_20120417_195005.rxlog">
+      <id>daa62dd2-7d38-494a-9e35-196f306965eb</id>
+    </None>
+    <None Include="Reports\trial_20120417_195348.rxlog">
+      <id>aaeb7523-7f73-426c-8735-f72c43d60433</id>
+    </None>
+    <None Include="Reports\trial_20120417_195528.rxlog">
+      <id>43f3fab4-531d-4049-b25d-142312aa7014</id>
+    </None>
+    <None Include="Reports\trial_20120417_195623.rxlog">
+      <id>437205b7-2109-4b55-8bda-0815f070ea4b</id>
+    </None>
+    <None Include="Reports\trial_20120417_195747.rxlog">
+      <id>f5602b21-434a-4ae0-919b-b33b6f97e51d</id>
+    </None>
+    <None Include="Reports\trial_20120418_121132.rxlog">
+      <id>83ccc095-9290-49f6-beab-1453ab910920</id>
+    </None>
+    <None Include="Reports\trial_20120418_121708.rxlog">
+      <id>0a14b92b-5498-4d08-8fef-2304b78dbf5b</id>
+    </None>
+    <None Include="Reports\trial_20120418_122421.rxlog">
+      <id>bf11f3fa-3ca8-43d9-95e3-ae54fb7fd864</id>
+    </None>
+    <None Include="Reports\trial_20120418_122517.rxlog">
+      <id>e1f5af1b-0a20-4a60-81cc-112a3bd1a50a</id>
+    </None>
+    <None Include="Reports\trial_20120418_122821.rxlog">
+      <id>a1ed5d98-e80b-4493-bb99-ec6b269014bf</id>
+    </None>
+    <None Include="Reports\trial_20120418_122907.rxlog">
+      <id>842794b1-db5f-4aa9-9ff2-f16b38eb5a9d</id>
+    </None>
+    <None Include="Reports\trial_20120418_122949.rxlog">
+      <id>d4ac3b16-937a-4ecb-8c00-1a5d6fa83605</id>
+    </None>
+    <None Include="Reports\trial_20120418_123113.rxlog">
+      <id>1038c71a-9386-483b-a75b-477ea38aaa65</id>
+    </None>
+    <None Include="Reports\trial_20120418_123202.rxlog">
+      <id>e0a9a72d-5b2d-424f-beb7-32e4b20f4669</id>
+    </None>
+    <None Include="Reports\trial_20120418_123944.rxlog">
+      <id>e35780a0-42e2-4297-8d86-5867972c8435</id>
+    </None>
+    <None Include="Reports\trial_20120418_124022.rxlog">
+      <id>6c1b01a3-a608-49c6-9342-ed60400888cb</id>
+    </None>
+    <None Include="Reports\trial_20120418_124040.rxlog">
+      <id>e8e9793a-ac9c-403c-a644-91004eb518d4</id>
+    </None>
+    <None Include="Reports\trial_20120418_124156.rxlog">
+      <id>98328a45-9411-4ad7-a57a-a425ba48d3b9</id>
+    </None>
+    <None Include="Reports\trial_20120418_124215.rxlog">
+      <id>c9764574-b9a6-40c5-a8ea-8f55a807b9b1</id>
+    </None>
+    <None Include="Reports\trial_20120418_124236.rxlog">
+      <id>219d975b-0c0b-4e5d-9ea5-4b67b7ce9d5c</id>
+    </None>
+    <None Include="Reports\trial_20120418_124308.rxlog">
+      <id>034a7f0f-9e7e-4614-a49f-b2db8335255b</id>
+    </None>
+    <None Include="Reports\trial_20120418_124519.rxlog">
+      <id>6a672f65-fe91-4f30-a00f-91565939e828</id>
+    </None>
+    <None Include="Reports\trial_20120418_124612.rxlog">
+      <id>77ca7a7c-1163-4afb-abbe-0b6a9c4590f7</id>
+    </None>
+    <None Include="Reports\trial_20120418_124756.rxlog">
+      <id>f17c9e6c-0d8f-4e87-8a58-cf0dd6affe07</id>
+    </None>
+    <None Include="Reports\trial_20120418_124850.rxlog">
+      <id>c2977fd6-98bd-45eb-ba49-72bfa9703b09</id>
+    </None>
+    <None Include="Reports\trial_20120418_124927.rxlog">
+      <id>34ad8a4f-8222-43ac-95c0-bdb048934ea4</id>
+    </None>
+    <None Include="Reports\trial_20120418_125013.rxlog">
+      <id>aa20d8e9-257a-4717-9f83-c7f5789089d2</id>
+    </None>
+    <None Include="Reports\trial_20120418_125830.rxlog">
+      <id>d7b2f4d8-1d20-4bf1-888c-2eff171cd05d</id>
+    </None>
+    <None Include="Reports\trial_20120418_141800.rxlog">
+      <id>2b42869a-775e-4c4c-8eef-33cdfc8fdfc3</id>
+    </None>
+    <None Include="Reports\trial_20120418_142054.rxlog">
+      <id>9bda1a29-3309-4573-9790-bb9a45709c4b</id>
+    </None>
+    <None Include="Reports\trial_20120418_142824.rxlog">
+      <id>a55c61e8-7636-4e9a-815f-648eb3f1c771</id>
+    </None>
+    <None Include="Reports\trial_20120418_143024.rxlog">
+      <id>3fafab9f-fb94-471d-83c9-0988c56ed533</id>
+    </None>
+    <None Include="Reports\trial_20120418_143232.rxlog">
+      <id>34ae4e32-f957-4232-b8ae-4a25c304fa30</id>
+    </None>
+    <None Include="Reports\trial_20120418_143425.rxlog">
+      <id>cf26fa37-82bb-43ff-9d6a-07ee3e1ee387</id>
+    </None>
+    <None Include="Reports\trial_20120418_144736.rxlog">
+      <id>a8e09184-5784-421a-b165-bf36aa49a936</id>
+    </None>
+    <None Include="Reports\trial_20120418_150515.rxlog">
+      <id>0208ce60-9a88-42c2-aaf4-6f6226f85f71</id>
+    </None>
+    <None Include="trialRepository.rxrep">
+      <id>aef1a90f-0d21-46e5-8e50-112d3877e8e9</id>
+      <projectdefaultrepository>true</projectdefaultrepository>
+      <repoid>831dc363-9ce7-495d-96ce-281d008ba28a</repoid>
+    </None>
+    <Content Include="Bugzilla_converter.rxtst">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <id>e5c52e76-9761-47d2-80c6-c5854ee7dd26</id>
+    </Content>
+    <Folder Include="Reports">
+      <ReportsDir>true</ReportsDir>
+      <id>d655928f-b30d-457c-ba1d-947a49c91500</id>
+    </Folder>
+  </ItemGroup>
+</Project>

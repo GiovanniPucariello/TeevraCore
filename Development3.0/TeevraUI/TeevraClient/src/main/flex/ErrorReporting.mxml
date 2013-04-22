@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();" >
+<mx:Script source="scripts/DateUtilScript.as"/>
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.events.ProcessStatusEvent;
+	import mx.controls.Alert;
+	import com.headstrong.teevra.client.events.GetPrcsRunMessageEvent;
+	import mx.core.IFlexDisplayObject;
+	import mx.managers.PopUpManager;
+	import com.headstrong.teevra.client.view.admin.MessageDataPopup;
+	import mx.effects.Fade;
+	import mx.formatters.DateFormatter;
+
+	import com.headstrong.teevra.client.view.entity.SchemaVO;
+	import mx.events.ListEvent;
+	import mx.collections.ArrayCollection;
+	import com.headstrong.teevra.client.util.UIModules;
+	import com.headstrong.teevra.client.util.UserEntitlements;
+		    
+    import com.headstrong.teevra.client.model.ViewModelLocator;
+          
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			private var popup:IFlexDisplayObject;
+            //private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+            
+            private var errorRecordButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+										
+ 			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+        	
+        	
+        	private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.viewErrorMessage))
+				   {
+				   		errorRecordButtonEnabled=false;
+				   		itemClickEnabled=false;
+				   		
+				   }
+				
+			}
+        	private function init():void
+			{
+				authorizePage();
+				errorRecordButton.enabled = false;
+				if(modelLocator.isPrcsStatusReport == false)
+				{
+					reportsGrid.dataProvider= modelLocator.errorReports;
+					closeButton.setVisible(false,false);					
+				}
+				else if (modelLocator.isPrcsStatusReport == true)
+				{
+					reportsGrid.dataProvider= modelLocator.prcsRunErrorReports;
+				    modelLocator.isPrcsStatusReport = false;
+				    
+				}
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(errorRecordButtonEnabled )
+				{
+					if(event.currentTarget.selectedItem.messageEventlogId != null){
+						errorRecordButton.enabled=(reportsGrid.selectedIndex != -1);
+					}
+					else{
+						errorRecordButton.enabled=(reportsGrid.selectedIndex == -1);
+					}
+				}
+	  		}
+	        
+	        private function setRelativeColWidths():void
+	  		{
+		  		reportsGrid.columns[0].width = reportsGrid.width*.10;
+		  		reportsGrid.columns[1].width = reportsGrid.width*.20;
+				reportsGrid.columns[2].width = reportsGrid.width*.2;
+				reportsGrid.columns[3].width = reportsGrid.width*.68;
+			}
+				
+			private function getMessageData(event:ListEvent):void
+        	{
+				if(errorRecordButtonEnabled)
+				{
+					if(event.currentTarget.selectedItem.messageEventlogId != null){
+						// call GetPrcsRunMessageEvent, which fetches the relevant data from the server 
+						// for the givrn messageEventlogId and displays it as popup
+						var getMessagaDataEvent:GetPrcsRunMessageEvent = new GetPrcsRunMessageEvent(event.currentTarget.selectedItem.messageEventlogId,this);
+						getMessagaDataEvent.dispatch();	
+					}
+				}
+				
+            }
+			
+				   	
+		   	private function close():void
+	        {     		
+	        	//On Close, Show the Process status screen
+				var prcsStatusEvent:ProcessStatusEvent = new ProcessStatusEvent();
+				prcsStatusEvent.dispatch();
+					
+			}
+			
+			private function showErrorRecord():void
+	        {     		
+	            var getMessagaDataEvent:GetPrcsRunMessageEvent = new GetPrcsRunMessageEvent(reportsGrid.selectedItem.messageEventlogId,this);
+				getMessagaDataEvent.dispatch();
+					
+			}
+
+	        
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		<mx:Button label="@Resource(key='button.ErrorReporting.close', bundle='TeevraUI')" id="closeButton" click="close()" textAlign="center"/>
+        <mx:Button label="@Resource(key='button.ErrorReporting.errorRecord', bundle='TeevraUI')" id="errorRecordButton" click="showErrorRecord()" textAlign="center"/>
+    </mx:HBox>
+    
+	<mx:DataGrid id="reportsGrid" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" width="100%" height="100%" itemClick="itemClickEvent(event);" creationComplete="setRelativeColWidths();" doubleClickEnabled="true" itemDoubleClick="getMessageData(event);">	
+	<mx:columns>       
+		<mx:DataGridColumn dataField="prcsRunId" headerText="@Resource(key='column.ErrorReporting.prcsRunId', bundle='TeevraUI')" />
+		<mx:DataGridColumn dataField="prcsName" headerText="@Resource(key='column.ErrorReporting.prcsName', bundle='TeevraUI')" />
+		<mx:DataGridColumn dataField="savepointTime" headerText="@Resource(key='column.ErrorReporting.savepointTime', bundle='TeevraUI')" labelFunction="formatDate"/>
+		<mx:DataGridColumn dataField="logMessage" headerText="@Resource(key='column.ErrorReporting.logMessage', bundle='TeevraUI')"/>
+	</mx:columns>		
+	</mx:DataGrid>
+</mx:Module>

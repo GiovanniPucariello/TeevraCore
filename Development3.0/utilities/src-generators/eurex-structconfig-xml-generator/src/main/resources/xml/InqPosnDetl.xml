@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqPosnDetlRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqPosnDetlRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="origTrnFiltGrpT" name="origTrnFiltGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqPosnDetlRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqPosnDetlRequestT" name="basic"/>
+			<element type="futExtInqPosnDetlRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqPosnDetlRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="prvLngQty" size="16"/>
+			<element type="char" name="prvShtQty" size="16"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="partSubGrpCod" size="3"/>
+			<element type="char" name="partNo" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="trnVmarAmnt" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqPosnDetlResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqPosnDetlRecT" name="futBscInqPosnDetlRec" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqPosnDetlRecT">
+		<sequence>
+			<element type="char" name="trdTyp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="origTrnGrpT" name="origTrnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqPosnDetlResponseT">
+		<sequence>
+			<element type="futExtInqPosnDetlRecT" name="futExtInqPosnDetlRec" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqPosnDetlResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqPosnDetlResponseT" name="basic"/>
+			<element type="futExtInqPosnDetlResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnDetlRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnDetlRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="origTrnFiltGrpT" name="origTrnFiltGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqPosnDetlRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqPosnDetlRequestT" name="basic"/>
+			<element type="optExtInqPosnDetlRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnDetlRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="prvLngQty" size="16"/>
+			<element type="char" name="prvShtQty" size="16"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="partSubGrpCod" size="3"/>
+			<element type="char" name="partNo" size="3"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="trnPrmAmnt" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqPosnDetlResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqPosnDetlRecT" name="optBscInqPosnDetlRec" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnDetlRecT">
+		<sequence>
+			<element type="char" name="trdTyp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="origTrnGrpT" name="origTrnGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqPosnDetlResponseT">
+		<sequence>
+			<element type="optExtInqPosnDetlRecT" name="optExtInqPosnDetlRec" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqPosnDetlResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqPosnDetlResponseT" name="basic"/>
+			<element type="optExtInqPosnDetlResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

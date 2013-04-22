@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+	class="flex.messaging.services.RemotingService">
+
+	<adapters>
+		<adapter-definition id="java-object"
+			class="flex.messaging.services.remoting.adapters.JavaAdapter"
+			default="true" />
+	</adapters>
+
+	<default-channels>
+		<channel ref="channel-amf" />
+	</default-channels>
+
+	<destination id="processService">
+		<properties>
+			<factory>spring</factory>
+			<source>processService</source>
+		</properties>
+	</destination>
+
+	<destination id="processAdminService">
+		<properties>
+			<factory>spring</factory>
+			<source>processAdminService</source>
+		</properties>
+	</destination>
+
+	<destination id="componentService">
+		<properties>
+			<factory>spring</factory>
+			<source>componentService</source>
+		</properties>
+	</destination>
+
+	<destination id="schemaService">
+		<properties>
+			<factory>spring</factory>
+			<source>schemaService</source>
+		</properties>
+	</destination>
+
+	<destination id="refDataService">
+		<properties>
+			<factory>spring</factory>
+			<source>refDataService</source>
+		</properties>
+	</destination>
+
+	<destination id="serverAdminService">
+		<properties>
+			<factory>spring</factory>
+			<source>serverAdminService</source>
+		</properties>
+	</destination>
+
+	<destination id="stateMachineService">
+		<properties>
+			<factory>spring</factory>
+			<source>stateMachineService</source>
+		</properties>
+	</destination>
+
+	<destination id="userAdminService">
+		<properties>
+			<factory>spring</factory>
+			<source>userAdminService</source>
+		</properties>
+	</destination>
+	<destination id="userAuthenticationService">
+		<properties>
+			<factory>spring</factory>
+			<source>userAuthenticationService</source>
+		</properties>
+	</destination>
+	<destination id="appPropertiesService">
+		<properties>
+			<factory>spring</factory>
+			<source>appPropertiesService</source>
+		</properties>
+	</destination>
+</service>

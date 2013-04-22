@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="99739022-7bb5-4a0e-8ae9-aa3c55374221" embeddedrepository="false">
+  <name>
+    close_loginagain
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="close_loginagain" namespace="UI_TC"/>
+  <variables/>
+  <recorditems>
+    <mouseitem enabled="True" optional="False" duration="1921ms" action="Click" button="Left" movetime="100ms" sx="560" sy="304" loc="540;209">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="b873bd2d-44cc-425e-9d3a-5abd3054a731">
+        <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="20,95,984,774">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.containers::Box]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.containers::VBox]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[mainArea]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[VBox]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="3374ms" action="Press" presstime="100ms" data="F11" scancode="87" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <mouseitem enabled="True" optional="False" duration="3014ms" action="Click" button="Left" movetime="100ms" sx="849" sy="84" loc="10;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="b12490d7-f6a1-443f-b4a3-ceab3c47a988">
+        <element role="button" prefcap="button" capabilities="accessible" flavor="msaa" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="False" index="2" rect="839,72,25,25">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="accessibledefaultaction" type="System.String">
+            <![CDATA[Press]]>
+          </attribute>
+          <attribute name="accessibledescription" type="System.String">
+            <![CDATA[Closes the window]]>
+          </attribute>
+          <attribute name="accessiblename" type="System.String">
+            <![CDATA[Close]]>
+          </attribute>
+          <attribute name="accessiblerole" type="System.Windows.Forms.AccessibleRole, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[PushButton]]>
+          </attribute>
+          <attribute name="accessiblestate" type="System.Windows.Forms.AccessibleStates, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[None]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/form[@title~'^iceFish\ -\ Microsoft\ Inter']/titlebar/button[@accessiblename='Close']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3935ms" action="DoubleClick" button="Left" movetime="100ms" sx="895" sy="422" loc="37;17">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="a23daf19-d510-40a1-8b37-9e12cb5614db">
+        <element role="listitem" prefcap="listitem" capabilities="nativeitem" flavor="win32" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="False" index="15" rect="858,405,78,67">
+          <attribute name="index" type="System.Int32">
+            <![CDATA[15]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Shortcut to iexplore]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/desktop[@processname='explorer']/container/list/listitem[@text='Shortcut to iexplore']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2234ms" action="Click" button="Left" movetime="100ms" sx="462" sy="113" loc="4;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="bb5bb10a-9b19-4ab7-a590-4022f813e371">
+        <element role="button" prefcap="button" capabilities="nativeitem" flavor="win32" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="False" index="3" rect="458,103,16,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="commandid" type="System.Int32">
+            <![CDATA[203]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/form[@title~'^https://hm\.headstrong\.com']/element[@class='WorkerW']/form/element[@controlid='41477']/toolbar[@class='ToolbarWindow32' and @instance='0']/button[@commandid='203']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="405ms" action="Press" presstime="100ms" data="H" scancode="35" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="375ms" sequence="tt" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keyitem enabled="True" optional="False" duration="280ms" action="Press" presstime="100ms" data="P" scancode="25" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="156ms" action="Down" presstime="100ms" data="RShiftKey, Shift" scancode="54" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="31ms" action="Down" presstime="31ms" data="Oem1, Shift" scancode="39" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="62ms" action="Up" presstime="62ms" data="RShiftKey" scancode="54" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="266ms" action="Up" presstime="100ms" data="Oem1" scancode="39" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="1375ms" sequence="//" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keyitem enabled="True" optional="False" duration="202ms" action="Press" presstime="100ms" data="NumPad1" scancode="79" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="218ms" action="Press" presstime="100ms" data="NumPad0" scancode="82" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="249ms" action="Press" presstime="100ms" data="Decimal" scancode="83" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="311ms" action="Press" presstime="100ms" data="NumPad2" scancode="80" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="359ms" sequence="{NumPad0}{NumPad0}" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keyitem enabled="True" optional="False" duration="2046ms" action="Press" presstime="100ms" data="Decimal" scancode="83" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="202ms" action="Press" presstime="100ms" data="NumPad2" scancode="80" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="249ms" action="Press" presstime="100ms" data="NumPad0" scancode="82" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="374ms" action="Press" presstime="100ms" data="Decimal" scancode="83" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="437ms" sequence="{NumPad4}{NumPad1}" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keyitem enabled="True" optional="False" duration="406ms" action="Press" presstime="100ms" data="Decimal" scancode="83" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="327ms" action="Press" presstime="100ms" data="NumPad7" scancode="71" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="655ms" action="Press" presstime="100ms" data="NumPad6" scancode="77" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="703ms" action="Down" presstime="100ms" data="RShiftKey, Shift" scancode="54" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="62ms" action="Down" presstime="62ms" data="Oem1, Shift" scancode="39" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="78ms" action="Up" presstime="78ms" data="RShiftKey" scancode="54" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="734ms" action="Up" presstime="100ms" data="Oem1" scancode="39" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="468ms" action="Press" presstime="100ms" data="NumPad8" scancode="72" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="265ms" action="Press" presstime="100ms" data="NumPad8" scancode="72" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="405ms" action="Press" presstime="100ms" data="NumPad8" scancode="72" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="842ms" action="Press" presstime="100ms" data="NumPad0" scancode="82" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="359ms" action="Press" presstime="100ms" data="OemQuestion" scancode="53" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="171ms" action="Press" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="217ms" action="Press" presstime="100ms" data="C" scancode="46" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="342ms" action="Press" presstime="100ms" data="E" scancode="18" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="172ms" action="Down" presstime="100ms" data="LShiftKey, Shift" scancode="42" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="78ms" action="Down" presstime="78ms" data="F, Shift" scancode="33" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="47ms" action="Up" presstime="47ms" data="LShiftKey" scancode="42" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="375ms" action="Up" presstime="100ms" data="F" scancode="33" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="186ms" action="Press" presstime="100ms" data="I" scancode="23" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="249ms" action="Press" presstime="100ms" data="S" scancode="31" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="686ms" action="Press" presstime="100ms" data="H" scancode="35" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keyitem enabled="True" optional="False" duration="1077ms" action="Press" presstime="100ms" data="Return" scancode="28" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <mouseitem enabled="True" optional="False" duration="1921ms" action="Click" button="Left" movetime="100ms" sx="602" sy="376" loc="505;5">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="b873bd2d-44cc-425e-9d3a-5abd3054a731">
+        <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="97,371,751,410">
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.containers::Box]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.containers::VBox]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[mainArea]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[VBox]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="1281ms" action="Press" presstime="100ms" data="F11" scancode="87" setModifiers="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+  </recorditems>
+  <repository name="UI_TCRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="UI_TCRepository.rxrep">
+    <codegen classname="UI_TCRepository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="VBNet">
+    <![CDATA[close_loginagain.UserCode.vb]]>
+  </usercodefile>
+  <references/>
+</recordtable>

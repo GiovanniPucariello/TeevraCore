@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscModMembRelaRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extModMembRelaRequestT">
+		<sequence>
+			<element type="char" name="nxtGivUpAcptInd"/>
+			<element type="char" name="nxtTakUpAcptInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="modMembRelaRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModMembRelaRequestT" name="basic"/>
+			<element type="extModMembRelaRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModMembRelaResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="relaUpdDat" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="modMembRelaResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModMembRelaResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

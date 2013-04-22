@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqMembLisRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMembLisRecT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="clgMembTypCod"/>
+			<element type="char" name="membExchLngNam" size="40"/>
+			<element type="char" name="membStsCod"/>
+			<element type="char" name="membHltByMsInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMembLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqMembLisRecT" name="bscInqMembLisRec" size="37"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

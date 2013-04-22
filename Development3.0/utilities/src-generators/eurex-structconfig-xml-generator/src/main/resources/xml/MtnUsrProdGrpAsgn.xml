@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscMtnUsrProdGrpAsgnRequestT">
+		<sequence>
+			<element type="char" name="actnCod"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="maxOrdrQty" size="13"/>
+			<element type="char" name="maxCalSprdQty" size="13"/>
+			<element type="char" name="maxWhsQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="mtnUsrProdGrpAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscMtnUsrProdGrpAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscMtnUsrProdGrpAsgnResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="mtnUsrProdGrpAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscMtnUsrProdGrpAsgnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

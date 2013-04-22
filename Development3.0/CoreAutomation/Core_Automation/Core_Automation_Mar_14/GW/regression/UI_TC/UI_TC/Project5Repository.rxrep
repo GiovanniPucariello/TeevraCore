@@ -1,0 +1,159 @@
+﻿<repository name="Project5Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718">
+  <codegen classname="Project5Repository" namespace="UI_TC"/>
+  <rootfolder name="Root" id="31097da2-1aff-446c-99c8-77ee9da049d7" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+    <appfolder name="WebDocumentIceFish" id="4b3bc745-10cb-43f4-b5a8-f42625f4ab60" searchtimeout="30000ms" capname="webdocument" isrooted="True" usecache="False">
+      <folder name="TableProcessGrid" id="06b26856-4bbf-487d-ac70-e09a88d6f362" searchtimeout="10000ms" capname="table" isrooted="True" usecache="False">
+        <item name="CellString4" id="65bcd539-6d72-4ab7-a335-dceef684866f" searchtimeout="10000ms" capname="cell">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Date Created']/cell[@text='Date Created']]]>
+        </item>
+        <item name="CellString2" id="81f90847-5b09-4016-be8b-8c37f58d40bf" searchtimeout="10000ms" capname="cell">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Description']/cell[@text='Description']]]>
+        </item>
+        <item name="CellString5" id="8c9fc3b6-fdc3-43de-adbc-ed41eb5aba0e" searchtimeout="10000ms" capname="cell">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Last Modified']/cell[@text='Last Modified']]]>
+        </item>
+        <item name="CellString" id="1233b349-bca7-4a7f-b3da-c2999629d959" searchtimeout="10000ms" capname="cell">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Process Id']/cell[@text='Process Id']]]>
+        </item>
+        <item name="CellString1" id="d7fc6204-3e2c-4dc5-abd4-8b80e68a380a" searchtimeout="10000ms" capname="cell">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Process Name']/cell[@text='Process Name']]]>
+        </item>
+        <item name="CellString3" id="710884eb-98e0-4a9f-ba44-79f50c70f3b7" searchtimeout="10000ms" capname="cell">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table/column[@text='Status']/cell[@text='Status']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/table]]>
+        </basepath>
+      </folder>
+      <folder name="FormForm" id="b6c196a5-831e-4dc2-b86d-982662d9bce2" searchtimeout="10000ms" capname="form" isrooted="True" usecache="False">
+        <item name="ButtonSubmit" id="a61d8995-575a-4749-9d54-9281ac13113b" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </item>
+        <item name="TextPasswordTextInput" id="d87918d3-879b-4743-9256-e02d12f96107" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@id='passwordTextInput']]]>
+        </item>
+        <item name="TextUserIdTextInput" id="d9ed635a-e359-46ee-aea1-e677b1afc735" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form]]>
+        </basepath>
+      </folder>
+      <item name="ButtonNew" id="665c4856-e6b6-4904-ae02-e16967af9073" searchtimeout="10000ms" capname="button">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+      </item>
+      <item name="ButtonDelete" id="f984521b-5a20-47ce-a30c-cda833dc77e2" searchtimeout="10000ms" capname="button">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+      </item>
+      <item name="TextProcess_Modeling_" id="28474b58-8254-4cf5-8b92-1d8f85341ff3" searchtimeout="10000ms" capname="text">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+      </item>
+      <folder name="ContainerHBox" id="11d1b29c-c9dd-4f64-a769-3d9db191148b" searchtimeout="10000ms" capname="container" isrooted="True" usecache="False">
+        <item name="ButtonEndpoints" id="0d4d210c-eb61-46cf-a68c-f225f947d2ba" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Endpoints']]]>
+        </item>
+        <item name="TextComponent_Palette" id="2d9d5e9d-cb5d-4ee4-8aa3-464b82c6f5c3" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@type='UIComponent']/text[@caption='Component Palette']]]>
+        </item>
+        <item name="CheckBoxCompEvntLog" id="7a539f97-ddfa-4000-ba4c-8975a0133fe5" searchtimeout="10000ms" capname="checkbox">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[1]/container/checkbox[@id='compEvntLog']]]>
+        </item>
+        <item name="TextEnable_Component_EventLo" id="f24b4a71-d1e3-4f54-9417-e1e3353ad8ce" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[1]/container/text[@caption~'^Enable\ Component\ EventLog']]]>
+        </item>
+        <item name="CheckBoxMsgEvntLog" id="f47e00fa-1ed7-4b5b-abc4-5e816225bf71" searchtimeout="10000ms" capname="checkbox">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[2]/container/checkbox[@id='msgEvntLog']]]>
+        </item>
+        <item name="TextEnable_Message_EventLogs" id="96a184c7-ba88-4520-9362-01e2b87f1647" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[2]/container/text[@caption='Enable Message EventLogs']]]>
+        </item>
+        <item name="CheckBoxPrcsEvntLog" id="3e12f164-2df3-4fdf-a8b0-af5c0efce83f" searchtimeout="10000ms" capname="checkbox">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[3]/container/checkbox[@id='prcsEvntLog']]]>
+        </item>
+        <item name="TextEnable_Process_EventLogs" id="958f74b9-a879-49d3-b4f6-f98d3db2f747" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[3]/container/text[@caption='Enable Process EventLogs']]]>
+        </item>
+        <item name="CheckBoxRecovery" id="3309ffd8-d9f2-4b5d-8905-91f92f67ac98" searchtimeout="10000ms" capname="checkbox">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[4]/container/checkbox[@id='recovery']]]>
+        </item>
+        <item name="TextEnable_Recovery" id="044371a7-b865-45b9-bfc5-cfe0aa760acb" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[4]/container/text[@caption='Enable Recovery']]]>
+        </item>
+        <item name="TextDescription" id="b140fabe-cbf7-480f-9f64-e56904357d6a" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[1]/text[@type='FormItemLabel']/text[@caption='Description']]]>
+        </item>
+        <item name="TextNameText" id="a17d458e-e288-4a2c-93f6-44b26253c76f" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[2]/text[@id='nameText']]]>
+        </item>
+        <item name="TextNameAsterisk" id="5efcb2c3-28a0-4cf5-83ea-0ac5e17d4ac2" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[2]/text[@type='FormItemLabel']/text[@caption='Name*']]]>
+        </item>
+        <item name="TabPageError_Handler" id="057fcf6b-966c-4bf9-bc0e-ed621562230d" searchtimeout="10000ms" capname="tabpage">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/tabpagelist/tabpage[@title='Error Handler']]]>
+        </item>
+        <item name="TabPageError_Reporting" id="307dd631-b9e2-4e51-a036-6eb352f7e35e" searchtimeout="10000ms" capname="tabpage">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/tabpagelist/tabpage[@title='Error Reporting']]]>
+        </item>
+        <item name="TabPageMessage_Throttling" id="2e65e82f-dc5d-462d-bba8-dda6bb80c5e2" searchtimeout="10000ms" capname="tabpage">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/tabpagelist/tabpage[@title='Message Throttling']]]>
+        </item>
+        <item name="TabPageProcess_Properties" id="9f2e8903-5d08-4f2e-9f71-63d7c026bd9b" searchtimeout="10000ms" capname="tabpage">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/tabpagelist/tabpage[@title='Process Properties']]]>
+        </item>
+        <item name="TextNEW" id="22670ec0-8397-475d-ab7f-c45e699c626c" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@type='UIComponent']/text[@caption='NEW']]]>
+        </item>
+        <item name="TextStatus" id="30bbebe7-03d9-499a-bf1b-08522e781ecf" searchtimeout="10000ms" capname="text">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@type='UIComponent']/text[@caption='Status']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]]]>
+        </basepath>
+      </folder>
+      <folder name="ContainerHBox1" id="cbd5b0e0-1cce-4deb-a1c5-55bf46742ec7" searchtimeout="10000ms" capname="container" isrooted="True" usecache="False">
+        <item name="ButtonDelete1" id="345cb531-a96c-4263-8a11-c4656a06165a" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='deleteButton']]]>
+        </item>
+        <item name="ButtonPublish" id="1b5fd365-7e6b-40d8-b963-71a34faba484" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='publishButton']]]>
+        </item>
+        <item name="ButtonSave" id="6a612bf5-4cab-4c94-9f0e-4e171f4bd507" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='saveButton']]]>
+        </item>
+        <item name="ButtonCancel" id="4d3b013a-c698-4783-a87f-d838f8aad9cc" searchtimeout="10000ms" capname="button">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@text='Cancel']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]]]>
+        </basepath>
+      </folder>
+      <item name="ButtonLogout" id="1bbd84fd-e6b3-49c5-91b2-683bdbb30152" searchtimeout="10000ms" capname="button">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='logoBox']/container/button[@id='logoutBtn']]]>
+      </item>
+      <item name="TextIceFish_Login" id="1592bfee-8d8d-4254-b746-773764f5b662" searchtimeout="10000ms" capname="text">
+        <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/element/text[@caption='iceFish Login']]]>
+      </item>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+  <variables/>
+</repository>

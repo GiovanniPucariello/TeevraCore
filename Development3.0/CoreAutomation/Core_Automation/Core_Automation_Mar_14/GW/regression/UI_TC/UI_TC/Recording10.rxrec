@@ -1,0 +1,1497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="7b7099f1-ddf7-4003-8afb-36f4f30a07e7" embeddedrepository="false">
+  <name>
+    Recording10
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="Recording10" namespace="UI_TC"/>
+  <variables/>
+  <recorditems>
+    <mouseitem enabled="True" optional="False" duration="1436ms" action="Click" button="Left" movetime="300ms" sx="637" sy="539" loc="36;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="fb7ffde9-b19c-4f21-9f85-a4aa6ec6309e">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="601,528,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox57.VBox80.Panel61.authenticationForm.userIdFormItem.TextInput63]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[userIdTextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="2187ms" sequence="icefish" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="999ms" action="Click" button="Left" movetime="300ms" sx="637" sy="568" loc="36;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="97e4798e-a47e-4fb8-8baf-60d1afdab07c">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="601,557,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox57.VBox80.Panel61.authenticationForm.passwordFormItem.TextInput64]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[passwordTextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@id='passwordTextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="2109ms" sequence="icefish{Tab}" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="2499ms" action="Click" button="Left" movetime="300ms" sx="634" sy="600" loc="33;14">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="18ebe36d-112a-4f7d-be96-44306f929a97">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="601,586,71,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Submit]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox57.VBox80.Panel61.authenticationForm.FormItem77.buttonHbox.Button59]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3359ms" action="Click" button="Left" movetime="300ms" sx="1147" sy="233" loc="23;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="a6424e66-38e0-4c61-9b3b-e8e52409e76d">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="1124,221,53,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[New]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader142.ViewProcess143.HBox144.newButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[newButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1047ms" action="Down" button="Left" movetime="300ms" sx="72" sy="326" loc="4;13">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="a52016f7-37bb-4518-bf3e-86cd927bc63d">
+        <element role="picture" prefcap="picture" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="68,313,25,25">
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.Panel476.compPalette.Grid479.GridRow495.GridItem496.ComponentPaletteItem485.VBox486.HBox487.Image489]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Image]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[icon_1]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Image]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/element[6]/container[6]/container[2]/container/container/container/picture[@id='icon_1']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="906ms" action="Up" button="Left" movetime="300ms" sx="348" sy="562" loc="130;120">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="4c3c2646-f91e-4754-a179-1422fa1e4bd5">
+        <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="218,442,1035,489">
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.VBox1140.graphCanvas]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.containers::Canvas]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[graphCanvas]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Canvas]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Right" movetime="300ms" sx="327" sy="547" loc="27;23">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="5e00070a-dd7b-4b34-9a46-31fe620a167d">
+        <element role="picture" prefcap="picture" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="300,524,50,50">
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.VBox1140.graphCanvas.ComponentGraphCanvasItem1520.Image1521]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Image]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[icon_1_8181]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Image]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']/container/picture[@id='icon_1_8181']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2093ms" action="Click" button="Left" movetime="300ms" sx="359" sy="578" loc="29;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="d03508bd-6e0f-4369-8253-d11da9c53219">
+        <element role="menuitem" prefcap="menuitem" capabilities="accessible" flavor="msaa" visible="True" valid="True" enabled="True" hasfocus="True" dontcache="False" index="1" rect="330,567,189,17">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Configure Component]]>
+          </attribute>
+          <attribute name="accessibledefaultaction" type="System.String">
+            <![CDATA[Execute]]>
+          </attribute>
+          <attribute name="accessiblekeyboardshortcut" type="System.String">
+            <![CDATA[c]]>
+          </attribute>
+          <attribute name="accessiblename" type="System.String">
+            <![CDATA[Configure Component]]>
+          </attribute>
+          <attribute name="accessiblerole" type="System.Windows.Forms.AccessibleRole, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[MenuItem]]>
+          </attribute>
+          <attribute name="accessiblestate" type="System.Windows.Forms.AccessibleStates, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[Focused, HotTracked]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/contextmenu[@processname='iexplore']/contextmenu/menuitem[@accessiblename='Configure Component']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1265ms" action="Click" button="Left" movetime="300ms" sx="570" sy="379" loc="44;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="4919e08b-e06f-4475-bda5-707f5154af57">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="526,368,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1531.ComponentConfigurationForm1542.FormItem1543.RestrictedTextInput1544]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[ServiceId]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/form/form/container[9]/text[@id='ServiceId']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="3906ms" sequence="dummy" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keysequenceitem enabled="True" optional="False" duration="2781ms" sequence="sample" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="450" sy="670" loc="27;14">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="869acc10-4fc2-4f86-aade-7b6a80452151">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="423,656,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer1531.ControlBar1601.Button1602]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="921ms" action="Click" button="Left" movetime="300ms" sx="435" sy="347" loc="99;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="deba5a4b-1e40-48d9-b2b0-2c8547ee8cd6">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="336,337,252,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.VBox1140.processDetails.newProcess.HBox1149.tabNavigator.HBox1152.VBox1289.Form1290.FormItem1291.nameText]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nameText]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[2]/text[@id='nameText']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="3312ms" sequence="dummysample" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="405ms" action="Click" button="Left" movetime="300ms" sx="423" sy="384" loc="86;17">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="836e7ef8-78fa-4a9c-8830-3a136c513140">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="337,367,250,43">
+          <attribute name="caption" type="System.String">
+          </attribute>
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.core::UITextField]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[UITextField]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[1]/text[@id='descriptionText']/text[@caption='']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="1375ms" sequence="test" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="764ms" action="Click" button="Left" movetime="300ms" sx="770" sy="350" loc="8;13">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7a53b405-f2ef-4531-bfb4-4ba36fbb36bc">
+        <element role="checkbox" prefcap="checkbox" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="762,337,14,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="checkstate" type="System.Windows.Forms.CheckState, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[Unchecked]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.VBox1140.processDetails.newProcess.HBox1149.tabNavigator.HBox1152.VBox1304.Form1305.FormItem1306.HBox1307.recovery]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::CheckBox]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[recovery]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[CheckBox]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[4]/container/checkbox[@id='recovery']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="843ms" action="Click" button="Left" movetime="300ms" sx="770" sy="374" loc="8;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="41533460-48d0-46e3-8200-268a9ab22de7">
+        <element role="checkbox" prefcap="checkbox" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="762,362,14,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="checkstate" type="System.Windows.Forms.CheckState, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[Unchecked]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.VBox1140.processDetails.newProcess.HBox1149.tabNavigator.HBox1152.VBox1304.Form1305.FormItem1314.HBox1315.prcsEvntLog]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::CheckBox]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[prcsEvntLog]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[CheckBox]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[3]/container/checkbox[@id='prcsEvntLog']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2499ms" action="Click" button="Left" movetime="300ms" sx="768" sy="395" loc="6;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="51a126bb-6456-474a-b34c-69a3290f1d5d">
+        <element role="checkbox" prefcap="checkbox" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="762,387,14,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="checkstate" type="System.Windows.Forms.CheckState, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+            <![CDATA[Unchecked]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox475.VBox1140.processDetails.newProcess.HBox1149.tabNavigator.HBox1152.VBox1304.Form1305.FormItem1322.HBox1323.msgEvntLog]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::CheckBox]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[msgEvntLog]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[CheckBox]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[1]/form/container[2]/container/checkbox[@id='msgEvntLog']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2749ms" action="Click" button="Left" movetime="300ms" sx="994" sy="230" loc="Center">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="f0b32b5d-638e-4392-860f-4a983175ddce">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="961,221,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader455.FlexDrawing461.VBox462.HBox463.saveButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[saveButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='saveButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3437ms" action="Click" button="Left" movetime="300ms" sx="656" sy="543" loc="Center">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7cd9e2d4-a81d-47ff-8596-d2e1689f0060">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="609,529,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert1660.AlertForm1668.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container[@caption='Save Process']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="3327ms" action="Press" presstime="100ms" data="F11" scancode="87" setModifiers="False" numLock="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <mouseitem enabled="True" optional="False" duration="1624ms" action="Click" button="Left" movetime="300ms" sx="87" sy="60" loc="17;6">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="70,54,179,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="130" sy="77" loc="66;7">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="595ed1ac-4058-4ac7-a383-5624d526107f">
+        <element role="menuitem" prefcap="menuitem" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="64,70,145,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[View Process]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[Object]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/contextmenu/menuitem[@text='View Process']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="6155ms" action="Click" button="Left" movetime="300ms" sx="217" sy="854" loc="93;7">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="86f4ddf6-bad1-43e3-ac9d-f1914dacbd4f">
+        <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="124,847,244,18">
+          <attribute name="columnindex" type="System.Int32">
+            <![CDATA[1]]>
+          </attribute>
+          <attribute name="isheader" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="rowindex" type="System.Int32">
+            <![CDATA[26]]>
+          </attribute>
+          <attribute name="selected" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[dummy1]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[String]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index='26']/cell[@text='dummy1']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2592ms" action="Click" button="Left" movetime="300ms" sx="1228" sy="232" loc="43;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="4891354d-5fc9-4fdd-9d15-6379d2a88ec1">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="1185,221,68,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Delete]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader2774.ViewProcess2775.HBox2776.deleteButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[deleteButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='deleteButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1124ms" action="Click" button="Left" movetime="300ms" sx="688" sy="538" loc="43;9">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="cc2f15f7-35c0-408c-bbb6-d8c5eba06555">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="645,529,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[No]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert3093.AlertForm3101.NO]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container[@caption='Confirm delete']/element[@type='AlertForm']/button[@text='No']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="1093ms" methodname="Mouse_Click_ContainerHBox1">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="615" sy="223" loc="587;2">
+          <comment>
+          </comment>
+          <bindings/>
+          <info sourcename="Recorder" id="7524bfeb-f7dd-478b-8331-2eed2be6f8df">
+            <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="28,221,1225,23">
+              <attribute name="flexuid" type="System.String">
+                <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader2774.ViewProcess2775.HBox2776]]>
+              </attribute>
+              <attribute name="fulltype" type="System.String">
+                <![CDATA[mx.containers::HBox]]>
+              </attribute>
+              <attribute name="type" type="System.String">
+                <![CDATA[HBox]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container[@type='HBox']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="9561ms" action="Click" button="Left" movetime="300ms" sx="109" sy="186" loc="33;6">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="76,180,179,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1686ms" action="Click" button="Left" movetime="300ms" sx="342" sy="348" loc="6;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="deba5a4b-1e40-48d9-b2b0-2c8547ee8cd6">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="336,337,252,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[dummysample]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader3284.FlexDrawing3286.VBox3287.HBox3300.VBox3965.processDetails.newProcess.HBox3974.tabNavigator.HBox3977.VBox4116.Form4117.FormItem4118.nameText]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nameText]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[2]/text[@id='nameText']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="5467ms" action="Press" presstime="100ms" data="Tab" scancode="15" setModifiers="False" numLock="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="3000ms" sequence="modified" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1874ms" action="Click" button="Left" movetime="300ms" sx="996" sy="233" loc="35;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="f0b32b5d-638e-4392-860f-4a983175ddce">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="961,221,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader3248.FlexDrawing3250.VBox3251.HBox3252.saveButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[saveButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='saveButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2420ms" action="Click" button="Left" movetime="300ms" sx="658" sy="545" loc="49;16">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7cd9e2d4-a81d-47ff-8596-d2e1689f0060">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="609,529,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert4449.AlertForm4457.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container[@caption='Save Process']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2280ms" action="Click" button="Left" movetime="300ms" sx="104" sy="183" loc="28;3">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="76,180,179,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="147" sy="205" loc="77;9">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="595ed1ac-4058-4ac7-a383-5624d526107f">
+        <element role="menuitem" prefcap="menuitem" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="70,196,145,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[View Process]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[Object]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/contextmenu/menuitem[@text='View Process']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="1109ms" methodname="Mouse_Click_CellString1">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <mouseitem enabled="True" optional="False" duration="1109ms" action="Click" button="Left" movetime="300ms" sx="248" sy="854" loc="124;7">
+          <comment>
+          </comment>
+          <bindings/>
+          <info sourcename="Recorder" id="86f4ddf6-bad1-43e3-ac9d-f1914dacbd4f">
+            <element role="cell" prefcap="cell" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="124,847,244,18">
+              <attribute name="columnindex" type="System.Int32">
+                <![CDATA[1]]>
+              </attribute>
+              <attribute name="isheader" type="System.Boolean">
+                <![CDATA[False]]>
+              </attribute>
+              <attribute name="rowindex" type="System.Int32">
+                <![CDATA[26]]>
+              </attribute>
+              <attribute name="selected" type="System.Boolean">
+                <![CDATA[False]]>
+              </attribute>
+              <attribute name="text" type="System.String">
+                <![CDATA[dummysample]]>
+              </attribute>
+              <attribute name="dataitemtype" type="System.String">
+                <![CDATA[String]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain='10.200.41.15:8880']/body/flexobject/container/container[@id='mainArea']/container/element/table/row[@index~'^.*']/cell[@text='dummysample']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="3030ms" action="Click" button="Left" movetime="300ms" sx="96" sy="153" loc="24;5">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="72,148,180,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2093ms" action="Click" button="Left" movetime="300ms" sx="339" sy="318" loc="7;13">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="deba5a4b-1e40-48d9-b2b0-2c8547ee8cd6">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="332,305,252,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[dummysample]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader5903.FlexDrawing5905.VBox5906.HBox5919.VBox6584.processDetails.newProcess.HBox6593.tabNavigator.HBox6596.VBox6735.Form6736.FormItem6737.nameText]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nameText]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[2]/text[@id='nameText']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="1764ms" action="Press" presstime="100ms" data="Tab" scancode="15" setModifiers="False" numLock="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="1781ms" sequence="test" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keyitem enabled="True" optional="False" duration="11248ms" action="Press" presstime="100ms" data="D1" scancode="2" setModifiers="False" numLock="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <mouseitem enabled="True" optional="False" duration="3248ms" action="Click" button="Left" movetime="300ms" sx="995" sy="199" loc="30;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="f0b32b5d-638e-4392-860f-4a983175ddce">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="965,189,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader5903.FlexDrawing5905.VBox5906.HBox5907.saveButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[saveButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='saveButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3842ms" action="Click" button="Left" movetime="300ms" sx="655" sy="528" loc="46;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7cd9e2d4-a81d-47ff-8596-d2e1689f0060">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="609,520,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert7041.AlertForm7049.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Save Process']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2421ms" action="Click" button="Left" movetime="300ms" sx="1071" sy="197" loc="40;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="c56b8b21-13bc-4cde-be3c-3592640e0718">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="1031,189,73,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Publish]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader7061.FlexDrawing7063.VBox7064.HBox7065.publishButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[publishButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='publishButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3077ms" action="Click" button="Left" movetime="300ms" sx="656" sy="528" loc="47;8">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="88cad396-53c8-44e7-8a38-6498cbfc75b3">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="609,520,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert8138.AlertForm8146.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Publish Process']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2967ms" action="Click" button="Left" movetime="300ms" sx="106" sy="152" loc="34;4">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="72,148,180,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="143" sy="173" loc="77;9">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="595ed1ac-4058-4ac7-a383-5624d526107f">
+        <element role="menuitem" prefcap="menuitem" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="66,164,145,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[View Process]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[Object]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/contextmenu/menuitem[@text='View Process']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="1078ms" methodname="Mouse_Click_ContainerHBox3">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <mouseitem enabled="True" optional="False" duration="1078ms" action="Click" button="Left" movetime="300ms" sx="417" sy="201" loc="393;12">
+          <comment>
+          </comment>
+          <bindings/>
+          <info sourcename="Recorder" id="7524bfeb-f7dd-478b-8331-2eed2be6f8df">
+            <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="24,189,1233,23">
+              <attribute name="flexuid" type="System.String">
+                <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader9272.ViewProcess9273.HBox9274]]>
+              </attribute>
+              <attribute name="fulltype" type="System.String">
+                <![CDATA[mx.containers::HBox]]>
+              </attribute>
+              <attribute name="type" type="System.String">
+                <![CDATA[HBox]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container[@type='HBox']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="2358ms" action="Click" button="Left" movetime="300ms" sx="100" sy="151" loc="28;3">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="72,148,180,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1702ms" action="Click" button="Left" movetime="300ms" sx="336" sy="318" loc="4;13">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="deba5a4b-1e40-48d9-b2b0-2c8547ee8cd6">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="332,305,252,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Fil7e_to_FTP]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader9740.FlexDrawing9742.VBox9743.HBox9756.VBox10421.processDetails.newProcess.HBox10430.tabNavigator.HBox10433.VBox10572.Form10573.FormItem10574.nameText]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nameText]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[4]/container[2]/form/container[2]/text[@id='nameText']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keyitem enabled="True" optional="False" duration="2437ms" action="Press" presstime="100ms" data="Tab" scancode="15" setModifiers="False" numLock="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <keysequenceitem enabled="True" optional="False" duration="1609ms" sequence="test" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <keyitem enabled="True" optional="False" duration="1780ms" action="Press" presstime="100ms" data="D2" scancode="3" setModifiers="False" numLock="False">
+      <comment>
+      </comment>
+      <bindings/>
+    </keyitem>
+    <mouseitem enabled="True" optional="False" duration="4483ms" action="Click" button="Left" movetime="300ms" sx="986" sy="201" loc="21;12">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="f0b32b5d-638e-4392-860f-4a983175ddce">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="3" rect="965,189,58,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Save]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader9740.FlexDrawing9742.VBox9743.HBox9744.saveButton]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[saveButton]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[2]/button[@id='saveButton']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="3890ms" action="Click" button="Left" movetime="300ms" sx="655" sy="529" loc="46;9">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7cd9e2d4-a81d-47ff-8596-d2e1689f0060">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="609,520,65,22">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[OK]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[Alert10882.AlertForm10890.OK]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container[@caption='Save Process']/element[@type='AlertForm']/button[@text='OK']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1420ms" action="Click" button="Left" movetime="300ms" sx="93" sy="151" loc="21;3">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="7792a091-c623-41ff-bb70-da22e6828c87">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="6" rect="72,148,180,19">
+          <attribute name="caption" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Process Modeling ]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.applicationControlBar.navigationCanvas.nav_processModel]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Label]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[nav_processModel]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Label]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/toolbar/container/text[@id='nav_processModel']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="300ms" sx="146" sy="171" loc="80;7">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="595ed1ac-4058-4ac7-a383-5624d526107f">
+        <element role="menuitem" prefcap="menuitem" capabilities="flexdataitem" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="66,164,145,18">
+          <attribute name="checked" type="System.Boolean">
+            <![CDATA[True]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[View Process]]>
+          </attribute>
+          <attribute name="dataitemtype" type="System.String">
+            <![CDATA[Object]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/contextmenu/menuitem[@text='View Process']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem enabled="True" optional="False" duration="1124ms" methodname="Mouse_Click_ContainerHBox4">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <mouseitem enabled="True" optional="False" duration="1124ms" action="Click" button="Left" movetime="300ms" sx="451" sy="193" loc="427;4">
+          <comment>
+          </comment>
+          <bindings/>
+          <info sourcename="Recorder" id="7524bfeb-f7dd-478b-8331-2eed2be6f8df">
+            <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="24,189,1233,23">
+              <attribute name="flexuid" type="System.String">
+                <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader12060.ViewProcess12061.HBox12062]]>
+              </attribute>
+              <attribute name="fulltype" type="System.String">
+                <![CDATA[mx.containers::HBox]]>
+              </attribute>
+              <attribute name="type" type="System.String">
+                <![CDATA[HBox]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain='10.200.41.38:8080']/body/flexobject/container/container[@id='mainArea']/container/element/container[@type='HBox']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+  </recorditems>
+  <repository name="Project10Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="Project10Repository.rxrep">
+    <codegen classname="Project10Repository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="VBNet">
+    <![CDATA[Recording10.UserCode.vb]]>
+  </usercodefile>
+  <references/>
+</recordtable>

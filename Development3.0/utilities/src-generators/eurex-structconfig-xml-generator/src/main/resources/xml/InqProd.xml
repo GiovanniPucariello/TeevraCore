@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqProdRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="prodTypId" size="4"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqProdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqProdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqProdRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="prodShtNam" size="30"/>
+			<element type="char" name="exchAff"/>
+			<element type="char" name="maxPrc" size="15"/>
+			<element type="char" name="quoEqlQtyInd"/>
+			<element type="char" name="quoMinQty" size="13"/>
+			<element type="char" name="fastMktMinQty" size="13"/>
+			<element type="char" name="fastMktPcnt" size="4"/>
+			<element type="sprdTblGrpT" name="sprdTblGrp" size="30"/>
+			<element type="sprdLnkRecT" name="sprdLnkRec" size="20"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+			<element type="char" name="undrDispDcml" size="2"/>
+			<element type="char" name="mgnStylTyp"/>
+			<element type="char" name="oneSidQuoInd"/>
+			<element type="char" name="primExchIdCod" size="4"/>
+			<element type="char" name="undrId" size="4"/>
+			<element type="char" name="undrIsinCod" size="12"/>
+			<element type="char" name="ticSiz" size="14"/>
+			<element type="char" name="ticVal" size="14"/>
+			<element type="char" name="prodTypCod" size="3"/>
+			<element type="char" name="prodTypNam" size="15"/>
+			<element type="char" name="ipsOfstPrc" size="14"/>
+			<element type="char" name="ipsRtio" size="4"/>
+			<element type="char" name="ipsRtio2" size="4"/>
+			<element type="char" name="ipsProdId" size="4"/>
+			<element type="char" name="ipsProdId2" size="4"/>
+			<element type="char" name="theoUndrId" size="4"/>
+			<element type="char" name="mtchTypCod"/>
+			<element type="char" name="prodDispDcml" size="2"/>
+			<element type="prcStepTblGrpT" name="prcStepTblGrp" size="8"/>
+			<element type="char" name="preTrdRiskRndLot" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqProdResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqProdRecT" name="futBscInqProdRec" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqProdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqProdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqProdRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="prodTypId" size="4"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqProdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqProdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqProdRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="prodShtNam" size="30"/>
+			<element type="char" name="exchAff"/>
+			<element type="char" name="maxPrc" size="15"/>
+			<element type="char" name="quoEqlQtyInd"/>
+			<element type="char" name="quoMinQty" size="13"/>
+			<element type="char" name="entMasQuoRecMax" size="3"/>
+			<element type="char" name="fastMktMinQty" size="13"/>
+			<element type="char" name="fastMktPcnt" size="4"/>
+			<element type="sprdTblGrpT" name="sprdTblGrp" size="30"/>
+			<element type="sprdLnkRecT" name="sprdLnkRec" size="20"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+			<element type="char" name="undrDispDcml" size="2"/>
+			<element type="char" name="oneSidQuoInd"/>
+			<element type="char" name="primExchIdCod" size="4"/>
+			<element type="char" name="undrId" size="4"/>
+			<element type="char" name="undrIsinCod" size="12"/>
+			<element type="char" name="exerStylTyp"/>
+			<element type="char" name="mgnStylTyp"/>
+			<element type="char" name="ticSiz" size="14"/>
+			<element type="char" name="ticVal" size="14"/>
+			<element type="char" name="stratMtchTypCod"/>
+			<element type="char" name="prodTypCod" size="3"/>
+			<element type="char" name="prodTypNam" size="15"/>
+			<element type="char" name="exerPrcDcml"/>
+			<element type="prcStepTblGrpT" name="prcStepTblGrp" size="8"/>
+			<element type="char" name="theoUndrId" size="4"/>
+			<element type="char" name="prodDispDcml" size="2"/>
+			<element type="char" name="preTrdRiskRndLot" size="13"/>
+			<element type="char" name="volaStratUndrId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqProdResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqProdRecT" name="optBscInqProdRec" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqProdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqProdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

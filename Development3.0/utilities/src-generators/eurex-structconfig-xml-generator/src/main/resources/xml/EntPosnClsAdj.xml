@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntPosnClsAdjRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnLngQty" size="16"/>
+			<element type="char" name="trnShtQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntPosnClsAdjRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntPosnClsAdjRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntPosnClsAdjRequestT" name="basic"/>
+			<element type="futExtEntPosnClsAdjRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntPosnClsAdjResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntPosnClsAdjResponseT">
+		<sequence>
+			<element type="char" name="crtZerCostQty" size="16"/>
+			<element type="char" name="prvZerCostQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntPosnClsAdjResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntPosnClsAdjResponseT" name="basic"/>
+			<element type="futExtEntPosnClsAdjResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntPosnClsAdjRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnLngQty" size="16"/>
+			<element type="char" name="trnShtQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntPosnClsAdjRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntPosnClsAdjRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntPosnClsAdjRequestT" name="basic"/>
+			<element type="optExtEntPosnClsAdjRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntPosnClsAdjResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="crtLngQty" size="16"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntPosnClsAdjResponseT">
+		<sequence>
+			<element type="char" name="crtZerCostQty" size="16"/>
+			<element type="char" name="prvZerCostQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntPosnClsAdjResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntPosnClsAdjResponseT" name="basic"/>
+			<element type="optExtEntPosnClsAdjResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

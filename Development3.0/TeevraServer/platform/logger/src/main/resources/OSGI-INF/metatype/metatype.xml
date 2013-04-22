@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData
+    xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0"
+    localization="metatype">
+
+    <!-- global configuration through the LogManager -->
+    <metatype:OCD id="com.headstrong.fusion.logger.LogManager"
+        name="%log.name" description="%log.description">
+        <metatype:AD id="com.headstrong.fusion.logger.level"
+            type="String" default="info" name="%log.level.name"
+            description="%log.level.description">
+            <metatype:Option value="trace" label="Trace" />
+            <metatype:Option value="debug" label="Debug" />
+            <metatype:Option value="info" label="Information" />
+            <metatype:Option value="warn" label="Warnings" />
+            <metatype:Option value="error" label="Error" />
+        </metatype:AD>
+        <metatype:AD id="com.headstrong.fusion.logger.log.file"
+            type="String" default="logs/error.log" name="%log.file.name"
+            description="%log.file.description" />
+        <metatype:AD id="com.headstrong.fusion.logger.file.number"
+            type="Integer" default="5" name="%log.file.number.name"
+            description="%log.file.number.description" />
+          <!--   Default configuration for fusion log file size
+		<metatype:AD id="com.headstrong.fusion.logger.file.size"
+            type="String" default="10mb" name="%log.file.size.name"
+            description="%log.file.size.description" />  -->
+        <metatype:AD id="com.headstrong.fusion.logger.pattern"
+            type="String"
+            default="{0\,date\,dd.MM.yyyy HH:mm:ss.SSS} *{4}* [{2}] {3} {5}"
+            name="%log.pattern.name"
+            description="%log.pattern.description" />
+    </metatype:OCD>
+    <metatype:Designate pid="com.headstrong.fusion.logger.LogManager">
+        <metatype:Object
+            ocdref="com.headstrong.fusion.logger.LogManager" />
+    </metatype:Designate>
+
+    <!-- LoggerWriter factory configuration -->
+    <metatype:OCD
+        id="com.headstrong.fusion.logger.LogManager.factory.writer"
+        name="%log.factory.writer.name"
+        description="%log.factory.writer.description">
+        <metatype:AD id="com.headstrong.fusion.logger.log.file"
+            type="String" default="logs/error.log" name="%log.file.name"
+            description="%log.file.description" />
+        <metatype:AD id="com.headstrong.fusion.logger.file.number"
+            type="Integer" default="5" name="%log.file.number.name"
+            description="%log.file.number.description" />
+        <!--   Default configuration for fusion log file size
+		<metatype:AD id="com.headstrong.fusion.logger.file.size"
+            type="String" default="10mb" name="%log.file.size.name"
+            description="%log.file.size.description" />  -->
+    </metatype:OCD>
+    <metatype:Designate
+        pid="com.headstrong.fusion.logger.LogManager.factory.writer">
+        <metatype:Object
+            ocdref="com.headstrong.fusion.logger.LogManager.factory.writer" />
+    </metatype:Designate>
+
+    <!-- LoggerConfig factory configuration -->
+    <metatype:OCD
+        id="com.headstrong.fusion.logger.LogManager.factory.config"
+        name="%log.factory.config.name"
+        description="%log.factory.config.description">
+        <metatype:AD id="com.headstrong.fusion.logger.level"
+            type="String" default="info" name="%log.level.name"
+            description="%log.level.description">
+            <metatype:Option value="trace" label="Trace" />
+            <metatype:Option value="debug" label="Debug" />
+            <metatype:Option value="info" label="Information" />
+            <metatype:Option value="warn" label="Warnings" />
+            <metatype:Option value="error" label="Error" />
+        </metatype:AD>
+        <metatype:AD id="com.headstrong.fusion.logger.file"
+            type="String" default="logs/error.log" name="%log.file.name"
+            description="%log.file.description" />
+        <metatype:AD id="com.headstrong.fusion.logger.pattern"
+            type="String"
+            default="{0\,date\,dd.MM.yyyy HH:mm:ss.SSS} *{4}* [{2}] {3} {5}"
+            name="%log.pattern.name"
+            description="%log.pattern.description" />
+        <metatype:AD id="com.headstrong.fusion.logger.names"
+            type="String" name="%log.loggers.name"
+            description="%log.loggers.description"
+            cardinality="2147483647" />
+    </metatype:OCD>
+    <metatype:Designate
+        pid="com.headstrong.fusion.logger.LogManager.factory.config">
+        <metatype:Object
+            ocdref="com.headstrong.fusion.logger.LogManager.factory.config" />
+    </metatype:Designate>
+</metatype:MetaData>

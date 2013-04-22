@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntDLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrExePrc" size="14"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="ordrExpDat" size="8"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntDLegOrdrRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="prcRsblChkInd"/>
+			<element type="char" name="ordrPersInd"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+			<element type="char" name="etsSesId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntDLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntDLegOrdrRequestT" name="basic"/>
+			<element type="futExtEntDLegOrdrRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntDLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrExeQty" size="13"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntDLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrBkQty" size="13"/>
+			<element type="char" name="ordrCnclQty" size="13"/>
+			<element type="char" name="ordrCreDat" size="8"/>
+			<element type="char" name="ordrCreTim" size="8"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntDLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntDLegOrdrResponseT" name="basic"/>
+			<element type="futExtEntDLegOrdrResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

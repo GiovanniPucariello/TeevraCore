@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscCpyUsrProdAsgnRequestT">
+		<sequence>
+			<element type="trdrIdGrpFromT" name="trdrIdGrpFrom"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="cpyUsrProdAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscCpyUsrProdAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="cpyUsrProdAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_INQUIRE_AUTOMATIC_EXERCISE_PARAMETERS_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="CStructToFIXML"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-RESPONSE" structName="optInqAutExerParmResponseT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.keyDataCtrlBlk">
+                <structField>basic.keyDataCtrlBlk</structField>
+            </field>
+            <field name="basic.mliRecCtr">
+                <structField>basic.mliRecCtr</structField>
+            </field>
+            <field name="basic.optBscInqAutExerParmRec{=82}.prodId">
+                <structField>basic.optBscInqAutExerParmRec{=82}.prodId</structField>
+            </field>
+            <field name="basic.optBscInqAutExerParmRec{=82}.dateLstUpdDat">
+                <structField>basic.optBscInqAutExerParmRec{=82}.dateLstUpdDat</structField>
+            </field>
+            <field name="extension.optExtInqAutExerParmRec{=82}.itmMinAmnt">
+                <structField>extension.optExtInqAutExerParmRec{=82}.itmMinAmnt</structField>
+            </field>
+            <field name="extension.optExtInqAutExerParmRec{=82}.itmMinAmntCod">
+                <structField>extension.optExtInqAutExerParmRec{=82}.itmMinAmntCod</structField>
+            </field>
+            <field name="extension.optExtInqAutExerParmRec{=82}.acctTypCodGrp.acctTypCod">
+                <structField>extension.optExtInqAutExerParmRec{=82}.acctTypCodGrp.acctTypCod</structField>
+            </field>
+            <field name="extension.optExtInqAutExerParmRec{=82}.acctTypCodGrp.acctTypNo">
+                <structField>extension.optExtInqAutExerParmRec{=82}.acctTypCodGrp.acctTypNo</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-RESPONSE" structName="optInqAutExerParmResponseT">
+        <mappings fixmlClassName="AsgnRpt">
+            <arrayMappings>
+                <arrayMapping src="extension.optExtInqAutExerParmRec" size="82">
+                    <targetObj name="message.value.Undly">
+                        <map targetDataSize="numeric signed 7, 2" targetDataType="Float" src="itmMinAmnt" target="CashAmt" type="simple"/>
+                    </targetObj>
+                    <targetObj name="message.value.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCodGrp.acctTypCod">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypCodGrp.acctTypNo">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                </arrayMapping>
+                <arrayMapping src="basic.optBscInqAutExerParmRec" size="82">
+                    <targetObj name="message.value.Undly">
+                        <map targetDataSize="Timestamp" targetDataType="String" src="dateLstUpdDat" target="MMY" type="simple"/>
+                        <map targetDataSize="alphanumeric 4" targetDataType="String" src="prodId" target="CFI" type="simple"/>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="binary 80" validationType="-" targetDataType="String" src="basic.keyDataCtrlBlk" target="message.value.Instrmt.EncSecDesc" type="simple"/>
+            <map targetDataSize="numeric 3" validationType="-" targetDataType="Big Integer" src="basic.mliRecCtr" target="message.value.Instrmt.EncSecDescLen" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetValue=" " src="extension.optExtInqAutExerParmRec.itmMinAmntCod" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+        </mappings>
+    </predicate>
+</configuration>

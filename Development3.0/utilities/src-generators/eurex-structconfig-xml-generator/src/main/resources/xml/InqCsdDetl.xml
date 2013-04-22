@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="extInqCsdDetlRequestT">
+		<sequence>
+			<element type="char" name="csdId" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqCsdDetlRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="extInqCsdDetlRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqCsdDetlResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqCsdDetlResponseT">
+		<sequence>
+			<element type="char" name="csdLngNam" size="40"/>
+			<element type="pstAddGrpT" name="pstAddGrp"/>
+			<element type="char" name="csdSwiftAdd" size="12"/>
+			<element type="char" name="csdCldrCod" size="4"/>
+			<element type="char" name="csdCldrCodNew" size="4"/>
+			<element type="char" name="csdDeadlTim" size="8"/>
+			<element type="char" name="csdDeadlTimNew" size="8"/>
+			<element type="ctctTextGrpT" name="ctctTextGrp" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqCsdDetlResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqCsdDetlResponseT" name="basic"/>
+			<element type="extInqCsdDetlResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

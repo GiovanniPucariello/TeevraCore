@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelAllOrdrRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrPersInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="delAllOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelAllOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscDelAllOrdrResponseT">
+		<sequence>
+			<element type="char" name="delOrdrCtr" size="9"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="delAllOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelAllOrdrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelUsrProdAsgnGrpT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscDelUsrProdAsgnRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="bscDelUsrProdAsgnGrpT" name="bscDelUsrProdAsgnGrp" size="100"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="delUsrProdAsgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelUsrProdAsgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="delUsrProdAsgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

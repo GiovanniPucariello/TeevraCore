@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscSubMSInfoPubBcastT">
+		<sequence>
+			<element type="char" name="msgShtText" size="55"/>
+			<element type="char" name="newsDat" size="8"/>
+			<element type="char" name="newsTim" size="8"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="actnCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="subMSInfoPubBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscSubMSInfoPubBcastT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

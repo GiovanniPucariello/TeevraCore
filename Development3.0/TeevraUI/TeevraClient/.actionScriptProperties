@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<actionScriptProperties mainApplicationPath="teevraClient.mxml" version="3">
+  <compiler additionalCompilerArguments="-locale=en_US -allow-source-path-overlap=true -services &quot;C:/Program Files/Apache Software Foundation/Tomcat 5.0/webapps/teevra/WEB-INF/flex/services-config.xml&quot;-target-player=10.0.0" copyDependentFiles="true" enableModuleDebug="true" flexSDK="Flex 3.2" generateAccessible="false" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersion="9.0.124" htmlPlayerVersionCheck="true" outputFolderLocation="C:/Program Files/Apache Software Foundation/Tomcat 5.0/webapps/teevra" outputFolderPath="bin-debug" sourceFolderPath="src/main/flex" strict="true" useApolloConfig="false" verifyDigests="true" warn="true">
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="src/main/resources/locale/{locale}"/>
+    </compilerSourcePath>
+    <libraryPath defaultLinkType="1">
+      <libraryPathEntry kind="4" path=""/>
+      <libraryPathEntry kind="1" linkType="1" path="libs"/>
+      <libraryPathEntry kind="3" linkType="1" path="Cairngorm.swc" useDefaultLinkType="false"/>
+    </libraryPath>
+    <sourceAttachmentPath/>
+  </compiler>
+  <applications>
+    <application path="teevraClient.mxml"/>
+  </applications>
+  <modules>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ComponentExtension.swf" optimize="true" sourcePath="src/main/flex/ComponentExtension.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ContentBasedRounter.swf" optimize="true" sourcePath="src/main/flex/ContentBasedRounter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="MulticastRouter.swf" optimize="true" sourcePath="src/main/flex/MulticastRouter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="CStructParserFormatter.swf" optimize="true" sourcePath="src/main/flex/CStructParserFormatter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="DataSourceConfig.swf" optimize="true" sourcePath="src/main/flex/DataSourceConfig.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="DBFormatter.swf" optimize="true" sourcePath="src/main/flex/DBFormatter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="DBParser.swf" optimize="true" sourcePath="src/main/flex/DBParser.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="DelimitedFormatter.swf" optimize="true" sourcePath="src/main/flex/DelimitedFormatter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="DelimitedParser.swf" optimize="true" sourcePath="src/main/flex/DelimitedParser.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ErrorReporting.swf" optimize="true" sourcePath="src/main/flex/ErrorReporting.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="FixedLengthParser.swf" optimize="true" sourcePath="src/main/flex/FixedLengthParser.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="FlexDrawing.swf" optimize="true" sourcePath="src/main/flex/FlexDrawing.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="GenericFormatter.swf" optimize="true" sourcePath="src/main/flex/GenericFormatter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ListOfComponent.swf" optimize="true" sourcePath="src/main/flex/ListOfComponent.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="LoginScreen.swf" optimize="true" sourcePath="src/main/flex/LoginScreen.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="MultiSectionParser.swf" optimize="true" sourcePath="src/main/flex/MultiSectionParser.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="NewProcss.swf" optimize="true" sourcePath="src/main/flex/NewProcss.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="NewSchema.swf" optimize="true" sourcePath="src/main/flex/NewSchema.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="NewStateMachine.swf" optimize="true" sourcePath="src/main/flex/NewStateMachine.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ProcessesStatus.swf" optimize="true" sourcePath="src/main/flex/ProcessesStatus.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="RefDataConfig.swf" optimize="true" sourcePath="src/main/flex/RefDataConfig.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="Splitter.swf" optimize="true" sourcePath="src/main/flex/Splitter.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="StateMachineDrawing.swf" optimize="true" sourcePath="src/main/flex/StateMachineDrawing.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="SystemPerformanceReports.swf" optimize="true" sourcePath="src/main/flex/SystemPerformanceReports.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="Transformer.swf" optimize="true" sourcePath="src/main/flex/Transformer.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="Validator.swf" optimize="true" sourcePath="src/main/flex/Validator.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewComponent.swf" optimize="true" sourcePath="src/main/flex/ViewComponent.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewProcess.swf" optimize="true" sourcePath="src/main/flex/ViewProcess.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewRole.swf" optimize="true" sourcePath="src/main/flex/ViewRole.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewSchema.swf" optimize="true" sourcePath="src/main/flex/ViewSchema.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewServerConfiguration.swf" optimize="true" sourcePath="src/main/flex/ViewServerConfiguration.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewStateMachine.swf" optimize="true" sourcePath="src/main/flex/ViewStateMachine.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="ViewUser.swf" optimize="true" sourcePath="src/main/flex/ViewUser.mxml"/>
+    <module application="src/main/flex/teevraClient.mxml" destPath="XMLParser.swf" optimize="true" sourcePath="src/main/flex/XMLParser.mxml"/>
+  </modules>
+  <buildCSSFiles/>
+</actionScriptProperties>

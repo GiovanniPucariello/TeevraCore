@@ -1,0 +1,4 @@
+set TEMP_CLASSPATH=%CLASSPATH%
+set CLASSPATH=%CLASSPATH%;bin/dataLoader.jar;lib/dom4j-1.6.1.jar;lib/jaxen-1.1.jar;lib/jsr173_1.0_api.jar;lib/log4j-1.2.15.jar;lib/ooxml-schemas-1.0.jar;lib/openxml4j-bin-beta.jar;lib/classes12.zip;lib/poi-3.5-beta3-20080926.jar;lib/poi-contrib-3.5-beta3-20080926.jar;lib/poi-jdk14-3.5-beta3-20080926.jar;lib/poi-ooxml-3.5-beta3-20080926.jar;lib/poi-scratchpad-3.5-beta3-20080926.jar;lib/resolver.jar;lib/xbean.jar;lib/xbean_xpath.jar;lib/xmlbeans-qname.jar;lib/xmlpublic.jar;lib/xmlunit1.0.jar
+java com.hs.stridehub.config.loader.DataLoader resources/tables.xlsx
+set CLASSPATH=%TEMP_CLASSPATH%

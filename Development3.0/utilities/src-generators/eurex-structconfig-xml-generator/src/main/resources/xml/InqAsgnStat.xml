@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscInqAsgnStatRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqAsgnStatRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqAsgnStatRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAsgnStatRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="asgnStsInd"/>
+			<element type="char" name="asgnMsgCtr" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAsgnStatResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="optBscInqAsgnStatRecT" name="optBscInqAsgnStatRec" size="135"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqAsgnStatResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqAsgnStatResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

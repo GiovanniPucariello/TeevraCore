@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable version="2.3.6.10664" id="e31a4c05-7261-4c23-b238-9ecf9cf6f4a4">
+  <name>
+    g
+  </name>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="g" namespace="Finetuned"/>
+  <recorditems>
+    <mouseitem duration="1046ms" action="Click" button="Left" movetime="300ms" sx="555" sy="550" loc="16;6">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="0ae88a06-57c8-4ee2-974d-d7dcd34cc01c">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="539,544,57,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Load]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[InputDialog1842.ControlBar1853.Button1854]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain='10.200.41.76:8880']/body/flexobject/form[@title='Choose Template']/element[@type='ControlBar']/button[@text='Load']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <userrecorditem duration="1109ms" methodname="Mouse_Click_TextServiceId1">
+      <comment>
+      </comment>
+      <internalrecorditem>
+        <mouseitem duration="1109ms" action="Click" button="Left" movetime="300ms" sx="505" sy="340" loc="Center">
+          <comment>
+          </comment>
+          <info sourcename="Recorder" id="e15c0beb-b73c-476b-b6ea-16d7392c1ac8">
+            <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="2" rect="495,329,160,23">
+              <attribute name="selectionlength" type="System.Int32">
+                <![CDATA[0]]>
+              </attribute>
+              <attribute name="selectionstart" type="System.Int32">
+                <![CDATA[0]]>
+              </attribute>
+              <attribute name="selectiontext" type="System.String">
+              </attribute>
+              <attribute name="text" type="System.String">
+              </attribute>
+              <attribute name="flexuid" type="System.String">
+                <![CDATA[ComponentConfigurationContainer1902.DelimitedParserConfigUI1917.VBox1918.HBox1919.RestrictedTextInput1923]]>
+              </attribute>
+              <attribute name="fulltype" type="System.String">
+                <![CDATA[mx.controls::TextInput]]>
+              </attribute>
+              <attribute name="id" type="System.String">
+                <![CDATA[serviceId]]>
+              </attribute>
+              <attribute name="type" type="System.String">
+                <![CDATA[TextInput]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain='10.200.41.76:8880']/body/flexobject/form/container/container[2]/container[3]/text[@id='serviceId']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+  </recorditems>
+  <repository name="FinetunedRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664" relativepath="FinetunedRepository.rxrep">
+    <codegen classname="FinetunedRepository" namespace="Finetuned"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+</recordtable>

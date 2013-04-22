@@ -1,0 +1,34 @@
+<fusion>
+	<mediators>
+		<mediator
+			type="com.headstrong.fusion.services.transformer.Transformer"
+			id="transformer" />
+		<mediator
+			type="com.headstrong.fusion.services.validator.Validator"
+			id="validator" />
+	</mediators>
+	<connectors>
+		<connector id="jms_1" type="JMS">
+			<property name="brokerURL" value="tcp://localhost:61616" />
+			<property name="destinationName" value="queue:source" />
+		</connector>
+		<connector id="jms_2" type="JMS">
+			<property name="brokerURL" value="tcp://localhost:61616" />
+			<property name="destinationName" value="queue:destination" />
+		</connector>
+	</connectors>
+	<process id="3" name="Integration Test Process Definition">
+		<route id="sequence1" start="true">
+			<from id="jms_1" />
+			<to id="parser" />
+		</route>
+		<route id="sequence2" split="true">
+			<from id="parser" />
+			<to id="splitter" />
+		</route>
+		<route id="sequence3">
+			<from id="transformer" />
+			<to id="jms_2" />
+		</route>
+	</process>
+</fusion>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntFlxFutRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="flxFutCntrIdGrpT" name="flxFutCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="flxCntrTrnIdClsGrpT" name="flxCntrTrnIdClsGrp"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="extEntFlxFutRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="entFlxFutRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntFlxFutRequestT" name="basic"/>
+			<element type="extEntFlxFutRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntFlxFutResponseT">
+		<sequence>
+			<element type="flxCntrTrnIdGrpT" name="flxCntrTrnIdGrp"/>
+			<element type="char" name="flxCntrSynProdId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="entFlxFutResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntFlxFutResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntFlxOptRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="flxOptCntrIdGrpT" name="flxOptCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="flxCntrTrnIdClsGrpT" name="flxCntrTrnIdClsGrp"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="extEntFlxOptRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="entFlxOptRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntFlxOptRequestT" name="basic"/>
+			<element type="extEntFlxOptRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntFlxOptResponseT">
+		<sequence>
+			<element type="flxCntrTrnIdGrpT" name="flxCntrTrnIdGrp"/>
+			<element type="char" name="flxCntrSynProdId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="entFlxOptResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntFlxOptResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

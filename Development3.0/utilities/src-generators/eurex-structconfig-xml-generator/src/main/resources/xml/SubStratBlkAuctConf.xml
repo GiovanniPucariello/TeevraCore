@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscSubStratBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="blkAuctPotPrcGrpT" name="blkAuctPotPrcGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="extSubStratBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoPrcBuy" size="14"/>
+			<element type="char" name="quoPrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtySel" size="13"/>
+			<element type="char" name="trnTypId"/>
+			<element type="char" name="quoTrnTimBuy" size="8"/>
+			<element type="char" name="quoTrnTimSel" size="8"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="subStratBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscSubStratBlkAuctConfPrivBcastT" name="basic"/>
+			<element type="extSubStratBlkAuctConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="subStratBlkAuctConfSubjectT">
+		<sequence>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+</struct>

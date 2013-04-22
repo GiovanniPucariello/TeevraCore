@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntSpcEquCollRequestT">
+		<sequence>
+			<element type="char" name="actnCod"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="spcEquCollQty" size="16"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="csdId" size="6"/>
+			<element type="char" name="csdPldgAcctNo" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="entSpcEquCollRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntSpcEquCollRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntSpcEquCollResponseT">
+		<sequence>
+			<element type="char" name="avlBulkCollQty" size="16"/>
+			<element type="char" name="usedSecQty" size="16"/>
+			<element type="char" name="secEvalPrc" size="14"/>
+			<element type="char" name="evalPrcDispDcml" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="entSpcEquCollResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntSpcEquCollResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

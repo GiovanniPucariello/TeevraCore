@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelBlkAuctReqRequestT">
+		<sequence>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelBlkAuctReqRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelBlkAuctReqRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelBlkAuctReqResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelBlkAuctReqRequestT">
+		<sequence>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelBlkAuctReqRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelBlkAuctReqRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelBlkAuctReqResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

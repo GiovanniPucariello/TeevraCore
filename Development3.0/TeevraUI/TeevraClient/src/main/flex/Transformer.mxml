@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" implements="com.headstrong.teevra.components.common.IComponentConfigurationUI">
+
+<mx:Script>
+<![CDATA[
+	import mx.controls.Alert;
+	import com.headstrong.teevra.client.graph.model.ProcessServiceVO;
+	import com.headstrong.teevra.client.graph.model.ComponentVO;
+	import mx.collections.ArrayCollection;
+	import com.headstrong.teevra.components.common.BaseComponentConfigurationUI;
+	import com.headstrong.teevra.components.transformer.TransformerConfigUI;
+
+
+	public function getConfigurationUI():BaseComponentConfigurationUI 
+	{
+		return new TransformerConfigUI();
+	}
+	
+]]>
+</mx:Script>	
+</mx:Module>

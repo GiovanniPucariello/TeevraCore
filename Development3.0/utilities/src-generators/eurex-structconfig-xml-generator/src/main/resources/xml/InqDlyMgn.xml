@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqDlyMgnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqDlyMgnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqDlyMgnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqDlyMgnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqDlyMgnRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="optPrmMgn" size="16"/>
+			<element type="char" name="futSprdMgn" size="16"/>
+			<element type="char" name="addlMgn" size="16"/>
+			<element type="char" name="dlvMgn" size="16"/>
+			<element type="char" name="mgnReqrAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqDlyMgnResponseT">
+		<sequence>
+			<element type="char" name="clgMembMgnReqr" size="16"/>
+			<element type="char" name="valUnknownInd"/>
+			<element type="extInqDlyMgnRecT" name="extInqDlyMgnRec" size="45"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqDlyMgnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqDlyMgnResponseT" name="basic"/>
+			<element type="extInqDlyMgnResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

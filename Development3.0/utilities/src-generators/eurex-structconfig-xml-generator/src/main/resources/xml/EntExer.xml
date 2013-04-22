@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscEntExerRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="exerQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntExerRequestT">
+		<sequence>
+			<element type="char" name="exerAllInd"/>
+			<element type="char" name="exerOtmWrnInd"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="password" size="8"/>
+			<element type="trdrIdGrpApprT" name="trdrIdGrpAppr"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntExerRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntExerRequestT" name="basic"/>
+			<element type="optExtEntExerRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntExerResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="crtLngQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntExerResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntExerResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

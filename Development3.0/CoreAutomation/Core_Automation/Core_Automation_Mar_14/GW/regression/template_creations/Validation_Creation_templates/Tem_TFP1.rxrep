@@ -1,0 +1,125 @@
+﻿<repository name="Tem_TFP1" id="23543cd1-74dc-4da9-beeb-50c256cc2fac" rxversion="3.0.2.12718">
+  <codegen classname="Tem_TFP1" namespace="Validation_Creation_templates"/>
+  <rootfolder name="Root" id="6d88ab1a-ae0c-4141-8590-4615040f3f0c" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+    <appfolder name="WebDocumentLocalhost_8082" id="ca1ec1ac-88a0-4ffe-a046-1f45da954bce" searchtimeout="30000ms" capname="webdocument" isrooted="True" usecache="False">
+      <folder name="ContainerHBox" id="5a5ebbf7-5af7-4b2d-a507-7b6658dd75ce" searchtimeout="30000ms" capname="container" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="ButtonEndpoints" id="f2826704-7544-40a3-9e08-a5cc7d81273f" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Endpoints']]]>
+        </item>
+        <item name="PictureIcon_45" id="c52fa89e-f3ac-494b-b60c-1d863b085161" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_45']]]>
+        </item>
+        <item name="ContainerGraphCanvas" id="8c8675e8-6045-4207-95d8-641f1bc0189a" searchtimeout="30000ms" capname="container" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']]]>
+        </item>
+        <item name="PictureIcon_45_185156" id="55c9e2cc-49f0-4f04-9dc1-9881a4ae6e9f" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']/container/picture[@id='icon_45_185156']]]>
+        </item>
+        <item name="ButtonFormatters" id="d225d136-bbd8-4c5c-af13-242193cf9c66" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Formatters']]]>
+        </item>
+        <item name="PictureIcon_14" id="d4b8993c-ed92-4b8a-b9d8-ff79a653415a" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_14']]]>
+        </item>
+        <item name="PictureIcon_14_386234" id="23a4d6f6-dd9c-4888-9e33-b9204cc63d89" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='graphCanvas']/container[@id~'^.*']/picture[@id='icon_14_386234']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]]]>
+        </basepath>
+      </folder>
+      <folder name="FormTFP_Configuration" id="8c5b1fce-b564-40a9-8342-ce558d0a1bae" searchtimeout="30000ms" capname="form" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="ButtonSave_as_Template___" id="3e5ba37a-dc9a-46aa-bfdf-b896764f2722" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save as Template...']]]>
+        </item>
+        <item name="TextThreadcount" id="39e1fd6b-8844-469c-8890-e1aee16d31a6" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Threadcount']]]>
+        </item>
+        <item name="ButtonButton" id="92668db3-249c-4158-b43e-b4cb3592d51f" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/combobox/button[@type='Button']]]>
+        </item>
+        <item name="TextDelayinmillisecondsbefor" id="6f3e74ed-6db1-4cdf-97cf-7dcd46df60b2" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Delayinmillisecondsbeforenextpoll']]]>
+        </item>
+        <item name="TextInputDirectory" id="7fab0cdf-9bc5-4549-9d3e-fed2c69d4959" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='InputDirectory']]]>
+        </item>
+        <item name="TextServiceId" id="7de784ee-46bc-4295-98a9-72c6dd73468c" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='ServiceId']]]>
+        </item>
+        <item name="ButtonSave" id="47abf184-dbe6-419b-868b-7b03decb695d" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form]]>
+        </basepath>
+      </folder>
+      <folder name="FlexObjectTeevra" id="da5b2c47-1b32-4b0b-b2f8-fa4d6060f2e9" searchtimeout="30000ms" capname="flexobject" isrooted="True" usecache="False">
+        <item name="ButtonSave" id="73402aae-8ceb-49d7-9430-433c6308839f" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form[@title='Save Template']/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <item name="TextTextInput" id="15f27bc7-3d76-4b25-b967-edc0a66e3e2b" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form[@title='Save Template']/form/container/text[@type='TextInput']]]>
+        </item>
+        <item name="TextS_TeevraC21_FixedCommon" id="040297ce-95db-4a99-ac48-eb39cae20af5" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/listitem/text[@caption='S_TeevraC21_FixedCommon']]]>
+        </item>
+        <item name="ButtonOK" id="4ae20ca9-3c40-41b5-8a6c-3b331dc316f1" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container[@caption='Save successful']/element[@type='AlertForm']/button[@text='OK']]]>
+        </item>
+        <item name="ButtonButton1" id="34f579ef-6661-4f35-ae4c-af76321c876a" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container[@type='HBox']/combobox/button[@type='Button']]]>
+        </item>
+        <item name="TextServiceId1" id="deb5b5f0-edce-4943-a130-72820d84453e" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container[@type='HBox']/text[@id='serviceId']]]>
+        </item>
+        <item name="TextUITextField" id="debce5a3-eadc-4e7c-b529-949467226e74" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container[@type='VBox']/text/text/text[@caption='']]]>
+        </item>
+        <item name="TextSample_typ" id="13075af4-fa91-4dcf-be81-e35d846326af" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/list/listitem[@text='Sample_typ']/text[@caption='Sample_typ']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <appfolder name="ContextMenuIexplore" id="e1e6b7b7-10fe-4315-8415-c9fd5db5f21e" searchtimeout="30000ms" capname="contextmenu" addcaps="nativewindow" isrooted="True" usecache="True">
+      <item name="MenuItemConfigure_Component" id="7939c643-b3cb-4dac-a31a-5ab8fa68c762" searchtimeout="30000ms" capname="menuitem" addcaps="accessible">
+        <![CDATA[/contextmenu[@processname='iexplore']/contextmenu/menuitem[@accessiblename='Configure Component']]]>
+      </item>
+      <basepath>
+        <![CDATA[/contextmenu[@processname='iexplore']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAALxJREFUOE9j/P//PwNFAGQACNsEZP9fs2Im0RimD6wZZgDQJUAmYQCy
+CKsBYFGgITsOnv9f1j73f0bVxP+R2S3/vWLL/oNcCAN4DYAZgs8dBA2AGbJs477/kTnN/z1jy0lz
+Acx2XGFCtAtABoDw1IXriXMBTAPMC+fOnfsPwugApwtgGmBOB9ENnZOIC4Oujmq4RcgGEO0CqLPA
+hmw/eA7sd5JcgGwAyBCYd0hyAUV5AZa2SaXhmYlUjTD1AHJC3EGQYdi3AAAAAElFTkSuQmCC
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+  <variables/>
+</repository>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscModPreTrdRskLimRequestT">
+		<sequence>
+			<element type="char" name="actnCod"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="violCntrLim" size="16"/>
+			<element type="char" name="rskLimRlseInd"/>
+			<element type="rskLimTimIntvlGrpT" name="rskLimTimIntvlGrp" size="2"/>
+			<element type="rskLimWrkOrdrGrpT" name="rskLimWrkOrdrGrp" size="2"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="modPreTrdRskLimRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModPreTrdRskLimRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModPreTrdRskLimResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="modPreTrdRskLimResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModPreTrdRskLimResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

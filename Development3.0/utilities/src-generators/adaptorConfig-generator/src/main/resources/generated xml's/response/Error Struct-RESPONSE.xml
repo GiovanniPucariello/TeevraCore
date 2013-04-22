@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="ERROR_STRUCT_RID" namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="CStructToFIXML"/>
+    <predicate mapType="STRUCT-BO" messageType="ERROR-RESPONSE" structName="statusDataGlobal">
+        <binding>
+            <field name="complSeverity">
+                <structField>complSeverity</structField>
+            </field>
+            <field name="complCode">
+                <structField>complCode</structField>
+            </field>
+            <field name="complText">
+                <structField>complText</structField>
+            </field>
+            <field name="techComplSeverity">
+                <structField>techComplSeverity</structField>
+            </field>
+            <field name="techComplCode">
+                <structField>techComplCode</structField>
+            </field>
+            <field name="techComplText">
+                <structField>techComplText</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="ERROR-RESPONSE" structName="statusDataGlobal">
+        <mappings fixmlClassName="FIXML">
+            <map targetDataSize="p/d" targetDataType="String" target="message.value.Error.ErrorType" type="switch-case">
+                <switch expr="complSeverity">
+                    <case value="0" targetValue="VCI_SUCCESS"/>
+                    <case value="1" targetValue="VCI_WARNING"/>
+                    <case value="2" targetValue="VCI_ERROR"/>
+                    <case value="3" targetValue="VCI_FATAL"/>
+                </switch>
+            </map>
+            <map targetDataSize="p/d" targetDataType="String" src="complCode" target="message.value.Error.ErrorCode" type="simple"/>
+            <map targetDataSize="ELB_MAX_STRING" targetDataType="String" src="complText" target="message.value.Error.ErrorMessage" type="simple"/>
+            <map targetDataSize="p/d" targetDataType="String" target="message.value.Error.Source" type="switch-case">
+                <switch expr="techComplSeverity">
+                    <case value="0" targetValue="VCI_SUCCESS"/>
+                    <case value="1" targetValue="VCI_WARNING"/>
+                    <case value="2" targetValue="VCI_ERROR"/>
+                    <case value="3" targetValue="VCI_FATAL"/>
+                </switch>
+            </map>
+            <map targetDataSize="p/d" targetDataType="String" src="techComplCode" target="message.value.Error.ErrorRecord" type="simple"/>
+            <map targetDataSize="ELB_MAX_STRING" targetDataType="String" src="techComplText" target="message.value.Error.ErrorDesc" type="simple"/>
+        </mappings>
+    </predicate>
+</configuration>

@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="RanorexReport3.xsl"?><report>
+  <activity user="ShaSrivastava" host="BL1DJD1W4BS" osversion="Windows XP Service Pack 3 32bit" runtimeversion="2.0.50727.3615" rxversion="3.0.1.12040" language="en-US" screenresolution="1280x1024" timestamp="10/31/2011 10:17:35 AM" module="Recording8" result="Success" duration="0ms" type="root" rid="1a8ebd75e50a53e0">
+    <detail>
+      Recording8
+    </detail>
+    <item time="00:00.421" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.FormForm.TextUserIdTextInput' at 49;11.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']" fullname="Project8Repository.WebDocumentIceFishHash.FormForm.TextUserIdTextInput" id="8747ceac6877453a82d8de940fec72e0" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="78" itemindex="0"/>
+    </item>
+    <item time="00:03.843" level="Info" category="Keyboard">
+      <message>
+        Key sequence 'teevra{Tab}'.
+      </message>
+      <metainfo itemindex="1" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="82"/>
+    </item>
+    <item time="00:06.999" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.FormForm.TextPasswordTextInput' at 50;10.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@id='passwordTextInput']" fullname="Project8Repository.WebDocumentIceFishHash.FormForm.TextPasswordTextInput" id="23d16ca425ba40e1bdfb12c76257374e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="86" itemindex="2"/>
+    </item>
+    <item time="00:09.468" level="Info" category="Keyboard">
+      <message>
+        Key sequence 'teevra{Tab}'.
+      </message>
+      <metainfo itemindex="3" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="90"/>
+    </item>
+    <item time="00:12.656" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.FormForm.ButtonSubmit' at 42;14.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']" fullname="Project8Repository.WebDocumentIceFishHash.FormForm.ButtonSubmit" id="04a1ab9cb143477384f62e9db2ec931c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="94" itemindex="4"/>
+    </item>
+    <item time="00:21.062" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.ButtonNew' at 26;11.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonNew" id="e479caeadb424d8b8f4445eb15cba01a" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="98" itemindex="5"/>
+    </item>
+    <item time="00:27.093" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.TabPageError_Reporting' at 57;11.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/tabpagelist/tabpage[@title='Error Reporting']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TabPageError_Reporting" id="4235252ed0924c9c8a63658b951c4d6e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="102" itemindex="6"/>
+    </item>
+    <item time="00:29.359" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='Default Error Reporter') on item 'WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/text[@caption='Default Error Reporter']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter" id="afa1bb195bd54ebca52670312b2b00da" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="106" itemindex="7"/>
+    </item>
+    <item time="00:29.577" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/text[@caption='Default Error Reporter']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter" id="afa1bb195bd54ebca52670312b2b00da" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="107" itemindex="7"/>
+    </item>
+    <item time="00:29.718" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Default Error Reporter') on item 'WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/text[@caption='Default Error Reporter']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter" id="afa1bb195bd54ebca52670312b2b00da" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="110" itemindex="8"/>
+    </item>
+    <item time="00:30.202" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/text[@caption='Default Error Reporter']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter" id="afa1bb195bd54ebca52670312b2b00da" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="111" itemindex="8"/>
+    </item>
+    <item time="00:30.359" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Label') on item 'WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/text[@caption='Default Error Reporter']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter" id="afa1bb195bd54ebca52670312b2b00da" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="114" itemindex="9"/>
+    </item>
+    <item time="00:30.577" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/text[@caption='Default Error Reporter']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TextDefault_Error_Reporter" id="afa1bb195bd54ebca52670312b2b00da" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="115" itemindex="9"/>
+    </item>
+    <item time="00:30.718" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="118" itemindex="10"/>
+    </item>
+    <item time="00:31.031" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="119" itemindex="10"/>
+    </item>
+    <item time="00:31.187" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Button') on item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="122" itemindex="11"/>
+    </item>
+    <item time="00:31.421" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="123" itemindex="11"/>
+    </item>
+    <item time="00:31.562" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton' at 137;13.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="126" itemindex="12"/>
+    </item>
+    <item time="00:36.296" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton' at 139;13.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="130" itemindex="13"/>
+    </item>
+    <item time="00:45.374" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton' at 141;13.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="134" itemindex="14"/>
+    </item>
+    <item time="00:50.687" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ListList.TextJMS_ErrReporter' at 46;8.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/list/listitem[@text='JMS ErrReporter']/text[@caption='JMS ErrReporter']" fullname="Project8Repository.WebDocumentIceFishHash.ListList.TextJMS_ErrReporter" id="8519f433c15842edbeb35bbd9ab88142" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="138" itemindex="15"/>
+    </item>
+    <item time="00:53.280" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton' at 140;14.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="142" itemindex="16"/>
+    </item>
+    <item time="00:58.296" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ListList.TextDB_ErrReporter' at 78;9.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/list/listitem[@text='DB ErrReporter']/text[@caption='DB ErrReporter']" fullname="Project8Repository.WebDocumentIceFishHash.ListList.TextDB_ErrReporter" id="5bde38a70bc44072a3555191ca45f14a" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="146" itemindex="17"/>
+    </item>
+    <item time="01:00.296" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.ButtonButton' at 144;14.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorRprVBox']/combobox/button[@type='Button']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.ButtonButton" id="f7711dbe18c94cecad9555c49943953c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="150" itemindex="18"/>
+    </item>
+    <item time="01:04.015" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ListList.TextFILE_ErrReporter' at 83;8.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/list/listitem[@text='FILE ErrReporter']/text[@caption='FILE ErrReporter']" fullname="Project8Repository.WebDocumentIceFishHash.ListList.TextFILE_ErrReporter" id="78aebedb0c9f46788b9c5b46278061ce" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="154" itemindex="19"/>
+    </item>
+    <item time="01:06.046" level="Info" category="Mouse">
+      <message>
+        Mouse Left Click item 'WebDocumentIceFishHash.ContainerVBox.TabPageError_Handler' at 39;9.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/tabpagelist/tabpage[@title='Error Handler']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox.TabPageError_Handler" id="0975e9d4e36245bea4e8ae0c25c37165" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="158" itemindex="20"/>
+    </item>
+    <item time="01:08.343" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='Business Error') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/text[@caption='Business Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error" id="ac6c115e50bb400a8096c1976e5f3193" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="162" itemindex="21"/>
+    </item>
+    <item time="01:08.546" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/text[@caption='Business Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error" id="ac6c115e50bb400a8096c1976e5f3193" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="163" itemindex="21"/>
+    </item>
+    <item time="01:08.702" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Business Error') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/text[@caption='Business Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error" id="ac6c115e50bb400a8096c1976e5f3193" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="166" itemindex="22"/>
+    </item>
+    <item time="01:09.405" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/text[@caption='Business Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error" id="ac6c115e50bb400a8096c1976e5f3193" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="167" itemindex="22"/>
+    </item>
+    <item time="01:09.562" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Label') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/text[@caption='Business Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error" id="ac6c115e50bb400a8096c1976e5f3193" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="170" itemindex="23"/>
+    </item>
+    <item time="01:09.780" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/text[@caption='Business Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextBusiness_Error" id="ac6c115e50bb400a8096c1976e5f3193" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="171" itemindex="23"/>
+    </item>
+    <item time="01:09.937" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Caption='System Error') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/text[@caption='System Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error" id="235f51d81f7e404f92539baf31d053e6" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="174" itemindex="24"/>
+    </item>
+    <item time="01:10.312" level="Success" category="Validation">
+      <message>
+        Attribute 'Caption' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/text[@caption='System Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error" id="235f51d81f7e404f92539baf31d053e6" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="175" itemindex="24"/>
+    </item>
+    <item time="01:10.452" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='System Error') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/text[@caption='System Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error" id="235f51d81f7e404f92539baf31d053e6" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="178" itemindex="25"/>
+    </item>
+    <item time="01:10.765" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/text[@caption='System Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error" id="235f51d81f7e404f92539baf31d053e6" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="179" itemindex="25"/>
+    </item>
+    <item time="01:10.921" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='Label') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/text[@caption='System Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error" id="235f51d81f7e404f92539baf31d053e6" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="182" itemindex="26"/>
+    </item>
+    <item time="01:11.140" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/text[@caption='System Error']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.TextSystem_Error" id="235f51d81f7e404f92539baf31d053e6" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="183" itemindex="26"/>
+    </item>
+    <item time="01:11.296" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and continue Job') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job" id="72a5809271c2419ab8c8b1bde9581543" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="186" itemindex="27"/>
+    </item>
+    <item time="01:11.983" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job" id="72a5809271c2419ab8c8b1bde9581543" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="187" itemindex="27"/>
+    </item>
+    <item time="01:12.140" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job" id="72a5809271c2419ab8c8b1bde9581543" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="190" itemindex="28"/>
+    </item>
+    <item time="01:12.843" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_continue_Job" id="72a5809271c2419ab8c8b1bde9581543" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="191" itemindex="28"/>
+    </item>
+    <item time="01:12.999" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and Abort Job') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job" id="753d184421b34b34b00c4f53c86641ea" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="194" itemindex="29"/>
+    </item>
+    <item time="01:13.671" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job" id="753d184421b34b34b00c4f53c86641ea" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="195" itemindex="29"/>
+    </item>
+    <item time="01:13.812" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job" id="753d184421b34b34b00c4f53c86641ea" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="198" itemindex="30"/>
+    </item>
+    <item time="01:14.030" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_Job" id="753d184421b34b34b00c4f53c86641ea" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="199" itemindex="30"/>
+    </item>
+    <item time="01:14.171" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and Abort after threshold') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t" id="ac6628bd4d924b2cbb752286e9b7b13e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="202" itemindex="31"/>
+    </item>
+    <item time="01:14.655" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t" id="ac6628bd4d924b2cbb752286e9b7b13e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="203" itemindex="31"/>
+    </item>
+    <item time="01:14.796" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t" id="ac6628bd4d924b2cbb752286e9b7b13e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="206" itemindex="32"/>
+    </item>
+    <item time="01:14.968" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_Abort_after_t" id="ac6628bd4d924b2cbb752286e9b7b13e" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="207" itemindex="32"/>
+    </item>
+    <item time="01:15.124" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and continue Job') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1" id="68e11453a8f849e8b128dcc34cf52c87" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="210" itemindex="33"/>
+    </item>
+    <item time="01:15.358" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1" id="68e11453a8f849e8b128dcc34cf52c87" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="211" itemindex="33"/>
+    </item>
+    <item time="01:15.499" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1" id="68e11453a8f849e8b128dcc34cf52c87" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="214" itemindex="34"/>
+    </item>
+    <item time="01:16.124" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and continue Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_continue_Job1" id="68e11453a8f849e8b128dcc34cf52c87" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="215" itemindex="34"/>
+    </item>
+    <item time="01:16.280" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and Abort Job') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1" id="75b915f52d434400ab4d742aa58473e7" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="218" itemindex="35"/>
+    </item>
+    <item time="01:16.530" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1" id="75b915f52d434400ab4d742aa58473e7" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="219" itemindex="35"/>
+    </item>
+    <item time="01:16.671" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1" id="75b915f52d434400ab4d742aa58473e7" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="222" itemindex="36"/>
+    </item>
+    <item time="01:17.030" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and Abort Job']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_Job1" id="75b915f52d434400ab4d742aa58473e7" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="223" itemindex="36"/>
+    </item>
+    <item time="01:17.187" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and Abort after threshold') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1" id="c83e8f4f825247b588363b5008258cc5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="226" itemindex="37"/>
+    </item>
+    <item time="01:17.358" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1" id="c83e8f4f825247b588363b5008258cc5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="227" itemindex="37"/>
+    </item>
+    <item time="01:17.515" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1" id="c83e8f4f825247b588363b5008258cc5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="230" itemindex="38"/>
+    </item>
+    <item time="01:17.812" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/container/radiobutton[@text~'^Report\ and\ Abort\ after\ th']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_Abort_after_t1" id="c83e8f4f825247b588363b5008258cc5" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="231" itemindex="38"/>
+    </item>
+    <item time="01:25.718" level="Info" category="Mouse">
+      <message>
+        Mouse Left Down item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.IndicatorScrollThumb' at 3;14.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/scrollbar/indicator[@type='ScrollThumb']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.IndicatorScrollThumb" id="f4cc26ea554b4f1c8289544e678d680c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="234" itemindex="39"/>
+    </item>
+    <item time="01:30.015" level="Info" category="Mouse">
+      <message>
+        Mouse Left Up item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.IndicatorScrollThumb' at 3;63.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/scrollbar/indicator[@type='ScrollThumb']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.IndicatorScrollThumb" id="f4cc26ea554b4f1c8289544e678d680c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="239" itemindex="40"/>
+    </item>
+    <item time="01:33.124" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and stop process') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process" id="fd4bad9f745c43c5a05d4efda5780e4d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="244" itemindex="41"/>
+    </item>
+    <item time="01:33.296" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process" id="fd4bad9f745c43c5a05d4efda5780e4d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="245" itemindex="41"/>
+    </item>
+    <item time="01:33.452" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process" id="fd4bad9f745c43c5a05d4efda5780e4d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="248" itemindex="42"/>
+    </item>
+    <item time="01:33.968" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[2]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerErrorHandlerHBox.RadioButtonReport_and_stop_process" id="fd4bad9f745c43c5a05d4efda5780e4d" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="249" itemindex="42"/>
+    </item>
+    <item time="01:34.124" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Text='Report and stop process') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1" id="02a87aff88234f92b274df5172d0b45c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="252" itemindex="43"/>
+    </item>
+    <item time="01:34.343" level="Success" category="Validation">
+      <message>
+        Attribute 'Text' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1" id="02a87aff88234f92b274df5172d0b45c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="253" itemindex="43"/>
+    </item>
+    <item time="01:34.499" level="Info" category="Validation">
+      <message>
+        Validating AttributeEqual (Type='RadioButton') on item 'WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1'.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1" id="02a87aff88234f92b274df5172d0b45c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="256" itemindex="44"/>
+    </item>
+    <item time="01:34.952" level="Success" category="Validation">
+      <message>
+        Attribute 'Type' of element for item 'Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1' does match the specified value.
+      </message>
+      <metainfo type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container[1]/container[@type='VBox']/container[@id='processDetails']/element[@id='newProcess']/container/container/container[@id='errorHandlerHBox']/container[1]/container/radiobutton[@text='Report and stop process']" fullname="Project8Repository.WebDocumentIceFishHash.ContainerVBox1.RadioButtonReport_and_stop_process1" id="02a87aff88234f92b274df5172d0b45c" timeout="50000" codefile="D:\ICEFISH\regression\UI_TC\UI_TC\Recording8.vb" codeline="257" itemindex="44"/>
+    </item>
+  </activity>
+</report>

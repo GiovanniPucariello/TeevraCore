@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_INQUIRE_ASSIGNMENT_STATUS_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="CStructToFIXML"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-RESPONSE" structName="optInqAsgnStatResponseT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.keyDataCtrlBlk">
+                <structField>basic.keyDataCtrlBlk</structField>
+            </field>
+            <field name="basic.mliRecCtr">
+                <structField>basic.mliRecCtr</structField>
+            </field>
+            <field name="basic.membExchIdCod">
+                <structField>basic.membExchIdCod</structField>
+            </field>
+            <field name="basic. optBscInqAsgnStatRec{=135}.prodId">
+                <structField>basic. optBscInqAsgnStatRec{=135}.prodId</structField>
+            </field>
+            <field name="basic. optBscInqAsgnStatRec{=135}.asgnStsInd">
+                <structField>basic. optBscInqAsgnStatRec{=135}.asgnStsInd</structField>
+            </field>
+            <field name="basic. optBscInqAsgnStatRec{=135}.asgnMsgCtr">
+                <structField>basic. optBscInqAsgnStatRec{=135}.asgnMsgCtr</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-RESPONSE" structName="optInqAsgnStatResponseT">
+        <mappings fixmlClassName="AsgnRpt">
+            <arrayMappings>
+                <arrayMapping src="basic. optBscInqAsgnStatRec" size="135">
+                    <targetObj name="message.value.Undly">
+                        <map targetDataSize="alphanumeric 4" targetDataType="String" src="prodId" target="CFI" type="simple"/>
+                        <map targetDataSize="numeric 9" targetDataType="String" src="asgnMsgCtr" target="Desc" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" src="asgnStsInd" target="OptA" type="simple"/>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="binary 80" targetDataType="String" src="basic.keyDataCtrlBlk" target="message.value.Instrmt.EncSecDesc" type="simple"/>
+            <map targetDataSize="numeric 3" targetDataType="Big Integer" src="basic.mliRecCtr" target="message.value.Instrmt.EncSecDescLen" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" targetDataType="String" src="basic.membExchIdCod" target="message.value.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+        </mappings>
+    </predicate>
+</configuration>

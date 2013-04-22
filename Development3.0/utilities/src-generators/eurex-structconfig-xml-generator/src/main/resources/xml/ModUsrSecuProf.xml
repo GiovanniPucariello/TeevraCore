@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscModUsrSecuProfRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extModUsrSecuProfRequestT">
+		<sequence>
+			<element type="char" name="rsrcAccLvlNo" size="350"/>
+		</sequence>
+	</complexType>
+	<complexType name="modUsrSecuProfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModUsrSecuProfRequestT" name="basic"/>
+			<element type="extModUsrSecuProfRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModUsrSecuProfRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModUsrSecuProfResponseT">
+		<sequence>
+			<element type="bscModUsrSecuProfRecT" name="bscModUsrSecuProfRec" size="350"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="modUsrSecuProfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModUsrSecuProfResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

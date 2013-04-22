@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscRejTakUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodTo" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futRejTakUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscRejTakUpOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futRejTakUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscRejTakUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodTo" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optRejTakUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscRejTakUpOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optRejTakUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

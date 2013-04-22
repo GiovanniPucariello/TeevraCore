@@ -1,0 +1,206 @@
+﻿<repository name="Temp_IBMQPID" id="f95408aa-9702-45bf-a332-8c237839bf32" rxversion="3.0.2.12718">
+  <codegen classname="Temp_IBMQPID" namespace="Validation_Creation_templates"/>
+  <rootfolder name="Root" id="72dcb10d-9952-4933-945c-e8647e3647b7" searchtimeout="30000ms" capname="unknown" isrooted="True" usecache="True">
+    <appfolder name="WebDocumentN10_200_20_83_8082" id="9eb439de-3406-4dd3-b80e-9d8b4c7ea941" searchtimeout="30000ms" capname="webdocument" isrooted="True" usecache="False">
+      <folder name="ContainerComponent_Palette" id="40e3750b-2acd-4d2c-950b-5124203d75b9" searchtimeout="30000ms" capname="container" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="ButtonEndpoints" id="324d78e0-a5fa-4fb8-a381-cf16cbd838da" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/button[@text='Endpoints']]]>
+        </item>
+        <item name="PictureIcon_46" id="0b7219f6-7792-4bf4-9321-c30b6e40b4d1" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_46']]]>
+        </item>
+        <item name="PictureIcon_41" id="f16003d9-3c81-4b52-876a-8fe992b82111" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']/element[@id='compPalette']/element/container/container/container/container/container/picture[@id='icon_41']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@caption='Component Palette']]]>
+        </basepath>
+      </folder>
+      <folder name="FlexObjectTeevra" id="da624e23-fda3-4236-b421-668ec258ca49" searchtimeout="30000ms" capname="flexobject" isrooted="True" usecache="False">
+        <item name="ContainerGraphCanvas" id="5b1a0bf9-26ba-4b54-9866-f63281218b63" searchtimeout="30000ms" capname="container" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']]]>
+        </item>
+        <item name="PictureIcon_41_176114" id="90f65598-76c3-4e3d-9225-d2ef8040b190" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']/container[@id~'^Box.*']/picture[@id='icon_41_176114']]]>
+        </item>
+        <item name="ButtonCancel" id="9845eadf-ab0b-45d0-8973-f6bad993d2bc" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Cancel']]]>
+        </item>
+        <item name="ButtonLoad_template___" id="55a4e457-3ef2-4e42-a63f-464726e31dff" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Load template...']]]>
+        </item>
+        <item name="ButtonSave_as_Template___" id="8775b6f0-28c9-4d79-bba7-2696ef806571" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save as Template...']]]>
+        </item>
+        <item name="ButtonSave" id="5b78fd1f-98f3-43ce-86d9-9a14f5a3e9bb" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <item name="TextThread_count" id="f19ca820-83b2-49d3-9010-918e2ae39603" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Thread count']]]>
+        </item>
+        <item name="TextPassword" id="0165e7df-aef1-4531-8cb5-0af0caa7b988" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Password']]]>
+        </item>
+        <item name="TextUser_Name" id="b647db07-0801-4a5d-8c7f-f7e9d33b6d7c" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='User Name']]]>
+        </item>
+        <item name="TextDelivery_Mode" id="56f108d0-733b-4948-a250-6a1b9200e0ef" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Delivery Mode']]]>
+        </item>
+        <item name="TextChannel" id="c87b1f6a-6bf0-4d65-aec7-f64b8b4bbcb4" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Channel']]]>
+        </item>
+        <item name="TextQueue_Manager" id="d89f241a-4166-4622-b921-86622b56b236" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Queue Manager']]]>
+        </item>
+        <item name="TextPort" id="06795fcb-c3ca-4a05-a6ae-16be09c921c2" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Port']]]>
+        </item>
+        <item name="TextBroker_Url" id="6086038e-ff26-4636-9c0e-a5ac4093f1fd" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Broker Url']]]>
+        </item>
+        <item name="TextService_Id" id="c890d21c-a751-4be6-aca6-2b7215fa18a4" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Service Id']]]>
+        </item>
+        <item name="TextSSL_TrustStore_Location" id="96efb1e1-987a-4809-8fe7-426b97ac651f" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='SSL TrustStore Location']]]>
+        </item>
+        <item name="TextSSL_Algorithm" id="2a27e166-9154-4a85-8aa1-71dee7f63c18" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='SSL Algorithm']]]>
+        </item>
+        <item name="TextSSL_Fips_Required" id="202779eb-0ff6-4f7d-b325-ca86c2e84e15" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text/text[@caption='SSL Fips Required']]]>
+        </item>
+        <item name="TextSSL_KeyStore_Password" id="48098a3f-57b1-41ac-928e-ee11c26438bc" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='SSL KeyStore Password']]]>
+        </item>
+        <item name="TextSSL_Cipher_Suite" id="9619593e-eb69-427c-b559-788ad34f75a1" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='SSL Cipher Suite']]]>
+        </item>
+        <item name="TextSSL_KeyStore_Location" id="0b1e7214-047d-4715-a582-ceb17df4f81c" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='SSL KeyStore Location']]]>
+        </item>
+        <item name="TextSSL_Enabled" id="a4f776f5-1c8a-427c-9ab3-b09fc1e12eeb" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text/text[@caption='SSL Enabled']]]>
+        </item>
+        <item name="TextDestination" id="01c9b5dc-fb44-47eb-8f34-a002ea630d4e" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@type='FormItemLabel']/text[@caption='Destination']]]>
+        </item>
+        <item name="TextServiceId" id="aa655fa6-5d8c-49d9-86bb-7c4bca91ba73" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='ServiceId']]]>
+        </item>
+        <item name="TextTextInput" id="e67fe658-0f85-4245-85a4-552afe423a57" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form[@title='Save Template']/form/container/text[@type='TextInput']]]>
+        </item>
+        <item name="PictureIcon_46_209286" id="37bcd095-2b44-43a3-9cee-587745ac5237" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']/container[@id~'^Box.*']/picture[@id='icon_46_209286']]]>
+        </item>
+        <item name="TextThreadcount1" id="69cbb5e2-1370-4b74-8025-77e5b798a14d" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Threadcount']]]>
+        </item>
+        <item name="TextQueueURL" id="4240bf9e-d275-49b5-b642-406e1a6ad76b" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='QueueURL']]]>
+        </item>
+        <item name="TextQueueName" id="e08f0436-6040-4f0b-9c7b-c657cf9311cd" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='QueueName']]]>
+        </item>
+        <item name="ButtonOK" id="44ec14aa-25d3-4aa6-9814-536ae85f4abe" searchtimeout="30000ms" capname="button" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container[@caption='Save successful']/element[@type='AlertForm']/button[@text='OK']]]>
+        </item>
+        <item name="PictureIcon_41_1761141" id="11200a13-0a81-4d03-a0eb-c8c09b0a49b3" searchtimeout="30000ms" capname="picture" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/container/container[@type='VBox']/container[@id='graphCanvas']/container[@id~'^Box.*']/picture[@id='icon_41_176114']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject]]>
+        </basepath>
+      </folder>
+      <folder name="FormForm" id="72bc8535-acf0-40a1-b819-2d2ade4983cd" searchtimeout="30000ms" capname="form" addcaps="flexelement" isrooted="True" usecache="False">
+        <item name="TextThreadcount" id="5fc6cca7-9b43-4359-9e1f-1c7a5e55b94a" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Threadcount']]]>
+        </item>
+        <item name="TextPassword1" id="b5d94d7d-a230-44a0-a828-bf7c2f517866" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Password']]]>
+        </item>
+        <item name="TextUserName" id="98d2fe6b-020d-4656-b528-da2da2f6a7e0" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='UserName']]]>
+        </item>
+        <item name="TextDeliveryMode" id="5d1bc6f4-0fbe-457b-9097-d010ba014f7f" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='DeliveryMode']]]>
+        </item>
+        <item name="TextChannel1" id="271b6117-6ae6-4e70-8f4a-29eceaa567cf" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Channel']]]>
+        </item>
+        <item name="TextQueueManager" id="9a26040f-d3a7-40ee-aa3b-ef1baebb02a4" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='QueueManager']]]>
+        </item>
+        <item name="TextPort1" id="fef7805c-4fd4-48cb-99d5-8a577912911c" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Port']]]>
+        </item>
+        <item name="TextBrokerUrl" id="2504724c-1061-4605-a07e-ee7bc2226c99" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='BrokerUrl']]]>
+        </item>
+        <item name="TextSSLTrustStoreLocation" id="c4c216db-dfdf-4060-ac9e-bdbb9b9ad9fc" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='SSLTrustStoreLocation']]]>
+        </item>
+        <item name="TextSSLAlgorithm" id="b2a32b83-24a2-4b75-8379-7e44e4996151" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='SSLAlgorithm']]]>
+        </item>
+        <item name="TextSSLKeyStorePassword" id="604943bb-134d-44b7-aa3d-2b12f5d061e6" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='SSLKeyStorePassword']]]>
+        </item>
+        <item name="TextSSLCipherSuite" id="741a2a54-06c9-40c4-a37b-956dbfea3c94" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='SSLCipherSuite']]]>
+        </item>
+        <item name="TextSSLKeyStoreLocation" id="794b49f0-2343-4472-a76b-b3d79f2ee501" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='SSLKeyStoreLocation']]]>
+        </item>
+        <item name="TextDestination1" id="9bec1c89-8706-4933-854a-f16846005881" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container/text[@id='Destination']]]>
+        </item>
+        <item name="TextServiceId" id="f862e92b-ff6b-47a3-aa79-07dc8e444008" searchtimeout="30000ms" capname="text" addcaps="flexelement">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[4]/text[@id='ServiceId']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <appfolder name="ContextMenuIexplore" id="fdf81afd-fc37-43cc-a77c-5544f7346b1e" searchtimeout="30000ms" capname="contextmenu" addcaps="nativewindow" isrooted="True" usecache="True">
+      <item name="MenuItemConfigure_Component" id="a0085dae-683c-4c22-bb5a-fee84db5cd2e" searchtimeout="30000ms" capname="menuitem" addcaps="accessible">
+        <![CDATA[/contextmenu[@processname='iexplore']/contextmenu/menuitem[@accessiblename='Configure Component']]]>
+      </item>
+      <basepath>
+        <![CDATA[/contextmenu[@processname='iexplore']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAAALxJREFUOE9j/P//PwNFAGQACNsEZP9fs2Im0RimD6wZZgDQJUAmYQCy
+CKsBYFGgITsOnv9f1j73f0bVxP+R2S3/vWLL/oNcCAN4DYAZgs8dBA2AGbJs477/kTnN/z1jy0lz
+Acx2XGFCtAtABoDw1IXriXMBTAPMC+fOnfsPwugApwtgGmBOB9ENnZOIC4Oujmq4RcgGEO0CqLPA
+hmw/eA7sd5JcgGwAyBCYd0hyAUV5AZa2SaXhmYlUjTD1AHJC3EGQYdi3AAAAAElFTkSuQmCC
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+  <variables/>
+</repository>

@@ -1,0 +1,87 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>teevra.platform.parent</artifactId>
+		<groupId>com.hs.fusion</groupId>
+		<version>2.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>connector.exchange.fix</artifactId>
+	<version>1.0</version>
+	<packaging>bundle</packaging>
+	<name>Fix connector</name>
+	<description>Fix exchange connector</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-core</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-commons</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-dbpool</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-logger</artifactId>
+			<version>${platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-quickfix</artifactId>
+			<version>2.9.0</version>
+			<!-- use the same version as your Camel core version 	!org.quickfixj.jmx,* -->
+		</dependency>
+		
+		<dependency>
+			<groupId>org.quickfixj</groupId>
+			<artifactId>quickfixj-all</artifactId>
+			<version>1.5.1</version>		       							 
+		</dependency>   
+		
+		<dependency>
+			<groupId>org.apache.mina</groupId>
+			<artifactId>mina-core</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		
+		
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>
+							com.headstrong.fusion.connector.exchange.fix.FixConnectorActivator
+						</Bundle-Activator>
+						<Import-Package>							!sun.misc.*,!sun.misc,!org.logicalcobwebs.*,!org.logicalcobwebs.proxool,!com.sleepycat.je;!com.sleepycat;!com.sleepycat.*,!org.quickfixj.jmx,*
+						</Import-Package>
+
+						<Export-Package>
+							com.headstrong.fusion.connector.exchange.fix
+						</Export-Package>
+						<Embed-Dependency>
+						quickfixj-all;inline=true;camel-quickfix;inline=true
+						</Embed-Dependency>										
+														
+						<Component-Version>1.0.0</Component-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

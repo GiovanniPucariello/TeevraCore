@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.util.AlertHelper;
+	import com.headstrong.teevra.client.model.DataSourceCache;
+	import mx.collections.ICollectionView;
+	import com.headstrong.teevra.client.events.RefDataServiceEvent;
+	import mx.events.CloseEvent;
+	import mx.events.ListEvent;
+	
+	import com.headstrong.teevra.client.events.DataSourceConfigEvent;
+	import mx.core.IFlexDisplayObject;
+	import mx.controls.Alert;
+
+	import mx.managers.PopUpManager;
+	import com.headstrong.teevra.client.view.admin.NewDataSourcePopup;
+	import com.headstrong.teevra.client.view.entity.DataSourceConfigVO;
+	import com.headstrong.teevra.client.util.UIModules;
+	import mx.collections.ArrayCollection;
+	import com.headstrong.teevra.client.util.UserEntitlements;
+  
+            import com.headstrong.teevra.client.model.ViewModelLocator;
+            
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			
+			private var popup:IFlexDisplayObject; 
+			private var dataSourceConfig:DataSourceConfigVO;
+			private var isNewConfig:Boolean;
+			
+			private var refDataServiceEvent:RefDataServiceEvent;
+			private var serviceIdentifier:String;			
+			private const REFRESH_REF_GRID_EVENT:String = "REFRESH_REF_GRID";
+			private const DELETE_DATASOURCE_EVENT:String = "DELETE_DATA_SOURCE";
+			private const ADD_DATASOURCE_EVENT:String = "ADD_DATA_SOURCE";
+			
+			private var isDataSourceConfigEvent:Boolean;
+			//private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private var newButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+			private var deleteButtonEnabled:Boolean=true;	
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudDataSource))
+				   {
+				   		newButtonEnabled=false;
+				   		itemClickEnabled=false;
+				   		deleteButtonEnabled=false;
+				   		
+				   }
+				
+			}
+			
+			private function init():void
+			{
+				authorizePage();
+				deleteButton.enabled = false;
+				newButton.enabled=newButtonEnabled;
+				  
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(deleteButtonEnabled)
+				   {
+						deleteButton.enabled = (dataSourceGrid.selectedIndex != -1);
+				   }
+	  		}
+	  		private function setRelativeColWidths():void
+	  		{
+		  		dataSourceGrid.columns[0].width = dataSourceGrid.width*.10;
+				dataSourceGrid.columns[1].width = dataSourceGrid.width*.20;
+				dataSourceGrid.columns[2].width = dataSourceGrid.width*.30;
+				dataSourceGrid.columns[3].width = dataSourceGrid.width*.20;
+				dataSourceGrid.columns[4].width = dataSourceGrid.width*.20;
+			}
+			
+			private function addNewConfig():void
+			{
+				isNewConfig = true;
+				var dataSourcePopup:NewDataSourcePopup;
+				
+				popup = PopUpManager.createPopUp(this, NewDataSourcePopup ,true);
+				popup.width = 500;
+				dataSourcePopup = NewDataSourcePopup(popup);  
+			
+				dataSourceConfig = new DataSourceConfigVO();
+		    	
+		    	dataSourcePopup.create(popupClose,popupSave,dataSourceConfig,isNewConfig);
+		    	PopUpManager.centerPopUp(popup);
+		    }
+		    private function popupClose(event:MouseEvent):void{
+	    		PopUpManager.removePopUp(popup);
+	   		}
+		    private function popupSave():void
+		    {
+		    	//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+		    	var args:Object = new Object();
+				args[RefDataServiceEvent.ADD_DATASOURCE_ID] = dataSourceConfig;
+				serviceIdentifier=ADD_DATASOURCE_EVENT;
+				refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.ADD_DATASOURCE_COMMAND, args, this);
+				refDataServiceEvent.dispatch();				
+				PopUpManager.removePopUp(popup);
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End		   		
+		    }
+		    
+		    private function refreshConfigs():void
+			{
+				isDataSourceConfigEvent = true;
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				var args:Object = new Object();
+				args[RefDataServiceEvent.REFRESH_REF_ID] = isDataSourceConfigEvent;
+				serviceIdentifier=REFRESH_REF_GRID_EVENT;
+				refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.REFRESH_DATASOURCE_COMMAND, args, this);
+				refDataServiceEvent.dispatch();	
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+				isDataSourceConfigEvent=refDataServiceEvent.getArgument(RefDataServiceEvent.REFRESH_REF_ID);				
+		    }
+		    private function deleteConfig():void
+        	{     		
+        		Alert.show("Do you want to delete the selected Configuration?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);		
+			}
+			
+			private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					
+					var args:Object = new Object();
+					args[RefDataServiceEvent.DELETE_DATASOURCE_ID] = dataSourceGrid.selectedItem.dataSourceName;
+					serviceIdentifier=DELETE_DATASOURCE_EVENT;
+					refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.DELETE_DATASOURCE_COMMAND, args, this);
+					refDataServiceEvent.dispatch();
+				}
+			}
+						
+			private function editConfig(event:ListEvent):void
+        	{
+				if(newButtonEnabled)
+				{
+					isNewConfig = false;
+					var dataSourcePopup:NewDataSourcePopup;
+					
+					popup = PopUpManager.createPopUp(this, NewDataSourcePopup ,true);
+					popup.width = 500;
+					dataSourcePopup = NewDataSourcePopup(popup);  
+					
+					dataSourceConfig = new DataSourceConfigVO();
+					dataSourceConfig.dataSourceId = event.currentTarget.selectedItem.dataSourceId;
+					dataSourceConfig.dataSourceName=event.currentTarget.selectedItem.dataSourceName;
+					dataSourceConfig.dbUrl=event.currentTarget.selectedItem.dbUrl;
+					dataSourceConfig.dbUsername=event.currentTarget.selectedItem.dbUsername;
+					dataSourceConfig.dbPassword=event.currentTarget.selectedItem.dbPassword;
+					dataSourceConfig.dbType=event.currentTarget.selectedItem.dbType;
+					dataSourceConfig.createdBy=event.currentTarget.selectedItem.createdBy;
+					dataSourceConfig.createdDate=event.currentTarget.selectedItem.createdDate;
+			    	
+			    	dataSourcePopup.create(popupClose,popupSave,dataSourceConfig,isNewConfig);
+			    	PopUpManager.centerPopUp(popup);
+		  		}
+            }
+            public function result( event:Object ):void 
+			{
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				switch(serviceIdentifier)
+				{
+					case REFRESH_REF_GRID_EVENT:
+						var dataSourceConfigs : ICollectionView = ICollectionView( event.result );
+						if(isDataSourceConfigEvent)
+						{
+							modelLocator.loadModule(ViewModelLocator.DATA_SOURCE_CONFIG_EVENT);
+							modelLocator.screenName = "Administration > Data Source Configurations";
+							modelLocator.dataSourceConfigs = dataSourceConfigs;
+						}
+						else
+						{
+							DataSourceCache.getInstance().loadDataSourceConfigs(dataSourceConfigs);
+						}
+						break;
+					
+					case DELETE_DATASOURCE_EVENT:
+						Alert.show("Data Source Configuration is deleted successfully!!","Delete Data Source Configuration");
+						refreshConfigs();
+						break;
+						
+					case ADD_DATASOURCE_EVENT:
+						Alert.show("Configurations saved successfully","Save Configuration");
+						refreshConfigs();
+						break;
+					//09-Apr-09 AP Code Added as a part of Generalization of event :Code End						
+				}
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case REFRESH_REF_GRID_EVENT:
+						AlertHelper.displayFault(info,"Data Source Configurations could not be retrieved");
+						break;
+					
+					case DELETE_DATASOURCE_EVENT:
+						AlertHelper.displayFault(info,"Data Source Configuration cannot be deleted");
+						break;
+						
+					case ADD_DATASOURCE_EVENT:
+						AlertHelper.displayFault(info,"Data Source Configuration cannot be added");
+						break;
+				}
+			}
+		    
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		<mx:Button id="newButton" label="@Resource(key='button.DataSourceConfig.newConfig', bundle='TeevraUI')" click="addNewConfig();"/>
+		<mx:Button id="deleteButton" label="@Resource(key='button.DataSourceConfig.deleteSchema', bundle='TeevraUI')" click="deleteConfig();"/>
+		<mx:Button id="refreshButton" label="@Resource(key='button.DataSourceConfig.refreshConfigs', bundle='TeevraUI')" click="refreshConfigs();"/>
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="dataSourceGrid" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" dataProvider="{modelLocator.dataSourceConfigs}" width="100%" height="100%" itemClick="itemClickEvent(event);"  doubleClickEnabled="true" itemDoubleClick="editConfig(event);" creationComplete="setRelativeColWidths();" >
+		<mx:columns>       
+			<mx:DataGridColumn dataField="dataSourceId" headerText="@Resource(key='column.DataSourceConfig.dataSourceId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="dataSourceName" headerText="@Resource(key='column.DataSourceConfig.dataSourceName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="dbUrl" headerText="@Resource(key='column.DataSourceConfig.dbUrl', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="dbUsername" headerText="@Resource(key='column.DataSourceConfig.dbUsername', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="dbType" headerText="@Resource(key='column.DataSourceConfig.dbType', bundle='TeevraUI')"/>
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

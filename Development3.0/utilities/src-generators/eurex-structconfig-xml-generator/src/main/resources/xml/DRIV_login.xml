@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="DRIVLoginAuthorizationDataT">
+		<sequence>
+			<element type="char" name="password" size="8"/>
+			<element type="char" name="applicationId" size="16"/>
+			<element type="char" name="newPw" size="8"/>
+		</sequence>
+	</complexType>
+</struct>

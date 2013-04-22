@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntSLegQuoReqRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntSLegQuoReqRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntSLegQuoReqRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntSLegQuoReqResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntSLegQuoReqRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntSLegQuoReqRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntSLegQuoReqRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntSLegQuoReqResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

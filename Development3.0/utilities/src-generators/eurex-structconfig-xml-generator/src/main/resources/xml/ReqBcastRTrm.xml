@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscReqBcastRTrmRequestT">
+		<sequence>
+			<element type="char" name="reCovBcastTyp"/>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="strtStmSeqNo" size="9"/>
+			<element type="char" name="stopStmSeqNo" size="9"/>
+			<element type="char" name="bcastIntnGapSkipInd"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="reqBcastRTrmRequestT">
+		<sequence>
+			<element type="bscReqBcastRTrmRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscReqBcastRTrmResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="rTrmData" size="3500"/>
+		</sequence>
+	</complexType>
+	<complexType name="reqBcastRTrmResponseT">
+		<sequence>
+			<element type="bscReqBcastRTrmResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

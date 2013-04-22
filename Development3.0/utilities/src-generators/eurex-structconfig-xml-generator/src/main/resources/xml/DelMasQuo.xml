@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="optBscDelMasQuoRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="suppQuoConfInd"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="82"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelMasQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelMasQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelMasQuoRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelMasQuoResponseT">
+		<sequence>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscDelMasQuoRecT" name="optBscDelMasQuoRec" size="82"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelMasQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelMasQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

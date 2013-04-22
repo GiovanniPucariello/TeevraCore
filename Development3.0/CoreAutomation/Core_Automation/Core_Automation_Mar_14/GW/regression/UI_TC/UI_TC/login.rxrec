@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="7909ba09-163a-4b8c-bfef-b9a1682bbfd9" embeddedrepository="false">
+  <name>
+    login
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="login" namespace="UI_TC"/>
+  <variables/>
+  <recorditems>
+    <userrecorditem enabled="True" optional="False" duration="1170ms" methodname="Mouse_Click_ContainerHBox1">
+      <comment>
+      </comment>
+      <bindings/>
+      <internalrecorditem>
+        <mouseitem enabled="True" optional="False" duration="1170ms" action="Click" button="Left" movetime="100ms" sx="747" sy="100" loc="726;5">
+          <comment>
+          </comment>
+          <bindings/>
+          <info sourcename="Recorder" id="eab23c85-6f0a-4fae-9efe-ecad435048e3">
+            <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="21,95,983,23">
+              <attribute name="basetype" type="System.String">
+                <![CDATA[mx.containers::Box]]>
+              </attribute>
+              <attribute name="flexuid" type="System.String">
+                <![CDATA[iceFishClient1.panel.mainArea.ModuleLoader139.ViewProcess140.HBox141]]>
+              </attribute>
+              <attribute name="fulltype" type="System.String">
+                <![CDATA[mx.containers::HBox]]>
+              </attribute>
+              <attribute name="type" type="System.String">
+                <![CDATA[HBox]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container[@type='HBox']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1093ms" action="Click" button="Left" movetime="100ms" sx="820" sy="26" loc="34;5">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="18ded8ae-ab59-4271-a227-a51f12064d8b">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="786,21,64,21">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Logout]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.logoBox.logoutBtn]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::LinkButton]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[logoutBtn]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[LinkButton]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='logoBox']/button[@id='logoutBtn']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <mouseitem enabled="True" optional="False" duration="2217ms" action="Click" button="Left" movetime="100ms" sx="513" sy="412" loc="40;9">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="058981d6-b30f-4eb2-a071-84cc728e64b3">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="473,403,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox58.VBox81.Panel62.authenticationForm.userIdFormItem.TextInput64]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[userIdTextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@id='userIdTextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="484ms" sequence="icefish" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1077ms" action="Click" button="Left" movetime="100ms" sx="513" sy="447" loc="40;15">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="99bc165a-de8a-4298-8c60-d75693da24ab">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="473,432,160,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox58.VBox81.Panel62.authenticationForm.passwordFormItem.TextInput65]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[passwordTextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[2]/text[@id='passwordTextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+    <keysequenceitem enabled="True" optional="False" duration="1859ms" sequence="icefish" presstime="100ms">
+      <comment>
+      </comment>
+      <bindings/>
+    </keysequenceitem>
+    <mouseitem enabled="True" optional="False" duration="1078ms" action="Click" button="Left" movetime="100ms" sx="520" sy="472" loc="47;11">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="347d93e9-e6f4-4135-a12f-143d37fd59b5">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="473,461,71,23">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Submit]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.mainArea.HBox58.VBox81.Panel62.authenticationForm.FormItem78.buttonHbox.Button60]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[Button]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[1]/container/button[@text='Submit']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="UI_TCRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="UI_TCRepository.rxrep">
+    <codegen classname="UI_TCRepository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="VBNet">
+    <![CDATA[login.UserCode.vb]]>
+  </usercodefile>
+  <references/>
+</recordtable>

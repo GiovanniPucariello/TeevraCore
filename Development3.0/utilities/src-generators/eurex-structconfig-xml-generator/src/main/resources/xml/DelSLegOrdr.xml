@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelSLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelSLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelSLegOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelSLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelSLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelSLegOrdrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelSLegOrdrRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelSLegOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelSLegOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelSLegOrdrResponseT">
+		<sequence>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelSLegOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelSLegOrdrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+	<rule name="isnotnullandnotempty" sequence="1"
+		errormsg="reqID is required and can not be null">
+		<input name="operand" value="message.value.reqID" type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="2"
+		errormsg="reqTyp is required and can not be null">
+		<input name="operand" value="message.value.reqTyp" type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="6"
+		errormsg="bizDt is required and can not be null">
+		<input name="operand" value="message.value.bizDt" type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="8"
+		errormsg="pty.ID is required and can not be null">
+		<input name="operand" value="message.value.pty.ID" type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="11"
+		errormsg="pty.r is required and can not be null">
+		<input name="operand" value="message.value.pty.r" type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="12"
+		errormsg="pty.sub.ID is required and can not be null">
+		<input name="operand" value="message.value.pty.sub.ID"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="13"
+		errormsg="pty.sub.typ is required and can not be null">
+		<input name="operand" value="message.value.pty.sub.typ"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="14"
+		errormsg="instrmt.ID is required and can not be null">
+		<input name="operand" value="message.value.instrmt.ID"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="15"
+		errormsg="instrmt.cfi is required and can not be null">
+		<input name="operand" value="message.value.instrmt.cfi"
+			type="constant" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="18"
+		errormsg="instrmt.mmy is required and can not be null">
+		<input name="operand" value="message.value.instrmt.mmy"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="19"
+		errormsg="instrmt.strkPx is required and can not be null">
+		<input name="operand" value="message.value.instrmt.strkPx"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="20"
+		errormsg="instrmt.exch is required and can not be null">
+		<input name="operand" value="message.value.instrmt.exch"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="22"
+		errormsg="qty.typ is required and can not be null">
+		<input name="operand" value="message.value.qty.typ"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="23"
+		errormsg="qty.long is required and can not be null">
+		<input name="operand" value="message.value.qty.long"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="25"
+		errormsg="qty.stat is required and can not be null">
+		<input name="operand" value="message.value.qty.stat"
+			type="input" />
+	</rule>
+</ruleset>

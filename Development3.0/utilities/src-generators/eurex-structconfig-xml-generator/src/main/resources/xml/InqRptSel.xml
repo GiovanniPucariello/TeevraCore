@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqRptSelPosnRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqRptSelRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqRptSelPosnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqRptSelResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqRptSelRecT">
+		<sequence>
+			<element type="char" name="rptIdCod" size="8"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="freqTypCod"/>
+			<element type="char" name="rptNam" size="30"/>
+			<element type="char" name="locCod"/>
+			<element type="char" name="stdRptReqInd"/>
+			<element type="char" name="rawRptReqInd"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqRptSelResponseT">
+		<sequence>
+			<element type="extInqRptSelRecT" name="extInqRptSelRec" size="29"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqRptSelResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqRptSelResponseT" name="basic"/>
+			<element type="extInqRptSelResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

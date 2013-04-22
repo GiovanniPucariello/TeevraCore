@@ -1,0 +1,27 @@
+<MCH>
+    <TFP>
+        <Server
+            providerURL="***unused for Teevra***"
+            initialContextFactory="***unused for Teevra***" />
+        <Batch batchType="SDM">
+            <Managers
+                batchManagerImplClass="com.tfp.manager.GenericBatchManager"
+                partitionManagerImplClass="com.tfp.manager.TediPartitionManager"
+                eventManagerImplClass="***unused for Teevra***"
+                />
+            <Partition>
+                <Delivery />
+                <TEDIParser sourceName="***unused for Teevra***" />
+            </Partition>
+            <Transaction transactionType="SDM">
+                <Delivery>
+                    <JMS
+                        jmsType="***unused for Teevra***"
+                        jndiName="***unused for Teevra***"
+                        connectionFactory="QueueConnectionFactory"
+                        />
+                </Delivery>
+            </Transaction>
+        </Batch>
+    </TFP>
+</MCH>

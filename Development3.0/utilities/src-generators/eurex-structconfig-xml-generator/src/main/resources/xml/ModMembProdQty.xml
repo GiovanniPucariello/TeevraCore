@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscModMembProdQtyGrpT">
+		<sequence>
+			<element type="prodGrpIdGrpT" name="prodGrpIdGrp"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="maxOrdrQty" size="13"/>
+			<element type="char" name="maxCalSprdQty" size="13"/>
+			<element type="char" name="maxWhsQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModMembProdQtyRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscModMembProdQtyGrpT" name="bscModMembProdQtyGrp" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="modMembProdQtyRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModMembProdQtyRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModMembProdQtyRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscModMembProdQtyResponseT">
+		<sequence>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscModMembProdQtyRecT" name="bscModMembProdQtyRec" size="100"/>
+		</sequence>
+	</complexType>
+	<complexType name="modMembProdQtyResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscModMembProdQtyResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

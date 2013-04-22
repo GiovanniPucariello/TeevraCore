@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqGivUpRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="112"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqGivUpRequestT">
+		<sequence>
+			<element type="char" name="trdTyp"/>
+			<element type="txtGrpFiltT" name="txtGrpFilt"/>
+			<element type="origTrnFiltGrpT" name="origTrnFiltGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqGivUpRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqGivUpRequestT" name="basic"/>
+			<element type="futExtInqGivUpRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqGivUpRecT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqGivUpResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqGivUpRecT" name="futBscInqGivUpRec" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqGivUpRecT">
+		<sequence>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrExePrc" size="14"/>
+			<element type="txtGrpFromT" name="txtGrpFrom"/>
+			<element type="txtGrpToT" name="txtGrpTo"/>
+			<element type="origGuTuTrnGrpT" name="origGuTuTrnGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="agrsrMtchInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqGivUpResponseT">
+		<sequence>
+			<element type="futExtInqGivUpRecT" name="futExtInqGivUpRec" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqGivUpResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqGivUpResponseT" name="basic"/>
+			<element type="futExtInqGivUpResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqGivUpRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="112"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqGivUpRequestT">
+		<sequence>
+			<element type="char" name="trdTyp"/>
+			<element type="txtGrpFiltT" name="txtGrpFilt"/>
+			<element type="origTrnFiltGrpT" name="origTrnFiltGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqGivUpRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqGivUpRequestT" name="basic"/>
+			<element type="optExtInqGivUpRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqGivUpRecT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="gutSts"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="lngQty" size="13"/>
+			<element type="char" name="shtQty" size="13"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqGivUpResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqGivUpRecT" name="optBscInqGivUpRec" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqGivUpRecT">
+		<sequence>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrExePrc" size="14"/>
+			<element type="txtGrpFromT" name="txtGrpFrom"/>
+			<element type="txtGrpToT" name="txtGrpTo"/>
+			<element type="origGuTuTrnGrpT" name="origGuTuTrnGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="agrsrMtchInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqGivUpResponseT">
+		<sequence>
+			<element type="optExtInqGivUpRecT" name="optExtInqGivUpRec" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqGivUpResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqGivUpResponseT" name="basic"/>
+			<element type="optExtInqGivUpResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

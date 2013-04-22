@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdLisRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdLisRecT">
+		<sequence>
+			<element type="char" name="prodTypId" size="4"/>
+			<element type="char" name="prodId" size="4"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdLisRecT" name="bscInqProdLisRec" size="987"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

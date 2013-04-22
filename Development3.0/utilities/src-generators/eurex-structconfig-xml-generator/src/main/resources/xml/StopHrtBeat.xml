@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscStopHrtBeatRequestT">
+		<sequence>
+			<element type="char" name="quoDelInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="stopHrtBeatRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscStopHrtBeatRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="stopHrtBeatResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

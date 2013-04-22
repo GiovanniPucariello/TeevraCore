@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="dceee869-f0ff-43ab-bd94-73ce879a7031" embeddedrepository="false">
+  <name>
+    Pro_creation_Enrichers
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    3
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="Pro_creation_Enrichers" namespace="Finetuned"/>
+  <variables/>
+  <recorditems>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="Function1">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="Function2">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="Function3">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+  </recorditems>
+  <repository name="Project25Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="Project25Repository.rxrep">
+    <codegen classname="Project25Repository" namespace="Finetuned"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="CSharp">
+    <![CDATA[Pro_creation_Enrichers.UserCode.cs]]>
+  </usercodefile>
+  <references/>
+</recordtable>

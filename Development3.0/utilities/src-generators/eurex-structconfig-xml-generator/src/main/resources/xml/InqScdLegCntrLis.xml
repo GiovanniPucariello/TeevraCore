@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqScdLegCntrLisRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqScdLegCntrLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqScdLegCntrLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqScdLegCntrLisRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqScdLegCntrLisResponseT">
+		<sequence>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqScdLegCntrLisRecT" name="futBscInqScdLegCntrLisRec" size="250"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqScdLegCntrLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqScdLegCntrLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

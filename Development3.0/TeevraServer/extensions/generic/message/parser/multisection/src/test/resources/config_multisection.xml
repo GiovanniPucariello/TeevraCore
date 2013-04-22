@@ -1,0 +1,43 @@
+<Config>
+	<ConfigName>SampleConfig</ConfigName>
+	<IsHeaderPresent>true</IsHeaderPresent>
+	<HeaderLine>1</HeaderLine>
+	<HeaderOffset>0</HeaderOffset>
+	<!-- HeaderIdentifier></HeaderIdentifier-->
+	<IsSectionHeaderPresent>true</IsSectionHeaderPresent>
+	<SectionHeaderIdentifier>0.*</SectionHeaderIdentifier>
+	<!-- SectionHeaderLine></SectionHeaderLine-->
+	<!-- SectionBodyLine></SectionBodyLine-->
+	<SectionBodyIdentifier>1.*</SectionBodyIdentifier>
+	<GenericHeader>
+		<delimiter>,</delimiter>
+		<binding>
+			<field name="Dept" index="1" />
+			<field name="Org" index="2" />
+		</binding>
+	</GenericHeader>
+	<Sections>
+		<Section>
+			<SectionHeader>
+				<delimiter></delimiter>
+				<binding>
+					<field name="Date" start="2" end="14"/>
+					<field name="CustodyAccount" start="17" end="32"/>
+					<field name="LenderName" start="33" end="50"/>
+					<field name="LenderAccountId" start="51" end="53"/>
+				</binding>
+			</SectionHeader>
+			<SectionBody>
+				<delimiter>\t</delimiter>
+				<binding>
+					<field name="IdentifierType" index="2"/>
+					<field name="SecurityId" index="3"/>
+					<field name="SecurityName" index="4"/>
+					<field name="Quantity" index="5"/>
+					<field name="DepositoryCode" index="6"/>
+					<field name="LenderSubAcAtDepository" index="7"/>
+				</binding>
+			</SectionBody>
+		</Section>
+	</Sections>
+</Config>

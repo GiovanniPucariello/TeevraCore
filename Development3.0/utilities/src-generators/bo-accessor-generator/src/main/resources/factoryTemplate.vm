@@ -1,0 +1,38 @@
+
+package  ${beanAccessorPkg};
+
+import javax.annotation.Generated;
+
+import com.headstrong.fusion.bo.java.BeanAccessor;
+#foreach($className in $registeredClasses)
+import ${beanAccessorPkg}.${fqnSimpleNameMap.get($className)}BeanAccessor;
+#end
+
+#foreach($className in $registeredClasses)
+import ${className};
+#end
+
+public class $className {
+	
+	private $className(){
+		//DefaultContstructor
+	}
+	
+	public static BeanAccessor getBeanAccessor(Object obj){
+		//for each java class registered with this generator, 
+		//create a new Bean Accessor;
+		BeanAccessor accessor = null;
+#foreach($className in $registeredClasses)
+		#if($velocityCount>1)else#end if(obj instanceof $fqnSimpleNameMap.get($className)){
+			accessor = new ${fqnSimpleNameMap.get($className)}BeanAccessor();
+		}
+#end
+		
+		//check if there was a match
+		if(accessor != null){
+			accessor.setTarget(obj);
+		}
+		return accessor;
+	}
+	
+}

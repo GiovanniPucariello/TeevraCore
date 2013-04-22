@@ -1,0 +1,14 @@
+<FIXML r="20030618" s="20040109" v="5.0" xr="FIA" xv="1.1" xmlns="http://www.fixprotocol.org/FIXML-5-0">
+	<PosMntReq ReqID="18AEXR" TxnTyp="1" Actn="1" BizDt="2003-12-04"
+		SetSesID="EOD" TxnTm="2003-09-10T00:00:00">
+		<Pty ID="CME" R="21" />
+		<Pty ID="600" R="4" />
+		<Pty ID="600" R="38">
+			<Sub ID="2" Typ="26" />
+		</Pty>
+		<Instrmt CFI="OCAXXS" Exch="CME" ID="ED" MMY="200412 " 					StrkPx="97.75" />
+		<Undly CFI="FXXXSX" ID="ED" MMY="200412" />
+		<Qty Long="1001" Typ="TQ" />
+	</PosMntReq>
+</FIXML>
+

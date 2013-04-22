@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_MODIFY_AUTOMATIC_EXERCISE_PARAMETERS_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="FIXML-BO" messageType="OPTIONS-REQUEST" structName="optModAutExerParmRequestT">
+        <mappings fixmlClassName="PosMntReq">
+            <selectors>
+                <selector dataType="Int" src="message.value.TxnTyp =1"/>
+                <selector dataType="Int" src="message.value.Actn = 2" preOperator="AND"/>
+                <selector dataType="String" src="message.value.Instrmt.SecTyp=OPT" preOperator="AND"/>
+            </selectors>
+            <map targetDataSize="alphanumeric 1" target="extension.acctTypCodGrp.acctTypNo" type="switch-case">
+                <switch expr="message.value.Pty.ID">
+                    <case value="ACCT_TYP_NO_ONE" targetValue="1"/>
+                    <case value="ACCT_TYP_NO_TWO" targetValue="2"/>
+                    <case value="ACCT_TYP_NO_MKT_AND_PROP" targetValue="P"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Instrmt.CFI" target="basic.genProdId" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" src="message.value.Pty[R=21].ID" target="header.exchApplId" type="simple"/>
+            <map targetDataSize="alphanumeric 7" validationType="m" targetValue="OPT" target="header.prodLine" type="constant"/>
+            <map targetDataSize="alphanumeric 1" targetValue=" " target="extension.itmMinAmntCod" type="constant"/>
+            <map targetDataSize="numeric signed 7, 2" src="message.value.ThresholdAmt" target="extension.itmMinAmnt" type="simple"/>
+            <map targetDataSize="Timestamp" validationType="f" src="message.value.Instrmt.Evnt.Txt" target="basic.dateLstUpdDat" type="simple"/>
+            <map targetDataSize="alphanumeric 1" target="extension.acctTypCodGrp.acctTypCod" type="switch-case">
+                <switch expr="message.value.Pty.R">
+                    <case value="30" targetValue="A"/>
+                    <case value="14" targetValue="G"/>
+                    <case value="66" targetValue="M"/>
+                    <case value="99" targetValue="P"/>
+                </switch>
+            </map>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " target="header.membExchIdCodOboMs" type="constant"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" targetValue=" 2" target="basic.actnCod" type="constant"/>
+        </mappings>
+    </predicate>
+    <predicate mapType="BO-STRUCT" messageType="OPTIONS-REQUEST" structName="optModAutExerParmRequestT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.actnCod">
+                <structField>basic.actnCod</structField>
+            </field>
+            <field name="basic.genProdId">
+                <structField>basic.genProdId</structField>
+            </field>
+            <field name="basic.dateLstUpdDat">
+                <structField>basic.dateLstUpdDat</structField>
+            </field>
+            <field name="extension.itmMinAmnt">
+                <structField>extension.itmMinAmnt</structField>
+            </field>
+            <field name="extension.itmMinAmntCod">
+                <structField>extension.itmMinAmntCod</structField>
+            </field>
+            <field name="extension.acctTypCodGrp.acctTypCod">
+                <structField>extension.acctTypCodGrp.acctTypCod</structField>
+            </field>
+            <field name="extension.acctTypCodGrp.acctTypNo">
+                <structField>extension.acctTypCodGrp.acctTypNo</structField>
+            </field>
+        </binding>
+    </predicate>
+</configuration>

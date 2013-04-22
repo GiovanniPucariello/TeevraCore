@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqSecuMvtRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="csdId" size="6"/>
+			<element type="char" name="csdPldgAcctNo" size="12"/>
+			<element type="char" name="asstPurpCod"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqSecuMvtRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqSecuMvtRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqSecuMvtRecT">
+		<sequence>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="clsPrc" size="14"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="strtBulk" size="16"/>
+			<element type="char" name="withBulk" size="16"/>
+			<element type="char" name="depBulk" size="16"/>
+			<element type="char" name="pendWithBulk" size="16"/>
+			<element type="char" name="crtBulk" size="16"/>
+			<element type="char" name="spcEquCollQty" size="16"/>
+			<element type="char" name="usedSecQty" size="16"/>
+			<element type="char" name="mktValFctr" size="4"/>
+			<element type="char" name="asstPurpCod"/>
+			<element type="char" name="collDispDcml" size="2"/>
+			<element type="char" name="secuTyp" size="4"/>
+			<element type="char" name="csdId" size="6"/>
+			<element type="char" name="csdPldgAcctNo" size="12"/>
+			<element type="char" name="nonEvalRsn" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqSecuMvtResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqSecuMvtRecT" name="bscInqSecuMvtRec" size="30"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqSecuMvtResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqSecuMvtResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

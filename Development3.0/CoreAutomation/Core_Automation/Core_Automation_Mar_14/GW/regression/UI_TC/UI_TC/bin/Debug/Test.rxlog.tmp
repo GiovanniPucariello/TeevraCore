@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="RanorexReport.xsl"?>
+<log title="Ranorex Test Report" rxversion="3.0.2.12718" runtimeversion="2.0.50727.3615">
+<message time="2012/02/02 12:19:52.242" level="INFO" category="User" style="" codefile="C:\Documents and Settings\LNowpada\Desktop\GW\regression\UI_TC\UI_TC\scenario1.UserCode.vb" codeline="124">
+<![CDATA[----------------------------------]]><br/>
+</message>
+<message time="2012/02/02 12:19:52.242" level="INFO" category="User" style="" codefile="C:\Documents and Settings\LNowpada\Desktop\GW\regression\UI_TC\UI_TC\scenario1.UserCode.vb" codeline="125">
+<![CDATA[Started scenario 1]]><br/>
+</message>
+<message time="2012/02/02 12:19:52.273" level="INFO" category="Validation" style="" type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@type='FormItemLabel']/text[@caption='User Name']" fullname="UI_TCRepository.WebDocumentIceFish1.FormForm.TextUser_Name" id="ad0229b3697e47618d8ccecf1b8662b7" timeout="50000" codefile="C:\Documents and Settings\LNowpada\Desktop\GW\regression\UI_TC\UI_TC\scenario1.vb" codeline="81" itemindex="1">
+<![CDATA[Validating AttributeEqual (Text='User Name') on item 'WebDocumentIceFish1.FormForm.TextUser_Name'.]]><br/>
+</message>
+<message time="2012/02/02 12:20:44.774" level="FAILURE" category="Validation" style="" type="repoitem" path="dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container[@id='loginHbox']/container/container/form/container[3]/text[@type='FormItemLabel']/text[@caption='User Name']" fullname="UI_TCRepository.WebDocumentIceFish1.FormForm.TextUser_Name" id="ad0229b3697e47618d8ccecf1b8662b7" timeout="50000" codefile="C:\Documents and Settings\LNowpada\Desktop\GW\regression\UI_TC\UI_TC\scenario1.vb" codeline="82">
+<![CDATA[Attribute 'Text' of element for item 'UI_TCRepository.WebDocumentIceFish1.FormForm.TextUser_Name' does not match the specified value (Failed to find item 'UI_TCRepository.WebDocumentIceFish1.FormForm.TextUser_Name' within the specified timeout of 50s.).]]><br/>
+</message>
+</log>

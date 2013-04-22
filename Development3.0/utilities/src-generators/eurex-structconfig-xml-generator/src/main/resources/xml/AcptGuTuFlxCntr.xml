@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscAcptGuTuFlxCntrRequestT">
+		<sequence>
+			<element type="flxCntrTrnIdGrpT" name="flxCntrTrnIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="acptGuTuFlxCntrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscAcptGuTuFlxCntrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscAcptGuTuFlxCntrResponseT">
+		<sequence>
+			<element type="char" name="flxCntrSynProdId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="acptGuTuFlxCntrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscAcptGuTuFlxCntrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

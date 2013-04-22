@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscSubPrivMembMsgBcastT">
+		<sequence>
+			<element type="char" name="privMembMsgTypCod"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="evntTypCod"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="msgText" size="255"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="prcsStsValCod" size="5"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="subPrivMembMsgBcastT">
+		<sequence>
+			<element type="char" name="stmSeqNo" size="9"/>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscSubPrivMembMsgBcastT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="subPrivMembMsgSubjectT">
+		<sequence>
+			<element type="char" name="membId" size="5"/>
+		</sequence>
+	</complexType>
+</struct>

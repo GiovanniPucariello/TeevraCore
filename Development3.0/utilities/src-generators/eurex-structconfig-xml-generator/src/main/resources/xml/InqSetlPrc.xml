@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqSetlPrcRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="118"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqSetlPrcRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqSetlPrcRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqSetlPrcRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="cntrSetlPrc" size="14"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+			<element type="char" name="cntrSetlPrcDat" size="8"/>
+			<element type="char" name="undrId" size="4"/>
+			<element type="char" name="lstTrdPrc" size="14"/>
+			<element type="char" name="trdDat" size="8"/>
+			<element type="char" name="trdTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqSetlPrcResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqSetlPrcRecT" name="futBscInqSetlPrcRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqSetlPrcRecT">
+		<sequence>
+			<element type="char" name="setlPrcCod"/>
+			<element type="char" name="undrClsPrc" size="14"/>
+			<element type="char" name="lstBidPrc" size="14"/>
+			<element type="char" name="lstAskPrc" size="14"/>
+			<element type="char" name="mgnClsPrc" size="14"/>
+			<element type="char" name="apprCod"/>
+			<element type="char" name="implVol" size="5"/>
+			<element type="char" name="opnInt" size="16"/>
+			<element type="char" name="undrFinSetlPrc" size="14"/>
+			<element type="char" name="finSetlPrcCalcCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqSetlPrcResponseT">
+		<sequence>
+			<element type="futExtInqSetlPrcRecT" name="futExtInqSetlPrcRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqSetlPrcResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqSetlPrcResponseT" name="basic"/>
+			<element type="futExtInqSetlPrcResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSetlPrcRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="118"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqSetlPrcRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqSetlPrcRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSetlPrcRecT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="cntrSetlPrc" size="14"/>
+			<element type="char" name="cntrSetlPrcDat" size="8"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+			<element type="char" name="undrId" size="4"/>
+			<element type="char" name="lstTrdPrc" size="14"/>
+			<element type="char" name="trdDat" size="8"/>
+			<element type="char" name="trdTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSetlPrcResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqSetlPrcRecT" name="optBscInqSetlPrcRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqSetlPrcRecT">
+		<sequence>
+			<element type="char" name="setlPrcCod"/>
+			<element type="char" name="undrClsPrc" size="14"/>
+			<element type="char" name="lstBidPrc" size="14"/>
+			<element type="char" name="lstAskPrc" size="14"/>
+			<element type="char" name="mgnClsPrc" size="14"/>
+			<element type="char" name="apprCod"/>
+			<element type="char" name="implVol" size="5"/>
+			<element type="char" name="opnInt" size="16"/>
+			<element type="char" name="undrFinSetlPrc" size="14"/>
+			<element type="char" name="finSetlPrcCalcCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqSetlPrcResponseT">
+		<sequence>
+			<element type="optExtInqSetlPrcRecT" name="optExtInqSetlPrcRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqSetlPrcResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqSetlPrcResponseT" name="basic"/>
+			<element type="optExtInqSetlPrcResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

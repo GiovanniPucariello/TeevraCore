@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script source="scripts/DateUtilScript.as"/>
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.util.AlertHelper;
+	import mx.collections.ArrayCollection;
+	import com.headstrong.teevra.client.events.UserAdminServiceEvent;
+	import com.headstrong.teevra.client.view.admin.NewRolePopup;
+	import com.headstrong.teevra.client.view.entity.RoleVO;
+	import mx.formatters.DateFormatter;
+	import mx.collections.ICollectionView;
+	import mx.events.CloseEvent;
+	
+	import com.headstrong.teevra.client.events.DataSourceConfigEvent;
+	import mx.core.IFlexDisplayObject;
+	import mx.controls.Alert;
+
+	import mx.managers.PopUpManager;
+  
+            import com.headstrong.teevra.client.model.ViewModelLocator;            
+			import com.headstrong.teevra.client.util.UserEntitlements;
+            
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			
+			private var popup:IFlexDisplayObject;
+			private var role:RoleVO;
+			private var isNewRole:Boolean;
+			private var userAdminServiceEvent:UserAdminServiceEvent;
+			private var selectedRoleId:Number;
+			
+			private var serviceIdentifier:String;			
+			private const GET_ROLES_EVENT:String = "GET_ROLES";
+			private const ADD_ROLE_EVENT:String ="ADD_ROLE";
+			private const DELETE_ROLE_EVENT:String = "DELETE_ROLE";
+			private const GET_ACTIVITIES_EVENT:String = "GET_ACTIVITIES";
+			
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private var newButtonEnabled:Boolean=true;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudRoles))
+				   {
+				   		newButtonEnabled=false;				   						   		
+				   }
+				
+			}
+			private function init():void
+			{
+				authorizePage();
+				deleteButton.enabled = false;
+				newButton.enabled=newButtonEnabled;
+				roleGrid.dataProvider = modelLocator.roles;
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(newButtonEnabled)
+				{
+					deleteButton.enabled = (roleGrid.selectedIndex != -1);
+				}
+	  		}
+	  		// sets width for individual columns
+	  		private function setRelativeColWidths():void
+	  		{
+				roleGrid.columns[0].width = roleGrid.width*.08;
+				roleGrid.columns[1].width = roleGrid.width*.15;
+				roleGrid.columns[2].width = roleGrid.width*.18;
+				roleGrid.columns[3].width = roleGrid.width*.1;
+				roleGrid.columns[4].width = roleGrid.width*.17;
+				roleGrid.columns[5].width = roleGrid.width*.16;
+				roleGrid.columns[6].width = roleGrid.width*.16;
+			}
+			// adds new role
+			private function addRole():void{
+				isNewRole = true;
+				getActivities();
+			}
+			
+			private function openNewRoleConfig():void{
+				var rolePopup:NewRolePopup;
+				
+				popup = PopUpManager.createPopUp(this, NewRolePopup ,true);
+				popup.width = 500;
+				rolePopup = NewRolePopup(popup);  
+				
+				role = new RoleVO();		
+		    	
+		    	rolePopup.create(popupClose,popupSave,role,isNewRole);
+		    	PopUpManager.centerPopUp(popup);
+			}
+			// deletes the selected role
+			private function deleteRole():void{
+			Alert.show("Do you want to delete the selected Role?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);	
+			}
+			//on confirmation for delete role
+			private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					selectedRoleId = roleGrid.selectedItem.roleId;
+					var args:Object = new Object();
+					args[UserAdminServiceEvent.DELETE_ROLE_ID] = selectedRoleId;
+					serviceIdentifier=DELETE_ROLE_EVENT;
+					userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.DELETE_ROLE_COMMAND, args, this);
+					userAdminServiceEvent.dispatch();	 			
+				}
+			}	
+			// refreshes the screen by retrieving roles from database
+			private function refreshRoles():void{
+				serviceIdentifier=GET_ROLES_EVENT;
+				userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.GET_ROLES_COMMAND, null, this);
+				userAdminServiceEvent.dispatch();
+			}
+			// edits the selected role
+			private function editRole(event:Event):void{
+				if(newButtonEnabled)
+				{
+					isNewRole = false;
+					role = RoleVO(event.currentTarget.selectedItem);
+					getActivities();
+				}
+					
+			}
+			private function openEditRoleConfig():void{
+				var rolePopup:NewRolePopup;
+				
+				popup = PopUpManager.createPopUp(this, NewRolePopup ,true);
+				popup.width = 500;
+				rolePopup = NewRolePopup(popup);  
+				
+		    	rolePopup.create(popupClose,popupSave,role,isNewRole);
+		    	PopUpManager.centerPopUp(popup);	
+			}
+			// retrieves activities from database
+			private function getActivities():void{
+				serviceIdentifier=GET_ACTIVITIES_EVENT;
+				userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.GET_ACTIVITIES_COMMAND, null, this);
+				userAdminServiceEvent.dispatch();
+			}
+        	
+        	private function popupClose(event:MouseEvent):void{
+	    		PopUpManager.removePopUp(popup);
+	   		}
+	   		
+	   		private function popupSave():void
+		    {
+		    	var args:Object = new Object();
+				args[UserAdminServiceEvent.ADD_ROLE_ID] = role;
+				serviceIdentifier=ADD_ROLE_EVENT;
+				userAdminServiceEvent = new UserAdminServiceEvent(UserAdminServiceEvent.ADD_ROLE_COMMAND, args, this);
+				userAdminServiceEvent.dispatch();				
+				PopUpManager.removePopUp(popup);	    	
+		    }	
+
+			public function result( event:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case GET_ROLES_EVENT:
+						var roles : ICollectionView = ICollectionView( event.result );
+						modelLocator.roles= roles;
+						modelLocator.loadModule(ViewModelLocator.VIEW_ROLE_SWF);
+						modelLocator.screenName = "Administration > Roles";
+						break;
+						
+					case ADD_ROLE_EVENT:
+						var role:RoleVO = RoleVO(event.result);
+						Alert.show("Role has been added successfully","Save Role");
+						refreshRoles();
+						break;	
+					
+					case DELETE_ROLE_EVENT:
+						Alert.show("Role has been deleted successfully","Delete Role");
+						refreshRoles();
+						break;
+					
+					case GET_ACTIVITIES_EVENT:
+						var activities : ICollectionView = ICollectionView( event.result );
+						modelLocator.activities= activities;
+						if(isNewRole){
+							openNewRoleConfig();
+						}
+						else{
+							openEditRoleConfig();
+						}
+						
+						break;
+											
+				}
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case GET_ROLES_EVENT:
+						AlertHelper.displayFault(info,"Roles could not be retrieved");
+						break;
+						
+					case ADD_ROLE_EVENT:
+						AlertHelper.displayFault(info,"Role cannot be added");
+						break;	
+					
+					case DELETE_ROLE_EVENT:
+						AlertHelper.displayFault(info,"Role cannot be deleted");
+						break;
+					
+					case GET_ACTIVITIES_EVENT:
+						AlertHelper.displayFault(info,"Activities cannot be added");						
+						break;											
+				}
+			}	    
+		    
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		<mx:Button id="newButton" label="@Resource(key='button.ViewRole.new', bundle='TeevraUI')" click="addRole();"/>
+		<mx:Button id="deleteButton" label="@Resource(key='button.ViewRole.delete', bundle='TeevraUI')" click="deleteRole();"/>
+		<mx:Button id="refreshButton" label="@Resource(key='button.ViewRole.refresh', bundle='TeevraUI')" click="refreshRoles();"/>
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="roleGrid" styleName="dataGridStyle" width="100%" height="100%" itemClick="itemClickEvent(event);"  doubleClickEnabled="true" itemDoubleClick="editRole(event);" creationComplete="setRelativeColWidths();" >
+		<mx:columns>       
+			<mx:DataGridColumn dataField="roleId" headerText="@Resource(key='column.ViewRole.roleId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="roleName" headerText="@Resource(key='column.ViewRole.roleName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="roleDesc" headerText="@Resource(key='column.ViewRole.roleDesc', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="roleStatus" headerText="@Resource(key='column.ViewRole.roleStatus', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="activityNames" headerText="@Resource(key='column.ViewRole.activityNames', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdDate" headerText="@Resource(key='column.ViewRole.createDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+			<mx:DataGridColumn dataField="modifiedDate" headerText="@Resource(key='column.ViewRole.modfiedDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

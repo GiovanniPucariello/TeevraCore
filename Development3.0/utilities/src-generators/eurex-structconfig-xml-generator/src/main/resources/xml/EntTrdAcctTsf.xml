@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntTrdAcctTsfRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodFromGrpT" name="acctTypCodFromGrp"/>
+			<element type="acctTypCodToGrpT" name="acctTypCodToGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntTrdAcctTsfRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntTrdAcctTsfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntTrdAcctTsfRequestT" name="basic"/>
+			<element type="futExtEntTrdAcctTsfRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdAcctTsfRecT">
+		<sequence>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="trnVmarAmnt" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdAcctTsfResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="futBscEntTrdAcctTsfRecT" name="futBscEntTrdAcctTsfRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntTrdAcctTsfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntTrdAcctTsfResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdAcctTsfRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodFromGrpT" name="acctTypCodFromGrp"/>
+			<element type="acctTypCodToGrpT" name="acctTypCodToGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntTrdAcctTsfRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntTrdAcctTsfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntTrdAcctTsfRequestT" name="basic"/>
+			<element type="optExtEntTrdAcctTsfRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdAcctTsfRecT">
+		<sequence>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="trnPrmAmnt" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdAcctTsfResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="optBscEntTrdAcctTsfRecT" name="optBscEntTrdAcctTsfRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntTrdAcctTsfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntTrdAcctTsfResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

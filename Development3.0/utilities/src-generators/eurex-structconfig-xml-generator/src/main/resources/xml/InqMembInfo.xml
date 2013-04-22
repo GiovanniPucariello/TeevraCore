@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqMembInfoRequestT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembInfoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembInfoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMembInfoResponseT">
+		<sequence>
+			<element type="char" name="clgMembCurrTypCod" size="3"/>
+			<element type="char" name="membExchAffilTypCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="iseTrdAlwdInd"/>
+			<element type="char" name="occClgAlwdInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqMembInfoResponseT">
+		<sequence>
+			<element type="char" name="membExchLngNam" size="40"/>
+			<element type="char" name="clgMembTypCod"/>
+			<element type="char" name="membRspDpt" size="35"/>
+			<element type="pstAddGrpT" name="pstAddGrp"/>
+			<element type="char" name="membAwvCtry" size="3"/>
+			<element type="clgCtctGrpT" name="clgCtctGrp" size="2"/>
+			<element type="char" name="cmpyCapCurrTypCod" size="3"/>
+			<element type="char" name="cmpyCapDat" size="8"/>
+			<element type="char" name="cmpyCapAmnt" size="16"/>
+			<element type="char" name="clgHseTypCod"/>
+			<element type="char" name="minCmpyCap" size="16"/>
+			<element type="char" name="minMgnColl" size="16"/>
+			<element type="char" name="minClgFun" size="16"/>
+			<element type="char" name="withStopCmpyCapInd"/>
+			<element type="char" name="withStopMgnCollInd"/>
+			<element type="char" name="withStopClgFunInd"/>
+			<element type="givUpCtctGrpT" name="givUpCtctGrp" size="2"/>
+			<element type="cshLimGrpT" name="cshLimGrp" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembInfoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembInfoResponseT" name="basic"/>
+			<element type="extInqMembInfoResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,167 @@
+<userInput>
+	<!-- Install -->
+	<panel order="0">
+				
+		<field type="combo" variable="teevra.apps">
+			<spec txt="Teevra applications">
+				<choice txt="=Teevra Web Application" value="Web" />
+				<choice txt="Teevra Server" value="Server" />
+				<choice txt="Both Web Application and Server" value="Both" />
+			</spec>
+		</field>
+	</panel>
+	<!--
+	<panel order="1">
+
+		<field type="title" bold="false" txt="Installation"
+			id="Select Teevra server components to be installed" />		
+		
+		<field type="combo" variable="teevra.components">
+			<spec txt="Teevra components">
+				<choice txt="LCH.Clearnet SA" value="Euronext" />
+				<choice txt="Eurex Clearing" value="Eurex" />
+				<choice txt="Both LCH.Clearnet SA and Eurex Clearing" value="Both" />
+			</spec>
+		</field>
+
+
+	</panel>
+	-->
+	<panel order="1">
+		
+		<field type="text" align="left" variable="fusion.home">
+			<spec txt="Enter Application Data Home"  size="30" />
+		</field>
+	</panel>
+		
+		
+	<panel order="2">			
+		
+		<field type="combo" variable="teevra.server.cluster">
+			<spec txt="Server App Configuration">
+				<choice txt="Install as Stand Alone Server" value="none" />
+				<choice txt="Install As Cluster" value="true" />
+				
+			</spec>
+		</field>
+	</panel>
+	<panel order="3">
+	
+		
+		<field type="text" align="left" variable="cluster.group.name"
+			conditionid="cluster.selected">
+			<spec txt="Cluster Name" size="30" />
+
+		</field>
+		<field type="space" />
+		<field type="combo" variable="cluster.type"
+			conditionid="cluster.selected">
+			<spec txt="Cluster Type ">
+				<choice txt="master" value="master" set="true" />
+				<choice txt="Slave" value="slave" />
+			</spec>
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="cluster.group.id"
+			conditionid="cluster.selected">
+			<spec txt="Cluster Id" size="30" />			
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="cluster.node.name"
+			conditionid="cluster.selected">
+			<spec txt="Node Name" size="30" />			
+		</field>
+		<field type="space" />
+
+
+	</panel>
+	
+	
+	<panel order="4">
+		<!--  Database Configuration Section -->		
+		
+		<field type="combo" variable="database.type">
+			<spec txt="Database ">
+				<choice txt="Oracle" value="Oracle"  />
+				<choice txt="PostGre SQL" value="Postgres" />
+				<choice txt="Sybase" value="Sybase" />
+			</spec>
+		</field>
+	</panel>
+	<panel order="5">
+		<!--  Database Configuration Section -->
+		
+		<field type="text" align="left" variable="jdbc.url">
+
+			<spec txt="Database URL" size="30"/>			
+
+		</field>
+		
+		<field type="text" align="left" variable="jdbc.username">
+			<spec txt="User Name" size="30" />
+			
+		</field>
+
+		<field type="text" align="left" variable="jdbc.password">
+			<spec txt="Password" size="30" />
+		</field>
+
+		<field type="text" align="left" variable="jdbc.passwordLocation">
+			<spec txt="Password File Location" size="30" />			
+		</field>
+
+	</panel>
+	
+	<panel order="6">
+		
+		<field type="radio" variable="auth.type">
+			<description align="left" id="Authentication Provider" />
+			<spec>
+				<choice txt="Ldap" id="Ldap" value="LDAP" />
+				<choice txt="Database" id="Database" value="DB"
+					 />
+			</spec>
+		</field>
+
+	</panel>
+	
+	
+	<panel order="7">
+		<!--  LDAP Configuration Section -->
+		
+		<field type="text" align="left" variable="ldap.url">
+			<spec txt="Enter LDAP Server URL like ldap://10.200.41.16:10389" size="30"
+				 />
+			
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.root">
+			<spec txt="Root Directory like o=teevra" size="30"  />
+		</field>
+		
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.userName">
+			<spec txt="User Dsn like uid=admin,ou=system" size="30"  />
+			
+		</field>
+		<field type="space" />
+		<field type="text" align="left" variable="ldap.password">
+			<spec txt="Password" size="30" />			
+		</field>
+		
+	</panel>
+	<panel order="8">
+
+		
+
+		<field type="text" align="left" variable="tomcat.home.dir"
+			conditionid="teevra.ui.selected">
+			<spec txt="Teevra Web App Install Directory" size="30"
+				 />
+			
+		</field>
+
+	</panel>
+
+	
+</userInput>

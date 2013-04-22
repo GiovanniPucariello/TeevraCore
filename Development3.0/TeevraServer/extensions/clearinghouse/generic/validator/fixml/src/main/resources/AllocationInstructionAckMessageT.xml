@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<ruleset>
+  <rule name="isnotnullandnotempty" sequence="1" errormsg="ID is required and can not be null">
+    <input name="operand" value="message.value.ID" type="input"/>
+  </rule>  
+   <rule name="isnotnullandnotempty" sequence="2" errormsg="stat is required and can not be null">
+      <input name="operand" value="message.value.stat" type="input"/>
+  </rule> 
+</ruleset>

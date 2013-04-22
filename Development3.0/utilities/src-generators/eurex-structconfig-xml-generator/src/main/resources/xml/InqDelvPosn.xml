@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqDelvPosnRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="236"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDelvPosnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDelvPosnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDelvPosnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="39"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqDelvPosnRecT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="opnLngQty" size="16"/>
+			<element type="char" name="opnShtQty" size="16"/>
+			<element type="char" name="notifQty" size="16"/>
+			<element type="char" name="dsgnOpnLng" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqDelvPosnResponseT">
+		<sequence>
+			<element type="futExtInqDelvPosnRecT" name="futExtInqDelvPosnRec" size="39"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDelvPosnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDelvPosnResponseT" name="basic"/>
+			<element type="futExtInqDelvPosnResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

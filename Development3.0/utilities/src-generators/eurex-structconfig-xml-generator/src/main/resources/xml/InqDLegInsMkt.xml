@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqDLegInsMktGrpT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDLegInsMktRequestT">
+		<sequence>
+			<element type="futBscInqDLegInsMktGrpT" name="futBscInqDLegInsMktGrp" size="152"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDLegInsMktRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDLegInsMktRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDLegInsMktRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="char" name="dblLegBstBidPrc" size="14"/>
+			<element type="char" name="dblLegBstBidQty" size="16"/>
+			<element type="char" name="dblLegBstAskPrc" size="14"/>
+			<element type="char" name="dblLegBstAskQty" size="16"/>
+			<element type="char" name="prcsStsValCod" size="5"/>
+			<element type="char" name="totTrdQty" size="16"/>
+			<element type="char" name="dlyHghPrc" size="14"/>
+			<element type="char" name="dlyLowPrc" size="14"/>
+			<element type="char" name="lstTrdPrc" size="14"/>
+			<element type="char" name="lstTrdQty" size="16"/>
+			<element type="char" name="trdTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDLegInsMktResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqDLegInsMktRecT" name="futBscInqDLegInsMktRec" size="40"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDLegInsMktResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDLegInsMktResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

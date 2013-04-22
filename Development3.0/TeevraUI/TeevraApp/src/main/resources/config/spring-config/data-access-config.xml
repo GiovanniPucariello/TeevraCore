@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+                  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                  http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+
+	<context:property-placeholder location="/WEB-INF/jdbc.properties" />
+	<bean id="dataSource"
+		class="com.headstrong.teevra.datasource.TeevraDataSource"
+		parent="basicDataSource" destroy-method="close">
+		<property name="passwordLocation">
+			<value>${jdbc.passwordLocation}</value>
+		</property>
+		<property name="password">
+			<value>${jdbc.password}</value>
+		</property>
+	</bean>
+
+	<bean id="basicDataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+			<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${jdbc.username}</value>
+		</property>
+	</bean>
+
+	<!-- 
+		<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+		<value>${jdbc.driverClassName}</value>
+		</property>
+		<property name="url">
+		<value>${jdbc.url}</value>
+		</property>
+		<property name="username">
+		<value>${jdbc.username}</value>
+		</property>
+		<property name="password">
+		<value>${jdbc.password}</value>
+		</property>
+		</bean>
+	-->
+
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>
+					com.headstrong.teevra.services.process.eo.ProcessEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.processadmin.eo.ProcessRuntimeEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.component.eo.ComponentEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.component.eo.ComponentConfigEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.schema.eo.MessageSchemaEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.schema.eo.MessageSchemaAttributeEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.process.eo.ProcessServiceConfigurationEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.schema.eo.MessageSchemaRawEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.processadmin.eo.MessageEventlogEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.process.eo.ProcessServiceConfigurationEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.refdata.eo.RefDataConfigEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.refdata.eo.DataSourceConfigEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.serveradmin.eo.ServerConfigEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.serveradmin.eo.ProcessServerEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.statemachine.eo.StateMachineEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.component.eo.ComponentTemplateEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.processadmin.eo.ProcessScheduleEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.useradmin.eo.UserEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.processadmin.eo.ProcessRuntimeEventlogEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.useradmin.eo.RoleEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.useradmin.eo.ActivityEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.useradmin.eo.UserRoleEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.useradmin.eo.RoleActivityEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.userauthorization.eo.MethodEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.userauthorization.eo.ActivityMethodEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.appproperties.eo.TPropertyEO
+				</value>
+				<value>
+					com.headstrong.teevra.services.refdata.eo.CacheReloadScheduleEO
+				</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					${hibernate.dialect}
+				</prop>
+				<prop
+					key="hibernante.transaction.manager_lookup_class">
+					net.sf.hibernante.transaction.
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+
+		</property>
+		<property name="eventListeners">
+			<map>
+				<entry key="merge">
+					<bean
+						class="org.springframework.orm.hibernate3.support.IdTransferringMergeEventListener" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="processDAO"
+		class="com.headstrong.teevra.services.process.dao.impl.ProcessDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="processConfigDAO"
+		class="com.headstrong.teevra.services.process.dao.impl.ProcessServiceConfigurationDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="processRuntimeDAO"
+		class="com.headstrong.teevra.services.processadmin.dao.impl.ProcessRuntimeDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="processRuntimeEventlogDAO"
+		class="com.headstrong.teevra.services.processadmin.dao.impl.ProcessRuntimeEventlogDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="componentDAO"
+		class="com.headstrong.teevra.services.component.dao.impl.ComponentDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="componentConfigDAO"
+		class="com.headstrong.teevra.services.component.dao.impl.ComponentConfigDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="messageSchemaDAO"
+		class="com.headstrong.teevra.services.schema.dao.impl.MessageSchemaDAOImpl"
+		parent="baseDAO">
+		<property name="messageSchemaAttributeDAO">
+			<ref bean="messageSchemaAttributeDAO" />
+		</property>
+		<property name="messageSchemaRawDAO">
+			<ref bean="messageSchemaRawDAO" />
+		</property>
+	</bean>
+
+	<bean id="messageSchemaAttributeDAO"
+		class="com.headstrong.teevra.services.schema.dao.impl.MessageSchemaAttributeDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="messageSchemaRawDAO"
+		class="com.headstrong.teevra.services.schema.dao.impl.MessageSchemaRawDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="messageEventlogDAO"
+		class="com.headstrong.teevra.services.processadmin.dao.impl.MessageEventlogDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="refDataConfigDAO"
+		class="com.headstrong.teevra.services.refdata.dao.impl.RefDataConfigDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="dataSourceConfigDAO"
+		class="com.headstrong.teevra.services.refdata.dao.impl.DataSourceConfigDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="serverConfigDAO"
+		class="com.headstrong.teevra.services.serveradmin.dao.impl.ServerConfigDAOImpl"
+		parent="baseDAO">
+		<property name="processServerDAO">
+			<ref bean="processServerDAO" />
+		</property>
+		<property name="processDAO">
+			<ref bean="processDAO" />
+		</property>
+	</bean>
+
+	<bean id="processServerDAO"
+		class="com.headstrong.teevra.services.serveradmin.dao.impl.ProcessServerDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="stateMachineDAO"
+		class="com.headstrong.teevra.services.statemachine.dao.impl.StateMachineDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="componentTemplateDAO"
+		class="com.headstrong.teevra.services.component.dao.impl.ComponentTemplateDAOImpl"
+		parent="baseDAO" />
+
+	<bean id="processScheduleDAO"
+		class="com.headstrong.teevra.services.processadmin.dao.impl.ProcessScheduleDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="userDAO"
+		class="com.headstrong.teevra.services.useradmin.dao.impl.UserDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="roleDAO"
+		class="com.headstrong.teevra.services.useradmin.dao.impl.RoleDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="activityDAO"
+		class="com.headstrong.teevra.services.useradmin.dao.impl.ActivityDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="userRoleDAO"
+		class="com.headstrong.teevra.services.useradmin.dao.impl.UserRoleDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="roleActivityDAO"
+		class="com.headstrong.teevra.services.useradmin.dao.impl.RoleActivityDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="propertyDAO"
+		class="com.headstrong.teevra.services.appproperties.dao.impl.TPropertyDAOImpl"
+		parent="baseDAO">
+	</bean>
+	
+	<bean id="cacheReloadScheduleDAO"
+		class="com.headstrong.teevra.services.refdata.dao.impl.CacheReloadScheduleDAOImpl"
+		parent="baseDAO">
+	</bean>
+
+	<bean id="baseDAO"
+		class="com.headstrong.teevra.common.dao.hibernate.BaseHibernateDAO">
+		<property name="hibernateTemplate">
+			<ref bean="hibernateTemplate" />
+		</property>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- ========================= SECURITY CONFIGS ========================= -->
+	<bean id="authenticationProviderFactory"
+		class="com.headstrong.teevra.services.userauthentication.provider.AuthenticationProviderFactory">
+		<property name="providerType">
+			<map>
+				<entry key="DB">
+					<ref local="jdbcAuthenticationProvider" />
+				</entry>
+				<entry key="LDAP">
+					<ref local="ldapAuthenticationProvider" />
+				</entry>
+
+			</map>
+		</property>
+	</bean>
+
+	<bean id="contextSource"
+		class="org.springframework.ldap.core.support.LdapContextSource">
+		<property name="url">
+			<value>${ldap.url}</value>
+		</property>
+		<property name="base">
+			<value>${ldap.root}</value>
+		</property>
+		<property name="userDn">
+			<value>${ldap.userName}</value>
+		</property>
+		<property name="password">
+			<value>${ldap.password}</value>
+		</property>
+	</bean>
+
+	<bean id="ldapTemplate"
+		class="org.springframework.ldap.core.LdapTemplate">
+		<constructor-arg ref="contextSource" />
+	</bean>
+
+	<bean id="jdbcAuthenticationProvider"
+		class="com.headstrong.teevra.services.userauthentication.provider.JDBCAuthenticationProvider">
+		<property name="userDAO">
+			<ref bean="userDAO" />
+		</property>
+	</bean>
+
+	<bean id="ldapAuthenticationProvider"
+		class="com.headstrong.teevra.services.userauthentication.provider.LDAPAuthenticationProvider">
+		<property name="ldapTemplate" ref="ldapTemplate" />
+	</bean>
+</beans>

@@ -1,0 +1,808 @@
+<?xml version="1.0"?>
+  
+    <mx:Application  creationComplete="loadInitialState()"  horizontalScrollPolicy="auto" paddingBottom="0" paddingLeft="0" paddingTop="3" paddingRight="0"  xmlns:mx="http://www.adobe.com/2006/mxml"  width="100%" height="100%" layout="vertical" 
+    xmlns:view="com.headstrong.teevra.client.view.entity.*"
+    xmlns:control="com.headstrong.teevra.client.control.*"
+    xmlns:business="com.headstrong.teevra.client.business.*"
+    implements="mx.rpc.IResponder" applicationComplete="initApp();" > 
+	
+	
+    <mx:Script>
+    	<![CDATA[
+    		import com.headstrong.teevra.components.common.TeevraUIComponentsID;
+    	    import mx.managers.HistoryManager;
+    		import mx.messaging.messages.ErrorMessage;
+    		import mx.rpc.events.FaultEvent;
+    		import mx.events.ItemClickEvent;
+    		import com.headstrong.teevra.client.util.InputDialog;
+    		import mx.managers.PopUpManager;
+    		import mx.controls.RadioButton;
+    		import mx.controls.RadioButtonGroup;
+    		import mx.core.IFlexDisplayObject;
+    		import flash.net.navigateToURL;
+    		import mx.validators.StringValidator;
+    		import com.headstrong.teevra.client.util.UserEntitlements;
+    		import com.headstrong.teevra.client.view.entity.UserVO;
+    		import mx.containers.FormItem;
+    		import mx.controls.TextInput;
+    		import mx.controls.Button;
+    		import mx.containers.Form;
+    		import mx.messaging.AbstractConsumer;
+    		import mx.events.CollectionEvent;
+    		import flash.sampler.getSize;
+    		import com.headstrong.teevra.client.graph.model.StateMachineGraphLinkVO;
+    		import com.headstrong.teevra.client.graph.model.StateMachineLinkVO;
+    		import com.headstrong.teevra.client.graph.model.StateMachineGraphNodeVO;
+    		import com.headstrong.teevra.client.graph.common.GraphCanvasItem;
+    		import com.headstrong.teevra.client.graph.common.Line;
+    		import com.headstrong.teevra.client.graph.common.Designer;
+    		import flash.utils.getQualifiedClassName;
+    		import mx.formatters.SwitchSymbolFormatter;
+    		import com.adobe.cairngorm.control.CairngormEvent;
+    		import mx.controls.Menu;
+    		import com.headstrong.teevra.client.model.SchemaCache;
+    		import com.headstrong.teevra.client.view.entity.SchemaAttributeVO;
+    		import com.headstrong.teevra.client.graph.model.ProcessGraphLinkVO;
+	    	import flash.display.Loader;
+    		import mx.modules.ModuleBase;
+    		import mx.modules.IModuleInfo;
+    		import mx.modules.Module;
+    		import mx.modules.ModuleManager;
+    		import mx.collections.ArrayCollection;
+    		import mx.managers.DragManager;
+    		import mx.events.MenuEvent;
+    		import mx.controls.Alert;
+    		import mx.resources.ResourceBundle;
+    		import mx.styles.StyleManager;
+    		import com.headstrong.teevra.client.events.*;    	
+    		import com.headstrong.teevra.client.model.ViewModelLocator;    		
+    		import com.headstrong.teevra.client.graph.model.ComponentConfigurationVO;
+    		import com.headstrong.teevra.client.graph.model.ComponentVO;
+    		import com.headstrong.teevra.client.view.entity.ProcessVO;    		
+    		import com.headstrong.teevra.client.graph.model.ProcessGraphVO;
+    		import com.headstrong.teevra.client.graph.model.ProcessGraphNodeVO;
+			import com.headstrong.teevra.client.util.UIModules;
+			import mx.modules.ModuleLoader;
+ 	     	import mx.events.ModuleEvent;
+    		private var _skin:String;
+    	    private var changeSkin:String="Change Skin";
+    		private var viewProcess:String="View Process";
+    		private var newProcess:String="New Process";
+    		private var drawingProcess:String="Drawing Process";
+    		private var viewSchema:String="View Schema";
+    		private var viewStateMachine:String="View StateMachine";
+    		private var processStauts:String = "Processes Status";
+    		private var systemPerformanceReports:String = "System Performance Reports";
+    		private var configuredReports:String = "Configured Reports";
+    		private var generateReports:String = "Generate Reports";
+    		private var errorReporting:String = "Error Reporting";
+    		private var components:String = "Components";
+    		private var componentExtension:String = "Component Extension";
+    		private var releaseProcss:String="Release Process";
+    		private var dataSource:String = "DataSource";
+    		private var refData:String="Reference Data";
+    		private var serverAdmin:String="Server Admin";
+    		private var userAdmin:String="User Admin";
+    		private var roles:String="Roles";
+    		private var iDragManager:DragManager;
+    		private var compVO:ComponentVO;
+    		private var compConfigVO:ComponentConfigurationVO;
+    		private var loader:Loader;
+			private var schemaCache:SchemaCache;    		    		
+    		private var designer:Designer = new Designer();   
+    		
+    		private var processGraphVO:ProcessGraphVO = new ProcessGraphVO();
+   			private var processGraphNodeVO:ProcessGraphNodeVO;
+    		private var processGraphLinkVO:ProcessGraphLinkVO;
+    		private var stateGraphNodeVO:StateMachineGraphNodeVO;
+    		private var stateGraphLinkVO:StateMachineGraphLinkVO;
+    		
+            private var boxes:ArrayCollection;
+			private var lines:ArrayCollection;
+			private var newLine:Line;
+	
+			private static var processGraphVOcounter:uint=0; 
+			private static var processGraphNodeVOcounter:uint=0;
+			private static var processGraphNodeLinkVOcounter:uint=0;
+			private var item:GraphCanvasItem;
+			private var loopCounter:uint=0;
+				
+			[Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			
+    		private var point1:Point = new Point();
+            private var processModelMenu:Menu;
+			private var processManagementMenu:Menu;
+   			private var reportsMenu:Menu;
+			private var exceptionHandlingMenu:Menu;
+			private var adminMenu:Menu;
+      		private var activeMenu:Menu = null;
+      		private var activeNavLabel:Label = null;      		
+      		private var isServerAdminFlag:Boolean;
+      		private var serverConfigEvent:ViewServerConfigurationEvent;      		
+      		public var modules:ArrayCollection=new ArrayCollection();
+      		
+      		private var processModelMenuData:Array=new Array();
+      		private var processManagementMenuData:Array=new Array();
+      		private var exceptionHandlingMenuData:Array=new Array();
+      		private var adminMenuData:Array=new Array();
+      		private var reportsMenuData:Array=new Array();
+      		// module to be loaded upon login , based on user roles and activities
+      		private var defaultModule:String="";
+      		private var loginHBOX:HBox;
+      		private var userIdTextInput:TextInput;
+      		private var passwordTextInput:TextInput;
+      		private var serviceIdentifier:String;
+      		private const LOGIN_EVENT:String = "LOGIN_EVENT";
+      		private const LOGOUT_EVENT:String = "LOGOUT_EVENT";
+      		private var userEntitlements:UserEntitlements;  
+      		private var errorMsgLbl:Label;
+      		private var userSettingPopUp:IFlexDisplayObject;
+      		private var themeName:String="css/greyThemeStyles.swf";
+      		private var _historyManager:HistoryManager;
+      	    public var moduleLoader:ModuleLoader;
+      		
+      /* 
+      (Redmine Feature # 589) initApp loads the RanorexModule need for automation of flex application.      
+      */	
+      		public function initApp():void{
+               var rxloader : Loader = new Loader();   
+               Application.application.rawChildren.addChild(rxloader);   
+               rxloader.name = "__rxloader";   
+               rxloader.width = 0; rxloader.height = 0;   
+               rxloader.load(new URLRequest("RanorexModule.swf"));
+               loadDummyDataGrid();
+             }
+        
+        /*
+       (Redmine Feature # 589) loads the HiddenDataGrid Module which contains dummy invisible datagrid.
+        */     
+             
+         public function loadDummyDataGrid() : void 
+		{		
+			moduleLoader = new ModuleLoader();
+			moduleLoader.applicationDomain = ApplicationDomain.currentDomain;
+			moduleLoader.url = "HiddenDataGrid.swf";
+			moduleLoader.addEventListener(ModuleEvent.READY, onDummyModuleLoad);
+			moduleLoader.loadModule();
+	        mainArea.addChild(moduleLoader);
+		}
+		
+	  public function onDummyModuleLoad(e:ModuleEvent):void
+		{
+			moduleLoader.percentHeight = 0;
+			moduleLoader.percentWidth = 0;					
+		}
+             
+
+      		private function init():void{
+      			
+      			authorizePage();	      		     		
+      			populateMainMenu();  
+      			logoutBtn.visible=true;
+      			themeBtn.visible=true;
+      			applicationControlBar.visible=true;
+      			openScreen(defaultModule);
+      		}
+      		public function reloadPage():void
+      		{
+      			var ref:URLRequest = new URLRequest("javascript:location.reload(true)");
+      			navigateToURL(ref,"_self");
+      		}
+      		private function authorizePage():void
+      		{
+      			// ToDo: remove this      			
+      			userEntitlements=new UserEntitlements();
+      			modelLocator.userEntitlements=userEntitlements;
+      			
+      		}
+      		private function populateMainMenu():void{
+      			
+      			if(!userEntitlements.isAdmin){
+      						
+      				if(!userEntitlements.pModelMenu) {
+      					 
+      					 navigationCanvas.removeChild(tabPModeling);
+      					 navigationCanvas.removeChild(nav_processModel);	
+      					 
+      			    }
+      			    else
+      			    {
+      			    	populateProcessModelingMenuItems(); 
+      			    }
+      			   
+      			    if(!userEntitlements.pStatusMenu) {      					  
+      					  navigationCanvas.removeChild(tabPManager);
+      					  navigationCanvas.removeChild(nav_processManagement);
+      					 
+      			    }
+      			    else
+      			    {
+      			    	populateProcessManagement();
+      			    }
+      			    
+      			    if(!userEntitlements.errorMonitorMenu) {      					  
+      					  navigationCanvas.removeChild(tabExceptionH);
+      					  navigationCanvas.removeChild(nav_exceptionHandling);
+      					 
+      			    }
+      			    else
+      			    {
+      			    	populateMonitorConsole();
+      			    }
+      			    if(!userEntitlements.adminMenu) {
+      					  
+      					  navigationCanvas.removeChild(tabAdmin);
+      					  navigationCanvas.removeChild(nav_admin);
+      					 
+      			    }
+      			    else
+      			    {
+      			    	populateAdministration();
+      			    }
+      			}
+      			else
+      			{
+      				populateAllMenuItems();
+      				defaultModule=viewProcess;
+      			}
+      		} 	
+      		private function populateAllMenuItems():void
+      		{
+      			processModelMenuData=[{label: "View Process"},{label: "View Schema"},
+      					{label: "View StateMachine"},{label: "DataSource"},
+      					{label: "Reference Data"}];
+      			processManagementMenuData=[{label: "Processes Status"}];
+      			exceptionHandlingMenuData=[{label: "Error Reporting"}];
+      			adminMenuData=[{label: "Components"},{label: "User Admin"},
+      								{label: "Roles"},{label: "Server Admin"}]; 
+      			//,{label: "Change Skin"}
+      		}
+      		private function populateProcessModelingMenuItems():void{
+      			  
+      			   if(userEntitlements.viewProcess)
+                   {                  		
+                   		processModelMenuData.push({label: "View Process"});                    		
+                   		defaultModule=viewProcess;
+                   		              		
+                   } 
+                   if(userEntitlements.viewSchema)
+                   {
+                   		processModelMenuData.push({label: "View Schema"});
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=viewSchema;
+                   		}
+                   		
+                   }  
+                   if(userEntitlements.viewStateMachine)
+                   {                   		
+                   		processModelMenuData.push({label: "View StateMachine"}); 
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=viewStateMachine;
+                   		}                  		
+                   }
+                   if(userEntitlements.viewDataSource)
+                   {                   		
+                   		processModelMenuData.push({label: "DataSource"}); 
+                   		
+                   		if(defaultModule=="")
+                   		{
+                   			
+                   			defaultModule=dataSource;
+                   		}                  		
+                   }
+                   if(userEntitlements.viewRefData)
+                   {                   		
+                   		processModelMenuData.push({label: "Reference Data"});
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=refData;
+                   		}                 		
+                   }
+      		}
+      		private function populateProcessManagement():void{
+      			   
+      			   if(userEntitlements.viewPublishedProcess){                  		
+                   		
+                   	  processManagementMenuData.push({label: "Processes Status"});   
+                   	  if(defaultModule=="")
+                   		{
+                   			defaultModule=processStauts;
+                   		}               		
+                   } 
+                   
+      		}
+      		private function populateMonitorConsole():void{
+      			   if(userEntitlements.viewErrorLog )
+                   {                  		
+                   		exceptionHandlingMenuData.push({label: "Error Reporting"}); 
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=errorReporting;
+                   		}                		
+                   } 
+                   
+      		}
+      		private function populateAdministration():void{
+      			 
+      			  if(userEntitlements.viewComponents)
+                   {                  		
+                   		adminMenuData.push({label: "Components"});  
+                   		
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=components;
+                   		}              		
+                   }
+                   if(userEntitlements.viewUsers)
+                   {   
+                   		adminMenuData.push({label: "User Admin"});  
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=userAdmin;
+                   		}                   		
+                   }
+                   
+                   if(userEntitlements.viewRoles)
+                   {  
+                   		adminMenuData.push({label: "Roles"});  
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=roles;
+                   		}                   		
+                   }
+                   if(userEntitlements.viewServers)
+                   {                   		
+                   		adminMenuData.push({label: "Server Admin"});  
+                   		if(defaultModule=="")
+                   		{
+                   			defaultModule=serverAdmin;
+                   		}                   		
+                   }
+      		}
+      		private function  setDefaultTheme():void
+      		{
+      			changeTheme(resourceManager.getString('TeevraUI', 'teevra.DefaultStyesheet.url'));
+      		}
+      		
+      		private function loadInitialState():void {
+     			applicationControlBar.visible=false;
+      			this.horizontalScrollPolicy="off";
+				this.verticalScrollPolicy="off";
+				loginScreen();
+      		} 
+      		//creates the login screen which also displays the given label over login screen
+      		public function loginScreen(errLblMsg:String=null):void
+      		{
+      			loginHBOX = new HBox();
+      			loginHBOX.percentWidth=100;
+      			loginHBOX.percentHeight=100;
+      			var buttonHBox:HBox = new HBox();
+      			var okbutton:Button = new Button();
+      			var cancelbutton:Button = new Button();
+      			var loginPanel:Panel = new Panel();
+      			var loginForm:Form = new Form();
+      		
+      			loginForm.name="authenticationForm";
+      			loginForm.defaultButton=okbutton;
+      			userIdTextInput = new TextInput();
+      			//(Redmine Feature # 589) ID of flex components is set so that it can be uniquely identified by Ranorex
+      			userIdTextInput.id=TeevraUIComponentsID.USER_ID;
+      			passwordTextInput = new TextInput();
+      			//(Redmine Feature # 589) ID of flex components is set so that it can be uniquely identified by Ranorex
+      			passwordTextInput.id=TeevraUIComponentsID.PASSWORD_ID;
+      			passwordTextInput.displayAsPassword = true;
+      			
+      			var userId:StringValidator = new StringValidator();
+      			userId.property="text";
+      			userId.source=userIdTextInput;
+      			
+      			var password:StringValidator = new StringValidator();
+      			password.property="text";
+      			password.source=passwordTextInput;
+      			      			
+      			var useridFormItem:FormItem = new FormItem();
+      			useridFormItem.name="userIdFormItem";
+      			useridFormItem.label=resourceManager.getString('TeevraUI', 'label.teevra.userName');
+      			useridFormItem.addChild(userIdTextInput);
+            			
+      			var passwordFormItem:FormItem = new FormItem();
+      			passwordFormItem.name="passwordFormItem";
+      			passwordFormItem.label=resourceManager.getString('TeevraUI', 'label.teevra.password');
+      			passwordFormItem.addChild(passwordTextInput);
+      			
+      			loginForm.addChild(useridFormItem);
+      			loginForm.addChild(passwordFormItem);
+      		
+      			buttonHBox.name="buttonHbox";
+      			okbutton.label=resourceManager.getString('TeevraUI', 'label.teevra.submit');
+      			okbutton.addEventListener(MouseEvent.CLICK,validateUser);
+      			cancelbutton.label=resourceManager.getString('TeevraUI', 'label.teevra.reset');
+      			cancelbutton.addEventListener(MouseEvent.CLICK,resetForm);
+      			buttonHBox.addChild(okbutton);
+      			buttonHBox.addChild(cancelbutton);
+      			
+      			var buttonFormItem:FormItem = new FormItem();
+      			buttonFormItem.addChild(buttonHBox);
+      			loginForm.addChild(buttonFormItem);
+      			
+      			loginPanel.addChild(loginForm);
+      			loginHBOX.id="loginHbox";
+      			loginPanel.styleName="panelStyle1";
+      			loginPanel.title=resourceManager.getString('TeevraUI', 'label.teevra.loginPage');
+      			
+      			var loginVBox:VBox = new VBox();
+      			errorMsgLbl = new Label();
+      			errorMsgLbl.visible=false;
+      			if(errLblMsg != null)
+      			{
+      				errorMsgLbl.visible=true;
+      				errorMsgLbl.setStyle("color","#FF0000");
+      				errorMsgLbl.text=errLblMsg;
+      			}
+      			
+      			errorMsgLbl.setStyle("horizontalAlign","center");
+      			loginVBox.addChild(errorMsgLbl);
+      			loginVBox.addChild(loginPanel)
+      			
+      			loginHBOX.addChild(loginVBox);
+      			loginHBOX.setStyle("verticalAlign","middle");
+      			loginHBOX.setStyle("horizontalAlign","center");
+      			mainArea.addChild(loginHBOX); 
+      			logoutBtn.visible=false;
+      			themeBtn.visible=false;
+      			applicationControlBar.visible=false;
+      			
+      		}     		
+      		
+   			private function createAndShowMenu(menu:Menu, menuData:Array, navItem:Label):void {
+   				if (menu == null) {
+   					menu = Menu.createMenu(navigationCanvas, menuData, true);
+   					menu.styleName = "navigationMenuStyle";	                
+	                menu.addEventListener("itemClick", menuHandler);
+   				}
+   				if ((activeMenu != null) && (activeMenu == menu)) {
+   					//no change in menu
+   					return;
+   				}
+   				if (activeMenu != null) {
+   					activeMenu.setVisible(false);
+   					activeNavLabel.styleName = "navigationLabelStyle";
+   				}
+   				activeMenu = menu;
+   				activeNavLabel = navItem;
+   				activeNavLabel.styleName = "activeNavigationLabelStyle";
+				point1.x = navItem.x;
+            	point1.y = navItem.y;                
+            	menu.show(point1.x+35, point1.y + 65);
+   			}
+            // Create and display the Menu control.
+            private function showProcessModelMenu():void {
+                                  
+              	createAndShowMenu(processModelMenu, processModelMenuData, nav_processModel);
+            }
+            private function showProcessManagementMenu():void {
+                createAndShowMenu(processManagementMenu, processManagementMenuData, nav_processManagement);
+            }
+            private function showReportsMenu():void {
+               // createAndShowMenu(reportsMenu, reportsMenuData, nav_reports);
+            }
+
+            private function showExceptionHandlingMenu():void {
+                createAndShowMenu(exceptionHandlingMenu, exceptionHandlingMenuData, nav_exceptionHandling);
+            }
+            private function showAdminMenu():void {
+               createAndShowMenu(adminMenu, adminMenuData, nav_admin);
+            }
+            // Event handler for the Menu control's change event.
+            private function menuHandler(event:MenuEvent):void  {
+               
+                openScreen(event.item.label);
+            }            
+       		public function loadScreen(): void
+			{
+				if (mainArea.getChildren().length > 0) {
+					mainArea.removeAllChildren();
+				}
+				mainArea.addChild(ViewModelLocator.getInstance().moduleLoader);
+			}			
+			
+    		public function openScreen(label:String):void
+    		{
+    			modelLocator.screenName = "";
+    			if(label==componentExtension)
+    			{
+    				
+				}
+    			if(label==newProcess)
+    			{
+    				
+    			}
+    			if(label==drawingProcess)
+    			{
+    				
+					//menuControlBar.visible="true";
+    			}
+    			if(label==viewSchema)
+    			{
+    				var viewSchema:ViewSchemaEvent = new ViewSchemaEvent();
+    				viewSchema.dispatch();
+    			}
+    			if(label==viewProcess)
+    			{
+    				var viewProcessEvent:ViewProcessEvent = new ViewProcessEvent();
+					viewProcessEvent.dispatch();
+				}
+    			if(label==processStauts)
+    			{		 
+    				var processStatusEvent:ProcessStatusEvent = new ProcessStatusEvent();
+    				processStatusEvent.dispatch();
+    				
+    				//to store the server configs in cache
+    				isServerAdminFlag = false;
+    				serverConfigEvent = new ViewServerConfigurationEvent(isServerAdminFlag);
+    				serverConfigEvent.dispatch();
+    			}
+    			if(label==systemPerformanceReports)
+    			{
+    			}
+    			if(label==configuredReports)
+    			{
+    			}
+    			if(label==generateReports)
+    			{
+    			}
+    			if(label==errorReporting)
+    			{   
+    				var errroReportingEvent:ErrorReportingEvent = new ErrorReportingEvent();
+    				errroReportingEvent.dispatch();
+    			}
+    			if(label==components)
+    			{
+    				var isViewComponentEvent:Boolean=true;
+    				var viewComponentEvent:ViewComponentEvent = new ViewComponentEvent(isViewComponentEvent);
+    				viewComponentEvent.dispatch();
+    			}
+    			if(label==componentExtension)
+    			{
+    			}
+    			if(label==releaseProcss)
+    			{
+    			}
+    			if(label==dataSource)
+    			{
+    				var isDataSourceConfigEvent:Boolean = true;
+    				var dataSourceConfigEvent:DataSourceConfigEvent = new DataSourceConfigEvent(isDataSourceConfigEvent);
+    				dataSourceConfigEvent.dispatch();
+    			}
+    			if(label==refData)
+    			{
+    				var refDataConfigEvent:RefDataConfigEvent = new RefDataConfigEvent();
+    				refDataConfigEvent.dispatch();
+    				
+    				//to store the server configs in cache
+    				serverConfigEvent = new ViewServerConfigurationEvent(false);
+    				serverConfigEvent.dispatch();
+    				
+    			}
+    			if(label==serverAdmin)
+    			{
+    				isServerAdminFlag = true;
+    				serverConfigEvent = new ViewServerConfigurationEvent(isServerAdminFlag);
+    				serverConfigEvent.dispatch();
+    			}
+    			if(label==viewStateMachine)
+				{
+					var viewStateMachineEvent:ViewStateMachineEvent = new ViewStateMachineEvent();
+					viewStateMachineEvent.dispatch();
+				}
+				if(label==userAdmin)
+				{
+					var viewUserEvent:ViewUserEvent = new ViewUserEvent();
+					viewUserEvent.dispatch();
+				}
+				if(label==roles)
+				{
+					var viewRoleEvent:ViewRoleEvent = new ViewRoleEvent();
+					viewRoleEvent.dispatch();
+				}
+				
+
+    		}
+    		private function changeThemes():void{
+    			
+    			var userSettingVBox:VBox = new VBox();
+    			var greyThemHBox:HBox = new HBox();
+    			    			
+				var themeRadioButtonGroup:RadioButtonGroup = new RadioButtonGroup();
+				var greyRadio:RadioButton = new RadioButton();
+				var greenRadio:RadioButton = new RadioButton();
+				
+
+				greyRadio.label=resourceManager.getString('TeevraUI', 'label.teevra.greyLabel.label');
+				greyRadio.selected=true;
+				themeName="css/greyThemeStyles.swf";
+				greyRadio.value=resourceManager.getString('TeevraUI','label.teevra.greyLabel.value');
+				greyRadio.group=themeRadioButtonGroup;
+				
+				greenRadio.label=resourceManager.getString('TeevraUI', 'label.teevra.greenLabel.label');
+				greenRadio.value=resourceManager.getString('TeevraUI', 'label.teevra.greenLabel.value');
+				greenRadio.group=themeRadioButtonGroup;
+				
+				themeRadioButtonGroup.addEventListener(ItemClickEvent.ITEM_CLICK,changeThemeColor);
+				
+				userSettingVBox.addChild(greyRadio);
+				userSettingVBox.addChild(greenRadio);
+				
+				userSettingPopUp = PopUpManager.createPopUp(DisplayObject(this), InputDialog, true, null);
+	       		(InputDialog(userSettingPopUp)).create("Theme Settings", userSettingVBox, okHandlerFunction, cancelHandlerFunction, "Ok", "Cancel");
+
+    		}
+    		private function changeThemeColor(event:ItemClickEvent):void
+			{
+				var selectIndex:int=0;
+				
+				if(event.currentTarget.selectedValue=="Gray")
+				{
+					themeName="css/greyThemeStyles.swf";
+				}
+				else if(event.currentTarget.selectedValue=="Green")
+				{
+					themeName="css/greenThemeStyles.swf";
+				}
+				
+			}
+    		public function okHandlerFunction(e:Event):void
+			{
+				changeTheme(themeName);
+				PopUpManager.removePopUp(userSettingPopUp);
+			}
+			public function cancelHandlerFunction(event:MouseEvent):void
+			{
+	    		PopUpManager.removePopUp(userSettingPopUp);
+	    	}
+    		private function changeTheme(skinUrl:String ):void
+			{
+				  if (_skin != null)
+				  {
+				    StyleManager.unloadStyleDeclarations(_skin, true);
+				  }
+				  _skin = skinUrl;
+				  StyleManager.loadStyleDeclarations(_skin, true); 
+			}
+			private function logout():void
+			{
+				serviceIdentifier=LOGOUT_EVENT;
+				var authenticationUserEvent:UserAuthenticationEvent=new UserAuthenticationEvent(UserAuthenticationEvent.LOGOUT_COMMAND, null, this);
+				authenticationUserEvent.dispatch();
+			}
+			private function resetForm(event:Event):void
+			{
+				userIdTextInput.text="";
+				userIdTextInput.setFocus();
+				passwordTextInput.text="";
+				errorMsgLbl.text="";
+				errorMsgLbl.visible=false;				
+			}
+			private function validateUser(event:MouseEvent):void
+			{
+				if(userIdTextInput.text.length>0 && passwordTextInput.text.length>0)
+				{	
+					var args:Object = new Object();
+	    			args[UserAuthenticationEvent.GET_USER_ID]=userIdTextInput.text;
+					args[UserAuthenticationEvent.GET_PASSWORD]=passwordTextInput.text;
+					serviceIdentifier=LOGIN_EVENT;
+					var authenticationUserEvent:UserAuthenticationEvent=new UserAuthenticationEvent(UserAuthenticationEvent.GET_LOGIN_COMMAND , args, this);
+					authenticationUserEvent.dispatch();
+				}
+				else
+				{
+					mainArea.removeChild(loginHBOX);
+					errorMsgLbl.setStyle("color","#FF0000");
+					var errorMsgLblText:String=resourceManager.getString('TeevraUI', 'label.teevra.loginInfoMissing');
+					loginScreen(errorMsgLblText);
+					errorMsgLbl.visible=true;
+				
+				}
+				
+			}
+			public function result( event:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case LOGIN_EVENT:
+						var user:UserVO = UserVO( event.result );
+						modelLocator.loggedInUser = user;
+						
+						mainArea.removeChild(loginHBOX);
+						/*
+						if(defaultModule=="")
+						{
+							defaultModule=viewProcess;
+						}
+						*/
+						
+						init();		
+						applicationControlBar.visible=true;
+						break;
+						
+					case LOGOUT_EVENT:
+						reloadPage();
+//						applicationControlBar.visible=false;
+//						loginScreen();
+						break;
+				}
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case LOGIN_EVENT:
+						mainArea.removeChild(loginHBOX);
+						errorMsgLbl.setStyle("color","#FF0000");
+						
+						var faultEvent : FaultEvent = FaultEvent( info );
+						var errorMessage:ErrorMessage = faultEvent.message as ErrorMessage;
+						var exceptionName:String = errorMessage.rootCause.name;
+						var errorMsgLblText:String ="";
+						if((exceptionName!=null) && (exceptionName == 'InactiveUserException')){
+							errorMsgLblText=resourceManager.getString('TeevraUI', 'label.teevra.inactiveUser');
+						}
+						else{
+							errorMsgLblText=resourceManager.getString('TeevraUI', 'label.teevra.loginFailed');	
+						}
+						loginScreen(errorMsgLblText);
+						errorMsgLbl.visible=true;
+						//Alert.show(event.fault.faultString);	
+					
+					case LOGOUT_EVENT:
+				}	
+			}
+    		
+    	]]>
+    	    	
+    </mx:Script>
+    <mx:Style source="css/greenThemeStyles.css" />   
+    <mx:Metadata>
+        [ResourceBundle("TeevraUI")]
+    </mx:Metadata> 
+    
+    <control:TeevraUIController id="controller" />
+    <business:Services id="Services" />
+
+	<mx:Panel id="panel" styleName="panelStyle" width="99%" height="99%" >
+ 	<mx:HBox id="logoBox" width="100%" paddingTop="0"> 	
+ 		<mx:Spacer width="75%"/>
+ 		<!--<mx:Image source="images/logout.png" verticalAlign="top" horizontalAlign="right" click="logout();"/> -->
+ 		<mx:HBox id="logoutHBox" paddingTop="9"> 	
+ 		<mx:LinkButton id ="logoutBtn" label="Logout" click="logout()" paddingTop="0"/>
+ 		<mx:LinkButton id="themeBtn" label="Switch Theme" click="changeThemes()" paddingTop="0"/>	
+ 		</mx:HBox>
+ 		 <mx:Image source="images/Teevra.png" verticalAlign="top" horizontalAlign="left" />
+ 			<!--mx:Image source="images/logo.png" horizontalAlign="left"/-->
+ 	</mx:HBox>
+ 	<mx:ApplicationControlBar id="applicationControlBar"  dock="false" width="100%" height="30" paddingTop="0" paddingBottom="0" paddingLeft="20" paddingRight="0" autoLayout="false" >
+    <mx:HBox paddingTop="2" horizontalGap="2" id="navigationCanvas" width="100%" height="100%" borderThickness="0" borderStyle="none">
+		<mx:Image id="tabPModeling" source="images/gTab01.png" alpha="0.5"/>
+		<mx:Label id="nav_processModel" click="showProcessModelMenu()" mouseOver="showProcessModelMenu()" styleName="navigationLabelStyle" text="Process Modeling "  fontWeight="bold" paddingTop="3" width="15%" />
+		<mx:Image id="tabPManager" source="images/gTab02.png"  alpha="0.5"/>
+		<mx:Label id="nav_processManagement" click="showProcessManagementMenu()" mouseOver="showProcessManagementMenu()" styleName="navigationLabelStyle"  text="Process Management " fontWeight="bold" paddingTop="3" width="17%"/>
+		<mx:Image id="tabExceptionH" source="images/gTab04.png"  alpha="0.5"/>
+		<mx:Label id="nav_exceptionHandling" click="showExceptionHandlingMenu()" mouseOver="showExceptionHandlingMenu()" styleName="navigationLabelStyle"  text="Monitoring Console " fontWeight="bold" paddingTop="3" width="16%"/>
+		<mx:Image id="tabAdmin" source="images/gTabAdmin.png"  alpha="0.5"/>
+		<mx:Label id="nav_admin" click="showAdminMenu()" mouseOver="showAdminMenu()" styleName="navigationLabelStyle"  text="Administration " fontWeight="bold" paddingTop="3" width="15%"/>
+		<!--
+		<mx:Image id="tabReports" source="images/gTabReports.png"  alpha="0.5" enabled="false"/>
+		<mx:Label id="nav_reports" click="showReportsMenu()" mouseOver="showReportsMenu()" enabled="false" mouseEnabled="false" styleName="navigationLabelStyle"  text="Reports " fontWeight="bold" paddingTop="3" width="10%"/>
+		-->
+	</mx:HBox>
+    
+    </mx:ApplicationControlBar> 
+    <mx:Spacer height="5">      	
+    </mx:Spacer>
+    <mx:VBox id="mainArea" width="100%" height="100%" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0" borderStyle="solid" cornerRadius="6" borderColor="black" borderThickness="0">
+	</mx:VBox>
+    </mx:Panel>
+</mx:Application> 	

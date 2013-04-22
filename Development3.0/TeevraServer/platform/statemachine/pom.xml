@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>teevra.platform.parent</artifactId>
+		<groupId>com.hs.fusion</groupId>
+		<version>2.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>fusion-statemachine</artifactId>
+	<version>${platform.version}</version>
+	<packaging>bundle</packaging>
+	<name>Finite State Machine.</name>
+	<description>Finite State Machine.</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.fusion.external</groupId>
+			<artifactId>commons-scxml</artifactId>
+			<version>0.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-jexl</groupId>
+			<artifactId>commons-jexl</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>
+				com.springsource.org.apache.commons.beanutils
+			</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>
+				com.springsource.org.apache.commons.digester
+			</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>com.springsource.javax.el</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>com.springsource.javax.servlet.jsp</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xalan</groupId>
+			<artifactId>com.springsource.org.apache.xalan</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.bcel</groupId>
+			<artifactId>com.springsource.org.apache.bcel</artifactId>
+			<version>5.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>
+				com.springsource.org.apache.commons.el
+			</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-commons</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-dbpool</artifactId>
+			<version>${platform.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>
+							com.headstrong.fusion.statemachine.activator.StateMachineActivator
+						</Bundle-Activator>
+						<Import-Package>
+							<!--   Dependencies "org.apache.commons.logging.impl,
+								org.apache.commons.scxml.semantics" 
+								had to added manually as these are not directly being referenced 
+								in the classes but while de-serialzing SCXMLExecutor instance these 
+								classes are required. -->
+							*,org.apache.commons.logging.impl,org.apache.commons.scxml.semantics
+						</Import-Package>
+						<Export-Package>
+							com.headstrong.fusion.statemachine.*
+						</Export-Package>
+						<Start-Level>3</Start-Level>
+						<Component-Version>2.1.0</Component-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

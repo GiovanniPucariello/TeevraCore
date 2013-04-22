@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqSLegInsMktRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="247"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqSLegInsMktRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqSLegInsMktRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqSLegInsMktRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="bstOrdrGrpT" name="bstOrdrGrp"/>
+			<element type="bstQuoOrdrGrpT" name="bstQuoOrdrGrp"/>
+			<element type="char" name="totTrdQty" size="16"/>
+			<element type="char" name="lstClsPrc" size="14"/>
+			<element type="char" name="lstSetlPrc" size="14"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+			<element type="char" name="cntrStsValCod"/>
+			<element type="char" name="prcsStsValCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqSLegInsMktResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqSLegInsMktRecT" name="futBscInqSLegInsMktRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqSLegInsMktRecT">
+		<sequence>
+			<element type="char" name="prcTypInd"/>
+			<element type="char" name="dlyHghPrc" size="14"/>
+			<element type="char" name="dlyLowPrc" size="14"/>
+			<element type="char" name="lstTrdPrc" size="14"/>
+			<element type="char" name="lstTrdQty" size="16"/>
+			<element type="char" name="lstAuctPrc" size="14"/>
+			<element type="char" name="trdTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqSLegInsMktResponseT">
+		<sequence>
+			<element type="futExtInqSLegInsMktRecT" name="futExtInqSLegInsMktRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqSLegInsMktResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqSLegInsMktResponseT" name="basic"/>
+			<element type="futExtInqSLegInsMktResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSLegInsMktRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="123"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqSLegInsMktRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqSLegInsMktRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSLegInsMktRecT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="bstOrdrGrpT" name="bstOrdrGrp"/>
+			<element type="bstQuoOrdrGrpT" name="bstQuoOrdrGrp"/>
+			<element type="char" name="totTrdQty" size="16"/>
+			<element type="char" name="lstClsPrc" size="14"/>
+			<element type="char" name="lstSetlPrc" size="14"/>
+			<element type="char" name="setlDispDcml" size="2"/>
+			<element type="char" name="cntrStsValCod"/>
+			<element type="char" name="prcsStsValCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqSLegInsMktResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqSLegInsMktRecT" name="optBscInqSLegInsMktRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqSLegInsMktRecT">
+		<sequence>
+			<element type="char" name="prcTypInd"/>
+			<element type="char" name="dlyHghPrc" size="14"/>
+			<element type="char" name="dlyLowPrc" size="14"/>
+			<element type="char" name="lstTrdPrc" size="14"/>
+			<element type="char" name="lstTrdQty" size="16"/>
+			<element type="char" name="lstAuctPrc" size="14"/>
+			<element type="char" name="trdTim" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqSLegInsMktResponseT">
+		<sequence>
+			<element type="optExtInqSLegInsMktRecT" name="optExtInqSLegInsMktRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqSLegInsMktResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqSLegInsMktResponseT" name="basic"/>
+			<element type="optExtInqSLegInsMktResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

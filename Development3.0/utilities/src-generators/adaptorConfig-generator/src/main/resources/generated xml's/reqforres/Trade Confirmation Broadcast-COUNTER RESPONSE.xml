@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_SUBSCRIBE_TRADE_CONFIRMATION" namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="FIXMLToCStruct"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-REQUEST" structName="optBscSubTrdConfSubjectT">
+        <binding>
+            <field name="basic.membId">
+                <structField>basic.membId</structField>
+            </field>
+            <field name="basic.prodId">
+                <structField>basic.prodId</structField>
+            </field>
+            <field name="basic.cntrExpYrDat">
+                <structField>basic.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.cntrExpMthDat">
+                <structField>basic.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.cntrClasCod">
+                <structField>basic.cntrClasCod</structField>
+            </field>
+            <field name="basic.cntrExerPrc">
+                <structField>basic.cntrExerPrc</structField>
+            </field>
+            <field name="basic.cntrVersNo">
+                <structField>basic.cntrVersNo</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-REQUEST" structName="optBscSubTrdConfSubjectT">
+        <mappings fixmlClassName="TrdCaptRptReq">
+            <map targetDataType="Int" targetValue="0" target="message.value.ReqTyp" type="constant"/>
+            <map targetDataType="String" targetValue="1" target="message.value.SubReqTyp" type="constant"/>
+            <map targetDataType="String" targetValue="1" target="message.value.Instrmt.Evnt.EventTyp " type="constant"/>
+            <map targetDataSize="numeric 1" validationType="m" targetDataType="String" targetValue="0" src="basic.cntrVersNo" target="message.value.Instrmt.OptAt" type="constant"/>
+            <map targetDataSize="numeric 2" validationType="m" targetDataType="Date" src="basic.cntrExpMthDat" target="message.value.Instrmt.MatDt[:Mth]" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="Date" src="basic.cntrExpYrDat" target="message.value.Instrmt.MatDt[:Yr]" type="simple"/>
+            <map targetDataSize="numeric 6" validationType="m" targetDataType="Float" src="basic.cntrExerPrc" target="message.value.Instrmt.StrkPx" type="simple"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" targetDataType="String" src="basic.membId" target="message.value.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="String" src="basic.prodId" target="message.value.Instrmt.CFI" type="simple"/>
+            <map targetDataSize="alphanumeric 1" validationType="m" targetDataType="String" target="message.value.Instrmt.Evnt.EventTyp" type="switch-case">
+                <switch expr="basic.cntrClasCod">
+                    <case value="P" targetValue="1"/>
+                    <case value="C" targetValue="2"/>
+                </switch>
+            </map>
+        </mappings>
+    </predicate>
+    <predicate mapType="STRUCT-BO" messageType="FUTURES-REQUEST" structName="futBscSubTrdConfSubjectT">
+        <binding>
+            <field name="basic.membId">
+                <structField>basic.membId</structField>
+            </field>
+            <field name="basic.prodId">
+                <structField>basic.prodId</structField>
+            </field>
+            <field name="basic.cntrExpYrDat">
+                <structField>basic.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.cntrExpMthDat">
+                <structField>basic.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.subjFill">
+                <structField>basic.subjFill</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="FUTURES-REQUEST" structName="futBscSubTrdConfSubjectT">
+        <mappings fixmlClassName="TrdCaptRptReq">
+            <map targetDataType="Int" targetValue="0" target="message.value.ReqTyp" type="constant"/>
+            <map targetDataType="String" targetValue="1" target="message.value.SubReqTyp" type="constant"/>
+            <map targetDataType="String" targetValue="null" target="message.value.Instrmt.Evnt.EventTyp" type="constant"/>
+            <map targetDataSize="numeric 2" validationType="m" targetDataType="Date" src="basic.cntrExpMthDat" target="message.value.Instrmt.MatDt[:Mth]" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="Date" src="basic.cntrExpYrDat" target="message.value.Instrmt.MatDt[:Yr]" type="simple"/>
+            <map targetDataSize="alphanumeric 8" validationType="r" targetValue="        " src="basic.subjFill" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="m" targetDataType="String" src="basic.membId" target="message.value.Pty[R=1].ID" type="simple"/>
+            <map targetDataSize="alphanumeric 4" validationType="m" targetDataType="String" src="basic.prodId" target="message.value.Instrmt.CFI" type="simple"/>
+        </mappings>
+    </predicate>
+</configuration>

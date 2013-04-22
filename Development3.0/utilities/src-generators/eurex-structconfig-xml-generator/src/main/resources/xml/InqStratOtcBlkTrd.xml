@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqStratOtcBlkTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratOtcBlkTrdRecT">
+		<sequence>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="blkTrdStsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqStratOtcBlkTrdResponseT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="stratEquLegGrpT" name="stratEquLegGrp"/>
+			<element type="stratTrdNoGrpT" name="stratTrdNoGrp"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="bscInqStratOtcBlkTrdRecT" name="bscInqStratOtcBlkTrdRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqStratOtcBlkTrdRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membClgIdCod" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqStratOtcBlkTrdResponseT">
+		<sequence>
+			<element type="extInqStratOtcBlkTrdRecT" name="extInqStratOtcBlkTrdRec" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqStratOtcBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqStratOtcBlkTrdResponseT" name="basic"/>
+			<element type="extInqStratOtcBlkTrdResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

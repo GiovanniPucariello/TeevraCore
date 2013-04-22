@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscModGivUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtModGivUpOrdrRequestT">
+		<sequence>
+			<element type="txtGrpToT" name="txtGrpTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="futModGivUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscModGivUpOrdrRequestT" name="basic"/>
+			<element type="futExtModGivUpOrdrRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futModGivUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscModGivUpOrdrRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCodFrom" size="5"/>
+			<element type="char" name="membExchIdCodFrom" size="5"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtModGivUpOrdrRequestT">
+		<sequence>
+			<element type="txtGrpToT" name="txtGrpTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModGivUpOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscModGivUpOrdrRequestT" name="basic"/>
+			<element type="optExtModGivUpOrdrRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optModGivUpOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

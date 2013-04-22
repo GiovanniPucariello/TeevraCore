@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntTrdSprnRecT">
+		<sequence>
+			<element type="char" name="trnLngQty" size="16"/>
+			<element type="char" name="trnShtQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdSprnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscEntTrdSprnRecT" name="futBscEntTrdSprnRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntTrdSprnRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntTrdSprnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntTrdSprnRequestT" name="basic"/>
+			<element type="futExtEntTrdSprnRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdSprnRecResT">
+		<sequence>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="trnVmarAmnt" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntTrdSprnResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscEntTrdSprnRecResT" name="futBscEntTrdSprnRecRes" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntTrdSprnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntTrdSprnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdSprnRecT">
+		<sequence>
+			<element type="char" name="trnLngQty" size="16"/>
+			<element type="char" name="trnShtQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdSprnRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trnIdSfxKeyGrpT" name="trnIdSfxKeyGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscEntTrdSprnRecT" name="optBscEntTrdSprnRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntTrdSprnRequestT">
+		<sequence>
+			<element type="txtGrpT" name="txtGrp" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntTrdSprnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntTrdSprnRequestT" name="basic"/>
+			<element type="optExtEntTrdSprnRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdSprnRecResT">
+		<sequence>
+			<element type="trnIdSfxGrpT" name="trnIdSfxGrp"/>
+			<element type="char" name="trnPrmAmnt" size="16"/>
+			<element type="char" name="trnFeeAmnt" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntTrdSprnResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscEntTrdSprnRecResT" name="optBscEntTrdSprnRecRes" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntTrdSprnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntTrdSprnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

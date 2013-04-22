@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+	<rule name="isnotnullandnotempty" sequence="14"
+		errormsg="instrmt.ID is required and can not be null">
+		<input name="operand" value="message.value.instrmt.iD"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="15"
+		errormsg="instrmt.cfi is required and can not be null">
+		<input name="operand" value="message.value.instrmt.cfi"
+			type="constant" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="18"
+		errormsg="instrmt.mmy is required and can not be null">
+		<input name="operand" value="message.value.instrmt.mmy"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="19"
+		errormsg="instrmt.strkPx is required and can not be null">
+		<input name="operand" value="message.value.instrmt.strkPx"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="20"
+		errormsg="instrmt.exch is required and can not be null">
+		<input name="operand" value="message.value.instrmt.exch"
+			type="input" />
+	</rule>
+
+</ruleset>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqGuarPosnRequestT">
+		<sequence>
+			<element type="char" name="guaId" size="5"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="asstPurpCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqGuarPosnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqGuarPosnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqGuarPosnResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqGuarPosnRecT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="guarNo" size="4"/>
+			<element type="char" name="guaId" size="5"/>
+			<element type="char" name="guarBegDat" size="8"/>
+			<element type="char" name="guarExpDat" size="8"/>
+			<element type="char" name="guarGrsAmnt" size="9"/>
+			<element type="char" name="guarCollAmnt" size="9"/>
+			<element type="char" name="guarText" size="20"/>
+			<element type="char" name="gtorEvalPcnt" size="3"/>
+			<element type="char" name="asstPurpCod"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqGuarPosnResponseT">
+		<sequence>
+			<element type="extInqGuarPosnRecT" name="extInqGuarPosnRec" size="27"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqGuarPosnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqGuarPosnResponseT" name="basic"/>
+			<element type="extInqGuarPosnResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

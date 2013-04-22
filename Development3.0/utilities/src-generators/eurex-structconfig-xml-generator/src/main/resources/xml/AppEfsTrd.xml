@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscAppEfsTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAppEfsTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAppEfsTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscAppEfsTrdResponseT">
+		<sequence>
+			<element type="char" name="trdNo" size="6"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futAppEfsTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscAppEfsTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

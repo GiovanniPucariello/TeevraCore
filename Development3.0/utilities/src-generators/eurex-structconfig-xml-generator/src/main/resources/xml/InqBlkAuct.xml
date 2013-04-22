@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqBlkAuctRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="118"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqBlkAuctRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqBlkAuctRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqBlkAuctRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="blkAuctStsCod"/>
+			<element type="char" name="blkAuctStrtTim" size="8"/>
+			<element type="char" name="blkAuctQty" size="16"/>
+			<element type="blkAuctPotPrcGrpT" name="blkAuctPotPrcGrp"/>
+			<element type="char" name="membRtng" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqBlkAuctResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqBlkAuctRecT" name="futBscInqBlkAuctRec" size="40"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqBlkAuctResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqBlkAuctResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqBlkAuctRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="118"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqBlkAuctRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqBlkAuctRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqBlkAuctRecT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="blkAuctStsCod"/>
+			<element type="char" name="blkAuctStrtTim" size="8"/>
+			<element type="char" name="blkAuctQty" size="16"/>
+			<element type="blkAuctPotPrcGrpT" name="blkAuctPotPrcGrp"/>
+			<element type="char" name="membRtng" size="2"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqBlkAuctResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqBlkAuctRecT" name="optBscInqBlkAuctRec" size="40"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqBlkAuctResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqBlkAuctResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

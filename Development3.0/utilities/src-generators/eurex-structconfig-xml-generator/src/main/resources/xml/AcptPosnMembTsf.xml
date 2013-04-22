@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscAcptPosnMembTsfRequestT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="acptPosnMembTsfRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscAcptPosnMembTsfRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscAcptPosnMembTsfResponseT">
+		<sequence>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="extAcptPosnMembTsfResponseT">
+		<sequence>
+			<element type="char" name="confCodMembClgIdFrom"/>
+			<element type="char" name="confCodMembExchIdFrom"/>
+			<element type="char" name="confCodMembClgIdTo"/>
+			<element type="char" name="confCodMembExchIdTo"/>
+		</sequence>
+	</complexType>
+	<complexType name="acptPosnMembTsfResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscAcptPosnMembTsfResponseT" name="basic"/>
+			<element type="extAcptPosnMembTsfResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

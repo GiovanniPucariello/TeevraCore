@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="cd72bd95-4e4f-4dbe-a0e7-8376701a2d00" embeddedrepository="false">
+  <name>
+    Converter
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="Converter" namespace="trial"/>
+  <variables/>
+  <recorditems>
+    <userrecorditem enabled="True" optional="False" duration="0ms" methodname="test">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+  </recorditems>
+  <repository name="trialRepository" id="831dc363-9ce7-495d-96ce-281d008ba28a" rxversion="3.0.2.12718" relativepath="trialRepository.rxrep">
+    <codegen classname="trialRepository" namespace="trial"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="VBNet">
+    <![CDATA[Converter.UserCode.vb]]>
+  </usercodefile>
+  <references/>
+</recordtable>

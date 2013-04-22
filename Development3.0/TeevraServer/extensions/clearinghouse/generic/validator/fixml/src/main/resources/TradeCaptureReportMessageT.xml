@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+	
+	<rule name="isnotnullandnotempty" sequence="2"
+		errormsg="instrmt.cfi is required and can not be null">
+		<input name="operand" value="message.value.instrmt.cfi"
+			type="input" />
+	</rule>	
+	<rule name="isnotnullandnotempty" sequence="6"
+		errormsg="lastQty is required and can not be null">
+		<input name="operand" value="message.value.lastQty"
+			type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="7"
+		errormsg="lastPx is required and can not be null">
+		<input name="operand" value="message.value.lastPx" type="input" />
+	</rule>
+	<rule name="isnotnullandnotempty" sequence="8"
+		errormsg="rptSide.side is required and can not be null">
+		<input name="operand" value="message.value.rptSide.side"
+			type="input" />
+	</rule>
+</ruleset>

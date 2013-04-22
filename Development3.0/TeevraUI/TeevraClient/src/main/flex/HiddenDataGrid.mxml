@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute"  width="0" height="0" initialize="initData();"  >
+	
+   <mx:Script>
+   <![CDATA[
+   	import mx.controls.dataGridClasses.DataGridColumn; 
+    import mx.collections.*;
+
+      private var DGArray:Array = [
+         {x:''}];
+         
+      [Bindable]
+      public var initDG:ICollectionView;
+      public function initData():void {
+           initDG=ICollectionView(new ArrayCollection(DGArray)); 
+        
+      }                     
+      
+   ]]>
+   </mx:Script>
+   
+   
+   <!-- (Redmine Feature # 589) ranorexDataGrid is a dummy invisible datagrid this is loaded directly in teevraClient.mxml(Application Tag) so that
+   other teevra dataGrids can be identified by Ranorex testing Tool when loaded later. -->
+
+   <mx:DataGrid editable="false" visible="false" styleName="dataGridStyle"  headerStyleName="dataGridheaderStyle" id="ranorexDataGrid" width="0" height="0"  dataProvider="{initDG}" >
+      <mx:columns>
+         <mx:DataGridColumn  dataField="x" headerText="x" />      
+      </mx:columns> 
+   </mx:DataGrid>
+	
+</mx:Module>

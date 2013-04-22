@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqProdStscRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdStscRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdStscRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdStscRecT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="undrPrc" size="14"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqProdStscResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqProdStscRecT" name="bscInqProdStscRec" size="90"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqProdStscRecT">
+		<sequence>
+			<element type="char" name="undrPrcRcvCod"/>
+			<element type="char" name="futTotTrdQty" size="16"/>
+			<element type="char" name="callTotTrdQty" size="16"/>
+			<element type="char" name="putTotTrdQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqProdStscResponseT">
+		<sequence>
+			<element type="extInqProdStscRecT" name="extInqProdStscRec" size="90"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqProdStscResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqProdStscResponseT" name="basic"/>
+			<element type="extInqProdStscResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

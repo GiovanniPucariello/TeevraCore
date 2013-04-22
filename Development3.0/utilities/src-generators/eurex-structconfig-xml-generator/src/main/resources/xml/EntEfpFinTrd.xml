@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntEfpFinTrdRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="membCtpyIdCod" size="5"/>
+			<element type="char" name="undrIsinCod" size="12"/>
+			<element type="char" name="nomVal" size="9"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="futPrc" size="14"/>
+			<element type="char" name="hdgeTyp" size="3"/>
+			<element type="char" name="setlDat" size="8"/>
+			<element type="char" name="setlInst" size="2"/>
+			<element type="cshLegEfpFinGrpT" name="cshLegEfpFinGrp"/>
+			<element type="char" name="cshPrcEfpFin" size="7"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntEfpFinTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntEfpFinTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntEfpFinTrdResponseT">
+		<sequence>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="exchRat" size="16"/>
+			<element type="cshLegEfpFinGrpT" name="cshLegEfpFinGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntEfpFinTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntEfpFinTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

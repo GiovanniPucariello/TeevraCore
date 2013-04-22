@@ -1,0 +1,22 @@
+
+STATUS | wrapper  | 2009/07/09 12:40:55 | --> Wrapper Started as Console
+STATUS | wrapper  | 2009/07/09 12:40:55 | Java Service Wrapper Community Edition 32-bit 3.3.5
+STATUS | wrapper  | 2009/07/09 12:40:55 |   Copyright (C) 1999-2009 Tanuki Software, Ltd.  All Rights Reserved.
+STATUS | wrapper  | 2009/07/09 12:40:55 |     http://wrapper.tanukisoftware.org
+STATUS | wrapper  | 2009/07/09 12:40:55 | 
+STATUS | wrapper  | 2009/07/09 12:40:55 | Launching a JVM...
+INFO   | jvm 1    | 2009/07/09 12:40:56 | TestWrapper: Initializing...
+INFO   | jvm 1    | 2009/07/09 12:40:56 | WrapperManager: Initializing...
+INFO   | jvm 1    | 2009/07/09 12:40:57 | TestWrapper: start()
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper: ActionServer Enabled. 
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:   Telnet localhost 9999
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:   Commands: 
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     S: Shutdown
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     H: Expected Halt
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     R: Restart
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     D: Thread Dump
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     U: Unexpected Halt (Simulate crash)
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     V: Access Violation (Actual crash)
+INFO   | jvm 1    | 2009/07/09 12:40:58 | TestWrapper:     G: Make the JVM appear to be hung.
+INFO   | jvm 1    | 2009/07/09 12:41:52 | TestWrapper: stop(0)
+STATUS | wrapper  | 2009/07/09 12:41:54 | <-- Wrapper Stopped

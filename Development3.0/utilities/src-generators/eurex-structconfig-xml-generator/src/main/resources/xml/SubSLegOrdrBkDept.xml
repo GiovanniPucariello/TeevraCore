@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscSubSLegOrdrBkDeptPubBcastT">
+		<sequence>
+			<element type="bstOrdrGrpT" name="bstOrdrGrp" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="futSubSLegOrdrBkDeptPubBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscSubSLegOrdrBkDeptPubBcastT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscSubSLegOrdrBkDeptSubjectT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="subjFill" size="8"/>
+		</sequence>
+	</complexType>
+</struct>

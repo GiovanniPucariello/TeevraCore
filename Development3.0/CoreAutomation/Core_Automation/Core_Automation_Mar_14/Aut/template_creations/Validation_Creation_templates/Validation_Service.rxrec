@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="d75cdab9-3088-46de-bffa-41c4a77a34c9" embeddedrepository="false">
+  <name>
+    Validation_Service
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    10
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="Validation_Service" namespace="Validation_Creation_templates"/>
+  <variables/>
+  <recorditems>
+    <userrecorditem enabled="True" optional="False" duration="812ms" methodname="Records_ValidationService">
+      <comment>
+      </comment>
+      <bindings/>
+    </userrecorditem>
+    <mouseitem enabled="True" optional="False" duration="1140ms" action="Click" button="Left" movetime="300ms" sx="289" sy="248" loc="68;10">
+      <comment>
+      </comment>
+      <bindings/>
+      <info sourcename="Recorder" id="f4c5e818-9e96-46db-a55f-a75b43d69f91">
+        <element role="text" prefcap="text" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="221,238,170,23">
+          <attribute name="selectionlength" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectionstart" type="System.Int32">
+            <![CDATA[0]]>
+          </attribute>
+          <attribute name="selectiontext" type="System.String">
+          </attribute>
+          <attribute name="text" type="System.String">
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.core::UIComponent]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[ComponentConfigurationContainer21012.ValidatorConfigUI21025.VBox21026.HBox21033.ComboBox21034.TextInput21040]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::TextInput]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[TextInput]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/container/container[2]/container[1]/combobox/text[@type='TextInput']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="parsersRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="parsersRepository.rxrep">
+    <codegen classname="parsersRepository" namespace="Validation_Creation_templates"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <references/>
+</recordtable>

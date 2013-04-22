@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1' ?>
+
+<!-- 
+    This ant build file is for building the data loader application .
+    You must have ant 1.6.1 to run this build. 
+    Each target has a comment node above it, explaining what the tag does.
+-->
+<project name="DataLoader" default="listTasks" basedir=".">
+
+	<!-- Set global properties for this build. -->
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="target.dir" value="${basedir}/target" />
+	<property name="jars.dir" value="${basedir}/lib" />
+	<property name="resources.dir" value="${basedir}/resources" />
+
+
+
+	<!-- Creating a reference for the classpath to build the application -->
+	<path id="dataloader.class.path">
+		<fileset dir="${jars.dir}">
+			<include name="*.*" />
+		</fileset>
+	</path>
+
+	<!-- Creates directory structure requied for the build. -->
+	<target description="Creates directory structure for build" name="init">
+		<!-- Creating the dte directory inside build, which will be removed when someone wants to clean
+             using ant clean. -->
+		<echo message="Creating output folders">
+		</echo>
+		<mkdir dir="${build.dir}/classes" />
+	</target>
+
+	<!-- Creates a clean env. by deleting build outputs. -->
+	<target description="Cleans classes and dist directory." name="clean">
+		<echo message="Cleaning up build." />
+		<delete dir="${build.dir}" />
+	</target>
+
+	<!-- Compiles all the java source files. -->
+	<target description="Compiles all the source files." name="compile" depends="init">
+		<echo message="Compiling java source." />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="dataloader.class.path" optimize="on" debug="on">
+			<include name="**/*.java" />
+		</javac>
+	</target>
+
+	<path id="build-classpath">
+	   <fileset dir="${jars.dir}">
+	      <include name="*.jar"/>
+	   </fileset>
+	</path>
+
+	<manifestclasspath property="lib.list" jarfile="${jars.file}">
+	   <classpath refid="build-classpath" />
+	</manifestclasspath>
+
+
+	<!-- Builds the dte jar file from the compiled class files. -->
+	<target name="buildJar" description="Builds JAR file of all app classes" depends="clean,init,compile,build">
+		<jar destfile="${build.dir}/dataLoader.jar" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="com.hs.stridehub.config.loader.DataLoader" />
+				<attribute name="Class-Path" value=". ${lib.list}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="build" depends="clean,init,compile">
+		<copy todir="${build.dir}/resources">
+			<fileset dir="${resources.dir}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<echo message="Copying the jar files from lib folder to ${build.dir}" />
+		<copy todir="${build.dir}/lib">
+			<fileset dir="${jars.dir}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- Default task for this build script. Just gives a help message. -->
+	<target description="Shows all the ant tasks along with a help message." name="listTasks">
+
+		<echo message=" Welcome to dte ant build. Here is a list of tasks for you. For running a task, run the command 'ant [taskname]'." />
+
+		<echoproperties>
+		</echoproperties>
+
+		<exec dir="${basedir}" executable="${os.ant}">
+			<arg line=" -projecthelp" />
+		</exec>
+	</target>
+
+</project>

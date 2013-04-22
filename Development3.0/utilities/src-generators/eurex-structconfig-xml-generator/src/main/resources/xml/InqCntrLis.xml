@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqCntrLisRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqCntrLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqCntrLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqCntrLisRecT">
+		<sequence>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrStsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqCntrLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqCntrLisRecT" name="futBscInqCntrLisRec" size="999"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqCntrLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqCntrLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqCntrLisRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqCntrLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqCntrLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqCntrLisRecT">
+		<sequence>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+			<element type="char" name="cntrStsCod"/>
+			<element type="char" name="lepoInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqCntrLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqCntrLisRecT" name="optBscInqCntrLisRec" size="493"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqCntrLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqCntrLisResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

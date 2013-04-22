@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelDLegMasOrdrGrpT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="futCntrId2GrpT" name="futCntrId2Grp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="userOrdrRef" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelDLegMasOrdrRequestT">
+		<sequence>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="futBscDelDLegMasOrdrGrpT" name="futBscDelDLegMasOrdrGrp" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelDLegMasOrdrRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelDLegMasOrdrRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelDLegMasOrdrRecT">
+		<sequence>
+			<element type="char" name="rtnCod" size="5"/>
+			<element type="char" name="lstEvntTrnId" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelDLegMasOrdrResponseT">
+		<sequence>
+			<element type="char" name="lstEvntDat" size="8"/>
+			<element type="char" name="lstEvntTim" size="8"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscDelDLegMasOrdrRecT" name="futBscDelDLegMasOrdrRec" size="12"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelDLegMasOrdrResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelDLegMasOrdrResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

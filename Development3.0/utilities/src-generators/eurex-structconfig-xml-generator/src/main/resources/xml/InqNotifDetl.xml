@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqNotifDetlRequestT">
+		<sequence>
+			<element type="char" name="membClgIdCod" size="5"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqNotifDetlRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqNotifDetlRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqNotifDetlRecT">
+		<sequence>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="notifQtyPerIsin" size="16"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqNotifDetlResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="char" name="crtShtQty" size="16"/>
+			<element type="char" name="notifQty" size="16"/>
+			<element type="char" name="dsgnOpnSht" size="16"/>
+			<element type="futBscInqNotifDetlRecT" name="futBscInqNotifDetlRec" size="26"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqNotifDetlRecT">
+		<sequence>
+			<element type="char" name="prodShtNam" size="30"/>
+			<element type="char" name="prodCtdInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqNotifDetlResponseT">
+		<sequence>
+			<element type="futExtInqNotifDetlRecT" name="futExtInqNotifDetlRec" size="10"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqNotifDetlResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqNotifDetlResponseT" name="basic"/>
+			<element type="futExtInqNotifDetlResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" >
+    <mx:Script><![CDATA[    
+        // Defines the method that the application calls.
+            
+    ]]></mx:Script>
+    <mx:DataGrid width="100%" height="100%">
+    <mx:dataProvider>
+        <mx:Object Component="Name of Shared Directory" Value="XXXX"/>
+        <mx:Object Component="Polling Frequence" Value="XXXX"/>
+        <mx:Object Component="File Name Pattern" Value="XXXX"/>
+    </mx:dataProvider>
+    
+    <mx:columns>
+    
+        <mx:DataGridColumn dataField="Component"/>    
+        <mx:DataGridColumn dataField="Value"/>
+   
+        
+    </mx:columns>
+    
+   
+  </mx:DataGrid>
+    <mx:HBox width="100%">
+    
+    	<mx:Button label="@Resource(key='button.ComponentExtension.ok', bundle='TeevraUI')"/>
+    	<mx:Button label="@Resource(key='button.ComponentExtension.cancel', bundle='TeevraUI')"/>
+    	
+    </mx:HBox>
+    
+   
+</mx:Module>

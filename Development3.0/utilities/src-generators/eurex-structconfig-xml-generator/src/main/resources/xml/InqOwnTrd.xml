@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqOwnTrdRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="100"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="timMin" size="8"/>
+			<element type="char" name="timMax" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqOwnTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqOwnTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnTrdRecT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrPrtFilCod"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="ordrExeQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="agrsrMtchInd"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnTrdResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqOwnTrdRecT" name="futBscInqOwnTrdRec" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqOwnTrdRecT">
+		<sequence>
+			<element type="char" name="acctTypCod"/>
+			<element type="char" name="acctTypNo"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="gutGrpT" name="gutGrp"/>
+			<element type="char" name="grsBas" size="6"/>
+			<element type="char" name="bonIsinCod" size="12"/>
+			<element type="char" name="swapEndDat" size="8"/>
+			<element type="char" name="cpnFixRat" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqOwnTrdResponseT">
+		<sequence>
+			<element type="futExtInqOwnTrdRecT" name="futExtInqOwnTrdRec" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqOwnTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqOwnTrdResponseT" name="basic"/>
+			<element type="futExtInqOwnTrdResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqOwnTrdRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="100"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="timMin" size="8"/>
+			<element type="char" name="timMax" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqOwnTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqOwnTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqOwnTrdRecT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="ordrPrtFilCod"/>
+			<element type="char" name="ordrExeQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="agrsrMtchInd"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="ordrNo" size="9"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrResCod"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="char" name="ordrQty" size="13"/>
+			<element type="char" name="ordrDat" size="8"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="posTrnTyp" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqOwnTrdResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqOwnTrdRecT" name="optBscInqOwnTrdRec" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqOwnTrdRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="gutGrpT" name="gutGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqOwnTrdResponseT">
+		<sequence>
+			<element type="optExtInqOwnTrdRecT" name="optExtInqOwnTrdRec" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqOwnTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqOwnTrdResponseT" name="basic"/>
+			<element type="optExtInqOwnTrdResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

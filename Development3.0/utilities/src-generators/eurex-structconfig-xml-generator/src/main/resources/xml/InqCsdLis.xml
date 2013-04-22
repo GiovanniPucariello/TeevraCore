@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqCsdLisRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqCsdLisRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqCsdLisRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqCsdLisResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqCsdLisRecT">
+		<sequence>
+			<element type="char" name="csdId" size="6"/>
+			<element type="char" name="csdLngNam" size="40"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqCsdLisResponseT">
+		<sequence>
+			<element type="extInqCsdLisRecT" name="extInqCsdLisRec" size="41"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqCsdLisResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqCsdLisResponseT" name="basic"/>
+			<element type="extInqCsdLisResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

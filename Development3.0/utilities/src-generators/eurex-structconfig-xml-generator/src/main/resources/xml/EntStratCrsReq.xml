@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntStratCrsReqRequestT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="stratIdGrpT" name="stratIdGrp"/>
+			<element type="char" name="ordrQty" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="entStratCrsReqRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntStratCrsReqRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="entStratCrsReqResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

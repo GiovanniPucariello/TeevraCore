@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscSubSLegQuoConfPrivBcastT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoBkQtyBuy" size="13"/>
+			<element type="char" name="quoBkQtySel" size="13"/>
+			<element type="char" name="quoExeQtyBuy" size="13"/>
+			<element type="char" name="quoExeQtySel" size="13"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="quoPrioTimBuy" size="8"/>
+			<element type="char" name="quoPrioTimSel" size="8"/>
+			<element type="char" name="quoPrioDatBuy" size="8"/>
+			<element type="char" name="quoPrioDatSel" size="8"/>
+			<element type="char" name="lstEvntDatBuy" size="8"/>
+			<element type="char" name="lstEvntTimBuy" size="8"/>
+			<element type="char" name="lstEvntTrnIdBuy" size="18"/>
+			<element type="char" name="lstEvntDatSel" size="8"/>
+			<element type="char" name="lstEvntTimSel" size="8"/>
+			<element type="char" name="lstEvntTrnIdSel" size="18"/>
+			<element type="char" name="trnTypId"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtSubSLegQuoConfPrivBcastT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futSubSLegQuoConfPrivBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscSubSLegQuoConfPrivBcastT" name="basic"/>
+			<element type="futExtSubSLegQuoConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscSubSLegQuoConfSubjectT">
+		<sequence>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="subjFill" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscSubSLegQuoConfPrivBcastT">
+		<sequence>
+			<element type="char" name="buyCod"/>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoBkQtyBuy" size="13"/>
+			<element type="char" name="quoBkQtySel" size="13"/>
+			<element type="char" name="quoExeQtyBuy" size="13"/>
+			<element type="char" name="quoExeQtySel" size="13"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="quoPrioTimBuy" size="8"/>
+			<element type="char" name="quoPrioTimSel" size="8"/>
+			<element type="char" name="quoPrioDatBuy" size="8"/>
+			<element type="char" name="quoPrioDatSel" size="8"/>
+			<element type="char" name="lstEvntDatBuy" size="8"/>
+			<element type="char" name="lstEvntTimBuy" size="8"/>
+			<element type="char" name="lstEvntTrnIdBuy" size="18"/>
+			<element type="char" name="lstEvntDatSel" size="8"/>
+			<element type="char" name="lstEvntTimSel" size="8"/>
+			<element type="char" name="lstEvntTrnIdSel" size="18"/>
+			<element type="char" name="trnTypId"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtSubSLegQuoConfPrivBcastT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optSubSLegQuoConfPrivBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscSubSLegQuoConfPrivBcastT" name="basic"/>
+			<element type="optExtSubSLegQuoConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscSubSLegQuoConfSubjectT">
+		<sequence>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+		</sequence>
+	</complexType>
+</struct>

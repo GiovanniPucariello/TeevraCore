@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" layout="vertical" creationComplete="initApp();"  width="100%"  height="100%" 
+	xmlns:com="*" xmlns:flexScript="com.headstrong.teevra.components.common.*">
+    <mx:Script>
+        <![CDATA[
+        	import mx.controls.Label;
+        	import mx.containers.DividedBox;
+        	import mx.containers.Box;
+        	import mx.containers.Panel;
+        	import mx.containers.VBox;
+        	import mx.controls.VRule;
+    	import mx.core.Application;
+    	import com.headstrong.teevra.client.graph.ComponentConfigurationContainer;
+    	import com.headstrong.teevra.client.graph.model.ProcessServiceVO;
+    	import com.headstrong.teevra.client.graph.model.ComponentVO;
+    	import com.headstrong.teevra.client.model.ComponentCache;
+    	import mx.managers.PopUpManager;
+    	import com.headstrong.teevra.client.util.InputDialog;
+    	import mx.core.IFlexDisplayObject;
+    	import com.headstrong.teevra.client.graph.ErrorHandler;
+    	import com.headstrong.teevra.components.common.CollapsiblePanel;
+    	import mx.events.CloseEvent;
+        import mx.collections.ArrayCollection;
+        import mx.rpc.events.ResultEvent;
+        import mx.rpc.events.FaultEvent;
+        import mx.controls.Alert;
+        import com.headstrong.teevra.client.events.ViewProcessEvent;
+        import com.headstrong.teevra.client.model.ViewModelLocator;
+  		import com.headstrong.teevra.client.view.entity.ProcessVO;
+ 
+ 		[Bindable]		
+ 		private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+ 		private var loadedProcess:ProcessVO;
+ 		private var errorHandlerPopup:IFlexDisplayObject;
+ 		
+ 		private var parentComponent:ComponentVO;
+ 		private var _serviceDetails:ProcessServiceVO;
+ 		private var popup:IFlexDisplayObject;
+ 		private var configUI:ComponentConfigurationContainer;
+ 		private var _errorHandler:ErrorHandler;
+ 		private var selectedItem:String;
+ 		private var loadedServiceDetails:ProcessServiceVO;
+ 		private var throttleTimeTextInput: TextInput;
+ 		private var throttleCntTextInput: TextInput;
+ 		
+		public function initApp():void
+ 		{			 		
+ 			loadedProcess = modelLocator.loadedProcess;
+ 			if (loadedProcess != null)
+ 			{
+ 				modelLocator.screenName = "Process Modeling > View Process > Edit Process";
+ 				nameText.text = loadedProcess.prcsName;
+ 				descriptionText.text = loadedProcess.prcsDesc;
+ 				recovery.selected = loadedProcess.prcsRecoveryEnabled;
+ 				prcsEvntLog.selected = loadedProcess.prcsEventLogReqd;
+ 				msgEvntLog.selected = loadedProcess.msgEventLogReqd;
+ 				compEvntLog.selected = loadedProcess.compEventLogReqd;
+ 				serviceDetails=loadedProcess.graph.errorReportNHandlingConfigs;
+			} 
+			else
+			{ 				
+ 				modelLocator.screenName = "Process Modeling > View Process > New Process";
+ 				nameText.text = "";
+ 				descriptionText.text = "";
+ 				recovery.selected=false;
+ 				prcsEvntLog.selected=false;
+ 				msgEvntLog.selected=false;
+ 				compEvntLog.selected=false;
+ 			}
+ 			if(ErrorRprCmb!=null && ErrorRprCmb.selectedIndex!=-1)
+ 			{
+ 				ConfigureErrRpt.enabled=true;
+ 			}
+ 			configureErrorHandler();
+ 			configureMsgThrottling();
+ 		}
+ 
+        public function getProcessVO():ProcessVO
+        {
+        	var processVO:ProcessVO = loadedProcess;
+        	if (loadedProcess == null)
+        	{
+        		processVO = new ProcessVO();
+        	}   
+	        processVO.prcsName = nameText.text;
+	        processVO.prcsDesc = descriptionText.text;
+	        processVO.prcsRecoveryEnabled = recovery.selected;
+	        processVO.prcsEventLogReqd = prcsEvntLog.selected;
+	        processVO.msgEventLogReqd = msgEvntLog.selected;
+	      	processVO.compEventLogReqd = compEvntLog.selected;
+        	processVO.throttleMsgCount = new Number (throttleCntTextInput.text);
+        	processVO.throttleTime = new Number (throttleTimeTextInput.text);
+        	return processVO;
+        }
+        public function configureErrorHandler():void
+		{
+			var businessErrorHandlerValue:String;
+			var systemErrorHandlerValue:String;
+			var businessHandlerVBox:VBox = new VBox();
+			var systemHandlerVBox:VBox = new VBox();
+			var businessLabel:Label=new Label();
+			var systemLabel:Label = new Label();
+			
+			if(serviceDetails!=null)
+			{
+				businessErrorHandlerValue = serviceDetails.businessErrorStrategy;
+				systemErrorHandlerValue = serviceDetails.systemErrorStrategy;
+			}
+			
+			errorHandler = new ErrorHandler();
+			
+			businessLabel.text=resourceManager.getString('TeevraUI', 'label.ErrorHandler.businessError');	
+			businessLabel.setStyle("fontWeight","bold");		
+			businessHandlerVBox.addChild(businessLabel);
+			businessHandlerVBox.percentWidth=40;
+			businessHandlerVBox.addChild(errorHandler.buildBusinessHandler(businessErrorHandlerValue));
+			
+			systemLabel.text=resourceManager.getString('TeevraUI', 'label.ErrorHandler.systemError');
+			systemLabel.setStyle("fontWeight","bold");			
+			systemHandlerVBox.addChild(systemLabel);
+			systemHandlerVBox.percentWidth=40;
+			systemHandlerVBox.addChild(errorHandler.buildSystemHandler(systemErrorHandlerValue));
+			
+			var vRule:VRule = new VRule();
+			vRule.percentHeight=100;
+			
+			errorHandlerHBox.addChild(businessHandlerVBox);
+			errorHandlerHBox.addChild(vRule);
+			errorHandlerHBox.addChild(systemHandlerVBox);		
+		}
+		public function loadErrorReporting(event:Event):void
+		{
+			var compVO:ComponentVO = ComponentVO(ErrorRprCmb.selectedItem);
+			parentComponent = ComponentVO(ComponentCache.getInstance().retrieveComponent(compVO.compName));
+			
+			popup = PopUpManager.createPopUp(DisplayObject(Application.application), ComponentConfigurationContainer, true, null);
+	    	configUI = ComponentConfigurationContainer(popup);
+	    	if(serviceDetails!=null && parentComponent.compId != serviceDetails.compId)
+			{
+				configUI.create(parentComponent, loadedServiceDetails, popupClose, popupSave);
+			}
+			else
+			{
+				configUI.create(parentComponent, serviceDetails, popupClose, popupSave);
+			}  
+	    	
+			
+		}
+		 public function popupClose(event:MouseEvent):void{
+	    	PopUpManager.removePopUp(popup);
+	    }	
+	    public function popupSave():void{
+	    	PopUpManager.removePopUp(popup);
+	    	serviceDetails = configUI.getServiceDetails();	
+	    	if(loadedServiceDetails!=null)
+	    		serviceDetails = loadedServiceDetails;	        	
+	    }
+		public function cancelHandlerFunction(event:MouseEvent):void{
+	    	PopUpManager.removePopUp(errorHandlerPopup);
+	    }
+	    private function loadRptComponent(event:Event):void
+	    {
+	    	var errorReporter:ArrayCollection = ArrayCollection(ComponentCache.getInstance().getErrorReporter());
+ 			ErrorRprCmb.dataProvider=errorReporter;
+ 			if(serviceDetails!=null)
+ 			{
+ 				ErrorRprCmb.selectedItem = ComponentVO(ComponentCache.getInstance().getComponentFromId(serviceDetails.compId));
+ 			}
+ 			else
+ 			{
+ 				ErrorRprCmb.selectedIndex=-1;
+ 			}
+ 			ErrorRprCmb.labelField="compName";
+	    }
+	    public function configureMsgThrottling():void
+		{
+			var throttleTimeLabel:Label = new Label();
+			var throttleCntLabel:Label = new Label();
+			
+			throttleTimeLabel.setStyle("fontWeight","bold");
+			throttleCntLabel.setStyle("fontWeight","bold");
+
+			throttleTimeLabel.text = resourceManager.getString('TeevraUI', 'label.throttle.time');
+			throttleTimeLabel.setStyle("fontWeight","bold");
+			throttleCntLabel.text = resourceManager.getString('TeevraUI', 'label.throttle.count');
+			throttleCntLabel.setStyle("fontWeight","bold");
+			
+			throttleTimeTextInput = new TextInput();
+			throttleCntTextInput = new TextInput();
+			throttleTimeTextInput.restrict = '0-9';
+			throttleCntTextInput.restrict = '0-9';
+			
+			if (loadedProcess != null) {
+				if (loadedProcess.throttleTime == 0) {
+					throttleTimeTextInput.text = '';
+				} else {
+					throttleTimeTextInput.text = loadedProcess.throttleTime.toString();
+				}
+				
+				if (loadedProcess.throttleMsgCount == 0) {
+					throttleCntTextInput.text = '';
+				} else {		
+					throttleCntTextInput.text = loadedProcess.throttleMsgCount.toString();
+				}
+			}
+			else {
+				throttleTimeTextInput.text = '';
+				throttleCntTextInput.text = '';
+			}
+			
+			msgThrottlingHBox.addChild(throttleCntLabel);
+			msgThrottlingHBox.addChild(throttleCntTextInput);
+			msgThrottlingHBox.addChild(throttleTimeLabel);
+			msgThrottlingHBox.addChild(throttleTimeTextInput);
+			
+		}
+	    private function enableButton():void
+	    {
+	    	ConfigureErrRpt.enabled=true;
+	    }
+	    private function checkEnable():void
+	    {
+	    	if(ErrorRprCmb.selectedIndex!=-1)
+	    	{
+	    		ConfigureErrRpt.enabled = true;
+	    	}
+	    	else
+	    	{
+	    		ConfigureErrRpt.enabled = false;
+	    	}
+	    }
+	    public function get errorHandler():ErrorHandler
+	    {
+	    	return _errorHandler;
+	    }
+	    public function set errorHandler(value:ErrorHandler):void
+	    {
+	    	this._errorHandler = value;	    	
+	    }
+	    public function get serviceDetails():ProcessServiceVO
+	    {
+	    	return _serviceDetails;
+	    }
+	    public function set serviceDetails(value:ProcessServiceVO):void
+	    {
+	    	this._serviceDetails = value;
+	    }
+        ]]>
+    </mx:Script>
+    
+    <mx:StringValidator 
+        id="nameValidator"
+        source="{nameText}" 
+        property="text"
+        minLength="3"
+    /> 	
+	 	<mx:HBox width="100%" height="100%">
+	 	
+	     <mx:TabNavigator id="tabNavigator"
+            width="100%"
+            height="100%">
+
+		
+		 	<mx:HBox width="100%" height="100%" label="Process Properties"> 
+		    	
+		    	<mx:VBox width="50%">
+			    	<mx:Form width="100%">
+						<mx:FormItem label="@Resource(key='formText.NewProcess.processName', bundle='TeevraUI')" width="345" fontWeight="bold" >
+		          	  		<mx:TextInput width="100%" id="nameText" fontWeight="normal"/>
+		      	  		</mx:FormItem>
+		      	  		<mx:FormItem label="@Resource(key='formText.NewProcess.processDesc', bundle='TeevraUI')" width="345" fontWeight="bold">
+		          	  		<mx:TextArea width="100%" maxChars="@Resource(key='maxFieldSize.descriptionText.size', bundle='TeevraUI')" id="descriptionText" fontWeight="normal"/>
+		          		</mx:FormItem>
+		        	</mx:Form>
+		    	</mx:VBox>
+		    	<mx:VBox width="50%">
+		    		<mx:Form width="100%">
+		      	  		<mx:FormItem width="345" >
+		      	  			<mx:HBox width="100%" height="100%">
+		          	  			<mx:CheckBox id="recovery" fontWeight="normal"/>
+		          	  			<mx:Label text="@Resource(key='formText.NewProcess.recovery', bundle='TeevraUI')" fontWeight="bold"/>
+		          			</mx:HBox>
+		          		</mx:FormItem>
+		          		<mx:FormItem width="345" >
+		      	  			<mx:HBox width="100%" height="100%">
+		          	  			<mx:CheckBox id="prcsEvntLog" fontWeight="normal"/>
+		          	  			<mx:Label text="@Resource(key='formText.NewProcess.prcsEvntLogReqd', bundle='TeevraUI')" fontWeight="bold"/>
+		          			</mx:HBox>
+		          		</mx:FormItem>
+		          		<mx:FormItem width="345" >
+		      	  			<mx:HBox width="100%" height="100%">
+		          	  			<mx:CheckBox id="msgEvntLog" fontWeight="normal"/>
+		          	  			<mx:Label text="@Resource(key='formText.NewProcess.msgEvntLogReqd', bundle='TeevraUI')" fontWeight="bold"/>
+		          			</mx:HBox>
+		          		</mx:FormItem>
+		          		<mx:FormItem width="345" >
+		      	  			<mx:HBox width="100%" height="100%">
+		          	  			<mx:CheckBox id="compEvntLog" fontWeight="normal"/>
+		          	  			<mx:Label text="@Resource(key='formText.NewProcess.compEvntLogReqd', bundle='TeevraUI')" fontWeight="bold"/>
+		          			</mx:HBox>
+		          		</mx:FormItem>
+		        	</mx:Form>
+		    	</mx:VBox>
+		    </mx:HBox>
+		    		    	
+	    	<mx:HBox label="Error Handler" id="errorHandlerHBox" horizontalAlign="left"/>	 			 				    		
+	    	<mx:HBox id="errorRprVBox" label="Error Reporting">
+	    		<mx:Label text="Default Error Reporter"/>
+	    		<mx:ComboBox id="ErrorRprCmb" add="loadRptComponent(event);" change="enableButton();" />
+	    		<mx:Button label="Configure" id="ConfigureErrRpt" click="loadErrorReporting(event);" add="checkEnable()" enabled="false"/>
+	    	</mx:HBox>
+	    	<mx:HBox label="Message Throttling" id="msgThrottlingHBox" horizontalAlign="left"/>		
+	    </mx:TabNavigator>	
+	    </mx:HBox>
+   
+</mx:Module>
+

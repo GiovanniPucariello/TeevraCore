@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.util.AlertHelper;
+	import com.headstrong.teevra.client.model.DataSourceCache;
+	import mx.collections.ICollectionView;
+	import com.headstrong.teevra.client.events.RefDataServiceEvent;
+	import mx.events.CloseEvent;
+	import mx.events.ListEvent;
+
+	import mx.controls.Alert;
+
+	import com.headstrong.teevra.client.events.RefDataConfigEvent;
+	import com.headstrong.teevra.client.view.admin.NewRefDataPopup;
+	import com.headstrong.teevra.client.view.entity.RefDataConfigVO;
+	import mx.core.IFlexDisplayObject;
+	import mx.managers.PopUpManager;
+	import com.headstrong.teevra.client.util.UIModules;
+	import mx.collections.ArrayCollection;
+	import com.headstrong.teevra.client.util.UserEntitlements;
+	import com.headstrong.teevra.client.model.ViewModelLocator;
+	
+	import com.headstrong.teevra.client.view.entity.ServerConfigVO;
+	import com.headstrong.teevra.client.model.ServerCache;
+    import com.headstrong.teevra.client.view.admin.Recurrence;
+	import com.headstrong.teevra.client.view.admin.CacheReloadSchedule;
+	import mx.collections.ArrayCollection;
+            
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			
+			private var popup:IFlexDisplayObject; 
+			private var newRefDataConfig:RefDataConfigVO;
+			private var isNewConfig:Boolean;
+			
+			private var isDataSourceConfigEvent:Boolean;
+			private var refDataServiceEvent:RefDataServiceEvent;
+			private var serviceIdentifier:String;			
+			private const REFRESH_REF_GRID_EVENT:String = "REFRESH_REF_GRID";
+			private const REFRESH_DATASOURCE_GRID_EVENT:String ="REFRESH_DATASOURCE_GRID";
+			private const DELETE_REFDATA_EVENT:String = "DELETE_REFDATA";
+			private const ADD_REFDATA_EVENT:String = "ADD_REFDATA";
+			private const RELOAD_CACHE:String = "RELOAD_CACHE";
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+		   
+			private var newButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+			private var deleteButtonEnabled:Boolean=true;	
+			
+			private const SET_SCHEDULE_EVENT:String = "SCHEDULE_RELOAD";
+			private const GET_SCHEDULE_EVENT:String = "GET_SCHEDULE_RECURRENCE";
+			private const serverComboBoxPrompt:String ="--select server--";
+			private var cacheReloadSchedule:CacheReloadSchedule;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudRefData))
+				   {
+				   		newButtonEnabled=false;
+				   		itemClickEnabled=false;
+				   		deleteButtonEnabled=false;
+				   		
+				   }
+				
+			}
+			private function init():void
+			{
+				authorizePage();
+				deleteButton.enabled = false;
+				newButton.enabled=newButtonEnabled;
+				
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(deleteButtonEnabled){
+					deleteButton.enabled = (refDataGrid.selectedIndex != -1);
+				}
+	  		}
+	  		
+	  		private function setRelativeColWidths():void
+	  		{
+		  		refDataGrid.columns[0].width = refDataGrid.width*.10;
+				refDataGrid.columns[1].width = refDataGrid.width*.25;
+				refDataGrid.columns[2].width = refDataGrid.width*.25;
+				refDataGrid.columns[3].width = refDataGrid.width*.40;
+			}
+			private function addNewConfig():void
+			{
+				isNewConfig = true;
+				var refDataPopup:NewRefDataPopup;
+				
+				popup = PopUpManager.createPopUp(this, NewRefDataPopup ,true);
+				popup.width = 500;
+				refDataPopup = NewRefDataPopup(popup);  
+				
+				newRefDataConfig = new RefDataConfigVO();		
+		    	
+		    	refDataPopup.create(popupClose,popupSave,newRefDataConfig,isNewConfig);
+		    	PopUpManager.centerPopUp(popup);
+		    }
+		    private function popupClose(event:MouseEvent):void{
+	    		PopUpManager.removePopUp(popup);
+	   		}
+		    private function popupSave():void
+		    {
+		    	//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+		    	var args:Object = new Object();
+				args[RefDataServiceEvent.ADD_REFDATA_ID] = newRefDataConfig;
+				serviceIdentifier=ADD_REFDATA_EVENT;
+				refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.ADD_REFDATASOURCE_COMMAND, args, this);
+				refDataServiceEvent.dispatch();				
+				PopUpManager.removePopUp(popup);
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End		    	
+		    }		    
+		    private function refreshConfigs():void
+			{
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				serviceIdentifier=REFRESH_REF_GRID_EVENT;
+				refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.REFRESH_REFDATA_COMMAND, null, this);
+				refDataServiceEvent.dispatch();	
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+		    }
+		    
+		     private function reloadCache():void
+			{
+				if (serverListing.selectedIndex == -1 )
+				{
+					Alert.show("Select a server to reload");
+					return;
+				}
+				
+				if (refDataGrid.selectedIndex == -1 )
+				{
+					Alert.show("Select a Reference Data to reload");
+					return;
+				}				
+				var server:ServerConfigVO = getServerConfig(serverListing.selectedItem as String);
+				var args:Object = new Object();
+				args[RefDataServiceEvent.RELOAD_CACHE_ID] = refDataGrid.selectedItem.refDataName;
+				args[RefDataServiceEvent.RELOAD_CACHE_SERVER] = server;				
+				refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.RELOAD_CACHE_COMMAND, args, this);
+				
+				serviceIdentifier=RELOAD_CACHE;
+				refDataServiceEvent.dispatch();	
+				
+		    }
+		   
+		    private function deleteConfig():void
+        	{     		
+        		Alert.show("Do you want to delete the selected Configuration?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);		
+			}
+			
+			private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start	
+					var args:Object = new Object();
+					args[RefDataServiceEvent.DELETE_REFDATA_ID] = refDataGrid.selectedItem.refDataName;
+					serviceIdentifier=DELETE_REFDATA_EVENT;
+					refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.DELETE_REFDATA_COMMAND, args, this);
+					refDataServiceEvent.dispatch();	
+					//09-Apr-09 AP Code Added as a part of Generalization of event :Code End    			
+				}
+			}			
+			private function editConfig(event:ListEvent):void
+        	{
+				if(newButtonEnabled){
+					isNewConfig = false;
+					var refDataPopup:NewRefDataPopup;
+					
+					popup = PopUpManager.createPopUp(this, NewRefDataPopup ,true);
+					popup.width = 500;
+					refDataPopup = NewRefDataPopup(popup);  
+					
+					newRefDataConfig = new RefDataConfigVO();
+					newRefDataConfig.refDataId = event.currentTarget.selectedItem.refDataId;
+					newRefDataConfig.refDataName = event.currentTarget.selectedItem.refDataName;
+					newRefDataConfig.dataSourceId = event.currentTarget.selectedItem.dataSourceId;
+					newRefDataConfig.dataSourceName = event.currentTarget.selectedItem.dataSourceName;
+					newRefDataConfig.refDataQuery = event.currentTarget.selectedItem.refDataQuery;
+					newRefDataConfig.createdBy=event.currentTarget.selectedItem.createdBy;
+					newRefDataConfig.createdDate=event.currentTarget.selectedItem.createdDate;
+					
+			    	refDataPopup.create(popupClose,popupSave,newRefDataConfig,isNewConfig);
+			    	PopUpManager.centerPopUp(popup);
+		  		}
+            }
+	   		
+	   		private function getServerConfig(serverName:String):ServerConfigVO
+			{
+				return ServerCache.getInstance().retrieveServer(serverName);
+			}
+			
+			private function getServerNames():ArrayCollection
+			{
+				var serverConfigList:ArrayCollection = ServerCache.getInstance().getConfigs();
+	    		var serverNamesList:ArrayCollection = new ArrayCollection();
+	    		for(var i:int=0; i<serverConfigList.length; i++)
+	    		{
+	    			var serverConfig:ServerConfigVO = ServerConfigVO(serverConfigList[i]);
+	    			serverNamesList.addItem(serverConfig.serverName);
+	    		}
+	    		
+				return serverNamesList;
+			}
+			
+			private function scheduleCacheReload():void
+			{
+				serviceIdentifier = GET_SCHEDULE_EVENT;
+				var args:Object = new Object();		
+				args[RefDataServiceEvent.GET_SCHEDULE_ID] = refDataGrid.selectedItem.refDataName;
+				refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.GET_SCHEDULE_COMMAND, args, this);
+				refDataServiceEvent.dispatch();
+		    }
+		    
+		    private function onSchedulePopupSave():void 
+		    {
+	    		cacheReloadSchedule.cacheName = refDataGrid.selectedItem.refDataName;
+	   			var serverName:String = serverListing.text.toString(); 
+				if(serverName == null || serverName == "")
+				{
+					Alert.show("Assign a server to schedule the reloading");
+				}
+				else
+				{
+		   			if(cacheReloadSchedule.recurrence == null)
+		   			{
+		   				Alert.show("Please Enter All the Information");
+		   			}
+			   		else
+			   		{
+			   			serviceIdentifier = SET_SCHEDULE_EVENT;
+			   			
+				   		var server:ServerConfigVO = getServerConfig(serverName);
+				   		var args:Object = new Object();
+						args[RefDataServiceEvent.SET_SCHEDULE_ID] = cacheReloadSchedule;
+						args[RefDataServiceEvent.SERVER_CONFIG] = server;
+						refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.SET_SCHEDULE_COMMAND, args, this);
+						refDataServiceEvent.dispatch();
+				   		PopUpManager.removePopUp(popup);			   		
+			   		}
+	 	    	}
+	   		}
+	   		
+            public function result( event:Object ):void 
+			{
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code Start	
+				switch(serviceIdentifier)
+				{
+					case REFRESH_REF_GRID_EVENT:
+						var refDataConfigs : ICollectionView = ICollectionView( event.result );
+						modelLocator.refDataConfigs = refDataConfigs;
+						modelLocator.loadModule(ViewModelLocator.REF_DATA_CONFIG_EVENT);
+						modelLocator.screenName = "Administration > Reference Data Configurations";
+						
+						isDataSourceConfigEvent = false;
+						var args:Object = new Object();
+						args[RefDataServiceEvent.REFRESH_REF_ID] = isDataSourceConfigEvent;//i think change the key
+						serviceIdentifier=REFRESH_DATASOURCE_GRID_EVENT;
+						refDataServiceEvent = new RefDataServiceEvent(RefDataServiceEvent.REFRESH_DATASOURCE_COMMAND, args, this);
+						refDataServiceEvent.dispatch();	
+						isDataSourceConfigEvent=refDataServiceEvent.getArgument(RefDataServiceEvent.REFRESH_REF_ID);
+						break;
+						
+					case REFRESH_DATASOURCE_GRID_EVENT:
+						var dataSourceConfigs : ICollectionView = ICollectionView( event.result );
+						if(isDataSourceConfigEvent)
+						{
+							modelLocator.loadModule(ViewModelLocator.DATA_SOURCE_CONFIG_EVENT);
+							modelLocator.screenName = "Administration > Data Source Configurations";
+							modelLocator.dataSourceConfigs = dataSourceConfigs;
+						}
+						else
+						{
+							DataSourceCache.getInstance().loadDataSourceConfigs(dataSourceConfigs);
+						}
+						break;	
+						
+					case DELETE_REFDATA_EVENT:
+						Alert.show("Reference Data Configuration is deleted successfully!!","Delete Reference Data Configuration");
+						refreshConfigs();
+						break;
+						
+					case ADD_REFDATA_EVENT:
+						Alert.show("Configurations saved successfully","Save Configuration");
+						refreshConfigs();
+						break;		
+					
+					case GET_SCHEDULE_EVENT:
+						cacheReloadSchedule = CacheReloadSchedule(event.result);
+						var configUI:Recurrence;
+						popup = PopUpManager.createPopUp(this, Recurrence, false);
+						configUI = Recurrence(popup);
+						if(cacheReloadSchedule == null)
+						{
+							cacheReloadSchedule = new CacheReloadSchedule();
+						}
+						cacheReloadSchedule.cacheName = refDataGrid.selectedItem.refDataName;
+				    	configUI.createCacheReloadUI(popupClose, onSchedulePopupSave, cacheReloadSchedule);
+				    	PopUpManager.centerPopUp(popup);
+				    	break;
+				    	
+				   case SET_SCHEDULE_EVENT:	
+						Alert.show("Reload of the Reference Data has been Scheduled Successfully","Schedule Reload");
+						break;
+					
+				 	case RELOAD_CACHE:	
+						Alert.show("Reload of the Cache is  Successfull","Reload Cache");
+						break;		
+						
+				}
+				
+				//09-Apr-09 AP Code Added as a part of Generalization of event :Code End
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case REFRESH_REF_GRID_EVENT:
+						AlertHelper.displayFault(info,"Reference data configurations cannot be retrieved");
+						break;
+						
+					case REFRESH_DATASOURCE_GRID_EVENT:
+						AlertHelper.displayFault(info,"Data source configurations cannot be retrieved");
+						break;	
+						
+					case DELETE_REFDATA_EVENT:
+						AlertHelper.displayFault(info,"Reference data configuration cannot be deleted");
+						break;
+						
+					case ADD_REFDATA_EVENT:
+						AlertHelper.displayFault(info,"Reference data configuration cannot be added");
+						break;						
+									
+					case GET_SCHEDULE_EVENT:
+						Alert.show(info.fault.faultString);
+						break;
+						
+					case SET_SCHEDULE_EVENT:	
+						AlertHelper.displayFault(info,"Reload cannot be scheduled");
+						break;
+					case RELOAD_CACHE:	
+						AlertHelper.displayFault(info,"Reload  Cache cannot be done");
+						break;	
+				}
+			}
+        
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		<mx:ComboBox id="serverListing" dataProvider="{getServerNames()}" selectedIndex="-1" prompt="{serverComboBoxPrompt}"/>
+		<mx:Button id="newButton" label="@Resource(key='button.RefDataConfig.newConfig', bundle='TeevraUI')" click="addNewConfig();"/>
+		<mx:Button id="deleteButton" label="@Resource(key='button.RefDataConfig.deleteSchema', bundle='TeevraUI')" click="deleteConfig();"/>
+		<mx:Button id="refreshButton" label="@Resource(key='button.RefDataConfig.refreshConfigs', bundle='TeevraUI')" click="refreshConfigs();"/>
+		<mx:Button id="scheduleReloadButton" label="@Resource(key='button.RefDataConfig.scheduleReload', bundle='TeevraUI')" click="scheduleCacheReload();"/>
+		<mx:Button id="reloadCacheButton" label="@Resource(key='button.RefDataConfig.reloadCache', bundle='TeevraUI')" click="reloadCache();"/>
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="refDataGrid" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" dataProvider="{modelLocator.refDataConfigs}" width="100%" height="100%" itemClick="itemClickEvent(event);" doubleClickEnabled="true" itemDoubleClick="editConfig(event);" creationComplete="setRelativeColWidths();" >
+		<mx:columns>       
+			<mx:DataGridColumn dataField="refDataId" headerText="@Resource(key='column.RefDataConfig.refDataId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="refDataName" headerText="@Resource(key='column.RefDataConfig.refDataName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="dataSourceName" headerText="@Resource(key='column.RefDataConfig.dataSourceName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="refDataQuery" headerText="@Resource(key='column.RefDataConfig.refDataQuery', bundle='TeevraUI')"/>
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

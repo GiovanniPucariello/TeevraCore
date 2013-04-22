@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration>
+    <configHeader schema="DRIV_INQUIRE_EXERCISE_RID " namespaceUri="http://www.fixprotocol.org/FIXML-5-0" transformationType="CStructToFIXML"/>
+    <predicate mapType="STRUCT-BO" messageType="OPTIONS-RESPONSE" structName="optInqExerResponseT">
+        <binding>
+            <field name="header.exchApplId">
+                <structField>header.exchApplId</structField>
+            </field>
+            <field name="header.prodLine">
+                <structField>header.prodLine</structField>
+            </field>
+            <field name="header.membExchIdCodOboMs">
+                <structField>header.membExchIdCodOboMs</structField>
+            </field>
+            <field name="basic.keyDataCtrlBlk">
+                <structField>basic.keyDataCtrlBlk</structField>
+            </field>
+            <field name="basic.mliRecCtr">
+                <structField>basic.mliRecCtr</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.exerQty">
+                <structField>basic.optBscInqExerRec{=21}.exerQty</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.crtLngQty">
+                <structField>basic.optBscInqExerRec{=21}.crtLngQty</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.dsgnOpnLng">
+                <structField>basic.optBscInqExerRec{=21}.dsgnOpnLng</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.trdUntNo">
+                <structField>basic.optBscInqExerRec{=21}.trdUntNo</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.undrPrc">
+                <structField>basic.optBscInqExerRec{=21}.undrPrc</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.undrPrcInd">
+                <structField>basic.optBscInqExerRec{=21}.undrPrcInd</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.undrDispDcml">
+                <structField>basic.optBscInqExerRec{=21}.undrDispDcml</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.itmPerUnt">
+                <structField>basic.optBscInqExerRec{=21}.itmPerUnt</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.acctTypCodGrp.acctTypCod">
+                <structField>basic.optBscInqExerRec{=21}.acctTypCodGrp.acctTypCod</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.acctTypCodGrp.acctTypNo">
+                <structField>basic.optBscInqExerRec{=21}.acctTypCodGrp.acctTypNo</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.optCntrIdGrp.prodId">
+                <structField>basic.optBscInqExerRec{=21}.optCntrIdGrp.prodId</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrClasCod">
+                <structField>basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrClasCod</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrExpMthDat">
+                <structField>basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrExpMthDat</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrExpYrDat">
+                <structField>basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrExpYrDat</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrExerPrc">
+                <structField>basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrExerPrc</structField>
+            </field>
+            <field name="basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrVersNo">
+                <structField>basic.optBscInqExerRec{=21}.optCntrIdGrp.cntrVersNo</structField>
+            </field>
+            <field name="extension.optExtInqExerRec{=21}.undrXetraPrc">
+                <structField>extension.optExtInqExerRec{=21}.undrXetraPrc</structField>
+            </field>
+            <field name="extension.optExtInqExerRec{=21}.abdnQty">
+                <structField>extension.optExtInqExerRec{=21}.abdnQty</structField>
+            </field>
+            <field name="extension.optExtInqExerRec{=21}.autManExerTyp">
+                <structField>extension.optExtInqExerRec{=21}.autManExerTyp</structField>
+            </field>
+        </binding>
+    </predicate>
+    <predicate mapType="BO-FIXML" messageType="OPTIONS-RESPONSE" structName="optInqExerResponseT">
+        <mappings fixmlClassName="PosMntRpt">
+            <arrayMappings>
+                <arrayMapping src="basic.optBscInqExerRec" size="21">
+                    <targetObj name="message.value.Qty[Typ=EX]">
+                        <map targetDataSize="Quantity" targetDataType="Float" src="exerQty" target="Long" type="simple"/>
+                    </targetObj>
+                    <targetObj name="message.value.Qty[Typ=ALC]">
+                        <map targetDataSize="Quantity" targetDataType="Float" src="dsgnOpnLng" target="Long" type="simple"/>
+                    </targetObj>
+                    <targetObj name="message.value.Undly">
+                        <map targetDataSize="numeric 2" targetDataType="Int" src="undrDispDcml" target="RepoTrm" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" targetValue="0" src="optCntrIdGrp.cntrVersNo" target="Issr" type="constant"/>
+                        <map targetDataSize="alphanumeric 4" targetDataType="Date" src="optCntrIdGrp.cntrExpYrDat" target="Mat[:Yr]" type="simple"/>
+                        <map targetDataSize="numeric 2" targetDataType="Date" src="optCntrIdGrp.cntrExpMthDat" target="Mat[:Mth]" type="simple"/>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" src="optCntrIdGrp.cntrClasCod" target="EncUndSecDesc" type="simple"/>
+                        <map targetDataSize="alphanumeric 4" targetDataType="String" src="optCntrIdGrp.prodId" target="CFI" type="simple"/>
+                        <map targetDataSize="trdMtchPrc" targetDataType="Float" src="undrPrc" target="Px" type="simple"/>
+                        <map targetDataSize="numeric 6" targetDataType="Float" src="optCntrIdGrp.cntrExerPrc" target="EndPx" type="simple"/>
+                    </targetObj>
+                    <targetObj name="message.value.Pty">
+                        <map targetDataSize="alphanumeric 1" targetDataType="Int" target="R" type="switch-case">
+                            <switch expr="acctTypCodGrp.acctTypCod">
+                                <case value="A" targetValue="30"/>
+                                <case value="G" targetValue="14"/>
+                                <case value="M" targetValue="66"/>
+                                <case value="P" targetValue="99"/>
+                            </switch>
+                        </map>
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="ID" type="switch-case">
+                            <switch expr="acctTypCodGrp.acctTypNo">
+                                <case value="1" targetValue="ACCT_TYP_NO_ONE"/>
+                                <case value="2" targetValue="ACCT_TYP_NO_TWO"/>
+                                <case value="P" targetValue="ACCT_TYP_NO_MKT_AND_PROP"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                    <targetObj name="message.value.Qty[Typ=TX]">
+                        <map targetDataSize="Quantity" targetDataType="Float" src="crtLngQty" target="Long" type="simple"/>
+                    </targetObj>
+                </arrayMapping>
+                <arrayMapping src="extension.optExtInqExerRec" size="21">
+                    <targetObj name="message.value.Undly">
+                        <map targetDataSize="alphanumeric 1" targetDataType="String" target="SetMeth" type="switch-case">
+                            <switch expr="autManExerTyp">
+                                <case value="A" targetValue="A"/>
+                                <case value="M" targetValue="M"/>
+                            </switch>
+                        </map>
+                    </targetObj>
+                    <targetObj name="message.value.Qty[Typ=TQ]">
+                        <map targetDataSize="Quantity" targetDataType="Float" src="abdnQty" target="Long" type="simple"/>
+                    </targetObj>
+                </arrayMapping>
+            </arrayMappings>
+            <map targetDataSize="binary 80" targetDataType="String" src="basic.keyDataCtrlBlk" target="message.value.Instrmt.EncSecDesc" type="simple"/>
+            <map targetDataSize="trdMtchPrc" targetValue="" src="extension.optExtInqExerRec.undrXetraPrc" target="NA" type="constant"/>
+            <map targetDataSize="numeric 3" targetDataType="Big Integer" src="basic.mliRecCtr" target="message.value.Instrmt.EncSecDescLen" type="simple"/>
+            <map targetDataSize="alphanumeric 1" targetValue=" " src="basic.optBscInqExerRec.undrPrcInd" target="NA" type="constant"/>
+            <map targetDataSize="numeric 8, 4" targetValue="00000000" src="basic.optBscInqExerRec.trdUntNo" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 7" targetDataType="String" targetValue="OPT" src="header.prodLine" target="message.value.Instrmt.SecTyp" type="constant"/>
+            <map targetDataSize="alphanumeric 4" targetDataType="String" src="header.exchApplId" target="message.value.Pty[R=21].ID" type="simple"/>
+            <map targetDataSize="Amount" targetValue="000000000000000" src="basic.optBscInqExerRec.itmPerUnt" target="NA" type="constant"/>
+            <map targetDataSize="alphanumeric 5" validationType="r" targetValue="     " src="header.membExchIdCodOboMs" target="NA" type="constant"/>
+        </mappings>
+    </predicate>
+</configuration>

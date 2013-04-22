@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqMembRelaRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembRelaRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembRelaRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMembRelaRecT">
+		<sequence>
+			<element type="char" name="relaSts"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMembRelaResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqMembRelaRecT" name="bscInqMembRelaRec" size="70"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqMembRelaRecT">
+		<sequence>
+			<element type="char" name="primClgMembInd"/>
+			<element type="char" name="givUpAcptInd"/>
+			<element type="char" name="takUpAcptInd"/>
+			<element type="char" name="nxtGivUpAcptInd"/>
+			<element type="char" name="nxtTakUpAcptInd"/>
+			<element type="char" name="relaUpdDat" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqMembRelaResponseT">
+		<sequence>
+			<element type="extInqMembRelaRecT" name="extInqMembRelaRec" size="70"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMembRelaResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMembRelaResponseT" name="basic"/>
+			<element type="extInqMembRelaResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

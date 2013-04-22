@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscSubBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="blkAuctPotPrcGrpT" name="blkAuctPotPrcGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtSubBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoPrcBuy" size="14"/>
+			<element type="char" name="quoPrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtySel" size="13"/>
+			<element type="char" name="trnTypId"/>
+			<element type="char" name="quoTrnTimBuy" size="8"/>
+			<element type="char" name="quoTrnTimSel" size="8"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futSubBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscSubBlkAuctConfPrivBcastT" name="basic"/>
+			<element type="futExtSubBlkAuctConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futSubBlkAuctConfSubjectT">
+		<sequence>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="subjFill" size="8"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscSubBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="blkAuctPotPrcGrpT" name="blkAuctPotPrcGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtSubBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoPrcBuy" size="14"/>
+			<element type="char" name="quoPrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtySel" size="13"/>
+			<element type="char" name="trnTypId"/>
+			<element type="char" name="quoTrnTimBuy" size="8"/>
+			<element type="char" name="quoTrnTimSel" size="8"/>
+			<element type="char" name="opnClsCod"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optSubBlkAuctConfPrivBcastT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscSubBlkAuctConfPrivBcastT" name="basic"/>
+			<element type="optExtSubBlkAuctConfPrivBcastT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optSubBlkAuctConfSubjectT">
+		<sequence>
+			<element type="char" name="membId" size="5"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="cntrClasCod"/>
+			<element type="char" name="cntrExpMthDat" size="2"/>
+			<element type="char" name="cntrExpYrDat" size="4"/>
+			<element type="char" name="cntrExerPrc" size="6"/>
+			<element type="char" name="cntrVersNo"/>
+		</sequence>
+	</complexType>
+</struct>

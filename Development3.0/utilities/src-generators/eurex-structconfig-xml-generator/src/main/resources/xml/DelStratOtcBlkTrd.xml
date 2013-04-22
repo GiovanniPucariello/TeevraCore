@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscDelStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratOtcBlkTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscDelStratOtcBlkTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="delStratOtcBlkTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+		</sequence>
+	</complexType>
+</struct>

@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!-- modules/ChildModule1.mxml -->
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script source="scripts/DateUtilScript.as"/>
+<mx:Script><![CDATA[
+	import com.headstrong.teevra.client.util.AlertHelper;
+	import com.headstrong.teevra.client.model.SchemaCache;
+	import mx.collections.ArrayCollection;
+	import mx.collections.ICollectionView;
+	import com.headstrong.teevra.client.events.SchemaServiceEvent;
+	import mx.events.CloseEvent;
+	import com.headstrong.teevra.client.events.ViewSchemaEvent;
+	import mx.formatters.DateFormatter;
+	import com.headstrong.teevra.client.view.entity.SchemaVO;
+	import mx.events.ListEvent;
+	import mx.controls.Alert;
+	import com.headstrong.teevra.client.model.ViewModelLocator;
+	import com.headstrong.teevra.client.util.UIModules;
+	import com.headstrong.teevra.client.util.UserEntitlements;
+          
+            [Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			private var schemaServiceEvent:SchemaServiceEvent;
+			private var serviceIdentifier:String;
+			
+			private const NEW_SCHEMA_EVENT:String = "NEW_SCHEMA_EVENT";
+			private const DELETE_SCHEMA_EVENT:String = "DELETE_SCHEMA_EVENT";
+			private const VIEW_SCHEMA_EVENT:String = "VIEW_SCHEMA_EVENT";
+			private const GET_SCHEMA_EVENT:String = "GET_SCHEMA_EVENT";
+			private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private var newButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+			private var deleteButtonEnabled:Boolean=true;			
+			private var editProcessAllowed:Boolean=true;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudSchema))
+				   {
+				   		newButtonEnabled=false;
+				   		itemClickEnabled=false;
+				   		deleteButtonEnabled=false;
+				   		editProcessAllowed=false;
+				   }
+				
+			}
+			
+			private function init():void
+			{
+				authorizePage();
+				deleteButton.enabled = false;				
+				newButton.enabled=newButtonEnabled;
+				  
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(userEntitlements.isAdmin || userEntitlements.crudSchema)
+				   	{
+						deleteButton.enabled = (schemaGrid.selectedIndex != -1);
+				   	}
+	  		}
+			private function createNewSchema():void
+        	{
+				modelLocator.loadedSchema = null;
+				//08-Apr-09 AP : Code Added as a part of Generalization of event :Code Start
+				serviceIdentifier=NEW_SCHEMA_EVENT;
+				schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.NEW_SCHEMA_COMMAND,null,this);
+				schemaServiceEvent.dispatch();
+				//08-Apr-09 AP : Code Added as a part of Generalization of event :Code END
+            }
+            
+            private function deleteSchema():void
+        	{     		
+        		Alert.show("Do you want to delete the selected schema?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);
+				
+			}
+			
+			private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					
+					//08-Apr-09 AP : Code Added as a part of Generalization of event :Code Start		
+					var args:Object = new Object();
+					args[SchemaServiceEvent.DELETE_SCHEMA_ID] = schemaGrid.selectedItem.schemaId;
+					serviceIdentifier=DELETE_SCHEMA_EVENT;
+					schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.DELETE_SCHEMA_COMMAND, args, this);
+					schemaServiceEvent.dispatch();
+					Alert.show("Schema has been deleted successfully!!","Delete Schema");
+				
+					//show the remaining schemas
+					schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.VIEW_SCHEMA_COMMAND, null, this);
+					schemaServiceEvent.dispatch();
+					serviceIdentifier=VIEW_SCHEMA_EVENT;
+						//08-Apr-09 AP : Code Added as a part of Generalization of event :Code End
+				}
+			}
+            private function editSchema(event:ListEvent):void
+        	{
+				if(userEntitlements.isAdmin || userEntitlements.crudSchema){
+					modelLocator.screenName="Process Modeling > View Schemas > Edit Schema";
+					//08-Apr-09 AP : Code Added as a part of Generalization of event :Code Start
+					var args:Object = new Object();
+					args[SchemaServiceEvent.GET_SCHEMA_ID] = event.currentTarget.selectedItem.schemaId;
+					serviceIdentifier=GET_SCHEMA_EVENT;
+					schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.GET_SCHEMA_COMMAND, args, this);
+					schemaServiceEvent.dispatch();	
+					//08-Apr-09 AP : Code Added as a part of Generalization of event :Code End
+				}
+            }
+             
+	        public function result( event:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case DELETE_SCHEMA_EVENT:
+						Alert.show("Schema has been deleted successfully!!","Delete Schema");
+						break;
+						
+					case VIEW_SCHEMA_EVENT:
+						var viewSchema : ICollectionView = ICollectionView( event.result );
+						modelLocator.viewSchema = viewSchema;
+						modelLocator.loadModule(ViewModelLocator.VIEW_SCHEMA_SWF);
+						modelLocator.screenName = "Process Modeling > View Schema";
+						break;
+						
+					case GET_SCHEMA_EVENT:
+						var schemas : ArrayCollection = ArrayCollection( event.result );
+						if (schemas.length > 0)
+						{
+							var viewModel : ViewModelLocator = ViewModelLocator.getInstance();
+							viewModel.loadedSchema = SchemaVO(schemas.getItemAt(0));
+						}
+						schemaServiceEvent = new SchemaServiceEvent(SchemaServiceEvent.NEW_SCHEMA_COMMAND,null,this);
+						schemaServiceEvent.dispatch();	
+						break;										
+				}
+				
+			}
+	        public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{
+					case DELETE_SCHEMA_EVENT:
+						AlertHelper.displayFault(info,"Schema cannot be deleted");
+						break;
+						
+					case VIEW_SCHEMA_EVENT:
+						AlertHelper.displayFault(info,"Schemas could not be retrieved");
+						break;
+						
+					case GET_SCHEMA_EVENT:
+						AlertHelper.displayFault(info,"Schema could not be retrieved");	
+						break;										
+				}
+			}
+           
+    ]]></mx:Script>
+	
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" fontWeight="bold" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+        <mx:Button id="newButton" label="@Resource(key='button.ViewSchema.newSchema', bundle='TeevraUI')" click="createNewSchema();"/>
+        <mx:Button id="deleteButton" label="@Resource(key='button.ViewSchema.deleteSchema', bundle='TeevraUI')" click="deleteSchema();"/>
+    </mx:HBox>
+    
+	<mx:DataGrid id="schemaGrid" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" dataProvider="{modelLocator.viewSchema}" width="100%" height="100%" itemClick="itemClickEvent(event);" doubleClickEnabled="true" itemDoubleClick="editSchema(event);">
+	
+	<mx:columns>       
+			<mx:DataGridColumn dataField="schemaId" headerText="@Resource(key='column.ViewSchema.schemaId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="schemaName" headerText="@Resource(key='column.ViewSchema.schemaName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="schemaDesc" headerText="@Resource(key='column.ViewSchema.schemaDesc', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdBy" headerText="@Resource(key='column.ViewSchema.createdBy', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdDate" headerText="@Resource(key='column.ViewSchema.createDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+			<mx:DataGridColumn dataField="modifiedBy" headerText="@Resource(key='column.ViewSchema.modifiedBy', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="modifiedDate" headerText="@Resource(key='column.ViewSchema.modfiedDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+		</mx:columns>	
+	
+	</mx:DataGrid>
+	
+</mx:Module>

@@ -1,0 +1,63 @@
+<binding>
+	<field name="requestQuote">
+		<xpath>/requestQuote</xpath>
+	</field>
+	<field name="requestQuote.header" >
+	<xpath>/requestQuote/header</xpath>
+	</field>
+	<field name="requestQuote.header.messageId">
+		<xpath>/requestQuote/header/messageId</xpath>
+	</field>
+	<field name="requestQuote.header.sentBy">
+		<xpath>/requestQuote/header/sentBy</xpath>
+	</field>
+	<field name="requestQuote.creditDefaultSwap">
+		<xpath>/requestQuote/creditDefaultSwap</xpath>
+	</field>
+	<field name="requestQuote.creditDefaultSwap.generalTerms">
+		<xpath>/requestQuote/creditDefaultSwap/generalTerms</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.scheduledTerminationDate">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/scheduledTerminationDate
+		</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.scheduledTerminationDate.unadjustedDate">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/scheduledTerminationDate/unadjustedDate
+		</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.referenceInformation">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/referenceInformation
+		</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.referenceInformation.referenceEntity">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/referenceInformation/referenceEntity
+		</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.referenceInformation.referenceEntity.id">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/referenceInformation/referenceEntity/id
+		</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.referenceInformation.referenceEntity.entityName">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/referenceInformation/referenceEntity/entityName
+		</xpath>
+	</field>
+	<field
+		name="requestQuote.creditDefaultSwap.generalTerms.referenceInformation.referenceEntity.entityId">
+		<xpath>
+			/requestQuote/creditDefaultSwap/generalTerms/referenceInformation/referenceEntity/entityId
+		</xpath>
+	</field>
+
+</binding>

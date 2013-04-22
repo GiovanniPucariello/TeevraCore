@@ -1,0 +1,25 @@
+<processing>
+<!--
+	<job
+		name="Installing Teevra as a windows service"
+		condition="izpack.selected.windowsservicepack">
+		<executefile name="${INSTALL_PATH}/bin/InstallTeevra-NT.bat"
+			condition="izpack.windowsinstall" />
+	</job>		
+-->
+	<job
+		name="Creating DB Schema and Intializing the Tables Windows Installer"
+		condition="izpack.selected.dbscriptsPack">
+		<executefile name="${INSTALL_PATH}/scripts/db/Launchsql.bat"
+			condition="izpack.windowsinstall" />
+	</job>
+<!--
+	<job
+		name="Creating DB Schema and Intializing the Tables Solaris installer"
+		condition="izpack.selected.dbscriptsPack">
+		<executefile name="${INSTALL_PATH}/scripts/db/Launchsql.sh"
+			condition="izpack.solarisinstall" />
+	</job>
+-->
+</processing>
+

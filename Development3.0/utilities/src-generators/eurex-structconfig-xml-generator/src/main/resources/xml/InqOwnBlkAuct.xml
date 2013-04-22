@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqOwnBlkAuctRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="118"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqOwnBlkAuctRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqOwnBlkAuctRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnBlkAuctRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoPrcBuy" size="14"/>
+			<element type="char" name="quoPrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtySel" size="13"/>
+			<element type="char" name="quoTrnTimBuy" size="8"/>
+			<element type="char" name="quoTrnTimSel" size="8"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqOwnBlkAuctResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqOwnBlkAuctRecT" name="futBscInqOwnBlkAuctRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqOwnBlkAuctRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqOwnBlkAuctResponseT">
+		<sequence>
+			<element type="futExtInqOwnBlkAuctRecT" name="futExtInqOwnBlkAuctRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqOwnBlkAuctResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqOwnBlkAuctResponseT" name="basic"/>
+			<element type="futExtInqOwnBlkAuctResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqOwnBlkAuctRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp" size="118"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqOwnBlkAuctRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqOwnBlkAuctRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqOwnBlkAuctRecT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="ordrTypCod"/>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+			<element type="char" name="quoPrcBuy" size="14"/>
+			<element type="char" name="quoPrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoExeQtySel" size="13"/>
+			<element type="char" name="quoTrnTimBuy" size="8"/>
+			<element type="char" name="quoTrnTimSel" size="8"/>
+			<element type="char" name="opnClsCod"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqOwnBlkAuctResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqOwnBlkAuctRecT" name="optBscInqOwnBlkAuctRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqOwnBlkAuctRecT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="txtGrpT" name="txtGrp"/>
+			<element type="char" name="membExchIdCodTo" size="5"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtInqOwnBlkAuctResponseT">
+		<sequence>
+			<element type="optExtInqOwnBlkAuctRecT" name="optExtInqOwnBlkAuctRec" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqOwnBlkAuctResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqOwnBlkAuctResponseT" name="basic"/>
+			<element type="optExtInqOwnBlkAuctResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

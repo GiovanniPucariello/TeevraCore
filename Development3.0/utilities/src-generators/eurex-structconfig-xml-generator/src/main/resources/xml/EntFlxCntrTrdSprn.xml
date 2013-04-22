@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscEntFlxCntrTrdSprnGrpT">
+		<sequence>
+			<element type="char" name="trnLngQty" size="16"/>
+			<element type="char" name="trnShtQty" size="16"/>
+			<element type="txtGrpT" name="txtGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntFlxCntrTrdSprnRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="flxCntrTrnIdGrpT" name="flxCntrTrnIdGrp"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscEntFlxCntrTrdSprnGrpT" name="bscEntFlxCntrTrdSprnGrp" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="entFlxCntrTrdSprnRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntFlxCntrTrdSprnRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntFlxCntrTrdSprnRecT">
+		<sequence>
+			<element type="char" name="trnIdSfxNo" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscEntFlxCntrTrdSprnResponseT">
+		<sequence>
+			<element type="char" name="flxCntrTrnIdNo" size="9"/>
+			<element type="char" name="buyCod"/>
+			<element type="char" name="flxCntrSynProdId" size="4"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscEntFlxCntrTrdSprnRecT" name="bscEntFlxCntrTrdSprnRec" size="20"/>
+		</sequence>
+	</complexType>
+	<complexType name="entFlxCntrTrdSprnResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscEntFlxCntrTrdSprnResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

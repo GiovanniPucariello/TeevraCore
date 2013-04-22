@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>fusion-parent</artifactId>
+		<groupId>com.hs.fusion</groupId>
+		<version>2.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hs.fusion</groupId>
+	<artifactId>performance</artifactId>
+	<version>${platform.version}</version>
+	<packaging>bundle</packaging>
+	<name>Fusion Performance Test</name>
+	<version>0.0.1-A</version>
+	<description>Fusion Performance Test</description>
+	<dependencies>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-commons</artifactId>
+			<version>0.0.1-A</version>
+		</dependency>
+		<dependency>
+			<groupId>com.hs.fusion</groupId>
+			<artifactId>fusion-remote</artifactId>
+			<version>0.0.1-A</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-Activator>
+							com.hs.fusion.performance.PerformanceTestActivator
+						</Bundle-Activator>
+						<Export-Package>
+							com.hs.fusion.performance.*;
+						</Export-Package>
+						<Start-Level>10</Start-Level>
+						<Component-Version>2.1.0</Component-Version>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

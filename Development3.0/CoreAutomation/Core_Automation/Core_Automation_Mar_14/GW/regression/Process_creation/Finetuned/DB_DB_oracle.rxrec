@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable rxversion="3.0.2.12718" id="f25a3649-4f06-4ce8-b134-990e247bd555" embeddedrepository="false">
+  <name>
+    DB_DB_oracle
+  </name>
+  <repeatcount>
+    1
+  </repeatcount>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="DB_DB_oracle" namespace="Finetuned"/>
+  <variables/>
+  <recorditems/>
+  <repository name="FinetunedRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" rxversion="3.0.2.12718" relativepath="FinetunedRepository.rxrep">
+    <codegen classname="FinetunedRepository" namespace="Finetuned"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+  <usercodefile lang="CSharp">
+    <![CDATA[DB_DB_oracle.UserCode.cs]]>
+  </usercodefile>
+  <references/>
+</recordtable>

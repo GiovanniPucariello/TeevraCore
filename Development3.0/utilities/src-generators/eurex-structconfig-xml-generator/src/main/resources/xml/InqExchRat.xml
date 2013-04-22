@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqExchRatRequestT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqExchRatRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqExchRatRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqExchRatRecT">
+		<sequence>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="exchRat" size="16"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+			<element type="char" name="maxCshAmntPosnTsf" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqExchRatResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="char" name="currTypCodTo" size="3"/>
+			<element type="bscInqExchRatRecT" name="bscInqExchRatRec" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqExchRatHrctRecT">
+		<sequence>
+			<element type="char" name="eurexCurrTypCod" size="3"/>
+			<element type="crsCurrHrctGrpT" name="crsCurrHrctGrp"/>
+			<element type="prvCrsCurrHrctGrpT" name="prvCrsCurrHrctGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqExchRatRecT">
+		<sequence>
+			<element type="char" name="prvExchRat" size="16"/>
+			<element type="char" name="setlPerd" size="2"/>
+			<element type="char" name="shtCldrNam" size="4"/>
+			<element type="char" name="shtCurrText" size="14"/>
+			<element type="char" name="cshClctCurr" size="3"/>
+			<element type="char" name="cntlBnkCurrInd"/>
+			<element type="char" name="permCshInd"/>
+			<element type="char" name="mjrCurr" size="3"/>
+			<element type="extInqExchRatHrctRecT" name="extInqExchRatHrctRec" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="extInqExchRatResponseT">
+		<sequence>
+			<element type="extInqExchRatRecT" name="extInqExchRatRec" size="7"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqExchRatResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqExchRatResponseT" name="basic"/>
+			<element type="extInqExchRatResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

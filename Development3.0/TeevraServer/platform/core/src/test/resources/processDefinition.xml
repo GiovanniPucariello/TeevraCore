@@ -1,0 +1,78 @@
+<fusion>
+	<mediators>
+		<mediator
+			type="com.headstrong.fusion.services.transformer.Transformer"
+			id="transformer" />
+		<mediator type="com.headstrong.fusion.services.ErrorProcessor"
+			id="errorMediator">
+			<onError exceptionType="Business">
+				<errorReporter id="jmsErrorhandler1"
+					formatter="formatter" />
+				<errorHandlingStrategy
+					type="ReportAndAbortJobIfThresholdCrossed">
+					<property name="threshold" value="50" />
+				</errorHandlingStrategy>
+			</onError>
+		</mediator>
+	</mediators>
+	<connectors>
+		<connector id="jms1" type="JMS">
+			<property name="brokerUrl" value="tcp://localhost:61616" />
+			<property name="destinationType" value="queue" />
+			<property name="destination" value="source" />
+			<property name="provider" value="Active MQ" />
+		</connector>
+		<connector id="jms2" type="JMS">
+			<property name="brokerUrl" value="tcp://localhost:61616" />
+			<property name="destinationType" value="queue" />
+			<property name="destination" value="destination" />
+			<property name="provider" value="Active MQ" />
+		</connector>
+	</connectors>
+	<routers>
+		<cbr id="cbr1">
+			<exprType>XPATH</exprType>
+			<when>
+				<expression>
+					(({$attrname}REL_OPR{constantValue})LOG_OPR({$attrname}REL_OPR{$attrname}))
+				</expression>
+				<to id="transformer" />
+			</when>
+			<otherwise>
+				<to id="transformer" />
+			</otherwise>
+		</cbr>
+		<savepoint id="123" />
+		<splitter id="split1">
+			<partitionKeyStrategy>
+				<partitionKeys>
+					<partitionKey>id</partitionKey>
+					<partitionKey>name</partitionKey>
+				</partitionKeys>
+			</partitionKeyStrategy>
+		</splitter>
+		<splitter id="split2">
+			<batchStrategy>
+				<batchSize>10</batchSize>
+			</batchStrategy>
+		</splitter>
+	</routers>
+	<errorReporters>
+		<errorReporter id="handle1" type="JMS">
+			<property name="brokerUrl" value="tcp://localhost:61616" />
+			<property name="destinationType" value="queue" />
+			<property name="destination" value="source" />
+			<property name="provider" value="Active MQ" />
+		</errorReporter>
+	</errorReporters>
+	<process id="1" name="Unit Testing Process Definition">
+		<route id="sequence1">
+			<from id="jms1" />
+			<to id="cbr1" />
+		</route>
+		<route id="sequence2">
+			<from id="transformer" />
+			<to id="jms2" />
+		</route>
+	</process>
+</fusion>

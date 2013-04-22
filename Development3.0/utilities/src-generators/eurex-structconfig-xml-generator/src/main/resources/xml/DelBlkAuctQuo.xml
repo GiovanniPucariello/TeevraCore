@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscDelBlkAuctQuoRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelBlkAuctQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelBlkAuctQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscDelBlkAuctQuoResponseT">
+		<sequence>
+			<element type="char" name="bidSidDel"/>
+			<element type="char" name="askSidDel"/>
+		</sequence>
+	</complexType>
+	<complexType name="futDelBlkAuctQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscDelBlkAuctQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelBlkAuctQuoRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelBlkAuctQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelBlkAuctQuoRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscDelBlkAuctQuoResponseT">
+		<sequence>
+			<element type="char" name="bidSidDel"/>
+			<element type="char" name="askSidDel"/>
+		</sequence>
+	</complexType>
+	<complexType name="optDelBlkAuctQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscDelBlkAuctQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

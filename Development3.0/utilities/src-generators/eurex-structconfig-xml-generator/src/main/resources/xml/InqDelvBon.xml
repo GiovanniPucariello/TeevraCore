@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqDelvBonRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="100"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDelvBonRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDelvBonRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDelvBonRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqDelvBonResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqDelvBonRecT" name="futBscInqDelvBonRec" size="19"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqDelvBonRecT">
+		<sequence>
+			<element type="char" name="secuNam" size="30"/>
+			<element type="char" name="cpnRat" size="5"/>
+			<element type="char" name="matuDat" size="8"/>
+			<element type="char" name="lstCpnDat" size="8"/>
+			<element type="char" name="nxtCpnDat" size="8"/>
+			<element type="char" name="convFctrMtd" size="2"/>
+			<element type="char" name="convFact" size="7"/>
+			<element type="char" name="ctdInd"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqDelvBonResponseT">
+		<sequence>
+			<element type="futExtInqDelvBonRecT" name="futExtInqDelvBonRec" size="19"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqDelvBonResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqDelvBonResponseT" name="basic"/>
+			<element type="futExtInqDelvBonResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

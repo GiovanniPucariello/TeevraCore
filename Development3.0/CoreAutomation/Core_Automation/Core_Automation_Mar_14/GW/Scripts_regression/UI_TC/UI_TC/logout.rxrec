@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<recordtable version="2.3.6.10664" id="ec3b1346-cac6-4fd5-8219-a50c7efdd63f">
+  <name>
+    logout
+  </name>
+  <turbomode>
+    False
+  </turbomode>
+  <genreport>
+    True
+  </genreport>
+  <speedfactor>
+    1
+  </speedfactor>
+  <useDefaultItemLogging>
+    True
+  </useDefaultItemLogging>
+  <codegen classname="logout" namespace="UI_TC"/>
+  <recorditems>
+    <userrecorditem duration="1061ms" methodname="Mouse_Click_ContainerPanel1">
+      <comment>
+      </comment>
+      <internalrecorditem>
+        <mouseitem duration="1061ms" action="Click" button="Left" movetime="100ms" sx="780" sy="91" loc="583;720">
+          <comment>
+          </comment>
+          <info sourcename="Recorder" id="a2f7da17-9bfb-4b7d-8a84-5ca1f5f08619">
+            <element role="container" prefcap="container" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="0" rect="4,4,1017,763">
+              <attribute name="caption" type="System.String">
+              </attribute>
+              <attribute name="basetype" type="System.String">
+                <![CDATA[mx.core::Container]]>
+              </attribute>
+              <attribute name="flexuid" type="System.String">
+                <![CDATA[iceFishClient1.panel]]>
+              </attribute>
+              <attribute name="fulltype" type="System.String">
+                <![CDATA[mx.containers::Panel]]>
+              </attribute>
+              <attribute name="id" type="System.String">
+                <![CDATA[panel]]>
+              </attribute>
+              <attribute name="type" type="System.String">
+                <![CDATA[Panel]]>
+              </attribute>
+              <children/>
+            </element>
+            <path>
+              <![CDATA[/dom[@domain~'^.*']/body/flexobject/container[@id='panel']]]>
+            </path>
+          </info>
+        </mouseitem>
+      </internalrecorditem>
+    </userrecorditem>
+    <mouseitem duration="1093ms" action="Click" button="Left" movetime="100ms" sx="818" sy="30" loc="32;9">
+      <comment>
+      </comment>
+      <info sourcename="Recorder" id="18ded8ae-ab59-4271-a227-a51f12064d8b">
+        <element role="button" prefcap="button" capabilities="flexelement" flavor="flex" visible="True" valid="True" enabled="True" hasfocus="False" dontcache="True" index="1" rect="786,21,64,21">
+          <attribute name="pressed" type="System.Boolean">
+            <![CDATA[False]]>
+          </attribute>
+          <attribute name="text" type="System.String">
+            <![CDATA[Logout]]>
+          </attribute>
+          <attribute name="basetype" type="System.String">
+            <![CDATA[mx.controls::Button]]>
+          </attribute>
+          <attribute name="flexuid" type="System.String">
+            <![CDATA[iceFishClient1.panel.logoBox.logoutBtn]]>
+          </attribute>
+          <attribute name="fulltype" type="System.String">
+            <![CDATA[mx.controls::LinkButton]]>
+          </attribute>
+          <attribute name="id" type="System.String">
+            <![CDATA[logoutBtn]]>
+          </attribute>
+          <attribute name="type" type="System.String">
+            <![CDATA[LinkButton]]>
+          </attribute>
+          <children/>
+        </element>
+        <path>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='logoBox']/button[@id='logoutBtn']]]>
+        </path>
+      </info>
+    </mouseitem>
+  </recorditems>
+  <repository name="UI_TCRepository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664" relativepath="UI_TCRepository.rxrep">
+    <codegen classname="UI_TCRepository" namespace="UI_TC"/>
+    <rootfolder name="_rootdummy_"/>
+  </repository>
+</recordtable>

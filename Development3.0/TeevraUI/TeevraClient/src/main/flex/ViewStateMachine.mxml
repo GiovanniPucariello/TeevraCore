@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Module xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="init();"
+	implements="mx.rpc.IResponder">
+<mx:Script source="scripts/DateUtilScript.as"/>
+	<mx:Script>
+		<![CDATA[
+			import com.headstrong.teevra.client.util.AlertHelper;
+			import com.headstrong.teevra.client.util.UIModules;
+			import com.headstrong.teevra.client.model.ComponentCache;
+			import com.headstrong.teevra.client.events.ComponentServiceEvent;
+			import mx.collections.SortField;
+			import mx.collections.Sort;
+			import mx.collections.ICollectionView;
+			import mx.collections.ArrayCollection;
+			import com.headstrong.teevra.client.events.StateMachineServiceEvent;
+			import mx.events.CloseEvent;
+			
+			import mx.controls.Alert;
+			import com.headstrong.teevra.client.model.StateMachineCache;
+			
+			import mx.formatters.DateFormatter;
+			import com.headstrong.teevra.client.model.ViewModelLocator;
+			import com.headstrong.teevra.client.util.UserEntitlements;
+			
+			[Bindable]		
+			private var modelLocator:ViewModelLocator = ViewModelLocator.getInstance();
+			private var stateMachineServiceEvent:StateMachineServiceEvent;
+			
+			private var isViewComponentEvent:Boolean;
+			private var serviceIdentifier:String;
+			
+			private const DELETE_STATEMACHINE_EVENT:String = "DELETE_STATEMACHINE_EVENT";
+			private const VIEW_STATEMACHINE_EVENT:String = "VIEW_STATEMACHINE_EVENT";
+			
+			//private var modules:ArrayCollection=modelLocator.loggedInUser.activityIds;
+			private var userEntitlements:UserEntitlements=modelLocator.userEntitlements;
+			
+			private var newButtonEnabled:Boolean=true;
+			private var itemClickEnabled:Boolean=true;
+			private var deleteButtonEnabled:Boolean=true;	
+			private var publishStateMachineAllowed:Boolean=true;	
+			private var editStateMachineAllowed:Boolean=true;
+			
+			private function authorizePage():void
+			{
+				if(!(userEntitlements.isAdmin || userEntitlements.crudStateMachine))
+				   {
+				   		newButtonEnabled=false;
+				   		itemClickEnabled=false;
+				   		deleteButtonEnabled=false;
+				   		editStateMachineAllowed=false;
+				   }
+				if(!(userEntitlements.isAdmin || userEntitlements.publishStateMachine))   
+				{
+					publishStateMachineAllowed=false;
+				}
+			}
+			
+			private function init():void
+			{
+				authorizePage();
+				deleteButton.enabled = false;
+				newButton.enabled=newButtonEnabled;
+				
+			}
+			
+			private function itemClickEvent(event:Event):void
+			{
+				if(deleteButtonEnabled)
+				   {
+									   	
+				   	 deleteButton.enabled = (stateMachineGrid.selectedIndex != -1);
+				   }
+				
+	  		}
+	  		
+			private function newStateMachine(event:MouseEvent):void
+			{
+				modelLocator.loadedStateMachine = null;
+				modelLocator.stateMachineEventString = null;
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				var stateMachineServiceEvent:StateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.NEW_STATEMACHINE_COMMAND,null,this);
+				stateMachineServiceEvent.dispatch();	
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code End
+			}			
+			private function deleteStateMachine(event:MouseEvent):void
+			{
+				Alert.show("Do you want to delete the state machine?", "Confirm delete", 
+		   			Alert.YES | Alert.NO, null, 
+		   			confirmDeleteHandler, null, Alert.NO);
+			}
+			
+			private function confirmDeleteHandler(e:CloseEvent):void 
+			{
+				if (e.detail == Alert.YES) {
+					//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+					var args:Object = new Object();
+					args[StateMachineServiceEvent.DELETE_STATEMACHINE_ID] = stateMachineGrid.selectedItem.stateMachineName;
+					stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.DELETE_STATEMACHINE_COMMAND, args, this);
+					stateMachineServiceEvent.dispatch();
+					serviceIdentifier=DELETE_STATEMACHINE_EVENT;
+					//08-Apr-09 AP Code Added as a part of Generalization of event :Code End
+				}
+			}
+			
+			private function editStateMachine(event:Event):void
+			{
+				if(editStateMachineAllowed || publishStateMachineAllowed)
+				   {
+						modelLocator.loadedStateMachine = StateMachineCache.getInstance().retrieveStateMachine(event.currentTarget.selectedItem.stateMachineName);
+						modelLocator.stateMachineEventString=modelLocator.loadedStateMachine.stateMachineEvents;
+						//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+						var stateMachineServiceEvent:StateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.NEW_STATEMACHINE_COMMAND,null,this);
+						stateMachineServiceEvent.dispatch();
+						//08-Apr-09 AP Code Added as a part of Generalization of event :Code End
+				   }
+			}
+
+	        public function result( event:Object ):void 
+			{			
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code Start
+				switch(serviceIdentifier)
+				{								
+					case DELETE_STATEMACHINE_EVENT:
+						Alert.show("State Machine has been deleted successfully!!","Delete State Machine");	
+						//shows the view state machine screen with remaining state machines
+						
+						stateMachineServiceEvent = new StateMachineServiceEvent(StateMachineServiceEvent.VIEW_STATEMACHINE_COMMAND,null,this);
+						stateMachineServiceEvent.dispatch();
+						serviceIdentifier=VIEW_STATEMACHINE_EVENT;
+					    break;
+					    
+					case VIEW_STATEMACHINE_EVENT:
+						var stateMachines : ICollectionView = ICollectionView( event.result );
+						//load the state machine cache
+						StateMachineCache.getInstance().loadStateMachines(stateMachines);
+						var sortByName:SortField;
+						var sortStateMachines:Sort;
+						modelLocator.loadModule(ViewModelLocator.VIEW_STATE_MACHINE_SWF);
+						modelLocator.screenName = "Process Modeling > View StateMachine";
+						modelLocator.stateMachines=stateMachines;
+						sortStateMachines = new Sort();
+						sortByName = new SortField("stateMachineName",true,false);
+						sortStateMachines.fields = [sortByName];
+						stateMachines.sort = sortStateMachines;
+						stateMachines.refresh();
+						break;						
+					
+				}
+				//08-Apr-09 AP Code Added as a part of Generalization of event :Code End				
+			}
+			public function fault( info:Object ):void 
+			{
+				switch(serviceIdentifier)
+				{								
+					case DELETE_STATEMACHINE_EVENT:
+						AlertHelper.displayFault(info,"State Machine cannot be deleted");
+						break;
+					    
+					case VIEW_STATEMACHINE_EVENT:
+						AlertHelper.displayFault(info,"State Machines could not be retrieved");
+						break;						
+					
+				}
+		
+			}
+		]]>
+	</mx:Script>
+	<mx:HBox width="100%" borderStyle="none" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+		<mx:Label styleName="labelStyle" text="{modelLocator.screenName}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0"/>
+		<mx:Spacer width="100%"/>
+		
+        <mx:Button id="newButton" label="@Resource(key='button.ViewStateMachine.new', bundle='TeevraUI')" click="newStateMachine(event);"/>
+        <mx:Button id="deleteButton" label="@Resource(key='button.ViewStateMachine.delete', bundle='TeevraUI')" enabled="false" click="deleteStateMachine(event);"/>
+        
+    </mx:HBox>
+    
+	<mx:DataGrid editable="false" id="stateMachineGrid" styleName="dataGridStyle" headerStyleName="dataGridheaderStyle" dataProvider="{modelLocator.stateMachines}" itemClick="itemClickEvent(event);" doubleClickEnabled="true" itemDoubleClick="editStateMachine(event);" width="100%" height="100%">
+		<mx:columns>       
+			<mx:DataGridColumn dataField="stateMachineId" headerText="@Resource(key='column.ViewStateMachine.stateMachineId', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="stateMachineName" headerText="@Resource(key='column.ViewStateMachine.stateMachineName', bundle='TeevraUI')" />
+			<mx:DataGridColumn dataField="stateMachineDesc" headerText="@Resource(key='column.ViewStateMachine.stateMachineDesc', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="stateMachineStatus" headerText="@Resource(key='column.ViewStateMachine.stateMachineStatus', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdBy" headerText="@Resource(key='column.ViewStateMachine.createdBy', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="createdDate" headerText="@Resource(key='column.ViewStateMachine.createDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+			<mx:DataGridColumn dataField="modifiedBy" headerText="@Resource(key='column.ViewStateMachine.modifiedBy', bundle='TeevraUI')"/>
+			<mx:DataGridColumn dataField="modifiedDate" headerText="@Resource(key='column.ViewStateMachine.modfiedDate', bundle='TeevraUI')" labelFunction="formatDate"/>
+		
+		</mx:columns>	
+	</mx:DataGrid>
+</mx:Module>

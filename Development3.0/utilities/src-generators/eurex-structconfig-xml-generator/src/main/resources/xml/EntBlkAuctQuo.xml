@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscEntBlkAuctQuoRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtEntBlkAuctQuoRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntBlkAuctQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntBlkAuctQuoRequestT" name="basic"/>
+			<element type="futExtEntBlkAuctQuoRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscEntBlkAuctQuoResponseT">
+		<sequence>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="futEntBlkAuctQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscEntBlkAuctQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntBlkAuctQuoRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="quoExePrcBuy" size="14"/>
+			<element type="char" name="quoExePrcSel" size="14"/>
+			<element type="char" name="blkAuctQuoQtyBuy" size="13"/>
+			<element type="char" name="blkAuctQuoQtySel" size="13"/>
+		</sequence>
+	</complexType>
+	<complexType name="optExtEntBlkAuctQuoRequestT">
+		<sequence>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntBlkAuctQuoRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntBlkAuctQuoRequestT" name="basic"/>
+			<element type="optExtEntBlkAuctQuoRequestT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscEntBlkAuctQuoResponseT">
+		<sequence>
+			<element type="char" name="ordrNoBuy" size="9"/>
+			<element type="char" name="ordrNoSel" size="9"/>
+		</sequence>
+	</complexType>
+	<complexType name="optEntBlkAuctQuoResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscEntBlkAuctQuoResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

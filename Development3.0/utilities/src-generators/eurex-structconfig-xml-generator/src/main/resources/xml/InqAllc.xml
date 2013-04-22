@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqAllcRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp" size="236"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="char" name="mliCntrDataCtr" size="3"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqAllcRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqAllcRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqAllcRecT">
+		<sequence>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="isinCod" size="12"/>
+			<element type="char" name="invcAmnt" size="16"/>
+			<element type="acctTypCodGrpT" name="acctTypCodGrp"/>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqAllcResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqAllcRecT" name="futBscInqAllcRec" size="26"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqAllcRecT">
+		<sequence>
+			<element type="char" name="secuNam" size="30"/>
+			<element type="char" name="allcQty" size="16"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqAllcResponseT">
+		<sequence>
+			<element type="futExtInqAllcRecT" name="futExtInqAllcRec" size="26"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqAllcResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqAllcResponseT" name="basic"/>
+			<element type="futExtInqAllcResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+</struct>

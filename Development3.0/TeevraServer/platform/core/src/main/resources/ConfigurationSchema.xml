@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+	<!--  Process Schedule -->
+	<class name="com.headstrong.fusion.config.ProcessSchedule">
+		<map-to xml="schedule" />
+		<field name="processId" type="java.lang.String">
+			<bind-xml name="processid" node="element" required="true" />
+		</field>
+		<field name="scheduleStartTime" type="java.util.Date">
+			<bind-xml name="scheduleStart" node="element"
+				required="false" />
+		</field>
+		<field name="scheduleStopTime" type="java.util.Date">
+			<bind-xml name="scheduleStop" node="element"
+				required="true" />
+		</field>
+		<field name="cronExpression" type="java.lang.String">
+			<bind-xml name="cronExpression" node="element"
+				required="true" />
+		</field>
+		<field name="processStopTime" type="java.lang.Long">
+			<bind-xml name="processStop" node="element" required="true" />
+		</field>
+	</class>
+	<!--  Cache Reload Schedule -->
+	<class name="com.headstrong.fusion.config.CacheReloadSchedule">
+		<map-to xml="schedule" />
+		<field name="cacheName" type="java.lang.String">
+			<bind-xml name="cacheName" node="element" required="true" />
+		</field>
+		<field name="scheduleStartTime" type="java.util.Date">
+			<bind-xml name="scheduleStart" node="element"
+				required="false" />
+		</field>
+		<field name="scheduleStopTime" type="java.util.Date">
+			<bind-xml name="scheduleStop" node="element"
+				required="true" />
+		</field>
+		<field name="cronExpression" type="java.lang.String">
+			<bind-xml name="cronExpression" node="element"
+				required="true" />
+		</field>
+	</class>
+	<!--  Cache Reload Schedule Configuration -->
+	<class name="com.headstrong.fusion.config.CacheReloadScheduleConfiguration">
+		<map-to xml="schedule" />
+		<field name="cacheName" type="java.lang.String">
+			<bind-xml name="cacheName" node="attribute" required="true" />
+		</field>
+		<field name="running" type="java.lang.Boolean">
+			<bind-xml name="running" node="element" />
+		</field>
+		<field name="schedule"
+			type="com.headstrong.fusion.config.CacheReloadSchedule">
+			<bind-xml name="schedule" node="element" required="false" />
+		</field>
+	</class>
+	
+	<!--   Fusion Configuration -->
+	<class name="com.headstrong.fusion.config.Configuration">
+		<map-to xml="fusion" />
+		<field name="processes"
+			type="com.headstrong.fusion.config.ProcessConfiguration"
+			collection="arraylist">
+			<bind-xml name="process" node="element"
+				location="processes" />
+		</field>
+		<field name="cacheReloadConfigurations"
+			type="com.headstrong.fusion.config.CacheReloadScheduleConfiguration"
+			collection="arraylist">
+			<bind-xml name="cacheReloadConfiguration" node="element"
+				location="cacheReloadConfigurations" />
+		</field>
+	</class>
+	<!--  Process Schedule -->
+	<class name="com.headstrong.fusion.config.ProcessConfiguration">
+		<map-to xml="schedule" />
+		<field name="id" type="java.lang.String">
+			<bind-xml name="id" node="attribute" required="true" />
+		</field>
+		<field name="running" type="java.lang.Boolean">
+			<bind-xml name="running" node="element"/>
+		</field>
+		<field name="schedule" type="com.headstrong.fusion.config.ProcessSchedule">
+			<bind-xml name="schedule" node="element" required="false" />
+		</field>
+	</class>
+	
+</mapping>

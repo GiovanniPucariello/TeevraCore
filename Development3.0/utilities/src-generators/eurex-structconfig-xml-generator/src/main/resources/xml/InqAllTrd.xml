@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="futBscInqAllTrdRequestT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="timMin" size="8"/>
+			<element type="char" name="timMax" size="8"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqAllTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqAllTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqAllTrdRecT">
+		<sequence>
+			<element type="futCntrIdGrpT" name="futCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="futBscInqAllTrdResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="futBscInqAllTrdRecT" name="futBscInqAllTrdRec" size="19"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqAllTrdRecT">
+		<sequence>
+			<element type="char" name="undrIsinCod" size="12"/>
+			<element type="char" name="grsBas" size="6"/>
+			<element type="char" name="swapEndDat" size="8"/>
+			<element type="char" name="cpnFixRat" size="6"/>
+		</sequence>
+	</complexType>
+	<complexType name="futExtInqAllTrdResponseT">
+		<sequence>
+			<element type="futExtInqAllTrdRecT" name="futExtInqAllTrdRec" size="19"/>
+		</sequence>
+	</complexType>
+	<complexType name="futInqAllTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="futBscInqAllTrdResponseT" name="basic"/>
+			<element type="futExtInqAllTrdResponseT" name="extension"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAllTrdRequestT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="timMin" size="8"/>
+			<element type="char" name="timMax" size="8"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqAllTrdRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqAllTrdRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAllTrdRecT">
+		<sequence>
+			<element type="optCntrIdGrpT" name="optCntrIdGrp"/>
+			<element type="char" name="dblLegTyp" size="3"/>
+			<element type="char" name="stratTyp" size="7"/>
+			<element type="char" name="trnIdNo" size="6"/>
+			<element type="char" name="trdXQty" size="13"/>
+			<element type="char" name="trdMtchPrc" size="14"/>
+			<element type="char" name="trnDat" size="8"/>
+			<element type="char" name="trnTim" size="8"/>
+			<element type="char" name="trdTyp"/>
+			<element type="char" name="currTypCod" size="3"/>
+			<element type="char" name="dateLstUpdDat" size="18"/>
+		</sequence>
+	</complexType>
+	<complexType name="optBscInqAllTrdResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="optBscInqAllTrdRecT" name="optBscInqAllTrdRec" size="19"/>
+		</sequence>
+	</complexType>
+	<complexType name="optInqAllTrdResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="optBscInqAllTrdResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>

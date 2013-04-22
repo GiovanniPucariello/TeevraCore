@@ -1,0 +1,89 @@
+﻿<repository name="Project1Repository" id="49f0df9c-b88c-4764-aa93-76d5ce30b1a9" version="2.3.6.10664">
+  <codegen classname="Project1Repository" namespace="UI_TC"/>
+  <rootfolder id="31097da2-1aff-446c-99c8-77ee9da049d7" searchtimeout="30s" capname="unknown" name="Root" isrooted="True" usecache="True">
+    <appfolder id="406c296d-8ab1-4826-b2d0-df6cb1ee36d8" searchtimeout="30s" capname="webdocument" name="WebDocument10_200_41_15_8880" isrooted="True" usecache="False">
+      <folder id="51512c4c-a74c-469b-8f0a-5108c6a66531" searchtimeout="10s" capname="flexobject" name="FlexObjectIceFish" isrooted="True" usecache="False">
+        <item id="06617188-2d7b-4f23-af6e-edabf3586510" searchtimeout="10s" capname="button" name="ButtonNew">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/container/container[@id='mainArea']/container/element/container/button[@id='newButton']]]>
+        </item>
+        <item id="8e9a5a77-781b-485f-be9d-68e133a99c2f" searchtimeout="10s" capname="button" name="ButtonClose">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Close']]]>
+        </item>
+        <item id="7ed56712-b61e-4432-a9e4-53b34aafd396" searchtimeout="10s" capname="button" name="ButtonSave">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/element[@type='ControlBar']/button[@text='Save']]]>
+        </item>
+        <item id="d24ed1a3-a6c0-47f9-88b9-d9bfbc580a5c" searchtimeout="10s" capname="button" name="SomeButton1">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[1]/container/container/button[@text='<']]]>
+        </item>
+        <item id="567515a6-b0c1-4b17-a8ac-71655d881337" searchtimeout="10s" capname="button" name="SomeButton">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[1]/container/container/button[@text='>']]]>
+        </item>
+        <item id="2c409662-67b7-4b17-ae55-bd646e6ad6b5" searchtimeout="10s" capname="text" name="TextRoles">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[1]/text/text[@caption='Roles']]]>
+        </item>
+        <item id="d4df5c04-4c8e-42a2-9990-9f2bcfbc5d46" searchtimeout="10s" capname="button" name="ButtonButton">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[2]/combobox/button[@type='Button']]]>
+        </item>
+        <item id="ae57928c-7367-44c8-91c6-79656844fdab" searchtimeout="10s" capname="text" name="TextStatusAsterisk">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[2]/text/text[@caption='Status*']]]>
+        </item>
+        <item id="4a873438-80d3-4eaf-b57c-ad4867c0e814" searchtimeout="10s" capname="text" name="TextEmail">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[3]/text[@type='FormItemLabel']/text[@caption='Email']]]>
+        </item>
+        <item id="0e34976e-533f-4b1b-be6f-59f4c9ca6116" searchtimeout="10s" capname="text" name="TextTextInput4">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[3]/text[@type='TextInput']]]>
+        </item>
+        <item id="53cdcc01-7374-42e5-be6b-57f61efa8b25" searchtimeout="10s" capname="text" name="TextPasswordAsterisk">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[4]/text[@type='FormItemLabel']/text[@caption='Password*']]]>
+        </item>
+        <item id="6c9b30bb-203b-42ac-a92b-d7eb8d5df480" searchtimeout="10s" capname="text" name="TextTextInput3">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[4]/text[@type='TextInput']]]>
+        </item>
+        <item id="e3300438-d405-401c-a51f-d7f8219c3e30" searchtimeout="10s" capname="text" name="TextLast_Name">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[5]/text[@type='FormItemLabel']/text[@caption='Last Name']]]>
+        </item>
+        <item id="f8091d34-2094-45e5-9ea7-18bacd1925ac" searchtimeout="10s" capname="text" name="TextTextInput2">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[5]/text[@type='TextInput']]]>
+        </item>
+        <item id="b762271b-ad3d-475c-93b7-81a3473681ad" searchtimeout="10s" capname="text" name="TextFirst_NameAsterisk">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[6]/text[@type='FormItemLabel']/text[@caption='First Name*']]]>
+        </item>
+        <item id="390ed04e-8225-4e7b-a262-80e5453426bf" searchtimeout="10s" capname="text" name="TextTextInput1">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[6]/text[@type='TextInput']]]>
+        </item>
+        <item id="d133c331-62fc-4e05-aa40-88f05d67a0b6" searchtimeout="10s" capname="text" name="TextUser_NameAsterisk">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[7]/text[@type='FormItemLabel']/text[@caption='User Name*']]]>
+        </item>
+        <item id="d5cccad3-6734-4bd7-a9c6-d27545e4b9ce" searchtimeout="10s" capname="text" name="TextTextInput">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[7]/text[@type='TextInput']]]>
+        </item>
+        <item id="a40c5d49-5c41-462d-966d-8c676ff405a4" searchtimeout="10s" capname="text" name="TextAdmin">
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject/form/form/container[1]/container/list[2]/listitem[@text='admin']/text[@caption='admin']]]>
+        </item>
+        <basepath>
+          <![CDATA[/dom[@domain~'^.*']/body/flexobject]]>
+        </basepath>
+      </folder>
+      <basepath>
+        <![CDATA[/dom[@domain~'^.*']]]>
+      </basepath>
+      <icon>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAjJJREFU
+OE+N091L01EYwPEJ/Q1B0GUXRRRUeBNEBAsSYyAVLdmFIuXCyswyC7VF5oVOli5dm0pqYkZTh/Zi
+L2olKUGy1HKrqS1RJtPp5nzb77ft2zazG3+LDjw8B855PufhHE6C7M+ob/uAKIgyISjKRDGSI/OA
+IMiEwHqORoXmfMLG/k25pqWbf40CbSOF2kfEBaqauhCD4bhGFLBPuOIjuoedBARpIBgKEwUOpVyI
+RWJSxuZOSo1trKxtBoIhYvDyagjfUhCnW5QG7uhb/gKe5TkMnR3oLe0UtmZxr7UBx7QPj0/ENrkq
+DUQvKHpCtFjbU8ZI2IY1PEix9SoH882cq37JsHOBL2NL0kBeSR1efwhTRw8FX1Oon1djsraQXu7i
+aKWbXQ3H0HXU8mnULw1kawzMeYPcvd9LmiUZ1WsF2TonOZWw36hha9t2jhddpm/YKw2ob1Tgmhe5
+/cBBYeVH0pqVKHqKUZZ7OZF1nW23tnA4N4O3g/PSQHpuGVOzAgbzKGotqLRm9nXuILE8heSzz9mt
+uESZqZYXAx5pIPViCc6ZAPbxBa6VDrE3v4adRXuQZ17hgNLCSfUTXvXPYOmblQZOZWpwTK3Fnspq
+96BraubImSLkqXqqGt/Eige++TG/c0sDivSb2CfXIvcgMOkOMD69iu3XSuzZPn9fihQv8n5oMT6Q
+pMqjf2SB9t4Jnnb/5HHXGI3PflBnsWNstVFtXo8qs0O6A/npnNjC/8bGr/wNMwQt25kbrHoAAAAA
+SUVORK5CYII=
+      </icon>
+    </appfolder>
+    <basepath>
+    </basepath>
+  </rootfolder>
+</repository>

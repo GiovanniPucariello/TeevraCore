@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struct type="complexStruct">
+	<complexType name="bscInqMktMkrQuoLimRequestT">
+		<sequence>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMktMkrQuoLimRequestT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMktMkrQuoLimRequestT" name="basic"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMktMkrQuoLimRecT">
+		<sequence>
+			<element type="char" name="membExchIdCod" size="5"/>
+			<element type="trdrIdGrpT" name="trdrIdGrp"/>
+			<element type="char" name="prodId" size="4"/>
+			<element type="char" name="volLimQty" size="16"/>
+			<element type="char" name="deltaLimQty" size="16"/>
+			<element type="char" name="vegaLimQty" size="16"/>
+			<element type="char" name="timIntvlSec" size="5"/>
+		</sequence>
+	</complexType>
+	<complexType name="bscInqMktMkrQuoLimResponseT">
+		<sequence>
+			<element type="char" name="keyDataCtrlBlk" size="80"/>
+			<element type="char" name="mliRecCtr" size="3"/>
+			<element type="bscInqMktMkrQuoLimRecT" name="bscInqMktMkrQuoLimRec" size="50"/>
+		</sequence>
+	</complexType>
+	<complexType name="inqMktMkrQuoLimResponseT">
+		<sequence>
+			<element type="dataHeaderT" name="header"/>
+			<element type="bscInqMktMkrQuoLimResponseT" name="basic"/>
+		</sequence>
+	</complexType>
+</struct>
